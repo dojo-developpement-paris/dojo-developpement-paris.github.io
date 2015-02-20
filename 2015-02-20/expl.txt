@@ -1,0 +1,9 @@
+
+Track  Roll  sum  ?? Frame?
+11     x<10  11-20    same    track=x
+11      10    21     frame++, track=11 
+
+[0-9]    x   -10    frame++  track=11
+
+
+
