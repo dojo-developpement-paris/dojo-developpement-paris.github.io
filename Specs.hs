@@ -6,7 +6,7 @@ import Data.Ord (comparing)
 data Rank = Rank Int | Ten | Jack | Queen | King | Ace
     deriving (Eq, Ord, Show)
 
-data Hand = HighCard | Flush 
+data Hand = HighCard [Card] | Flush 
     deriving (Eq, Ord, Show)
 
 data Suit = Diamonds | Hearts | Clubs | Spades
@@ -31,14 +31,14 @@ charToSuit 'C' = Clubs
 charToSuit 'S' = Spades
 
 cards :: String -> [Card]
-cards = sort . map card . words
+cards = reverse . sort . map card . words
 
 suit :: String -> Char
 
 suit = head . tail 
 hand :: String -> Hand
 hand s | all (== suit (head (words s))) (map suit (words s)) = Flush
-hand _ = HighCard
+hand s = HighCard $ cards s
 
 charToRank :: Char -> Rank
 charToRank '1' = Ace
@@ -64,17 +64,18 @@ main = hspec $ do
         describe "of five cards" $ do
             describe "high cards between one another" $ do
                 it "expect hands with the same values to be equal" $ do
-                    cards "2D 4D 5D 6D 7H" `compare` cards "2H 7H 5H 6H 4D"  `shouldBe` EQ
+                    hand "2D 4D 5D 6D 7H" `compare` hand "2H 7H 5H 6H 4D"  `shouldBe` EQ
                 it "expect the hand containing the highest card to win" $ do
-                    cards "2D 4D 5D 6D KH" `compare` cards "1H 7H 5H 6H 4D"  `shouldBe` LT
+                    hand "8D 7D 5D 6D KH" `compare` hand "1H 7H 5H 6H 4D"  `shouldBe` LT
             describe "flush" $ do
                 it "expect the lowest flush to beat the higher high cards" $ do
                     hand "2D 3D 4D 5D 7D" `compare` hand "9H JD KD 1D QH" `shouldBe` GT
+
  
     describe "cards" $ do
         it "should be ordered according to poker rules" $ do    
             let unsorted = cards "1D QD 7D 4D 9D 6D 3D 8D 5D TD JD 2D KD"
                 expected = cards "2D 3D 4D 5D 6D 7D 8D 9D TD JD QD KD 1D"
-            sort unsorted `shouldBe` expected
+            reverse (sort unsorted) `shouldBe` expected
 
     
