@@ -10,6 +10,7 @@ Présent
 - Zacharia
 - Patrick
 - Stéphane
+- Isabelle
 
 Rétrospective
 (randori Ruby Poker Hand, avec les calisthenics)
