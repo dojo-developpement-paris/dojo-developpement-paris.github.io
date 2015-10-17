@@ -1,6 +1,6 @@
 Prochaine Session
 
-Jeudi 22 Octobre 2015?
+Jeudi 22 Octobre 2015
 
 Présent
 - Michel
