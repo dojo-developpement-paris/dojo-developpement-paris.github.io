@@ -1,0 +1,2 @@
+class Some
+end
