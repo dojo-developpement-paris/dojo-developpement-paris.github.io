@@ -17,7 +17,7 @@ Rétrospective
 - the solution was rather elegant (using infinite lists for padding and zip3)
 
 Sujets:
-- **Kata Haskell Bank OCR with QuickCheck**
+- **Kata Haskell Bank OCR without QuickCheck**
 - Randori Haskell for Jacky's Car
 
 méthode de vote:
