@@ -1,79 +1,112 @@
-\ Tests.fs
-REQUIRE ffl/tst.fs
 
-\ t' > t => P[t'] >= P[t]
-\ \/ t t'  O(t,t',p) => P[t'] >= P[t]+p
+require ffl/tst.fs
+require Rent.fs
+page cr
 
-REQUIRE Rent.fs
-
-: TEST-PLAN
-    INITIALIZE
-    4807 15 PLAN!
-    T{ 15 PLAN@ 4807 ?S }T ;
-
-: TEST-UPDATE-ONLY-WITH-MAX
-    INITIALIZE
-    10 0 PLAN! 
-    T{ 0 PLAN@ 10 ?S }T
-    12 0 PLAN!
-    T{ 0 PLAN@ 12 ?S }T
-     8 0 PLAN!
-    T{ 0 PLAN@ 12 ?S }T ;
-      
-: TEST-PLAN-IS-GE-PROFIT
-    INITIALIZE
-    T{ 0 PLAN@ 0 ?S }T 
-    7 PROFIT !
-    T{ 0 PLAN@ 7 ?S }T
-    42 0 PLAN!
-    T{ 0 PLAN@ 42 ?S }T ;
-
-: TEST-RENT-THEN-CASH
-    INITIALIZE
-    5 10 RENT 
-    T{ 5 PLAN@ 10 ?S }T 
-    5 9  RENT
-    T{ 5 PLAN@ 10 ?S }T
-    3 PROFIT !
-    5 9  RENT
-    T{ 5 PLAN@ 12 ?S }T ;
-
-: TEST-CASH-THEN-RENT
-    INITIALIZE
-    5 10 RENT
-    5 CASH
-    T{ PROFIT @ 10 ?S }T ;
-
-: TEST-DO-ACTIONS
-    INITIALIZE
-    5  10 RENT
-    10 14 RENT
-    5 CASH
-    14 8 RENT
-    15 7 RENT
-    10 CASH
-    14 CASH
-    15 CASH
-    T{ PROFIT @ 18 ?S }T
-    INITIALIZE
- ( 0  )   5 10 RENT
- ( 3  )   10 14 RENT
- ( 5  )   5  CASH
- ( 10 )   10 CASH
-    T{ PROFIT @ 14 ?S }T  ;
+: should CR ;
+: tests
+    should ." when initialize, profit is 0 and plan values are 0" 
+    4807 PROFIT !
+    INITIALIZE 
+    T{ PROFIT @ 0 ?S
+       0 PLAN@ 0 ?S
+       7 PLAN@ 0 ?S    
+    }T 
     
-TEST-PLAN
-TEST-UPDATE-ONLY-WITH-MAX
-TEST-PLAN-IS-GE-PROFIT
-TEST-RENT-THEN-CASH
-TEST-CASH-THEN-RENT
-TEST-DO-ACTIONS
+    should ." planning a rent from t with duration d updates plan at t+d "
+    INITIALIZE
+    0 5 100 RENT-AIRPLANE
+    T{ 5 PLAN@ 100 ?S }T 
+
+    should ." update of plan is only if value is greater"
+    INITIALIZE
+    0 5 100 RENT-AIRPLANE
+    0 5  80 RENT-AIRPLANE
+    T{ 5 PLAN@ 100 ?S }T 
+
+    should ." update profit when cash at a given time" 
+    INITIALIZE
+    0 5 100 RENT-AIRPLANE
+    5 UPDATE-PROFIT
+    T{ PROFIT @ 100 ?S }T 
+
+    should ." update profit only if value is greater" 
+    INITIALIZE
+    0 5 100 RENT-AIRPLANE
+    0 7  80 RENT-AIRPLANE
+    5 UPDATE-PROFIT
+    7 UPDATE-PROFIT
+    T{ PROFIT @ 100 ?S }T 
+
+    should ." plan a rent with price + current profit"
+    INITIALIZE
+    0 5 100 RENT-AIRPLANE
+    5 UPDATE-PROFIT
+    5 9  80 RENT-AIRPLANE
+    T{ 14 PLAN@ 180 ?S }T 
+
+    should ." pass the demo test"
+    INITIALIZE
+     0 5 100 RENT-AIRPLANE
+     3 7 140 RENT-AIRPLANE
+     5 UPDATE-PROFIT
+     5 9  80 RENT-AIRPLANE
+     6 9  70 RENT-AIRPLANE
+    10 UPDATE-PROFIT
+    14 UPDATE-PROFIT
+    15 UPDATE-PROFIT
+    T{ PROFIT @ 180 ?S }T 
+
+    
+    should ." store a value of n bits into a cell"
+    10 15  4 <FIELD 
+    T{ 250 ?S }T 
+    3 2 1 8 <FIELD 8 <FIELD 
+    T{ 65536 256 2 * + 3 + ?S }T 
+
+    should ." a cash action at t is lower than rent action at t"
+    5 0 0 ACTION>KEY
+    5 1 1 ACTION>KEY
+    T{ < -1 ?S }T 
+
+    should ." extract a value from a cell" 
+    250 4 FIELD> 
+    T{ 15 ?S 10 ?S }T 
+    65536 256 2 * + 3 + 
+    8 FIELD> 8 FIELD> .S
+    T{ 1 ?S 2 ?S 3 ?S }T
+
+    should ." decode an action key" 
+    5 9 80 ACTION>KEY KEY>ACTION
+    T{ 80 ?S 9 ?S 5 ?S }T
+
+    should ." execute action does rent and cash" 
+    INITIALIZE 
+    0 5 100 EXECUTE-ACTION
+    5 0 0   EXECUTE-ACTION
+    T{ PROFIT @ 100 ?S }T 
+    
+    should ." add order generates two actions" 
+    INITIALIZE
+    0 5 100 ADD-ORDER
+    T{ ACTIONS ACT-LENGTH@ 2 ?S }T
+
+    should ." process all actions" 
+    INITIALIZE
+     0 5 100 ADD-ORDER
+     3 7 140 ADD-ORDER
+     5 9  80 ADD-ORDER
+     6 9  70 ADD-ORDER
+    COMPUTE-PROFIT 
+    T{ PROFIT @ 180 ?S }T
 
 
+    
+ 
 
 
+;
 
-
-BYE
-
+tests
+bye
 
