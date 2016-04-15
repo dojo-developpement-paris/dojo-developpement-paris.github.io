@@ -1,6 +1,6 @@
 Prochaine Session
 
-Vendredi 15 avril 2016
+Vendredi 22 avril 2016
 
 Présent
 - Yann
@@ -12,25 +12,25 @@ Présent
 - François
 - Vasile
 - Benoît
-- Geoffroy
-- Patrick
 - Nicolas
 - Matthieu
+- Jacques
+- Amina
 
 Rétrospective
-- Kata Haskell Lags Optimisé
-- Pas besoin de générer 3 actions par demande, mais deux (vérifié au resto à l'after)
-- on n'a pas testé sur un grand volume
-- concentration requise pour les folds et compagnie
-- fatigue de la fin d'hiver
-- générer les évènements pour chacune des demandes
-
-
-
+- Kata Lags Forth - un tour de forth
+- que du bien
+- un peu lent pour arriver au sujet intéressant, trop de détails, ex: méthodes d'accès à l'adresse
+- bonnes explication
+- 
 Sujets:
-A - Randori Haskell - Google code Jam: Standing Ovation
-B - Kata Lags Forth - un tour de forth
-C - Randori Potter Python  
+A 15 - kata lags Forth
+B 12 - kata lags Ruby
+C 10 - Randori lags Haskell
+D 4 - Randori lags (plusieurs avions) haskell
+E 7 - mob roman number Java
+F 8 - mob roman number haskell
+G 4 - mob roman number javascript
 
 méthode de vote:
 points = sujets div 2
