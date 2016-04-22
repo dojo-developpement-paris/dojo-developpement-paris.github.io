@@ -1,36 +1,45 @@
 Prochaine Session
 
-Vendredi 22 avril 2016
+Vendredi 29 avril 2016
 
 Présent
-- Yann
 - Xavier
+- Charles Marie
+- Yvan
+- Laurent
+- Emmanuel
+- Annaz
+- Patrick
+- Wassel
 - Alexandre
 - Christophe
 - Arjuna
 - Shahnaz
 - François
-- Vasile
 - Benoît
 - Nicolas
 - Matthieu
 - Jacques
-- Amina
+- Ricardo
+- Stéphane
 
 Rétrospective
-- Kata Lags Forth - un tour de forth
-- que du bien
-- un peu lent pour arriver au sujet intéressant, trop de détails, ex: méthodes d'accès à l'adresse
-- bonnes explication
-- 
+- On est allé plus loin: on a fini le kata
+- on a refait le kata de la semaine d'avant en 20 minutes
+- refactoring facile 2 fonctions à changer pour changer de conteneur
+- on a laissé de côté la hashtable et c'est tant mieux
+
+Formats:
+- kata: la personne au clavier est maître
+- randori: chacun est maître du clavier pendant 5 mn
+- mob : la personne au clavier n'est pas maître, c'est la salle
+
+* type driven development: type, propriétés des types, puis TU
 Sujets:
-A 15 - kata lags Forth
-B 12 - kata lags Ruby
-C 10 - Randori lags Haskell
-D 4 - Randori lags (plusieurs avions) haskell
-E 7 - mob roman number Java
-F 8 - mob roman number haskell
-G 4 - mob roman number javascript
+-8  mob programming, Haskell roman numbers, type driven development
+-4 mob programming, Haskell First Minimum Free
+-  kata Haskell, LAGS la version rapide
+
 
 méthode de vote:
 points = sujets div 2
