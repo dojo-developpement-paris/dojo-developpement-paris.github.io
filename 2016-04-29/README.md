@@ -13,6 +13,11 @@ Présent
 - Tanguy
 - Wassel
 - Arjuna
+- Anas
+- Patrick
+- Maxime
+- Hugette
+- Isabelle
 
 Rétrospective
 - **mob programming, Haskell roman numbers, type driven development**
