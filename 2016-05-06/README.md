@@ -1,33 +1,22 @@
 Prochaine Session
 
-Vendredi 29 avril 2016
+Vendredi 20 Mai 2016
 
 Présent
-- Xavier
-- Charles Marie
-- Yvan
-- Laurent
 - Emmanuel
-- Annaz
-- Patrick
-- Wassel
-- Alexandre
 - Christophe
 - Arjuna
 - Shahnaz
 - François
 - Benoît
-- Nicolas
-- Matthieu
-- Jacques
-- Ricardo
 - Stéphane
 
 Rétrospective
-- On est allé plus loin: on a fini le kata
-- on a refait le kata de la semaine d'avant en 20 minutes
-- refactoring facile 2 fonctions à changer pour changer de conteneur
-- on a laissé de côté la hashtable et c'est tant mieux
+- Mob Randori: Anagrames en Haskell
+- kata réussi, avec même du temps pour l'optimiser
+- on aurait eu besoin d'une structure en arbre pour être plus performant
+
+
 
 Formats:
 - kata: la personne au clavier est maître
@@ -36,9 +25,8 @@ Formats:
 
 * type driven development: type, propriétés des types, puis TU
 Sujets:
--8  mob programming, Haskell roman numbers, type driven development
--4 mob programming, Haskell First Minimum Free
--  kata Haskell, LAGS la version rapide
+- Mob Programming : FizzBuzz en Haskell
+ 
 
 
 méthode de vote:
