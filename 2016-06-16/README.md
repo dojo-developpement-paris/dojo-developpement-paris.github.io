@@ -1,27 +1,30 @@
 Prochaine Session
 
-Vendredi 17 Juin 2016
+Vendredi 23 Juin 2016 - lieu à déterminer
 
 Présent
-- Patrick
-- Rémi
 - Christophe
 - François
 - Shahnaz
+- Benoît
+- Tom
+- Ibrahima
+- Arjuna
+- Emmanual
+- Patrick
+- Xavier
 
 Rétrospective
-- kata haskell : dessiner un arbre de pythagore 
-- Je n'ai pas fini le kata à temps 
-- Rémi a réussi à faire la même chose en .net C#
-- le code pour écrire du SVG encombre
-- avantage : cette partie est didactique pour apprendre Haskell
-- on pourrait utiliser Blaze-SVG mais la forme est peut être moins facile à appréhender quand on débute
-- ce qui a été fait pourrait être une intro à Blaze-SVG
-- j'ai redécouvert Pythagore
+- Haskell, mob, convertir un tableau ascii | comme | ceci | en html 
+- Le kata a été terminé avec succès
+- On s'est bien amusé
+- Le code évoque presque un diagramme de Backus-Naur des tables en HTML
 
 Sujets 
-- quicksort en Haskell mob programming
-- Haskell, mob, convertir un tableau ascii | comme | ceci | en html 
+A 8 - quicksort en Haskell mob programming
+B 9- mob programming, haskell, requêter un fichier csv
+C 7- kata Java Roman Numerals avec mutation testing (test de la couverture des tests par mutation du code)
+D 6- mob programming, Haskell, rank and file : trouver une colonne manquante dans une matrice 
 
 
 Formats:
