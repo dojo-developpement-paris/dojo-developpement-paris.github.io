@@ -1,23 +1,34 @@
 import Test.Hspec
-import TableParser
+import CSVParser
+
+csv = ["id;libelle;prix",
+           "4087;pomme;0.35",
+           "42;banane des champs;1.97",
+           "100;poire;2.60"]
 
 main = hspec $ do
-    describe "a parser" $ do
-        it "should return an empty table when given an empty string" $ do
-            parse ""  `shouldBe` "<table></table>"
-
-        it "should parse a one row, one cell table" $ do
-            parse "|content|"  `shouldBe` 
-                "<table><TR><TD>content</TD></TR></table>"
-            parse "|any|"  `shouldBe` 
-                "<table><TR><TD>any</TD></TR></table>"
-
-        it "should parse several cells in a row" $ do
-            parse "|one|two|"  `shouldBe` 
-                wrap "table" "<TR><TD>one</TD><TD>two</TD></TR>"
-
-        it "should parse several rows" $ do
-            parse "|one|\n|two|"  `shouldBe` 
-                "<table><TR><TD>one</TD></TR><TR><TD>two</TD></TR></table>"
-            parse "|one|\n|two|\n|a|b|"  `shouldBe` 
-                "<table><TR><TD>one</TD></TR><TR><TD>two</TD></TR><TR><TD>a</TD><TD>b</TD></TR></table>"
+    describe "parser" $ do
+        describe "count lines in CSV file" $ do
+            it "should count 3 lines on a 4 lines CSV" $ do
+                let table = parse csv
+                count table `shouldBe` 3
+            it "should count 2 lines on a 3 lines CSV" $ do
+                let csv = ["id;libelle;prix",
+                           "4087;pomme;0.35",
+                           "100;poire;2.60"]
+                    table = parse csv
+                count table `shouldBe` 2
+        describe "reader" $ do
+            it "should read a CSV file" $ do
+                csv <- readCSV "catalogue.csv"
+                csv `shouldBe` ["id;libelle;prix",
+                                "4087;pomme;0.35",
+                                "42;banane des champs;1.97",
+                                "100;poire;2.60"]
+        describe "retrieve" $ do
+            let table = parse csv
+            it "should retrieve the price on a given line" $ do
+                retrieve table "prix" 1 `shouldBe` DoubleField 0.35
+                retrieve table "prix" 2 `shouldBe` DoubleField 1.97
+            it "should retrieve the label on a given line" $ do
+                retrieve table "libelle" 1 `shouldBe` StringField "pomme"
