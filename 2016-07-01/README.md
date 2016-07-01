@@ -1,41 +1,29 @@
-Prochaine Session
+Prochaine session: Vendredi 8/07/2016
 
-Vendredi 23 Juin 2016 - lieu à déterminer
-
-Présent
-- Christophe
+Présents :
 - François
 - Shahnaz
-- Benoît
-- Tom
-- Ibrahima
-- Arjuna
-- Emmanual
 - Patrick
-- Xavier
+- Arjuna
+- Ludivine
+- Christophe
+- Andreea
 
-Rétrospective
-- Haskell, mob, convertir un tableau ascii | comme | ceci | en html 
-- Le kata a été terminé avec succès
-- On s'est bien amusé
-- Le code évoque presque un diagramme de Backus-Naur des tables en HTML
+Rdv Vendredi 1er Juillet - lieu à determiner
 
-Sujets 
-A 8 - quicksort en Haskell mob programming
-B 9- mob programming, haskell, requêter un fichier csv
-C 7- kata Java Roman Numerals avec mutation testing (test de la couverture des tests par mutation du code)
-D 6- mob programming, Haskell, rank and file : trouver une colonne manquante dans une matrice 
+Rétro 
+C'ETAIT HORRIBLE
+
+la résolution du problème: il y a des chiffres romains à 1 car. et des chiffres romains à 2 cars. 
+1 = I
+4 = IV
+
+cette étape manquait pour arriver à une solution plus générique
 
 
-Formats:
-- kata: la personne au clavier est maître
-- randori: chacun est maître du clavier pendant 5 mn
-- mob : la personne au clavier n'est pas maître, c'est la salle
+Propositions de Sujets:
 
-* type driven development: type, propriétés des types, puis TU
-Sujets:
+A - Gilded Rose, mob programming Haskell
+B - Quicksort, Haskell, mob Programming 
+C - Roman Numerals, Haskell, Kata
 
-méthode de vote:
-points = sujets div 2
-
-e.g. = sujets = 5, points = 2 => 2 votes, à 1 et 2 points
