@@ -1,34 +1,33 @@
 import Test.Hspec
-import CSVParser
+import RomanNumerals
 
-csv = ["id;libelle;prix",
-           "4087;pomme;0.35",
-           "42;banane des champs;1.97",
-           "100;poire;2.60"]
+shouldConvertTo n s =
+    it ("should convert " ++ (show n) ++ " to " ++ s)  $ do 
+        toRoman n `shouldBe` s
 
 main = hspec $ do
-    describe "parser" $ do
-        describe "count lines in CSV file" $ do
-            it "should count 3 lines on a 4 lines CSV" $ do
-                let table = parse csv
-                count table `shouldBe` 3
-            it "should count 2 lines on a 3 lines CSV" $ do
-                let csv = ["id;libelle;prix",
-                           "4087;pomme;0.35",
-                           "100;poire;2.60"]
-                    table = parse csv
-                count table `shouldBe` 2
-        describe "reader" $ do
-            it "should read a CSV file" $ do
-                csv <- readCSV "catalogue.csv"
-                csv `shouldBe` ["id;libelle;prix",
-                                "4087;pomme;0.35",
-                                "42;banane des champs;1.97",
-                                "100;poire;2.60"]
-        describe "retrieve" $ do
-            let table = parse csv
-            it "should retrieve the price on a given line" $ do
-                retrieve table "prix" 1 `shouldBe` DoubleField 0.35
-                retrieve table "prix" 2 `shouldBe` DoubleField 1.97
-            it "should retrieve the label on a given line" $ do
-                retrieve table "libelle" 1 `shouldBe` StringField "pomme"
+    describe "toRoman" $ do
+        1   `shouldConvertTo` "I"
+        2   `shouldConvertTo` "II"
+        5   `shouldConvertTo` "V"
+        4   `shouldConvertTo` "IV"
+        6   `shouldConvertTo` "VI"
+        7   `shouldConvertTo` "VII"
+        10  `shouldConvertTo` "X"
+        11  `shouldConvertTo` "XI"
+        9   `shouldConvertTo` "IX"
+        16  `shouldConvertTo` "XVI"
+        39  `shouldConvertTo` "XXXIX"
+        50  `shouldConvertTo` "L"
+        51  `shouldConvertTo` "LI"
+        49  `shouldConvertTo` "XLIX"
+        100 `shouldConvertTo` "C"
+        143 `shouldConvertTo` "CXLIII"
+        90  `shouldConvertTo` "XC"
+        95  `shouldConvertTo` "XCV"
+        500 `shouldConvertTo` "D"
+        400 `shouldConvertTo` "CD"
+        1000`shouldConvertTo` "M"
+        3999`shouldConvertTo` "MMMCMXCIX"
+
+
