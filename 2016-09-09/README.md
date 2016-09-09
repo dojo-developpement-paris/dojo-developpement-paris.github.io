@@ -1,44 +1,33 @@
-Prochaine session: Vendredi 09/09/2016 18:45
-
+Prochaine session: Vendredi 16/09/2016 18:45
 Présents :
 - François
 - Shahnaz
 - Christophe
+- Dimitri
 - Xavier
 - Arjuna
-- Benoît
-- Huguette 
-- Yvan
-- Nicolas
+- Pierre
+- Marcel
+- Geoffrey
+- Huguette
 - Patrick
-- Michel
-- Thierry
-- Elena
-- Ludivine
-- Geoffroy
+- Benoît
+- Yvan
 
 
 Rétro 
-- mob  Haskell: bonus / malus 
-- On n'est pas allé très loin
-- Le sujet était intéressant (sujet métier bien solide)
-- Les particularismes du métier
-- bon exercice de progression pour comprendre comment arriver au bon calcul
-- c'était concret 
-- discussions sur la manière de s'exprimer dans le code
-- on a essayé les noms de variable longs
-- on a cherché à découper en sous blocs (Step Down Rule)
-- on pourrait wrapper les notions techniques (e.g. fromInteger)
-
+Kata exploratoire Haskell deux usages insolites des fonctions (it will blow your mind)
+- ça été apprécié
+- question: comment est fait Data.Map (arbre Rouge/Noir immutable)
+- le conteneur par fonction est une liste chainée de ifs..
+- pourrait on écrire la même chose sans if?
+- même avec des simples fonctions on peut bien s'emmêler la tête
 
 Sujets proposés:
-- A 2 Mob Haskell Game Of Life
-- B 7 Kata exploratoire Haskell deux usages insolites des fonctions (it will blow your mind)
-- C 1 Mob Elm Game of Life
+- A 6 Kata Haskell Number to LCD
+- B 5 Kata Haskell Bowling Score de deux manières 
+- C 1 Kata Functors & Applicative Functors 
 
-
-
-Propositions de Sujets:
  
   
 
