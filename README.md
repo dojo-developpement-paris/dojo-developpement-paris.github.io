@@ -1,4 +1,4 @@
-Prochaine session: Vendredi 7/01/2017 18:45 
+Prochaine session: Vendredi 6/01/2017 18:45 
 chez Arolla
 
 Présents :
