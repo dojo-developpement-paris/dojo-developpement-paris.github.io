@@ -11,8 +11,9 @@ score ts = score' 0 ts
 score' :: FrameIndex -> [Throw] -> Score
 score' 10 _ = 0
 score' f (x:y:z:ts) | x   == 10 = x + y + z + score' (f+1) (y:z:ts)
-                    | x+y == 10 = x + y + z + score' (f+1) (z:ts) 
+                    | x+y == 10 = x + y + z + score' (f+1) (z:ts)
                     | otherwise = x + y +     score' (f+1) (z:ts)
+score' f (x:y:ts)   | x   == 10 = x + y + score' (f+1) (y:ts)
 score' f ts = sum ts
 
 type FrameScore = Score
