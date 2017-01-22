@@ -18,6 +18,8 @@ main = hspec $ do
             score [10,10,10,10,10,10,10,10,10,10,10,10] `shouldBe` 300
         it "when given an almost perfect, adds only one bonus" $ do
             score [10,10,10,10,10,10,10,10,10,6,4,10] `shouldBe` 276
+        it "when given a strike and in the middle of the next turn, we assume second throw is 0" $ do
+            score [4,5,10,10,4] `shouldBe` 51
 
     describe "a game state" $ do
         it "can be initial" $ do
