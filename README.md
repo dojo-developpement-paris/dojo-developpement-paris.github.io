@@ -1,8 +1,7 @@
-Prochaine session: Vendredi 27/01/2017 18:45 
-chez Arolla
+Prochaine session: Vendredi 03/02/2017 18:45 
+chez OCTO (34 avenue de l'opéra) peut être à confirmer
 
 Présents :
-- Michel
 - Patrick
 - Romeu
 - Aurore
@@ -10,30 +9,31 @@ Présents :
 - François
 - Shahnaz
 - Arjun
-- Marc
 - Xavier
-- Simon
-- Huguette
+- Sébastien
 - Ubald
+- Michel
+- Benoît
 
-- Dimitri
 
+Retro: 
+Kata - haskell - Bowling kata les deux méthodes (récursion et fold) et valider avec quickcheck
+- intéressant de comparer 2 approches (récursion vs fold avec état)
+- on a un bug probable vu au dernier moment
+- il faudrait des fonctions d'accès à l'état du jeu plutôt que d'exposer le tuple
+- il y a une troisième voie : faire les sommes des lancers et lister les bonus
+- ça a été plus long que ce je pensais (pas eu le temps de faire les quickchecks)
+- on pourrait baser la 2ème approche sur la 1ère (par refactoring)
 
-Retro: mob - haskell - Mastermind
-- C'était galère
-- Sujet dificile pour une première fois
-- Manquer du Prolog pour ce genre de problème
-- Pas de direction de design clair
-- Faut faire un design papier avant de coder
-- Faut peut être utiliser un nombre au lieu d'une liste d'entier
-- Faut t'il représenter le guess comme un nombre?
-- Difficile à suivre pour tout le monde
-
+ 
 Sujets:
-A - 14 - Kata - haskell - Bowling kata les deux méthodes (récursion et fold) et valider avec quickcheck
-B - 6 - strong style randori  - java - pattern process manager (Greg Young)         
-C - 7 - randori - haskell - Kata Potter
-D - 8 - mob - clojure - Roman numerals 
-E - 4 - Kata - forth - Louer votre votre avion 
+A - 20 Bank - Haskell - Mob programming
+B - 8 Potter - Haskell - Randori
+C - 4 Bowling Score - Haskell - Mob programming
+D - 10 Lags - Forth - Kata
+E - 10 cristal de koch - Elm - Randori
+F - 14 Event sourcing décorateur - Python + Haskell - Mob programming
+
+
 
 
