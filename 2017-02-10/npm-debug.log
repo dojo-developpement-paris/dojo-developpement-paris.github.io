@@ -1,0 +1,571 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'elm-test' ]
+2 info using npm@1.3.5
+3 info using node@v0.10.15
+4 verbose cache add [ 'elm-test', null ]
+5 verbose cache add name=undefined spec="elm-test" args=["elm-test",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'elm-test',
+6 verbose parsed url   path: 'elm-test',
+6 verbose parsed url   href: 'elm-test' }
+7 silly lockFile bd9edda6-elm-test elm-test
+8 verbose lock elm-test /Users/Christophe/.npm/bd9edda6-elm-test.lock
+9 silly lockFile bd9edda6-elm-test elm-test
+10 silly lockFile bd9edda6-elm-test elm-test
+11 verbose addNamed [ 'elm-test', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 1e0b88bb-elm-test elm-test@
+14 verbose lock elm-test@ /Users/Christophe/.npm/1e0b88bb-elm-test.lock
+15 silly addNameRange { name: 'elm-test', range: '*', hasData: false }
+16 verbose url raw elm-test
+17 verbose url resolving [ 'https://registry.npmjs.org/', './elm-test' ]
+18 verbose url resolved https://registry.npmjs.org/elm-test
+19 info trying registry request attempt 1 at 19:25:45
+20 verbose etag "589cde70-8fc3"
+21 http GET https://registry.npmjs.org/elm-test
+22 http 304 https://registry.npmjs.org/elm-test
+23 silly registry.get cb [ 304,
+23 silly registry.get   { date: 'Fri, 10 Feb 2017 18:25:45 GMT',
+23 silly registry.get     via: '1.1 varnish',
+23 silly registry.get     'cache-control': 'max-age=300',
+23 silly registry.get     etag: '"589cde70-8fc3"',
+23 silly registry.get     age: '0',
+23 silly registry.get     connection: 'keep-alive',
+23 silly registry.get     'x-served-by': 'cache-cdg8731-CDG',
+23 silly registry.get     'x-cache': 'HIT',
+23 silly registry.get     'x-cache-hits': '1',
+23 silly registry.get     'x-timer': 'S1486751145.645794,VS0,VE17',
+23 silly registry.get     vary: 'Accept-Encoding' } ]
+24 verbose etag elm-test from cache
+25 silly addNameRange number 2 { name: 'elm-test', range: '*', hasData: true }
+26 silly addNameRange versions [ 'elm-test',
+26 silly addNameRange   [ '0.1.0',
+26 silly addNameRange     '0.2.0',
+26 silly addNameRange     '0.3.0',
+26 silly addNameRange     '0.4.0',
+26 silly addNameRange     '0.4.1',
+26 silly addNameRange     '0.5.0',
+26 silly addNameRange     '0.6.0',
+26 silly addNameRange     '0.6.1',
+26 silly addNameRange     '0.6.2',
+26 silly addNameRange     '0.6.3',
+26 silly addNameRange     '0.6.4',
+26 silly addNameRange     '0.6.5',
+26 silly addNameRange     '0.16.0-beta',
+26 silly addNameRange     '0.16.0-beta2',
+26 silly addNameRange     '0.16.0',
+26 silly addNameRange     '0.16.1-alpha',
+26 silly addNameRange     '0.16.1-alpha2',
+26 silly addNameRange     '0.16.1-alpha3',
+26 silly addNameRange     '0.16.1-alpha4',
+26 silly addNameRange     '0.17.0-alpha',
+26 silly addNameRange     '0.17.1',
+26 silly addNameRange     '0.17.2',
+26 silly addNameRange     '0.17.3',
+26 silly addNameRange     '0.18.0-alpha',
+26 silly addNameRange     '0.18.0',
+26 silly addNameRange     '0.18.1',
+26 silly addNameRange     '0.18.2',
+26 silly addNameRange     '0.16.0-patch1' ] ]
+27 verbose addNamed [ 'elm-test', '0.18.2' ]
+28 verbose addNamed [ '0.18.2', '0.18.2' ]
+29 silly lockFile 6e6dd2c3-elm-test-0-18-2 elm-test@0.18.2
+30 verbose lock elm-test@0.18.2 /Users/Christophe/.npm/6e6dd2c3-elm-test-0-18-2.lock
+31 silly lockFile 6e6dd2c3-elm-test-0-18-2 elm-test@0.18.2
+32 silly lockFile 6e6dd2c3-elm-test-0-18-2 elm-test@0.18.2
+33 silly lockFile 1e0b88bb-elm-test elm-test@
+34 silly lockFile 1e0b88bb-elm-test elm-test@
+35 silly resolved [ { name: 'elm-test',
+35 silly resolved     version: '0.18.2',
+35 silly resolved     description: 'Run elm-test suites.',
+35 silly resolved     main: 'elm-test.js',
+35 silly resolved     engines: { node: '>=4.0.0' },
+35 silly resolved     scripts: { test: 'node tests/ci.js' },
+35 silly resolved     repository:
+35 silly resolved      { type: 'git',
+35 silly resolved        url: 'git+https://github.com/rtfeldman/node-test-runner.git' },
+35 silly resolved     bin: { 'elm-test': 'bin/elm-test' },
+35 silly resolved     keywords: [ 'elm', 'elm-test', 'cli' ],
+35 silly resolved     author: { name: 'Richard Feldman' },
+35 silly resolved     license: 'BSD-3-Clause',
+35 silly resolved     bugs: { url: 'https://github.com/rtfeldman/node-test-runner/issues' },
+35 silly resolved     homepage: 'https://github.com/rtfeldman/node-test-runner#readme',
+35 silly resolved     dependencies:
+35 silly resolved      { chalk: '1.1.3',
+35 silly resolved        chokidar: '1.6.0',
+35 silly resolved        'cross-spawn': '4.0.0',
+35 silly resolved        'find-up': '^1.1.2',
+35 silly resolved        firstline: '^1.2.0',
+35 silly resolved        'fs-extra': '0.30.0',
+35 silly resolved        lodash: '4.13.1',
+35 silly resolved        minimist: '^1.2.0',
+35 silly resolved        'node-elm-compiler': '4.1.0',
+35 silly resolved        temp: '0.8.3' },
+35 silly resolved     devDependencies: { shelljs: '0.7.3' },
+35 silly resolved     readme: '# node-test-runner [![Version](https://img.shields.io/npm/v/elm-test.svg)](https://www.npmjs.com/package/elm-test) [![Travis build Status](https://travis-ci.org/rtfeldman/node-test-runner.svg?branch=master)](http://travis-ci.org/rtfeldman/node-test-runner) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/fixcy4ko78di0l31/branch/master?svg=true)](https://ci.appveyor.com/project/rtfeldman/node-test-runner/branch/master)\n\nRuns [elm-test](https://github.com/elm-community/elm-test) suites from Node.js\n\n## Installation\n\n```bash\nnpm install -g elm-test\n```\n\n## Usage\n\n```bash\nelm-test init  # Adds the elm-test dependency and creates Main.elm and Tests.elm\nelm-test       # Runs the tests\n```\n\nThen add your tests to Tests.elm.\n\n\n### Configuration\n\nThe `--compiler` flag can be used to use a version of the Elm compiler that\nhas not been install globally.\n\n```\nnpm install elm\nelm-test --compiler ./node_modules/.bin/elm-make\n```\n\n\n### Travis CI\n\nIf you want to run your tests on Travis CI, here\'s a good starter `.travis.yml`:\n\n```yml\nlanguage: node_js\nnode_js:\n  - "5"\ninstall:\n  - npm install -g elm\n  - npm install -g elm-test\n  - elm-package install -y\n  - pushd tests && elm-package install -y && popd\nscript:\n  - elm-test\n```\n',
+35 silly resolved     readmeFilename: 'README.md',
+35 silly resolved     _id: 'elm-test@0.18.2',
+35 silly resolved     _from: 'elm-test@' } ]
+36 info install elm-test@0.18.2 into /usr/local/lib
+37 info installOne elm-test@0.18.2
+38 warn engine elm-test@0.18.2: wanted: {"node":">=4.0.0"} (current: {"node":"v0.10.15","npm":"1.3.5"})
+39 info /usr/local/lib/node_modules/elm-test unbuild
+40 verbose tar unpack /Users/Christophe/.npm/elm-test/0.18.2/package.tgz
+41 silly lockFile 40fd2903--local-lib-node-modules-elm-test tar:///usr/local/lib/node_modules/elm-test
+42 verbose lock tar:///usr/local/lib/node_modules/elm-test /Users/Christophe/.npm/40fd2903--local-lib-node-modules-elm-test.lock
+43 silly lockFile c80973ec--npm-elm-test-0-18-2-package-tgz tar:///Users/Christophe/.npm/elm-test/0.18.2/package.tgz
+44 verbose lock tar:///Users/Christophe/.npm/elm-test/0.18.2/package.tgz /Users/Christophe/.npm/c80973ec--npm-elm-test-0-18-2-package-tgz.lock
+45 silly gunzTarPerm modes [ '755', '644' ]
+46 silly gunzTarPerm extractEntry package.json
+47 silly gunzTarPerm extractEntry .npmignore
+48 silly gunzTarPerm extractEntry README.md
+49 silly gunzTarPerm extractEntry LICENSE
+50 silly gunzTarPerm extractEntry appveyor.yml
+51 silly gunzTarPerm extractEntry bin/elm-test
+52 silly gunzTarPerm extractEntry .travis.yml
+53 silly gunzTarPerm extractEntry examples/tests/FailingTests.elm
+54 silly gunzTarPerm extractEntry examples/tests/Native/Polyfilled.js
+55 silly gunzTarPerm extractEntry examples/tests/PassingTests.elm
+56 silly gunzTarPerm extractEntry examples/tests/elm-package.json
+57 silly gunzTarPerm extractEntry tests/ci.js
+58 silly gunzTarPerm extractEntry src/Chalk.elm
+59 silly gunzTarPerm extractEntry src/Test/Reporter/Chalk.elm
+60 silly gunzTarPerm extractEntry src/Test/Reporter/Json.elm
+61 silly gunzTarPerm extractEntry src/Test/Reporter/Reporter.elm
+62 silly gunzTarPerm extractEntry src/Test/Reporter/Result.elm
+63 silly gunzTarPerm extractEntry src/Test/Runner/Node/App.elm
+64 silly gunzTarPerm extractEntry src/Test/Runner/Node.elm
+65 silly gunzTarPerm extractEntry templates/Main.elm
+66 silly gunzTarPerm extractEntry templates/Tests.elm
+67 silly gunzTarPerm extractEntry templates/elm-package.json
+68 silly gunzTarPerm extractEntry templates/gitignore
+69 silly gunzTarPerm extractEntry elm-package.json
+70 silly lockFile 40fd2903--local-lib-node-modules-elm-test tar:///usr/local/lib/node_modules/elm-test
+71 silly lockFile 40fd2903--local-lib-node-modules-elm-test tar:///usr/local/lib/node_modules/elm-test
+72 silly lockFile c80973ec--npm-elm-test-0-18-2-package-tgz tar:///Users/Christophe/.npm/elm-test/0.18.2/package.tgz
+73 silly lockFile c80973ec--npm-elm-test-0-18-2-package-tgz tar:///Users/Christophe/.npm/elm-test/0.18.2/package.tgz
+74 info preinstall elm-test@0.18.2
+75 verbose readDependencies using package.json deps
+76 verbose readDependencies using package.json deps
+77 verbose cache add [ 'cross-spawn@4.0.0', null ]
+78 verbose cache add name=undefined spec="cross-spawn@4.0.0" args=["cross-spawn@4.0.0",null]
+79 verbose parsed url { protocol: null,
+79 verbose parsed url   slashes: null,
+79 verbose parsed url   auth: null,
+79 verbose parsed url   host: null,
+79 verbose parsed url   port: null,
+79 verbose parsed url   hostname: null,
+79 verbose parsed url   hash: null,
+79 verbose parsed url   search: null,
+79 verbose parsed url   query: null,
+79 verbose parsed url   pathname: 'cross-spawn@4.0.0',
+79 verbose parsed url   path: 'cross-spawn@4.0.0',
+79 verbose parsed url   href: 'cross-spawn@4.0.0' }
+80 verbose cache add name="cross-spawn" spec="4.0.0" args=["cross-spawn","4.0.0"]
+81 verbose parsed url { protocol: null,
+81 verbose parsed url   slashes: null,
+81 verbose parsed url   auth: null,
+81 verbose parsed url   host: null,
+81 verbose parsed url   port: null,
+81 verbose parsed url   hostname: null,
+81 verbose parsed url   hash: null,
+81 verbose parsed url   search: null,
+81 verbose parsed url   query: null,
+81 verbose parsed url   pathname: '4.0.0',
+81 verbose parsed url   path: '4.0.0',
+81 verbose parsed url   href: '4.0.0' }
+82 verbose addNamed [ 'cross-spawn', '4.0.0' ]
+83 verbose addNamed [ '4.0.0', '4.0.0' ]
+84 silly lockFile dcccc695-cross-spawn-4-0-0 cross-spawn@4.0.0
+85 verbose lock cross-spawn@4.0.0 /Users/Christophe/.npm/dcccc695-cross-spawn-4-0-0.lock
+86 verbose cache add [ 'chalk@1.1.3', null ]
+87 verbose cache add name=undefined spec="chalk@1.1.3" args=["chalk@1.1.3",null]
+88 verbose parsed url { protocol: null,
+88 verbose parsed url   slashes: null,
+88 verbose parsed url   auth: null,
+88 verbose parsed url   host: null,
+88 verbose parsed url   port: null,
+88 verbose parsed url   hostname: null,
+88 verbose parsed url   hash: null,
+88 verbose parsed url   search: null,
+88 verbose parsed url   query: null,
+88 verbose parsed url   pathname: 'chalk@1.1.3',
+88 verbose parsed url   path: 'chalk@1.1.3',
+88 verbose parsed url   href: 'chalk@1.1.3' }
+89 verbose cache add name="chalk" spec="1.1.3" args=["chalk","1.1.3"]
+90 verbose parsed url { protocol: null,
+90 verbose parsed url   slashes: null,
+90 verbose parsed url   auth: null,
+90 verbose parsed url   host: null,
+90 verbose parsed url   port: null,
+90 verbose parsed url   hostname: null,
+90 verbose parsed url   hash: null,
+90 verbose parsed url   search: null,
+90 verbose parsed url   query: null,
+90 verbose parsed url   pathname: '1.1.3',
+90 verbose parsed url   path: '1.1.3',
+90 verbose parsed url   href: '1.1.3' }
+91 verbose addNamed [ 'chalk', '1.1.3' ]
+92 verbose addNamed [ '1.1.3', '1.1.3' ]
+93 silly lockFile bf7a37a7-chalk-1-1-3 chalk@1.1.3
+94 verbose lock chalk@1.1.3 /Users/Christophe/.npm/bf7a37a7-chalk-1-1-3.lock
+95 verbose cache add [ 'chokidar@1.6.0', null ]
+96 verbose cache add name=undefined spec="chokidar@1.6.0" args=["chokidar@1.6.0",null]
+97 verbose parsed url { protocol: null,
+97 verbose parsed url   slashes: null,
+97 verbose parsed url   auth: null,
+97 verbose parsed url   host: null,
+97 verbose parsed url   port: null,
+97 verbose parsed url   hostname: null,
+97 verbose parsed url   hash: null,
+97 verbose parsed url   search: null,
+97 verbose parsed url   query: null,
+97 verbose parsed url   pathname: 'chokidar@1.6.0',
+97 verbose parsed url   path: 'chokidar@1.6.0',
+97 verbose parsed url   href: 'chokidar@1.6.0' }
+98 verbose cache add name="chokidar" spec="1.6.0" args=["chokidar","1.6.0"]
+99 verbose parsed url { protocol: null,
+99 verbose parsed url   slashes: null,
+99 verbose parsed url   auth: null,
+99 verbose parsed url   host: null,
+99 verbose parsed url   port: null,
+99 verbose parsed url   hostname: null,
+99 verbose parsed url   hash: null,
+99 verbose parsed url   search: null,
+99 verbose parsed url   query: null,
+99 verbose parsed url   pathname: '1.6.0',
+99 verbose parsed url   path: '1.6.0',
+99 verbose parsed url   href: '1.6.0' }
+100 verbose addNamed [ 'chokidar', '1.6.0' ]
+101 verbose addNamed [ '1.6.0', '1.6.0' ]
+102 silly lockFile 28de5bd5-chokidar-1-6-0 chokidar@1.6.0
+103 verbose lock chokidar@1.6.0 /Users/Christophe/.npm/28de5bd5-chokidar-1-6-0.lock
+104 verbose cache add [ 'find-up@^1.1.2', null ]
+105 verbose cache add name=undefined spec="find-up@^1.1.2" args=["find-up@^1.1.2",null]
+106 verbose parsed url { protocol: null,
+106 verbose parsed url   slashes: null,
+106 verbose parsed url   auth: null,
+106 verbose parsed url   host: null,
+106 verbose parsed url   port: null,
+106 verbose parsed url   hostname: null,
+106 verbose parsed url   hash: null,
+106 verbose parsed url   search: null,
+106 verbose parsed url   query: null,
+106 verbose parsed url   pathname: 'find-up@^1.1.2',
+106 verbose parsed url   path: 'find-up@^1.1.2',
+106 verbose parsed url   href: 'find-up@^1.1.2' }
+107 verbose cache add name="find-up" spec="^1.1.2" args=["find-up","^1.1.2"]
+108 verbose parsed url { protocol: null,
+108 verbose parsed url   slashes: null,
+108 verbose parsed url   auth: null,
+108 verbose parsed url   host: null,
+108 verbose parsed url   port: null,
+108 verbose parsed url   hostname: null,
+108 verbose parsed url   hash: null,
+108 verbose parsed url   search: null,
+108 verbose parsed url   query: null,
+108 verbose parsed url   pathname: '^1.1.2',
+108 verbose parsed url   path: '^1.1.2',
+108 verbose parsed url   href: '^1.1.2' }
+109 verbose addNamed [ 'find-up', '^1.1.2' ]
+110 verbose addNamed [ null, null ]
+111 silly lockFile 27256877-find-up-1-1-2 find-up@^1.1.2
+112 verbose lock find-up@^1.1.2 /Users/Christophe/.npm/27256877-find-up-1-1-2.lock
+113 verbose cache add [ 'firstline@^1.2.0', null ]
+114 verbose cache add name=undefined spec="firstline@^1.2.0" args=["firstline@^1.2.0",null]
+115 verbose parsed url { protocol: null,
+115 verbose parsed url   slashes: null,
+115 verbose parsed url   auth: null,
+115 verbose parsed url   host: null,
+115 verbose parsed url   port: null,
+115 verbose parsed url   hostname: null,
+115 verbose parsed url   hash: null,
+115 verbose parsed url   search: null,
+115 verbose parsed url   query: null,
+115 verbose parsed url   pathname: 'firstline@^1.2.0',
+115 verbose parsed url   path: 'firstline@^1.2.0',
+115 verbose parsed url   href: 'firstline@^1.2.0' }
+116 verbose cache add name="firstline" spec="^1.2.0" args=["firstline","^1.2.0"]
+117 verbose parsed url { protocol: null,
+117 verbose parsed url   slashes: null,
+117 verbose parsed url   auth: null,
+117 verbose parsed url   host: null,
+117 verbose parsed url   port: null,
+117 verbose parsed url   hostname: null,
+117 verbose parsed url   hash: null,
+117 verbose parsed url   search: null,
+117 verbose parsed url   query: null,
+117 verbose parsed url   pathname: '^1.2.0',
+117 verbose parsed url   path: '^1.2.0',
+117 verbose parsed url   href: '^1.2.0' }
+118 verbose addNamed [ 'firstline', '^1.2.0' ]
+119 verbose addNamed [ null, null ]
+120 silly lockFile 8e0296f5-firstline-1-2-0 firstline@^1.2.0
+121 verbose lock firstline@^1.2.0 /Users/Christophe/.npm/8e0296f5-firstline-1-2-0.lock
+122 verbose cache add [ 'fs-extra@0.30.0', null ]
+123 verbose cache add name=undefined spec="fs-extra@0.30.0" args=["fs-extra@0.30.0",null]
+124 verbose parsed url { protocol: null,
+124 verbose parsed url   slashes: null,
+124 verbose parsed url   auth: null,
+124 verbose parsed url   host: null,
+124 verbose parsed url   port: null,
+124 verbose parsed url   hostname: null,
+124 verbose parsed url   hash: null,
+124 verbose parsed url   search: null,
+124 verbose parsed url   query: null,
+124 verbose parsed url   pathname: 'fs-extra@0.30.0',
+124 verbose parsed url   path: 'fs-extra@0.30.0',
+124 verbose parsed url   href: 'fs-extra@0.30.0' }
+125 verbose cache add name="fs-extra" spec="0.30.0" args=["fs-extra","0.30.0"]
+126 verbose parsed url { protocol: null,
+126 verbose parsed url   slashes: null,
+126 verbose parsed url   auth: null,
+126 verbose parsed url   host: null,
+126 verbose parsed url   port: null,
+126 verbose parsed url   hostname: null,
+126 verbose parsed url   hash: null,
+126 verbose parsed url   search: null,
+126 verbose parsed url   query: null,
+126 verbose parsed url   pathname: '0.30.0',
+126 verbose parsed url   path: '0.30.0',
+126 verbose parsed url   href: '0.30.0' }
+127 verbose addNamed [ 'fs-extra', '0.30.0' ]
+128 verbose addNamed [ '0.30.0', '0.30.0' ]
+129 silly lockFile 26f58866-fs-extra-0-30-0 fs-extra@0.30.0
+130 verbose lock fs-extra@0.30.0 /Users/Christophe/.npm/26f58866-fs-extra-0-30-0.lock
+131 verbose cache add [ 'lodash@4.13.1', null ]
+132 verbose cache add name=undefined spec="lodash@4.13.1" args=["lodash@4.13.1",null]
+133 verbose parsed url { protocol: null,
+133 verbose parsed url   slashes: null,
+133 verbose parsed url   auth: null,
+133 verbose parsed url   host: null,
+133 verbose parsed url   port: null,
+133 verbose parsed url   hostname: null,
+133 verbose parsed url   hash: null,
+133 verbose parsed url   search: null,
+133 verbose parsed url   query: null,
+133 verbose parsed url   pathname: 'lodash@4.13.1',
+133 verbose parsed url   path: 'lodash@4.13.1',
+133 verbose parsed url   href: 'lodash@4.13.1' }
+134 verbose cache add name="lodash" spec="4.13.1" args=["lodash","4.13.1"]
+135 verbose parsed url { protocol: null,
+135 verbose parsed url   slashes: null,
+135 verbose parsed url   auth: null,
+135 verbose parsed url   host: null,
+135 verbose parsed url   port: null,
+135 verbose parsed url   hostname: null,
+135 verbose parsed url   hash: null,
+135 verbose parsed url   search: null,
+135 verbose parsed url   query: null,
+135 verbose parsed url   pathname: '4.13.1',
+135 verbose parsed url   path: '4.13.1',
+135 verbose parsed url   href: '4.13.1' }
+136 verbose addNamed [ 'lodash', '4.13.1' ]
+137 verbose addNamed [ '4.13.1', '4.13.1' ]
+138 silly lockFile 95e260a2-lodash-4-13-1 lodash@4.13.1
+139 verbose lock lodash@4.13.1 /Users/Christophe/.npm/95e260a2-lodash-4-13-1.lock
+140 verbose cache add [ 'minimist@^1.2.0', null ]
+141 verbose cache add name=undefined spec="minimist@^1.2.0" args=["minimist@^1.2.0",null]
+142 verbose parsed url { protocol: null,
+142 verbose parsed url   slashes: null,
+142 verbose parsed url   auth: null,
+142 verbose parsed url   host: null,
+142 verbose parsed url   port: null,
+142 verbose parsed url   hostname: null,
+142 verbose parsed url   hash: null,
+142 verbose parsed url   search: null,
+142 verbose parsed url   query: null,
+142 verbose parsed url   pathname: 'minimist@^1.2.0',
+142 verbose parsed url   path: 'minimist@^1.2.0',
+142 verbose parsed url   href: 'minimist@^1.2.0' }
+143 verbose cache add name="minimist" spec="^1.2.0" args=["minimist","^1.2.0"]
+144 verbose parsed url { protocol: null,
+144 verbose parsed url   slashes: null,
+144 verbose parsed url   auth: null,
+144 verbose parsed url   host: null,
+144 verbose parsed url   port: null,
+144 verbose parsed url   hostname: null,
+144 verbose parsed url   hash: null,
+144 verbose parsed url   search: null,
+144 verbose parsed url   query: null,
+144 verbose parsed url   pathname: '^1.2.0',
+144 verbose parsed url   path: '^1.2.0',
+144 verbose parsed url   href: '^1.2.0' }
+145 verbose addNamed [ 'minimist', '^1.2.0' ]
+146 verbose addNamed [ null, null ]
+147 silly lockFile 53129369-minimist-1-2-0 minimist@^1.2.0
+148 verbose lock minimist@^1.2.0 /Users/Christophe/.npm/53129369-minimist-1-2-0.lock
+149 verbose cache add [ 'node-elm-compiler@4.1.0', null ]
+150 verbose cache add name=undefined spec="node-elm-compiler@4.1.0" args=["node-elm-compiler@4.1.0",null]
+151 verbose parsed url { protocol: null,
+151 verbose parsed url   slashes: null,
+151 verbose parsed url   auth: null,
+151 verbose parsed url   host: null,
+151 verbose parsed url   port: null,
+151 verbose parsed url   hostname: null,
+151 verbose parsed url   hash: null,
+151 verbose parsed url   search: null,
+151 verbose parsed url   query: null,
+151 verbose parsed url   pathname: 'node-elm-compiler@4.1.0',
+151 verbose parsed url   path: 'node-elm-compiler@4.1.0',
+151 verbose parsed url   href: 'node-elm-compiler@4.1.0' }
+152 verbose cache add name="node-elm-compiler" spec="4.1.0" args=["node-elm-compiler","4.1.0"]
+153 verbose parsed url { protocol: null,
+153 verbose parsed url   slashes: null,
+153 verbose parsed url   auth: null,
+153 verbose parsed url   host: null,
+153 verbose parsed url   port: null,
+153 verbose parsed url   hostname: null,
+153 verbose parsed url   hash: null,
+153 verbose parsed url   search: null,
+153 verbose parsed url   query: null,
+153 verbose parsed url   pathname: '4.1.0',
+153 verbose parsed url   path: '4.1.0',
+153 verbose parsed url   href: '4.1.0' }
+154 verbose addNamed [ 'node-elm-compiler', '4.1.0' ]
+155 verbose addNamed [ '4.1.0', '4.1.0' ]
+156 silly lockFile caebbf6c-node-elm-compiler-4-1-0 node-elm-compiler@4.1.0
+157 verbose lock node-elm-compiler@4.1.0 /Users/Christophe/.npm/caebbf6c-node-elm-compiler-4-1-0.lock
+158 verbose cache add [ 'temp@0.8.3', null ]
+159 verbose cache add name=undefined spec="temp@0.8.3" args=["temp@0.8.3",null]
+160 verbose parsed url { protocol: null,
+160 verbose parsed url   slashes: null,
+160 verbose parsed url   auth: null,
+160 verbose parsed url   host: null,
+160 verbose parsed url   port: null,
+160 verbose parsed url   hostname: null,
+160 verbose parsed url   hash: null,
+160 verbose parsed url   search: null,
+160 verbose parsed url   query: null,
+160 verbose parsed url   pathname: 'temp@0.8.3',
+160 verbose parsed url   path: 'temp@0.8.3',
+160 verbose parsed url   href: 'temp@0.8.3' }
+161 verbose cache add name="temp" spec="0.8.3" args=["temp","0.8.3"]
+162 verbose parsed url { protocol: null,
+162 verbose parsed url   slashes: null,
+162 verbose parsed url   auth: null,
+162 verbose parsed url   host: null,
+162 verbose parsed url   port: null,
+162 verbose parsed url   hostname: null,
+162 verbose parsed url   hash: null,
+162 verbose parsed url   search: null,
+162 verbose parsed url   query: null,
+162 verbose parsed url   pathname: '0.8.3',
+162 verbose parsed url   path: '0.8.3',
+162 verbose parsed url   href: '0.8.3' }
+163 verbose addNamed [ 'temp', '0.8.3' ]
+164 verbose addNamed [ '0.8.3', '0.8.3' ]
+165 silly lockFile cd3be569-temp-0-8-3 temp@0.8.3
+166 verbose lock temp@0.8.3 /Users/Christophe/.npm/cd3be569-temp-0-8-3.lock
+167 info addNameTag [ 'find-up', '^1.1.2' ]
+168 info addNameTag [ 'firstline', '^1.2.0' ]
+169 info addNameTag [ 'minimist', '^1.2.0' ]
+170 verbose url raw cross-spawn/4.0.0
+171 verbose url resolving [ 'https://registry.npmjs.org/', './cross-spawn/4.0.0' ]
+172 verbose url resolved https://registry.npmjs.org/cross-spawn/4.0.0
+173 info trying registry request attempt 1 at 19:25:45
+174 verbose etag "2VG1WHQKB1IQJANDPR7H1YAWO"
+175 http GET https://registry.npmjs.org/cross-spawn/4.0.0
+176 verbose url raw chokidar/1.6.0
+177 verbose url resolving [ 'https://registry.npmjs.org/', './chokidar/1.6.0' ]
+178 verbose url resolved https://registry.npmjs.org/chokidar/1.6.0
+179 info trying registry request attempt 1 at 19:25:45
+180 verbose etag "7EU6CZ0M950ZYVDRXIYP903LN"
+181 http GET https://registry.npmjs.org/chokidar/1.6.0
+182 verbose url raw fs-extra/0.30.0
+183 verbose url resolving [ 'https://registry.npmjs.org/', './fs-extra/0.30.0' ]
+184 verbose url resolved https://registry.npmjs.org/fs-extra/0.30.0
+185 info trying registry request attempt 1 at 19:25:45
+186 verbose etag "89DVVMVGSWPXONP0QQ62KGTQQ"
+187 http GET https://registry.npmjs.org/fs-extra/0.30.0
+188 verbose url raw chalk/1.1.3
+189 verbose url resolving [ 'https://registry.npmjs.org/', './chalk/1.1.3' ]
+190 verbose url resolved https://registry.npmjs.org/chalk/1.1.3
+191 info trying registry request attempt 1 at 19:25:45
+192 verbose etag "2E9U3HX0U13LOBRST5G5IP8LY"
+193 http GET https://registry.npmjs.org/chalk/1.1.3
+194 verbose url raw find-up
+195 verbose url resolving [ 'https://registry.npmjs.org/', './find-up' ]
+196 verbose url resolved https://registry.npmjs.org/find-up
+197 info trying registry request attempt 1 at 19:25:45
+198 verbose etag "5894c739-2b8c"
+199 http GET https://registry.npmjs.org/find-up
+200 verbose url raw firstline
+201 verbose url resolving [ 'https://registry.npmjs.org/', './firstline' ]
+202 verbose url resolved https://registry.npmjs.org/firstline
+203 info trying registry request attempt 1 at 19:25:45
+204 verbose etag "58487c27-318a"
+205 http GET https://registry.npmjs.org/firstline
+206 verbose url raw lodash/4.13.1
+207 verbose url resolving [ 'https://registry.npmjs.org/', './lodash/4.13.1' ]
+208 verbose url resolved https://registry.npmjs.org/lodash/4.13.1
+209 info trying registry request attempt 1 at 19:25:45
+210 verbose etag "527F86B5RRQSS8S2S4G9HPZ2F"
+211 http GET https://registry.npmjs.org/lodash/4.13.1
+212 verbose url raw node-elm-compiler/4.1.0
+213 verbose url resolving [ 'https://registry.npmjs.org/', './node-elm-compiler/4.1.0' ]
+214 verbose url resolved https://registry.npmjs.org/node-elm-compiler/4.1.0
+215 info trying registry request attempt 1 at 19:25:45
+216 verbose etag "5XWILSX62ZV1E93C7669E84LQ"
+217 http GET https://registry.npmjs.org/node-elm-compiler/4.1.0
+218 verbose url raw minimist
+219 verbose url resolving [ 'https://registry.npmjs.org/', './minimist' ]
+220 verbose url resolved https://registry.npmjs.org/minimist
+221 info trying registry request attempt 1 at 19:25:45
+222 verbose etag "589dd2f9-738e"
+223 http GET https://registry.npmjs.org/minimist
+224 verbose url raw temp/0.8.3
+225 verbose url resolving [ 'https://registry.npmjs.org/', './temp/0.8.3' ]
+226 verbose url resolved https://registry.npmjs.org/temp/0.8.3
+227 info trying registry request attempt 1 at 19:25:45
+228 verbose etag "UVUBW819BTT5NNFU8P3QM3XA"
+229 http GET https://registry.npmjs.org/temp/0.8.3
+230 http 304 https://registry.npmjs.org/find-up
+231 silly registry.get cb [ 304,
+231 silly registry.get   { date: 'Fri, 10 Feb 2017 18:25:45 GMT',
+231 silly registry.get     via: '1.1 varnish',
+231 silly registry.get     'cache-control': 'max-age=300',
+231 silly registry.get     etag: '"5894c739-2b8c"',
+231 silly registry.get     age: '183',
+231 silly registry.get     connection: 'keep-alive',
+231 silly registry.get     'x-served-by': 'cache-cdg8731-CDG',
+231 silly registry.get     'x-cache': 'HIT',
+231 silly registry.get     'x-cache-hits': '1',
+231 silly registry.get     'x-timer': 'S1486751145.983598,VS0,VE0',
+231 silly registry.get     vary: 'Accept-Encoding' } ]
+232 verbose etag find-up from cache
+233 silly lockFile 27256877-find-up-1-1-2 find-up@^1.1.2
+234 silly lockFile 27256877-find-up-1-1-2 find-up@^1.1.2
+235 verbose about to build /usr/local/lib/node_modules/elm-test
+236 info /usr/local/lib/node_modules/elm-test unbuild
+237 info preuninstall elm-test@0.18.2
+238 info uninstall elm-test@0.18.2
+239 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild elm-test@0.18.2
+240 verbose /usr/local/bin,[object Object] binRoot
+241 info postuninstall elm-test@0.18.2
+242 error Error: No compatible version found: find-up@'^1.1.2'
+242 error Valid install targets:
+242 error ["1.0.0","1.1.0","1.1.1","1.1.2","2.0.0","2.1.0"]
+242 error     at installTargetsError (/usr/local/lib/node_modules/npm/lib/cache.js:719:10)
+242 error     at /usr/local/lib/node_modules/npm/lib/cache.js:638:10
+242 error     at saved (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:142:7)
+242 error     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:133:7
+242 error     at Object.oncomplete (fs.js:107:15)
+243 error If you need help, you may report this log at:
+243 error     <http://github.com/isaacs/npm/issues>
+243 error or email it to:
+243 error     <npm-@googlegroups.com>
+244 error System Darwin 14.5.0
+245 error command "node" "/usr/local/bin/npm" "install" "-g" "elm-test"
+246 error cwd /Users/Christophe/dev/dojo/dojo-developpement-paris.github.io
+247 error node -v v0.10.15
+248 error npm -v 1.3.5
+249 verbose exit [ 1, true ]
