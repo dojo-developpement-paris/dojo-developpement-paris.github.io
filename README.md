@@ -8,6 +8,7 @@ Présents :
 - Shahnaz
 - Xavier
 - Noël
+- Benoît
 
 
 Retro: Haskell - Mob - Bowling score (sujet moins compliqué)
