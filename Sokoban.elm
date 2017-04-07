@@ -1,5 +1,6 @@
 import Html exposing (Html,div)
 import Html.Attributes exposing (..)
+import Keyboard exposing (..)
 import String 
 
 main =
@@ -9,16 +10,35 @@ main =
 type alias Model = List String
 
 init : (Model, Cmd Msg)
-init = (["#######",
-         "#$@. +*"], Cmd.none)
+init = (["########",
+         "#. $ @ #",
+         "########"], Cmd.none)
 
-type Msg = Foo
+type Msg = West | East | None
+
+moveLeft : Model -> Model
+moveLeft _ = ["########",
+              "#. $@  #",
+              "########"]
+moveRight : Model -> Model
+moveRight _ = ["########",
+               "#. $  @#",
+               "########"]
 
 update : Msg -> Model -> (Model, Cmd Msg)
-update msg model = ([], Cmd.none)
+update msg model = case msg of 
+    West -> (moveLeft model, Cmd.none)
+    East -> (moveRight model, Cmd.none)
+    _ -> (model, Cmd.none)
 
 subscriptions : Model -> Sub Msg
-subscriptions model = Sub.none
+subscriptions model = presses interpretKeyCode
+
+interpretKeyCode : KeyCode -> Msg
+interpretKeyCode k = case k of
+    104 -> West
+    108 -> East
+    _   -> None
 
 view : Model -> Html Msg
 view model = div [] <| List.map row model 
