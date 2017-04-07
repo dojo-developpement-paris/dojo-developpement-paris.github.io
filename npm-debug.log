@@ -1,0 +1,122 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'elm-upgrade' ]
+2 info using npm@1.3.5
+3 info using node@v0.10.15
+4 verbose cache add [ 'elm-upgrade', null ]
+5 verbose cache add name=undefined spec="elm-upgrade" args=["elm-upgrade",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'elm-upgrade',
+6 verbose parsed url   path: 'elm-upgrade',
+6 verbose parsed url   href: 'elm-upgrade' }
+7 silly lockFile 282cc1a5-elm-upgrade elm-upgrade
+8 verbose lock elm-upgrade /Users/Christophe/.npm/282cc1a5-elm-upgrade.lock
+9 silly lockFile 282cc1a5-elm-upgrade elm-upgrade
+10 silly lockFile 282cc1a5-elm-upgrade elm-upgrade
+11 verbose addNamed [ 'elm-upgrade', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile e7705560-elm-upgrade elm-upgrade@
+14 verbose lock elm-upgrade@ /Users/Christophe/.npm/e7705560-elm-upgrade.lock
+15 silly addNameRange { name: 'elm-upgrade', range: '*', hasData: false }
+16 verbose url raw elm-upgrade
+17 verbose url resolving [ 'https://registry.npmjs.org/', './elm-upgrade' ]
+18 verbose url resolved https://registry.npmjs.org/elm-upgrade
+19 info trying registry request attempt 1 at 19:14:20
+20 verbose etag "583a7188-347e"
+21 http GET https://registry.npmjs.org/elm-upgrade
+22 http 304 https://registry.npmjs.org/elm-upgrade
+23 silly registry.get cb [ 304,
+23 silly registry.get   { date: 'Fri, 07 Apr 2017 17:14:20 GMT',
+23 silly registry.get     via: '1.1 varnish',
+23 silly registry.get     'cache-control': 'max-age=300',
+23 silly registry.get     etag: '"583a7188-347e"',
+23 silly registry.get     age: '258',
+23 silly registry.get     connection: 'keep-alive',
+23 silly registry.get     'x-served-by': 'cache-lcy1134-LCY',
+23 silly registry.get     'x-cache': 'HIT',
+23 silly registry.get     'x-cache-hits': '1',
+23 silly registry.get     'x-timer': 'S1491585260.469610,VS0,VE0',
+23 silly registry.get     vary: 'Accept-Encoding' } ]
+24 verbose etag elm-upgrade from cache
+25 silly addNameRange number 2 { name: 'elm-upgrade', range: '*', hasData: true }
+26 silly addNameRange versions [ 'elm-upgrade',
+26 silly addNameRange   [ '0.18.0-alpha',
+26 silly addNameRange     '0.18.0',
+26 silly addNameRange     '0.18.1',
+26 silly addNameRange     '0.18.2',
+26 silly addNameRange     '0.18.3',
+26 silly addNameRange     '0.18.4',
+26 silly addNameRange     '0.18.5',
+26 silly addNameRange     '0.18.6',
+26 silly addNameRange     '0.18.7' ] ]
+27 verbose addNamed [ 'elm-upgrade', '0.18.7' ]
+28 verbose addNamed [ '0.18.7', '0.18.7' ]
+29 silly lockFile 52bbc8fe-elm-upgrade-0-18-7 elm-upgrade@0.18.7
+30 verbose lock elm-upgrade@0.18.7 /Users/Christophe/.npm/52bbc8fe-elm-upgrade-0-18-7.lock
+31 silly lockFile 52bbc8fe-elm-upgrade-0-18-7 elm-upgrade@0.18.7
+32 silly lockFile 52bbc8fe-elm-upgrade-0-18-7 elm-upgrade@0.18.7
+33 silly lockFile e7705560-elm-upgrade elm-upgrade@
+34 silly lockFile e7705560-elm-upgrade elm-upgrade@
+35 silly resolved [ { name: 'elm-upgrade',
+35 silly resolved     version: '0.18.7',
+35 silly resolved     description: 'Upgrade Elm projects',
+35 silly resolved     scripts: { test: 'echo "Error: no test specified" && exit 1' },
+35 silly resolved     author: { name: 'Aaron VonderHaar', email: 'gruen0aermel@gmail.com' },
+35 silly resolved     license: 'MIT',
+35 silly resolved     dependencies:
+35 silly resolved      { caw: '^2.0.0',
+35 silly resolved        'fs-extra': '^0.30.0',
+35 silly resolved        got: '^6.6.3',
+35 silly resolved        semver: '^5.3.0',
+35 silly resolved        which: '^1.2.11' },
+35 silly resolved     bin: { 'elm-upgrade': 'upgrade.js' },
+35 silly resolved     devDependencies: { standard: '^8.6.0' },
+35 silly resolved     readme: '## elm-upgrade ![](https://img.shields.io/npm/v/elm-upgrade.svg)\n\n**elm-upgrade** helps you upgrade your Elm 0.17 projects to Elm 0.18.  It attemps to automate many of the steps in the [Elm 0.18 upgrade guide](https://github.com/elm-lang/elm-platform/blob/master/upgrade-docs/0.18.md).  **elm-upgrade** will do the following:\n  - Update the `elm-version` in your project\'s `elm-package.json` file\n  - Try to upgrade all of your project dependencies in `elm-package.json`\n  - Warn you if some of your project dependencies don\'t support Elm 0.18 yet\n  - Use [elm-format](https://github.com/avh4/elm-format) to upgrade your code, which includes the following:\n    - Infix function calls using backticks become normal functions calls\n    - Infix function calls using backticks with `andThen` and `onError` become pipelines\n    - Ranges become calls to `List.range`\n    - Primes in variable names become underscores\n    - References to `fst` and `snd` become `Tuple.first` and `Tuple.second`\n\n## How to use it\n\nTo use **elm-upgrade**, first [install elm-format](https://github.com/avh4/elm-format#installation-) and then run the following in your terminal:\n\n```sh\nnpm install -g elm-upgrade\ncd path/to/my/elm/project\nelm-upgrade\n```\n\nAfter the automated upgrade, you will probably still have to fix a few things.  See the [Elm 0.18 upgrade guide](https://github.com/elm-lang/elm-platform/blob/master/upgrade-docs/0.18.md) for more details.\n\n\n## What it looks liks\n\n```\nΞ workspace/tangram-logo git:(master) ▶ elm-upgrade\nINFO: Found elm at /usr/local/bin/elm\nINFO: Found elm-format at /usr/local/bin/elm-format\nINFO: Found Elm Platform 0.18.0\nINFO: Found elm-format-0.18 0.5.0-alpha-elm018beta-rc1\nINFO: Cleaning ./elm-stuff before upgrading\nINFO: Changing elm-package.json#elm-version to "0.18.0 <= v < 0.19.0"\nINFO: Removing all dependencies from elm-package.json to reinstall them\nINFO: Installing latest version of elm-lang/core\nINFO: Installing latest version of elm-lang/html\nINFO: Installing latest version of elm-lang/svg\nINFO: Upgrading *.elm files in ./\n\n\nSUCCESS! Your project\'s dependencies and code have been upgraded.\nHowever, your project may not yet compile due to API changes in your\ndependencies.\n\nSee https://github.com/elm-lang/elm-platform/blob/master/upgrade-docs/0.18.md\nand the documentation for your dependencies for more information.\n\nΞ workspace/tangram-logo git:(master) ▶ git diff\n```\n```diff\ndiff --git a/Pieces.elm b/Pieces.elm\nindex c15b583..65bd962 100644\n--- a/Pieces.elm\n+++ b/Pieces.elm\n@@ -54,12 +54,12 @@ rotate angle ps =\n         rad =\n             degrees angle\n\n-        rotate\' ( x, y ) =\n+        rotate_ ( x, y ) =\n             ( cos rad * x + sin rad * y\n             , sin rad * -x + cos rad * y\n             )\n     in\n-        List.map rotate\' ps\n+        List.map rotate_ ps\n\n\n triangle : Float -> List Point\ndiff --git a/elm-package.json b/elm-package.json\nindex a21d43e..dd09245 100644\n--- a/elm-package.json\n+++ b/elm-package.json\n@@ -8,9 +8,9 @@\n     ],\n     "exposed-modules": [],\n     "dependencies": {\n-        "elm-lang/core": "4.0.5 <= v < 5.0.0",\n-        "elm-lang/html": "1.1.0 <= v < 2.0.0",\n-        "elm-lang/svg": "1.1.1 <= v < 2.0.0"\n+        "elm-lang/core": "5.0.0 <= v < 6.0.0",\n+        "elm-lang/html": "2.0.0 <= v < 3.0.0",\n+        "elm-lang/svg": "2.0.0 <= v < 3.0.0"\n     },\n-    "elm-version": "0.17.1 <= v < 0.18.0"\n+    "elm-version": "0.18.0 <= v < 0.19.0"\n }\n```\n\n\n## Development info for contributors to elm-upgrade\n\n```sh\nnpm install\nnpm link\n```\n\nYou should now have `elm-upgrade` on your path.\n',
+35 silly resolved     readmeFilename: 'README.md',
+35 silly resolved     _id: 'elm-upgrade@0.18.7',
+35 silly resolved     _from: 'elm-upgrade@' } ]
+36 info install elm-upgrade@0.18.7 into /usr/local/lib
+37 info installOne elm-upgrade@0.18.7
+38 info /usr/local/lib/node_modules/elm-upgrade unbuild
+39 verbose tar unpack /Users/Christophe/.npm/elm-upgrade/0.18.7/package.tgz
+40 silly lockFile 009fafcd-cal-lib-node-modules-elm-upgrade tar:///usr/local/lib/node_modules/elm-upgrade
+41 verbose lock tar:///usr/local/lib/node_modules/elm-upgrade /Users/Christophe/.npm/009fafcd-cal-lib-node-modules-elm-upgrade.lock
+42 silly lockFile fc2d93e8-m-elm-upgrade-0-18-7-package-tgz tar:///Users/Christophe/.npm/elm-upgrade/0.18.7/package.tgz
+43 verbose lock tar:///Users/Christophe/.npm/elm-upgrade/0.18.7/package.tgz /Users/Christophe/.npm/fc2d93e8-m-elm-upgrade-0-18-7-package-tgz.lock
+44 silly gunzTarPerm modes [ '755', '644' ]
+45 error Error: EACCES, mkdir '/usr/local/lib/node_modules/elm-upgrade'
+45 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/elm-upgrade']
+45 error   errno: 3,
+45 error   code: 'EACCES',
+45 error   path: '/usr/local/lib/node_modules/elm-upgrade',
+45 error   fstream_type: 'Directory',
+45 error   fstream_path: '/usr/local/lib/node_modules/elm-upgrade',
+45 error   fstream_class: 'DirWriter',
+45 error   fstream_stack:
+45 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+45 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53',
+45 error      'Object.oncomplete (fs.js:107:15)' ] }
+46 error Please try running this command again as root/Administrator.
+47 error System Darwin 16.4.0
+48 error command "node" "/usr/local/bin/npm" "install" "-g" "elm-upgrade"
+49 error cwd /Users/Christophe/dev/dojo/dojo-developpement-paris.github.io
+50 error node -v v0.10.15
+51 error npm -v 1.3.5
+52 error path /usr/local/lib/node_modules/elm-upgrade
+53 error fstream_path /usr/local/lib/node_modules/elm-upgrade
+54 error fstream_type Directory
+55 error fstream_class DirWriter
+56 error code EACCES
+57 error errno 3
+58 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/elm-upgrade'
+59 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+59 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53
+59 error fstream_stack Object.oncomplete (fs.js:107:15)
+60 verbose exit [ 3, true ]
