@@ -1,22 +1,25 @@
-Prochaine session: Vendredi 21/04/2017
+Prochaine session: Mercredi 03/05/2017
 chez Arolla 
 
 Présents :
-- Patrick
 - François
 - Shahnaz
 - Arjun
-- Clement
 - Benoit
+- Xavier
+- Christophe
+- Marine
 
-Retro: Mob Elm Sokoban
-- Cà fait 5 fois qu'on fait le kata et butte sur le même problème 'qu'est ce qu'on fait des chaînes de caractères'
-- On devrait faire un modèle
-- Phase exploratoire
-- C'était sympa de faire du elm
- 
+Retro: Bowling kata guidé par le REPL avec F#
+- C'était intéressant
+- Boucle de feedback plus rapide que TDD
+- Mais on risque de ne pas capitaliser le savoir...
+- Risque de faire des tests moins compréhensibles (assertion, message d'erreur)
+
 Sujets:
+* A - 5 - kata - Haskell - Finir Sokoban ! (avec un modèle)
+B - 3 - kata - Haskell - Sokoban mais différemment (avec des fonctions)
+C - 2 - mob - Haskell - Sokoban (encore un différent)
+D - 11 - mob - Haskell - Résoudre un labyrinthe
 
-* A - 0 - kata - F# - Bowling kata en explorant avec le REPL
-B - 0 - kata - python - Event sourcing calcul de chemin le plus court
 
