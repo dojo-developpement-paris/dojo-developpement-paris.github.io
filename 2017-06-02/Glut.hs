@@ -12,20 +12,19 @@ main = do
 display :: DisplayCallback
 display = do
     clear [ ColorBuffer ]
-    renderSquares 0.7 (pi/4) (0.5,0)
-    renderSquares 0.5 (pi/2) (-0.5,0)
+    scale' 0.5
+    renderSquares 10 0.7 0 (0.5,0)
     flush
 
-renderSquares s a (x,y) = do
+renderSquares 0 _ _ _ = return ()
+renderSquares n s a (x,y) = do
     translate' x y
     scale' s
     rotateZ a
     color red
     renderPrimitive Quads $ vertex2s points
-    color green
-    translate' 0 1
-    scale' 0.5
-    renderPrimitive Quads $ vertex2s points
+    renderSquares (n-1) (1 / sqrt 2) (pi/4) (0,1)
+
 scale' :: GLfloat -> IO ()
 scale' n = scale n n n
 
