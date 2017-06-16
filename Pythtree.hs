@@ -15,5 +15,10 @@ tree = undefined
 grow 0 = Nil
 grow n = Branch 0 (grow (n-1)) (grow (n-1))
 
-fromList [42] = Branch 42 Nil Nil
-fromList _ = Nil
+fromList [] = Nil
+fromList (x:xs) = Branch x (fromList ls) (fromList rs)
+    where
+    ls = take half xs
+    rs = drop half xs
+    half = length xs `div` 2
+
