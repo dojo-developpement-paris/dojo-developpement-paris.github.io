@@ -12,3 +12,5 @@ main = hspec $ do
 
         it "can be populated with a list" $ do
             fromList [42] `shouldBe` Branch 42 Nil Nil
+            fromList [17] `shouldBe` Branch 17 Nil Nil
+            fromList [42,17,23] `shouldBe` Branch 42 (Branch 17 Nil Nil) (Branch 23 Nil Nil)
