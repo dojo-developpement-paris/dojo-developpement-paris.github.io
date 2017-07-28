@@ -1,5 +1,5 @@
-Prochaine session: Vendredi 07/07/2017
-Arolla, fall back zenika
+Prochaine session: Vendredi 28/07/2017
+chez Arolla
 
 Présents :
 - François
@@ -9,19 +9,23 @@ Présents :
 - Christophe
 - Anselme
 - Patrick
+- Marine
+- Romeo
+- Souhaib
 
-Retro
-- Mob Elm 2048 
-- On commencé avec Elm puis en Haskell à cause de problème avec la plateforme Elm
-- On a surtout fait la construction de la grille
-- On a refactorer une récursion en fold
-- Utilisation de séquence au lieu de liste
-- Commencer par le replissage ce n'est pas le plus interessant par rapport à la compression
+Retro Kata haskell 2048  
+- On a juste les déplacements et l'insertion, il manque le hazard et la boucle de jeu
+- Facile comme problème
+- On doit pouvoir le faire en 1 dojo
+- Algo générique
+- Séparer les calculs et le hazard
 
 Sujets:
-A 0 Kata haskell 2048  
-B 0 Mob  haskell 2048
-
+A - 7 - Mob - Clojure - Tennis kata
+B - 11 - Kata - Haskell - Tdd les nombres premiers avec crible d'Eratosthène - listes ordonnées infinie "lazy"
+C - 6 - Evil randori - A voter - Poker hands
+D - 2 - Mob - Haskell - Tdd les nombres premiers avec crible d'Eratosthène - listes ordonnées infinie "lazy"
+E - 7 - Strong style randori - Java - Kata bowling
 
 
 
