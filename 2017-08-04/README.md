@@ -6,7 +6,7 @@ Présents :
 - Shahnaz
 - Karine
 - Arjun
-- Patrick
+- Patrick G
 - Pin
 - Antoine
 
