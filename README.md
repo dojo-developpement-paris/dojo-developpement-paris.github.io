@@ -1,5 +1,5 @@
-Prochaine session: Vendredi 29/09/2017
-chez Arolla
+Prochaine session: Vendredi 06/10/2017
+chez Zenika
 
 Présents :
 - Patrick
@@ -8,33 +8,34 @@ Présents :
 - François
 - Shahnaz
 - Xavier
-- Vasile
-- Benoit
-- Walid
 - Sara
-- Lionel
 - Ubald
+- Christophe
+- Andrea
+- Richard
+- Christian
+- Frederic
+- Marc
+- Walid
 
 
 
+Retro : Mob - Haskell - Les GEOHASH voisins
 
-Retro :  Kata - Javascript & haskell - Introduction à la PF
-
-- La présentation commence à être rodée
-- Ajouter un plan ou une synthèse de la présentation
-- Utile de faire des commits à chaque étape, mais dispo sur [https://github.com/FaustXVI/functional-programming-introduction/commits/playing](https://github.com/FaustXVI/functional-programming-introduction/commits/playing)
-- Projet de transcription intéressant
-- On présente les principes utiles en fonctionnel donc en Haskell
-- On peut écrire du javacript presque comme du Haskell
-
+- On a fait deux choses en même temps: Apprendre lea Applicative Haskell et resoudre le pb de GEOHASH
+- On n'a pas fait de plan sauf pour les tests
+- On a une du mal à choisir une représentation du pb
+- On n'a pas découper le pb en pb plus simple comme rechercher les voisins Nord puis Sud puis Est puis Ouest et tous les autres ensuite
+- On découpe facilite la résolution du pb
+- L'utilisation de types au lieu des chaînes de caractères pourrait aider
+- On s'est tout de même bien amusé
 
 Sujets:
 
-A - 5 - Kata - Humain - Explication des living monads (mime)
-* B - 18 - Mob - Haskell - Les GEOHASH voisins
-C - 5 - Mob - Haskell - Bank account kata 
-D - 8 - Mob - kotlin - Bank account kata avec la contrainte des Calisthenics
- 
+* A - 17 - Kata - Human - Let's have a drink with Living Monad (miming)
+B - 10 - Mob - Haskell - GEOHASH (Pomodoro 8 minutes code +  2 minutes retro)
+C - 11 - Mob - Haskell - Bowling score
+D - 7 - Kata - Haskell - GEOASH use an abstract way
 
 
 
