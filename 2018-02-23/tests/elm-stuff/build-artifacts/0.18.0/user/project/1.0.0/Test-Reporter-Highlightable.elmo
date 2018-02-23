@@ -1,0 +1,53 @@
+var _user$project$Test_Reporter_Highlightable$resolve = F2(
+	function (_p0, highlightable) {
+		var _p1 = _p0;
+		var _p2 = highlightable;
+		if (_p2.ctor === 'Highlighted') {
+			return _p1.fromHighlighted(_p2._0);
+		} else {
+			return _p1.fromPlain(_p2._0);
+		}
+	});
+var _user$project$Test_Reporter_Highlightable$Plain = function (a) {
+	return {ctor: 'Plain', _0: a};
+};
+var _user$project$Test_Reporter_Highlightable$Highlighted = function (a) {
+	return {ctor: 'Highlighted', _0: a};
+};
+var _user$project$Test_Reporter_Highlightable$map = F2(
+	function (transform, highlightable) {
+		var _p3 = highlightable;
+		if (_p3.ctor === 'Highlighted') {
+			return _user$project$Test_Reporter_Highlightable$Highlighted(
+				transform(_p3._0));
+		} else {
+			return _user$project$Test_Reporter_Highlightable$Plain(
+				transform(_p3._0));
+		}
+	});
+var _user$project$Test_Reporter_Highlightable$fromDiff = function (diff) {
+	var _p4 = diff;
+	switch (_p4.ctor) {
+		case 'Added':
+			return {ctor: '[]'};
+		case 'Removed':
+			return {
+				ctor: '::',
+				_0: _user$project$Test_Reporter_Highlightable$Highlighted(_p4._0),
+				_1: {ctor: '[]'}
+			};
+		default:
+			return {
+				ctor: '::',
+				_0: _user$project$Test_Reporter_Highlightable$Plain(_p4._0),
+				_1: {ctor: '[]'}
+			};
+	}
+};
+var _user$project$Test_Reporter_Highlightable$diffLists = F2(
+	function (expected, actual) {
+		return A2(
+			_elm_lang$core$List$concatMap,
+			_user$project$Test_Reporter_Highlightable$fromDiff,
+			A2(_user$project$Test_Runner_Node_Vendor_Diff$diff, expected, actual));
+	});

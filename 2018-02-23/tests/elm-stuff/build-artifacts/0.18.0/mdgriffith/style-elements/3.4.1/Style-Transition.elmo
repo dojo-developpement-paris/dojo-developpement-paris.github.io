@@ -1,0 +1,48 @@
+var _mdgriffith$style_elements$Style_Transition$transitions = function (trans) {
+	return _mdgriffith$style_elements$Style_Internal_Model$Transitions(
+		A2(_elm_lang$core$List$map, _mdgriffith$style_elements$Style_Internal_Model$Transition, trans));
+};
+var _mdgriffith$style_elements$Style_Transition$performant = _mdgriffith$style_elements$Style_Internal_Model$Transitions(
+	{
+		ctor: '::',
+		_0: _mdgriffith$style_elements$Style_Internal_Model$Transition(
+			{
+				delay: 0,
+				duration: 130 * _elm_lang$core$Time$millisecond,
+				easing: 'ease',
+				props: {
+					ctor: '::',
+					_0: 'transform',
+					_1: {
+						ctor: '::',
+						_0: 'filter',
+						_1: {
+							ctor: '::',
+							_0: 'opacity',
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}),
+		_1: {ctor: '[]'}
+	});
+var _mdgriffith$style_elements$Style_Transition$all = _mdgriffith$style_elements$Style_Internal_Model$Transitions(
+	{
+		ctor: '::',
+		_0: _mdgriffith$style_elements$Style_Internal_Model$Transition(
+			{
+				delay: 0,
+				duration: 130 * _elm_lang$core$Time$millisecond,
+				easing: 'ease',
+				props: {
+					ctor: '::',
+					_0: 'all',
+					_1: {ctor: '[]'}
+				}
+			}),
+		_1: {ctor: '[]'}
+	});
+var _mdgriffith$style_elements$Style_Transition$Transition = F4(
+	function (a, b, c, d) {
+		return {delay: a, duration: b, easing: c, props: d};
+	});

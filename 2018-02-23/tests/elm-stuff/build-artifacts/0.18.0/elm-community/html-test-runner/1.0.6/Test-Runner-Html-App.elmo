@@ -1,0 +1,94 @@
+var _elm_community$html_test_runner$Test_Runner_Html_App$present = function (model) {
+	var _p0 = model;
+	if (_p0.ctor === 'NotStarted') {
+		return _elm_lang$core$Maybe$Nothing;
+	} else {
+		return _elm_lang$core$Maybe$Just(
+			{ctor: '_Tuple2', _0: _p0._1 - _p0._0, _1: _p0._2});
+	}
+};
+var _elm_community$html_test_runner$Test_Runner_Html_App$start = F3(
+	function (runs, test, seed) {
+		return _elm_community$html_test_runner$Test_Runner_Exploration$step(
+			A3(_elm_community$html_test_runner$Test_Runner_Exploration$fromTest, runs, seed, test));
+	});
+var _elm_community$html_test_runner$Test_Runner_Html_App$Started = F3(
+	function (a, b, c) {
+		return {ctor: 'Started', _0: a, _1: b, _2: c};
+	});
+var _elm_community$html_test_runner$Test_Runner_Html_App$NotStarted = F3(
+	function (a, b, c) {
+		return {ctor: 'NotStarted', _0: a, _1: b, _2: c};
+	});
+var _elm_community$html_test_runner$Test_Runner_Html_App$Dispatch = function (a) {
+	return {ctor: 'Dispatch', _0: a};
+};
+var _elm_community$html_test_runner$Test_Runner_Html_App$dispatch = A2(
+	_elm_lang$core$Task$perform,
+	_elm_community$html_test_runner$Test_Runner_Html_App$Dispatch,
+	A2(
+		_elm_lang$core$Task$andThen,
+		function (_p1) {
+			return _elm_lang$core$Time$now;
+		},
+		_elm_lang$core$Process$sleep(0)));
+var _elm_community$html_test_runner$Test_Runner_Html_App$init = F3(
+	function (runs, maybeSeed, test) {
+		return {
+			ctor: '_Tuple2',
+			_0: A3(_elm_community$html_test_runner$Test_Runner_Html_App$NotStarted, maybeSeed, runs, test),
+			_1: _elm_community$html_test_runner$Test_Runner_Html_App$dispatch
+		};
+	});
+var _elm_community$html_test_runner$Test_Runner_Html_App$update = F2(
+	function (_p2, model) {
+		var _p3 = _p2;
+		var _p5 = _p3._0;
+		var _p4 = model;
+		if (_p4.ctor === 'NotStarted') {
+			if (_p4._0.ctor === 'Nothing') {
+				return {
+					ctor: '_Tuple2',
+					_0: A3(
+						_elm_community$html_test_runner$Test_Runner_Html_App$Started,
+						_p5,
+						_p5,
+						A3(
+							_elm_community$html_test_runner$Test_Runner_Html_App$start,
+							_p4._1,
+							_p4._2,
+							_mgold$elm_random_pcg$Random_Pcg$initialSeed(
+								_elm_lang$core$Basics$floor(_p5)))),
+					_1: _elm_community$html_test_runner$Test_Runner_Html_App$dispatch
+				};
+			} else {
+				return {
+					ctor: '_Tuple2',
+					_0: A3(
+						_elm_community$html_test_runner$Test_Runner_Html_App$Started,
+						_p5,
+						_p5,
+						A3(_elm_community$html_test_runner$Test_Runner_Html_App$start, _p4._1, _p4._2, _p4._0._0)),
+					_1: _elm_community$html_test_runner$Test_Runner_Html_App$dispatch
+				};
+			}
+		} else {
+			if (_p4._2.ctor === 'Running') {
+				return {
+					ctor: '_Tuple2',
+					_0: A3(
+						_elm_community$html_test_runner$Test_Runner_Html_App$Started,
+						_p4._0,
+						_p5,
+						_elm_community$html_test_runner$Test_Runner_Exploration$step(_p4._2._0.next)),
+					_1: _elm_community$html_test_runner$Test_Runner_Html_App$dispatch
+				};
+			} else {
+				return {
+					ctor: '_Tuple2',
+					_0: A3(_elm_community$html_test_runner$Test_Runner_Html_App$Started, _p4._0, _p5, _p4._2),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			}
+		}
+	});

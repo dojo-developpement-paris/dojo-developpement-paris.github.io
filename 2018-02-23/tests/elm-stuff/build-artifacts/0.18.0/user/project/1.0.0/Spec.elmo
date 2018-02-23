@@ -1,0 +1,115 @@
+var _user$project$Spec$Model = function (a) {
+	return {msgs: a};
+};
+var _user$project$Spec$AckAck = {ctor: 'AckAck'};
+var _user$project$Spec$createEffect = A2(
+	_elm_lang$core$Task$perform,
+	_elm_lang$core$Basics$always(_user$project$Spec$AckAck),
+	_elm_lang$core$Task$succeed(0));
+var _user$project$Spec$internalToRuntime = function (_p0) {
+	var _p1 = _p0;
+	var _p3 = _p1._0;
+	var _p2 = _p1._1;
+	if (_p2.ctor === 'DoAnAck') {
+		return {ctor: '_Tuple2', _0: _p3, _1: _user$project$Spec$createEffect};
+	} else {
+		return {ctor: '_Tuple2', _0: _p3, _1: _elm_lang$core$Platform_Cmd$none};
+	}
+};
+var _user$project$Spec$ReceiveMail = F2(
+	function (a, b) {
+		return {ctor: 'ReceiveMail', _0: a, _1: b};
+	});
+var _user$project$Spec$DoAnAck = function (a) {
+	return {ctor: 'DoAnAck', _0: a};
+};
+var _user$project$Spec$None = {ctor: 'None'};
+var _user$project$Spec$update = F2(
+	function (msg, model) {
+		var _p4 = msg;
+		if (_p4.ctor === 'ReceiveMail') {
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						msgs: {ctor: '::', _0: _p4._1, _1: model.msgs}
+					}),
+				_1: _user$project$Spec$DoAnAck(32)
+			};
+		} else {
+			return {ctor: '_Tuple2', _0: model, _1: _user$project$Spec$None};
+		}
+	});
+var _user$project$Spec$externalUpdate = F2(
+	function (msg, model) {
+		return _user$project$Spec$internalToRuntime(
+			A2(_user$project$Spec$update, msg, model));
+	});
+var _user$project$Spec$Paris = {ctor: 'Paris'};
+var _user$project$Spec$spec = A2(
+	_elm_community$elm_test$Test$describe,
+	'testing commands',
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_community$elm_test$Test$test,
+			'messages are easy to test',
+			function (_p5) {
+				var oldModel = {
+					msgs: {ctor: '[]'}
+				};
+				var _p6 = A2(
+					_user$project$Spec$update,
+					A2(_user$project$Spec$ReceiveMail, _user$project$Spec$Paris, 'hello'),
+					oldModel);
+				var newModel = _p6._0;
+				return A2(
+					_elm_community$elm_test$Expect$equal,
+					newModel,
+					_elm_lang$core$Native_Utils.update(
+						oldModel,
+						{
+							msgs: {
+								ctor: '::',
+								_0: 'hello',
+								_1: {ctor: '[]'}
+							}
+						}));
+			}),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_community$elm_test$Test$test,
+				'when a message arrives, send an Ack',
+				function (_p7) {
+					var oldModel = {
+						msgs: {ctor: '[]'}
+					};
+					var _p8 = A2(
+						_user$project$Spec$update,
+						A2(_user$project$Spec$ReceiveMail, _user$project$Spec$Paris, 'hello'),
+						oldModel);
+					var command = _p8._1;
+					return A2(
+						_elm_community$elm_test$Expect$equal,
+						command,
+						_user$project$Spec$DoAnAck(32));
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_community$elm_test$Test$test,
+					'ackAck',
+					function (_p9) {
+						var oldModel = {
+							msgs: {ctor: '[]'}
+						};
+						var _p10 = A2(_user$project$Spec$update, _user$project$Spec$AckAck, oldModel);
+						var command = _p10._1;
+						return A2(_elm_community$elm_test$Expect$equal, command, _user$project$Spec$None);
+					}),
+				_1: {ctor: '[]'}
+			}
+		}
+	});

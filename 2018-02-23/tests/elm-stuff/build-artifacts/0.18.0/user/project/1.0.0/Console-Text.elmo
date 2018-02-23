@@ -1,0 +1,330 @@
+var _user$project$Console_Text$applyModifiersHelp = F2(
+	function (modifier, str) {
+		var _p0 = modifier;
+		if (_p0.ctor === 'Inverted') {
+			return _user$project$Test_Runner_Node_Vendor_Console$colorsInverted(str);
+		} else {
+			return _user$project$Test_Runner_Node_Vendor_Console$dark(str);
+		}
+	});
+var _user$project$Console_Text$applyModifiers = F2(
+	function (modifiers, str) {
+		return A3(_elm_lang$core$List$foldl, _user$project$Console_Text$applyModifiersHelp, str, modifiers);
+	});
+var _user$project$Console_Text$applyStyle = F2(
+	function (style, str) {
+		var _p1 = style;
+		switch (_p1.ctor) {
+			case 'Normal':
+				return str;
+			case 'Bold':
+				return _user$project$Test_Runner_Node_Vendor_Console$bold(str);
+			default:
+				return _user$project$Test_Runner_Node_Vendor_Console$underline(str);
+		}
+	});
+var _user$project$Console_Text$colorizeBackground = F2(
+	function (color, str) {
+		var _p2 = color;
+		switch (_p2.ctor) {
+			case 'Default':
+				return str;
+			case 'Red':
+				return _user$project$Test_Runner_Node_Vendor_Console$bgRed(str);
+			case 'Green':
+				return _user$project$Test_Runner_Node_Vendor_Console$bgGreen(str);
+			case 'Yellow':
+				return _user$project$Test_Runner_Node_Vendor_Console$bgYellow(str);
+			case 'Black':
+				return _user$project$Test_Runner_Node_Vendor_Console$bgBlack(str);
+			case 'Blue':
+				return _user$project$Test_Runner_Node_Vendor_Console$bgBlue(str);
+			case 'Magenta':
+				return _user$project$Test_Runner_Node_Vendor_Console$bgMagenta(str);
+			case 'Cyan':
+				return _user$project$Test_Runner_Node_Vendor_Console$bgCyan(str);
+			default:
+				return _user$project$Test_Runner_Node_Vendor_Console$bgWhite(str);
+		}
+	});
+var _user$project$Console_Text$colorizeForeground = F2(
+	function (color, str) {
+		var _p3 = color;
+		switch (_p3.ctor) {
+			case 'Default':
+				return str;
+			case 'Red':
+				return _user$project$Test_Runner_Node_Vendor_Console$red(str);
+			case 'Green':
+				return _user$project$Test_Runner_Node_Vendor_Console$green(str);
+			case 'Yellow':
+				return _user$project$Test_Runner_Node_Vendor_Console$yellow(str);
+			case 'Black':
+				return _user$project$Test_Runner_Node_Vendor_Console$black(str);
+			case 'Blue':
+				return _user$project$Test_Runner_Node_Vendor_Console$blue(str);
+			case 'Magenta':
+				return _user$project$Test_Runner_Node_Vendor_Console$magenta(str);
+			case 'Cyan':
+				return _user$project$Test_Runner_Node_Vendor_Console$cyan(str);
+			default:
+				return _user$project$Test_Runner_Node_Vendor_Console$white(str);
+		}
+	});
+var _user$project$Console_Text$render = F2(
+	function (useColor, txt) {
+		var _p4 = txt;
+		if (_p4.ctor === 'Text') {
+			var _p7 = _p4._1;
+			var _p6 = _p4._0;
+			var _p5 = useColor;
+			if (_p5.ctor === 'UseColor') {
+				return A2(
+					_user$project$Console_Text$applyStyle,
+					_p6.style,
+					A2(
+						_user$project$Console_Text$applyModifiers,
+						_p6.modifiers,
+						A2(
+							_user$project$Console_Text$colorizeForeground,
+							_p6.foreground,
+							A2(_user$project$Console_Text$colorizeBackground, _p6.background, _p7))));
+			} else {
+				return _p7;
+			}
+		} else {
+			return A2(
+				_elm_lang$core$String$join,
+				'',
+				A2(
+					_elm_lang$core$List$map,
+					_user$project$Console_Text$render(useColor),
+					_p4._0));
+		}
+	});
+var _user$project$Console_Text$Texts = function (a) {
+	return {ctor: 'Texts', _0: a};
+};
+var _user$project$Console_Text$concat = _user$project$Console_Text$Texts;
+var _user$project$Console_Text$Text = F2(
+	function (a, b) {
+		return {ctor: 'Text', _0: a, _1: b};
+	});
+var _user$project$Console_Text$Monochrome = {ctor: 'Monochrome'};
+var _user$project$Console_Text$UseColor = {ctor: 'UseColor'};
+var _user$project$Console_Text$White = {ctor: 'White'};
+var _user$project$Console_Text$Cyan = {ctor: 'Cyan'};
+var _user$project$Console_Text$Magenta = {ctor: 'Magenta'};
+var _user$project$Console_Text$Blue = {ctor: 'Blue'};
+var _user$project$Console_Text$Black = {ctor: 'Black'};
+var _user$project$Console_Text$Yellow = {ctor: 'Yellow'};
+var _user$project$Console_Text$Green = {ctor: 'Green'};
+var _user$project$Console_Text$Red = {ctor: 'Red'};
+var _user$project$Console_Text$Default = {ctor: 'Default'};
+var _user$project$Console_Text$Dark = {ctor: 'Dark'};
+var _user$project$Console_Text$dark = function (txt) {
+	var _p8 = txt;
+	if (_p8.ctor === 'Text') {
+		var _p9 = _p8._0;
+		return A2(
+			_user$project$Console_Text$Text,
+			_elm_lang$core$Native_Utils.update(
+				_p9,
+				{
+					modifiers: {ctor: '::', _0: _user$project$Console_Text$Dark, _1: _p9.modifiers}
+				}),
+			_p8._1);
+	} else {
+		return _user$project$Console_Text$Texts(
+			A2(_elm_lang$core$List$map, _user$project$Console_Text$dark, _p8._0));
+	}
+};
+var _user$project$Console_Text$Inverted = {ctor: 'Inverted'};
+var _user$project$Console_Text$inverted = function (txt) {
+	var _p10 = txt;
+	if (_p10.ctor === 'Text') {
+		var _p11 = _p10._0;
+		return A2(
+			_user$project$Console_Text$Text,
+			_elm_lang$core$Native_Utils.update(
+				_p11,
+				{
+					modifiers: {ctor: '::', _0: _user$project$Console_Text$Inverted, _1: _p11.modifiers}
+				}),
+			_p10._1);
+	} else {
+		return _user$project$Console_Text$Texts(
+			A2(_elm_lang$core$List$map, _user$project$Console_Text$inverted, _p10._0));
+	}
+};
+var _user$project$Console_Text$Underline = {ctor: 'Underline'};
+var _user$project$Console_Text$underline = function (txt) {
+	var _p12 = txt;
+	if (_p12.ctor === 'Text') {
+		return A2(
+			_user$project$Console_Text$Text,
+			_elm_lang$core$Native_Utils.update(
+				_p12._0,
+				{style: _user$project$Console_Text$Underline}),
+			_p12._1);
+	} else {
+		return _user$project$Console_Text$Texts(
+			A2(_elm_lang$core$List$map, _user$project$Console_Text$dark, _p12._0));
+	}
+};
+var _user$project$Console_Text$Bold = {ctor: 'Bold'};
+var _user$project$Console_Text$bold = function (txt) {
+	var _p13 = txt;
+	if (_p13.ctor === 'Text') {
+		return A2(
+			_user$project$Console_Text$Text,
+			_elm_lang$core$Native_Utils.update(
+				_p13._0,
+				{style: _user$project$Console_Text$Bold}),
+			_p13._1);
+	} else {
+		return _user$project$Console_Text$Texts(
+			A2(_elm_lang$core$List$map, _user$project$Console_Text$dark, _p13._0));
+	}
+};
+var _user$project$Console_Text$Normal = {ctor: 'Normal'};
+var _user$project$Console_Text$plain = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Default,
+		background: _user$project$Console_Text$Default,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$default = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Default,
+		background: _user$project$Console_Text$Default,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$red = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Red,
+		background: _user$project$Console_Text$Default,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$green = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Green,
+		background: _user$project$Console_Text$Default,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$yellow = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Yellow,
+		background: _user$project$Console_Text$Default,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$black = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Black,
+		background: _user$project$Console_Text$Default,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$blue = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Blue,
+		background: _user$project$Console_Text$Default,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$magenta = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Magenta,
+		background: _user$project$Console_Text$Default,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$cyan = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Cyan,
+		background: _user$project$Console_Text$Default,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$white = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$White,
+		background: _user$project$Console_Text$Default,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$bgRed = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Default,
+		background: _user$project$Console_Text$Red,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$bgGreen = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Default,
+		background: _user$project$Console_Text$Green,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$bgYellow = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Default,
+		background: _user$project$Console_Text$Yellow,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$bgBlack = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Default,
+		background: _user$project$Console_Text$Black,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$bgBlue = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Default,
+		background: _user$project$Console_Text$Blue,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$bgMagenta = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Default,
+		background: _user$project$Console_Text$Magenta,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$bgCyan = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Default,
+		background: _user$project$Console_Text$Cyan,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$bgWhite = _user$project$Console_Text$Text(
+	{
+		foreground: _user$project$Console_Text$Default,
+		background: _user$project$Console_Text$White,
+		style: _user$project$Console_Text$Normal,
+		modifiers: {ctor: '[]'}
+	});
+var _user$project$Console_Text$normal = function (txt) {
+	var _p14 = txt;
+	if (_p14.ctor === 'Text') {
+		return A2(
+			_user$project$Console_Text$Text,
+			_elm_lang$core$Native_Utils.update(
+				_p14._0,
+				{style: _user$project$Console_Text$Normal}),
+			_p14._1);
+	} else {
+		return _user$project$Console_Text$Texts(
+			A2(_elm_lang$core$List$map, _user$project$Console_Text$dark, _p14._0));
+	}
+};

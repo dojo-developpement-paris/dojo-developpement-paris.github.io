@@ -1,0 +1,92 @@
+var _mdgriffith$style_elements$Style_Border$roundBottomLeft = function (x) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'border-bottom-left-radius',
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(x),
+			'px'));
+};
+var _mdgriffith$style_elements$Style_Border$roundBottomRight = function (x) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'border-bottom-right-radius',
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(x),
+			'px'));
+};
+var _mdgriffith$style_elements$Style_Border$roundTopRight = function (x) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'border-top-right-radius',
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(x),
+			'px'));
+};
+var _mdgriffith$style_elements$Style_Border$roundTopLeft = function (x) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'border-top-left-radius',
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(x),
+			'px'));
+};
+var _mdgriffith$style_elements$Style_Border$rounded = function (box) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'border-radius',
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(box),
+			'px'));
+};
+var _mdgriffith$style_elements$Style_Border$dotted = A2(_mdgriffith$style_elements$Style_Internal_Model$Exact, 'border-style', 'dotted');
+var _mdgriffith$style_elements$Style_Border$dashed = A2(_mdgriffith$style_elements$Style_Internal_Model$Exact, 'border-style', 'dashed');
+var _mdgriffith$style_elements$Style_Border$solid = A2(_mdgriffith$style_elements$Style_Internal_Model$Exact, 'border-style', 'solid');
+var _mdgriffith$style_elements$Style_Border$none = A2(_mdgriffith$style_elements$Style_Internal_Model$Exact, 'border-width', '0');
+var _mdgriffith$style_elements$Style_Border$bottom = function (l) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'border-bottom-width',
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(l),
+			'px'));
+};
+var _mdgriffith$style_elements$Style_Border$top = function (l) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'border-top-width',
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(l),
+			'px'));
+};
+var _mdgriffith$style_elements$Style_Border$right = function (l) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'border-right-width',
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(l),
+			'px'));
+};
+var _mdgriffith$style_elements$Style_Border$left = function (l) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'border-left-width',
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(l),
+			'px'));
+};
+var _mdgriffith$style_elements$Style_Border$all = function (v) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'border-width',
+		_mdgriffith$style_elements$Style_Internal_Render_Value$box(
+			{ctor: '_Tuple4', _0: v, _1: v, _2: v, _3: v}));
+};

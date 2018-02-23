@@ -1,0 +1,793 @@
+var _mdgriffith$style_elements$Element_Internal_Adjustments$spacingToMargin = function (attrs) {
+	var spaceToMarg = function (a) {
+		var _p0 = a;
+		if (_p0.ctor === 'Spacing') {
+			var _p2 = _p0._1;
+			var _p1 = _p0._0;
+			return _mdgriffith$style_elements$Element_Internal_Model$Margin(
+				{ctor: '_Tuple4', _0: _p2, _1: _p1, _2: _p2, _3: _p1});
+		} else {
+			return _p0;
+		}
+	};
+	return A2(_elm_lang$core$List$map, spaceToMarg, attrs);
+};
+var _mdgriffith$style_elements$Element_Internal_Adjustments$defaultPadding = F2(
+	function (_p4, _p3) {
+		var _p5 = _p4;
+		var _p6 = _p3;
+		return {
+			ctor: '_Tuple4',
+			_0: A2(_elm_lang$core$Maybe$withDefault, _p6._0, _p5._0),
+			_1: A2(_elm_lang$core$Maybe$withDefault, _p6._1, _p5._1),
+			_2: A2(_elm_lang$core$Maybe$withDefault, _p6._2, _p5._2),
+			_3: A2(_elm_lang$core$Maybe$withDefault, _p6._3, _p5._3)
+		};
+	});
+var _mdgriffith$style_elements$Element_Internal_Adjustments$hoistFixedScreenElements = function (el) {
+	var elementIsOnScreen = function (attrs) {
+		return A2(
+			_elm_lang$core$List$any,
+			function (attr) {
+				return _elm_lang$core$Native_Utils.eq(
+					attr,
+					_mdgriffith$style_elements$Element_Internal_Model$PositionFrame(_mdgriffith$style_elements$Element_Internal_Model$Screen));
+			},
+			attrs);
+	};
+	var _p7 = el;
+	switch (_p7.ctor) {
+		case 'Element':
+			return elementIsOnScreen(_p7._0.attrs) ? {
+				ctor: '_Tuple2',
+				_0: _mdgriffith$style_elements$Element_Internal_Model$Empty,
+				_1: _elm_lang$core$Maybe$Just(
+					{
+						ctor: '::',
+						_0: el,
+						_1: {ctor: '[]'}
+					})
+			} : {ctor: '_Tuple2', _0: el, _1: _elm_lang$core$Maybe$Nothing};
+		case 'Layout':
+			return elementIsOnScreen(_p7._0.attrs) ? {
+				ctor: '_Tuple2',
+				_0: _mdgriffith$style_elements$Element_Internal_Model$Empty,
+				_1: _elm_lang$core$Maybe$Just(
+					{
+						ctor: '::',
+						_0: el,
+						_1: {ctor: '[]'}
+					})
+			} : {ctor: '_Tuple2', _0: el, _1: _elm_lang$core$Maybe$Nothing};
+		default:
+			return {ctor: '_Tuple2', _0: el, _1: _elm_lang$core$Maybe$Nothing};
+	}
+};
+var _mdgriffith$style_elements$Element_Internal_Adjustments$tagIntermediates = false;
+var _mdgriffith$style_elements$Element_Internal_Adjustments$tag = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Adjustments$tagIntermediates ? _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$class(str)) : _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$class(''));
+};
+var _mdgriffith$style_elements$Element_Internal_Adjustments$counterSpacing = function (elm) {
+	var _p8 = elm;
+	if (_p8.ctor === 'Layout') {
+		var _p25 = _p8._0.layout;
+		var _p24 = _p8._0.attrs;
+		var forPadding = function (posAttr) {
+			var _p9 = posAttr;
+			if (_p9.ctor === 'Padding') {
+				return _elm_lang$core$Maybe$Just(
+					A2(
+						_mdgriffith$style_elements$Element_Internal_Adjustments$defaultPadding,
+						{ctor: '_Tuple4', _0: _p9._0, _1: _p9._1, _2: _p9._2, _3: _p9._3},
+						{ctor: '_Tuple4', _0: 0, _1: 0, _2: 0, _3: 0}));
+			} else {
+				return _elm_lang$core$Maybe$Nothing;
+			}
+		};
+		var forSpacing = function (posAttr) {
+			var _p10 = posAttr;
+			if (_p10.ctor === 'Spacing') {
+				var _p12 = _p10._1;
+				var _p11 = _p10._0;
+				return _elm_lang$core$Maybe$Just(
+					{ctor: '_Tuple4', _0: _p12, _1: _p11, _2: _p12, _3: _p11});
+			} else {
+				return _elm_lang$core$Maybe$Nothing;
+			}
+		};
+		var padding = _elm_lang$core$List$head(
+			_elm_lang$core$List$reverse(
+				A2(_elm_lang$core$List$filterMap, forPadding, _p24)));
+		var spacing = _elm_lang$core$List$head(
+			_elm_lang$core$List$reverse(
+				A2(_elm_lang$core$List$filterMap, forSpacing, _p24)));
+		var hasSpacing = function () {
+			var _p13 = spacing;
+			if (_p13.ctor === 'Nothing') {
+				return false;
+			} else {
+				return true;
+			}
+		}();
+		var _p14 = A2(
+			_elm_lang$core$List$partition,
+			function (attr) {
+				return _elm_lang$core$Native_Utils.eq(
+					attr,
+					_mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Center)) || _elm_lang$core$Native_Utils.eq(
+					attr,
+					_mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$VerticalCenter));
+			},
+			_p24);
+		var centeredProps = _p14._0;
+		var others = _p14._1;
+		var _p15 = _p25;
+		if (_p15.ctor === 'FlexLayout') {
+			if (hasSpacing) {
+				var phantomPadding = _mdgriffith$style_elements$Element_Internal_Model$PhantomPadding(
+					A2(
+						_elm_lang$core$Maybe$withDefault,
+						{ctor: '_Tuple4', _0: 0, _1: 0, _2: 0, _3: 0},
+						padding));
+				var _p16 = function () {
+					var _p17 = spacing;
+					if (_p17.ctor === 'Nothing') {
+						return {
+							ctor: '_Tuple3',
+							_0: {ctor: '_Tuple4', _0: 0, _1: 0, _2: 0, _3: 0},
+							_1: A2(_mdgriffith$style_elements$Element_Internal_Model$Spacing, 0, 0),
+							_2: 0
+						};
+					} else {
+						var _p20 = _p17._0._1;
+						var _p19 = _p17._0._3;
+						var _p18 = _p17._0._2;
+						return {
+							ctor: '_Tuple3',
+							_0: {ctor: '_Tuple4', _0: -1 * _p17._0._0, _1: -1 * _p20, _2: -1 * _p18, _3: -1 * _p19},
+							_1: A2(_mdgriffith$style_elements$Element_Internal_Model$Spacing, _p20, _p18),
+							_2: (_p20 + _p19) / 2
+						};
+					}
+				}();
+				var negativeMargin = _p16._0;
+				var spacingAttr = _p16._1;
+				var totalHSpacing = _p16._2;
+				var forAlignment = function (attr) {
+					var _p21 = attr;
+					switch (_p21.ctor) {
+						case 'HAlign':
+							return true;
+						case 'VAlign':
+							return true;
+						default:
+							return false;
+					}
+				};
+				var _p22 = A2(_elm_lang$core$List$partition, forAlignment, _p24);
+				var aligned = _p22._0;
+				var unaligned = _p22._1;
+				return _mdgriffith$style_elements$Element_Internal_Model$Layout(
+					{
+						node: _p8._0.node,
+						style: _p8._0.style,
+						layout: A2(
+							_mdgriffith$style_elements$Style_Internal_Model$FlexLayout,
+							_mdgriffith$style_elements$Style_Internal_Model$GoRight,
+							{ctor: '[]'}),
+						attrs: {
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Adjustments$tag('counter-spacing-container'),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(true),
+								_1: unaligned
+							}
+						},
+						children: _mdgriffith$style_elements$Element_Internal_Model$Normal(
+							{
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$Layout(
+									{
+										node: 'div',
+										style: _elm_lang$core$Maybe$Nothing,
+										layout: _p25,
+										attrs: {
+											ctor: '::',
+											_0: _mdgriffith$style_elements$Element_Internal_Adjustments$tag('counter-spacing'),
+											_1: {
+												ctor: '::',
+												_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(false),
+												_1: {
+													ctor: '::',
+													_0: phantomPadding,
+													_1: {
+														ctor: '::',
+														_0: _mdgriffith$style_elements$Element_Internal_Model$Margin(negativeMargin),
+														_1: {
+															ctor: '::',
+															_0: spacingAttr,
+															_1: {
+																ctor: '::',
+																_0: _mdgriffith$style_elements$Element_Internal_Model$Width(
+																	A2(_mdgriffith$style_elements$Style_Internal_Model$Calc, 100, totalHSpacing)),
+																_1: {
+																	ctor: '::',
+																	_0: _mdgriffith$style_elements$Element_Internal_Model$Shrink(1),
+																	_1: aligned
+																}
+															}
+														}
+													}
+												}
+											}
+										},
+										children: function () {
+											var _p23 = _p8._0.children;
+											if (_p23.ctor === 'Normal') {
+												return _mdgriffith$style_elements$Element_Internal_Model$Normal(
+													A2(
+														_elm_lang$core$List$map,
+														_mdgriffith$style_elements$Element_Internal_Modify$addAttr(
+															_mdgriffith$style_elements$Element_Internal_Model$PointerEvents(true)),
+														_p23._0));
+											} else {
+												return _mdgriffith$style_elements$Element_Internal_Model$Keyed(
+													A2(
+														_elm_lang$core$List$map,
+														_elm_lang$core$Tuple$mapSecond(
+															_mdgriffith$style_elements$Element_Internal_Modify$addAttr(
+																_mdgriffith$style_elements$Element_Internal_Model$PointerEvents(true))),
+														_p23._0));
+											}
+										}(),
+										absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+									}),
+								_1: {ctor: '[]'}
+							}),
+						absolutelyPositioned: _p8._0.absolutelyPositioned
+					});
+			} else {
+				return _mdgriffith$style_elements$Element_Internal_Model$Layout(
+					_elm_lang$core$Native_Utils.update(
+						_p8._0,
+						{
+							attrs: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(true),
+								_1: _p24
+							}
+						}));
+			}
+		} else {
+			return elm;
+		}
+	} else {
+		return elm;
+	}
+};
+var _mdgriffith$style_elements$Element_Internal_Adjustments$positionNearby = F2(
+	function (parent, elm) {
+		var setPosition = F3(
+			function (nearbyPosition, _p26, el) {
+				var _p27 = _p26;
+				var _p31 = _p27._1;
+				var _p30 = _p27._0;
+				var nearbyAlignment = function () {
+					var _p28 = nearbyPosition;
+					_v13_4:
+					do {
+						if ((_p28.ctor === 'Just') && (_p28._0.ctor === 'Nearby')) {
+							switch (_p28._0._0.ctor) {
+								case 'Above':
+									return {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$Top),
+										_1: {ctor: '[]'}
+									};
+								case 'Below':
+									return {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$Bottom),
+										_1: {ctor: '[]'}
+									};
+								case 'OnRight':
+									return {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Right),
+										_1: {ctor: '[]'}
+									};
+								case 'OnLeft':
+									return {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Left),
+										_1: {ctor: '[]'}
+									};
+								default:
+									break _v13_4;
+							}
+						} else {
+							break _v13_4;
+						}
+					} while(false);
+					return {ctor: '[]'};
+				}();
+				var framed = function () {
+					var _p29 = nearbyPosition;
+					if (_p29.ctor === 'Nothing') {
+						return false;
+					} else {
+						return true;
+					}
+				}();
+				return (_elm_lang$core$Native_Utils.eq(
+					nearbyPosition,
+					_elm_lang$core$Maybe$Just(
+						_mdgriffith$style_elements$Element_Internal_Model$Nearby(_mdgriffith$style_elements$Element_Internal_Model$Above))) || _elm_lang$core$Native_Utils.eq(
+					nearbyPosition,
+					_elm_lang$core$Maybe$Just(
+						_mdgriffith$style_elements$Element_Internal_Model$Nearby(_mdgriffith$style_elements$Element_Internal_Model$Below)))) ? _mdgriffith$style_elements$Element_Internal_Model$Layout(
+					{
+						node: 'div',
+						style: _elm_lang$core$Maybe$Nothing,
+						layout: A2(
+							_mdgriffith$style_elements$Style_Internal_Model$FlexLayout,
+							_mdgriffith$style_elements$Style_Internal_Model$GoRight,
+							{ctor: '[]'}),
+						attrs: {
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Adjustments$tag('above-below-intermediate-parent'),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(false),
+								_1: {
+									ctor: '::',
+									_0: _mdgriffith$style_elements$Element_Internal_Model$Height(
+										_mdgriffith$style_elements$Style_Internal_Model$Px(0)),
+									_1: {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Element_Internal_Model$Width(
+											_mdgriffith$style_elements$Style_Internal_Model$Percent(100)),
+										_1: {
+											ctor: '::',
+											_0: _mdgriffith$style_elements$Element_Internal_Model$PositionFrame(
+												_mdgriffith$style_elements$Element_Internal_Model$Absolute(
+													_elm_lang$core$Native_Utils.eq(
+														nearbyPosition,
+														_elm_lang$core$Maybe$Just(
+															_mdgriffith$style_elements$Element_Internal_Model$Nearby(_mdgriffith$style_elements$Element_Internal_Model$Above))) ? _mdgriffith$style_elements$Element_Internal_Model$TopLeft : _mdgriffith$style_elements$Element_Internal_Model$BottomLeft)),
+											_1: {
+												ctor: '::',
+												_0: A3(
+													_mdgriffith$style_elements$Element_Internal_Model$Position,
+													_elm_lang$core$Maybe$Just(0),
+													_elm_lang$core$Maybe$Just(0),
+													_elm_lang$core$Maybe$Nothing),
+												_1: A2(_elm_lang$core$Basics_ops['++'], nearbyAlignment, _p30)
+											}
+										}
+									}
+								}
+							}
+						},
+						children: _mdgriffith$style_elements$Element_Internal_Model$Normal(
+							{
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$Element(
+									{
+										node: 'div',
+										style: _elm_lang$core$Maybe$Nothing,
+										attrs: {
+											ctor: '::',
+											_0: _mdgriffith$style_elements$Element_Internal_Adjustments$tag('above-below-intermediate'),
+											_1: {
+												ctor: '::',
+												_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(false),
+												_1: {
+													ctor: '::',
+													_0: _mdgriffith$style_elements$Element_Internal_Model$PositionFrame(
+														_mdgriffith$style_elements$Element_Internal_Model$Absolute(
+															_elm_lang$core$Native_Utils.eq(
+																nearbyPosition,
+																_elm_lang$core$Maybe$Just(
+																	_mdgriffith$style_elements$Element_Internal_Model$Nearby(_mdgriffith$style_elements$Element_Internal_Model$Above))) ? _mdgriffith$style_elements$Element_Internal_Model$BottomLeft : _mdgriffith$style_elements$Element_Internal_Model$TopLeft)),
+													_1: {
+														ctor: '::',
+														_0: A3(
+															_mdgriffith$style_elements$Element_Internal_Model$Position,
+															_elm_lang$core$Maybe$Nothing,
+															_elm_lang$core$Maybe$Just(0),
+															_elm_lang$core$Maybe$Nothing),
+														_1: {
+															ctor: '::',
+															_0: _mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$Bottom),
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										},
+										child: _mdgriffith$style_elements$Element_Internal_Adjustments$counterSpacing(
+											A2(
+												_mdgriffith$style_elements$Element_Internal_Modify$setAttrs,
+												{
+													ctor: '::',
+													_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(true),
+													_1: {
+														ctor: '::',
+														_0: _mdgriffith$style_elements$Element_Internal_Model$PositionFrame(
+															_mdgriffith$style_elements$Element_Internal_Model$Absolute(_mdgriffith$style_elements$Element_Internal_Model$TopLeft)),
+														_1: {
+															ctor: '::',
+															_0: A3(
+																_mdgriffith$style_elements$Element_Internal_Model$Position,
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Nothing),
+															_1: _p31
+														}
+													}
+												},
+												el)),
+										absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+									}),
+								_1: {ctor: '[]'}
+							}),
+						absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+					}) : (framed ? _mdgriffith$style_elements$Element_Internal_Model$Layout(
+					{
+						node: 'div',
+						style: _elm_lang$core$Maybe$Nothing,
+						layout: A2(
+							_mdgriffith$style_elements$Style_Internal_Model$FlexLayout,
+							_mdgriffith$style_elements$Style_Internal_Model$GoRight,
+							{ctor: '[]'}),
+						attrs: {
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Adjustments$tag('nearby-intermediate-parent'),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(false),
+								_1: {
+									ctor: '::',
+									_0: _mdgriffith$style_elements$Element_Internal_Model$Height(
+										_mdgriffith$style_elements$Style_Internal_Model$Percent(100)),
+									_1: {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Element_Internal_Model$Width(
+											_mdgriffith$style_elements$Style_Internal_Model$Percent(100)),
+										_1: {
+											ctor: '::',
+											_0: _mdgriffith$style_elements$Element_Internal_Model$PositionFrame(
+												_mdgriffith$style_elements$Element_Internal_Model$Absolute(_mdgriffith$style_elements$Element_Internal_Model$TopLeft)),
+											_1: {
+												ctor: '::',
+												_0: A3(
+													_mdgriffith$style_elements$Element_Internal_Model$Position,
+													_elm_lang$core$Maybe$Just(0),
+													_elm_lang$core$Maybe$Just(0),
+													_elm_lang$core$Maybe$Nothing),
+												_1: A2(_elm_lang$core$Basics_ops['++'], nearbyAlignment, _p30)
+											}
+										}
+									}
+								}
+							}
+						},
+						children: _mdgriffith$style_elements$Element_Internal_Model$Normal(
+							{
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$Element(
+									{
+										node: 'div',
+										style: _elm_lang$core$Maybe$Nothing,
+										attrs: A2(
+											_elm_lang$core$Basics_ops['++'],
+											_p31,
+											{
+												ctor: '::',
+												_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(false),
+												_1: {
+													ctor: '::',
+													_0: _mdgriffith$style_elements$Element_Internal_Model$PositionFrame(_mdgriffith$style_elements$Element_Internal_Model$Relative),
+													_1: {
+														ctor: '::',
+														_0: A3(
+															_mdgriffith$style_elements$Element_Internal_Model$Position,
+															_elm_lang$core$Maybe$Just(0),
+															_elm_lang$core$Maybe$Just(0),
+															_elm_lang$core$Maybe$Nothing),
+														_1: {
+															ctor: '::',
+															_0: A4(
+																_mdgriffith$style_elements$Element_Internal_Model$Padding,
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Just(0)),
+															_1: {
+																ctor: '::',
+																_0: _mdgriffith$style_elements$Element_Internal_Adjustments$tag('nearby-intermediate'),
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}
+											}),
+										child: _mdgriffith$style_elements$Element_Internal_Adjustments$counterSpacing(
+											A2(
+												_mdgriffith$style_elements$Element_Internal_Modify$addAttrList,
+												{
+													ctor: '::',
+													_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(true),
+													_1: {
+														ctor: '::',
+														_0: _mdgriffith$style_elements$Element_Internal_Model$PositionFrame(
+															_mdgriffith$style_elements$Element_Internal_Model$Absolute(_mdgriffith$style_elements$Element_Internal_Model$TopLeft)),
+														_1: {
+															ctor: '::',
+															_0: A3(
+																_mdgriffith$style_elements$Element_Internal_Model$Position,
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Nothing),
+															_1: {ctor: '[]'}
+														}
+													}
+												},
+												el)),
+										absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+									}),
+								_1: {ctor: '[]'}
+							}),
+						absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+					}) : ((!_elm_lang$core$List$isEmpty(_p30)) ? _mdgriffith$style_elements$Element_Internal_Model$Layout(
+					{
+						node: 'div',
+						style: _elm_lang$core$Maybe$Nothing,
+						layout: A2(
+							_mdgriffith$style_elements$Style_Internal_Model$FlexLayout,
+							_mdgriffith$style_elements$Style_Internal_Model$GoRight,
+							{ctor: '[]'}),
+						attrs: {
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Adjustments$tag('nearby-intermediate-parent'),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(false),
+								_1: {
+									ctor: '::',
+									_0: _mdgriffith$style_elements$Element_Internal_Model$Height(
+										_mdgriffith$style_elements$Style_Internal_Model$Percent(100)),
+									_1: {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Element_Internal_Model$Width(
+											_mdgriffith$style_elements$Style_Internal_Model$Percent(100)),
+										_1: {
+											ctor: '::',
+											_0: _mdgriffith$style_elements$Element_Internal_Model$PositionFrame(_mdgriffith$style_elements$Element_Internal_Model$Relative),
+											_1: {
+												ctor: '::',
+												_0: A3(
+													_mdgriffith$style_elements$Element_Internal_Model$Position,
+													_elm_lang$core$Maybe$Just(0),
+													_elm_lang$core$Maybe$Just(0),
+													_elm_lang$core$Maybe$Nothing),
+												_1: A2(_elm_lang$core$Basics_ops['++'], nearbyAlignment, _p30)
+											}
+										}
+									}
+								}
+							}
+						},
+						children: _mdgriffith$style_elements$Element_Internal_Model$Normal(
+							{
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$Element(
+									{
+										node: 'div',
+										style: _elm_lang$core$Maybe$Nothing,
+										attrs: A2(
+											_elm_lang$core$Basics_ops['++'],
+											_p31,
+											{
+												ctor: '::',
+												_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(false),
+												_1: {
+													ctor: '::',
+													_0: _mdgriffith$style_elements$Element_Internal_Model$PositionFrame(_mdgriffith$style_elements$Element_Internal_Model$Relative),
+													_1: {
+														ctor: '::',
+														_0: A3(
+															_mdgriffith$style_elements$Element_Internal_Model$Position,
+															_elm_lang$core$Maybe$Just(0),
+															_elm_lang$core$Maybe$Just(0),
+															_elm_lang$core$Maybe$Nothing),
+														_1: {
+															ctor: '::',
+															_0: A4(
+																_mdgriffith$style_elements$Element_Internal_Model$Padding,
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Just(0)),
+															_1: {
+																ctor: '::',
+																_0: _mdgriffith$style_elements$Element_Internal_Adjustments$tag('nearby-intermediate'),
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}
+											}),
+										child: _mdgriffith$style_elements$Element_Internal_Adjustments$counterSpacing(
+											A2(
+												_mdgriffith$style_elements$Element_Internal_Modify$addAttrList,
+												{
+													ctor: '::',
+													_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(true),
+													_1: {
+														ctor: '::',
+														_0: _mdgriffith$style_elements$Element_Internal_Model$PositionFrame(_mdgriffith$style_elements$Element_Internal_Model$Relative),
+														_1: {
+															ctor: '::',
+															_0: A3(
+																_mdgriffith$style_elements$Element_Internal_Model$Position,
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Just(0),
+																_elm_lang$core$Maybe$Nothing),
+															_1: {ctor: '[]'}
+														}
+													}
+												},
+												el)),
+										absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+									}),
+								_1: {ctor: '[]'}
+							}),
+						absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+					}) : _mdgriffith$style_elements$Element_Internal_Adjustments$counterSpacing(elm)));
+			});
+		var forAlignment = function (attr) {
+			var _p32 = attr;
+			switch (_p32.ctor) {
+				case 'HAlign':
+					return true;
+				case 'VAlign':
+					return true;
+				default:
+					return false;
+			}
+		};
+		var separateAlignment = function (attrs) {
+			return A2(_elm_lang$core$List$partition, forAlignment, attrs);
+		};
+		var _p33 = elm;
+		switch (_p33.ctor) {
+			case 'Element':
+				var _p37 = _p33._0.attrs;
+				var isFrame = function (attr) {
+					var _p34 = attr;
+					if (_p34.ctor === 'PositionFrame') {
+						return _elm_lang$core$Maybe$Just(_p34._0);
+					} else {
+						return _elm_lang$core$Maybe$Nothing;
+					}
+				};
+				var frame = _elm_lang$core$List$head(
+					A2(_elm_lang$core$List$filterMap, isFrame, _p37));
+				var _p35 = separateAlignment(_p37);
+				var aligned = _p35._0;
+				var unaligned = _p35._1;
+				var _p36 = parent;
+				if (_p36.ctor === 'Nothing') {
+					return A3(
+						setPosition,
+						frame,
+						{ctor: '_Tuple2', _0: aligned, _1: unaligned},
+						elm);
+				} else {
+					return elm;
+				}
+			case 'Layout':
+				var _p41 = _p33._0.attrs;
+				var isFrame = function (attr) {
+					var _p38 = attr;
+					if (_p38.ctor === 'PositionFrame') {
+						return _elm_lang$core$Maybe$Just(_p38._0);
+					} else {
+						return _elm_lang$core$Maybe$Nothing;
+					}
+				};
+				var frame = _elm_lang$core$List$head(
+					A2(_elm_lang$core$List$filterMap, isFrame, _p41));
+				var _p39 = separateAlignment(_p41);
+				var aligned = _p39._0;
+				var unaligned = _p39._1;
+				var _p40 = parent;
+				if (_p40.ctor === 'Nothing') {
+					return A3(
+						setPosition,
+						frame,
+						{ctor: '_Tuple2', _0: aligned, _1: unaligned},
+						elm);
+				} else {
+					return _mdgriffith$style_elements$Element_Internal_Adjustments$counterSpacing(elm);
+				}
+			default:
+				return _mdgriffith$style_elements$Element_Internal_Adjustments$counterSpacing(elm);
+		}
+	});
+var _mdgriffith$style_elements$Element_Internal_Adjustments$centerTextLayout = function (elm) {
+	var _p42 = elm;
+	if (_p42.ctor === 'Layout') {
+		var _p43 = A2(
+			_elm_lang$core$List$partition,
+			function (attr) {
+				return _elm_lang$core$Native_Utils.eq(
+					attr,
+					_mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Center)) || _elm_lang$core$Native_Utils.eq(
+					attr,
+					_mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$VerticalCenter));
+			},
+			_p42._0.attrs);
+		var centeredProps = _p43._0;
+		var others = _p43._1;
+		var _p44 = _p42._0.layout;
+		if (_p44.ctor === 'TextLayout') {
+			return (!_elm_lang$core$List$isEmpty(centeredProps)) ? _mdgriffith$style_elements$Element_Internal_Model$Layout(
+				{
+					node: 'div',
+					style: _elm_lang$core$Maybe$Nothing,
+					layout: A2(
+						_mdgriffith$style_elements$Style_Internal_Model$FlexLayout,
+						_mdgriffith$style_elements$Style_Internal_Model$GoRight,
+						{ctor: '[]'}),
+					attrs: {
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Element_Internal_Adjustments$tag('center-text'),
+						_1: {
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(false),
+							_1: centeredProps
+						}
+					},
+					children: _mdgriffith$style_elements$Element_Internal_Model$Normal(
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Model$Layout(
+								_elm_lang$core$Native_Utils.update(
+									_p42._0,
+									{
+										attrs: {
+											ctor: '::',
+											_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(true),
+											_1: others
+										}
+									})),
+							_1: {ctor: '[]'}
+						}),
+					absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+				}) : elm;
+		} else {
+			return elm;
+		}
+	} else {
+		return elm;
+	}
+};
+var _mdgriffith$style_elements$Element_Internal_Adjustments$apply = function (root) {
+	var stack = F2(
+		function (parent, el) {
+			return function (_p45) {
+				return _mdgriffith$style_elements$Element_Internal_Adjustments$hoistFixedScreenElements(
+					A2(
+						_mdgriffith$style_elements$Element_Internal_Adjustments$positionNearby,
+						parent,
+						_mdgriffith$style_elements$Element_Internal_Adjustments$centerTextLayout(_p45)));
+			}(el);
+		});
+	return A3(_mdgriffith$style_elements$Element_Internal_Model$adjust, stack, _elm_lang$core$Maybe$Nothing, root);
+};

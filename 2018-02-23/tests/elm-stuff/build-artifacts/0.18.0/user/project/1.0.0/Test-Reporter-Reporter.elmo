@@ -1,0 +1,30 @@
+var _user$project$Test_Reporter_Reporter$TestReporter = F4(
+	function (a, b, c, d) {
+		return {format: a, reportBegin: b, reportComplete: c, reportSummary: d};
+	});
+var _user$project$Test_Reporter_Reporter$createReporter = function (report) {
+	var _p0 = report;
+	switch (_p0.ctor) {
+		case 'JsonReport':
+			return A4(_user$project$Test_Reporter_Reporter$TestReporter, 'JSON', _user$project$Test_Reporter_Json$reportBegin, _user$project$Test_Reporter_Json$reportComplete, _user$project$Test_Reporter_Json$reportSummary);
+		case 'ConsoleReport':
+			var _p1 = _p0._0;
+			return A4(
+				_user$project$Test_Reporter_Reporter$TestReporter,
+				'CHALK',
+				_user$project$Test_Reporter_Console$reportBegin(_p1),
+				_user$project$Test_Reporter_Console$reportComplete(_p1),
+				_user$project$Test_Reporter_Console$reportSummary(_p1));
+		default:
+			return A4(_user$project$Test_Reporter_Reporter$TestReporter, 'JUNIT', _user$project$Test_Reporter_JUnit$reportBegin, _user$project$Test_Reporter_JUnit$reportComplete, _user$project$Test_Reporter_JUnit$reportSummary);
+	}
+};
+var _user$project$Test_Reporter_Reporter$RunInfo = F4(
+	function (a, b, c, d) {
+		return {paths: a, fuzzRuns: b, testCount: c, initialSeed: d};
+	});
+var _user$project$Test_Reporter_Reporter$JUnitReport = {ctor: 'JUnitReport'};
+var _user$project$Test_Reporter_Reporter$JsonReport = {ctor: 'JsonReport'};
+var _user$project$Test_Reporter_Reporter$ConsoleReport = function (a) {
+	return {ctor: 'ConsoleReport', _0: a};
+};

@@ -1,0 +1,255 @@
+var _user$project$Test_Reporter_Console_Format$verticalBar = F3(
+	function (comparison, expected, actual) {
+		return A2(
+			_elm_lang$core$String$join,
+			'\n',
+			{
+				ctor: '::',
+				_0: actual,
+				_1: {
+					ctor: '::',
+					_0: '╷',
+					_1: {
+						ctor: '::',
+						_0: A2(_elm_lang$core$Basics_ops['++'], '│ ', comparison),
+						_1: {
+							ctor: '::',
+							_0: '╵',
+							_1: {
+								ctor: '::',
+								_0: expected,
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			});
+	});
+var _user$project$Test_Reporter_Console_Format$listDiffToString = F4(
+	function (index, description, _p0, originals) {
+		listDiffToString:
+		while (true) {
+			var _p1 = _p0;
+			var _p2 = {ctor: '_Tuple2', _0: _p1.expected, _1: _p1.actual};
+			if (_p2._0.ctor === '[]') {
+				if (_p2._1.ctor === '[]') {
+					return A2(
+						_elm_lang$core$String$join,
+						'',
+						{
+							ctor: '::',
+							_0: 'Two lists were unequal previously, yet ended up equal later.',
+							_1: {
+								ctor: '::',
+								_0: 'This should never happen!',
+								_1: {
+									ctor: '::',
+									_0: 'Please report this bug to https://github.com/elm-community/elm-test/issues - and include these lists: ',
+									_1: {
+										ctor: '::',
+										_0: '\n',
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$core$Basics$toString(originals.originalExpected),
+											_1: {
+												ctor: '::',
+												_0: '\n',
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$core$Basics$toString(originals.originalActual),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						});
+				} else {
+					return A3(
+						_user$project$Test_Reporter_Console_Format$verticalBar,
+						A2(_elm_lang$core$Basics_ops['++'], description, ' was longer than'),
+						_elm_lang$core$Basics$toString(originals.originalExpected),
+						_elm_lang$core$Basics$toString(originals.originalActual));
+				}
+			} else {
+				if (_p2._1.ctor === '[]') {
+					return A3(
+						_user$project$Test_Reporter_Console_Format$verticalBar,
+						A2(_elm_lang$core$Basics_ops['++'], description, ' was shorter than'),
+						_elm_lang$core$Basics$toString(originals.originalExpected),
+						_elm_lang$core$Basics$toString(originals.originalActual));
+				} else {
+					var _p4 = _p2._0._0;
+					var _p3 = _p2._1._0;
+					if (_elm_lang$core$Native_Utils.eq(_p4, _p3)) {
+						var _v2 = index + 1,
+							_v3 = description,
+							_v4 = {expected: _p2._0._1, actual: _p2._1._1},
+							_v5 = originals;
+						index = _v2;
+						description = _v3;
+						_p0 = _v4;
+						originals = _v5;
+						continue listDiffToString;
+					} else {
+						return A2(
+							_elm_lang$core$String$join,
+							'',
+							{
+								ctor: '::',
+								_0: A3(
+									_user$project$Test_Reporter_Console_Format$verticalBar,
+									description,
+									_elm_lang$core$Basics$toString(originals.originalExpected),
+									_elm_lang$core$Basics$toString(originals.originalActual)),
+								_1: {
+									ctor: '::',
+									_0: '\n\nThe first diff is at index ',
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$core$Basics$toString(index),
+										_1: {
+											ctor: '::',
+											_0: ': it was `',
+											_1: {
+												ctor: '::',
+												_0: _p3,
+												_1: {
+													ctor: '::',
+													_0: '`, but `',
+													_1: {
+														ctor: '::',
+														_0: _p4,
+														_1: {
+															ctor: '::',
+															_0: '` was expected.',
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							});
+					}
+				}
+			}
+		}
+	});
+var _user$project$Test_Reporter_Console_Format$isFloat = function (str) {
+	var _p5 = _elm_lang$core$String$toFloat(str);
+	if (_p5.ctor === 'Ok') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var _user$project$Test_Reporter_Console_Format$highlightEqual = F2(
+	function (expected, actual) {
+		if (_elm_lang$core$Native_Utils.eq(expected, '\"\"') || _elm_lang$core$Native_Utils.eq(actual, '\"\"')) {
+			return _elm_lang$core$Maybe$Nothing;
+		} else {
+			if (_user$project$Test_Reporter_Console_Format$isFloat(expected) && _user$project$Test_Reporter_Console_Format$isFloat(actual)) {
+				return _elm_lang$core$Maybe$Nothing;
+			} else {
+				var actualChars = _elm_lang$core$String$toList(actual);
+				var expectedChars = _elm_lang$core$String$toList(expected);
+				return _elm_lang$core$Maybe$Just(
+					{
+						ctor: '_Tuple2',
+						_0: A2(
+							_elm_lang$core$List$map,
+							_user$project$Test_Reporter_Highlightable$map(_elm_lang$core$String$fromChar),
+							A2(_user$project$Test_Reporter_Highlightable$diffLists, expectedChars, actualChars)),
+						_1: A2(
+							_elm_lang$core$List$map,
+							_user$project$Test_Reporter_Highlightable$map(_elm_lang$core$String$fromChar),
+							A2(_user$project$Test_Reporter_Highlightable$diffLists, actualChars, expectedChars))
+					});
+			}
+		}
+	});
+var _user$project$Test_Reporter_Console_Format$format = F3(
+	function (formatEquality, description, reason) {
+		var _p6 = reason;
+		switch (_p6.ctor) {
+			case 'Custom':
+				return description;
+			case 'Equality':
+				var _p10 = _p6._0;
+				var _p9 = _p6._1;
+				var _p7 = A2(_user$project$Test_Reporter_Console_Format$highlightEqual, _p10, _p9);
+				if (_p7.ctor === 'Nothing') {
+					return A3(_user$project$Test_Reporter_Console_Format$verticalBar, description, _p10, _p9);
+				} else {
+					var _p8 = A2(formatEquality, _p7._0._0, _p7._0._1);
+					var formattedExpected = _p8._0;
+					var formattedActual = _p8._1;
+					return A3(_user$project$Test_Reporter_Console_Format$verticalBar, description, formattedExpected, formattedActual);
+				}
+			case 'Comparison':
+				return A3(_user$project$Test_Reporter_Console_Format$verticalBar, description, _p6._0, _p6._1);
+			case 'TODO':
+				return description;
+			case 'Invalid':
+				if (_p6._0.ctor === 'BadDescription') {
+					return _elm_lang$core$Native_Utils.eq(description, '') ? 'The empty string is not a valid test description.' : A2(_elm_lang$core$Basics_ops['++'], 'This is an invalid test description: ', description);
+				} else {
+					return description;
+				}
+			case 'ListDiff':
+				var _p12 = _p6._0;
+				var _p11 = _p6._1;
+				return A4(
+					_user$project$Test_Reporter_Console_Format$listDiffToString,
+					0,
+					description,
+					{expected: _p12, actual: _p11},
+					{originalExpected: _p12, originalActual: _p11});
+			default:
+				var _p14 = _p6._0.missing;
+				var _p13 = _p6._0.extra;
+				var missingStr = _elm_lang$core$List$isEmpty(_p14) ? '' : A2(
+					_elm_lang$core$Basics_ops['++'],
+					'\nThese keys are missing: ',
+					function (d) {
+						return A2(
+							_elm_lang$core$Basics_ops['++'],
+							'[ ',
+							A2(_elm_lang$core$Basics_ops['++'], d, ' ]'));
+					}(
+						A2(_elm_lang$core$String$join, ', ', _p14)));
+				var extraStr = _elm_lang$core$List$isEmpty(_p13) ? '' : A2(
+					_elm_lang$core$Basics_ops['++'],
+					'\nThese keys are extra: ',
+					function (d) {
+						return A2(
+							_elm_lang$core$Basics_ops['++'],
+							'[ ',
+							A2(_elm_lang$core$Basics_ops['++'], d, ' ]'));
+					}(
+						A2(_elm_lang$core$String$join, ', ', _p13)));
+				return A2(
+					_elm_lang$core$String$join,
+					'',
+					{
+						ctor: '::',
+						_0: A3(_user$project$Test_Reporter_Console_Format$verticalBar, description, _p6._0.expected, _p6._0.actual),
+						_1: {
+							ctor: '::',
+							_0: '\n',
+							_1: {
+								ctor: '::',
+								_0: extraStr,
+								_1: {
+									ctor: '::',
+									_0: missingStr,
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					});
+		}
+	});
