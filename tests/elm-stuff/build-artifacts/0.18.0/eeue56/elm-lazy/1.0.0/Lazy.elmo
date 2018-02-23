@@ -1,0 +1,108 @@
+var _eeue56$elm_lazy$Lazy$force = function (piece) {
+	var _p0 = piece;
+	if (_p0.ctor === 'Evaluated') {
+		return _p0._0;
+	} else {
+		return _p0._0(
+			{ctor: '_Tuple0'});
+	}
+};
+var _eeue56$elm_lazy$Lazy$Evaluated = function (a) {
+	return {ctor: 'Evaluated', _0: a};
+};
+var _eeue56$elm_lazy$Lazy$evaluate = function (piece) {
+	var _p1 = piece;
+	if (_p1.ctor === 'Evaluated') {
+		return _eeue56$elm_lazy$Lazy$Evaluated(_p1._0);
+	} else {
+		return _eeue56$elm_lazy$Lazy$Evaluated(
+			_p1._0(
+				{ctor: '_Tuple0'}));
+	}
+};
+var _eeue56$elm_lazy$Lazy$Lazy = function (a) {
+	return {ctor: 'Lazy', _0: a};
+};
+var _eeue56$elm_lazy$Lazy$lazy = function (thunk) {
+	return _eeue56$elm_lazy$Lazy$Lazy(thunk);
+};
+var _eeue56$elm_lazy$Lazy$map = F2(
+	function (f, a) {
+		return _eeue56$elm_lazy$Lazy$lazy(
+			function (_p2) {
+				var _p3 = _p2;
+				return f(
+					_eeue56$elm_lazy$Lazy$force(a));
+			});
+	});
+var _eeue56$elm_lazy$Lazy$map2 = F3(
+	function (f, a, b) {
+		return _eeue56$elm_lazy$Lazy$lazy(
+			function (_p4) {
+				var _p5 = _p4;
+				return A2(
+					f,
+					_eeue56$elm_lazy$Lazy$force(a),
+					_eeue56$elm_lazy$Lazy$force(b));
+			});
+	});
+var _eeue56$elm_lazy$Lazy$map3 = F4(
+	function (f, a, b, c) {
+		return _eeue56$elm_lazy$Lazy$lazy(
+			function (_p6) {
+				var _p7 = _p6;
+				return A3(
+					f,
+					_eeue56$elm_lazy$Lazy$force(a),
+					_eeue56$elm_lazy$Lazy$force(b),
+					_eeue56$elm_lazy$Lazy$force(c));
+			});
+	});
+var _eeue56$elm_lazy$Lazy$map4 = F5(
+	function (f, a, b, c, d) {
+		return _eeue56$elm_lazy$Lazy$lazy(
+			function (_p8) {
+				var _p9 = _p8;
+				return A4(
+					f,
+					_eeue56$elm_lazy$Lazy$force(a),
+					_eeue56$elm_lazy$Lazy$force(b),
+					_eeue56$elm_lazy$Lazy$force(c),
+					_eeue56$elm_lazy$Lazy$force(d));
+			});
+	});
+var _eeue56$elm_lazy$Lazy$map5 = F6(
+	function (f, a, b, c, d, e) {
+		return _eeue56$elm_lazy$Lazy$lazy(
+			function (_p10) {
+				var _p11 = _p10;
+				return A5(
+					f,
+					_eeue56$elm_lazy$Lazy$force(a),
+					_eeue56$elm_lazy$Lazy$force(b),
+					_eeue56$elm_lazy$Lazy$force(c),
+					_eeue56$elm_lazy$Lazy$force(d),
+					_eeue56$elm_lazy$Lazy$force(e));
+			});
+	});
+var _eeue56$elm_lazy$Lazy$apply = F2(
+	function (f, x) {
+		return _eeue56$elm_lazy$Lazy$lazy(
+			function (_p12) {
+				var _p13 = _p12;
+				return A2(
+					_eeue56$elm_lazy$Lazy$force,
+					f,
+					_eeue56$elm_lazy$Lazy$force(x));
+			});
+	});
+var _eeue56$elm_lazy$Lazy$andThen = F2(
+	function (callback, a) {
+		return _eeue56$elm_lazy$Lazy$lazy(
+			function (_p14) {
+				var _p15 = _p14;
+				return _eeue56$elm_lazy$Lazy$force(
+					callback(
+						_eeue56$elm_lazy$Lazy$force(a)));
+			});
+	});

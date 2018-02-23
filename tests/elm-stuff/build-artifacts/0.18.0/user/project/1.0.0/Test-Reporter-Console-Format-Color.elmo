@@ -1,0 +1,14 @@
+var _user$project$Test_Reporter_Console_Format_Color$fromHighlightable = _user$project$Test_Reporter_Highlightable$resolve(
+	{fromHighlighted: _user$project$Test_Runner_Node_Vendor_Console$colorsInverted, fromPlain: _elm_lang$core$Basics$identity});
+var _user$project$Test_Reporter_Console_Format_Color$formatEquality = F2(
+	function (highlightedExpected, highlightedActual) {
+		var formattedActual = A2(
+			_elm_lang$core$String$join,
+			'',
+			A2(_elm_lang$core$List$map, _user$project$Test_Reporter_Console_Format_Color$fromHighlightable, highlightedActual));
+		var formattedExpected = A2(
+			_elm_lang$core$String$join,
+			'',
+			A2(_elm_lang$core$List$map, _user$project$Test_Reporter_Console_Format_Color$fromHighlightable, highlightedExpected));
+		return {ctor: '_Tuple2', _0: formattedExpected, _1: formattedActual};
+	});

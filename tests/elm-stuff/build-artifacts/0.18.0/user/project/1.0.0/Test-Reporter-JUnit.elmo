@@ -1,0 +1,259 @@
+var _user$project$Test_Reporter_JUnit$reasonToString = F2(
+	function (description, reason) {
+		var _p0 = reason;
+		switch (_p0.ctor) {
+			case 'Custom':
+				return description;
+			case 'Equality':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					_p0._0,
+					A2(_elm_lang$core$Basics_ops['++'], '\n\nwas not equal to\n\n', _p0._1));
+			case 'Comparison':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					_p0._0,
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						'\n\nfailed when compared with ',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							description,
+							A2(_elm_lang$core$Basics_ops['++'], ' on\n\n', _p0._1))));
+			case 'TODO':
+				return A2(_elm_lang$core$Basics_ops['++'], 'TODO: ', description);
+			case 'Invalid':
+				if (_p0._0.ctor === 'BadDescription') {
+					var explanation = _elm_lang$core$Native_Utils.eq(description, '') ? 'The empty string is not a valid test description.' : A2(_elm_lang$core$Basics_ops['++'], 'This is an invalid test description: ', description);
+					return A2(_elm_lang$core$Basics_ops['++'], 'Invalid test: ', explanation);
+				} else {
+					return A2(_elm_lang$core$Basics_ops['++'], 'Invalid test: ', description);
+				}
+			case 'ListDiff':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(_p0._0),
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						'\n\nhad different elements than\n\n',
+						_elm_lang$core$Basics$toString(_p0._1)));
+			default:
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(_p0._0.expected),
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						'\n\nhad different contents than\n\n',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_elm_lang$core$Basics$toString(_p0._0.actual),
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								'\n\nthese were extra:\n\n',
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(_p0._0.extra),
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										'\n\nthese were missing:\n\n',
+										_elm_lang$core$Basics$toString(_p0._0.missing)))))));
+		}
+	});
+var _user$project$Test_Reporter_JUnit$encodeTime = function (time) {
+	return _elm_lang$core$Json_Encode$string(
+		_elm_lang$core$Basics$toString(
+			_elm_lang$core$Time$inSeconds(time)));
+};
+var _user$project$Test_Reporter_JUnit$formatClassAndName = function (labels) {
+	var _p1 = labels;
+	if (_p1.ctor === '::') {
+		return {
+			ctor: '_Tuple2',
+			_0: A2(
+				_elm_lang$core$String$join,
+				' ',
+				_elm_lang$core$List$reverse(_p1._1)),
+			_1: _p1._0
+		};
+	} else {
+		return {ctor: '_Tuple2', _0: '', _1: ''};
+	}
+};
+var _user$project$Test_Reporter_JUnit$formatFailure = function (_p2) {
+	var _p3 = _p2;
+	var message = A2(_user$project$Test_Reporter_JUnit$reasonToString, _p3.description, _p3.reason);
+	var _p4 = _p3.given;
+	if (_p4.ctor === 'Just') {
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			'Given ',
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				_p4._0,
+				A2(_elm_lang$core$Basics_ops['++'], '\n\n', message)));
+	} else {
+		return message;
+	}
+};
+var _user$project$Test_Reporter_JUnit$encodeFailureTuple = function (message) {
+	return {
+		ctor: '_Tuple2',
+		_0: 'failure',
+		_1: _elm_lang$core$Json_Encode$string(message)
+	};
+};
+var _user$project$Test_Reporter_JUnit$encodeOutcome = function (outcome) {
+	var _p5 = outcome;
+	switch (_p5.ctor) {
+		case 'Passed':
+			return {ctor: '[]'};
+		case 'Failed':
+			var message = A2(
+				_elm_lang$core$String$join,
+				'\n\n\n',
+				A2(_elm_lang$core$List$map, _user$project$Test_Reporter_JUnit$formatFailure, _p5._0));
+			return {
+				ctor: '::',
+				_0: _user$project$Test_Reporter_JUnit$encodeFailureTuple(message),
+				_1: {ctor: '[]'}
+			};
+		default:
+			return {
+				ctor: '::',
+				_0: _user$project$Test_Reporter_JUnit$encodeFailureTuple(
+					A2(_elm_lang$core$Basics_ops['++'], 'TODO: ', _p5._0)),
+				_1: {ctor: '[]'}
+			};
+	}
+};
+var _user$project$Test_Reporter_JUnit$reportComplete = function (_p6) {
+	var _p7 = _p6;
+	var _p8 = _user$project$Test_Reporter_JUnit$formatClassAndName(_p7.labels);
+	var classname = _p8._0;
+	var name = _p8._1;
+	return _elm_lang$core$Json_Encode$object(
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			{
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: '@classname',
+					_1: _elm_lang$core$Json_Encode$string(classname)
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: '@name',
+						_1: _elm_lang$core$Json_Encode$string(name)
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: '@time',
+							_1: _user$project$Test_Reporter_JUnit$encodeTime(_p7.duration)
+						},
+						_1: {ctor: '[]'}
+					}
+				}
+			},
+			_user$project$Test_Reporter_JUnit$encodeOutcome(_p7.outcome)));
+};
+var _user$project$Test_Reporter_JUnit$encodeExtraFailure = function (failure) {
+	return _user$project$Test_Reporter_JUnit$reportComplete(
+		{
+			labels: {ctor: '[]'},
+			duration: 0,
+			outcome: _user$project$Test_Reporter_TestResults$Failed(
+				{ctor: '[]'})
+		});
+};
+var _user$project$Test_Reporter_JUnit$reportSummary = F2(
+	function (_p9, autoFail) {
+		var _p10 = _p9;
+		var _p12 = _p10.failed;
+		var extraFailures = function () {
+			var _p11 = {ctor: '_Tuple2', _0: _p12, _1: autoFail};
+			if (((_p11.ctor === '_Tuple2') && (_p11._0 === 0)) && (_p11._1.ctor === 'Just')) {
+				return {
+					ctor: '::',
+					_0: _user$project$Test_Reporter_JUnit$encodeExtraFailure(_p11._1._0),
+					_1: {ctor: '[]'}
+				};
+			} else {
+				return {ctor: '[]'};
+			}
+		}();
+		return _elm_lang$core$Json_Encode$object(
+			{
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'testsuite',
+					_1: _elm_lang$core$Json_Encode$object(
+						{
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: '@name',
+								_1: _elm_lang$core$Json_Encode$string('elm-test')
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: '@package',
+									_1: _elm_lang$core$Json_Encode$string('elm-test')
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: '@tests',
+										_1: _elm_lang$core$Json_Encode$int(_p10.testCount)
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '_Tuple2',
+											_0: '@failed',
+											_1: _elm_lang$core$Json_Encode$int(_p12)
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '_Tuple2',
+												_0: '@errors',
+												_1: _elm_lang$core$Json_Encode$int(0)
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '_Tuple2',
+													_0: '@time',
+													_1: _elm_lang$core$Json_Encode$float(_p10.duration)
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '_Tuple2',
+														_0: 'testcase',
+														_1: _elm_lang$core$Json_Encode$list(extraFailures)
+													},
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						})
+				},
+				_1: {ctor: '[]'}
+			});
+	});
+var _user$project$Test_Reporter_JUnit$reportBegin = function (_p13) {
+	return _elm_lang$core$Maybe$Nothing;
+};

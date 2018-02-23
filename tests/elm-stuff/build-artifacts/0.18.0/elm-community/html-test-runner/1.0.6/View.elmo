@@ -1,0 +1,651 @@
+var _elm_community$html_test_runner$View$code = F2(
+	function (style, str) {
+		return A2(
+			_mdgriffith$style_elements$Element$node,
+			'pre',
+			A3(
+				_mdgriffith$style_elements$Element$el,
+				style,
+				{
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Element_Attributes$inlineStyle(
+						{
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'white-space', _1: 'pre-wrap'},
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				},
+				_mdgriffith$style_elements$Element$text(str)));
+	});
+var _elm_community$html_test_runner$View$formattedDuration = function (time) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		_elm_lang$core$Basics$toString(time),
+		' ms');
+};
+var _elm_community$html_test_runner$View$color = function (palette) {
+	var _p0 = palette;
+	switch (_p0.ctor) {
+		case 'Primary':
+			return A3(_elm_lang$core$Color$rgb, 41, 60, 75);
+		case 'Secondary':
+			return A3(_elm_lang$core$Color$rgb, 84, 84, 84);
+		case 'Accent':
+			return A3(_elm_lang$core$Color$rgb, 96, 181, 204);
+		case 'Background':
+			return A3(_elm_lang$core$Color$rgb, 255, 255, 255);
+		case 'Good':
+			return A3(_elm_lang$core$Color$rgb, 0, 100, 0);
+		case 'Bad':
+			return A3(_elm_lang$core$Color$rgb, 179, 0, 0);
+		default:
+			return A3(_elm_lang$core$Color$rgb, 122, 67, 0);
+	}
+};
+var _elm_community$html_test_runner$View$Description = function (a) {
+	return {ctor: 'Description', _0: a};
+};
+var _elm_community$html_test_runner$View$coloredLabel = F3(
+	function ($char, textColor, str) {
+		return A3(
+			_mdgriffith$style_elements$Element$column,
+			_elm_community$html_test_runner$View$Description(textColor),
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Element$text(
+					A2(
+						_elm_lang$core$String$cons,
+						$char,
+						A2(
+							_elm_lang$core$String$cons,
+							_elm_lang$core$Native_Utils.chr(' '),
+							str))),
+				_1: {ctor: '[]'}
+			});
+	});
+var _elm_community$html_test_runner$View$Header = function (a) {
+	return {ctor: 'Header', _0: a};
+};
+var _elm_community$html_test_runner$View$App = {ctor: 'App'};
+var _elm_community$html_test_runner$View$None = {ctor: 'None'};
+var _elm_community$html_test_runner$View$finished = F4(
+	function (duration, passed, failures, _p1) {
+		var _p2 = _p1;
+		return A3(
+			_mdgriffith$style_elements$Element$column,
+			_elm_community$html_test_runner$View$None,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: A3(
+					_mdgriffith$style_elements$Element$row,
+					_elm_community$html_test_runner$View$Header(_p2._0),
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Element$header(
+							_mdgriffith$style_elements$Element$text(_p2._1)),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A3(
+						_mdgriffith$style_elements$Element$row,
+						_elm_community$html_test_runner$View$None,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A3(
+								_mdgriffith$style_elements$Element$table,
+								_elm_community$html_test_runner$View$None,
+								{
+									ctor: '::',
+									_0: _mdgriffith$style_elements$Element_Attributes$spacing(10),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Element$bold('Duration'),
+										_1: {
+											ctor: '::',
+											_0: _mdgriffith$style_elements$Element$bold('Passed'),
+											_1: {
+												ctor: '::',
+												_0: _mdgriffith$style_elements$Element$bold('Failed'),
+												_1: {ctor: '[]'}
+											}
+										}
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '::',
+											_0: _mdgriffith$style_elements$Element$text(
+												_elm_community$html_test_runner$View$formattedDuration(duration)),
+											_1: {
+												ctor: '::',
+												_0: _mdgriffith$style_elements$Element$text(
+													_elm_lang$core$Basics$toString(passed)),
+												_1: {
+													ctor: '::',
+													_0: _mdgriffith$style_elements$Element$text(
+														_elm_lang$core$Basics$toString(
+															_elm_lang$core$List$length(failures))),
+													_1: {ctor: '[]'}
+												}
+											}
+										},
+										_1: {ctor: '[]'}
+									}
+								}),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
+			});
+	});
+var _elm_community$html_test_runner$View$givenCode = function (value) {
+	return A2(
+		_elm_community$html_test_runner$View$code,
+		_elm_community$html_test_runner$View$None,
+		A2(_elm_lang$core$Basics_ops['++'], 'Given ', value));
+};
+var _elm_community$html_test_runner$View$Warning = {ctor: 'Warning'};
+var _elm_community$html_test_runner$View$Bad = {ctor: 'Bad'};
+var _elm_community$html_test_runner$View$Good = {ctor: 'Good'};
+var _elm_community$html_test_runner$View$Background = {ctor: 'Background'};
+var _elm_community$html_test_runner$View$Accent = {ctor: 'Accent'};
+var _elm_community$html_test_runner$View$Secondary = {ctor: 'Secondary'};
+var _elm_community$html_test_runner$View$oneFailure = function (failure) {
+	var inContext = function (_p3) {
+		var _p4 = _p3;
+		return A3(
+			_mdgriffith$style_elements$Element$column,
+			_elm_community$html_test_runner$View$None,
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Element_Attributes$spacing(10),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A3(
+					_mdgriffith$style_elements$Element$wrappedRow,
+					_elm_community$html_test_runner$View$None,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: A2(_mdgriffith$style_elements$Element$whenJust, _p4.given, _elm_community$html_test_runner$View$givenCode),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A3(
+						_mdgriffith$style_elements$Element$wrappedRow,
+						_elm_community$html_test_runner$View$None,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A2(_elm_community$html_test_runner$View$code, _elm_community$html_test_runner$View$None, _p4.message),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
+			});
+	};
+	var _p5 = A3(
+		_elm_community$html_test_runner$Test_Runner_Exploration$formatFailure,
+		A2(
+			_elm_community$html_test_runner$View$coloredLabel,
+			_elm_lang$core$Native_Utils.chr('↓'),
+			_elm_community$html_test_runner$View$Secondary),
+		A2(
+			_elm_community$html_test_runner$View$coloredLabel,
+			_elm_lang$core$Native_Utils.chr('✗'),
+			_elm_community$html_test_runner$View$Bad),
+		failure);
+	var labels = _p5._0;
+	var expectations = _p5._1;
+	return A3(
+		_mdgriffith$style_elements$Element$el,
+		_elm_community$html_test_runner$View$None,
+		{
+			ctor: '::',
+			_0: _mdgriffith$style_elements$Element_Attributes$inlineStyle(
+				{
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: 'display', _1: 'list-item'},
+					_1: {
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'margin', _1: '10px'},
+						_1: {
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'padding', _1: '10px'},
+							_1: {ctor: '[]'}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		},
+		A3(
+			_mdgriffith$style_elements$Element$column,
+			_elm_community$html_test_runner$View$None,
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Element_Attributes$spacing(5),
+				_1: {ctor: '[]'}
+			},
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				labels,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					{
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Element$spacer(3),
+						_1: {ctor: '[]'}
+					},
+					A2(_elm_lang$core$List$map, inContext, expectations)))));
+};
+var _elm_community$html_test_runner$View$allFailures = function (failures) {
+	return A2(
+		_mdgriffith$style_elements$Element$node,
+		'ol',
+		A3(
+			_mdgriffith$style_elements$Element$column,
+			_elm_community$html_test_runner$View$None,
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Element_Attributes$spacing(10),
+				_1: {
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Element_Attributes$padding(10),
+					_1: {ctor: '[]'}
+				}
+			},
+			A2(
+				_elm_lang$core$List$map,
+				function (_p6) {
+					return A2(
+						_mdgriffith$style_elements$Element$node,
+						'li',
+						_elm_community$html_test_runner$View$oneFailure(_p6));
+				},
+				failures)));
+};
+var _elm_community$html_test_runner$View$summary = F2(
+	function (failures, message) {
+		return A3(
+			_mdgriffith$style_elements$Element$column,
+			_elm_community$html_test_runner$View$None,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: A3(
+					_mdgriffith$style_elements$Element$wrappedRow,
+					_elm_community$html_test_runner$View$None,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: message,
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A3(
+						_mdgriffith$style_elements$Element$wrappedRow,
+						_elm_community$html_test_runner$View$None,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _elm_community$html_test_runner$View$allFailures(failures),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
+			});
+	});
+var _elm_community$html_test_runner$View$Primary = {ctor: 'Primary'};
+var _elm_community$html_test_runner$View$withColor = F2(
+	function (toStyle, attributes) {
+		var withColorHelp = function (p) {
+			return A2(
+				_mdgriffith$style_elements$Style$style,
+				toStyle(p),
+				{
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Style_Color$text(
+						_elm_community$html_test_runner$View$color(p)),
+					_1: attributes
+				});
+		};
+		return A2(
+			_elm_lang$core$List$map,
+			withColorHelp,
+			{
+				ctor: '::',
+				_0: _elm_community$html_test_runner$View$Primary,
+				_1: {
+					ctor: '::',
+					_0: _elm_community$html_test_runner$View$Secondary,
+					_1: {
+						ctor: '::',
+						_0: _elm_community$html_test_runner$View$Accent,
+						_1: {
+							ctor: '::',
+							_0: _elm_community$html_test_runner$View$Background,
+							_1: {
+								ctor: '::',
+								_0: _elm_community$html_test_runner$View$Good,
+								_1: {
+									ctor: '::',
+									_0: _elm_community$html_test_runner$View$Bad,
+									_1: {
+										ctor: '::',
+										_0: _elm_community$html_test_runner$View$Warning,
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}
+			});
+	});
+var _elm_community$html_test_runner$View$stylesheet = _mdgriffith$style_elements$Style$stylesheet(
+	_elm_lang$core$List$concat(
+		{
+			ctor: '::',
+			_0: {
+				ctor: '::',
+				_0: A2(
+					_mdgriffith$style_elements$Style$style,
+					_elm_community$html_test_runner$View$None,
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_mdgriffith$style_elements$Style$style,
+						_elm_community$html_test_runner$View$App,
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Style_Color$text(
+								_elm_community$html_test_runner$View$color(_elm_community$html_test_runner$View$Primary)),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Style_Color$border(
+									_elm_community$html_test_runner$View$color(_elm_community$html_test_runner$View$Accent)),
+								_1: {
+									ctor: '::',
+									_0: _mdgriffith$style_elements$Style_Font$typeface(
+										{
+											ctor: '::',
+											_0: 'Source Sans Pro',
+											_1: {
+												ctor: '::',
+												_0: 'Trebuchet MS',
+												_1: {
+													ctor: '::',
+													_0: 'Lucida Grande',
+													_1: {
+														ctor: '::',
+														_0: 'Bitstream Vera Sans',
+														_1: {
+															ctor: '::',
+															_0: 'Helvetica Neue',
+															_1: {
+																ctor: '::',
+																_0: 'sans-serif',
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}
+											}
+										}),
+									_1: {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Style_Border$top(8),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}),
+					_1: {ctor: '[]'}
+				}
+			},
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_community$html_test_runner$View$withColor,
+					_elm_community$html_test_runner$View$Description,
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_community$html_test_runner$View$withColor,
+						_elm_community$html_test_runner$View$Header,
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Style_Font$size(24),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Style_Font$bold,
+								_1: {
+									ctor: '::',
+									_0: _mdgriffith$style_elements$Style$paddingBottomHint(24),
+									_1: {ctor: '[]'}
+								}
+							}
+						}),
+					_1: {ctor: '[]'}
+				}
+			}
+		}));
+var _elm_community$html_test_runner$View$running = F2(
+	function (completed, remaining) {
+		return A3(
+			_mdgriffith$style_elements$Element$column,
+			_elm_community$html_test_runner$View$None,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Element$header(
+					A3(
+						_mdgriffith$style_elements$Element$el,
+						_elm_community$html_test_runner$View$Header(_elm_community$html_test_runner$View$Primary),
+						{ctor: '[]'},
+						_mdgriffith$style_elements$Element$text('Running Tests...'))),
+				_1: {
+					ctor: '::',
+					_0: A3(
+						_mdgriffith$style_elements$Element$row,
+						_elm_community$html_test_runner$View$None,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element$text(
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(completed),
+									' completed')),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A3(
+							_mdgriffith$style_elements$Element$row,
+							_elm_community$html_test_runner$View$None,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element$text(
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(remaining),
+										' remaining')),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}
+			});
+	});
+var _elm_community$html_test_runner$View$app = function (model) {
+	var wrapper = function (nested) {
+		return A3(
+			_mdgriffith$style_elements$Element$row,
+			_elm_community$html_test_runner$View$App,
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Element_Attributes$padding(20),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A3(
+					_mdgriffith$style_elements$Element$el,
+					_elm_community$html_test_runner$View$None,
+					{
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Element_Attributes$width(
+							_mdgriffith$style_elements$Element_Attributes$fill(1)),
+						_1: {ctor: '[]'}
+					},
+					_mdgriffith$style_elements$Element$empty),
+				_1: {
+					ctor: '::',
+					_0: A3(
+						_mdgriffith$style_elements$Element$el,
+						_elm_community$html_test_runner$View$None,
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Attributes$width(
+								_mdgriffith$style_elements$Element_Attributes$px(960)),
+							_1: {ctor: '[]'}
+						},
+						nested),
+					_1: {
+						ctor: '::',
+						_0: A3(
+							_mdgriffith$style_elements$Element$el,
+							_elm_community$html_test_runner$View$None,
+							{
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Attributes$width(
+									_mdgriffith$style_elements$Element_Attributes$fill(1)),
+								_1: {ctor: '[]'}
+							},
+							_mdgriffith$style_elements$Element$empty),
+						_1: {ctor: '[]'}
+					}
+				}
+			});
+	};
+	return wrapper(
+		function () {
+			var _p7 = model;
+			if (_p7.ctor === 'Nothing') {
+				return A2(
+					_elm_community$html_test_runner$View$summary,
+					{ctor: '[]'},
+					_mdgriffith$style_elements$Element$header(
+						A3(
+							_mdgriffith$style_elements$Element$el,
+							_elm_community$html_test_runner$View$Header(_elm_community$html_test_runner$View$Primary),
+							{ctor: '[]'},
+							_mdgriffith$style_elements$Element$text('Loading Tests...'))));
+			} else {
+				switch (_p7._0._1.ctor) {
+					case 'Pass':
+						return A2(
+							_elm_community$html_test_runner$View$summary,
+							{ctor: '[]'},
+							A4(
+								_elm_community$html_test_runner$View$finished,
+								_p7._0._0,
+								_p7._0._1._0,
+								{ctor: '[]'},
+								{ctor: '_Tuple2', _0: _elm_community$html_test_runner$View$Good, _1: 'Test Run Passed'}));
+					case 'Todo':
+						var _p8 = _p7._0._1._1;
+						return A2(
+							_elm_community$html_test_runner$View$summary,
+							_p8,
+							A4(
+								_elm_community$html_test_runner$View$finished,
+								_p7._0._0,
+								_p7._0._1._0,
+								_p8,
+								{ctor: '_Tuple2', _0: _elm_community$html_test_runner$View$Warning, _1: 'Test Run Incomplete: TODO\'s remaining'}));
+					case 'Incomplete':
+						switch (_p7._0._1._1.ctor) {
+							case 'Only':
+								return A2(
+									_elm_community$html_test_runner$View$summary,
+									{ctor: '[]'},
+									A4(
+										_elm_community$html_test_runner$View$finished,
+										_p7._0._0,
+										_p7._0._1._0,
+										{ctor: '[]'},
+										{ctor: '_Tuple2', _0: _elm_community$html_test_runner$View$Warning, _1: 'Test Run Incomplete: Test.only was used'}));
+							case 'Skip':
+								return A2(
+									_elm_community$html_test_runner$View$summary,
+									{ctor: '[]'},
+									A4(
+										_elm_community$html_test_runner$View$finished,
+										_p7._0._0,
+										_p7._0._1._0,
+										{ctor: '[]'},
+										{ctor: '_Tuple2', _0: _elm_community$html_test_runner$View$Warning, _1: 'Test Run Incomplete: Test.skip was used'}));
+							default:
+								return A2(
+									_elm_community$html_test_runner$View$summary,
+									{ctor: '[]'},
+									A4(
+										_elm_community$html_test_runner$View$finished,
+										_p7._0._0,
+										_p7._0._1._0,
+										{ctor: '[]'},
+										{
+											ctor: '_Tuple2',
+											_0: _elm_community$html_test_runner$View$Warning,
+											_1: A2(_elm_lang$core$Basics_ops['++'], 'Test Run Incomplete: ', _p7._0._1._1._0)
+										}));
+						}
+					case 'Fail':
+						var _p9 = _p7._0._1._1;
+						return A2(
+							_elm_community$html_test_runner$View$summary,
+							_p9,
+							A4(
+								_elm_community$html_test_runner$View$finished,
+								_p7._0._0,
+								_p7._0._1._0,
+								_p9,
+								{ctor: '_Tuple2', _0: _elm_community$html_test_runner$View$Bad, _1: 'Test Run Failed'}));
+					default:
+						var _p10 = _p7._0._1._0.failures;
+						return A2(
+							_elm_community$html_test_runner$View$summary,
+							_p10,
+							A2(
+								_elm_community$html_test_runner$View$running,
+								_p7._0._1._0.passed + _elm_lang$core$List$length(_p10),
+								_p7._0._1._0.remaining));
+				}
+			}
+		}());
+};
+var _elm_community$html_test_runner$View$view = function (model) {
+	return A2(
+		_mdgriffith$style_elements$Element$viewport,
+		_elm_community$html_test_runner$View$stylesheet,
+		_elm_community$html_test_runner$View$app(model));
+};

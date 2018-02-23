@@ -1,0 +1,360 @@
+var _user$project$Test_Runner_Node$init = function (_p0) {
+	var _p1 = _p0;
+	var testReporter = _user$project$Test_Reporter_Reporter$createReporter(_p1.report);
+	var _p2 = function () {
+		var _p3 = _p1.runners;
+		switch (_p3.ctor) {
+			case 'Plain':
+				return {
+					indexedRunners: A2(
+						_elm_lang$core$List$indexedMap,
+						F2(
+							function (v0, v1) {
+								return {ctor: '_Tuple2', _0: v0, _1: v1};
+							}),
+						_p3._0),
+					autoFail: _elm_lang$core$Maybe$Nothing
+				};
+			case 'Only':
+				return {
+					indexedRunners: A2(
+						_elm_lang$core$List$indexedMap,
+						F2(
+							function (v0, v1) {
+								return {ctor: '_Tuple2', _0: v0, _1: v1};
+							}),
+						_p3._0),
+					autoFail: _elm_lang$core$Maybe$Just('Test.only was used')
+				};
+			case 'Skipping':
+				return {
+					indexedRunners: A2(
+						_elm_lang$core$List$indexedMap,
+						F2(
+							function (v0, v1) {
+								return {ctor: '_Tuple2', _0: v0, _1: v1};
+							}),
+						_p3._0),
+					autoFail: _elm_lang$core$Maybe$Just('Test.skip was used')
+				};
+			default:
+				return {
+					indexedRunners: {ctor: '[]'},
+					autoFail: _elm_lang$core$Maybe$Just(_p3._0)
+				};
+		}
+	}();
+	var indexedRunners = _p2.indexedRunners;
+	var autoFail = _p2.autoFail;
+	var testCount = _elm_lang$core$List$length(indexedRunners);
+	var model = {
+		available: _elm_lang$core$Dict$fromList(indexedRunners),
+		runInfo: {testCount: testCount, paths: _p1.paths, fuzzRuns: _p1.fuzzRuns, initialSeed: _p1.initialSeed},
+		processes: _p1.processes,
+		nextTestToRun: 0,
+		results: {ctor: '[]'},
+		testReporter: testReporter,
+		autoFail: autoFail
+	};
+	return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+};
+var _user$project$Test_Runner_Node$countFailures = F2(
+	function (_p4, failures) {
+		var _p5 = _p4;
+		var _p6 = _p5._1.outcome;
+		if (_p6.ctor === 'Failed') {
+			return failures + 1;
+		} else {
+			return failures;
+		}
+	});
+var _user$project$Test_Runner_Node$warn = F2(
+	function (str, result) {
+		var _p7 = _elm_lang$core$Debug$log(str);
+		return result;
+	});
+var _user$project$Test_Runner_Node$runThunk = _user$project$Native_RunTest.runThunk;
+var _user$project$Test_Runner_Node$receive = _elm_lang$core$Native_Platform.incomingPort('receive', _elm_lang$core$Json_Decode$value);
+var _user$project$Test_Runner_Node$send = _elm_lang$core$Native_Platform.outgoingPort(
+	'send',
+	function (v) {
+		return v;
+	});
+var _user$project$Test_Runner_Node$sendResults = F3(
+	function (isFinished, testReporter, results) {
+		var addToKeyValues = F2(
+			function (_p8, list) {
+				var _p9 = _p8;
+				return {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Basics$toString(_p9._0),
+						_1: testReporter.reportComplete(_p9._1)
+					},
+					_1: list
+				};
+			});
+		var typeStr = isFinished ? 'FINISHED' : 'RESULTS';
+		return _user$project$Test_Runner_Node$send(
+			A2(
+				_elm_lang$core$Json_Encode$encode,
+				0,
+				_elm_lang$core$Json_Encode$object(
+					{
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'type',
+							_1: _elm_lang$core$Json_Encode$string(typeStr)
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: 'results',
+								_1: _elm_lang$core$Json_Encode$object(
+									A3(
+										_elm_lang$core$List$foldl,
+										addToKeyValues,
+										{ctor: '[]'},
+										results))
+							},
+							_1: {ctor: '[]'}
+						}
+					})));
+	});
+var _user$project$Test_Runner_Node$sendBegin = function (model) {
+	var extraFields = function () {
+		var _p10 = model.testReporter.reportBegin(model.runInfo);
+		if (_p10.ctor === 'Just') {
+			return {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 'message', _1: _p10._0},
+				_1: {ctor: '[]'}
+			};
+		} else {
+			return {ctor: '[]'};
+		}
+	}();
+	var baseFields = {
+		ctor: '::',
+		_0: {
+			ctor: '_Tuple2',
+			_0: 'type',
+			_1: _elm_lang$core$Json_Encode$string('BEGIN')
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: 'testCount',
+				_1: _elm_lang$core$Json_Encode$int(model.runInfo.testCount)
+			},
+			_1: {ctor: '[]'}
+		}
+	};
+	return _user$project$Test_Runner_Node$send(
+		A2(
+			_elm_lang$core$Json_Encode$encode,
+			0,
+			_elm_lang$core$Json_Encode$object(
+				A2(_elm_lang$core$Basics_ops['++'], baseFields, extraFields))));
+};
+var _user$project$Test_Runner_Node$Model = F7(
+	function (a, b, c, d, e, f, g) {
+		return {available: a, runInfo: b, testReporter: c, results: d, processes: e, nextTestToRun: f, autoFail: g};
+	});
+var _user$project$Test_Runner_Node$Complete = F4(
+	function (a, b, c, d) {
+		return {ctor: 'Complete', _0: a, _1: b, _2: c, _3: d};
+	});
+var _user$project$Test_Runner_Node$dispatch = F2(
+	function (model, startTime) {
+		var _p11 = A2(_elm_lang$core$Dict$get, model.nextTestToRun, model.available);
+		if (_p11.ctor === 'Nothing') {
+			return A3(_user$project$Test_Runner_Node$sendResults, true, model.testReporter, model.results);
+		} else {
+			var outcomes = _user$project$Test_Reporter_TestResults$outcomesFromExpectations(
+				_user$project$Test_Runner_Node$runThunk(_p11._0.run));
+			return A2(
+				_elm_lang$core$Task$perform,
+				A3(_user$project$Test_Runner_Node$Complete, _p11._0.labels, outcomes, startTime),
+				_elm_lang$core$Time$now);
+		}
+	});
+var _user$project$Test_Runner_Node$Dispatch = function (a) {
+	return {ctor: 'Dispatch', _0: a};
+};
+var _user$project$Test_Runner_Node$update = F2(
+	function (msg, _p12) {
+		var _p13 = _p12;
+		var _p21 = _p13.testReporter;
+		var _p20 = _p13;
+		var _p14 = msg;
+		switch (_p14.ctor) {
+			case 'Receive':
+				var _p15 = A2(_elm_lang$core$Json_Decode$decodeValue, _user$project$Test_Runner_JsMessage$decoder, _p14._0);
+				if (_p15.ctor === 'Ok') {
+					if (_p15._0.ctor === 'Summary') {
+						var _p17 = _p15._0._2;
+						var _p16 = _p15._0._1;
+						var exitCode = (_elm_lang$core$Native_Utils.cmp(_p16, 0) > 0) ? 2 : ((_elm_lang$core$Native_Utils.eq(_p20.autoFail, _elm_lang$core$Maybe$Nothing) && _elm_lang$core$List$isEmpty(_p17)) ? 0 : 3);
+						var testCount = _p20.runInfo.testCount;
+						var summaryInfo = {
+							testCount: testCount,
+							passed: (testCount - _p16) - _elm_lang$core$List$length(_p17),
+							failed: _p16,
+							todos: _p17,
+							duration: _p15._0._0
+						};
+						var summary = A2(_p21.reportSummary, summaryInfo, _p20.autoFail);
+						var cmd = _user$project$Test_Runner_Node$send(
+							A2(
+								_elm_lang$core$Json_Encode$encode,
+								0,
+								_elm_lang$core$Json_Encode$object(
+									{
+										ctor: '::',
+										_0: {
+											ctor: '_Tuple2',
+											_0: 'type',
+											_1: _elm_lang$core$Json_Encode$string('SUMMARY')
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '_Tuple2',
+												_0: 'exitCode',
+												_1: _elm_lang$core$Json_Encode$int(exitCode)
+											},
+											_1: {
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: 'message', _1: summary},
+												_1: {ctor: '[]'}
+											}
+										}
+									})));
+						return {ctor: '_Tuple2', _0: _p20, _1: cmd};
+					} else {
+						var _p18 = _p15._0._0;
+						var cmd = A2(_elm_lang$core$Task$perform, _user$project$Test_Runner_Node$Dispatch, _elm_lang$core$Time$now);
+						return _elm_lang$core$Native_Utils.eq(_p18, -1) ? {
+							ctor: '_Tuple2',
+							_0: _elm_lang$core$Native_Utils.update(
+								_p20,
+								{nextTestToRun: _p18 + _p20.processes}),
+							_1: _elm_lang$core$Platform_Cmd$batch(
+								{
+									ctor: '::',
+									_0: cmd,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Test_Runner_Node$sendBegin(_p20),
+										_1: {ctor: '[]'}
+									}
+								})
+						} : {
+							ctor: '_Tuple2',
+							_0: _elm_lang$core$Native_Utils.update(
+								_p20,
+								{nextTestToRun: _p18}),
+							_1: cmd
+						};
+					}
+				} else {
+					var cmd = _user$project$Test_Runner_Node$send(
+						A2(
+							_elm_lang$core$Json_Encode$encode,
+							0,
+							_elm_lang$core$Json_Encode$object(
+								{
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: 'type',
+										_1: _elm_lang$core$Json_Encode$string('ERROR')
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '_Tuple2',
+											_0: 'message',
+											_1: _elm_lang$core$Json_Encode$string(_p15._0)
+										},
+										_1: {ctor: '[]'}
+									}
+								})));
+					return {ctor: '_Tuple2', _0: _p20, _1: cmd};
+				}
+			case 'Dispatch':
+				return {
+					ctor: '_Tuple2',
+					_0: _p20,
+					_1: A2(_user$project$Test_Runner_Node$dispatch, _p20, _p14._0)
+				};
+			default:
+				var _p19 = _p14._1;
+				var nextTestToRun = _p20.nextTestToRun + _p20.processes;
+				var isFinished = _elm_lang$core$Native_Utils.cmp(nextTestToRun, _p20.runInfo.testCount) > -1;
+				var duration = _p14._3 - _p14._2;
+				var prependOutcome = F2(
+					function (outcome, results) {
+						return {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: _p20.nextTestToRun,
+								_1: {labels: _p14._0, outcome: outcome, duration: duration}
+							},
+							_1: results
+						};
+					});
+				var results = A3(_elm_lang$core$List$foldl, prependOutcome, _p20.results, _p19);
+				if (isFinished || A2(_elm_lang$core$List$any, _user$project$Test_Reporter_TestResults$isFailure, _p19)) {
+					var cmd = A3(_user$project$Test_Runner_Node$sendResults, isFinished, _p21, results);
+					return isFinished ? {ctor: '_Tuple2', _0: _p20, _1: cmd} : {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							_p20,
+							{
+								nextTestToRun: nextTestToRun,
+								results: {ctor: '[]'}
+							}),
+						_1: _elm_lang$core$Platform_Cmd$batch(
+							{
+								ctor: '::',
+								_0: cmd,
+								_1: {
+									ctor: '::',
+									_0: A2(_elm_lang$core$Task$perform, _user$project$Test_Runner_Node$Dispatch, _elm_lang$core$Time$now),
+									_1: {ctor: '[]'}
+								}
+							})
+					};
+				} else {
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							_p20,
+							{nextTestToRun: nextTestToRun, results: results}),
+						_1: A2(_elm_lang$core$Task$perform, _user$project$Test_Runner_Node$Dispatch, _elm_lang$core$Time$now)
+					};
+				}
+		}
+	});
+var _user$project$Test_Runner_Node$Receive = function (a) {
+	return {ctor: 'Receive', _0: a};
+};
+var _user$project$Test_Runner_Node$runWithOptions = function (options) {
+	return A2(
+		_user$project$Test_Runner_Node_App$run,
+		options,
+		{
+			init: _user$project$Test_Runner_Node$init,
+			update: _user$project$Test_Runner_Node$update,
+			subscriptions: function (_p22) {
+				return _user$project$Test_Runner_Node$receive(_user$project$Test_Runner_Node$Receive);
+			}
+		});
+};

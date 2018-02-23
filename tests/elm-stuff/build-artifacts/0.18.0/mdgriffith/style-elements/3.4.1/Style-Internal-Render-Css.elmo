@@ -1,0 +1,30 @@
+var _mdgriffith$style_elements$Style_Internal_Render_Css$prop = F2(
+	function (i, _p0) {
+		var _p1 = _p0;
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			A2(_elm_lang$core$String$repeat, i, ' '),
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				_p1._0,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					': ',
+					A2(_elm_lang$core$Basics_ops['++'], _p1._1, ';'))));
+	});
+var _mdgriffith$style_elements$Style_Internal_Render_Css$brace = F2(
+	function (i, str) {
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			' {\n',
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				str,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'\n',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						A2(_elm_lang$core$String$repeat, i, ' '),
+						'}'))));
+	});
