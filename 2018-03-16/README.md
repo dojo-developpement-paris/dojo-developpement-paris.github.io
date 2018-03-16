@@ -12,12 +12,12 @@ Présents :
 - Gary
 - Arjuna
 - Benoit
+- Christophe
 
 
 Absents :
 
 - Emmanuel
-- Christophe
 - Renata
 - Ubald
 - Julien
