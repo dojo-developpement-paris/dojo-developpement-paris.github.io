@@ -1,19 +1,16 @@
 fn luhn(n: u64) -> bool {
-    let mut acc = 0;
+    (0..19).fold(0, |acc, index| {
+        acc + sum_digit(index, digit_at(index, n))
+    }) % 10 == 0
+}
 
-    for index  in 0..16 {
-        let digit = (n % 10_u64.pow(index + 1)) / 10_u64.pow(index);
-        acc += sum_digit(index, digit);
-    }
-    acc % 10 == 0
+fn digit_at(index: u32, number: u64) -> u64 {
+    (number % 10_u64.pow(index + 1)) / 10_u64.pow(index)
 }
 
 fn sum_digit(index: u32, digit: u64) -> u64 {
-    let mut result = digit * (1 + (index % 2) as u64);
-    if result > 9 {
-        result -= 9;
-    }
-    result
+    let result = digit * (1 + (index % 2) as u64);
+    result - (9 * (result / 10))
 }
 
 #[cfg(test)]
@@ -60,5 +57,4 @@ mod should {
     fn be_true_for_4697592777636222() {
         assert_eq!(luhn(4697592777636222), true);
     }
-
 }
