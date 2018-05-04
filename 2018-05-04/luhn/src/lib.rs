@@ -1,1 +1,2 @@
-mod luhn;
+pub mod luhn;
+mod luhns;

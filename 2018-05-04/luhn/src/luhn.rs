@@ -1,5 +1,7 @@
-fn luhn(n: u64) -> bool {
-    (0..19).fold(0, |acc, index| {
+const MAX_NUMBER_OF_DIGITS: u32 = 19;
+
+pub fn luhn(n: u64) -> bool {
+    (0..MAX_NUMBER_OF_DIGITS).fold(0, |acc, index| {
         acc + sum_digit(index, digit_at(index, n))
     }) % 10 == 0
 }
