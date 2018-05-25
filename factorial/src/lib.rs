@@ -19,23 +19,40 @@ fn factorial(n : u64) -> BigUint {
     result
 }
 
-enum TailRec { Done(BigUint), Continue(Box<FnBox()->TailRec>) }
+enum TailRec<T> { Done(T), Continue(Box<FnBox()->TailRec<T>>) }
+
+impl <T> TailRec<T> {
+    fn result(self) -> T {
+        let mut step = self;
+        loop {
+            match step {
+                TailRec::Done(result) => return result,
+                TailRec::Continue(next_step) => step = next_step()
+            }
+        }
+    }
+}
 
 fn factorial_rec(n : u64) -> BigUint {
-    fn factorial_tail_rec(n : u64, acc : BigUint) -> TailRec {
+    fn factorial_tail_rec(n : u64, acc : BigUint) -> TailRec<BigUint> {
         if n == 1 {
             TailRec::Done(acc)
         } else {
             TailRec::Continue(Box::new(move || factorial_tail_rec(n-1, acc*BigUint::from(n))))
         }
     }
-    let mut step = factorial_tail_rec(n, BigUint::from(1_u64));
-    loop {
-        match step {
-            TailRec::Done(result) => return result,
-            TailRec::Continue(next_step) => step = next_step()
+    factorial_tail_rec(n, BigUint::from(1_u64)).result()
+}
+
+fn sum_rec(n : u64) -> u64 {
+    fn sum_tail_rec(n : u64, acc : u64) -> TailRec<u64> {
+        if n ==  {
+            TailRec::Done(acc)
+        }else {
+            TailRec::Continue(Box::new(move || sum_tail_rec(n-1, acc+n)))
         }
     }
+    sum_tail_rec(n, 0).result()
 }
 
 #[cfg(test)]
@@ -61,5 +78,9 @@ mod tests {
     #[test]
     fn factorial_rec_makes_stack_overflow() {
         assert_eq!(factorial_rec(10000), factorial(10000));
+    }
+    #[test]
+    fn sum_yieds_sum() {
+        assert_eq!(sum_rec(10),55 );
     }
 }
