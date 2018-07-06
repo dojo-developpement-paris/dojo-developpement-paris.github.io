@@ -1,22 +1,28 @@
-Prochaine session:  Jeudi 18 mai 2018 20:40 - 21:30, Arolla  
+Prochaine session: ??? 
+
 Présents :
-- Patrick
-- Xavier
+- Zizou
 - Christophe
-- Abdoulaye
+- Xavier
+- Yvan
 
 Absents :
+- Benoit
+- Patrick
 - Karine
 - Emmanuel
+- Lionel
+- Sébastien
+- Nicolas
 - Arnaud
+- Ubald
+- Antoine
+- Abdoulaye
 - Renata
 - Arjuna
-- Lionel
 - Arnaud T
-- Xavier
 - Mathieu
 - Gary
-- Benoit
 - Julien
 - Christian
 - Jesua
@@ -26,15 +32,18 @@ Absents :
 - Marc
 - François
 - Shahnaz
-- Ubald
 - Jerome
 
 
-Retro : Haskell - Kata - Robinson - Comprendre les functor, applicative et monad avec le REPL GHCi 
-- Trop long, pourrait faire trois katas
-- Robinson à découvert les patterns fonctionnels
+Retro: Java - Bank Kata [https://github.com/sandromancuso/bank-kata-outsidein-screencast](https://github.com/sandromancuso/bank-kata-outsidein-screencast)  
+- Découverte de double loop
 
 Sujets proposés :
-A - 0 - Mob - Rust - Validateur de nombre de luhn.
+A - 0 - Mob - haskell - word ladder
+B - 0 - Mob - scala ou Java - fuzzbuzz random
+* C - 4 - Mob - rust - trifusion parellel
+ 
+
+ 
 
 
