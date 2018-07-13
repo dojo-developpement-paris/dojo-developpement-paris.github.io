@@ -1,7 +1,0 @@
-[package]
-name = "trifusion"
-version = "0.1.0"
-authors = ["FaustXVI <xavier.detant@gmail.com>"]
-
-[dependencies]
-spectral = "0.6.0"

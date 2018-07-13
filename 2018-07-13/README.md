@@ -1,17 +1,17 @@
-Prochaine session: ??? 
+Prochaine session: Vendredi 20 juillet
 
 Présents :
-- Zizou
+- Benoit
 - Christophe
 - Xavier
-- Yvan
+- Karine
+- Lionel
 
 Absents :
-- Benoit
 - Patrick
-- Karine
+- Yvan
+- Zizou
 - Emmanuel
-- Lionel
 - Sébastien
 - Nicolas
 - Arnaud
@@ -35,13 +35,18 @@ Absents :
 - Jerome
 
 
-Retro: Java - Bank Kata [https://github.com/sandromancuso/bank-kata-outsidein-screencast](https://github.com/sandromancuso/bank-kata-outsidein-screencast)  
-- Découverte de double loop
+Retro: Mob - rust - trifusion parellel
+- On a pas vu l'aspect parallel
+- mais on a un trifusion
+- décrochage dû à une fatigue physique
+- longue bataille de slices vs Vec
+- on s'est pris les pieds dans le tapis avec les durées de vie des références
+- fusion n'est pas des plus clair
 
 Sujets proposés :
-A - 0 - Mob - haskell - word ladder
-B - 0 - Mob - scala ou Java - fuzzbuzz random
-* C - 4 - Mob - rust - trifusion parellel
+A - 2 - Mob - Haskell - word ladder 
+B - 4 - Kata - Elm - Lens
+C - 1 - Mob - Elm - refactor de code legacy
  
 
  
