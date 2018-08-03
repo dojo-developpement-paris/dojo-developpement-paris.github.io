@@ -1,19 +1,21 @@
-Prochaine session: Vendredi 03 Août 2018 chez Arolla
+Prochaine session: Jeudi 9 Août 2018 chez Arolla
 
 Présents :
+- Patrick
 - Xavier
 - Karine
 - Christophe
-- Patrick
+- Thomas
+- Souaib
+- Benoit
+
+Absents :
 - Mathias
 - Aloïs
 - Pin 
 - Widad
 - Nabil
-
-Absents :
 - Yvan
-- Nabil
 - Zizou
 - Emmanuel
 - Sébastien
@@ -39,20 +41,16 @@ Absents :
 - Jerome
 
 
-Retro: Mob - Scala - Distance de Leveinsthein (distance entre 2 mots)
-- quand on relit le programme on le comprend 
-- on a terminé le kata
-- ce n'est pas la version optimisée
-- le programme n'est pas tail-recursive (ce n'est pas possible)
-- il n'utilise pas de mémoization
-- le passage à la récursion a été très soudain
-- Property Based Testing sur la symétrie de la fonction (uniquement sur des chaînes de maxi 6 caractères)
+Retro: Mob  - Haskell - Simulation Sandpile
+- C'était le bordel - pas de plan - changement des specs au bout de 10 minutes
+- Beaucoup de choses non comprises
+- La petite matrice s'avert compliqué à cause du comportement du bord
+- Personne ne maitrisait le sujet, mais c'était nouveau
+- Bonne contribution du Mob
+
 
 Sujets proposés :
-- A 7 Kata - Haskell - WordLadder
-- B 5 Mob  - Haskell - WordLadder
-- C 9 Mob  - Javascript - Automates Cellulaires à une dimension
-- D 12 Mob  - Haskell - Simulation Sandpile
-- E 7 Mob  - Haskell - Distance de Leveinsthein 
-- F 8 Mob  - Kotlin - Calcul du rayon d'un graphe
-
+- A - 6 - Kata - Haskell - word ladder
+- B - 2 - Mob - Haskell - bonus / malus
+- C - 3 - Mob - Haskell - word ladder
+- D - 10 - Mob - Rust - Le jeu de la vie
