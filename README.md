@@ -1,20 +1,21 @@
-Prochaine session: Jeudi 18 Octobre à Arolla
+Prochaine session: Jeudi 24 Octobre à Octo
 
 Présents :
 - Patrick
+- Thomas
 - Xavier
+- Lucien
+
+Absents :
 - Cédric
 - Karine
 - Christophe
 - Benjamin
 - Jean-Baptiste
 - Benoît
-
-Absents :
 - Emmanuel
 - Benoit
 - Nicolas 
-- Thomas
 - Lancelot
 - Omar
 - Renata
@@ -56,18 +57,17 @@ Absents :
 - Jerome
 
 
-Retro: Haskell - mob - Run Length encoding / decoding
-- build with TDD, debug with QuickCheck, back to unit test
-- bug : 1e1 passe le parser d'Int (reads)
-- bug EA -> 1E1A -> ???
-- le mob a bien fonctionné, équilibre des prises de paroles
-- l'exercice introduit de la récursion
-- bonne intro à Haskell
+Retro: Addition de Fraction - Haskell - Silent Mob  fishbowl à 2 chaises (dont une toujours libre) la personnne assise navigue.
+- Le fishbowl a été une bonne experience pour faciliter le déroulement du mob.
+- Le fishbowl du driver a été un plus.
+- On a terminé l'addition des fractions dix minutes en avance.
+- On a fait du quickCheck qui nous a remonté des bug.
+- On a révisé les fractions.
+ 
 
 Sujets proposés :
-- A - Addition de Fraction - Haskell - Silent Mob  fishbowl à 2 chaises (dont une toujours libre) la personnne assise navigue. 
-- B - Addition de Fraction - Haskell - Mob
-- C - Haskell - Un serveur de dés - Haskell Yesod - Mob
+* A - Haskell - Fishbowl mob - anagram
+B - Haskell - Fishbowl mob - Listes hétérogennes 
 
 
 
