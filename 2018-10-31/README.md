@@ -8,6 +8,8 @@ Présents :
 - Renata
 - Sarah
 - Nicolas
+- Thibaut
+- Emmanuel
 
 Absents :
 - Benjamin - Benoît - Jean-Baptiste - Abdoulaye - Aloïs - Antoine - Arjuna - Arnaud - Arnaud - Arnaud T - Benoit - Christian - Christian - Christophe - Christophe - Emmanuel - François - Gary - Geoffrey - Guillaume - Hamza - Jean-Baptiste - Jerome - Jesua - Lancelot - Marc - Mathias - Mathieu - Mathieu - Nabil - Nicolas - Nicolas 2 - Nicolas 3 - Omar - Patrick - Pedro - Pin - Quang - Renata - Renaud - Shahnaz - Souaib - Sébastien - Thomas - Ubald - Widad - Xavier - Yvan - Zizou
@@ -19,12 +21,13 @@ Retro:
 - ce n'est pas du Haskell simple (IOs / le framework Yesod, templating)
 - découverte de Yesod
 - on n'a pas tout fini (on avait 2 dés - on peut aller plus loin : nombre de dés paramétrables, images de dés / animations 
-- 
+- on a perdu les sources (oubli de commit?) 
 
 Sujets proposés :
-- A - Elm kata Lens 
-- B - Rust - Mob - Bloom filter 
-- * C - Haskell - mob - Run Length encoding / decoding
+- A 7 - kotlin - mob - bowling score 
+- B 10 - haskell - mob - bank kata 
+- C 6 - java - mob - Enigma 
+- D 3 - java - randori - Harry Potter
 
 
 
