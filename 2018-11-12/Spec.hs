@@ -1,6 +1,8 @@
 import Test.Hspec
 
 main = hspec $ do
-    describe "dummy" $ do
-        it "should pass" $ do
-            2 + 2  `shouldBe`  4
+    describe "greeting" $ do    
+        it "should say Hello Bob when given Bob" $ do
+            greet "Bob"  `shouldBe`  "Hello, Bob."
+
+greet _ = "Hello, Bob."
