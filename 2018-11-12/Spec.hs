@@ -23,9 +23,9 @@ sayHello name = "Hello, " ++ name ++ "."
 
 shoutHello name = "HELLO " ++ name ++ "!"
 
+greet []     = sayHello "my friend"
 greet [name] | all isUpper name  = shoutHello name
 greet [name] = sayHello name
-greet []     = sayHello "my friend"
 greet [n,m]  = sayHello (n ++ " and " ++ m) 
 greet names = greet [firstNames, last names]
     where firstNames = intercalate ", " (init names) ++ ","
