@@ -12,6 +12,7 @@ main = hspec $ do
 
 sayHello name = "Hello, " ++ name ++ "." 
 
+
 greet (Just "JERRY") = "HELLO JERRY!"
 greet (Just name) = sayHello name
-greet Nothing     = greet (Just "my friend")
+greet Nothing     = sayHello "my friend"
