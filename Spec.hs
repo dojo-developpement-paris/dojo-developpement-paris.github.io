@@ -1,4 +1,5 @@
 import Test.Hspec
+import Data.Char (isUpper)
 
 main = hspec $ do
     describe "greeting" $ do    
@@ -9,11 +10,12 @@ main = hspec $ do
             greet Nothing  `shouldBe` "Hello, my friend." 
         it "should shout when given a name in uppercase" $ do
             greet (Just "JERRY") `shouldBe` "HELLO JERRY!"
+            greet (Just "MARY") `shouldBe` "HELLO MARY!"
 
 sayHello name = "Hello, " ++ name ++ "." 
 
 shoutHello name = "HELLO " ++ name ++ "!"
 
-greet (Just "JERRY") = shoutHello "JERRY"
+greet (Just name) | all isUpper name  = shoutHello name
 greet (Just name) = sayHello name
 greet Nothing     = sayHello "my friend"
