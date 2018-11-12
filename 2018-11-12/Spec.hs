@@ -11,12 +11,15 @@ main = hspec $ do
         it "should shout when given a name in uppercase" $ do
             greet ["JERRY"] `shouldBe` "HELLO JERRY!"
             greet ["MARY"] `shouldBe` "HELLO MARY!"
+        it "should say hello to two people" $ do
+            greet ["Jill","Jane"] `shouldBe` "Hello, Jill and Jane."
         
 
 sayHello name = "Hello, " ++ name ++ "." 
 
 shoutHello name = "HELLO " ++ name ++ "!"
 
+greet [n,m]  = sayHello (n ++ " and " ++ m) 
 greet [name] | all isUpper name  = shoutHello name
 greet [name] = sayHello name
 greet []     = sayHello "my friend"
