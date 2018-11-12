@@ -21,7 +21,7 @@ sayHello name = "Hello, " ++ name ++ "."
 
 shoutHello name = "HELLO " ++ name ++ "!"
 
-greet [n,m,o] = sayHello ("Amy, Brian," ++ " and " ++ "Charlotte")
+greet [n,m,o] = sayHello ("Amy, Brian," ++ " and " ++ o)
 greet [n,m]  = sayHello (n ++ " and " ++ m) 
 greet [name] | all isUpper name  = shoutHello name
 greet [name] = sayHello name
