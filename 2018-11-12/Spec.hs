@@ -1,6 +1,6 @@
 import Test.Hspec
 import Data.Char (isUpper)
-import Data.List (intercalate)
+import Data.List (intercalate, init, last)
 
 main = hspec $ do
     describe "greeting" $ do    
@@ -27,5 +27,6 @@ greet [name] | all isUpper name  = shoutHello name
 greet [name] = sayHello name
 greet []     = sayHello "my friend"
 greet [n,m]  = sayHello (n ++ " and " ++ m) 
-greet [n,m,o] = greet [n',o]
-    where n' = intercalate ", " [n,m] ++ ","
+greet names = greet [n',o]
+    where n' = intercalate ", " (init names) ++ ","
+          o  = last names
