@@ -1,5 +1,4 @@
 import Test.Hspec
-import Data.Maybe (fromMaybe)
 
 main = hspec $ do
     describe "greeting" $ do    
@@ -9,4 +8,5 @@ main = hspec $ do
         it "should say Hello my friend when no name given" $ do
             greet Nothing  `shouldBe` "Hello, my friend." 
 
-greet name = "Hello, " ++ (fromMaybe "my friend" name) ++ "."
+greet (Just name) = "Hello, " ++ name ++ "."
+greet Nothing     = greet (Just "my friend")
