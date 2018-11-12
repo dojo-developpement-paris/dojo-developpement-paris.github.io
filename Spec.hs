@@ -10,6 +10,8 @@ main = hspec $ do
         it "should shout when given a name in uppercase" $ do
             greet (Just "JERRY") `shouldBe` "HELLO JERRY!"
 
+sayHello name = "Hello, " ++ name ++ "." 
+
 greet (Just "JERRY") = "HELLO JERRY!"
-greet (Just name) = "Hello, " ++ name ++ "."
+greet (Just name) = sayHello name
 greet Nothing     = greet (Just "my friend")
