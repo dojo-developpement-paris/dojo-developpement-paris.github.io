@@ -15,6 +15,7 @@ main = hspec $ do
             greet ["Jill","Jane"] `shouldBe` "Hello, Jill and Jane."
         it "should say hello to more than two people" $ do
             greet ["Amy","Brian","Charlotte"]  `shouldBe` "Hello, Amy, Brian, and Charlotte." 
+            greet ["Dave","Eric","Fred"]  `shouldBe` "Hello, Dave, Eric, and Fred."
         
 
 sayHello name = "Hello, " ++ name ++ "." 
@@ -22,7 +23,7 @@ sayHello name = "Hello, " ++ name ++ "."
 shoutHello name = "HELLO " ++ name ++ "!"
 
 greet [n,m,o] = greet [n',o]
-    where n' = "Amy, Brian," 
+    where n' = n ++ ", " ++ m ++ ","
 greet [n,m]  = sayHello (n ++ " and " ++ m) 
 greet [name] | all isUpper name  = shoutHello name
 greet [name] = sayHello name
