@@ -7,7 +7,7 @@ cellStatus state 2 = state
 cellStatus _ 3 = Alive 
 cellStatus _ _ = Dead
 
-neighbors _ _ = 0
+neighbors _ list = length list
 
 main = hspec $ do
     describe "game of life" $ do
@@ -27,3 +27,4 @@ main = hspec $ do
         describe "Neighbors" $ do
           it "counts cell's neighbors" $ do
             neighbors (1,1) [] `shouldBe` 0
+            neighbors (1,1) [(0,1)] `shouldBe` 1
