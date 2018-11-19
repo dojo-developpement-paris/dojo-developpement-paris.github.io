@@ -3,7 +3,7 @@ import Test.Hspec
 data Liveness = Dead | Alive
     deriving (Eq, Show)
 
-cellStatus Dead 2 = Dead
+cellStatus state 2 = state
 cellStatus _ n | n == 2 || n == 3 = Alive 
 cellStatus _ _ = Dead
 
