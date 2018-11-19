@@ -22,4 +22,6 @@ main = hspec $ do
                  cellStatus Alive 2  `shouldBe` Alive 
              it "stay alive when 3 neighbors" $ do
                  cellStatus Alive 3 `shouldBe` Alive 
-
+        describe "Neighbors" $ do
+          it "counts cell's neighbors" $ do
+            neighbors [[Dead]] `shouldBe` [[0]]
