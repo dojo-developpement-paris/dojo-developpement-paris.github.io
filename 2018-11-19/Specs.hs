@@ -7,6 +7,8 @@ cellStatus state 2 = state
 cellStatus _ 3 = Alive 
 cellStatus _ _ = Dead
 
+neighbors _ _ = 0
+
 main = hspec $ do
     describe "game of life" $ do
         describe "Cell" $ do
