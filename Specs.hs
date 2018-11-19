@@ -4,7 +4,7 @@ data Liveness = Dead | Alive
     deriving (Eq, Show)
 
 cellStatus state 2 = state
-cellStatus _ n | n == 2 || n == 3 = Alive 
+cellStatus _ 3 = Alive 
 cellStatus _ _ = Dead
 
 main = hspec $ do
