@@ -19,4 +19,5 @@ bank [_] out = out report
                         ,"Solde : 4807"
                         ]
 
+balance :: [Operation] -> Amount
 balance _ = 0
