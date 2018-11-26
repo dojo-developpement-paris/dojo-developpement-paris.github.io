@@ -9,7 +9,8 @@ bank [] out = out report
     where report = unlines $ 
                         ["Solde initial : 0"
                         ,"Date | Debit | Credit"
-                        ] ++ (history []) ++
+                        ]
+                         ++ (history []) ++
                         ["Solde : " ++ show (balance [])
                         ]
 bank os out = out report
