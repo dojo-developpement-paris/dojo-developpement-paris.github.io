@@ -26,3 +26,6 @@ main = hspec $ do
         it "should compute a new balance" $ do
                 balance [] `shouldBe` 0
                 balance [Deposit "26/11/2018" 4807] `shouldBe` 4807
+    describe "History" $ do
+        it "should give operations history" $ do
+                history [] `shouldBe` []
