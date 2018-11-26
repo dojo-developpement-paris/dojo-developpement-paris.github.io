@@ -2,14 +2,14 @@ module Bank where
 
 type Date = String
 type Amount = Int
-data Operation = Deposit Date Amount
+data Operation = Deposit Date Amount deriving Show
 
 bank :: (Monad m) => [Operation] -> (String -> m ()) -> m ()
 bank [] out = out report
     where report = unlines 
                         ["Solde initial : 0"
                         ,"Date | Debit | Credit"
-                        ,"Solde : 0"
+                        ,"Solde : " ++ show (balance [])
                         ]
 bank [_] out = out report
     where report = unlines 
