@@ -20,5 +20,5 @@ bank [_] out = out report
                         ]
 
 balance :: [Operation] -> Amount
-balance [_] = 4807
+balance [Deposit _ amount] = amount
 balance _ = 0
