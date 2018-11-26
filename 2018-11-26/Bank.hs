@@ -22,3 +22,6 @@ bank os out = out report
 balance :: [Operation] -> Amount
 balance [Deposit _ amount] = amount
 balance _ = 0
+
+history :: [Operation] -> [String]
+history [] = []
