@@ -22,4 +22,6 @@ main = hspec $ do
                         , "26/11/2018 | | 4807"
                         ,"Solde : 4807"
                         ]
-
+    describe "Balance" $ do
+        it "should compute a new balance" $ do
+                balance [] `shouldBe` 0
