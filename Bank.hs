@@ -11,12 +11,12 @@ bank [] out = out report
                         ,"Date | Debit | Credit"
                         ,"Solde : " ++ show (balance [])
                         ]
-bank [_] out = out report
+bank operations out = out report
     where report = unlines 
                         ["Solde initial : 0"
                         ,"Date | Debit | Credit"
                         ,"26/11/2018 | | 4807"
-                        ,"Solde : 4807"
+                        ,"Solde : " ++ (show.balance) operations
                         ]
 
 balance :: [Operation] -> Amount
