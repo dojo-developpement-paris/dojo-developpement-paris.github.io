@@ -1,6 +1,11 @@
 import Test.Hspec
+import Control.Monad.Writer (writer, runWriter)
+import Bank
 
-main = hspec $ do
-    describe "failing test" $ do
-        it "fails" $ do
-            2 + 2 `shouldBe` 4
+out = \s -> writer ((),s)
+
+main = hspec $ do 
+    describe "Bank" $ do
+        it "outputs a number" $ do
+                let run = bank out
+                (lines.snd) (runWriter run)  `shouldBe` ["4807"]
