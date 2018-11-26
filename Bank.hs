@@ -18,3 +18,5 @@ bank [_] out = out report
                         ,"26/11/2018 | | 4807"
                         ,"Solde : 4807"
                         ]
+
+balance _ = 0
