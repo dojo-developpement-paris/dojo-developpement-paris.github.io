@@ -6,10 +6,11 @@ data Operation = Deposit Date Amount deriving Show
 
 bank :: (Monad m) => [Operation] -> (String -> m ()) -> m ()
 bank [] out = out report
-    where report = unlines 
+    where report = unlines $ 
                         ["Solde initial : 0"
                         ,"Date | Debit | Credit"
-                        ,"Solde : " ++ show (balance [])
+                        ] ++ (history []) ++
+                        ["Solde : " ++ show (balance [])
                         ]
 bank os out = out report
     where report = unlines 
