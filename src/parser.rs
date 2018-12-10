@@ -1,7 +1,4 @@
 use chrono::prelude::*;
-use chrono::NaiveDateTime;
-use chrono::Utc;
-use regex::Regex;
 use std::num::ParseIntError;
 use chrono::ParseResult;
 
@@ -32,7 +29,9 @@ fn parse(s: &str) -> Result<Event, &'static str> {
 
 fn parse_guard_id(s: &str) -> Result<u64, ParseIntError> {
     let sharp_index = s.chars().position(|c| c == '#').unwrap();
-    (&s[sharp_index + 1..=sharp_index + 2]).parse()
+    let sub = &s[sharp_index + 1..];
+    let space_index = sub.chars().position(|c| c == ' ').unwrap();
+    (&sub[..space_index]).parse()
 }
 
 fn parse_event_date(s: &str) -> ParseResult<NaiveDateTime> {
@@ -56,5 +55,13 @@ mod should {
             .that(&result.guard_id).is_equal_to(10);
         asserting!("event type")
             .that(&result.event_type).is_equal_to(EventType::ShiftStart);
+    }
+
+    #[test]
+    fn parse_a_shift_with_single_digit_id() {
+        let line = "[1518-11-01 00:00] Guard #1 begins shift";
+        let result = parse(line).unwrap();
+        asserting!("guard id")
+            .that(&result.guard_id).is_equal_to(1);
     }
 }
