@@ -18,15 +18,27 @@ struct Event {
 }
 
 fn parse(s: &str) -> Event {
-    let date_as_string = &s[1..=16];
-    let sharp_index = s.chars().position(|c| c == '#').unwrap();
-    let id = (&s[sharp_index + 1..=sharp_index + 2])
-        .parse().unwrap();
+    let date = parse_event_date(s);
+    let guard_id = parse_guard_id(s);
+    let event_type = EventType::ShiftStart;
     Event {
-        date: NaiveDateTime::parse_from_str(date_as_string, EVENT_DATE_FORMAT).unwrap(),
-        guard_id: id,
-        event_type: EventType::ShiftStart,
+        date,
+        guard_id,
+        event_type,
     }
+}
+
+fn parse_guard_id(s: &str) -> u64 {
+    let sharp_index = s.chars().position(|c| c == '#').unwrap();
+    let guard_id = (&s[sharp_index + 1..=sharp_index + 2])
+        .parse().unwrap();
+    guard_id
+}
+
+fn parse_event_date(s: &str) -> NaiveDateTime {
+    let date_as_string = &s[1..=16];
+    let date = NaiveDateTime::parse_from_str(date_as_string, EVENT_DATE_FORMAT).unwrap();
+    date
 }
 
 #[cfg(test)]
