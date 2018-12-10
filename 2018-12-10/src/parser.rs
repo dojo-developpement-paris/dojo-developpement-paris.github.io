@@ -19,15 +19,15 @@ struct Event {
     event_type: EventType,
 }
 
-fn parse(s: &str) -> Event {
-    let date = parse_event_date(s).unwrap();
-    let guard_id = parse_guard_id(s).unwrap();
+fn parse(s: &str) -> Result<Event, &'static str> {
+    let date = parse_event_date(s).map_err(|_| "Date error")?;
+    let guard_id = parse_guard_id(s).map_err(|_| "Guard id error")?;
     let event_type = EventType::ShiftStart;
-    Event {
+    Ok(Event {
         date,
         guard_id,
         event_type,
-    }
+    })
 }
 
 fn parse_guard_id(s: &str) -> Result<u64, ParseIntError> {
@@ -48,7 +48,7 @@ mod should {
     #[test]
     fn parse_a_shift() {
         let line = "[1518-11-01 00:00] Guard #10 begins shift";
-        let result = parse(line);
+        let result = parse(line).unwrap();
         asserting!("date").that(&result.date)
             .is_equal_to(
                 NaiveDate::from_ymd(1518, 11, 1).and_hms(0, 0, 0));
