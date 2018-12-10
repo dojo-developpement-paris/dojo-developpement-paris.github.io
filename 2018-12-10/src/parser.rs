@@ -1,6 +1,9 @@
 use chrono::prelude::*;
 use chrono::NaiveDateTime;
 use chrono::Utc;
+use regex::Regex;
+
+const EVENT_DATE_FORMAT: &str = "%Y-%m-%d %H:%M";
 
 #[derive(Debug, PartialEq)]
 enum EventType {
@@ -15,9 +18,13 @@ struct Event {
 }
 
 fn parse(s: &str) -> Event {
+    let date_as_string = &s[1..=16];
+    let sharp_index = s.chars().position(|c| c == '#').unwrap();
+    let id = (&s[sharp_index + 1..=sharp_index + 2])
+        .parse().unwrap();
     Event {
-        date: NaiveDate::from_ymd(1518, 11, 1).and_hms(0, 0, 0),
-        guard_id: 10,
+        date: NaiveDateTime::parse_from_str(date_as_string, EVENT_DATE_FORMAT).unwrap(),
+        guard_id: id,
         event_type: EventType::ShiftStart,
     }
 }
