@@ -2,6 +2,7 @@ use chrono::prelude::*;
 use chrono::NaiveDateTime;
 use chrono::Utc;
 use regex::Regex;
+use std::num::ParseIntError;
 
 const EVENT_DATE_FORMAT: &str = "%Y-%m-%d %H:%M";
 
@@ -19,7 +20,7 @@ struct Event {
 
 fn parse(s: &str) -> Event {
     let date = parse_event_date(s);
-    let guard_id = parse_guard_id(s);
+    let guard_id = parse_guard_id(s).unwrap();
     let event_type = EventType::ShiftStart;
     Event {
         date,
@@ -28,11 +29,9 @@ fn parse(s: &str) -> Event {
     }
 }
 
-fn parse_guard_id(s: &str) -> u64 {
+fn parse_guard_id(s: &str) -> Result<u64, ParseIntError> {
     let sharp_index = s.chars().position(|c| c == '#').unwrap();
-    let guard_id = (&s[sharp_index + 1..=sharp_index + 2])
-        .parse().unwrap();
-    guard_id
+    (&s[sharp_index + 1..=sharp_index + 2]).parse()
 }
 
 fn parse_event_date(s: &str) -> NaiveDateTime {
