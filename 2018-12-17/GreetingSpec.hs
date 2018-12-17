@@ -1,16 +1,24 @@
 import Test.Hspec
 import Data.Char
+import Data.List
 
-greet :: [String] -> String
+type Name = String
+
+greet :: [Name] -> String
 greet [n] | all isUpper n  = shoutHello n 
 greet [n] = sayHello n 
 greet []  = sayHello "my friend"
-greet [a,b] = sayHello $ a ++ " and " ++ b 
+greet ns = sayHello $ joinNames ns
 
-sayHello :: String -> String
+joinNames :: [Name] -> String
+joinNames [n] = n  
+joinNames [a,b] = a ++ " and " ++ b   
+joinNames ns = (intercalate ", " $ init ns) ++ ", and " ++ last ns   
+
+sayHello :: Name -> String
 sayHello n = "Hello, " ++ n ++ "."
 
-shoutHello :: String -> String
+shoutHello :: Name -> String
 shoutHello n = "HELLO " ++ n ++ "!"
 
 main = hspec $ do
@@ -23,8 +31,11 @@ main = hspec $ do
           greet ["TOM"]  `shouldBe` "HELLO TOM!"
         it "should say hello my friend with no given name" $ do
           greet []  `shouldBe` "Hello, my friend."
-        it "should say hello to each name when given several names" $ do
+        it "should say hello to each name when given two names" $ do
           greet ["Jill", "Jane"]  `shouldBe` "Hello, Jill and Jane."
+        it "should say hello to each name when given several names" $ do
+          greet ["Amy", "Brian", "Charlotte"]  `shouldBe` "Hello, Amy, Brian, and Charlotte."
+          greet ["Amy", "Brian", "Kevin", "Charlotte"]  `shouldBe` "Hello, Amy, Brian, Kevin, and Charlotte."
         
 
     
