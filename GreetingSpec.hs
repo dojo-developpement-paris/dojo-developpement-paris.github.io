@@ -1,10 +1,11 @@
 import Test.Hspec
 import Data.Char
 
-greet :: Maybe String -> String
-greet (Just n) | all isUpper n  = shoutHello n 
-greet (Just n) = sayHello n 
-greet Nothing  = sayHello "my friend"
+greet :: [String] -> String
+greet [n] | all isUpper n  = shoutHello n 
+greet [n] = sayHello n 
+greet []  = sayHello "my friend"
+greet [a,b] = sayHello $ a ++ " and " ++ b 
 
 sayHello :: String -> String
 sayHello n = "Hello, " ++ n ++ "."
@@ -15,14 +16,15 @@ shoutHello n = "HELLO " ++ n ++ "!"
 main = hspec $ do
     describe "Greet" $ do
         it "should say hello to the given name" $ do
-          greet (Just "Bob")  `shouldBe` "Hello, Bob."
-          greet (Just "Alice")  `shouldBe` "Hello, Alice."
+          greet ["Bob"]  `shouldBe` "Hello, Bob."
+          greet ["Alice"]  `shouldBe` "Hello, Alice."
         it "should shout hello when given an uppercase name" $ do
-          greet (Just "JERRY")  `shouldBe` "HELLO JERRY!"
-          greet (Just "TOM")  `shouldBe` "HELLO TOM!"
+          greet ["JERRY"]  `shouldBe` "HELLO JERRY!"
+          greet ["TOM"]  `shouldBe` "HELLO TOM!"
         it "should say hello my friend with no given name" $ do
-          greet Nothing  `shouldBe` "Hello, my friend."
-
+          greet []  `shouldBe` "Hello, my friend."
+        it "should say hello to each name when given several names" $ do
+          greet ["Jill", "Jane"]  `shouldBe` "Hello, Jill and Jane."
         
 
     
