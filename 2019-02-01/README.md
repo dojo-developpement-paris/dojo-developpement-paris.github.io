@@ -2,27 +2,30 @@ Prochaine session: Vendredi 1 fevrier 2019 chez Arolla 21 rue du Bouloi
 
 Présents :
 - Patrick
-- Nicolas
-- Benoit
-- Stella
 - Christophe
-- Tara
-- Sébastien
-- Mamadi
-- Cedric
+- Youssef
 - Nicolas
+- Lionel
+- Sébastien
+- Claire
+- Mamadi
 
-Retro: Rust - Mob - Bowling kata
-- Présentation de Rust à des nouveaux arrivants
-- Plusieurs implémentations avec boucle puis récursion
-- Problème de conversion de u8 en u16
-- On n'a pas terminé le kata
+Retro: Mob - Haskell - Interpréteur de forth
+
+- Beaucoup de monde et de nouveaux à la séance.
+- Sujet choisi difficile avec des nouveaux.
+- Doit on fixer ou annoncer la difficulté des sujets?
+- Est-ce que tout le monde comprend les sujets?
+- Code propre mais répétitif.
+- On a compliqué les choses en gérant les effets de bord qui n'était pas utile.
 
 Sujets proposés :
-A - 8 - Mob - Haskell - QuickCheck sur le problème des bidons
-* B - 10 - Mob - Haskell - Interpréteur de forth
-C - 4 - Kata - Haskell - TDD avec QuickCheck - diamond kata
-D - 6 - Kata - Haskell - TDD avec QuickCheck - bowling kata
+* A - 7 - Kata - Haskell - Bowling score en property based test (QuickCheck)
+B - 3 - Mob - Haskell - Diamond kata en property based test (QuickCheck)
+C - 6 - Mob - Haskell - Le problème des bidons avec QuickCheck
+D - 7 - Mob - Haskell - Les perles de Dijkstra avec QuickCheck 
+E - 1 - Mob - Rust - Diamond kata avec du property based testing
+
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
