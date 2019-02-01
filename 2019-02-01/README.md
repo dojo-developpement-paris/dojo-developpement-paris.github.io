@@ -1,4 +1,4 @@
-Prochaine session: Vendredi 1 fevrier 2019 chez Arolla 21 rue du Bouloi
+Prochaine session: Vendredi 8 fevrier 2019 chez Arolla 21 rue du Bouloi
 
 Présents :
 - Patrick
