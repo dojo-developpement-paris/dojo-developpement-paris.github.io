@@ -5,7 +5,7 @@ diamond :: Char -> [String]
 diamond 'A' = map mirror $ mirror ["A"]
 diamond 'B' = map mirror $ mirror [a, b]
     where
-        a = " A"
+        a = replicate 1 ' ' ++ "A"
         b = "B "
 diamond 'C' = map mirror $ mirror [a, b, c]
     where
