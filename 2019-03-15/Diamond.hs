@@ -9,9 +9,9 @@ diamond 'B' = map mirror $ mirror [a, b]
         b = replicate 0 ' ' ++ "B" ++ replicate 1 ' '
 diamond 'C' = map mirror $ mirror [a, b, c]
     where
-        a = "  A"
-        b = " B "
-        c = "C  "
+        a = replicate 2 ' ' ++ "A" ++ replicate 0 ' '
+        b = replicate 1 ' ' ++ "B" ++ replicate 1 ' ' 
+        c = replicate 0 ' ' ++ "C" ++ replicate 2 ' '
 
 mirror :: [a] -> [a] 
 mirror xs = xs ++ (tail (reverse xs)) 
