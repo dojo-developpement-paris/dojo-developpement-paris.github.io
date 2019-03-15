@@ -25,9 +25,9 @@ diamond 'C' = map mirror $ mirror [a, b, c]
         n = length ls
         m = n - 1
         ms = [0..m]
-        a = replicate (ms!!2) ' ' ++ [ls!!0] ++ replicate (ms!!0) ' ' 
-        b = replicate (ms!!1) ' ' ++ [ls!!1] ++ replicate (ms!!1) ' '
-        c = replicate (ms!!0) ' ' ++ [ls!!2] ++ replicate (ms!!2) ' '
+        a = replicate (ms!!(m-0)) ' ' ++ [ls!!0] ++ replicate (ms!!0) ' ' 
+        b = replicate (ms!!(m-1)) ' ' ++ [ls!!1] ++ replicate (ms!!1) ' '
+        c = replicate (ms!!(m-2)) ' ' ++ [ls!!2] ++ replicate (ms!!2) ' '
 
 mirror :: [a] -> [a] 
 mirror xs = xs ++ (tail (reverse xs)) 
