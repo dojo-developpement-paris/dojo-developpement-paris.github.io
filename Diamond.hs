@@ -19,9 +19,9 @@ diamond 'B' = map mirror $ mirror [a, b]
         a = replicate (ms!!1) ' ' ++ [ls!!0] ++ replicate (ms!!0) ' ' 
         b = replicate (ms!!0) ' ' ++ [ls!!1] ++ replicate (ms!!1) ' '
 
-diamond 'C' = map mirror $ mirror r
+diamond l = map mirror $ mirror r
     where
-        ls = ['A'..'C']
+        ls = ['A'..l]
         n = length ls
         m = n - 1
         ms = [0..m]
