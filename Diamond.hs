@@ -2,9 +2,9 @@ module Diamond (diamond)
 where
 
 diamond :: Char -> [String]
-diamond 'A' = ["A"]
-diamond 'B' = [" A ","B B"," A "]
-diamond 'C' = ["  A  "," B B ","C   C"," B B ","  A  "]
+diamond 'A' = mirror ["A"]
+diamond 'B' = mirror [" A ","B B"]
+diamond 'C' = mirror ["  A  "," B B ","C   C"]
 
 mirror :: [a] -> [a] 
 mirror xs = xs ++ (tail (reverse xs)) 
