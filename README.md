@@ -9,6 +9,7 @@ Présents :
 - Joseph
 - Arthur
 - Xavier
+- Benoît
 
 
 Retro - Mob - Python - Gilded rose
