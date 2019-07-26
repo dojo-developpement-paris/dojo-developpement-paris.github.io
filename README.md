@@ -11,17 +11,6 @@ Présents :
 - Joseph
 - Siu
 
-- Souhib
-- Dounia
-- Benoît
-- Richard
-- Xavier
-- Birame
-- Patricia
-- Li
-- Sébastien
-- Mohamed
-
 Retro Mob - Java - Kata anagrams
 - Il y a eu beaucoup de troll sur Java.
 - Une grosse discussion sur la classe Word porte son poids ou pas.
@@ -31,7 +20,7 @@ Retro Mob - Java - Kata anagrams
 
 Sujets proposés :
 A - 5 - Mob - Haskell - Addition des nombres Shadok
-* B - 9 - Mob - Prolog - LAGS
+* B - 9 - Mob - Prolog - LAGS (https://github.com/stefanroock/ProSpec.git)
 C - 4 - Randori - Python - Bowling kata - chalistenic
 D - 5 - Mob - Kotlin - Word wrap
 E - 4 - Mob - Smalltalk - Bowling kata 
