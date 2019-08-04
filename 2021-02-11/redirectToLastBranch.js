@@ -1,4 +1,4 @@
-const PERSONNAL_ACCESS_TOKEN = "53ba72dc7a8288724f96c85941a11ec5b8fa82d4";
+const STORAGE_KEY = "githubPersonnalAccessToken";
 
 const query = `
 {
@@ -15,12 +15,39 @@ const query = `
 
 const dojoBranch = /^\d{4}-\d{2}-\d{2}$/;
 
-async function getResult() {
+function tokenSeemsValid(token) {
+  return token !== null && /^\w+$/.test(token);
+}
+
+function getToken() {
+  let token = window.localStorage.getItem(STORAGE_KEY);
+
+  if (tokenSeemsValid(token) === false) {
+    window.alert(
+      "Vous allez être rediriger vers l'interface de GitHub\nVeuillez générez un token sans authorisation particulière"
+    );
+
+    window.open("https://github.com/settings/tokens/new");
+
+    token = window.prompt("Token");
+    if (tokenSeemsValid(token) === true) {
+      window.localStorage.setItem(STORAGE_KEY, token);
+    }
+  }
+
+  return token;
+}
+
+function deleteToken() {
+  window.localStorage.removeItem(STORAGE_KEY);
+}
+
+async function getResult(token) {
   const response = await fetch("https://api.github.com/graphql", {
     method: "POST",
     body: JSON.stringify({ query }),
     headers: {
-      Authorization: `bearer ${PERSONNAL_ACCESS_TOKEN}`
+      Authorization: `bearer ${token}`
     }
   });
 
@@ -40,13 +67,20 @@ function formatURL(repositoryURL, branchName) {
 
 async function redirectToLastBranch() {
   try {
-    const result = await getResult();
+    const token = getToken();
+    const result = await getResult(token);
     const { repository } = result.data;
     const branchName = getLastBranchName(repository);
     const url = formatURL(repository.url, branchName);
     window.location.assign(url);
   } catch (ex) {
     console.error(ex);
-    alert("Oups ! Problème technique\nPlus d'infos dans la console");
+    if (
+      window.confirm(
+        "Oups ! Problème technique\nPlus d'infos dans la console\nVoulez vous supprimer le token ?"
+      )
+    ) {
+      deleteToken();
+    }
   }
 }
