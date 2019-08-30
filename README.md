@@ -1,23 +1,27 @@
-Prochaine session: 30 Août 2019 chez Octo
+Prochaine session: Vendredi 06 Septempbre 2019 -- lieu à déterminer
 
 Présents :
-- Patrick
+- Benoît
+- Christophe
+- Arnaud
 - Pin
-- Christelle
+- Gildas
 - Patricia
-- Birame
-- Fares
+- Nicolas
+- Joseph
 
-Retro Mob  - Java - L'addition des shadoks
-- On est resté en outside-in et aurait du passer en inside-out quand on était bloqué.
-- Le code est compliqué.
-- Pas forcement objet.
-- Très verbeux pour peu de fonctionnalités.
+Retro Mob  - Haskell - L'addition des shadoks
+- role de driver: intéressant et compliqué (Haskell, écouter les gens)
+- les gens qui avaient déjà fait ce kata ont guidé les autres
+- plus simple en Haskell qu'en Java, et moins verbeux
 
+ 
 Sujets proposés :
-* A - 0 - Haskell - Mob - L'addition des shadoks
-B - 0 - Typescript - Randori - Bowling score
-C - 0 - Typescript - Mob - Bowling score
+- A 2 - Mob Haskell -- Bonus/Malus
+- B 4 - Mob SmallTalk -- Bowling Score
+- * C 7 - Mob C -- Louez votre avion et gagnez des sous
+- D 7 - Mob Haskell -- Simuler la Signalisation
+- E 4 - Mob Haskell -- Jeu de la vie
 
 
 Explication des règles :
