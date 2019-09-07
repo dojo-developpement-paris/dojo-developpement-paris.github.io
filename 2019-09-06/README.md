@@ -19,10 +19,10 @@ Retro Mob C -- Louez votre avion et gagnez des sous
 - Des gens connaissaient C, c'était cool
 
 Sujets proposés :
-A - 7 - Kata - Haskell / Elm - Aventure dans ma base de production
-B - 3 - Mob  - Haskell - Prédiction des plaques d'immatriculation 
-C - 8 - Mob  - Haskell - Game of life
-D - 7 - Mob  - Python  - Fourmi de langton
+- A - 7 - Kata - Haskell / Elm - Aventure dans ma base de production
+- B - 3 - Mob  - Haskell - Prédiction des plaques d'immatriculation 
+- _C - 8 - Mob  - Haskell - Game of life_
+- D - 7 - Mob  - Python  - Fourmi de langton
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
