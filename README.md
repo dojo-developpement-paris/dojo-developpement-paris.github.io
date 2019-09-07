@@ -1,28 +1,28 @@
-Prochaine session: Vendredi 06 Septempbre 2019 -- lieu à déterminer
+Prochaine session: -- date et lieu à déterminer
 
 Présents :
 - Benoît
-- Christophe
 - Arnaud
 - Pin
-- Gildas
-- Patricia
-- Nicolas
 - Joseph
+- Christelle
+- Kevin
+- Lilian
+- Florian
 
-Retro Mob  - Haskell - L'addition des shadoks
-- role de driver: intéressant et compliqué (Haskell, écouter les gens)
-- les gens qui avaient déjà fait ce kata ont guidé les autres
-- plus simple en Haskell qu'en Java, et moins verbeux
+Retro Mob C -- Louez votre avion et gagnez des sous
+- Les pointeurs c'est compliqué
+- C'était laborieux
+- Les tests en C c'est interessant
+- Bien comprendre la philosophie des pointeurs permet de comprendre le détail du fonctionnement
+- On aurait pas dû faire les I/O
+- Des gens connaissaient C, c'était cool
 
- 
 Sujets proposés :
-- A 2 - Mob Haskell -- Bonus/Malus
-- B 4 - Mob SmallTalk -- Bowling Score
-- * C 7 - Mob C -- Louez votre avion et gagnez des sous
-- D 7 - Mob Haskell -- Simuler la Signalisation
-- E 4 - Mob Haskell -- Jeu de la vie
-
+A - 7 - Kata - Haskell / Elm - Aventure dans ma base de production
+B - 3 - Mob  - Haskell - Prédiction des plaques d'immatriculation 
+C - 8 - Mob  - Haskell - Game of life
+D - 7 - Mob  - Python  - Fourmi de langton
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
