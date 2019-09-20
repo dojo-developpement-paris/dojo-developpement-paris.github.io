@@ -10,6 +10,7 @@ Présents :
 - Christelle
 - Nicolas
 - Arnaud
+- Eric
 
 Retro Mob  - Haskell - Game of life
 - que l'affichage en console
