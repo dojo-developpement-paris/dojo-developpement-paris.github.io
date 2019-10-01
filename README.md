@@ -1,33 +1,23 @@
-Prochaine session: Vendredi 9 novembre 2018 chez Arolla 21 rue du Bouloi
-
+Prochaine session: Vendredi 4 Octobre 2019 - Zenika 10 rue de Milan
 Présents :
-- Karim
-- Karine
+- Abdou
+- Lilian
 - Christophe
-- Patrick
-- Renata
-- Sarah
-- Nicolas
-- Thibaut
-- Emmanuel
+- Pierre-Yves
+- Arnaud
 
 Absents :
-- Benjamin - Benoît - Jean-Baptiste - Abdoulaye - Aloïs - Antoine - Arjuna - Arnaud - Arnaud - Arnaud T - Benoit - Christian - Christian - Christophe - Christophe - Emmanuel - François - Gary - Geoffrey - Guillaume - Hamza - Jean-Baptiste - Jerome - Jesua - Lancelot - Marc - Mathias - Mathieu - Mathieu - Nabil - Nicolas - Nicolas 2 - Nicolas 3 - Omar - Patrick - Pedro - Pin - Quang - Renata - Renaud - Shahnaz - Souaib - Sébastien - Thomas - Ubald - Widad - Xavier - Yvan - Zizou
 
 
 Retro:
-- Haskell - Fishbowl Mob - Un serveur de lancer de dés en Haskell avec Yesod
-- il y avait 2 personnes qui participaient
-- ce n'est pas du Haskell simple (IOs / le framework Yesod, templating)
-- découverte de Yesod
-- on n'a pas tout fini (on avait 2 dés - on peut aller plus loin : nombre de dés paramétrables, images de dés / animations 
-- on a perdu les sources (oubli de commit?) 
+- Haskell -- Score de Molki -- mob 
+- on n'est pas allé jusqu'au bout du kata
+- plaisant
 
 Sujets proposés :
-- A 7 - kotlin - mob - bowling score 
-- B 10 - haskell - mob - bank kata 
-- C 6 - java - mob - Enigma 
-- D 3 - java - randori - Harry Potter
+A - 0 - Mob - Haskell - Recherche en profondeur sur un graphe
+B - 0 - Kata - Haskell - Bitmap avec Min Heap
+C - 0 - Mob - Python - Chaînes de Markov
 
 
 
