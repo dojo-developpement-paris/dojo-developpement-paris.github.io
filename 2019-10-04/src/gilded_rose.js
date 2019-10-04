@@ -14,7 +14,9 @@ class Shop {
         this.items[i].quality--;
     }
     increaseQuality(i) {
-        this.items[i].quality++;
+        if (this.items[i].quality < 50) {
+            this.items[i].quality++;
+        }
     }
     updateQuality() {
         for (var i = 0; i < this.items.length; i++) {
@@ -56,9 +58,7 @@ class Shop {
                         this.items[i].quality = 0;
                     }
                 } else {
-                    if (this.items[i].quality < 50) {
                         this.increaseQuality(i);
-                    }
                 }
             }
         }
