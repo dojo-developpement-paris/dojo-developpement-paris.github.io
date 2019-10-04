@@ -11,6 +11,7 @@ class Shop {
     this.items = items;
   }
     increaseQuality(i) {
+        this.items[i].quality = this.items[i].quality + 1;
     }
   updateQuality() {
     for (var i = 0; i < this.items.length; i++) {
@@ -32,7 +33,6 @@ class Shop {
             if (this.items[i].sellIn < 6) {
               if (this.items[i].quality < 50) {
                   this.increaseQuality(i);
-                this.items[i].quality = this.items[i].quality + 1;
               }
             }
           }
