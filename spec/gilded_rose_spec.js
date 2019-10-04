@@ -7,7 +7,6 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(9);
   });
     [10,0].forEach(sellIn => { 
-
         it("should never decrease quality of Sulfuras, Hand of Ragnaros", function() {
             const gildedRose = new Shop([ new Item("Sulfuras, Hand of Ragnaros", sellIn, 10) ]);
             const items = gildedRose.updateQuality();
@@ -35,4 +34,9 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(0);
   });
 
+  it("should increase quality by 1 for Backstage when sellIn > 10", function() {
+    const gildedRose = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", 20, 10) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(11);
+  });
 });
