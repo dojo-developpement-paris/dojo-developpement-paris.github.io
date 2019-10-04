@@ -11,10 +11,10 @@ class Shop {
         this.items = items;
     }
     decreaseQuality(i) {
-        this.items[i].quality -= 1;
+        this.items[i].quality--;
     }
     increaseQuality(i) {
-        this.items[i].quality = this.items[i].quality + 1;
+        this.items[i].quality++;
     }
     updateQuality() {
         for (var i = 0; i < this.items.length; i++) {
