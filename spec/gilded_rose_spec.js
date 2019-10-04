@@ -36,7 +36,7 @@ describe("Gilded Rose", function() {
             checkQualityFor("Backstage passes to a TAFKAL80ETC concert", sellIn, 10).toEqual(12);
         });
     });
-    [5,4].forEach(sellIn => { 
+    [5,4,1].forEach(sellIn => { 
         it("should increase quality by 3 for Backstage when sellIn <= 5", function() {
             checkQualityFor("Backstage passes to a TAFKAL80ETC concert",sellIn,10).toEqual(13);
         });
