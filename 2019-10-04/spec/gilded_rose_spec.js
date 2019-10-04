@@ -49,7 +49,7 @@ describe("Gilded Rose", function() {
       });
   });
     const checkQualityFor = (name, sellIn, initialQuality) => {
-          const gildedRose = new Shop([ new Item(name, sellIn, 10) ]);
+          const gildedRose = new Shop([ new Item(name, sellIn, initialQuality) ]);
           const items = gildedRose.updateQuality();
           return expect(items[0].quality);
     };
