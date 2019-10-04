@@ -6,6 +6,11 @@ describe("Gilded Rose", function() {
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toEqual(9);
   });
+  it("should decrease quality by 2 once sellIn is due, by default", function() {
+    const gildedRose = new Shop([ new Item("foo", 0, 10) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(8);
+  });
   it("should increase quality by 1 for Aged Brie", function() {
     const gildedRose = new Shop([ new Item("Aged Brie", 10, 10) ]);
     const items = gildedRose.updateQuality();
