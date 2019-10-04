@@ -27,15 +27,15 @@ class Shop {
                     }
                 }
             } else {
-                    this.increaseQuality(i);
-                    if (this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert') {
-                        if (this.items[i].sellIn < 11) {
-                            this.increaseQuality(i);
-                        }
-                        if (this.items[i].sellIn < 6) {
-                            this.increaseQuality(i);
-                        }
+                this.increaseQuality(i);
+                if (this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert') {
+                    if (this.items[i].sellIn < 11) {
+                        this.increaseQuality(i);
                     }
+                    if (this.items[i].sellIn < 6) {
+                        this.increaseQuality(i);
+                    }
+                }
             }
             if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
                 this.items[i].sellIn = this.items[i].sellIn - 1;
@@ -52,7 +52,7 @@ class Shop {
                         this.items[i].quality = 0;
                     }
                 } else {
-                        this.increaseQuality(i);
+                    this.increaseQuality(i);
                 }
             }
         }
