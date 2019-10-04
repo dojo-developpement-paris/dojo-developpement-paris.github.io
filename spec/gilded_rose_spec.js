@@ -6,6 +6,11 @@ describe("Gilded Rose", function() {
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toEqual(9);
   });
+  it("should not decrease quality by 1 for Aged Brie", function() {
+    const gildedRose = new Shop([ new Item("Aged Brie", 10, 10) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).not.toEqual(9);
+  });
   it("quality cannot be negative", function() {
     const gildedRose = new Shop([ new Item("foo", 0, 0) ]);
     const items = gildedRose.updateQuality();
