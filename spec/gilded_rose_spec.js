@@ -17,19 +17,13 @@ describe("Gilded Rose", function() {
         checkQualityFor("foo", 0, 10).toEqual(8);
     });
     it("should increase quality by 1 for Aged Brie", function() {
-        const gildedRose = new Shop([ new Item("Aged Brie", 10, 10) ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(11);
+        checkQualityFor("Aged Brie", 10, 10).toEqual(11);
     });
     it("Aged Brie cannot exceed 50 in quality", function() {
-        const gildedRose = new Shop([ new Item("Aged Brie", 10, 50) ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(50);
+        checkQualityFor("Aged Brie", 10, 50).toEqual(50);
     });
     it("quality cannot be negative", function() {
-        const gildedRose = new Shop([ new Item("foo", 0, 0) ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(0);
+        checkQualityFor("foo", 0, 0).toEqual(0);
     });
 
     [20,11].forEach(sellIn => { 
