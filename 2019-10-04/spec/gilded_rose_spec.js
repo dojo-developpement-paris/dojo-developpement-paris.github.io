@@ -41,4 +41,9 @@ describe("Gilded Rose", function() {
             checkQualityFor("Backstage passes to a TAFKAL80ETC concert",sellIn,10).toEqual(13);
         });
     });
+    [0].forEach(sellIn => { 
+        it("should set quality to 0 Backstage when sellIn <= 0 (after the show)", function() {
+            checkQualityFor("Backstage passes to a TAFKAL80ETC concert",sellIn,10).toEqual(0);
+        });
+    });
 });
