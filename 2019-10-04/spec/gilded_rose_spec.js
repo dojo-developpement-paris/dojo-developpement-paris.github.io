@@ -6,6 +6,11 @@ describe("Gilded Rose", function() {
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toEqual(9);
   });
+  it("should never decrease quality of Sulfuras, Hand of Ragnaros", function() {
+    const gildedRose = new Shop([ new Item("Sulfuras, Hand of Ragnaros", 10, 10) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(10);
+  });
   it("should decrease quality by 2 once sellIn is due, by default", function() {
     const gildedRose = new Shop([ new Item("foo", 0, 10) ]);
     const items = gildedRose.updateQuality();
