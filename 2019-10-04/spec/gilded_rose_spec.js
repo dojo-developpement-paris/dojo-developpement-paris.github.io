@@ -10,9 +10,7 @@ describe("Gilded Rose", function() {
     });
     [10,0].forEach(sellIn => { 
         it("should never decrease quality of Sulfuras, Hand of Ragnaros", function() {
-            const gildedRose = new Shop([ new Item("Sulfuras, Hand of Ragnaros", sellIn, 10) ]);
-            const items = gildedRose.updateQuality();
-            expect(items[0].quality).toEqual(10);
+            checkQualityFor("Sulfuras, Hand of Ragnaros", sellIn, 10).toEqual(10);
         });
     });
     it("should decrease quality by 2 once sellIn is due, by default", function() {
