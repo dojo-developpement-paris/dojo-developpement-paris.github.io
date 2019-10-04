@@ -6,9 +6,7 @@ describe("Gilded Rose", function() {
         return expect(items[0].quality);
     };
     it("should decrease quality by 1 by default", function() {
-        const gildedRose = new Shop([ new Item("foo", 10, 10) ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(9);
+        checkQualityFor("foo",10,10).toEqual(9);
     });
     [10,0].forEach(sellIn => { 
         it("should never decrease quality of Sulfuras, Hand of Ragnaros", function() {
