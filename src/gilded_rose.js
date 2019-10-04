@@ -10,6 +10,9 @@ class Shop {
     constructor(items=[]){
         this.items = items;
     }
+    decreaseQuality(i) {
+        this.items[i].quality -= 1;
+    }
     increaseQuality(i) {
         this.items[i].quality = this.items[i].quality + 1;
     }
