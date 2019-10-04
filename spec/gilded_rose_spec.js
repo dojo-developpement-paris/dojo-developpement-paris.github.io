@@ -41,7 +41,7 @@ describe("Gilded Rose", function() {
           expect(items[0].quality).toEqual(11);
       });
   });
-  [10].forEach(sellIn => { 
+  [10,6].forEach(sellIn => { 
       it("should increase quality by 2 for Backstage when sellIn <= 10 and > 5", function() {
           const gildedRose = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, 10) ]);
           const items = gildedRose.updateQuality();
