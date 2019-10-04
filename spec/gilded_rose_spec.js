@@ -49,7 +49,7 @@ describe("Gilded Rose", function() {
       });
   });
     const checkQualityFor = (name, sellIn, initialQuality) => {
-          const gildedRose = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, 10) ]);
+          const gildedRose = new Shop([ new Item(name, sellIn, 10) ]);
           const items = gildedRose.updateQuality();
           return expect(items[0].quality);
     };
