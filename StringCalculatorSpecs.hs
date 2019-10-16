@@ -1,4 +1,5 @@
 import Test.Hspec
+import Data.List.Split
 
 eval :: String -> Int
 eval (c : '+' : s) = (eval [c]) + (eval s)
