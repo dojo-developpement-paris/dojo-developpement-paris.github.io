@@ -2,7 +2,7 @@ import Test.Hspec
 import Data.List.Split
 
 eval :: String -> Int
-eval = sum.map read . splitOn "+"
+eval = sum . map read . splitOn "+"
         
 
 main = hspec $ do
