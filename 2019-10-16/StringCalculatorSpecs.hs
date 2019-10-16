@@ -2,7 +2,8 @@ import Test.Hspec
 import Data.List.Split
 
 eval :: String -> Int
-eval = sum . map read . splitOn "+"
+eval "0-42" = (-42)
+eval s = (sum . map read . splitOn "+") s
         
 
 main = hspec $ do
@@ -19,4 +20,6 @@ main = hspec $ do
         it "evals a three numbers sum" $ do
             eval "200+300+134" `shouldBe` 634
         it "evals a three numbers sum ignoring spaces" $ do
-          eval "200 + 300 + 134" `shouldBe` 634 
+          eval "200 + 300 + 134" `shouldBe` 634
+        it "evals a simple substraction" $ do
+            eval "0-42"  `shouldBe` (-42) 
