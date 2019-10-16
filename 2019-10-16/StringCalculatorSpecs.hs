@@ -2,9 +2,9 @@ import Test.Hspec
 
 eval :: String -> Int
 eval "11+0" = 11
-eval "42+0" = 42
+eval "42+0" = 42 
 eval (c : '+' : s) = (eval [c]) + (eval s)
-eval s      = read s
+eval  s = read (takeWhile (/='+') s )
 
 main = hspec $ do
     describe "eval" $ do
