@@ -2,8 +2,6 @@ import Test.Hspec
 import Data.List.Split
 
 eval :: String -> Int
-eval "0-42" = (-42)
-eval "42-0" = 42
 eval s | '-' `elem` s = ( foldl1 (-) . map read . splitOn "-") s
 eval s = (sum . map read . splitOn "+") s
         
