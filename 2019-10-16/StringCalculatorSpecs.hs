@@ -2,10 +2,7 @@ import Test.Hspec
 import Data.List.Split
 
 eval :: String -> Int
-eval (c : '+' : s) = (eval [c]) + (eval s)
-eval  s = read (firstNumber )
-  where firstNumber = head numbers 
-        numbers = splitOn "+" s
+eval = sum.map read . splitOn "+"
         
 
 main = hspec $ do
