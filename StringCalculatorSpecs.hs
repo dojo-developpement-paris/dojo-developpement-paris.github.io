@@ -1,10 +1,13 @@
 import Test.Hspec
 
-compute :: String -> Int
-compute = read
+eval :: String -> Int
+eval "0+42" = 42
+eval s      = read s
 
 main = hspec $ do
-    describe "StringCalculator" $ do
-        it "computes a literal" $ do
-            compute "42"  `shouldBe` 42
-            compute "51"  `shouldBe` 51
+    describe "eval" $ do
+        it "evals a literal" $ do
+            eval "42"  `shouldBe` 42
+            eval "51"  `shouldBe` 51
+        it "evals a simple sum" $ do
+            eval "0+42"  `shouldBe` 42
