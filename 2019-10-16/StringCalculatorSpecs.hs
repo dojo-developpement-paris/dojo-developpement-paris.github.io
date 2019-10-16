@@ -4,7 +4,9 @@ import Data.List.Split
 eval :: String -> Int
 eval (c : '+' : s) = (eval [c]) + (eval s)
 eval  s = read (firstNumber )
-  where firstNumber = takeWhile (/='+') s 
+  where firstNumber = head numbers 
+        numbers = splitOn "+" s
+        
 
 main = hspec $ do
     describe "eval" $ do
