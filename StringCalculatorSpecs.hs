@@ -1,8 +1,7 @@
 import Test.Hspec
 
 eval :: String -> Int
-eval "0+42" = 42
-eval "1+32" = 33
+eval (c : '+' : s) = (read [c]) + (read s)
 eval s      = read s
 
 main = hspec $ do
