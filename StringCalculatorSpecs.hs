@@ -16,3 +16,5 @@ main = hspec $ do
         it "evals a two digits left number sum" $ do
             eval "11+0"  `shouldBe` 11
             eval "42+0" `shouldBe` 42
+        it "evals a three numbers sum" $ do
+            eval "200+300+134" `shouldBe` 634 
