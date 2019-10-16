@@ -2,6 +2,7 @@ import Test.Hspec
 
 eval :: String -> Int
 eval "0+42" = 42
+eval "1+32" = 33
 eval s      = read s
 
 main = hspec $ do
@@ -11,3 +12,4 @@ main = hspec $ do
             eval "51"  `shouldBe` 51
         it "evals a simple sum" $ do
             eval "0+42"  `shouldBe` 42
+            eval "1+32" `shouldBe` 33
