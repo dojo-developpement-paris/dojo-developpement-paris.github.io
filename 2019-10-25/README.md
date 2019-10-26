@@ -21,11 +21,11 @@ Retro: Randori Haskell - String calculator en gambling driven development
 - On avait pas mal de nouveau
 
 Sujets proposés :
-*A - 9 - Mob - SmallTalk - Fourmi de Langton*
-B - 4 - Mob - SmallTalk - Calcul du score de Bowling
-C - 5 - Mob - Haskell   - RPN (Reverse Polish Notation)
-D - 8 - Mob - Litterate Haskell   - Teaching Driven Development String Calculator de tel sorte que tout le monde puisse l'expliquer la semaine prochaine
-E - 1 - Mob - Python - FizzBuzz Calisthénique
+- *A - 9 - Mob - SmallTalk - Fourmi de Langton*
+- B - 4 - Mob - SmallTalk - Calcul du score de Bowling
+- C - 5 - Mob - Haskell   - RPN (Reverse Polish Notation)
+- D - 8 - Mob - Litterate Haskell   - Teaching Driven Development String Calculator de tel sorte que tout le monde puisse l'expliquer la semaine prochaine
+- E - 1 - Mob - Python - FizzBuzz Calisthénique
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
