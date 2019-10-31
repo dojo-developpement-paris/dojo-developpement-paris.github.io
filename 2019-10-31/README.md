@@ -4,6 +4,7 @@ Présents :
 - Kevin
 - Christelle
 - Karl
+- Benoit
 
 Retro: Mob - SmallTalk - Fourmi de Langton
 - Fourmi de Langton qui se déplace que sur une ligne
