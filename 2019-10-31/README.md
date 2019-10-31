@@ -11,8 +11,8 @@ Retro: Mob - SmallTalk - Fourmi de Langton
 - On a pas pu trop voir ce que permettait SmallTalk
 
 Sujets proposés :
-A - 2 - Mob - Java - Décomposition en facteur premier
-B - 1 - Mob - Python - Triangle de Sierpinski
+- **A - 2 - Mob - Java - Décomposition en facteur premier**
+- B - 1 - Mob - Python - Triangle de Sierpinski
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
