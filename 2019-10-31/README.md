@@ -1,11 +1,17 @@
-Prochaine session: Jeudi 31 Octobre 2019 - Arolla 21 rue du bouloi
+Prochaine session: Vendredi 8 Novembre - Arolla 21 rue du Bouloi
 
 Présents :
 - Kevin
+- Christelle
+- Karl
 
 Retro: Mob - SmallTalk - Fourmi de Langton
+- Fourmi de Langton qui se déplace que sur une ligne
+- On a pas pu trop voir ce que permettait SmallTalk
 
 Sujets proposés :
+A - 2 - Mob - Java - Décomposition en facteur premier
+B - 1 - Mob - Python - Triangle de Sierpinski
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
