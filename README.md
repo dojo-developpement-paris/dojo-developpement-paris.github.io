@@ -17,7 +17,7 @@ Sujets proposés :
 A - 6 - Haskell - Mob - Les rotations de pièces de tétris
 B - 2 - Haskell - Mob - Greeting kata
 C - 6 - Haskell - Randori - Greeting kata
-D - 10 - **Python - Mob - Trick or treat**
+D - 10 - **Python - Mob - Trick or treat [https://www.codewars.com/kata/halloween-trick-or-treat](https://www.codewars.com/kata/halloween-trick-or-treat)**
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
