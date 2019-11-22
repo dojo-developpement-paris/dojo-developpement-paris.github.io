@@ -2,7 +2,7 @@ with import ./nixUnit.nix;
 
 let
   tests = (
-#    import ./romanTest.nix //
+    import ./romanNumeralsTest.nix //
     {}
     );
 in
