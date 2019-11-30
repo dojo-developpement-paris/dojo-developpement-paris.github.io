@@ -1,7 +1,7 @@
-module Parser (repl, prefix, debug) where
+module Parser (repl, normal, debug) where
 import Data.Maybe
 
-repl = interact (unlines . map prefix . lines)
+repl mode = interact (unlines . map mode . lines)
 
 -- "*+42 17!5"
 --
@@ -27,10 +27,10 @@ data Token = V Value
            | B Binary
            | U Unary
 
-prefix :: String -> String
-prefix s = case (map fst . filter success . parse) s of
+normal :: String -> String
+normal s = case (map fst . filter success . parse) s of
     [t] -> show (eval t)
-    _ -> "error : incorrect prefix expression" 
+    _ -> "Parsing of the expression failed" 
 
 debug :: String -> String
 debug s = case parse s of
