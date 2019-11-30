@@ -15,6 +15,8 @@ data Tree a = Nil
 data Token = V Value
            | B Binary
            | U Unary
+           | Lambda Binary
+           | Apply Binary (Tree Token)
 
 normal :: String -> String
 normal s = case (map fst . filter success . parse) s of
@@ -62,7 +64,7 @@ unaryParser _ = []
 binaryParser :: Parser Token
 binaryParser (c:s) = case lookup c binaries of
     Nothing -> []
-    Just f -> [(B c,s)]
+    Just f -> [(Lambda c,s)]
 binaryParser _ = []
 
 leaf :: Parser a -> Parser (Tree a) 
@@ -93,3 +95,5 @@ eval :: Tree Token -> Value
 eval (Node (V n) _ _) = n
 eval (Node (U c) t _) = let f = fromJust (lookup c unaries) in f (eval t)
 eval (Node (B c) t u) = let f = fromJust (lookup c binaries) in f (eval t) (eval u)
+eval (Node (Lambda c) t u) = eval (Node (Apply c  t) u Nil)
+eval (Node (Apply c t) u Nil) = let f = fromJust (lookup c binaries) in f (eval t) (eval u)
