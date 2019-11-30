@@ -9,10 +9,13 @@ type Value = Integer
 type Operation = Char
 type Parser a = String -> [(a,String)]
 
-data Expr where
-   V :: Value -> Expr
-   Lambda :: Operation -> Expr
-   Apply :: Expr -> Expr -> Expr
+data Op a = Op a
+data Val = Val
+
+data Expr typ where
+   V :: Value -> Expr Val
+   Lambda :: Operation -> Expr (Op a)
+   Apply :: Expr (Op a) -> Expr Val -> Expr a
 
 normal :: String -> String
 normal s = case (map fst . filter success . parse) s of
@@ -28,20 +31,20 @@ debug s = case parse s of
 success :: (a,String) -> Bool
 success = null . snd
 
-parse :: Parser Expr
+parse :: Parser (Expr Val)
 parse = expression
 
-expression :: Parser Expr
+expression :: Parser (Expr Val)
 expression = number 
            <|> (unary <&> expression)
            <|> (binary <&> expression <&> expression)
 
 number = spaces valueParser 
-unary  = spaces (function unaries)
-binary = spaces (function binaries)
+unary  = spaces (uParser unaries)
+binary = spaces (bParser binaries)
            
 
-valueParser :: Parser Expr
+valueParser :: Parser (Expr Val)
 valueParser s = case reads s of
     [(n,s')] | n >= 0 -> [(V n, s')]
     _ -> []  
@@ -51,11 +54,18 @@ fact n = product [1..n]
 unaries = zip "-!" [negate, fact]
 binaries= zip "+-*/%" [(+),(-),(*),div,mod]
 
-function :: [(Char, f)] -> Parser Expr
-function functions (c:s) = case lookup c functions of
+uParser :: [(Char, f)] -> Parser (Expr (Op Val))
+uParser uParsers (c:s) = case lookup c uParsers of
     Nothing -> []
     Just f -> [(Lambda c,s)]
-function _ _ = []
+uParser _ _ = []
+
+
+bParser :: [(Char, f)] -> Parser (Expr (Op (Op Val)))
+bParser uParsers (c:s) = case lookup c uParsers of
+    Nothing -> []
+    Just f -> [(Lambda c,s)]
+bParser _ _ = []
 
 spaces :: Parser a -> Parser a
 spaces p (' ':rest) = spaces p rest
@@ -66,18 +76,14 @@ infixl 2 <|>
 (p <|> q) s = p s <> q s
 
 infixl 3 <&>
-(<&>) :: Parser Expr -> Parser Expr -> Parser Expr
+(<&>) :: Parser (Expr (Op a)) -> Parser (Expr Val) -> Parser (Expr a)
 (p <&> q) s = case p s of
     [] -> []
-    rs -> [(grow a b, s'')
+    rs -> [(Apply a b, s'')
           | (a,s') <- rs
           , (b,s'') <- q s']
-    where
-    grow :: Expr -> Expr -> Expr
-    grow (V a) _ = V a
-    grow lam t = Apply lam t
 
-eval :: Expr -> Value
+eval :: Expr Val -> Value
 eval (V n) = n
 eval (Apply (Lambda c) t) = let f = fromJust (lookup c unaries) in f (eval t)
 eval (Apply (Apply (Lambda c) t) u) = let f = fromJust (lookup c binaries) in f (eval t) (eval u)
