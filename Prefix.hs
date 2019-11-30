@@ -1,4 +1,7 @@
-main = interact (unlines . map prefix . lines)
+import Data.Maybe
+main = repl
+
+repl = interact (unlines . map prefix . lines)
 
 -- "*+42 17!5"
 --
@@ -12,31 +15,39 @@ main = interact (unlines . map prefix . lines)
 
 
 type Value = Integer
-type Unary = Value -> Value
-type Binary = Value -> Value -> Value
 
+type Unary = Char
+type Binary = Char
 type Parser a = String -> [(a,String)]
 
 data Tree a = Nil 
             | Node a (Tree a) (Tree a)
 
 data Token = V Value
-           | U Unary
            | B Binary
+           | U Unary
 
 prefix :: String -> String
-prefix s = case parse s of
+prefix s = case (map fst . filter success . parse) s of
+    [t] -> show (eval t)
+    _ -> "error : incorrect prefix expression" 
+
+debug :: String -> String
+debug s = case parse s of
     [] -> "error : incorrect prefix expression" 
-    [(t,"")] -> show (eval t)
-    [(_,s)]  -> "error: extra chars in expression, Master : " ++ s
-    
+    rs -> unlines [show (eval t) ++ " (" ++ s ++ ")"
+                  | (t,s) <- rs]
+
+success :: (a,String) -> Bool
+success = null . snd
 
 parse :: Parser (Tree Token)
 parse = expression
 
+expression :: Parser (Tree Token)
 expression = number 
-           <|> (binary <&> expression <&> expression)
            <|> (unary <&> expression)
+           <|> (binary <&> expression <&> expression)
 
 number = spaces (leaf valueParser) 
 unary  = spaces (leaf unaryParser)
@@ -50,18 +61,19 @@ valueParser s = case reads s of
 
 fact n = product [1..n]
 
+unaries = zip "-!" [negate, fact]
+binaries= zip "+-*/%" [(+),(-),(*),div,mod]
+
 unaryParser :: Parser Token
-unaryParser ('-':s) = [(U negate,s)]
-unaryParser ('!':s) = [(U fact,s)]
+unaryParser (c:s) = case lookup c unaries of
+    Nothing -> []
+    Just f -> [(U c,s)]
 unaryParser _ = []
 
-
 binaryParser :: Parser Token
-binaryParser ('+':s) = [(B (+),s)]
-binaryParser ('-':s) = [(B (-),s)]
-binaryParser ('*':s) = [(B (*),s)]
-binaryParser ('/':s) = [(B div,s)]
-binaryParser ('%':s) = [(B mod,s)]
+binaryParser (c:s) = case lookup c binaries of
+    Nothing -> []
+    Just f -> [(B c,s)]
 binaryParser _ = []
 
 
@@ -82,11 +94,13 @@ spaces :: Parser a -> Parser a
 spaces p (' ':rest) = spaces p rest
 spaces p s       = p s
 
+
+
+
 infixl 2 <|>
 (<|>) :: Parser a -> Parser a -> Parser a 
-(p <|> q) s = case p s of
-    [] -> q s
-    rs -> rs
+(p <|> q) s = p s <> q s
+
 
 infixl 3 <&>
 (<&>) :: Parser (Tree a) -> Parser (Tree a) -> Parser (Tree a)
@@ -107,5 +121,5 @@ parserDummy _ = []
 
 eval :: Tree Token -> Value
 eval (Node (V n) _ _) = n
-eval (Node (U f) t _) = f (eval t)
-eval (Node (B f) t u) = f (eval t) (eval u)
+eval (Node (U c) t _) = let f = fromJust (lookup c unaries) in f (eval t)
+eval (Node (B c) t u) = let f = fromJust (lookup c binaries) in f (eval t) (eval u)
