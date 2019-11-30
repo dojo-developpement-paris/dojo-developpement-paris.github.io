@@ -3,17 +3,6 @@ import Data.Maybe
 
 repl mode = interact (unlines . map mode . lines)
 
--- "*+42 17!5"
---
--- (*
---      (+
---          42
---          17)
---      (!
---          5))
---
-
-
 type Value = Integer
 
 type Unary = Char
@@ -76,17 +65,6 @@ binaryParser (c:s) = case lookup c binaries of
     Just f -> [(B c,s)]
 binaryParser _ = []
 
-
--- *+42 17 !5
--- Node (B (*)) 
---       Node (B (+))  
---          Node (V 42) Nil Nil
---          Node (V 17) Nil Nil
---       Node (U (fact)) 
---          (Node (V 5) Nil Nil)
---          Nil
---
---
 leaf :: Parser a -> Parser (Tree a) 
 leaf p = fmap (\(a,s) -> (Node a Nil Nil, s)) . p
 
@@ -94,13 +72,9 @@ spaces :: Parser a -> Parser a
 spaces p (' ':rest) = spaces p rest
 spaces p s       = p s
 
-
-
-
 infixl 2 <|>
 (<|>) :: Parser a -> Parser a -> Parser a 
 (p <|> q) s = p s <> q s
-
 
 infixl 3 <&>
 (<&>) :: Parser (Tree a) -> Parser (Tree a) -> Parser (Tree a)
@@ -114,10 +88,6 @@ infixl 3 <&>
     grow Nil t = t
     grow (Node a Nil Nil) u = Node a u Nil
     grow (Node a t Nil) u = Node a t u
-
-parserDummy :: Parser (Tree Token)
-parserDummy "foo" = [(Node (V 42) Nil Nil,"")]
-parserDummy _ = []
 
 eval :: Tree Token -> Value
 eval (Node (V n) _ _) = n
