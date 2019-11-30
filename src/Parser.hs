@@ -9,7 +9,7 @@ type Operation = Char
 type Parser a = String -> [(a,String)]
 
 data Tree a = Nil 
-            | Node a (Tree a) (Tree a)
+            | Node a (Tree a)
 
 data Token = V Value
            | Lambda Operation
@@ -65,7 +65,7 @@ binaryParser (c:s) = case lookup c binaries of
 binaryParser _ = []
 
 leaf :: Parser a -> Parser (Tree a) 
-leaf p = fmap (\(a,s) -> (Node a Nil Nil, s)) . p
+leaf p = fmap (\(a,s) -> (Node a Nil, s)) . p
 
 spaces :: Parser a -> Parser a
 spaces p (' ':rest) = spaces p rest
@@ -85,12 +85,12 @@ infixl 3 <&>
     where
     grow :: Tree a -> Tree a -> Tree a
     grow Nil t = t
-    grow (Node a Nil Nil) u = Node a u Nil
-    grow (Node a t Nil) u = Node a t u
+    grow (Node a Nil) u = Node a u
+    grow (Node a t) u = Node (Apply a t) u
 
 eval :: Tree Token -> Value
-eval (Node (V n) _ _) = n
-eval (Node (Lambda c) t Nil) = eval (Node (Apply c t) Nil Nil)
-eval (Node (Lambda c) t u) = eval (Node (Apply c t) u Nil)
-eval (Node (Apply c t) Nil Nil) = let f = fromJust (lookup c unaries) in f (eval t)
-eval (Node (Apply c t) u Nil) = let f = fromJust (lookup c binaries) in f (eval t) (eval u)
+eval (Node (V n) _) = n
+eval (Node (Lambda c) t) = eval (Node (Apply c t) Nil)
+--eval (Node (Lambda c) t u) = eval (Node (Apply c t) u)
+eval (Node (Apply c t) Nil) = let f = fromJust (lookup c unaries) in f (eval t)
+eval (Node (Apply c t) u) = let f = fromJust (lookup c binaries) in f (eval t) (eval u)
