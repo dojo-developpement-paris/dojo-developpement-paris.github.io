@@ -1,3 +1,4 @@
+{-# LANGUAGE GADTs #-}
 module Parser (repl, normal, debug) where
 import Data.Maybe
 
@@ -8,9 +9,10 @@ type Value = Integer
 type Operation = Char
 type Parser a = String -> [(a,String)]
 
-data Expr = V Value
-           | Lambda Operation
-           | Apply Expr Expr
+data Expr where
+   V :: Value -> Expr
+   Lambda :: Operation -> Expr
+   Apply :: Expr -> Expr -> Expr
 
 normal :: String -> String
 normal s = case (map fst . filter success . parse) s of
