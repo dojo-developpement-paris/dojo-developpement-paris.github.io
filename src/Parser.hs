@@ -35,8 +35,8 @@ expression = number
            <|> (binary <&> expression <&> expression)
 
 number = spaces valueParser 
-unary  = spaces unaryParser
-binary = spaces binaryParser
+unary  = spaces (function unaries)
+binary = spaces (function binaries)
            
 
 valueParser :: Parser Expr
@@ -49,17 +49,11 @@ fact n = product [1..n]
 unaries = zip "-!" [negate, fact]
 binaries= zip "+-*/%" [(+),(-),(*),div,mod]
 
-unaryParser :: Parser Expr
-unaryParser (c:s) = case lookup c unaries of
+function :: [(Char, f)] -> Parser Expr
+function functions (c:s) = case lookup c functions of
     Nothing -> []
     Just f -> [(Lambda c,s)]
-unaryParser _ = []
-
-binaryParser :: Parser Expr
-binaryParser (c:s) = case lookup c binaries of
-    Nothing -> []
-    Just f -> [(Lambda c,s)]
-binaryParser _ = []
+function _ _ = []
 
 spaces :: Parser a -> Parser a
 spaces p (' ':rest) = spaces p rest
