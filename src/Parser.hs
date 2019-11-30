@@ -1,15 +1,7 @@
-main = interact (unlines . map prefix . lines)
+module Parser (repl)
+where
 
--- "*+42 17!5"
---
--- (*
---      (+
---          42
---          17)
---      (!
---          5))
---
-
+repl = interact (unlines . map prefix . lines)
 
 type Value = Integer
 type Unary = Value -> Value
@@ -25,18 +17,22 @@ data Token = V Value
            | B Binary
 
 prefix :: String -> String
-prefix s = case parse s of
+prefix s = case filter success $ parse s of
     [] -> "error : incorrect prefix expression" 
     [(t,"")] -> show (eval t)
-    [(_,s)]  -> "error: extra chars in expression, Master : " ++ s
-    
+    _ -> "ambiguous expression"
+
+success :: (a, String) -> Bool
+success (_,"") = True
+success _      = False
+  
 
 parse :: Parser (Tree Token)
 parse = expression
 
 expression = number 
-           <|> (binary <&> expression <&> expression)
            <|> (unary <&> expression)
+           <|> (binary <&> expression <&> expression)
 
 number = spaces (leaf valueParser) 
 unary  = spaces (leaf unaryParser)
@@ -65,16 +61,6 @@ binaryParser ('%':s) = [(B mod,s)]
 binaryParser _ = []
 
 
--- *+42 17 !5
--- Node (B (*)) 
---       Node (B (+))  
---          Node (V 42) Nil Nil
---          Node (V 17) Nil Nil
---       Node (U (fact)) 
---          (Node (V 5) Nil Nil)
---          Nil
---
---
 leaf :: Parser a -> Parser (Tree a) 
 leaf p = fmap (\(a,s) -> (Node a Nil Nil, s)) . p
 
@@ -84,17 +70,16 @@ spaces p s       = p s
 
 infixl 2 <|>
 (<|>) :: Parser a -> Parser a -> Parser a 
-(p <|> q) s = case p s of
-    [] -> q s
-    rs -> rs
+(p <|> q) s = p s <> q s
 
 infixl 3 <&>
 (<&>) :: Parser (Tree a) -> Parser (Tree a) -> Parser (Tree a)
-(p <&> q) s = case p s of
-    [] -> []
-    rs -> [(grow a b, s'')
-          | (a,s') <- rs
-          , (b,s'') <- q s']
+(p <&> q) s = 
+    p s >>= 
+        (\(prevTree, intermediate) -> 
+            map (\(nextTree, remainder) -> (grow prevTree nextTree, remainder)) 
+                (q intermediate)
+        )
     where
     grow :: Tree a -> Tree a -> Tree a
     grow Nil t = t
