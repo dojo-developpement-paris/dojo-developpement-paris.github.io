@@ -8,9 +8,9 @@ type Value = Integer
 type Operation = Char
 type Parser a = String -> [(a,String)]
 
-data Token = V Value
+data Expr = V Value
            | Lambda Operation
-           | Apply Token Token
+           | Apply Expr Expr
 
 normal :: String -> String
 normal s = case (map fst . filter success . parse) s of
@@ -26,10 +26,10 @@ debug s = case parse s of
 success :: (a,String) -> Bool
 success = null . snd
 
-parse :: Parser Token
+parse :: Parser Expr
 parse = expression
 
-expression :: Parser Token
+expression :: Parser Expr
 expression = number 
            <|> (unary <&> expression)
            <|> (binary <&> expression <&> expression)
@@ -39,7 +39,7 @@ unary  = spaces unaryParser
 binary = spaces binaryParser
            
 
-valueParser :: Parser Token
+valueParser :: Parser Expr
 valueParser s = case reads s of
     [(n,s')] | n >= 0 -> [(V n, s')]
     _ -> []  
@@ -49,13 +49,13 @@ fact n = product [1..n]
 unaries = zip "-!" [negate, fact]
 binaries= zip "+-*/%" [(+),(-),(*),div,mod]
 
-unaryParser :: Parser Token
+unaryParser :: Parser Expr
 unaryParser (c:s) = case lookup c unaries of
     Nothing -> []
     Just f -> [(Lambda c,s)]
 unaryParser _ = []
 
-binaryParser :: Parser Token
+binaryParser :: Parser Expr
 binaryParser (c:s) = case lookup c binaries of
     Nothing -> []
     Just f -> [(Lambda c,s)]
@@ -70,18 +70,18 @@ infixl 2 <|>
 (p <|> q) s = p s <> q s
 
 infixl 3 <&>
-(<&>) :: Parser Token -> Parser Token -> Parser Token
+(<&>) :: Parser Expr -> Parser Expr -> Parser Expr
 (p <&> q) s = case p s of
     [] -> []
     rs -> [(grow a b, s'')
           | (a,s') <- rs
           , (b,s'') <- q s']
     where
-    grow :: Token -> Token -> Token
+    grow :: Expr -> Expr -> Expr
     grow (V a) _ = V a
     grow lam t = Apply lam t
 
-eval :: Token -> Value
+eval :: Expr -> Value
 eval (V n) = n
 eval (Apply (Lambda c) t) = let f = fromJust (lookup c unaries) in f (eval t)
 eval (Apply (Apply (Lambda c) t) u) = let f = fromJust (lookup c binaries) in f (eval t) (eval u)
