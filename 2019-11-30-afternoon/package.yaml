@@ -21,13 +21,24 @@ library:
   source-dirs: src
 
 executables:
-  parser-exe:
-    main:                Main.hs
+  calc:
+    main:                Calc.hs
     source-dirs:         app
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -main-is Calc
+    dependencies:
+    - parser
+  debug:
+    main:                Debug.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -main-is Debug
     dependencies:
     - parser
 

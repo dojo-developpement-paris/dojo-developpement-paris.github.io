@@ -1,15 +1,15 @@
 import Test.Hspec
-import Parser (prefix)
+import Parser (normal)
 
 main = hspec 
   (describe "a polish calculator parser" 
     (it "parses simple expressions" 
       (do 
-          prefix "42" `shouldBe` "42"
-          prefix "-42" `shouldBe` "-42"
-          prefix "--42" `shouldBe` "42"
-          prefix "-3 4" `shouldBe` "-1"
-          prefix "*+42 17 !5" `shouldBe` "7080"
+          normal "42" `shouldBe` "42"
+          normal "-42" `shouldBe` "-42"
+          normal "--42" `shouldBe` "42"
+          normal "-3 4" `shouldBe` "-1"
+          normal "*+42 17 !5" `shouldBe` "7080"
       ) 
     )
   )
