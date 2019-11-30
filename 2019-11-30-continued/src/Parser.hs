@@ -5,17 +5,15 @@ repl mode = interact (unlines . map mode . lines)
 
 type Value = Integer
 
-type Unary = Char
-type Binary = Char
+type Operation = Char
 type Parser a = String -> [(a,String)]
 
 data Tree a = Nil 
             | Node a (Tree a) (Tree a)
 
 data Token = V Value
-           | U Unary
-           | Lambda Binary
-           | Apply Binary (Tree Token)
+           | Lambda Operation
+           | Apply Operation (Tree Token)
 
 normal :: String -> String
 normal s = case (map fst . filter success . parse) s of
@@ -92,8 +90,7 @@ infixl 3 <&>
 
 eval :: Tree Token -> Value
 eval (Node (V n) _ _) = n
-eval (Node (U c) t _) = let f = fromJust (lookup c unaries) in f (eval t)
 eval (Node (Lambda c) t Nil) = eval (Node (Apply c t) Nil Nil)
-eval (Node (Lambda c) t u) = eval (Node (Apply c  t) u Nil)
+eval (Node (Lambda c) t u) = eval (Node (Apply c t) u Nil)
 eval (Node (Apply c t) Nil Nil) = let f = fromJust (lookup c unaries) in f (eval t)
 eval (Node (Apply c t) u Nil) = let f = fromJust (lookup c binaries) in f (eval t) (eval u)
