@@ -57,7 +57,7 @@ binaries= zip "+-*/%" [(+),(-),(*),div,mod]
 unaryParser :: Parser Token
 unaryParser (c:s) = case lookup c unaries of
     Nothing -> []
-    Just f -> [(U c,s)]
+    Just f -> [(Lambda c,s)]
 unaryParser _ = []
 
 binaryParser :: Parser Token
@@ -93,5 +93,7 @@ infixl 3 <&>
 eval :: Tree Token -> Value
 eval (Node (V n) _ _) = n
 eval (Node (U c) t _) = let f = fromJust (lookup c unaries) in f (eval t)
+eval (Node (Lambda c) t Nil) = eval (Node (Apply c t) Nil Nil)
 eval (Node (Lambda c) t u) = eval (Node (Apply c  t) u Nil)
+eval (Node (Apply c t) Nil Nil) = let f = fromJust (lookup c unaries) in f (eval t)
 eval (Node (Apply c t) u Nil) = let f = fromJust (lookup c binaries) in f (eval t) (eval u)
