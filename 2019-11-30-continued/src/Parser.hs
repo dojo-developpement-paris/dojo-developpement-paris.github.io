@@ -13,7 +13,6 @@ data Tree a = Nil
             | Node a (Tree a) (Tree a)
 
 data Token = V Value
-           | B Binary
            | U Unary
            | Lambda Binary
            | Apply Binary (Tree Token)
@@ -94,6 +93,5 @@ infixl 3 <&>
 eval :: Tree Token -> Value
 eval (Node (V n) _ _) = n
 eval (Node (U c) t _) = let f = fromJust (lookup c unaries) in f (eval t)
-eval (Node (B c) t u) = let f = fromJust (lookup c binaries) in f (eval t) (eval u)
 eval (Node (Lambda c) t u) = eval (Node (Apply c  t) u Nil)
 eval (Node (Apply c t) u Nil) = let f = fromJust (lookup c binaries) in f (eval t) (eval u)
