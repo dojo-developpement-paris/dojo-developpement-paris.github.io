@@ -1,5 +1,5 @@
+module Parser (repl, prefix, debug) where
 import Data.Maybe
-main = repl
 
 repl = interact (unlines . map prefix . lines)
 
