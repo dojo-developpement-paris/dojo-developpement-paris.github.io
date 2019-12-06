@@ -13,7 +13,7 @@ impl Position {
 fn evolve(ground : HashSet<Position>) -> HashSet<Position> {
     let mut result = HashSet::new();
     if ground.len() == 3 {
-        return [Position::new(0,1)].iter().cloned().collect();
+        result.insert(Position::new(0,1));
     }
     return result;
 }
