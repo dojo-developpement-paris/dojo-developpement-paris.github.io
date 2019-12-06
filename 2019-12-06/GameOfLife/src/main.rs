@@ -20,14 +20,12 @@ mod game_of_life_should {
     use super::*;
     fn assert_evolve(initial_ground:&[Position],final_ground:&[Position]) {
         let initial_set:HashSet<Position> = initial_ground.iter().cloned().collect();
-        let final_set:HashSet<Position> = final_ground.iter().cloned().collect();
+        let final_set  :HashSet<Position> = final_ground.iter().cloned().collect();
         assert_eq!(final_set, evolve(initial_set));
     }
     #[test]
     fn not_create_life_when_there_is_no_living_cell() {
-        let initial_ground = HashSet::new();
-        let final_ground   = HashSet::new();
-        assert_eq!(final_ground, evolve(initial_ground));
+        assert_evolve(&[],&[]);
     }
     #[test]
     fn let_an_isolated_cell_die() {
