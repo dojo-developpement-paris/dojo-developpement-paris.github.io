@@ -29,9 +29,7 @@ mod game_of_life_should {
     }
     #[test]
     fn let_an_isolated_cell_die() {
-        let initial_ground = [Position::new(0,0)].iter().cloned().collect();
-        let final_ground = HashSet::new();
-        assert_eq!(final_ground, evolve(initial_ground));
+        assert_evolve(&[Position::new(0,0)],&[]);
     }
     #[test]
     fn let_a_cell_survive_when_surrounded_by_two_cells() {
