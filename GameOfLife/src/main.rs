@@ -13,7 +13,12 @@ impl Position {
 fn evolve(ground : HashSet<Position>) -> HashSet<Position> {
     let mut result = HashSet::new();
     if ground.len() == 3 {
-        result.insert(Position::new(0,1));
+        if ground.contains(&Position::new(0,3)) {
+            result.insert(Position::new(0,2));
+        }
+        else {
+            result.insert(Position::new(0,1));
+        }
     }
     result
 }
@@ -38,5 +43,9 @@ mod game_of_life_should {
                         Position::new(0,1),
                         Position::new(0,2)],
                       &[Position::new(0,1)]);
+        assert_evolve(&[Position::new(0,1),
+                        Position::new(0,2),
+                        Position::new(0,3)],
+                      &[Position::new(0,2)]);
     }
 }
