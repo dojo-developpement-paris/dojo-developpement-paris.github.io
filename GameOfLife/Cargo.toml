@@ -1,0 +1,6 @@
+[package]
+name = "GameOfLife"
+version = "0.1.0"
+authors = ["Christophe Thibaut <cthibaut@octo.com>"]
+
+[dependencies]
