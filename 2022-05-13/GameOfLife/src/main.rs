@@ -16,7 +16,7 @@ fn evolve(ground : HashSet<Position>) -> HashSet<Position> {
         if ground.contains(&Position::new(0,3)) {
             result.insert(Position::new(0,2));
         }
-        if ground.contains(&Position::new(0,0)) {
+        if ground.contains(&Position::new(0,0)) && ground.contains(&Position::new(0,2)) {
             result.insert(Position::new(0,1));
         }
     }
@@ -36,6 +36,7 @@ mod game_of_life_should {
     #[test]
     fn let_an_isolated_cell_die() {
         assert_evolve(&[Position::new(0,0)],&[]);
+        assert_evolve(&[Position::new(0,0),Position::new(10,10),Position::new(20,20)],&[]);
     }
     #[test]
     fn let_a_cell_survive_when_surrounded_by_two_cells() {
