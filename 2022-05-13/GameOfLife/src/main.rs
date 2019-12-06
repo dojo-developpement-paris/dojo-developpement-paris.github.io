@@ -11,7 +11,7 @@ impl Position {
     }
 }
 fn evolve(ground : HashSet<Position>) -> HashSet<Position> {
-    if(ground.len() == 3) {
+    if ground.len() == 3 {
         return [Position::new(0,1)].iter().cloned().collect();
     }
     return HashSet::new();
