@@ -33,8 +33,6 @@ mod game_of_life_should {
     }
     #[test]
     fn let_a_cell_survive_when_surrounded_by_two_cells() {
-        let initial_ground = [Position::new(0,0),Position::new(0,1),Position::new(0,2)].iter().cloned().collect();
-        let final_ground:HashSet<Position> = [Position::new(0,1)].iter().cloned().collect();
-        assert_eq!(final_ground, evolve(initial_ground));
+        assert_evolve(&[Position::new(0,0),Position::new(0,1),Position::new(0,2)],&[Position::new(0,1)]);
     }
 }
