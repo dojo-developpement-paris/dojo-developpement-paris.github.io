@@ -7,7 +7,7 @@ struct Position {
 
 impl Position {
     pub fn new(row : i64, col : i64) -> Self {
-        return Position { row : row, col : col }; 
+        Position { row : row, col : col } 
     }
 }
 fn evolve(ground : HashSet<Position>) -> HashSet<Position> {
