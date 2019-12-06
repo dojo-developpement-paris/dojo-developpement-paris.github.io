@@ -18,6 +18,7 @@ fn evolve(ground : HashSet<Position>) -> HashSet<Position> {
 }
 mod game_of_life_should {
     use super::*;
+    fn assert_evolve(initial_ground:&[Position]) {}
     #[test]
     fn not_create_life_when_there_is_no_living_cell() {
         let initial_ground = HashSet::new();
