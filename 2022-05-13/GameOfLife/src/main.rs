@@ -11,10 +11,11 @@ impl Position {
     }
 }
 fn evolve(ground : HashSet<Position>) -> HashSet<Position> {
+    let mut result = HashSet::new();
     if ground.len() == 3 {
         return [Position::new(0,1)].iter().cloned().collect();
     }
-    return HashSet::new();
+    return result;
 }
 mod game_of_life_should {
     use super::*;
