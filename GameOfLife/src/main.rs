@@ -16,7 +16,7 @@ fn evolve(ground : HashSet<Position>) -> HashSet<Position> {
         if ground.contains(&Position::new(0,3)) {
             result.insert(Position::new(0,2));
         }
-        else {
+        if ground.contains(&Position::new(0,0)) {
             result.insert(Position::new(0,1));
         }
     }
