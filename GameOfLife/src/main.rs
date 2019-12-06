@@ -1,6 +1,6 @@
 use std::collections::HashSet;
 
-#[derive(Hash, Eq, PartialEq, Debug)]
+#[derive(Hash, Eq, PartialEq, Debug, Clone)]
 struct Position { 
     row : i64,
     col : i64 }
