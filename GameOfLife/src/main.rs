@@ -33,6 +33,9 @@ mod game_of_life_should {
     }
     #[test]
     fn let_a_cell_survive_when_surrounded_by_two_cells() {
-        assert_evolve(&[Position::new(0,0),Position::new(0,1),Position::new(0,2)],&[Position::new(0,1)]);
+        assert_evolve(&[Position::new(0,0),
+                        Position::new(0,1),
+                        Position::new(0,2)],
+                      &[Position::new(0,1)]);
     }
 }
