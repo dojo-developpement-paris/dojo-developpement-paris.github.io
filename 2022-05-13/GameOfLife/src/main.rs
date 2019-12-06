@@ -13,7 +13,7 @@ impl Position {
 fn evolve(ground : HashSet<Position>) -> HashSet<Position> {
     let mut result = HashSet::new();
     if ground.len() == 3 {
-        if ground.contains(&Position::new(0,3)) {
+        if ground.contains(&Position::new(0,3)) && ground.contains(&Position::new(0,1)) {
             result.insert(Position::new(0,2));
         }
         if ground.contains(&Position::new(0,0)) && ground.contains(&Position::new(0,2)) {
@@ -37,6 +37,7 @@ mod game_of_life_should {
     fn let_an_isolated_cell_die() {
         assert_evolve(&[Position::new(0,0)],&[]);
         assert_evolve(&[Position::new(0,0),Position::new(10,10),Position::new(20,20)],&[]);
+        assert_evolve(&[Position::new(0,3),Position::new(10,10),Position::new(20,20)],&[]);
     }
     #[test]
     fn let_a_cell_survive_when_surrounded_by_two_cells() {
