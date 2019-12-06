@@ -23,8 +23,7 @@ mod game_of_life_should {
     }
     #[test]
     fn let_an_isolated_cell_die() {
-        let mut initial_ground = HashSet::new();
-        initial_ground.insert(Position::new(0,0));
+        let initial_ground = [Position::new(0,0)].iter().cloned().collect();
         let final_ground = HashSet::new();
         assert_eq!(final_ground, evolve(initial_ground));
     }
