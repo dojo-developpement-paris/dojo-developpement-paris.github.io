@@ -15,7 +15,7 @@ fn evolve(ground : HashSet<Position>) -> HashSet<Position> {
     if ground.len() == 3 {
         result.insert(Position::new(0,1));
     }
-    return result;
+    result
 }
 mod game_of_life_should {
     use super::*;
