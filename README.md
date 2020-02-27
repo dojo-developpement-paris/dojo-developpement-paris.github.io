@@ -1,28 +1,31 @@
-Prochaine session: Jeudi 20 Fevrier 2020 chez Arolla 
+Prochaine session: Jeudi 27 Fevrier 2020 chez OCTO
 
 Présents :
 - Patrick
 - Christophe
-- Marc
-- Christelle
 - Kevin
-- Arthur
-- Abderahman
+- Tarik
+- Julien
+- Younes
+- Félix
+- Léo
 
-Retro: Haskell - Mob - Poker hand [http://codingdojo.org/kata/PokerHands/](http://codingdojo.org/kata/PokerHands/)
-- On a modélisé le type Card
-- Type Driven Development
-- On a modélisé une main de type HighCard
-- Savoir quitter le String
-- Bon kata pour apprendre Haskell
-- Test longs à écrire
+Retro: Mob - Java - Bank account
+- le driver était en auto-pilote
+- kata intéressant 
+- changement de contexte entre Opérations et Historique 
+- des steps trop grands, beaucoup de code pour amener la barre verte
+- la classe test s'appelle ToBeNamed wtf
+- il y avait moyen de refactorer les tests
+- la passe de refactoring était compliquée (peut être parce qu'on passe d'un contexte à l'autre)
+- l'empreinte haskell : factory pour créer les opérations
 
 Sujets proposés :
-A - 8 - Mob - Java - Bank account
-B - 4 - Mob - Haskell - Recoder des fonctions built in (fold, compose ...)
-C - 1 - Mob - Haskell - Greeting Kata
-D - 6 - Kata - Haskell - Word ladder
-E - 2 - Mob - Java - Kata Money
+- A 8 kata java - Coder votre framework de test unitaires à l'aide de votre framework de test unitaire pour tester votre framework de tests unitaires en TDD
+- B 12 Mob haskell - Bank Kata avec focus sur la persistence (en mode elephant carpaccio)
+- C 4 Mob python - FizzBuzz open/close
+- D 3 Mob haskell - Greeting Kata 
+- E 0 Mob C# - Gilded Rose
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
