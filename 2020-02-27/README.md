@@ -1,31 +1,28 @@
-Prochaine session: Jeudi 27 Fevrier 2020 chez OCTO
+Prochaine session: Mercredi 4/03/2020 chez Arolla
 
 Présents :
-- Patrick
 - Christophe
+- Benoit
+- Christelle
+- Abderahman
 - Kevin
-- Tarik
-- Julien
-- Younes
 - Félix
 - Léo
+- Florent
 
-Retro: Mob - Java - Bank account
-- le driver était en auto-pilote
-- kata intéressant 
-- changement de contexte entre Opérations et Historique 
-- des steps trop grands, beaucoup de code pour amener la barre verte
-- la classe test s'appelle ToBeNamed wtf
-- il y avait moyen de refactorer les tests
-- la passe de refactoring était compliquée (peut être parce qu'on passe d'un contexte à l'autre)
-- l'empreinte haskell : factory pour créer les opérations
+Retro: Mob haskell - Bank Kata avec focus sur la persistence (en mode elephant carpaccio)
+- mode de fonctionnement (mob, coder à plusieurs) intéressant
+- Haskell: pas un langage adapté au problème posé, d'où rythme lent
+- galère pour avoir des tests indépendants (puisqu'ils écrivent dans un fichier commun)
+- on poursuivait deux problèmes : concepts du langages et l'exercise bank kata en lui même (en carpaccio)
+- le code mélange les couches métier/infra
+- si on voit du haskell pour la première fois, est il valable d'explorer la monade IO, when, la laziness etc..
 
 Sujets proposés :
-- A 8 kata java - Coder votre framework de test unitaires à l'aide de votre framework de test unitaire pour tester votre framework de tests unitaires en TDD
-- B 12 Mob haskell - Bank Kata avec focus sur la persistence (en mode elephant carpaccio)
-- C 4 Mob python - FizzBuzz open/close
-- D 3 Mob haskell - Greeting Kata 
-- E 0 Mob C# - Gilded Rose
+- A 3 mob Haskell - les plaques d'immatriculation AA9999AA -> prochain numéro = AA0000AB
+- B 7 mob Haskell - Bank Kata
+- C 10 mob C# - compter les points au tennis 
+- D 4 kata java - coder votre framework de test unitaire en TDD à l'aide de votre framework de test unitaire pour tester votre framework de test unitaires en partant de rien.
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
