@@ -1,20 +1,15 @@
 Prochaine session: Vendredi 20/03/2020 chez Arolla
 
 Présents :
-- Benoit
 - Christelle
-- Patrick
-- Nicolas
-- Minh-Tam
-- Lionel
+- Sebastien
+- Omar
 
 Retro: mob python - wallet kata <http://codingdojo.org/kata/Wallet/>
 - On a terminé le kata dans la scéance.
 - On peut passer des chaînes et des listes au même paramètre et tout va bien.
 
 Sujets proposés :
-A - 5 - Mob - Haskell - LCD number en TCR
-B - 0 - Mob - Java - Kata diamond
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
