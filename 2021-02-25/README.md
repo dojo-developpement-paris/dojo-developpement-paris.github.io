@@ -4,12 +4,13 @@ Présents :
 - Christelle
 - Sebastien
 - Omar
-
-Retro: mob python - wallet kata <http://codingdojo.org/kata/Wallet/>
-- On a terminé le kata dans la scéance.
-- On peut passer des chaînes et des listes au même paramètre et tout va bien.
+- Christophe
 
 Sujets proposés :
+- A - 8 - Mob - Python - Outil de recherche linguistique
+- B - 0 - Mob - Haskell - Perle de Dijkstra
+- C - 9 - Mob - C - Bowling Kata
+- D - 4 - Kata - Forth - Sokoban
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
