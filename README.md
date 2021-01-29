@@ -1,10 +1,11 @@
-Prochaine session: Vendredi 20/03/2020 chez Arolla
+Prochaine session: 
 
 Présents :
 - Christelle
 - Sebastien
 - Omar
 - Christophe
+- Patrick
 
 Sujets proposés :
 - A - 8 - Mob - Python - Outil de recherche linguistique
