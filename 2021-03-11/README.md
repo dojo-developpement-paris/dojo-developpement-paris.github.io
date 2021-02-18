@@ -1,37 +1,35 @@
-Prochaine session: Jeudi 11 février 2021
+Prochaine session: Jeudi 25 Février 2021
 
 Présents :
-- Patrick
 - Pin
-- David
-- Xavier
-- Abdessamed
 - Nicolas
 - Kevin 
-- Mathilde
-- Léa
-- Hélène
+- Logan
+- Fabien
+- Victor
+- Bernard
+- Benoît
 - Christophe
 - Sebastien
 - Christelle
-- Mamadi
-- Benoit
+- Maxime
+- Léa
 
-Rétro:  Mob - C - Bowling Kata
-- Le framework de test m'a fait me poser beaucoup de question sur ce qu'était un test
-- Framework de test rudimentaire mais efficace
-- Le code ne représentrait pas trop le domaine métier
-- On a plus cherché à aller de l'avant et faire passer les tests que de prendre du temps pour de la refacto
-- Mélange Mob et Kata
+Rétro:  Mob - Haskell - Yatse
+- Un code sympa
+- on a rendu hommage au formattage préféré de ToF
+- commentaires de code
+- on a pas utilisé les types haskell pour structurer au maximum le jeu. Ex dé = Int, liste (peut contenir plus de 5 dés)
+- le nommage de la fonction _f_ n'était pas hyper top
+- on n'a pas été trop vite, pris le temps d'écrire la fonction pour bien la comprendre avant de refactorer
+- les règles du jeu sont suffisamment simples à comprendre (par rapport à d'autres sujets)
 
 Sujets proposés :
-- A - 9 - Mob - Python - Outil de recherche linguistique
-- B - 24 - Mob - Haskell - Traducteur de nombre en notation cistercienne (base 10 000)
-- C - 8 - Mob + TCR - Haskell - Traducteur de nombre en notation cistercienne (base 10 000)
-- D - 9 - Mob - CHaskell - Bowling Kata, from C to Haskell
-- E - 4 - Kata - CHaskell - Bowling Kata, from C to Haskell
-- F - 11 - Mob - Haskell - Yatse 
-- G - 7 - Kata - Forth - Sokoban
+- A 9 - mars rover - mob - Haskell
+- B 7 - la notation cistercienne - kata - Haskell
+- C 7 - Sokoban - Type Abstrait De Données - mob - Haskell
+- D 5 - Yatzee - Utiliser des types spécifiques - Property Based Testing - mob - Haskell
+- E 5 - Valider une grille Picross - mob - Haskell -
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
