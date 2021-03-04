@@ -1,26 +1,22 @@
-Prochaine session: Jeudi 04 Mars 2021
+Prochaine session: Jeudi 11 Mars 2021
 
 Présents :
-- Nicolas
-- Marc
-- Christophe
+- Xavier
+- Diawara
+- Othmane
 - Christelle
 - Sébastien
 - Benoît
+- Fabien
 
-Rétro:  Mob - Haskell - Mars Rover
-- cool : surcharge de la stratégie de dérivation appliquée à newtype 
-- overkill? : (Show,Num,Eq,Ord,Real,Integral)
-- cool : opérateur <> Monoid + mplus
-- hypothèse : typeclass Cycle (Anneaux) ?
-
-
+Rétro: Sokoban - Type Abstrait De Données - mob - Haskell
+* L'arrivée des semigroups s'est faite petit à petit, on n'est pas partis avec
+  une solution toute faite.
 
 Sujets proposés :
-- A 3 - la notation cistercienne - kata - Haskell
-- B 9 - Sokoban - Type Abstrait De Données - mob - Haskell
-- C 3 - Yatzy - Utiliser des types spécifiques - Property Based Testing - mob - Haskell
-- D 3 - Bowling Score en programmation objet - Haskell - mob
+- A 2 Haskell - Mob - Continuer le Sokoban de la dernière fois.
+- B 3 Haskell - Mob - Mars Rover kata.
+- C 2 Haskell - Mob - Jeu de la Vie.
 
 
 Explication des règles :
