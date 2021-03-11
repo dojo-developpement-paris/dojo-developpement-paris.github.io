@@ -1,23 +1,20 @@
-Prochaine session: Jeudi 11 Mars 2021
+Prochaine session: Jeudi 18 Mars 2021
 
 Présents :
-- Xavier
-- Diawara
-- Othmane
 - Christelle
 - Sébastien
 - Benoît
-- Fabien
+- Nicolas
+- Merrad
 
-Rétro: Sokoban - Type Abstrait De Données - mob - Haskell
-* L'arrivée des semigroups s'est faite petit à petit, on n'est pas partis avec
-  une solution toute faite.
+Rétro: B 3 Haskell - Mob - Mars Rover kata.
+* On a réinventé la classe Cyclic, mais on n'a pas regardé si ça existait déjà.
 
-Sujets proposés :
-- A 2 Haskell - Mob - Continuer le Sokoban de la dernière fois.
-- B 3 Haskell - Mob - Mars Rover kata.
-- C 2 Haskell - Mob - Jeu de la Vie.
-
+Propositions:
+* A 5 - Elm - Mob - Sokoban mais avec des trucs qui bougent vraiment
+* B 3 - Haskell - Mob - Yatzy en type-driven (types restrictifs)
+* C 4 - Forth - Mob - Sokoban
+* D 6 - C lang - Mob - Bowling score avec des Abstract Data Type
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
