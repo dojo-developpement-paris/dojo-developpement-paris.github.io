@@ -1,20 +1,25 @@
-Prochaine session: Jeudi 18 Mars 2021
+Prochaine session: Jeudi 25 Mars 2021
 
 Présents :
 - Christelle
-- Sébastien
 - Benoît
 - Nicolas
-- Merrad
+- Quentin
+- Patrick
+- Pin
 
-Rétro: B 3 Haskell - Mob - Mars Rover kata.
-* On a réinventé la classe Cyclic, mais on n'a pas regardé si ça existait déjà.
+
+Rétro: D 6 - C lang - Mob - Bowling score avec des Abstract Data Type
+* On a utilisé des fake pour faire passer les tests.
+* On a retiré les fake peut-être un peu tard.
+* Le code n'est pas portable (le runner est fait avec un makefile pour Linux)
 
 Propositions:
-* A 5 - Elm - Mob - Sokoban mais avec des trucs qui bougent vraiment
-* B 3 - Haskell - Mob - Yatzy en type-driven (types restrictifs)
-* C 4 - Forth - Mob - Sokoban
-* D 6 - C lang - Mob - Bowling score avec des Abstract Data Type
+A 6 - Rust    - Mob - Bowling kata
+B 7 - Haskell - Mob - Server Rest avec Spock
+C 8 - Elm     - Mob - Sokoban
+D 6 - Haskell - Mob - Kata Poker Hand
+E 6 - Forth   - Mob - Sokoban
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
