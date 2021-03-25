@@ -22,8 +22,6 @@ card (c:_) = Card (digitToInt c)
 
 main = hspec $ do
     describe "Comparing Cards" $ do
-        it "Ace > King" $ do
-            (card "A♠") `compare` (card "K♠") `shouldBe` GT
         it "cards can be ordered by rank" $ do
             let cards = map card $ words "A♠ K♠ Q♠ J♠ T♠ 9♠ 8♠ 7♠ 6♠ 5♠ 4♠ 3♠ 2♠"
             sort cards `shouldBe` (reverse cards)
