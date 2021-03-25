@@ -25,3 +25,7 @@ main = hspec $ do
         it "cards can be ordered by rank" $ do
             let cards = map card $ words "A♠ K♠ Q♠ J♠ T♠ 9♠ 8♠ 7♠ 6♠ 5♠ 4♠ 3♠ 2♠"
             sort cards `shouldBe` (reverse cards)
+        it "two cards with the same rank are equals" $ do
+            card "A♠" `compare` card "A♥" `shouldBe` EQ
+            card "A♦" `compare` card "A♣" `shouldBe` EQ
+            card "A♦" `compare` card "A♥" `shouldBe` EQ
