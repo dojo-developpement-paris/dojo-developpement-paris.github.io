@@ -7,7 +7,8 @@ import Test.Hspec
 ♣
 -}
 
-data Card = Card Int deriving (Eq, Ord)
+data Card = Card Int
+    deriving (Eq, Ord)
 
 card :: String -> Card
 card ('A':_) = Card 14
