@@ -18,6 +18,8 @@ card ('J':_) = Card 11
 card ('T':_) = Card 10
 card (c:_) | c `elem` ['0'..'9'] = Card (digitToInt c)
 
+compareHands :: [Card] -> [Card] -> Ordering
+compareHands _ _ = GT
 
 main = hspec $ do
     describe "Comparing Cards" $ do
@@ -28,3 +30,7 @@ main = hspec $ do
             card "A♠" `compare` card "A♥" `shouldBe` EQ
             card "A♦" `compare` card "A♣" `shouldBe` EQ
             card "A♦" `compare` card "A♥" `shouldBe` EQ
+    describe "Comparing hands" $ do
+        it "high card with higher card wins" $ do
+            let cards cs = map card $ words cs
+            cards "A♠ Q♠ J♠ T♣ 9♠" `compareHands` cards "8♣ 7♠ 6♠ 3♠ 2♠" `shouldBe` GT
