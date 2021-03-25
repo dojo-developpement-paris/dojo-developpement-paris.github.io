@@ -1,5 +1,4 @@
 import Test.Hspec
-import Test.QuickCheck
 
 import Data.Char (digitToInt)
 import Data.List (sort)
