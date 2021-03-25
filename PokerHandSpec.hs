@@ -1,12 +1,11 @@
 import Test.Hspec
+import Test.QuickCheck
+
 import Data.Char (digitToInt)
 import Data.List (sort)
 
 {-
-♠
-♥
-♦
-♣
+♠ ♥ ♦ ♣
 -}
 
 data Card = Card Int
@@ -18,7 +17,8 @@ card ('K':_) = Card 13
 card ('Q':_) = Card 12
 card ('J':_) = Card 11
 card ('T':_) = Card 10
-card (c:_) = Card (digitToInt c)
+card (c:_) | c `elem` ['0'..'9'] = Card (digitToInt c)
+
 
 main = hspec $ do
     describe "Comparing Cards" $ do
