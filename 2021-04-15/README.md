@@ -1,25 +1,33 @@
-Prochaine session: Jeudi 25 Mars 2021
+Prochaine session: Jeudi 01 Avril 2021 (:p)
 
 Présents :
 - Christelle
 - Benoît
 - Nicolas
 - Quentin
-- Patrick
-- Pin
+- Tarik
+- Christophe
+- Gerwais
+- Sébastien
 
 
-Rétro: D 6 - C lang - Mob - Bowling score avec des Abstract Data Type
-* On a utilisé des fake pour faire passer les tests.
-* On a retiré les fake peut-être un peu tard.
-* Le code n'est pas portable (le runner est fait avec un makefile pour Linux)
+Rétro: C 8 - Elm - Mob - Sokoban
+* On a pas fait de tests automatisés
+* On a utilisé des émojis
+* c'était plus "effervescent que d'habitude!"
+* C'était sympa d'avoir une interface graphique et pas juste des TUs
+* Le clavier c'était pas simple :(
+* Si les tests visuels marchent bien, ça peut marcher aussi bien que TDD
+* c'était bien d'utiliser des émojis
+
 
 Propositions:
-A 6 - Rust    - Mob - Bowling kata
-B 7 - Haskell - Mob - Server Rest avec Spock
-C 8 - Elm     - Mob - Sokoban
-D 6 - Haskell - Mob - Kata Poker Hand
-E 6 - Forth   - Mob - Sokoban
+* A 7-3 - Forth   - Mob - Sokoban
+  * B 4 - Haskell - Mob - Un petit serveur web avec Spock
+  * C 5 - Rust    - Mob - Bowling kata
+  * D 1 - Haskell - Mob - Poker hands
+* E 7-5 - Haskell - Mob - Poker hands TCR
+
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
