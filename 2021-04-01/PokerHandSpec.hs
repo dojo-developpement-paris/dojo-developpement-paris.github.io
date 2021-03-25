@@ -7,8 +7,11 @@ import Test.Hspec
 ♣
 -}
 
-card ('A':_) = 14
-card ('K':_) = 13
+data Card = Card Int deriving (Eq, Ord)
+
+card :: String -> Card
+card ('A':_) = Card 14
+card ('K':_) = Card 13
 
 main = hspec $ do
     describe "Comparing Cards" $ do
