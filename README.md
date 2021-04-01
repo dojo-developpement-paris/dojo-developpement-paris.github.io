@@ -1,4 +1,4 @@
-Prochaine session: Jeudi 01 Avril 2021 (:p)
+Prochaine session: Jeudi 08 Avril 2021 (:p)
 
 Présents :
 - Christelle
@@ -11,22 +11,20 @@ Présents :
 - Sébastien
 
 
-Rétro: C 8 - Elm - Mob - Sokoban
-* On a pas fait de tests automatisés
-* On a utilisé des émojis
-* c'était plus "effervescent que d'habitude!"
-* C'était sympa d'avoir une interface graphique et pas juste des TUs
-* Le clavier c'était pas simple :(
-* Si les tests visuels marchent bien, ça peut marcher aussi bien que TDD
-* c'était bien d'utiliser des émojis
+Rétro: E 7-5 - Haskell - Mob - Poker hands TCR
+* Les cards avec un Int c'est pas super typé
+* On n'a pas amené le kata suffisament loin pour avoir besoin de meilleurs types
+* On a commencé à utiliser des couleurs pour les cartes avant qu'elles soient utiles.
+* Partout on voit apparaître une donnée qui n'est pas utilisée.
+* "A un moment donné on va avoir besoin de la couleur" mais on n'en a pas eu besoin.
+* On a essayé de mettre un Property Based Test et on n'a pas réussi, c'est dommage.
+* C'est facile de faire des tests synthétiques en haskell, :)
 
 
 Propositions:
-* A 7-3 - Forth   - Mob - Sokoban
-  * B 4 - Haskell - Mob - Un petit serveur web avec Spock
-  * C 5 - Rust    - Mob - Bowling kata
-  * D 1 - Haskell - Mob - Poker hands
-* E 7-5 - Haskell - Mob - Poker hands TCR
+A 3 5 - Haskell - Mob - faire un petit serveur web REST avec Spock.
+B 3 3 - Haskell - Mob - Enigma d'avril :D
+  C 2 - Forth   - Mob - Sokoban 
 
 
 Explication des règles :
