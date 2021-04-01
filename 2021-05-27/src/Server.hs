@@ -40,10 +40,10 @@ routes = do
           setStatus status404
           text ("unknown: " <> v)
 
-  post ("values" <//> var) $
-    \k -> do
-   --   theBody :: Text <- jsonBody
-   --   dict <- getState
-      text "Stored!"
+--  post ("values" <//> var) $
+--    \k -> do
+--   --   theBody :: Text <- jsonBody
+--   --   dict <- getState
+--      text "Stored!"
       
       
