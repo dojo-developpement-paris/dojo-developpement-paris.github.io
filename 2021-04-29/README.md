@@ -1,31 +1,26 @@
-Prochaine session: Jeudi 08 Avril 2021 (:p)
+Prochaine session: Jeudi 15 Avril 2021
 
 Présents :
-- Christelle
-- Benoît
-- Nicolas
-- Quentin
-- Tarik
-- Christophe
-- Gerwais
-- Sébastien
+- Les bonnes personnes
 
 
-Rétro: E 7-5 - Haskell - Mob - Poker hands TCR
-* Les cards avec un Int c'est pas super typé
-* On n'a pas amené le kata suffisament loin pour avoir besoin de meilleurs types
-* On a commencé à utiliser des couleurs pour les cartes avant qu'elles soient utiles.
-* Partout on voit apparaître une donnée qui n'est pas utilisée.
-* "A un moment donné on va avoir besoin de la couleur" mais on n'en a pas eu besoin.
-* On a essayé de mettre un Property Based Test et on n'a pas réussi, c'est dommage.
-* C'est facile de faire des tests synthétiques en haskell, :)
-
+Rétro: A 3-5 - Haskell - Mob - faire un petit serveur web REST avec Spock.
+* On a probablement avancé trop vite :(
+* On copiait-collait beaucoup de code sans l'expliquer.
+* Ca aurait probablement été plus difficile avec un driver qui découvre.
+* C'est compliqué
+* Mob programming mais en fait c'était un kata.
+* La rétro la semaine suivante c'est pas pratique.
+* 2 choses difficiles dans un mob:
+  - arrêter de parler (trop focus sur une idée alors que le groupe n'est plus dedans)
+  - exprimer ses besoins.
+* L'experience du dojo online est plutôt bonne. 
 
 Propositions:
-A 3 5 - Haskell - Mob - faire un petit serveur web REST avec Spock.
-B 3 3 - Haskell - Mob - Enigma d'avril :D
-  C 2 - Forth   - Mob - Sokoban 
-
+A 3 - Haskell - Kata Orientation - Faire un server rest avec Spock - Overexplained!.
+B 5 - Haskell - Mob Orientation  - Lire des nombres sur stdin et signaler les erreurs de parsing.
+C 3 - Haskell - Mob Orientation  - Créer un algorithme pour connecter des PINs et les visualiser. (https://excalidraw.com/#json=4887877871730688,plZzOFnHb7EI8cN3MNyzrA)
+D 7 - Haskell - Mob Orientation  - Emulateur énigma avec un product owner
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
@@ -33,3 +28,5 @@ Explication des règles :
 * Kata: 1 personne fait une démo + les autres donnent du feed back
 * Fishbowl: [Définition](https://en.wikipedia.org/wiki/Fishbowl_(conversation))
 * TCR: [Définition](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
+* Orientation: On coupe la séance en plusieurs sous-séances, et entre chaque
+  séance on fait une rétro/orientation.
