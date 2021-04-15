@@ -42,3 +42,4 @@ tests:
     dependencies:
     - calculette
     - hspec
+    - mtl
