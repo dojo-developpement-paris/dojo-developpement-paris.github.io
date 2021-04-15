@@ -1,26 +1,29 @@
-Prochaine session: Jeudi 15 Avril 2021
+Prochaine session: Jeudi 22 Avril 2021
 
 Présents :
 - Les bonnes personnes
 
 
-Rétro: A 3-5 - Haskell - Mob - faire un petit serveur web REST avec Spock.
-* On a probablement avancé trop vite :(
-* On copiait-collait beaucoup de code sans l'expliquer.
-* Ca aurait probablement été plus difficile avec un driver qui découvre.
-* C'est compliqué
-* Mob programming mais en fait c'était un kata.
-* La rétro la semaine suivante c'est pas pratique.
-* 2 choses difficiles dans un mob:
-  - arrêter de parler (trop focus sur une idée alors que le groupe n'est plus dedans)
-  - exprimer ses besoins.
-* L'experience du dojo online est plutôt bonne. 
+Rétro: D 7 - Haskell - Mob Orientation  - Emulateur énigma avec un product owner
+* Le code était bien documenté
+* On avait un PO qui connaissait bien le sujet, donc on a compris l'exercice
+  plus facilement.
+* Le mode orientation a aidé l'exercice.
+* Le mode orientation donnait la parole à des gens qui participent moins
+  d'habitude
+* Comme le sujet était nouveau pour tout le monde, ça permettait à tout le monde
+  de participer et de rentrer dans le sujet.
+* On va regretter le PO.
+* On était dans une approche bottom-up: on crée des composants.
+  C'est difficile à réconcilier cette approche avec un test de reçette.
+* L'exercice se prêtait mal à la production d'un résultat partiel.
+
 
 Propositions:
-A 3 - Haskell - Kata Orientation - Faire un server rest avec Spock - Overexplained!.
-B 5 - Haskell - Mob Orientation  - Lire des nombres sur stdin et signaler les erreurs de parsing.
-C 3 - Haskell - Mob Orientation  - Créer un algorithme pour connecter des PINs et les visualiser. (https://excalidraw.com/#json=4887877871730688,plZzOFnHb7EI8cN3MNyzrA)
-D 7 - Haskell - Mob Orientation  - Emulateur énigma avec un product owner
+A 1 - Haskell - Mob Orientation - Reprise du code Emulateur Enigma de la dernière fois.
+B 4 - Haskell - Mob Orientation - Une calculette avec de l'IO *et* de la gestion d'erreurs.
+
+
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
