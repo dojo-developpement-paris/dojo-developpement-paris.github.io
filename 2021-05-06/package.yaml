@@ -1,6 +1,6 @@
-name:                enigma
+name:                calculette
 version:             0.1.0.0
-github:              "githubuser/enigma"
+github:              "githubuser/calculette"
 author:              "Author name here"
 maintainer:          "example@example.com"
 copyright:           "2021 Author name here"
@@ -12,7 +12,7 @@ copyright:           "2021 Author name here"
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/enigma#readme>
+description:         Please see the README on GitHub at <https://github.com/githubuser/calculette#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -21,7 +21,7 @@ library:
   source-dirs: src
 
 executables:
-  enigma-exe:
+  calculette-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -29,10 +29,10 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - enigma
+    - calculette
 
 tests:
-  enigma-test:
+  calculette-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -40,5 +40,5 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - enigma
+    - calculette
     - hspec
