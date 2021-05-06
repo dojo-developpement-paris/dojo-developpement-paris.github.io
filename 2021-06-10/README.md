@@ -1,17 +1,16 @@
-Prochaine session: Jeudi 06 Mai 2021
+Prochaine session: Jeudi 13 Mai 2021
 
 Présents :
 - Les bonnes personnes
 
 
-Rétro: D 8 - Vim - Mob orientation - Le tutorial
-* On a appris des choses
-* C'est bien d'avoir quelqu'un avec de l'expérience pour répondre aux questions.
-* "Ca m'a donné confiance pour l'utiliser."
+Rétro: Rust    - Mob Orientation - Mars Rover
+* Les `.into()` en Rust sont omniprésents :(
 
 Sujets:
-A 2 + tiré au sort - Rust    - Mob Orientation - Mars Rover
-B 2 - Haskell - Mob Orientation - Bonus auto
+A 0 - Elm     - Mob - Continuer Sokoban
+B 2 - Haskell - Mob - Bonus Auto en abusant des patterns
+
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
