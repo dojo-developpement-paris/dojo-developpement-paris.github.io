@@ -42,3 +42,4 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - bonus
+    - hspec
