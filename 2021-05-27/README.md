@@ -1,15 +1,16 @@
-Prochaine session: Jeudi 13 Mai 2021
+Prochaine session: Jeudi 3 Juin 2021
 
 Présents :
 - Les bonnes personnes
 
 
-Rétro: Rust    - Mob Orientation - Mars Rover
-* Les `.into()` en Rust sont omniprésents :(
+Rétro: Haskell - Mob - Bonus Auto en abusant des patterns
+* On a trouvé un cas bizarre pour la regle des 3 ans sans accident
 
-Sujets:
-A 0 - Elm     - Mob - Continuer Sokoban
-B 2 - Haskell - Mob - Bonus Auto en abusant des patterns
+
+Sujets: 
+* A 3 Haskell - Mob - Calculateur en Notation Polonaise inversée (1 2 3 * +)
+* B 1 Elm - Mob - Hexagone magique (https://fr.wikipedia.org/wiki/Hexagone_magique)
 
 
 Explication des règles :
