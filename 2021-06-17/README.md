@@ -1,17 +1,15 @@
-Prochaine session: Jeudi 10 Juin 2021
+Prochaine session: Jeudi 17 Juin 2021
 
 Présents :
 - Les bonnes personnes
 
 
-Rétro: Haskell - Mob - Calculateur en Notation Polonaise inversée (1 2 3 * +)
-* chamboulé parce que ça ressemblait à rien que je connais donc c'était tout nouveau
-* On a appris sur le code mais aussi sur la manière d'écrire le code.
-
+Rétro: Rust - Mob Orientation - émulateur 6502
+* cf. notes de Fabien
+* On aurait aimé faire au moins une instruction
 
 Sujets:
-* A 4 - Rust - Mob Orientation - émulateur 6502
-* B 1 - TypeScript - Mob - Calcul Bowling Score
+A - Rust - Mob - Chiffres romains
 
 
 Explication des règles :
