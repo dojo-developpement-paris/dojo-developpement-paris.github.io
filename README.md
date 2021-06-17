@@ -1,16 +1,13 @@
-Prochaine session: Jeudi 17 Juin 2021
+Prochaine session: Jeudi 24 Juin 2021
 
 Présents :
 - Les bonnes personnes
 
-
-Rétro: Rust - Mob Orientation - émulateur 6502
-* cf. notes de Fabien
-* On aurait aimé faire au moins une instruction
+Rétro: A - Rust - Mob - Chiffres romains
+* on a fait l'exercice assez vite
 
 Sujets:
-A - Rust - Mob - Chiffres romains
-
+A - Elm - Mob - Mars Rover avec des graphiques
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
