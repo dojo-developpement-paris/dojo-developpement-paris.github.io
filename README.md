@@ -1,13 +1,14 @@
-Prochaine session: Jeudi 24 Juin 2021
+Prochaine session: Vendredi 20 Mai 2022
+CodeWorks
+25 bd Italiens 75002 
 
 Présents :
 - Les bonnes personnes
 
-Rétro: A - Rust - Mob - Chiffres romains
-* on a fait l'exercice assez vite
+Rétro:!!!
 
 Sujets:
-A - Elm - Mob - Mars Rover avec des graphiques
+A 15 - Python - Mob - Les régles éléctorales legislative 
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
