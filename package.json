@@ -1,0 +1,22 @@
+{
+  "name": "dojo-developpement-paris.github.io",
+  "version": "1.0.0",
+  "description": "Prochaine session: Vendredi 24 juin 2022\r Enercoop\r 16/18 quai de la Loire\r 75019 Paris",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifelightdev/dojo-developpement-paris.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lifelightdev/dojo-developpement-paris.github.io/issues"
+  },
+  "homepage": "https://github.com/lifelightdev/dojo-developpement-paris.github.io#readme",
+  "dependencies": {
+    "jest": "^28.1.1"
+  }
+}
