@@ -1,26 +1,31 @@
-Prochaine session: Jeudi 9/06 ? chez CodeWorks
+Prochaine session: vendredi 15/07 chez Enercoop 16,18 quai de la Loire
 
 Présents :
-- Christophe
-- Lauren
-- Ubald
-- Allan
-- Antoine
-- Andrea
-- Benoît
+- Sébastien
+- Christelle
 - Laurent
-- Said
+- Jacques
+- Marc
+- Christophe
+- Pin
+- Antoine
+- Ubald
+- Sonia
 
-Rétro: Game of Life TypeScript avec deno
-- découverte de deno (runtime js à la node + outils de dev, test runner, bundler)
-- présentation du tooling
+Rétro: Kata Diamond en Property Based Testing en Haskell
+- grosses étapes (peut être trop grosses) 
+- chagriné qu'on ait violenté le PBT : on faisait des boucles explicites au lieu de généraliser les propriétés  
+- plaisante utilisation de la symétrie (mirror) et de chercher à en faire une propriété
+- des idées ont volé, qui n'ont pas atteint leur cibles
+- il n'y a pas un seul exemple dans les tests
+- on a déraillé : en train d'écrire un test -> contre-proposition -> contre-contre-proposition
 
 
 Sujets:
-- A 8 3 Game of Life, Mob, elm
-- B 8 2 Cat Fact, Mob, node 
-- C 8 4 simulations orbitales, Mob ,elm
-- D 1 Poules et Renard, Mob, Python
+- A4 mob, refacto sur du rust (un programme permettant de faire du TCR)
+- B8 mob, gossiping bus drivers, en C
+- C8 mob, gossiping bus drivers, en Ruby
+- D10 mob, gossiping bus drivers, en prolog 
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
