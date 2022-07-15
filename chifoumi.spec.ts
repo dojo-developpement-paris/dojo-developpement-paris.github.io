@@ -15,8 +15,7 @@ const EGALITE = "égalité"
 
 const chifoumi = (_: Mains, __: Mains): Mains | typeof EGALITE => {
     if (_ === __) return EGALITE
-    if (_ === Mains.Feuille && __ === Mains.Pierre) return Mains.Feuille
-    if (_ === Mains.Pierre && __ === Mains.Feuille) return Mains.Feuille
+    if (_ === Mains.Feuille && __ === Mains.Pierre || _ === Mains.Pierre && __ === Mains.Feuille) return Mains.Feuille
     if (_ === Mains.Feuille && __ === Mains.Ciseaux) return Mains.Ciseaux
     return Mains.Pierre
 }
