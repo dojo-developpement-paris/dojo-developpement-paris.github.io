@@ -11,7 +11,9 @@ enum Mains {
     Ciseaux
 }
 
-const chifoumi = (_: Mains, __: Mains): Mains | "égalité" => {
+type EGALITE = "égalité"
+
+const chifoumi = (_: Mains, __: Mains): Mains | EGALITE => {
     if (_ === Mains.Pierre && __ === Mains.Pierre) return "égalité"
     if (_ === Mains.Feuille && __ === Mains.Pierre) return Mains.Feuille
     if (_ === Mains.Feuille && __ === Mains.Ciseaux) return Mains.Ciseaux
