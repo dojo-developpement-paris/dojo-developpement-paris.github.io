@@ -26,6 +26,11 @@ describe('chifoumi', () => {
         expect(jeu).toBe(Mains.Pierre)
     })
 
+    it('pierre gagne contre ciseaux et inversement', () => {
+        const jeu = chifoumi(Mains.Pierre, Mains.Ciseaux)
+        expect(jeu).toBe(Mains.Pierre)
+    })
+
     it('ciseaux gagnent contre feuille', () => {
         const jeu = chifoumi(Mains.Feuille, Mains.Ciseaux)
         expect(jeu).toBe(Mains.Ciseaux)
