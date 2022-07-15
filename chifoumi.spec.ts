@@ -11,7 +11,6 @@ enum Mains {
     Ciseaux
 }
 
-type TYPE_EGALITE = string
 const EGALITE = "égalité"
 
 const chifoumi = (_: Mains, __: Mains): Mains | typeof EGALITE => {
@@ -22,22 +21,22 @@ const chifoumi = (_: Mains, __: Mains): Mains | typeof EGALITE => {
 }
 
 describe('chifoumi', () => {
-    it('pierre gagne', () => {
+    it('pierre gagne contre ciseaux', () => {
         const jeu = chifoumi(Mains.Ciseaux, Mains.Pierre)
         expect(jeu).toBe(Mains.Pierre)
     })
 
-    it('ciseaux gagnent', () => {
+    it('ciseaux gagnent contre feuille', () => {
         const jeu = chifoumi(Mains.Feuille, Mains.Ciseaux)
         expect(jeu).toBe(Mains.Ciseaux)
     })
 
-    it('feuille gagne', () => {
+    it('feuille gagne contre pierre', () => {
         const jeu = chifoumi(Mains.Feuille, Mains.Pierre)
         expect(jeu).toBe(Mains.Feuille)
     })
 
-    it('égalité', () => {
+    it('égalité sur pierre', () => {
         const jeu = chifoumi(Mains.Pierre, Mains.Pierre)
         expect(jeu).toBe("égalité")
     })
