@@ -3,8 +3,6 @@
 // pierre > ciseaux
 // ciseaux > feuille
 
-
-// feuille et pierre = feuille
 enum Mains {
     Ciseaux,
     Pierre,
