@@ -1,7 +1,7 @@
 {
   "name": "dojo-developpement-paris.github.io",
   "version": "1.0.0",
-  "description": "Prochaine session: Vendredi 24 juin 2022\r Enercoop\r 16/18 quai de la Loire\r 75019 Paris",
+  "description": "Prochaine session: Vendredi 22 juillet 2022\r CodeWorks ?\r 25 bd des Italien\r 75002 Paris",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/lifelightdev/dojo-developpement-paris.github.io#readme",
   "dependencies": {
-    "jest": "^28.1.1"
+    "@types/jest": "^28.1.5",
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.6",
+    "typescript": "^4.7.4"
   }
 }

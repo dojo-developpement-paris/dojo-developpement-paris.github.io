@@ -1,19 +1,18 @@
-Prochaine session: Vendredi 24 juin 2022
-CodeWorks
+Prochaine session: Vendredi 22 juillet 2022
+CodeWorks ?
 25 bd des Italien
 75002 Paris
 
 Présents :
-- Christophe, Antoine, Saïd, Christelle, Pin
+- Christelle, Mehdi, Antoine, Pin
 
-Rétro: diamond - Java
-- Cours personnalisé
-- Debut d'idée d'implémentation
-- Super d'être juste trois
+Rétro: mob, gossiping bus drivers, en prolog
+- on n'a pas été tres loin
+- c'était intéressant de voir du Prolog
+- C'est encore obscure 
 
 Sujets:
-
-B - 6 - Mob - JS - Compteur en lettre ou en chiffre (recurtion)
+D - 6 - Mob & TCR - Type Script - Qui a gagné un chifoumi ?
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
