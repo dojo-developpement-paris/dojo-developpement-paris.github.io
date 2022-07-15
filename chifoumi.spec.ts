@@ -13,10 +13,10 @@ enum Mains {
 
 const EGALITE = "égalité"
 
-const chifoumi = (_: Mains, __: Mains): Mains | typeof EGALITE => {
-    if (_ === __) return EGALITE
-    if (_ === Mains.Feuille && __ === Mains.Ciseaux || _ === Mains.Ciseaux && __ === Mains.Feuille) return Mains.Ciseaux
-    if (_ === Mains.Feuille && __ === Mains.Pierre || _ === Mains.Pierre && __ === Mains.Feuille) return Mains.Feuille
+const chifoumi = (main_A: Mains, main_B: Mains): Mains | typeof EGALITE => {
+    if (main_A === main_B) return EGALITE
+    if (main_A === Mains.Feuille && main_B === Mains.Ciseaux || main_A === Mains.Ciseaux && main_B === Mains.Feuille) return Mains.Ciseaux
+    if (main_A === Mains.Feuille && main_B === Mains.Pierre || main_A === Mains.Pierre && main_B === Mains.Feuille) return Mains.Feuille
     return Mains.Pierre
 }
 
