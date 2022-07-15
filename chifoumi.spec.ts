@@ -6,9 +6,9 @@
 
 // feuille et pierre = feuille
 enum Mains {
-    Feuille = 0,
+    Ciseaux = 0,
     Pierre = 1,
-    Ciseaux = 2
+    Feuille = 2
 }
 
 const EGALITE = "égalité"
@@ -16,8 +16,7 @@ const EGALITE = "égalité"
 const chifoumi = (main_A: Mains, main_B: Mains): Mains | typeof EGALITE => {
     if (main_A === main_B) return EGALITE
     if (main_A === Mains.Feuille && main_B === Mains.Ciseaux || main_A === Mains.Ciseaux && main_B === Mains.Feuille) return Mains.Ciseaux
-    //if (main_A === Mains.Feuille && main_B === Mains.Pierre || main_A === Mains.Pierre && main_B === Mains.Feuille) return Mains.Feuille
-    if (main_A < main_B) return main_A
+    if (main_A > main_B) return main_A
     return main_B
 }
 
