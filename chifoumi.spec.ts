@@ -16,6 +16,7 @@ const EGALITE = "égalité"
 const chifoumi = (_: Mains, __: Mains): Mains | typeof EGALITE => {
     if (_ === __) return EGALITE
     if (_ === Mains.Feuille && __ === Mains.Pierre) return Mains.Feuille
+    if (_ === Mains.Pierre && __ === Mains.Feuille) return Mains.Feuille
     if (_ === Mains.Feuille && __ === Mains.Ciseaux) return Mains.Ciseaux
     return Mains.Pierre
 }
@@ -33,6 +34,11 @@ describe('chifoumi', () => {
 
     it('feuille gagne contre pierre', () => {
         const jeu = chifoumi(Mains.Feuille, Mains.Pierre)
+        expect(jeu).toBe(Mains.Feuille)
+    })
+
+    it('feuille gagne contre pierre 2', () => {
+        const jeu = chifoumi(Mains.Pierre, Mains.Feuille)
         expect(jeu).toBe(Mains.Feuille)
     })
 
