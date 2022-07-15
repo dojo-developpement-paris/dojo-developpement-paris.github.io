@@ -14,7 +14,7 @@ enum Mains {
 const EGALITE = "égalité"
 
 const chifoumi = (_: Mains, __: Mains): Mains | typeof EGALITE => {
-    if (_ === Mains.Pierre && __ === Mains.Pierre) return EGALITE
+    if (_ === __) return EGALITE
     if (_ === Mains.Feuille && __ === Mains.Pierre) return Mains.Feuille
     if (_ === Mains.Feuille && __ === Mains.Ciseaux) return Mains.Ciseaux
     return Mains.Pierre
@@ -36,8 +36,8 @@ describe('chifoumi', () => {
         expect(jeu).toBe(Mains.Feuille)
     })
 
-    it('égalité sur pierre', () => {
-        const jeu = chifoumi(Mains.Pierre, Mains.Pierre)
+    it.each([Mains.Pierre, Mains.Ciseaux, Mains.Feuille])('égalité', (main) => {
+        const jeu = chifoumi(main, main)
         expect(jeu).toBe("égalité")
     })
 })
