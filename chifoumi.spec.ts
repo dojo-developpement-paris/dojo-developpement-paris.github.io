@@ -6,9 +6,9 @@
 
 // feuille et pierre = feuille
 enum Mains {
-    Feuille,
-    Pierre,
-    Ciseaux
+    Feuille = 0,
+    Pierre = 1,
+    Ciseaux = 2
 }
 
 const EGALITE = "égalité"
