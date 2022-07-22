@@ -1,31 +1,28 @@
-Prochaine session: vendredi 15/07 chez Enercoop 16,18 quai de la Loire
+Prochaine session: vendredi 29/07 à CodeWorks 
 
 Présents :
-- Sébastien
-- Christelle
-- Laurent
-- Jacques
-- Marc
 - Christophe
-- Pin
+- Simon
+- Laurent
+- Mehdi
 - Antoine
-- Ubald
-- Sonia
+- Zeineb
+- Hind
+- Pin
+- Andy
 
-Rétro: Kata Diamond en Property Based Testing en Haskell
-- grosses étapes (peut être trop grosses) 
-- chagriné qu'on ait violenté le PBT : on faisait des boucles explicites au lieu de généraliser les propriétés  
-- plaisante utilisation de la symétrie (mirror) et de chercher à en faire une propriété
-- des idées ont volé, qui n'ont pas atteint leur cibles
-- il n'y a pas un seul exemple dans les tests
-- on a déraillé : en train d'écrire un test -> contre-proposition -> contre-contre-proposition
 
+Rétro: algorithme Pierre/Feuille/Ciseaux en TypeScript, mob
+- assez intéressant et facile à comprendre
+- on était en TCR, avec des grosses étapes quand même
 
 Sujets:
-- A4 mob, refacto sur du rust (un programme permettant de faire du TCR)
-- B8 mob, gossiping bus drivers, en C
-- C8 mob, gossiping bus drivers, en Ruby
-- D10 mob, gossiping bus drivers, en prolog 
+- A 3 Mob C - Gossiping Bus Drivers 
+- B 8 Mob Python - implémenter les règles du jeu de go
+- C 5 Mob Rust - convertisseur chiffres Romains / Arabes
+- D 4 Mob Rust TCR - convertisseur
+- E 7 Mob Forth - convertisseur chiffres Romains / Arabes
+
 
 Explication des règles :
 * Mob: 1 typist + les autres naviguent
