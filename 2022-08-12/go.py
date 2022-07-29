@@ -1,29 +1,28 @@
-
-White = 0
-Black = 1
-
 class Board:
-
     def __init__(self):
-        self.player_to_play = Black
-        self.positions = []
+        self.played = []
 
-    def play(self, x, y, player):
-        if not self.is_free(x,y):
-            return False
-        if player != self.player_to_play:
-            return False
-        if (x,y) == (3,0):
-            self.positions.remove((3,1))
-        self.positions.append((x,y))
-        self.player_to_play = 1 - player
-        return True
+    def is_legit(self,x,y):
+        is_free = (x,y) not in self.played
+        in_bounds = x in range(9) and y in range(9)
+        return is_free and in_bounds
+            
+    def play(self, x, y):
+        if self.is_legit(x, y):
+            self.played.append((x,y))
+            return True
+        return False
 
-    def is_free(self, x, y):
-        return (x,y) not in self.positions
+    def adjacent(self, x, y):
+        return [(x-1,y),(x+1,y),(x,y-1),(x,y+1)]
 
     def liberties(self, x, y):
-        adjacent = [(x+1, y), (x-1, y), (x, y+1), (x, y-1)]
-        liberties = [ True for (x,y) in adjacent if self.is_free(x,y) ]
-        return len(liberties)
+        neighbors = self.adjacent(x,y)
+        friends = [(x,y) for (x,y) in neighbors if (x,y) in self.played]
+        libs = [(x,y) for (x,y) in neighbors if self.is_legit(x,y)]
+        for (fx, fy) in friends:
+            libs.append([(x,y) for (x,y) in self.adjacent(fx, fy) if self.is_legit(x,y)])
 
+        return len(set(libs))
+
+    
