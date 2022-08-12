@@ -1,32 +1,22 @@
-Prochaine session: vendredi 05/08 à CodeWorks
+Prochaine session: vendredi 19/08 à Arolla
 
 Présents :
-- Christophe
-- Laurent
 - Pin
-- Ubald
-- Antoine
-- Nelly
-- Andrea
-- O
+- Birame
+- Elena
 - Sofiane
-- Lilian
+- Said
+- Nelly
+- Vicky
 
-Retro : 
-- Mob Python - implémenter les règles du jeu de go
-    - une marche trop haute
-    - il y a un post LinkedIn de Laurent sur ce kata
-    - on a cru qu'une variable de classe était une variable d'instance
-       - des tests passaient mais de manière dépendante
-    - on aurait pu faire un plan (on avait des specs)
-    - les tests nous ont montré qu'on faisait une étape trop grosse (asserts qui s'accumulent)
+Retro : Mob Python - implémenter les règles du jeu pierre feuille ciseaux
+- on était pas loin de trouver une implem générique
+- systeme de points mais pas de décision de gagnant
 
 Sujets:
-- A 9 En Mob les règles du go en Forth  
-- B 3 Refacto en Rust (git-ganble)
-- C 11 Les règles du jeu de go en Python
-- D 9 Le day 07 de l'advent of code 2015 en Haskell 
-
+- A 7 - Mob Fishbowl - JS - game of life
+- * B 7 - Mob - TS - recoder des Promises
+- C 4 - Mob Fishbowl - Python - Tennis
 
 
 Explication des règles :
