@@ -1,11 +1,16 @@
-Prochaine session : le  à 
+Prochaine session : le 2022-08-26 à CodeWorks
 
 Personnes présentes :
-- 
+- Ubald
+- Antoine
+- ToF
+- pin
+- Nelly
 
 Retro :
-- Ancien sujet
-  - 
+- Mob - TS - recoder des Promises
+  - on a pas réussi à refaire la meme interface que les `Promise`
+  - on aurait pu implémenter l'interface `PromiseLike` qui nous aurait permit d'utiliser l'interface `async` / `await`
 
 Explication des règles :
 - Tout le monde peut proposer un sujet
@@ -17,9 +22,9 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 Sujets :
-- 0 - A - 
-- 0 - B - 
-- 0 - C - 
+- 3 - A - Mob Fishbowl - Forth - Roman Numeral
+- 0 - B - Mob - C - Générer toutes les permutations possibles d'une liste
+- 0 - C - Mob - TS - Recréer des `Promise`
 
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
