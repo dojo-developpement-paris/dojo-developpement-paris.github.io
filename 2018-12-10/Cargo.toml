@@ -1,0 +1,10 @@
+[package]
+name = "adventOfCode"
+version = "0.1.0"
+authors = ["FaustXVI <xavier.detant@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+spectral = "0.6.0"
+chrono = "0.4"
+regex = "1"
