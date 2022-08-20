@@ -1,0 +1,50 @@
+var _mdgriffith$style_elements$Style_Scale$shrink = F3(
+	function (ratio, i, size) {
+		shrink:
+		while (true) {
+			if (_elm_lang$core$Native_Utils.cmp(i, 0) < 1) {
+				return size;
+			} else {
+				var _v0 = ratio,
+					_v1 = i - 1,
+					_v2 = size / ratio;
+				ratio = _v0;
+				i = _v1;
+				size = _v2;
+				continue shrink;
+			}
+		}
+	});
+var _mdgriffith$style_elements$Style_Scale$grow = F3(
+	function (ratio, i, size) {
+		grow:
+		while (true) {
+			if (_elm_lang$core$Native_Utils.cmp(i, 0) < 1) {
+				return size;
+			} else {
+				var _v3 = ratio,
+					_v4 = i - 1,
+					_v5 = size * ratio;
+				ratio = _v3;
+				i = _v4;
+				size = _v5;
+				continue grow;
+			}
+		}
+	});
+var _mdgriffith$style_elements$Style_Scale$resize = F3(
+	function (normal, ratio, scale) {
+		return (_elm_lang$core$Native_Utils.eq(scale, 0) || _elm_lang$core$Native_Utils.eq(scale, 1)) ? normal : ((_elm_lang$core$Native_Utils.cmp(scale, 0) < 0) ? A3(_mdgriffith$style_elements$Style_Scale$shrink, ratio, scale * -1, normal) : A3(_mdgriffith$style_elements$Style_Scale$grow, ratio, scale - 1, normal));
+	});
+var _mdgriffith$style_elements$Style_Scale$roundedModular = F2(
+	function (normal, ratio) {
+		return function (_p0) {
+			return _elm_lang$core$Basics$toFloat(
+				_elm_lang$core$Basics$round(
+					A3(_mdgriffith$style_elements$Style_Scale$resize, normal, ratio, _p0)));
+		};
+	});
+var _mdgriffith$style_elements$Style_Scale$modular = F3(
+	function (normal, ratio, fontScale) {
+		return A3(_mdgriffith$style_elements$Style_Scale$resize, normal, ratio, fontScale);
+	});

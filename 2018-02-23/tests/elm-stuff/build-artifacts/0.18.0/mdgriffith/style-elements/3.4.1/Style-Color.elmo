@@ -1,0 +1,42 @@
+var _mdgriffith$style_elements$Style_Color$placeholder = function (clr) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$PseudoElement,
+		'::placeholder',
+		{
+			ctor: '::',
+			_0: _mdgriffith$style_elements$Style_Internal_Model$TextColor(clr),
+			_1: {
+				ctor: '::',
+				_0: A2(_mdgriffith$style_elements$Style_Internal_Model$Exact, 'opacity', '1'),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _mdgriffith$style_elements$Style_Color$selection = function (clr) {
+	return _mdgriffith$style_elements$Style_Internal_Model$SelectionColor(clr);
+};
+var _mdgriffith$style_elements$Style_Color$decoration = function (clr) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'text-decoration-color',
+		_mdgriffith$style_elements$Style_Internal_Render_Value$color(clr));
+};
+var _mdgriffith$style_elements$Style_Color$cursor = function (clr) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'cursor-color',
+		_mdgriffith$style_elements$Style_Internal_Render_Value$color(clr));
+};
+var _mdgriffith$style_elements$Style_Color$border = function (clr) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'border-color',
+		_mdgriffith$style_elements$Style_Internal_Render_Value$color(clr));
+};
+var _mdgriffith$style_elements$Style_Color$background = function (clr) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Exact,
+		'background-color',
+		_mdgriffith$style_elements$Style_Internal_Render_Value$color(clr));
+};
+var _mdgriffith$style_elements$Style_Color$text = _mdgriffith$style_elements$Style_Internal_Model$TextColor;

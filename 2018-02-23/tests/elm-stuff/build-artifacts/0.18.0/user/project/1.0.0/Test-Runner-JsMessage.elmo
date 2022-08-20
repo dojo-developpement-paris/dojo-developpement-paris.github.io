@@ -1,0 +1,45 @@
+var _user$project$Test_Runner_JsMessage$todoDecoder = A3(
+	_elm_lang$core$Json_Decode$map2,
+	F2(
+		function (v0, v1) {
+			return {ctor: '_Tuple2', _0: v0, _1: v1};
+		}),
+	A2(
+		_elm_lang$core$Json_Decode$field,
+		'labels',
+		_elm_lang$core$Json_Decode$list(_elm_lang$core$Json_Decode$string)),
+	A2(_elm_lang$core$Json_Decode$field, 'todo', _elm_lang$core$Json_Decode$string));
+var _user$project$Test_Runner_JsMessage$Summary = F3(
+	function (a, b, c) {
+		return {ctor: 'Summary', _0: a, _1: b, _2: c};
+	});
+var _user$project$Test_Runner_JsMessage$Test = function (a) {
+	return {ctor: 'Test', _0: a};
+};
+var _user$project$Test_Runner_JsMessage$decodeMessageFromType = function (messageType) {
+	var _p0 = messageType;
+	switch (_p0) {
+		case 'TEST':
+			return A2(
+				_elm_lang$core$Json_Decode$map,
+				_user$project$Test_Runner_JsMessage$Test,
+				A2(_elm_lang$core$Json_Decode$field, 'index', _elm_lang$core$Json_Decode$int));
+		case 'SUMMARY':
+			return A4(
+				_elm_lang$core$Json_Decode$map3,
+				_user$project$Test_Runner_JsMessage$Summary,
+				A2(_elm_lang$core$Json_Decode$field, 'duration', _elm_lang$core$Json_Decode$float),
+				A2(_elm_lang$core$Json_Decode$field, 'failures', _elm_lang$core$Json_Decode$int),
+				A2(
+					_elm_lang$core$Json_Decode$field,
+					'todos',
+					_elm_lang$core$Json_Decode$list(_user$project$Test_Runner_JsMessage$todoDecoder)));
+		default:
+			return _elm_lang$core$Json_Decode$fail(
+				A2(_elm_lang$core$Basics_ops['++'], 'Unrecognized message type: ', messageType));
+	}
+};
+var _user$project$Test_Runner_JsMessage$decoder = A2(
+	_elm_lang$core$Json_Decode$andThen,
+	_user$project$Test_Runner_JsMessage$decodeMessageFromType,
+	A2(_elm_lang$core$Json_Decode$field, 'type', _elm_lang$core$Json_Decode$string));

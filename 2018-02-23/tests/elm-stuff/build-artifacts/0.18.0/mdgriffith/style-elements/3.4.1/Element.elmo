@@ -1,0 +1,925 @@
+var _mdgriffith$style_elements$Element$map = _mdgriffith$style_elements$Element_Internal_Model$mapMsg;
+var _mdgriffith$style_elements$Element$responsive = F3(
+	function (a, _p1, _p0) {
+		var _p2 = _p1;
+		var _p7 = _p2._0;
+		var _p6 = _p2._1;
+		var _p3 = _p0;
+		var _p5 = _p3._0;
+		var _p4 = _p3._1;
+		if (_elm_lang$core$Native_Utils.cmp(a, _p7) < 1) {
+			return _p5;
+		} else {
+			if (_elm_lang$core$Native_Utils.cmp(a, _p6) > -1) {
+				return _p4;
+			} else {
+				var deltaA = (a - _p7) / (_p6 - _p7);
+				return (deltaA * (_p4 - _p5)) + _p5;
+			}
+		}
+	});
+var _mdgriffith$style_elements$Element$classifyDevice = function (_p8) {
+	var _p9 = _p8;
+	var _p11 = _p9.width;
+	var _p10 = _p9.height;
+	return {
+		width: _p11,
+		height: _p10,
+		phone: _elm_lang$core$Native_Utils.cmp(_p11, 600) < 1,
+		tablet: (_elm_lang$core$Native_Utils.cmp(_p11, 600) > 0) && (_elm_lang$core$Native_Utils.cmp(_p11, 1200) < 1),
+		desktop: (_elm_lang$core$Native_Utils.cmp(_p11, 1200) > 0) && (_elm_lang$core$Native_Utils.cmp(_p11, 1800) < 1),
+		bigDesktop: _elm_lang$core$Native_Utils.cmp(_p11, 1800) > 0,
+		portrait: _elm_lang$core$Native_Utils.cmp(_p11, _p10) > 0
+	};
+};
+var _mdgriffith$style_elements$Element$embed = function (sheet) {
+	return A2(_mdgriffith$style_elements$Element_Internal_Render$embed, false, sheet);
+};
+var _mdgriffith$style_elements$Element$root = _mdgriffith$style_elements$Element_Internal_Render$root;
+var _mdgriffith$style_elements$Element$render = F2(
+	function (stylesheet, el) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{ctor: '[]'},
+			A2(_mdgriffith$style_elements$Element_Internal_Render$render, stylesheet, el));
+	});
+var _mdgriffith$style_elements$Element$embedStylesheet = function (sheet) {
+	return A2(_mdgriffith$style_elements$Element_Internal_Render$embed, false, sheet);
+};
+var _mdgriffith$style_elements$Element$toHtml = F2(
+	function (stylesheet, el) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{ctor: '[]'},
+			A2(_mdgriffith$style_elements$Element_Internal_Render$render, stylesheet, el));
+	});
+var _mdgriffith$style_elements$Element$viewport = _mdgriffith$style_elements$Element_Internal_Render$viewport;
+var _mdgriffith$style_elements$Element$layout = _mdgriffith$style_elements$Element_Internal_Render$root;
+var _mdgriffith$style_elements$Element$onLeft = F2(
+	function (nearbys, parent) {
+		var position = F2(
+			function (el, p) {
+				return A2(
+					_mdgriffith$style_elements$Element_Internal_Modify$addChild,
+					p,
+					A2(
+						_mdgriffith$style_elements$Element_Internal_Modify$removeAttrs,
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Right),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Left),
+								_1: {ctor: '[]'}
+							}
+						},
+						A2(
+							_mdgriffith$style_elements$Element_Internal_Modify$addAttr,
+							_mdgriffith$style_elements$Element_Internal_Model$PositionFrame(
+								_mdgriffith$style_elements$Element_Internal_Model$Nearby(_mdgriffith$style_elements$Element_Internal_Model$OnLeft)),
+							el)));
+			});
+		return A3(_elm_lang$core$List$foldl, position, parent, nearbys);
+	});
+var _mdgriffith$style_elements$Element$onRight = F2(
+	function (nearbys, parent) {
+		var position = F2(
+			function (el, p) {
+				return A2(
+					_mdgriffith$style_elements$Element_Internal_Modify$addChild,
+					p,
+					A2(
+						_mdgriffith$style_elements$Element_Internal_Modify$removeAttrs,
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Right),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Left),
+								_1: {ctor: '[]'}
+							}
+						},
+						A2(
+							_mdgriffith$style_elements$Element_Internal_Modify$addAttr,
+							_mdgriffith$style_elements$Element_Internal_Model$PositionFrame(
+								_mdgriffith$style_elements$Element_Internal_Model$Nearby(_mdgriffith$style_elements$Element_Internal_Model$OnRight)),
+							el)));
+			});
+		return A3(_elm_lang$core$List$foldl, position, parent, nearbys);
+	});
+var _mdgriffith$style_elements$Element$below = F2(
+	function (nearbys, parent) {
+		var position = F2(
+			function (el, p) {
+				return A2(
+					_mdgriffith$style_elements$Element_Internal_Modify$addChild,
+					p,
+					A2(
+						_mdgriffith$style_elements$Element_Internal_Modify$removeAttrs,
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$Top),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$Bottom),
+								_1: {ctor: '[]'}
+							}
+						},
+						A2(
+							_mdgriffith$style_elements$Element_Internal_Modify$addAttr,
+							_mdgriffith$style_elements$Element_Internal_Model$PositionFrame(
+								_mdgriffith$style_elements$Element_Internal_Model$Nearby(_mdgriffith$style_elements$Element_Internal_Model$Below)),
+							el)));
+			});
+		return A3(_elm_lang$core$List$foldl, position, parent, nearbys);
+	});
+var _mdgriffith$style_elements$Element$above = F2(
+	function (nearbys, parent) {
+		var position = F2(
+			function (el, p) {
+				return A2(
+					_mdgriffith$style_elements$Element_Internal_Modify$addChild,
+					p,
+					A2(
+						_mdgriffith$style_elements$Element_Internal_Modify$removeAttrs,
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$Top),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$Bottom),
+								_1: {ctor: '[]'}
+							}
+						},
+						A2(
+							_mdgriffith$style_elements$Element_Internal_Modify$addAttr,
+							_mdgriffith$style_elements$Element_Internal_Model$PositionFrame(
+								_mdgriffith$style_elements$Element_Internal_Model$Nearby(_mdgriffith$style_elements$Element_Internal_Model$Above)),
+							el)));
+			});
+		return A3(_elm_lang$core$List$foldl, position, parent, nearbys);
+	});
+var _mdgriffith$style_elements$Element$within = F2(
+	function (nearbys, parent) {
+		var position = F2(
+			function (el, p) {
+				return A2(
+					_mdgriffith$style_elements$Element_Internal_Modify$addChild,
+					p,
+					A2(
+						_mdgriffith$style_elements$Element_Internal_Modify$addAttr,
+						_mdgriffith$style_elements$Element_Internal_Model$PositionFrame(
+							_mdgriffith$style_elements$Element_Internal_Model$Nearby(_mdgriffith$style_elements$Element_Internal_Model$Within)),
+						el));
+			});
+		return A3(_elm_lang$core$List$foldl, position, parent, nearbys);
+	});
+var _mdgriffith$style_elements$Element$link = F2(
+	function (src, el) {
+		return A2(
+			_mdgriffith$style_elements$Element_Internal_Modify$addAttrList,
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Element_Internal_Model$Attr(
+					_elm_lang$html$Html_Attributes$href(src)),
+				_1: {
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Element_Internal_Model$Attr(
+						_elm_lang$html$Html_Attributes$rel('noopener noreferrer')),
+					_1: {ctor: '[]'}
+				}
+			},
+			A2(_mdgriffith$style_elements$Element_Internal_Modify$setNode, 'a', el));
+	});
+var _mdgriffith$style_elements$Element$spanAll = function (name) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Model$Named,
+		_mdgriffith$style_elements$Style_Internal_Model$SpanAll,
+		_elm_lang$core$Maybe$Just(name));
+};
+var _mdgriffith$style_elements$Element$span = F2(
+	function (i, name) {
+		return A2(
+			_mdgriffith$style_elements$Style_Internal_Model$Named,
+			_mdgriffith$style_elements$Style_Internal_Model$SpanJust(i),
+			_elm_lang$core$Maybe$Just(name));
+	});
+var _mdgriffith$style_elements$Element$named = F2(
+	function (name, el) {
+		return _mdgriffith$style_elements$Element_Internal_Model$NamedOnGrid(
+			A2(
+				_mdgriffith$style_elements$Element_Internal_Modify$addAttr,
+				_mdgriffith$style_elements$Element_Internal_Model$GridArea(name),
+				el));
+	});
+var _mdgriffith$style_elements$Element$area = F2(
+	function (box, el) {
+		return _mdgriffith$style_elements$Element_Internal_Model$OnGrid(
+			A2(
+				_mdgriffith$style_elements$Element_Internal_Modify$addAttr,
+				_mdgriffith$style_elements$Element_Internal_Model$GridCoords(
+					_mdgriffith$style_elements$Style_Internal_Model$GridPosition(box)),
+				el));
+	});
+var _mdgriffith$style_elements$Element$namedGrid = F4(
+	function (style, template, attrs, children) {
+		var forSpacing = function (attr) {
+			var _p12 = attr;
+			if (_p12.ctor === 'Spacing') {
+				return true;
+			} else {
+				return false;
+			}
+		};
+		var _p13 = A2(_elm_lang$core$List$partition, forSpacing, attrs);
+		var spacing = _p13._0;
+		var notSpacingAttrs = _p13._1;
+		var gridAttributes = function () {
+			var _p14 = _elm_lang$core$List$head(
+				_elm_lang$core$List$reverse(spacing));
+			if (_p14.ctor === 'Nothing') {
+				return {ctor: '[]'};
+			} else {
+				if (_p14._0.ctor === 'Spacing') {
+					return {
+						ctor: '::',
+						_0: A2(_mdgriffith$style_elements$Style_Internal_Model$GridGap, _p14._0._0, _p14._0._1),
+						_1: {ctor: '[]'}
+					};
+				} else {
+					return {ctor: '[]'};
+				}
+			}
+		}();
+		var prepare = function (el) {
+			return _mdgriffith$style_elements$Element_Internal_Model$Normal(
+				A2(
+					_elm_lang$core$List$map,
+					function (_p15) {
+						var _p16 = _p15;
+						return _p16._0;
+					},
+					el));
+		};
+		return _mdgriffith$style_elements$Element_Internal_Model$Layout(
+			{
+				node: 'div',
+				style: _elm_lang$core$Maybe$Just(style),
+				layout: A2(
+					_mdgriffith$style_elements$Style_Internal_Model$Grid,
+					_mdgriffith$style_elements$Style_Internal_Model$NamedGridTemplate(template),
+					gridAttributes),
+				attrs: notSpacingAttrs,
+				children: prepare(children),
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$grid = F4(
+	function (style, template, attrs, children) {
+		var forSpacing = function (attr) {
+			var _p17 = attr;
+			if (_p17.ctor === 'Spacing') {
+				return true;
+			} else {
+				return false;
+			}
+		};
+		var _p18 = A2(_elm_lang$core$List$partition, forSpacing, attrs);
+		var spacing = _p18._0;
+		var notSpacingAttrs = _p18._1;
+		var gridAttributes = function () {
+			var _p19 = _elm_lang$core$List$head(
+				_elm_lang$core$List$reverse(spacing));
+			if (_p19.ctor === 'Nothing') {
+				return {ctor: '[]'};
+			} else {
+				if (_p19._0.ctor === 'Spacing') {
+					return {
+						ctor: '::',
+						_0: A2(_mdgriffith$style_elements$Style_Internal_Model$GridGap, _p19._0._0, _p19._0._1),
+						_1: {ctor: '[]'}
+					};
+				} else {
+					return {ctor: '[]'};
+				}
+			}
+		}();
+		var prepare = function (el) {
+			return _mdgriffith$style_elements$Element_Internal_Model$Normal(
+				A2(
+					_elm_lang$core$List$map,
+					function (_p20) {
+						var _p21 = _p20;
+						return _p21._0;
+					},
+					el));
+		};
+		return _mdgriffith$style_elements$Element_Internal_Model$Layout(
+			{
+				node: 'div',
+				style: _elm_lang$core$Maybe$Just(style),
+				layout: A2(
+					_mdgriffith$style_elements$Style_Internal_Model$Grid,
+					_mdgriffith$style_elements$Style_Internal_Model$GridTemplate(template),
+					gridAttributes),
+				attrs: notSpacingAttrs,
+				children: prepare(children),
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$table = F3(
+	function (style, attrs, rows) {
+		var children = _elm_lang$core$List$concat(
+			A2(
+				_elm_lang$core$List$indexedMap,
+				F2(
+					function (row, columns) {
+						return A2(
+							_elm_lang$core$List$indexedMap,
+							F2(
+								function (col, content) {
+									return A2(
+										_mdgriffith$style_elements$Element$area,
+										{
+											start: {ctor: '_Tuple2', _0: row, _1: col},
+											width: 1,
+											height: 1
+										},
+										content);
+								}),
+							columns);
+					}),
+				rows));
+		return A4(
+			_mdgriffith$style_elements$Element$grid,
+			style,
+			{
+				columns: {ctor: '[]'},
+				rows: {ctor: '[]'}
+			},
+			attrs,
+			children);
+	});
+var _mdgriffith$style_elements$Element$wrappedColumn = F3(
+	function (style, attrs, children) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Layout(
+			{
+				node: 'div',
+				style: _elm_lang$core$Maybe$Just(style),
+				layout: A2(
+					_mdgriffith$style_elements$Style_Internal_Model$FlexLayout,
+					_mdgriffith$style_elements$Style_Internal_Model$Down,
+					{
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Style_Internal_Model$Wrap(true),
+						_1: {ctor: '[]'}
+					}),
+				attrs: attrs,
+				children: _mdgriffith$style_elements$Element_Internal_Model$Normal(children),
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$wrappedRow = F3(
+	function (style, attrs, children) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Layout(
+			{
+				node: 'div',
+				style: _elm_lang$core$Maybe$Just(style),
+				layout: A2(
+					_mdgriffith$style_elements$Style_Internal_Model$FlexLayout,
+					_mdgriffith$style_elements$Style_Internal_Model$GoRight,
+					{
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Style_Internal_Model$Wrap(true),
+						_1: {ctor: '[]'}
+					}),
+				attrs: attrs,
+				children: _mdgriffith$style_elements$Element_Internal_Model$Normal(children),
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$column = F3(
+	function (style, attrs, children) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Layout(
+			{
+				node: 'div',
+				style: _elm_lang$core$Maybe$Just(style),
+				layout: A2(
+					_mdgriffith$style_elements$Style_Internal_Model$FlexLayout,
+					_mdgriffith$style_elements$Style_Internal_Model$Down,
+					{ctor: '[]'}),
+				attrs: attrs,
+				children: _mdgriffith$style_elements$Element_Internal_Model$Normal(children),
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$row = F3(
+	function (style, attrs, children) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Layout(
+			{
+				node: 'div',
+				style: _elm_lang$core$Maybe$Just(style),
+				layout: A2(
+					_mdgriffith$style_elements$Style_Internal_Model$FlexLayout,
+					_mdgriffith$style_elements$Style_Internal_Model$GoRight,
+					{ctor: '[]'}),
+				attrs: attrs,
+				children: _mdgriffith$style_elements$Element_Internal_Model$Normal(children),
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$paragraph = F3(
+	function (style, attrs, children) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Layout(
+			{
+				node: 'p',
+				style: _elm_lang$core$Maybe$Just(style),
+				layout: _mdgriffith$style_elements$Style_Internal_Model$TextLayout(false),
+				attrs: attrs,
+				children: _mdgriffith$style_elements$Element_Internal_Model$Normal(
+					A2(
+						_elm_lang$core$List$map,
+						_mdgriffith$style_elements$Element_Internal_Modify$addAttrToNonText(_mdgriffith$style_elements$Element_Internal_Model$Inline),
+						children)),
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$textLayout = F3(
+	function (style, attrs, children) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Layout(
+			{
+				node: 'div',
+				style: _elm_lang$core$Maybe$Just(style),
+				layout: _mdgriffith$style_elements$Style_Internal_Model$TextLayout(true),
+				attrs: attrs,
+				children: _mdgriffith$style_elements$Element_Internal_Model$Normal(children),
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$full = F3(
+	function (elem, attrs, child) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Element(
+			{
+				node: 'div',
+				style: _elm_lang$core$Maybe$Just(elem),
+				attrs: {ctor: '::', _0: _mdgriffith$style_elements$Element_Internal_Model$Expand, _1: attrs},
+				child: child,
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$inputText = F3(
+	function (elem, attrs, content) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Element(
+			{
+				node: 'input',
+				style: _elm_lang$core$Maybe$Just(elem),
+				attrs: {
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Element_Attributes$type_('text'),
+					_1: {
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Element_Attributes$value(content),
+						_1: attrs
+					}
+				},
+				child: _mdgriffith$style_elements$Element_Internal_Model$Empty,
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$select = F4(
+	function (group, style, attributes, buttons) {
+		var toChild = function (_p22) {
+			var _p23 = _p22;
+			return A2(
+				_mdgriffith$style_elements$Element_Internal_Modify$addAttrList,
+				{
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Element_Attributes$value(_p23._0),
+					_1: {
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Element_Attributes$selected(_p23._1),
+						_1: {ctor: '[]'}
+					}
+				},
+				A2(_mdgriffith$style_elements$Element_Internal_Modify$setNode, 'option', _p23._2));
+		};
+		return A2(
+			_mdgriffith$style_elements$Element_Internal_Modify$setNode,
+			'select',
+			A3(
+				_mdgriffith$style_elements$Element$column,
+				style,
+				{
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Element_Attributes$name(group),
+					_1: attributes
+				},
+				A2(_elm_lang$core$List$map, toChild, buttons)));
+	});
+var _mdgriffith$style_elements$Element$radio = F4(
+	function (group, style, attributes, buttons) {
+		var toChild = function (_p24) {
+			var _p25 = _p24;
+			var _p28 = _p25._2;
+			var literalLabel = _mdgriffith$style_elements$Element_Internal_Modify$removeStyle(
+				_mdgriffith$style_elements$Element_Internal_Modify$removeAllAttrs(
+					_mdgriffith$style_elements$Element_Internal_Modify$getChild(_p28)));
+			var forInputEvents = function (attr) {
+				var _p26 = attr;
+				if (_p26.ctor === 'InputEvent') {
+					return true;
+				} else {
+					return false;
+				}
+			};
+			var attrs = _mdgriffith$style_elements$Element_Internal_Modify$getAttrs(_p28);
+			var _p27 = A2(_elm_lang$core$List$partition, forInputEvents, attrs);
+			var inputEvents = _p27._0;
+			var nonInputEventAttrs = _p27._1;
+			var rune = _mdgriffith$style_elements$Element_Internal_Modify$removeStyle(
+				_mdgriffith$style_elements$Element_Internal_Modify$removeContent(
+					A2(
+						_mdgriffith$style_elements$Element_Internal_Modify$addAttrList,
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							{
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Attributes$type_('radio'),
+								_1: {
+									ctor: '::',
+									_0: _mdgriffith$style_elements$Element_Attributes$name(group),
+									_1: {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Element_Attributes$value(_p25._0),
+										_1: {
+											ctor: '::',
+											_0: _mdgriffith$style_elements$Element_Attributes$checked(_p25._1),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							},
+							inputEvents),
+						A2(_mdgriffith$style_elements$Element_Internal_Modify$setNode, 'input', _p28))));
+			var style = _mdgriffith$style_elements$Element_Internal_Modify$getStyle(_p28);
+			return _mdgriffith$style_elements$Element_Internal_Model$Layout(
+				{
+					node: 'layout',
+					style: style,
+					layout: A2(
+						_mdgriffith$style_elements$Style_Internal_Model$FlexLayout,
+						_mdgriffith$style_elements$Style_Internal_Model$GoRight,
+						{ctor: '[]'}),
+					attrs: nonInputEventAttrs,
+					children: _mdgriffith$style_elements$Element_Internal_Model$Normal(
+						{
+							ctor: '::',
+							_0: rune,
+							_1: {
+								ctor: '::',
+								_0: literalLabel,
+								_1: {ctor: '[]'}
+							}
+						}),
+					absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+				});
+		};
+		return A3(
+			_mdgriffith$style_elements$Element$column,
+			style,
+			attributes,
+			A2(_elm_lang$core$List$map, toChild, buttons));
+	});
+var _mdgriffith$style_elements$Element$form = _mdgriffith$style_elements$Element_Internal_Modify$setNode('form');
+var _mdgriffith$style_elements$Element$video = _mdgriffith$style_elements$Element_Internal_Modify$setNode('video');
+var _mdgriffith$style_elements$Element$audio = _mdgriffith$style_elements$Element_Internal_Modify$setNode('audio');
+var _mdgriffith$style_elements$Element$iframe = _mdgriffith$style_elements$Element_Internal_Modify$setNode('iframe');
+var _mdgriffith$style_elements$Element$canvas = _mdgriffith$style_elements$Element_Internal_Modify$setNode('canvas');
+var _mdgriffith$style_elements$Element$button = _mdgriffith$style_elements$Element_Internal_Modify$setNode('button');
+var _mdgriffith$style_elements$Element$aside = _mdgriffith$style_elements$Element_Internal_Modify$setNode('aside');
+var _mdgriffith$style_elements$Element$article = _mdgriffith$style_elements$Element_Internal_Modify$setNode('article');
+var _mdgriffith$style_elements$Element$nav = _mdgriffith$style_elements$Element_Internal_Modify$setNode('nav');
+var _mdgriffith$style_elements$Element$section = _mdgriffith$style_elements$Element_Internal_Modify$setNode('section');
+var _mdgriffith$style_elements$Element$header = _mdgriffith$style_elements$Element_Internal_Modify$setNode('header');
+var _mdgriffith$style_elements$Element$node = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Modify$setNode(str);
+};
+var _mdgriffith$style_elements$Element$label = F4(
+	function (elem, attrs, label, input) {
+		var containedLabel = function () {
+			var _p29 = label;
+			if (_p29.ctor === 'Text') {
+				return _mdgriffith$style_elements$Element_Internal_Model$Element(
+					{
+						node: 'div',
+						style: _elm_lang$core$Maybe$Nothing,
+						attrs: {ctor: '[]'},
+						child: A2(_mdgriffith$style_elements$Element_Internal_Model$Text, _p29._0, _p29._1),
+						absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+					});
+			} else {
+				return _p29;
+			}
+		}();
+		return A2(
+			_mdgriffith$style_elements$Element$node,
+			'label',
+			A3(
+				_mdgriffith$style_elements$Element$column,
+				elem,
+				attrs,
+				{
+					ctor: '::',
+					_0: label,
+					_1: {
+						ctor: '::',
+						_0: input,
+						_1: {ctor: '[]'}
+					}
+				}));
+	});
+var _mdgriffith$style_elements$Element$labelBelow = F4(
+	function (elem, attrs, label, input) {
+		var containedLabel = function () {
+			var _p30 = label;
+			if (_p30.ctor === 'Text') {
+				return _mdgriffith$style_elements$Element_Internal_Model$Element(
+					{
+						node: 'div',
+						style: _elm_lang$core$Maybe$Nothing,
+						attrs: {ctor: '[]'},
+						child: A2(_mdgriffith$style_elements$Element_Internal_Model$Text, _p30._0, _p30._1),
+						absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+					});
+			} else {
+				return _p30;
+			}
+		}();
+		return A2(
+			_mdgriffith$style_elements$Element$node,
+			'label',
+			A3(
+				_mdgriffith$style_elements$Element$column,
+				elem,
+				attrs,
+				{
+					ctor: '::',
+					_0: input,
+					_1: {
+						ctor: '::',
+						_0: label,
+						_1: {ctor: '[]'}
+					}
+				}));
+	});
+var _mdgriffith$style_elements$Element$html = _mdgriffith$style_elements$Element_Internal_Model$Raw;
+var _mdgriffith$style_elements$Element$image = F4(
+	function (src, style, attrs, child) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Element(
+			{
+				node: 'img',
+				style: _elm_lang$core$Maybe$Just(style),
+				attrs: {
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Element_Internal_Model$Attr(
+						_elm_lang$html$Html_Attributes$src(src)),
+					_1: attrs
+				},
+				child: child,
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$spacer = _mdgriffith$style_elements$Element_Internal_Model$Spacer;
+var _mdgriffith$style_elements$Element$circle = F4(
+	function (radius, style, attrs, child) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Element(
+			{
+				node: 'div',
+				style: _elm_lang$core$Maybe$Just(style),
+				attrs: {
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Element_Internal_Model$Attr(
+						_elm_lang$html$Html_Attributes$style(
+							{
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'border-radius',
+									_1: A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(radius),
+										'px')
+								},
+								_1: {ctor: '[]'}
+							})),
+					_1: {
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Element_Internal_Model$Width(
+							_mdgriffith$style_elements$Style_Internal_Model$Px(2 * radius)),
+						_1: {
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Model$Height(
+								_mdgriffith$style_elements$Style_Internal_Model$Px(2 * radius)),
+							_1: attrs
+						}
+					}
+				},
+				child: child,
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$el = F3(
+	function (style, attrs, child) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Element(
+			{
+				node: 'div',
+				style: _elm_lang$core$Maybe$Just(style),
+				attrs: attrs,
+				child: child,
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$super = _mdgriffith$style_elements$Element_Internal_Model$Text(_mdgriffith$style_elements$Element_Internal_Model$Super);
+var _mdgriffith$style_elements$Element$sub = _mdgriffith$style_elements$Element_Internal_Model$Text(_mdgriffith$style_elements$Element_Internal_Model$Sub);
+var _mdgriffith$style_elements$Element$underline = _mdgriffith$style_elements$Element_Internal_Model$Text(_mdgriffith$style_elements$Element_Internal_Model$Underline);
+var _mdgriffith$style_elements$Element$strike = _mdgriffith$style_elements$Element_Internal_Model$Text(_mdgriffith$style_elements$Element_Internal_Model$Strike);
+var _mdgriffith$style_elements$Element$italic = _mdgriffith$style_elements$Element_Internal_Model$Text(_mdgriffith$style_elements$Element_Internal_Model$Italic);
+var _mdgriffith$style_elements$Element$bold = _mdgriffith$style_elements$Element_Internal_Model$Text(_mdgriffith$style_elements$Element_Internal_Model$Bold);
+var _mdgriffith$style_elements$Element$text = _mdgriffith$style_elements$Element_Internal_Model$Text(_mdgriffith$style_elements$Element_Internal_Model$NoDecoration);
+var _mdgriffith$style_elements$Element$textArea = F3(
+	function (elem, attrs, content) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Element(
+			{
+				node: 'textarea',
+				style: _elm_lang$core$Maybe$Just(elem),
+				attrs: attrs,
+				child: _mdgriffith$style_elements$Element$text(content),
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$empty = _mdgriffith$style_elements$Element_Internal_Model$Empty;
+var _mdgriffith$style_elements$Element$hairline = function (style) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Element(
+		{
+			node: 'hr',
+			style: _elm_lang$core$Maybe$Just(style),
+			attrs: {
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Element_Internal_Model$Height(
+					_mdgriffith$style_elements$Style_Internal_Model$Px(1)),
+				_1: {ctor: '[]'}
+			},
+			child: _mdgriffith$style_elements$Element$empty,
+			absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+		});
+};
+var _mdgriffith$style_elements$Element$break = _mdgriffith$style_elements$Element_Internal_Model$Element(
+	{
+		node: 'br',
+		style: _elm_lang$core$Maybe$Nothing,
+		attrs: {ctor: '[]'},
+		child: _mdgriffith$style_elements$Element$empty,
+		absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+	});
+var _mdgriffith$style_elements$Element$inlineChildren = F4(
+	function (node, style, attrs, children) {
+		var _p31 = function () {
+			var _p32 = children;
+			if (_p32.ctor === '[]') {
+				return {ctor: '_Tuple2', _0: _mdgriffith$style_elements$Element$empty, _1: _elm_lang$core$Maybe$Nothing};
+			} else {
+				return {
+					ctor: '_Tuple2',
+					_0: A2(_mdgriffith$style_elements$Element_Internal_Modify$addAttrToNonText, _mdgriffith$style_elements$Element_Internal_Model$Inline, _p32._0),
+					_1: _elm_lang$core$Maybe$Just(
+						A2(
+							_elm_lang$core$List$map,
+							_mdgriffith$style_elements$Element_Internal_Modify$addAttrToNonText(_mdgriffith$style_elements$Element_Internal_Model$Inline),
+							_p32._1))
+				};
+			}
+		}();
+		var child = _p31._0;
+		var others = _p31._1;
+		return _mdgriffith$style_elements$Element_Internal_Model$Element(
+			{node: node, style: style, attrs: attrs, child: child, absolutelyPositioned: others});
+	});
+var _mdgriffith$style_elements$Element$checkbox = F4(
+	function (on, style, attrs, label) {
+		var forInputEvents = function (attr) {
+			var _p33 = attr;
+			if (_p33.ctor === 'InputEvent') {
+				return true;
+			} else {
+				return false;
+			}
+		};
+		var _p34 = A2(_elm_lang$core$List$partition, forInputEvents, attrs);
+		var events = _p34._0;
+		var notInputEvents = _p34._1;
+		return _mdgriffith$style_elements$Element_Internal_Model$Element(
+			{
+				node: 'label',
+				style: _elm_lang$core$Maybe$Just(style),
+				attrs: notInputEvents,
+				child: A4(
+					_mdgriffith$style_elements$Element$inlineChildren,
+					'div',
+					_elm_lang$core$Maybe$Nothing,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Element_Internal_Model$Element(
+							{
+								node: 'input',
+								style: _elm_lang$core$Maybe$Nothing,
+								attrs: {
+									ctor: '::',
+									_0: _mdgriffith$style_elements$Element_Attributes$type_('checkbox'),
+									_1: {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Element_Attributes$checked(on),
+										_1: events
+									}
+								},
+								child: _mdgriffith$style_elements$Element$empty,
+								absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+							}),
+						_1: {
+							ctor: '::',
+							_0: label,
+							_1: {ctor: '[]'}
+						}
+					}),
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			});
+	});
+var _mdgriffith$style_elements$Element$when = F2(
+	function (bool, elm) {
+		return bool ? elm : _mdgriffith$style_elements$Element$empty;
+	});
+var _mdgriffith$style_elements$Element$whenJust = F2(
+	function (maybe, view) {
+		var _p35 = maybe;
+		if (_p35.ctor === 'Nothing') {
+			return _mdgriffith$style_elements$Element$empty;
+		} else {
+			return view(_p35._0);
+		}
+	});
+var _mdgriffith$style_elements$Element$screen = function (el) {
+	return A2(
+		_mdgriffith$style_elements$Element$within,
+		{
+			ctor: '::',
+			_0: el,
+			_1: {ctor: '[]'}
+		},
+		_mdgriffith$style_elements$Element_Internal_Model$Element(
+			{
+				node: 'div',
+				style: _elm_lang$core$Maybe$Nothing,
+				attrs: {
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Element_Internal_Model$PositionFrame(_mdgriffith$style_elements$Element_Internal_Model$Screen),
+					_1: {
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Element_Internal_Model$Width(
+							A2(_mdgriffith$style_elements$Style_Internal_Model$Calc, 100, 0)),
+						_1: {
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Internal_Model$Height(
+								A2(_mdgriffith$style_elements$Style_Internal_Model$Calc, 100, 0)),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(false),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				},
+				child: _mdgriffith$style_elements$Element$empty,
+				absolutelyPositioned: _elm_lang$core$Maybe$Nothing
+			}));
+};
+var _mdgriffith$style_elements$Element$Grid = F2(
+	function (a, b) {
+		return {rows: a, columns: b};
+	});
+var _mdgriffith$style_elements$Element$NamedGrid = F2(
+	function (a, b) {
+		return {rows: a, columns: b};
+	});
+var _mdgriffith$style_elements$Element$GridPosition = F3(
+	function (a, b, c) {
+		return {start: a, width: b, height: c};
+	});
+var _mdgriffith$style_elements$Element$Device = F7(
+	function (a, b, c, d, e, f, g) {
+		return {width: a, height: b, phone: c, tablet: d, desktop: e, bigDesktop: f, portrait: g};
+	});
+var _mdgriffith$style_elements$Element$Option = F3(
+	function (a, b, c) {
+		return {ctor: 'Option', _0: a, _1: b, _2: c};
+	});
+var _mdgriffith$style_elements$Element$option = _mdgriffith$style_elements$Element$Option;

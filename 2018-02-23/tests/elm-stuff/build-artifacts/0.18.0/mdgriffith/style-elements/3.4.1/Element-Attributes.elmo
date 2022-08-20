@@ -1,0 +1,633 @@
+var _mdgriffith$style_elements$Element_Attributes$manifest = function (man) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$manifest(man));
+};
+var _mdgriffith$style_elements$Element_Attributes$scope = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$scope(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$rowspan = function (i) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$rowspan(i));
+};
+var _mdgriffith$style_elements$Element_Attributes$headers = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$headers(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$colspan = function (i) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$colspan(i));
+};
+var _mdgriffith$style_elements$Element_Attributes$start = function (i) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$start(i));
+};
+var _mdgriffith$style_elements$Element_Attributes$reversed = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$reversed(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$pubdate = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$pubdate(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$datetime = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$datetime(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$rel = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$rel(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$ping = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$ping(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$media = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$media(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$hreflang = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$hreflang(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$downloadAs = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$downloadAs(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$download = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$download(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$target = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$target(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$href = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$href(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$cite = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$cite(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$align = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$align(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$keytype = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$keytype(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$challenge = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$challenge(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$coords = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$coords(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$shape = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$shape(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$usemap = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$usemap(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$ismap = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$ismap(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$wrap = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$wrap(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$rows = function (i) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$rows(i));
+};
+var _mdgriffith$style_elements$Element_Attributes$cols = function (i) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$cols(i));
+};
+var _mdgriffith$style_elements$Element_Attributes$step = function (s) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$step(s));
+};
+var _mdgriffith$style_elements$Element_Attributes$min = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$min(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$max = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$max(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$form = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$form(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$for = function (id) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$for(id));
+};
+var _mdgriffith$style_elements$Element_Attributes$size = function (i) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$size(i));
+};
+var _mdgriffith$style_elements$Element_Attributes$required = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$required(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$readonly = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$readonly(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$pattern = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$pattern(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$novalidate = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$novalidate(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$name = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$name(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$multiple = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$multiple(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$method = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$method(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$maxlength = function (i) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$maxlength(i));
+};
+var _mdgriffith$style_elements$Element_Attributes$minlength = function (i) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$minlength(i));
+};
+var _mdgriffith$style_elements$Element_Attributes$list = function (l) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$list(l));
+};
+var _mdgriffith$style_elements$Element_Attributes$formaction = function (action) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$formaction(action));
+};
+var _mdgriffith$style_elements$Element_Attributes$enctype = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$enctype(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$disabled = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$disabled(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$autofocus = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$autofocus(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$autocomplete = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$autocomplete(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$action = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$action(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$acceptCharset = function ($char) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$acceptCharset($char));
+};
+var _mdgriffith$style_elements$Element_Attributes$accept = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$accept(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$selected = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$selected(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$placeholder = function (place) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$placeholder(place));
+};
+var _mdgriffith$style_elements$Element_Attributes$checked = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$checked(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$defaultValue = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$defaultValue(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$value = function (val) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$value(val));
+};
+var _mdgriffith$style_elements$Element_Attributes$type_ = function (t) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$type_(t));
+};
+var _mdgriffith$style_elements$Element_Attributes$srcdoc = function (doc) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$srcdoc(doc));
+};
+var _mdgriffith$style_elements$Element_Attributes$seamless = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$seamless(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$sandbox = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$sandbox(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$srclang = function (lang) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$srclang(lang));
+};
+var _mdgriffith$style_elements$Element_Attributes$kind = function (k) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$kind(k));
+};
+var _mdgriffith$style_elements$Element_Attributes$default = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$default(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$poster = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$poster(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$preload = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$preload(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$loop = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$loop(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$controls = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$controls(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$autoplay = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$autoplay(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$alt = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$alt(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$src = function (s) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$src(s));
+};
+var _mdgriffith$style_elements$Element_Attributes$scoped = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$scoped(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$language = function (lang) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$language(lang));
+};
+var _mdgriffith$style_elements$Element_Attributes$httpEquiv = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$httpEquiv(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$defer = function (def) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$defer(def));
+};
+var _mdgriffith$style_elements$Element_Attributes$content = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$content(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$charset = function ($char) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$charset($char));
+};
+var _mdgriffith$style_elements$Element_Attributes$async = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$async(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$tabindex = function (index) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$tabindex(index));
+};
+var _mdgriffith$style_elements$Element_Attributes$spellcheck = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$spellcheck(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$lang = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$lang(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$itemprop = function (item) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$itemprop(item));
+};
+var _mdgriffith$style_elements$Element_Attributes$dropzone = function (drop) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$dropzone(drop));
+};
+var _mdgriffith$style_elements$Element_Attributes$draggable = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$draggable(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$dir = function (d) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$dir(d));
+};
+var _mdgriffith$style_elements$Element_Attributes$contextmenu = function (id) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$contextmenu(id));
+};
+var _mdgriffith$style_elements$Element_Attributes$contenteditable = function (on) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$contenteditable(on));
+};
+var _mdgriffith$style_elements$Element_Attributes$accesskey = function ($char) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$accesskey($char));
+};
+var _mdgriffith$style_elements$Element_Attributes$title = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$title(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$id = function (str) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$id(str));
+};
+var _mdgriffith$style_elements$Element_Attributes$class = function (cls) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$class(cls));
+};
+var _mdgriffith$style_elements$Element_Attributes$map = F2(
+	function (fn, attr) {
+		var _p0 = attr;
+		switch (_p0.ctor) {
+			case 'Attr':
+				return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+					A2(_elm_lang$html$Html_Attributes$map, fn, _p0._0));
+			case 'Vary':
+				return A2(_mdgriffith$style_elements$Element_Internal_Model$Vary, _p0._0, _p0._1);
+			case 'Height':
+				return _mdgriffith$style_elements$Element_Internal_Model$Height(_p0._0);
+			case 'Width':
+				return _mdgriffith$style_elements$Element_Internal_Model$Width(_p0._0);
+			case 'Inline':
+				return _mdgriffith$style_elements$Element_Internal_Model$Inline;
+			case 'Hidden':
+				return _mdgriffith$style_elements$Element_Internal_Model$Hidden;
+			case 'PositionFrame':
+				return _mdgriffith$style_elements$Element_Internal_Model$PositionFrame(_p0._0);
+			case 'Opacity':
+				return _mdgriffith$style_elements$Element_Internal_Model$Opacity(_p0._0);
+			case 'Expand':
+				return _mdgriffith$style_elements$Element_Internal_Model$Expand;
+			case 'Padding':
+				return A4(_mdgriffith$style_elements$Element_Internal_Model$Padding, _p0._0, _p0._1, _p0._2, _p0._3);
+			case 'PhantomPadding':
+				return _mdgriffith$style_elements$Element_Internal_Model$PhantomPadding(_p0._0);
+			case 'Margin':
+				return _mdgriffith$style_elements$Element_Internal_Model$Margin(_p0._0);
+			case 'GridArea':
+				return _mdgriffith$style_elements$Element_Internal_Model$GridArea(_p0._0);
+			case 'GridCoords':
+				return _mdgriffith$style_elements$Element_Internal_Model$GridCoords(_p0._0);
+			case 'PointerEvents':
+				return _mdgriffith$style_elements$Element_Internal_Model$PointerEvents(_p0._0);
+			case 'Event':
+				return _mdgriffith$style_elements$Element_Internal_Model$Event(
+					A2(_elm_lang$html$Html_Attributes$map, fn, _p0._0));
+			case 'InputEvent':
+				return _mdgriffith$style_elements$Element_Internal_Model$InputEvent(
+					A2(_elm_lang$html$Html_Attributes$map, fn, _p0._0));
+			case 'Position':
+				return A3(_mdgriffith$style_elements$Element_Internal_Model$Position, _p0._0, _p0._1, _p0._2);
+			case 'Spacing':
+				return A2(_mdgriffith$style_elements$Element_Internal_Model$Spacing, _p0._0, _p0._1);
+			case 'VAlign':
+				return _mdgriffith$style_elements$Element_Internal_Model$VAlign(_p0._0);
+			case 'HAlign':
+				return _mdgriffith$style_elements$Element_Internal_Model$HAlign(_p0._0);
+			case 'Shrink':
+				return _mdgriffith$style_elements$Element_Internal_Model$Shrink(_p0._0);
+			default:
+				return _mdgriffith$style_elements$Element_Internal_Model$Overflow(_p0._0);
+		}
+	});
+var _mdgriffith$style_elements$Element_Attributes$toAttr = _mdgriffith$style_elements$Element_Internal_Model$Attr;
+var _mdgriffith$style_elements$Element_Attributes$attribute = F2(
+	function (name, val) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+			A2(_elm_lang$html$Html_Attributes$attribute, name, val));
+	});
+var _mdgriffith$style_elements$Element_Attributes$property = F2(
+	function (str, val) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+			A2(_elm_lang$html$Html_Attributes$property, str, val));
+	});
+var _mdgriffith$style_elements$Element_Attributes$inlineStyle = function (_p1) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$virtual_dom$VirtualDom$style(_p1));
+};
+var _mdgriffith$style_elements$Element_Attributes$classList = function (_p2) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$classList(_p2));
+};
+var _mdgriffith$style_elements$Element_Attributes$clipY = _mdgriffith$style_elements$Element_Internal_Model$Attr(
+	_elm_lang$virtual_dom$VirtualDom$style(
+		{
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 'overflow-y', _1: 'hidden'},
+			_1: {ctor: '[]'}
+		}));
+var _mdgriffith$style_elements$Element_Attributes$clipX = _mdgriffith$style_elements$Element_Internal_Model$Attr(
+	_elm_lang$virtual_dom$VirtualDom$style(
+		{
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 'overflow-x', _1: 'hidden'},
+			_1: {ctor: '[]'}
+		}));
+var _mdgriffith$style_elements$Element_Attributes$clip = _mdgriffith$style_elements$Element_Internal_Model$Attr(
+	_elm_lang$virtual_dom$VirtualDom$style(
+		{
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 'overflow', _1: 'hidden'},
+			_1: {ctor: '[]'}
+		}));
+var _mdgriffith$style_elements$Element_Attributes$xScrollbar = _mdgriffith$style_elements$Element_Internal_Model$Overflow(_mdgriffith$style_elements$Element_Internal_Model$XAxis);
+var _mdgriffith$style_elements$Element_Attributes$yScrollbar = _mdgriffith$style_elements$Element_Internal_Model$Overflow(_mdgriffith$style_elements$Element_Internal_Model$YAxis);
+var _mdgriffith$style_elements$Element_Attributes$scrollbars = _mdgriffith$style_elements$Element_Internal_Model$Overflow(_mdgriffith$style_elements$Element_Internal_Model$AllAxis);
+var _mdgriffith$style_elements$Element_Attributes$hidden = _mdgriffith$style_elements$Element_Internal_Model$Hidden;
+var _mdgriffith$style_elements$Element_Attributes$paddingBottom = function (x) {
+	return A4(
+		_mdgriffith$style_elements$Element_Internal_Model$Padding,
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Just(x),
+		_elm_lang$core$Maybe$Nothing);
+};
+var _mdgriffith$style_elements$Element_Attributes$paddingTop = function (x) {
+	return A4(
+		_mdgriffith$style_elements$Element_Internal_Model$Padding,
+		_elm_lang$core$Maybe$Just(x),
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Nothing);
+};
+var _mdgriffith$style_elements$Element_Attributes$paddingRight = function (x) {
+	return A4(
+		_mdgriffith$style_elements$Element_Internal_Model$Padding,
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Just(x),
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Nothing);
+};
+var _mdgriffith$style_elements$Element_Attributes$paddingLeft = function (x) {
+	return A4(
+		_mdgriffith$style_elements$Element_Internal_Model$Padding,
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Just(x));
+};
+var _mdgriffith$style_elements$Element_Attributes$paddingXY = F2(
+	function (x, y) {
+		return A4(
+			_mdgriffith$style_elements$Element_Internal_Model$Padding,
+			_elm_lang$core$Maybe$Just(y),
+			_elm_lang$core$Maybe$Just(x),
+			_elm_lang$core$Maybe$Just(y),
+			_elm_lang$core$Maybe$Just(x));
+	});
+var _mdgriffith$style_elements$Element_Attributes$padding = function (x) {
+	return A4(
+		_mdgriffith$style_elements$Element_Internal_Model$Padding,
+		_elm_lang$core$Maybe$Just(x),
+		_elm_lang$core$Maybe$Just(x),
+		_elm_lang$core$Maybe$Just(x),
+		_elm_lang$core$Maybe$Just(x));
+};
+var _mdgriffith$style_elements$Element_Attributes$spacingXY = _mdgriffith$style_elements$Element_Internal_Model$Spacing;
+var _mdgriffith$style_elements$Element_Attributes$spacing = function (x) {
+	return A2(_mdgriffith$style_elements$Element_Internal_Model$Spacing, x, x);
+};
+var _mdgriffith$style_elements$Element_Attributes$vary = _mdgriffith$style_elements$Element_Internal_Model$Vary;
+var _mdgriffith$style_elements$Element_Attributes$percent = _mdgriffith$style_elements$Style_Internal_Model$Percent;
+var _mdgriffith$style_elements$Element_Attributes$fill = _mdgriffith$style_elements$Style_Internal_Model$Fill;
+var _mdgriffith$style_elements$Element_Attributes$px = _mdgriffith$style_elements$Style_Internal_Model$Px;
+var _mdgriffith$style_elements$Element_Attributes$height = _mdgriffith$style_elements$Element_Internal_Model$Height;
+var _mdgriffith$style_elements$Element_Attributes$maxHeight = function (len) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$style(
+			{
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'max-height',
+					_1: _mdgriffith$style_elements$Style_Internal_Render_Value$length(len)
+				},
+				_1: {ctor: '[]'}
+			}));
+};
+var _mdgriffith$style_elements$Element_Attributes$minHeight = function (len) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$style(
+			{
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'min-height',
+					_1: _mdgriffith$style_elements$Style_Internal_Render_Value$length(len)
+				},
+				_1: {ctor: '[]'}
+			}));
+};
+var _mdgriffith$style_elements$Element_Attributes$maxWidth = function (len) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$style(
+			{
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'max-width',
+					_1: _mdgriffith$style_elements$Style_Internal_Render_Value$length(len)
+				},
+				_1: {ctor: '[]'}
+			}));
+};
+var _mdgriffith$style_elements$Element_Attributes$minWidth = function (len) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Attr(
+		_elm_lang$html$Html_Attributes$style(
+			{
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'min-width',
+					_1: _mdgriffith$style_elements$Style_Internal_Render_Value$length(len)
+				},
+				_1: {ctor: '[]'}
+			}));
+};
+var _mdgriffith$style_elements$Element_Attributes$width = _mdgriffith$style_elements$Element_Internal_Model$Width;
+var _mdgriffith$style_elements$Element_Attributes$moveXY = F2(
+	function (x, y) {
+		return A3(
+			_mdgriffith$style_elements$Element_Internal_Model$Position,
+			_elm_lang$core$Maybe$Just(x),
+			_elm_lang$core$Maybe$Just(y),
+			_elm_lang$core$Maybe$Nothing);
+	});
+var _mdgriffith$style_elements$Element_Attributes$moveY = function (y) {
+	return A3(
+		_mdgriffith$style_elements$Element_Internal_Model$Position,
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Just(y),
+		_elm_lang$core$Maybe$Nothing);
+};
+var _mdgriffith$style_elements$Element_Attributes$moveX = function (x) {
+	return A3(
+		_mdgriffith$style_elements$Element_Internal_Model$Position,
+		_elm_lang$core$Maybe$Just(x),
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Nothing);
+};
+var _mdgriffith$style_elements$Element_Attributes$moveLeft = function (x) {
+	return A3(
+		_mdgriffith$style_elements$Element_Internal_Model$Position,
+		_elm_lang$core$Maybe$Just(
+			_elm_lang$core$Basics$negate(x)),
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Nothing);
+};
+var _mdgriffith$style_elements$Element_Attributes$moveRight = function (x) {
+	return A3(
+		_mdgriffith$style_elements$Element_Internal_Model$Position,
+		_elm_lang$core$Maybe$Just(x),
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Nothing);
+};
+var _mdgriffith$style_elements$Element_Attributes$moveDown = function (y) {
+	return A3(
+		_mdgriffith$style_elements$Element_Internal_Model$Position,
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Just(y),
+		_elm_lang$core$Maybe$Nothing);
+};
+var _mdgriffith$style_elements$Element_Attributes$moveUp = function (y) {
+	return A3(
+		_mdgriffith$style_elements$Element_Internal_Model$Position,
+		_elm_lang$core$Maybe$Nothing,
+		_elm_lang$core$Maybe$Just(
+			_elm_lang$core$Basics$negate(y)),
+		_elm_lang$core$Maybe$Nothing);
+};
+var _mdgriffith$style_elements$Element_Attributes$alignRight = _mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Right);
+var _mdgriffith$style_elements$Element_Attributes$alignLeft = _mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Left);
+var _mdgriffith$style_elements$Element_Attributes$alignBottom = _mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$Bottom);
+var _mdgriffith$style_elements$Element_Attributes$alignTop = _mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$Top);
+var _mdgriffith$style_elements$Element_Attributes$justify = _mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Justify);
+var _mdgriffith$style_elements$Element_Attributes$verticalCenter = _mdgriffith$style_elements$Element_Internal_Model$VAlign(_mdgriffith$style_elements$Element_Internal_Model$VerticalCenter);
+var _mdgriffith$style_elements$Element_Attributes$center = _mdgriffith$style_elements$Element_Internal_Model$HAlign(_mdgriffith$style_elements$Element_Internal_Model$Center);

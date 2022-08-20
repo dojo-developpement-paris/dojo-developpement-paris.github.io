@@ -1,0 +1,15 @@
+{
+    "elm-community/elm-test": "4.2.0",
+    "mdgriffith/style-elements": "3.4.1",
+    "elm-lang/virtual-dom": "2.0.4",
+    "eeue56/elm-lazy": "1.0.0",
+    "mgold/elm-random-pcg": "5.0.2",
+    "eeue56/elm-lazy-list": "1.0.0",
+    "elm-lang/dom": "1.1.1",
+    "elm-lang/html": "2.0.0",
+    "eeue56/elm-shrink": "1.0.0",
+    "elm-community/html-test-runner": "1.0.6",
+    "elm-lang/window": "1.0.1",
+    "Skinney/murmur3": "2.0.6",
+    "elm-lang/core": "5.1.1"
+}

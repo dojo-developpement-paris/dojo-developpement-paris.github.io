@@ -1,0 +1,333 @@
+var _mdgriffith$style_elements$Style_Internal_Selector$getFindable = function (find) {
+	getFindable:
+	while (true) {
+		var _p0 = find;
+		switch (_p0.ctor) {
+			case 'Select':
+				return {
+					ctor: '::',
+					_0: _p0._1,
+					_1: {ctor: '[]'}
+				};
+			case 'SelectChild':
+				var _v1 = _p0._0;
+				find = _v1;
+				continue getFindable;
+			case 'Stack':
+				return A2(
+					_elm_lang$core$Maybe$withDefault,
+					{ctor: '[]'},
+					A2(
+						_elm_lang$core$Maybe$map,
+						function (x) {
+							return {
+								ctor: '::',
+								_0: x,
+								_1: {ctor: '[]'}
+							};
+						},
+						_elm_lang$core$List$head(
+							_elm_lang$core$List$reverse(
+								A2(_elm_lang$core$List$concatMap, _mdgriffith$style_elements$Style_Internal_Selector$getFindable, _p0._0)))));
+			default:
+				return {ctor: '[]'};
+		}
+	}
+};
+var _mdgriffith$style_elements$Style_Internal_Selector$render = F2(
+	function (maybeGuard, selector) {
+		var spacer = function (sel) {
+			var _p1 = sel;
+			if (_p1.ctor === 'Pseudo') {
+				return '';
+			} else {
+				return ' ';
+			}
+		};
+		var renderAndSpace = F2(
+			function (i, sel) {
+				return _elm_lang$core$Native_Utils.eq(i, 0) ? A2(_mdgriffith$style_elements$Style_Internal_Selector$render, maybeGuard, sel) : A2(
+					_elm_lang$core$Basics_ops['++'],
+					spacer(sel),
+					A2(_mdgriffith$style_elements$Style_Internal_Selector$render, maybeGuard, sel));
+			});
+		var guard = function (str) {
+			var _p2 = maybeGuard;
+			if (_p2.ctor === 'Nothing') {
+				return str;
+			} else {
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					str,
+					A2(_elm_lang$core$Basics_ops['++'], '--', _p2._0));
+			}
+		};
+		var _p3 = selector;
+		switch (_p3.ctor) {
+			case 'Select':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'.style-elements .',
+					guard(_p3._0));
+			case 'SelectChild':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'> ',
+					A2(_mdgriffith$style_elements$Style_Internal_Selector$render, maybeGuard, _p3._0));
+			case 'Free':
+				return _p3._0;
+			case 'Pseudo':
+				return _p3._0;
+			default:
+				return _elm_lang$core$String$concat(
+					A2(_elm_lang$core$List$indexedMap, renderAndSpace, _p3._0));
+		}
+	});
+var _mdgriffith$style_elements$Style_Internal_Selector$topName = function (selector) {
+	topName:
+	while (true) {
+		var _p4 = selector;
+		switch (_p4.ctor) {
+			case 'Select':
+				return _p4._0;
+			case 'SelectChild':
+				var _v6 = _p4._0;
+				selector = _v6;
+				continue topName;
+			case 'Stack':
+				return A2(
+					_elm_lang$core$Maybe$withDefault,
+					'',
+					_elm_lang$core$List$head(
+						_elm_lang$core$List$reverse(
+							A2(_elm_lang$core$List$map, _mdgriffith$style_elements$Style_Internal_Selector$topName, _p4._0))));
+			default:
+				return '';
+		}
+	}
+};
+var _mdgriffith$style_elements$Style_Internal_Selector$uncapitalize = function (str) {
+	var tail = A2(_elm_lang$core$String$dropLeft, 1, str);
+	var head = _elm_lang$core$String$toLower(
+		A2(_elm_lang$core$String$left, 1, str));
+	return A2(_elm_lang$core$Basics_ops['++'], head, tail);
+};
+var _mdgriffith$style_elements$Style_Internal_Selector$formatName = function (x) {
+	return A4(
+		_elm_lang$core$Regex$replace,
+		_elm_lang$core$Regex$All,
+		_elm_lang$core$Regex$regex('[\\s+]'),
+		function (_p5) {
+			return '-';
+		},
+		A4(
+			_elm_lang$core$Regex$replace,
+			_elm_lang$core$Regex$All,
+			_elm_lang$core$Regex$regex('[A-Z0-9]+'),
+			function (_p6) {
+				var _p7 = _p6;
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					' ',
+					_elm_lang$core$String$toLower(_p7.match));
+			},
+			A4(
+				_elm_lang$core$Regex$replace,
+				_elm_lang$core$Regex$All,
+				_elm_lang$core$Regex$regex('[^a-zA-Z0-9_-]'),
+				function (_p8) {
+					return '';
+				},
+				_mdgriffith$style_elements$Style_Internal_Selector$uncapitalize(
+					_elm_lang$core$Basics$toString(x)))));
+};
+var _mdgriffith$style_elements$Style_Internal_Selector$Stack = function (a) {
+	return {ctor: 'Stack', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Selector$Free = function (a) {
+	return {ctor: 'Free', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Selector$free = function (str) {
+	return _mdgriffith$style_elements$Style_Internal_Selector$Free(str);
+};
+var _mdgriffith$style_elements$Style_Internal_Selector$SelectChild = function (a) {
+	return {ctor: 'SelectChild', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Selector$child = F2(
+	function (parent, selector) {
+		return _mdgriffith$style_elements$Style_Internal_Selector$Stack(
+			{
+				ctor: '::',
+				_0: parent,
+				_1: {
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Style_Internal_Selector$SelectChild(selector),
+					_1: {ctor: '[]'}
+				}
+			});
+	});
+var _mdgriffith$style_elements$Style_Internal_Selector$Pseudo = function (a) {
+	return {ctor: 'Pseudo', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Selector$Select = F2(
+	function (a, b) {
+		return {ctor: 'Select', _0: a, _1: b};
+	});
+var _mdgriffith$style_elements$Style_Internal_Selector$guard = F2(
+	function (guard, selector) {
+		var addGuard = function (str) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				str,
+				A2(_elm_lang$core$Basics_ops['++'], '__', guard));
+		};
+		var onFindable = function (findable) {
+			var _p9 = findable;
+			if (_p9.ctor === 'Style') {
+				return A2(
+					_mdgriffith$style_elements$Style_Internal_Find$Style,
+					_p9._0,
+					addGuard(_p9._1));
+			} else {
+				return A3(
+					_mdgriffith$style_elements$Style_Internal_Find$Variation,
+					_p9._0,
+					_p9._1,
+					addGuard(_p9._2));
+			}
+		};
+		var onSelector = function (sel) {
+			var _p10 = sel;
+			switch (_p10.ctor) {
+				case 'Select':
+					return A2(
+						_mdgriffith$style_elements$Style_Internal_Selector$Select,
+						addGuard(_p10._0),
+						onFindable(_p10._1));
+				case 'SelectChild':
+					return _mdgriffith$style_elements$Style_Internal_Selector$SelectChild(
+						onSelector(_p10._0));
+				case 'Stack':
+					return _mdgriffith$style_elements$Style_Internal_Selector$Stack(
+						A2(_elm_lang$core$List$map, onSelector, _p10._0));
+				default:
+					return _p10;
+			}
+		};
+		return onSelector(selector);
+	});
+var _mdgriffith$style_elements$Style_Internal_Selector$select = function ($class) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Selector$Select,
+		_mdgriffith$style_elements$Style_Internal_Selector$formatName($class),
+		A2(
+			_mdgriffith$style_elements$Style_Internal_Find$Style,
+			$class,
+			_mdgriffith$style_elements$Style_Internal_Selector$formatName($class)));
+};
+var _mdgriffith$style_elements$Style_Internal_Selector$variant = F2(
+	function (sel, $var) {
+		var _p11 = sel;
+		switch (_p11.ctor) {
+			case 'Pseudo':
+				return _mdgriffith$style_elements$Style_Internal_Selector$Pseudo(_p11._0);
+			case 'Select':
+				var _p12 = _p11._0;
+				return A2(
+					_mdgriffith$style_elements$Style_Internal_Selector$Select,
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_p12,
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							'-',
+							_mdgriffith$style_elements$Style_Internal_Selector$formatName($var))),
+					A3(
+						_mdgriffith$style_elements$Style_Internal_Find$toVariation,
+						$var,
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_p12,
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								'-',
+								_mdgriffith$style_elements$Style_Internal_Selector$formatName($var))),
+						_p11._1));
+			case 'SelectChild':
+				return _mdgriffith$style_elements$Style_Internal_Selector$SelectChild(
+					A2(_mdgriffith$style_elements$Style_Internal_Selector$variant, _p11._0, $var));
+			case 'Free':
+				return _mdgriffith$style_elements$Style_Internal_Selector$Free(_p11._0);
+			default:
+				var _p14 = _p11._0;
+				var init = _elm_lang$core$List$reverse(
+					A2(
+						_elm_lang$core$List$drop,
+						1,
+						_elm_lang$core$List$reverse(_p14)));
+				var lastElem = _elm_lang$core$List$head(
+					_elm_lang$core$List$reverse(_p14));
+				var _p13 = lastElem;
+				if (_p13.ctor === 'Nothing') {
+					return _mdgriffith$style_elements$Style_Internal_Selector$Stack(_p14);
+				} else {
+					return _mdgriffith$style_elements$Style_Internal_Selector$Stack(
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							init,
+							{
+								ctor: '::',
+								_0: A2(_mdgriffith$style_elements$Style_Internal_Selector$variant, _p13._0, $var),
+								_1: {ctor: '[]'}
+							}));
+				}
+		}
+	});
+var _mdgriffith$style_elements$Style_Internal_Selector$pseudo = F2(
+	function (psu, sel) {
+		var _p15 = sel;
+		switch (_p15.ctor) {
+			case 'Pseudo':
+				return _mdgriffith$style_elements$Style_Internal_Selector$Pseudo(
+					A2(_elm_lang$core$Basics_ops['++'], _p15._0, psu));
+			case 'Select':
+				return _mdgriffith$style_elements$Style_Internal_Selector$Stack(
+					{
+						ctor: '::',
+						_0: A2(_mdgriffith$style_elements$Style_Internal_Selector$Select, _p15._0, _p15._1),
+						_1: {
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Style_Internal_Selector$Pseudo(psu),
+							_1: {ctor: '[]'}
+						}
+					});
+			case 'SelectChild':
+				return _mdgriffith$style_elements$Style_Internal_Selector$SelectChild(
+					A2(_mdgriffith$style_elements$Style_Internal_Selector$pseudo, psu, _p15._0));
+			case 'Free':
+				return _mdgriffith$style_elements$Style_Internal_Selector$Free(_p15._0);
+			default:
+				var _p17 = _p15._0;
+				var init = _elm_lang$core$List$reverse(
+					A2(
+						_elm_lang$core$List$drop,
+						1,
+						_elm_lang$core$List$reverse(_p17)));
+				var lastElem = _elm_lang$core$List$head(
+					_elm_lang$core$List$reverse(_p17));
+				var _p16 = lastElem;
+				if (_p16.ctor === 'Nothing') {
+					return _mdgriffith$style_elements$Style_Internal_Selector$Stack(_p17);
+				} else {
+					return _mdgriffith$style_elements$Style_Internal_Selector$Stack(
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							init,
+							{
+								ctor: '::',
+								_0: A2(_mdgriffith$style_elements$Style_Internal_Selector$pseudo, psu, _p16._0),
+								_1: {ctor: '[]'}
+							}));
+				}
+		}
+	});

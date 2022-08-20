@@ -1,0 +1,93 @@
+var _mdgriffith$style_elements$Element_Events$keyCode = A2(_elm_lang$core$Json_Decode$field, 'keyCode', _elm_lang$core$Json_Decode$int);
+var _mdgriffith$style_elements$Element_Events$targetChecked = A2(
+	_elm_lang$core$Json_Decode$at,
+	{
+		ctor: '::',
+		_0: 'target',
+		_1: {
+			ctor: '::',
+			_0: 'checked',
+			_1: {ctor: '[]'}
+		}
+	},
+	_elm_lang$core$Json_Decode$bool);
+var _mdgriffith$style_elements$Element_Events$targetValue = A2(
+	_elm_lang$core$Json_Decode$at,
+	{
+		ctor: '::',
+		_0: 'target',
+		_1: {
+			ctor: '::',
+			_0: 'value',
+			_1: {ctor: '[]'}
+		}
+	},
+	_elm_lang$core$Json_Decode$string);
+var _mdgriffith$style_elements$Element_Events$defaultOptions = _elm_lang$virtual_dom$VirtualDom$defaultOptions;
+var _mdgriffith$style_elements$Element_Events$onWithOptions = F3(
+	function (event, options, decode) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Event(
+			A3(_elm_lang$html$Html_Events$onWithOptions, event, options, decode));
+	});
+var _mdgriffith$style_elements$Element_Events$on = F2(
+	function (event, decode) {
+		return _mdgriffith$style_elements$Element_Internal_Model$Event(
+			A2(_elm_lang$html$Html_Events$on, event, decode));
+	});
+var _mdgriffith$style_elements$Element_Events$onFocus = function (_p0) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Event(
+		_elm_lang$html$Html_Events$onFocus(_p0));
+};
+var _mdgriffith$style_elements$Element_Events$onBlur = function (_p1) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Event(
+		_elm_lang$html$Html_Events$onBlur(_p1));
+};
+var _mdgriffith$style_elements$Element_Events$onSubmit = function (_p2) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Event(
+		_elm_lang$html$Html_Events$onSubmit(_p2));
+};
+var _mdgriffith$style_elements$Element_Events$onCheck = function (_p3) {
+	return _mdgriffith$style_elements$Element_Internal_Model$InputEvent(
+		_elm_lang$html$Html_Events$onCheck(_p3));
+};
+var _mdgriffith$style_elements$Element_Events$onInput = function (_p4) {
+	return _mdgriffith$style_elements$Element_Internal_Model$InputEvent(
+		_elm_lang$html$Html_Events$onInput(_p4));
+};
+var _mdgriffith$style_elements$Element_Events$onMouseOut = function (_p5) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Event(
+		_elm_lang$html$Html_Events$onMouseOut(_p5));
+};
+var _mdgriffith$style_elements$Element_Events$onMouseOver = function (_p6) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Event(
+		_elm_lang$html$Html_Events$onMouseOver(_p6));
+};
+var _mdgriffith$style_elements$Element_Events$onMouseLeave = function (_p7) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Event(
+		_elm_lang$html$Html_Events$onMouseLeave(_p7));
+};
+var _mdgriffith$style_elements$Element_Events$onMouseEnter = function (_p8) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Event(
+		_elm_lang$html$Html_Events$onMouseEnter(_p8));
+};
+var _mdgriffith$style_elements$Element_Events$onMouseUp = function (_p9) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Event(
+		_elm_lang$html$Html_Events$onMouseUp(_p9));
+};
+var _mdgriffith$style_elements$Element_Events$onMouseDown = function (_p10) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Event(
+		_elm_lang$html$Html_Events$onMouseDown(_p10));
+};
+var _mdgriffith$style_elements$Element_Events$onDoubleClick = function (_p11) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Event(
+		_elm_lang$html$Html_Events$onDoubleClick(_p11));
+};
+var _mdgriffith$style_elements$Element_Events$onClick = function (_p12) {
+	return _mdgriffith$style_elements$Element_Internal_Model$Event(
+		_elm_lang$html$Html_Events$onClick(_p12));
+};
+var _mdgriffith$style_elements$Element_Events$event = _mdgriffith$style_elements$Element_Internal_Model$Event;
+var _mdgriffith$style_elements$Element_Events$Options = F2(
+	function (a, b) {
+		return {stopPropagation: a, preventDefault: b};
+	});

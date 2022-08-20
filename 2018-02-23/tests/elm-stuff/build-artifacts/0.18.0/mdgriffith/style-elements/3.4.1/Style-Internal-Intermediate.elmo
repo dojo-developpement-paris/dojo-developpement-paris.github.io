@@ -1,0 +1,337 @@
+var _mdgriffith$style_elements$Style_Internal_Intermediate$asFindable = function (intermediate) {
+	var findableProp = function (prop) {
+		var _p0 = prop;
+		switch (_p0.ctor) {
+			case 'SubClass':
+				return _mdgriffith$style_elements$Style_Internal_Intermediate$asFindable(_p0._0);
+			case 'PropsAndSub':
+				return _mdgriffith$style_elements$Style_Internal_Intermediate$asFindable(_p0._1);
+			default:
+				return {ctor: '[]'};
+		}
+	};
+	var _p1 = intermediate;
+	if (_p1.ctor === 'Class') {
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			_mdgriffith$style_elements$Style_Internal_Selector$getFindable(_p1._0.selector),
+			A2(_elm_lang$core$List$concatMap, findableProp, _p1._0.props));
+	} else {
+		return {ctor: '[]'};
+	}
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$render = function (renderable) {
+	var _p2 = renderable;
+	switch (_p2.ctor) {
+		case 'RenderableClass':
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_p2._0,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					A2(
+						_mdgriffith$style_elements$Style_Internal_Render_Css$brace,
+						0,
+						A2(
+							_elm_lang$core$String$join,
+							'\n',
+							A2(
+								_elm_lang$core$List$map,
+								_mdgriffith$style_elements$Style_Internal_Render_Css$prop(2),
+								_p2._1))),
+					'\n'));
+		case 'RenderableMedia':
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_p2._0,
+				A2(
+					_mdgriffith$style_elements$Style_Internal_Render_Css$brace,
+					0,
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						'  ',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_p2._1,
+							A2(
+								_mdgriffith$style_elements$Style_Internal_Render_Css$brace,
+								2,
+								A2(
+									_elm_lang$core$String$join,
+									'\n',
+									A2(
+										_elm_lang$core$List$map,
+										_mdgriffith$style_elements$Style_Internal_Render_Css$prop(4),
+										_p2._2)))))));
+		default:
+			return _p2._0;
+	}
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$hash = function (value) {
+	return _elm_lang$core$Basics$toString(
+		A2(_Skinney$murmur3$Murmur3$hashString, 8675309, value));
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$calculateGuard = function ($class) {
+	var propToString = function (_p3) {
+		var _p4 = _p3;
+		return A2(_elm_lang$core$Basics_ops['++'], _p4._0, _p4._1);
+	};
+	var asString = function (prop) {
+		var _p5 = prop;
+		switch (_p5.ctor) {
+			case 'Props':
+				return _elm_lang$core$String$concat(
+					A2(_elm_lang$core$List$map, propToString, _p5._0));
+			case 'SubClass':
+				return _mdgriffith$style_elements$Style_Internal_Intermediate$calculateGuard(_p5._0);
+			case 'PropsAndSub':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$String$concat(
+						A2(_elm_lang$core$List$map, propToString, _p5._0)),
+					_mdgriffith$style_elements$Style_Internal_Intermediate$calculateGuard(_p5._1));
+			default:
+				return '';
+		}
+	};
+	var _p6 = $class;
+	switch (_p6.ctor) {
+		case 'Class':
+			return _elm_lang$core$String$concat(
+				A2(_elm_lang$core$List$map, asString, _p6._0.props));
+		case 'Media':
+			return _elm_lang$core$String$concat(
+				A2(_elm_lang$core$List$map, asString, _p6._0.props));
+		default:
+			return '';
+	}
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$Free = function (a) {
+	return {ctor: 'Free', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$Media = function (a) {
+	return {ctor: 'Media', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$Class = function (a) {
+	return {ctor: 'Class', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$Animation = {ctor: 'Animation'};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$PropsAndSub = F2(
+	function (a, b) {
+		return {ctor: 'PropsAndSub', _0: a, _1: b};
+	});
+var _mdgriffith$style_elements$Style_Internal_Intermediate$SubClass = function (a) {
+	return {ctor: 'SubClass', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$applyGuard = F2(
+	function (guard, $class) {
+		var guardProp = function (prop) {
+			var _p7 = prop;
+			if (_p7.ctor === 'SubClass') {
+				return _mdgriffith$style_elements$Style_Internal_Intermediate$SubClass(
+					A2(_mdgriffith$style_elements$Style_Internal_Intermediate$applyGuard, guard, _p7._0));
+			} else {
+				return _p7;
+			}
+		};
+		var _p8 = $class;
+		switch (_p8.ctor) {
+			case 'Class':
+				var _p9 = _p8._0;
+				return _mdgriffith$style_elements$Style_Internal_Intermediate$Class(
+					{
+						selector: A2(_mdgriffith$style_elements$Style_Internal_Selector$guard, guard, _p9.selector),
+						props: A2(_elm_lang$core$List$map, guardProp, _p9.props)
+					});
+			case 'Media':
+				var _p10 = _p8._0;
+				return _mdgriffith$style_elements$Style_Internal_Intermediate$Media(
+					{
+						query: _p10.query,
+						selector: A2(_mdgriffith$style_elements$Style_Internal_Selector$guard, guard, _p10.selector),
+						props: A2(_elm_lang$core$List$map, guardProp, _p10.props)
+					});
+			default:
+				return _p8;
+		}
+	});
+var _mdgriffith$style_elements$Style_Internal_Intermediate$guard = function ($class) {
+	return A2(
+		_mdgriffith$style_elements$Style_Internal_Intermediate$applyGuard,
+		_mdgriffith$style_elements$Style_Internal_Intermediate$hash(
+			_mdgriffith$style_elements$Style_Internal_Intermediate$calculateGuard($class)),
+		$class);
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$asMediaQuery = F2(
+	function (query, prop) {
+		var classAsMediaQuery = function (cls) {
+			var _p11 = cls;
+			if (_p11.ctor === 'Class') {
+				return _mdgriffith$style_elements$Style_Internal_Intermediate$Media(
+					{query: query, selector: _p11._0.selector, props: _p11._0.props});
+			} else {
+				return _p11;
+			}
+		};
+		var _p12 = prop;
+		switch (_p12.ctor) {
+			case 'SubClass':
+				return _mdgriffith$style_elements$Style_Internal_Intermediate$SubClass(
+					classAsMediaQuery(_p12._0));
+			case 'PropsAndSub':
+				return A2(
+					_mdgriffith$style_elements$Style_Internal_Intermediate$PropsAndSub,
+					_p12._0,
+					classAsMediaQuery(_p12._1));
+			default:
+				return _p12;
+		}
+	});
+var _mdgriffith$style_elements$Style_Internal_Intermediate$Props = function (a) {
+	return {ctor: 'Props', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$props = _mdgriffith$style_elements$Style_Internal_Intermediate$Props;
+var _mdgriffith$style_elements$Style_Internal_Intermediate$RenderableFree = function (a) {
+	return {ctor: 'RenderableFree', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$RenderableMedia = F3(
+	function (a, b, c) {
+		return {ctor: 'RenderableMedia', _0: a, _1: b, _2: c};
+	});
+var _mdgriffith$style_elements$Style_Internal_Intermediate$RenderableClass = F2(
+	function (a, b) {
+		return {ctor: 'RenderableClass', _0: a, _1: b};
+	});
+var _mdgriffith$style_elements$Style_Internal_Intermediate$makeRenderable = function (cls) {
+	var renderableProps = F2(
+		function (prop, _p13) {
+			var _p14 = _p13;
+			var _p17 = _p14._1;
+			var _p16 = _p14._0;
+			var _p15 = prop;
+			switch (_p15.ctor) {
+				case 'Props':
+					return {
+						ctor: '_Tuple2',
+						_0: A2(_elm_lang$core$Basics_ops['++'], _p16, _p15._0),
+						_1: _p17
+					};
+				case 'SubClass':
+					return {
+						ctor: '_Tuple2',
+						_0: _p16,
+						_1: A2(
+							_elm_lang$core$Basics_ops['++'],
+							_p17,
+							_mdgriffith$style_elements$Style_Internal_Intermediate$makeRenderable(_p15._0))
+					};
+				case 'PropsAndSub':
+					return {
+						ctor: '_Tuple2',
+						_0: A2(_elm_lang$core$Basics_ops['++'], _p16, _p15._0),
+						_1: A2(
+							_elm_lang$core$Basics_ops['++'],
+							_p17,
+							_mdgriffith$style_elements$Style_Internal_Intermediate$makeRenderable(_p15._1))
+					};
+				default:
+					return {ctor: '_Tuple2', _0: _p16, _1: _p17};
+			}
+		});
+	var _p18 = cls;
+	switch (_p18.ctor) {
+		case 'Class':
+			var _p19 = A3(
+				_elm_lang$core$List$foldl,
+				renderableProps,
+				{
+					ctor: '_Tuple2',
+					_0: {ctor: '[]'},
+					_1: {ctor: '[]'}
+				},
+				_p18._0.props);
+			var rendered = _p19._0;
+			var subelements = _p19._1;
+			return {
+				ctor: '::',
+				_0: A2(
+					_mdgriffith$style_elements$Style_Internal_Intermediate$RenderableClass,
+					A2(_mdgriffith$style_elements$Style_Internal_Selector$render, _elm_lang$core$Maybe$Nothing, _p18._0.selector),
+					rendered),
+				_1: subelements
+			};
+		case 'Media':
+			var _p20 = A3(
+				_elm_lang$core$List$foldl,
+				renderableProps,
+				{
+					ctor: '_Tuple2',
+					_0: {ctor: '[]'},
+					_1: {ctor: '[]'}
+				},
+				_p18._0.props);
+			var rendered = _p20._0;
+			var subelements = _p20._1;
+			return {
+				ctor: '::',
+				_0: A3(
+					_mdgriffith$style_elements$Style_Internal_Intermediate$RenderableMedia,
+					_p18._0.query,
+					A2(_mdgriffith$style_elements$Style_Internal_Selector$render, _elm_lang$core$Maybe$Nothing, _p18._0.selector),
+					rendered),
+				_1: subelements
+			};
+		default:
+			return {
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Style_Internal_Intermediate$RenderableFree(_p18._0),
+				_1: {ctor: '[]'}
+			};
+	}
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$raw = function (cls) {
+	var topName = function () {
+		var _p21 = cls;
+		switch (_p21.ctor) {
+			case 'Class':
+				return _mdgriffith$style_elements$Style_Internal_Selector$topName(_p21._0.selector);
+			case 'Media':
+				return _mdgriffith$style_elements$Style_Internal_Selector$topName(_p21._0.selector);
+			default:
+				return '';
+		}
+	}();
+	return {
+		ctor: '_Tuple2',
+		_0: topName,
+		_1: A2(
+			_elm_lang$core$String$join,
+			'\n',
+			A2(
+				_elm_lang$core$List$map,
+				_mdgriffith$style_elements$Style_Internal_Intermediate$render,
+				_mdgriffith$style_elements$Style_Internal_Intermediate$makeRenderable(cls)))
+	};
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$Rendered = function (a) {
+	return {ctor: 'Rendered', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Intermediate$finalize = function (intermediates) {
+	var finalizeCss = function (cls) {
+		return A2(
+			_elm_lang$core$String$join,
+			'\n',
+			A2(
+				_elm_lang$core$List$map,
+				_mdgriffith$style_elements$Style_Internal_Intermediate$render,
+				_mdgriffith$style_elements$Style_Internal_Intermediate$makeRenderable(cls)));
+	};
+	return _mdgriffith$style_elements$Style_Internal_Intermediate$Rendered(
+		{
+			css: A2(
+				_elm_lang$core$String$join,
+				'\n',
+				A2(_elm_lang$core$List$map, finalizeCss, intermediates)),
+			findable: A2(_elm_lang$core$List$concatMap, _mdgriffith$style_elements$Style_Internal_Intermediate$asFindable, intermediates)
+		});
+};

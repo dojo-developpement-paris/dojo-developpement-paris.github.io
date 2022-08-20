@@ -1,0 +1,129 @@
+var _user$project$Test_Reporter_TestResults$outcomesFromExpectationsHelp = F2(
+	function (expectation, builder) {
+		var _p0 = _elm_community$elm_test$Test_Runner$getFailureReason(expectation);
+		if (_p0.ctor === 'Just') {
+			var _p1 = _p0._0;
+			return _elm_community$elm_test$Test_Runner$isTodo(expectation) ? _elm_lang$core$Native_Utils.update(
+				builder,
+				{
+					todos: {ctor: '::', _0: _p1.description, _1: builder.todos}
+				}) : _elm_lang$core$Native_Utils.update(
+				builder,
+				{
+					failures: {ctor: '::', _0: _p1, _1: builder.failures}
+				});
+		} else {
+			return _elm_lang$core$Native_Utils.update(
+				builder,
+				{passes: builder.passes + 1});
+		}
+	});
+var _user$project$Test_Reporter_TestResults$isFailure = function (outcome) {
+	var _p2 = outcome;
+	if (_p2.ctor === 'Failed') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var _user$project$Test_Reporter_TestResults$isTodo = function (outcome) {
+	var _p3 = outcome;
+	if (_p3.ctor === 'Todo') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var _user$project$Test_Reporter_TestResults$TestResult = F3(
+	function (a, b, c) {
+		return {labels: a, outcome: b, duration: c};
+	});
+var _user$project$Test_Reporter_TestResults$SummaryInfo = F5(
+	function (a, b, c, d, e) {
+		return {testCount: a, passed: b, failed: c, todos: d, duration: e};
+	});
+var _user$project$Test_Reporter_TestResults$Failure = F3(
+	function (a, b, c) {
+		return {given: a, description: b, reason: c};
+	});
+var _user$project$Test_Reporter_TestResults$OutcomeBuilder = F3(
+	function (a, b, c) {
+		return {passes: a, todos: b, failures: c};
+	});
+var _user$project$Test_Reporter_TestResults$Failed = function (a) {
+	return {ctor: 'Failed', _0: a};
+};
+var _user$project$Test_Reporter_TestResults$Todo = function (a) {
+	return {ctor: 'Todo', _0: a};
+};
+var _user$project$Test_Reporter_TestResults$Passed = {ctor: 'Passed'};
+var _user$project$Test_Reporter_TestResults$outcomesFromExpectations = function (expectations) {
+	var _p4 = expectations;
+	if (_p4.ctor === '::') {
+		if (_p4._1.ctor === '[]') {
+			var _p7 = _p4._0;
+			var _p5 = _elm_community$elm_test$Test_Runner$getFailureReason(_p7);
+			if (_p5.ctor === 'Nothing') {
+				return {
+					ctor: '::',
+					_0: _user$project$Test_Reporter_TestResults$Passed,
+					_1: {ctor: '[]'}
+				};
+			} else {
+				var _p6 = _p5._0;
+				return _elm_community$elm_test$Test_Runner$isTodo(_p7) ? {
+					ctor: '::',
+					_0: _user$project$Test_Reporter_TestResults$Todo(_p6.description),
+					_1: {ctor: '[]'}
+				} : {
+					ctor: '::',
+					_0: _user$project$Test_Reporter_TestResults$Failed(
+						{
+							ctor: '::',
+							_0: _p6,
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				};
+			}
+		} else {
+			var builder = A3(
+				_elm_lang$core$List$foldl,
+				_user$project$Test_Reporter_TestResults$outcomesFromExpectationsHelp,
+				{
+					passes: 0,
+					todos: {ctor: '[]'},
+					failures: {ctor: '[]'}
+				},
+				expectations);
+			var failuresList = function () {
+				var _p8 = builder.failures;
+				if (_p8.ctor === '[]') {
+					return {ctor: '[]'};
+				} else {
+					return {
+						ctor: '::',
+						_0: _user$project$Test_Reporter_TestResults$Failed(_p8),
+						_1: {ctor: '[]'}
+					};
+				}
+			}();
+			return _elm_lang$core$List$concat(
+				{
+					ctor: '::',
+					_0: A2(_elm_lang$core$List$repeat, builder.passes, _user$project$Test_Reporter_TestResults$Passed),
+					_1: {
+						ctor: '::',
+						_0: A2(_elm_lang$core$List$map, _user$project$Test_Reporter_TestResults$Todo, builder.todos),
+						_1: {
+							ctor: '::',
+							_0: failuresList,
+							_1: {ctor: '[]'}
+						}
+					}
+				});
+		}
+	} else {
+		return {ctor: '[]'};
+	}
+};

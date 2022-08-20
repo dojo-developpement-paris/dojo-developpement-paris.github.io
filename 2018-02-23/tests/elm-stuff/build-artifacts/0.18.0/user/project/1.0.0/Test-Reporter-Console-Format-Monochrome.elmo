@@ -1,0 +1,53 @@
+var _user$project$Test_Reporter_Console_Format_Monochrome$fromHighlightable = function (indicator) {
+	return _user$project$Test_Reporter_Highlightable$resolve(
+		{
+			fromHighlighted: function ($char) {
+				return {ctor: '_Tuple2', _0: $char, _1: indicator};
+			},
+			fromPlain: function ($char) {
+				return {ctor: '_Tuple2', _0: $char, _1: ' '};
+			}
+		});
+};
+var _user$project$Test_Reporter_Console_Format_Monochrome$formatEquality = F2(
+	function (highlightedExpected, highlightedActual) {
+		var _p0 = _elm_lang$core$List$unzip(
+			A2(
+				_elm_lang$core$List$map,
+				_user$project$Test_Reporter_Console_Format_Monochrome$fromHighlightable('▼'),
+				highlightedActual));
+		var formattedActual = _p0._0;
+		var actualIndicators = _p0._1;
+		var combinedActual = A2(
+			_elm_lang$core$String$join,
+			'\n',
+			{
+				ctor: '::',
+				_0: A2(_elm_lang$core$String$join, '', actualIndicators),
+				_1: {
+					ctor: '::',
+					_0: A2(_elm_lang$core$String$join, '', formattedActual),
+					_1: {ctor: '[]'}
+				}
+			});
+		var _p1 = _elm_lang$core$List$unzip(
+			A2(
+				_elm_lang$core$List$map,
+				_user$project$Test_Reporter_Console_Format_Monochrome$fromHighlightable('▲'),
+				highlightedExpected));
+		var formattedExpected = _p1._0;
+		var expectedIndicators = _p1._1;
+		var combinedExpected = A2(
+			_elm_lang$core$String$join,
+			'\n',
+			{
+				ctor: '::',
+				_0: A2(_elm_lang$core$String$join, '', formattedExpected),
+				_1: {
+					ctor: '::',
+					_0: A2(_elm_lang$core$String$join, '', expectedIndicators),
+					_1: {ctor: '[]'}
+				}
+			});
+		return {ctor: '_Tuple2', _0: combinedExpected, _1: combinedActual};
+	});
