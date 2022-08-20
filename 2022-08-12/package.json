@@ -1,0 +1,25 @@
+{
+  "name": "dojo-developpement-paris.github.io",
+  "version": "1.0.0",
+  "description": "Prochaine session: vendredi 19/08 à Arolla",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinage404/dojo-developpement-paris.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pinage404/dojo-developpement-paris.github.io/issues"
+  },
+  "homepage": "https://github.com/pinage404/dojo-developpement-paris.github.io#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
+  }
+}
