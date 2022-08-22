@@ -1,0 +1,30 @@
+var _mdgriffith$style_elements$Style_Filter$sepia = function (x) {
+	return _mdgriffith$style_elements$Style_Internal_Model$Sepia(x);
+};
+var _mdgriffith$style_elements$Style_Filter$saturate = function (x) {
+	return _mdgriffith$style_elements$Style_Internal_Model$Saturate(x);
+};
+var _mdgriffith$style_elements$Style_Filter$opacity = function (x) {
+	return _mdgriffith$style_elements$Style_Internal_Model$OpacityFilter(x);
+};
+var _mdgriffith$style_elements$Style_Filter$invert = function (x) {
+	return _mdgriffith$style_elements$Style_Internal_Model$Invert(x);
+};
+var _mdgriffith$style_elements$Style_Filter$hueRotate = function (x) {
+	return _mdgriffith$style_elements$Style_Internal_Model$HueRotate(x);
+};
+var _mdgriffith$style_elements$Style_Filter$grayscale = function (x) {
+	return _mdgriffith$style_elements$Style_Internal_Model$Grayscale(x);
+};
+var _mdgriffith$style_elements$Style_Filter$contrast = function (x) {
+	return _mdgriffith$style_elements$Style_Internal_Model$Contrast(x);
+};
+var _mdgriffith$style_elements$Style_Filter$brightness = function (x) {
+	return _mdgriffith$style_elements$Style_Internal_Model$Brightness(x);
+};
+var _mdgriffith$style_elements$Style_Filter$blur = function (x) {
+	return _mdgriffith$style_elements$Style_Internal_Model$Blur(x);
+};
+var _mdgriffith$style_elements$Style_Filter$url = function (s) {
+	return _mdgriffith$style_elements$Style_Internal_Model$FilterUrl(s);
+};

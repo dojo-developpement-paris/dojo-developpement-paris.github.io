@@ -1,0 +1,387 @@
+var _user$project$Test_Reporter_Console$withChar = F2(
+	function (icon, str) {
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$String$fromChar(icon),
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				' ',
+				A2(_elm_lang$core$Basics_ops['++'], str, '\n')));
+	});
+var _user$project$Test_Reporter_Console$stat = F2(
+	function (label, value) {
+		return _user$project$Console_Text$concat(
+			{
+				ctor: '::',
+				_0: _user$project$Console_Text$dark(
+					_user$project$Console_Text$plain(label)),
+				_1: {
+					ctor: '::',
+					_0: _user$project$Console_Text$plain(
+						A2(_elm_lang$core$Basics_ops['++'], value, '\n')),
+					_1: {ctor: '[]'}
+				}
+			});
+	});
+var _user$project$Test_Reporter_Console$textToValue = F2(
+	function (useColor, txt) {
+		return _elm_lang$core$Json_Encode$string(
+			A2(_user$project$Console_Text$render, useColor, txt));
+	});
+var _user$project$Test_Reporter_Console$failureLabelsToText = function (_p0) {
+	return _user$project$Console_Text$concat(
+		A3(
+			_elm_community$elm_test$Test_Runner$formatLabels,
+			function (_p1) {
+				return _user$project$Console_Text$dark(
+					_user$project$Console_Text$plain(
+						A2(
+							_user$project$Test_Reporter_Console$withChar,
+							_elm_lang$core$Native_Utils.chr('↓'),
+							_p1)));
+			},
+			function (_p2) {
+				return _user$project$Console_Text$red(
+					A2(
+						_user$project$Test_Reporter_Console$withChar,
+						_elm_lang$core$Native_Utils.chr('✗'),
+						_p2));
+			},
+			_p0));
+};
+var _user$project$Test_Reporter_Console$todoToChalk = function (message) {
+	return _user$project$Console_Text$plain(
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			'◦ TODO: ',
+			A2(_elm_lang$core$Basics_ops['++'], message, '\n\n')));
+};
+var _user$project$Test_Reporter_Console$todoLabelsToText = function (_p3) {
+	return _user$project$Console_Text$concat(
+		A3(
+			_elm_community$elm_test$Test_Runner$formatLabels,
+			function (_p4) {
+				return _user$project$Console_Text$dark(
+					_user$project$Console_Text$plain(
+						A2(
+							_user$project$Test_Reporter_Console$withChar,
+							_elm_lang$core$Native_Utils.chr('↓'),
+							_p4)));
+			},
+			function (_p5) {
+				return _user$project$Console_Text$dark(
+					_user$project$Console_Text$plain(
+						A2(
+							_user$project$Test_Reporter_Console$withChar,
+							_elm_lang$core$Native_Utils.chr('↓'),
+							_p5)));
+			},
+			_p3));
+};
+var _user$project$Test_Reporter_Console$todosToText = function (_p6) {
+	var _p7 = _p6;
+	return _user$project$Console_Text$concat(
+		{
+			ctor: '::',
+			_0: _user$project$Test_Reporter_Console$todoLabelsToText(_p7._0),
+			_1: {
+				ctor: '::',
+				_0: _user$project$Test_Reporter_Console$todoToChalk(_p7._1),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _user$project$Test_Reporter_Console$summarizeTodos = function (_p8) {
+	return _user$project$Console_Text$concat(
+		A2(_elm_lang$core$List$map, _user$project$Test_Reporter_Console$todosToText, _p8));
+};
+var _user$project$Test_Reporter_Console$pluralize = F3(
+	function (singular, plural, count) {
+		var suffix = _elm_lang$core$Native_Utils.eq(count, 1) ? singular : plural;
+		return A2(
+			_elm_lang$core$String$join,
+			' ',
+			{
+				ctor: '::',
+				_0: _elm_lang$core$Basics$toString(count),
+				_1: {
+					ctor: '::',
+					_0: suffix,
+					_1: {ctor: '[]'}
+				}
+			});
+	});
+var _user$project$Test_Reporter_Console$reportBegin = F2(
+	function (useColor, _p9) {
+		var _p10 = _p9;
+		var prefix = A2(
+			_elm_lang$core$Basics_ops['++'],
+			'Running ',
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				A3(_user$project$Test_Reporter_Console$pluralize, 'test', 'tests', _p10.testCount),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'. To reproduce these results, run: elm-test --fuzz ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p10.fuzzRuns),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							' --seed ',
+							_elm_lang$core$Basics$toString(_p10.initialSeed))))));
+		return _elm_lang$core$Maybe$Just(
+			A2(
+				_user$project$Test_Reporter_Console$textToValue,
+				useColor,
+				_user$project$Console_Text$plain(
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						A2(
+							_elm_lang$core$String$join,
+							' ',
+							{ctor: '::', _0: prefix, _1: _p10.paths}),
+						'\n'))));
+	});
+var _user$project$Test_Reporter_Console$indent = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'\n',
+		A2(
+			_elm_lang$core$List$map,
+			F2(
+				function (x, y) {
+					return A2(_elm_lang$core$Basics_ops['++'], x, y);
+				})('    '),
+			A2(_elm_lang$core$String$split, '\n', str)));
+};
+var _user$project$Test_Reporter_Console$failureToText = F2(
+	function (useColor, _p11) {
+		var _p12 = _p11;
+		var formatEquality = function () {
+			var _p13 = useColor;
+			if (_p13.ctor === 'Monochrome') {
+				return _user$project$Test_Reporter_Console_Format_Monochrome$formatEquality;
+			} else {
+				return _user$project$Test_Reporter_Console_Format_Color$formatEquality;
+			}
+		}();
+		var messageText = _user$project$Console_Text$plain(
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				'\n',
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_user$project$Test_Reporter_Console$indent(
+						A3(_user$project$Test_Reporter_Console_Format$format, formatEquality, _p12.description, _p12.reason)),
+					'\n\n')));
+		var _p14 = _p12.given;
+		if (_p14.ctor === 'Nothing') {
+			return messageText;
+		} else {
+			return _user$project$Console_Text$concat(
+				{
+					ctor: '::',
+					_0: _user$project$Console_Text$dark(
+						_user$project$Console_Text$plain(
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								'\nGiven ',
+								A2(_elm_lang$core$Basics_ops['++'], _p14._0, '\n')))),
+					_1: {
+						ctor: '::',
+						_0: messageText,
+						_1: {ctor: '[]'}
+					}
+				});
+		}
+	});
+var _user$project$Test_Reporter_Console$failuresToText = F3(
+	function (useColor, labels, failures) {
+		return _user$project$Console_Text$concat(
+			{
+				ctor: '::',
+				_0: _user$project$Test_Reporter_Console$failureLabelsToText(labels),
+				_1: A2(
+					_elm_lang$core$List$map,
+					_user$project$Test_Reporter_Console$failureToText(useColor),
+					failures)
+			});
+	});
+var _user$project$Test_Reporter_Console$reportComplete = F2(
+	function (useColor, _p15) {
+		var _p16 = _p15;
+		var _p18 = _p16.labels;
+		var _p17 = _p16.outcome;
+		switch (_p17.ctor) {
+			case 'Passed':
+				return _elm_lang$core$Json_Encode$null;
+			case 'Failed':
+				return A2(
+					_user$project$Test_Reporter_Console$textToValue,
+					useColor,
+					A3(_user$project$Test_Reporter_Console$failuresToText, useColor, _p18, _p17._0));
+			default:
+				return _elm_lang$core$Json_Encode$object(
+					{
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'todo',
+							_1: _elm_lang$core$Json_Encode$string(_p17._0)
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: 'labels',
+								_1: _elm_lang$core$Json_Encode$list(
+									A2(_elm_lang$core$List$map, _elm_lang$core$Json_Encode$string, _p18))
+							},
+							_1: {ctor: '[]'}
+						}
+					});
+		}
+	});
+var _user$project$Test_Reporter_Console$formatDuration = function (time) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		_elm_lang$core$Basics$toString(time),
+		' ms');
+};
+var _user$project$Test_Reporter_Console$reportSummary = F3(
+	function (useColor, _p19, autoFail) {
+		var _p20 = _p19;
+		var _p26 = _p20.todos;
+		var _p25 = _p20.failed;
+		var individualTodos = (_elm_lang$core$Native_Utils.cmp(_p25, 0) > 0) ? _user$project$Console_Text$plain('') : _user$project$Test_Reporter_Console$summarizeTodos(
+			_elm_lang$core$List$reverse(_p26));
+		var todoStats = function () {
+			var _p21 = _elm_lang$core$List$length(_p26);
+			if (_p21 === 0) {
+				return _user$project$Console_Text$plain('');
+			} else {
+				return A2(
+					_user$project$Test_Reporter_Console$stat,
+					'Todo:     ',
+					_elm_lang$core$Basics$toString(_p21));
+			}
+		}();
+		var headlineResult = function () {
+			var _p22 = {
+				ctor: '_Tuple3',
+				_0: autoFail,
+				_1: _p25,
+				_2: _elm_lang$core$List$length(_p26)
+			};
+			_v9_4:
+			do {
+				if (_p22._0.ctor === 'Nothing') {
+					if (_p22._1 === 0) {
+						switch (_p22._2) {
+							case 0:
+								return _elm_lang$core$Result$Ok('TEST RUN PASSED');
+							case 1:
+								return _elm_lang$core$Result$Err(
+									{ctor: '_Tuple3', _0: _user$project$Console_Text$yellow, _1: 'TEST RUN INCOMPLETE', _2: ' because there is 1 TODO remaining'});
+							default:
+								return _elm_lang$core$Result$Err(
+									{
+										ctor: '_Tuple3',
+										_0: _user$project$Console_Text$yellow,
+										_1: 'TEST RUN INCOMPLETE',
+										_2: A2(
+											_elm_lang$core$Basics_ops['++'],
+											' because there are ',
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												_elm_lang$core$Basics$toString(_p22._2),
+												' TODOs remaining'))
+									});
+						}
+					} else {
+						break _v9_4;
+					}
+				} else {
+					if (_p22._1 === 0) {
+						return _elm_lang$core$Result$Err(
+							{
+								ctor: '_Tuple3',
+								_0: _user$project$Console_Text$yellow,
+								_1: 'TEST RUN INCOMPLETE',
+								_2: A2(_elm_lang$core$Basics_ops['++'], ' because ', _p22._0._0)
+							});
+					} else {
+						break _v9_4;
+					}
+				}
+			} while(false);
+			return _elm_lang$core$Result$Err(
+				{ctor: '_Tuple3', _0: _user$project$Console_Text$red, _1: 'TEST RUN FAILED', _2: ''});
+		}();
+		var headline = function () {
+			var _p23 = headlineResult;
+			if (_p23.ctor === 'Ok') {
+				return _user$project$Console_Text$underline(
+					_user$project$Console_Text$green(
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							'\n',
+							A2(_elm_lang$core$Basics_ops['++'], _p23._0, '\n\n'))));
+			} else {
+				var _p24 = _p23._0._0;
+				return _user$project$Console_Text$concat(
+					{
+						ctor: '::',
+						_0: _user$project$Console_Text$underline(
+							_p24(
+								A2(_elm_lang$core$Basics_ops['++'], '\n', _p23._0._1))),
+						_1: {
+							ctor: '::',
+							_0: _p24(
+								A2(_elm_lang$core$Basics_ops['++'], _p23._0._2, '\n\n')),
+							_1: {ctor: '[]'}
+						}
+					});
+			}
+		}();
+		return _elm_lang$core$Json_Encode$string(
+			A2(
+				_user$project$Console_Text$render,
+				useColor,
+				_user$project$Console_Text$concat(
+					{
+						ctor: '::',
+						_0: headline,
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_user$project$Test_Reporter_Console$stat,
+								'Duration: ',
+								_user$project$Test_Reporter_Console$formatDuration(_p20.duration)),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_user$project$Test_Reporter_Console$stat,
+									'Passed:   ',
+									_elm_lang$core$Basics$toString(_p20.passed)),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_user$project$Test_Reporter_Console$stat,
+										'Failed:   ',
+										_elm_lang$core$Basics$toString(_p25)),
+									_1: {
+										ctor: '::',
+										_0: todoStats,
+										_1: {
+											ctor: '::',
+											_0: individualTodos,
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}
+					})));
+	});

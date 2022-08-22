@@ -1,0 +1,102 @@
+var _mdgriffith$style_elements$Style_Shadow$drop = function (_p0) {
+	var _p1 = _p0;
+	return _mdgriffith$style_elements$Style_Internal_Model$ShadowModel(
+		{kind: 'drop', offset: _p1.offset, size: 0, blur: _p1.blur, color: _p1.color});
+};
+var _mdgriffith$style_elements$Style_Shadow$text = function (_p2) {
+	var _p3 = _p2;
+	return _mdgriffith$style_elements$Style_Internal_Model$ShadowModel(
+		{kind: 'text', offset: _p3.offset, size: 0, blur: _p3.blur, color: _p3.color});
+};
+var _mdgriffith$style_elements$Style_Shadow$inset = function (_p4) {
+	var _p5 = _p4;
+	return _mdgriffith$style_elements$Style_Internal_Model$ShadowModel(
+		{kind: 'inset', offset: _p5.offset, size: _p5.size, blur: _p5.blur, color: _p5.color});
+};
+var _mdgriffith$style_elements$Style_Shadow$box = function (_p6) {
+	var _p7 = _p6;
+	return _mdgriffith$style_elements$Style_Internal_Model$ShadowModel(
+		{kind: 'box', offset: _p7.offset, size: _p7.size, blur: _p7.blur, color: _p7.color});
+};
+var _mdgriffith$style_elements$Style_Shadow$deep = _mdgriffith$style_elements$Style$shadows(
+	{
+		ctor: '::',
+		_0: _mdgriffith$style_elements$Style_Shadow$box(
+			{
+				color: A4(_elm_lang$core$Color$rgba, 0, 0, 0, 0.2),
+				offset: {ctor: '_Tuple2', _0: 0, _1: 14},
+				blur: 20,
+				size: -12
+			}),
+		_1: {ctor: '[]'}
+	});
+var _mdgriffith$style_elements$Style_Shadow$simple = _mdgriffith$style_elements$Style$shadows(
+	{
+		ctor: '::',
+		_0: _mdgriffith$style_elements$Style_Shadow$box(
+			{
+				color: A4(_elm_lang$core$Color$rgba, 0, 0, 0, 0.5),
+				offset: {ctor: '_Tuple2', _0: 0, _1: 29},
+				blur: 32,
+				size: -20
+			}),
+		_1: {
+			ctor: '::',
+			_0: _mdgriffith$style_elements$Style_Shadow$box(
+				{
+					color: A4(_elm_lang$core$Color$rgba, 0, 0, 0, 0.25),
+					offset: {ctor: '_Tuple2', _0: 0, _1: 4},
+					blur: 11,
+					size: -3
+				}),
+			_1: {ctor: '[]'}
+		}
+	});
+var _mdgriffith$style_elements$Style_Shadow$textGlow = F2(
+	function (color, size) {
+		return _mdgriffith$style_elements$Style_Internal_Model$Shadows(
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Style_Internal_Model$ShadowModel(
+					{
+						kind: 'text',
+						offset: {ctor: '_Tuple2', _0: 0, _1: 0},
+						size: size,
+						blur: size * 2,
+						color: color
+					}),
+				_1: {ctor: '[]'}
+			});
+	});
+var _mdgriffith$style_elements$Style_Shadow$innerGlow = F2(
+	function (color, size) {
+		return _mdgriffith$style_elements$Style_Internal_Model$Shadows(
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Style_Internal_Model$ShadowModel(
+					{
+						kind: 'inset',
+						offset: {ctor: '_Tuple2', _0: 0, _1: 0},
+						size: size,
+						blur: size * 2,
+						color: color
+					}),
+				_1: {ctor: '[]'}
+			});
+	});
+var _mdgriffith$style_elements$Style_Shadow$glow = F2(
+	function (color, size) {
+		return _mdgriffith$style_elements$Style_Internal_Model$Shadows(
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Style_Internal_Model$ShadowModel(
+					{
+						kind: 'box',
+						offset: {ctor: '_Tuple2', _0: 0, _1: 0},
+						size: size,
+						blur: size * 2,
+						color: color
+					}),
+				_1: {ctor: '[]'}
+			});
+	});

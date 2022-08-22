@@ -1,0 +1,20 @@
+var _elm_community$html_test_runner$Test_Runner_Html$runWithOptions = F3(
+	function (runs, seed, test) {
+		return _elm_lang$html$Html$program(
+			{
+				init: A3(
+					_elm_community$html_test_runner$Test_Runner_Html_App$init,
+					A2(_elm_lang$core$Maybe$withDefault, 100, runs),
+					seed,
+					test),
+				update: _elm_community$html_test_runner$Test_Runner_Html_App$update,
+				view: function (_p0) {
+					return _elm_community$html_test_runner$View$view(
+						_elm_community$html_test_runner$Test_Runner_Html_App$present(_p0));
+				},
+				subscriptions: function (_p1) {
+					return _elm_lang$core$Platform_Sub$none;
+				}
+			});
+	});
+var _elm_community$html_test_runner$Test_Runner_Html$run = A2(_elm_community$html_test_runner$Test_Runner_Html$runWithOptions, _elm_lang$core$Maybe$Nothing, _elm_lang$core$Maybe$Nothing);

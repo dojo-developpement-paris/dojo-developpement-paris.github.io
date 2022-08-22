@@ -1,0 +1,1 @@
+{"rustc":7593772938685037094,"features":"[]","target":11332526261983429755,"profile":16909488126996664195,"path":10872709659218687626,"deps":[["num-bigint v0.1.44","num_bigint",2402492461530156857]],"local":[{"MtimeBased":[[1527275744,725687879],".fingerprint/factorial-a247a9b559e425dc/dep-test-lib-factorial-a247a9b559e425dc"]}],"rustflags":[],"edition":"Edition2015"}

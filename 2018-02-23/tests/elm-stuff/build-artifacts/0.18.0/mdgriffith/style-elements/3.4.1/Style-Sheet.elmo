@@ -1,0 +1,18 @@
+var _mdgriffith$style_elements$Style_Sheet$mix = _mdgriffith$style_elements$Style_Internal_Batchable$batch;
+var _mdgriffith$style_elements$Style_Sheet$merge = function (_p0) {
+	var _p1 = _p0;
+	return _mdgriffith$style_elements$Style_Internal_Batchable$many(
+		_mdgriffith$style_elements$Style_Internal_Batchable$toList(_p1._0));
+};
+var _mdgriffith$style_elements$Style_Sheet$ChildSheet = function (a) {
+	return {ctor: 'ChildSheet', _0: a};
+};
+var _mdgriffith$style_elements$Style_Sheet$map = F3(
+	function (toParent, toParentVariation, styles) {
+		return _mdgriffith$style_elements$Style_Sheet$ChildSheet(
+			A2(
+				_elm_lang$core$List$map,
+				_mdgriffith$style_elements$Style_Internal_Batchable$map(
+					A2(_mdgriffith$style_elements$Style_Internal_Model$mapClassAndVar, toParent, toParentVariation)),
+				styles));
+	});

@@ -1,0 +1,1085 @@
+var _mdgriffith$style_elements$Style_Internal_Render_Property$flexbox = F2(
+	function (dir, el) {
+		var _p0 = el;
+		switch (_p0.ctor) {
+			case 'Wrap':
+				return _p0._0 ? {ctor: '_Tuple2', _0: 'flex-wrap', _1: 'wrap'} : {ctor: '_Tuple2', _0: 'flex-wrap', _1: 'nowrap'};
+			case 'Horz':
+				var _p6 = _p0._0;
+				var _p1 = dir;
+				switch (_p1.ctor) {
+					case 'GoRight':
+						var _p2 = _p6;
+						switch (_p2.ctor) {
+							case 'Other':
+								if (_p2._0.ctor === 'Left') {
+									return {ctor: '_Tuple2', _0: 'justify-content', _1: 'flex-start'};
+								} else {
+									return {ctor: '_Tuple2', _0: 'justify-content', _1: 'flex-end'};
+								}
+							case 'Center':
+								return {ctor: '_Tuple2', _0: 'justify-content', _1: 'center'};
+							case 'Justify':
+								return {ctor: '_Tuple2', _0: 'justify-content', _1: 'space-between'};
+							default:
+								return {ctor: '_Tuple2', _0: 'justify-content', _1: 'space-between'};
+						}
+					case 'GoLeft':
+						var _p3 = _p6;
+						switch (_p3.ctor) {
+							case 'Other':
+								if (_p3._0.ctor === 'Left') {
+									return {ctor: '_Tuple2', _0: 'justify-content', _1: 'flex-end'};
+								} else {
+									return {ctor: '_Tuple2', _0: 'justify-content', _1: 'flex-start'};
+								}
+							case 'Center':
+								return {ctor: '_Tuple2', _0: 'justify-content', _1: 'center'};
+							case 'Justify':
+								return {ctor: '_Tuple2', _0: 'justify-content', _1: 'space-between'};
+							default:
+								return {ctor: '_Tuple2', _0: 'justify-content', _1: 'space-between'};
+						}
+					case 'Down':
+						var _p4 = _p6;
+						switch (_p4.ctor) {
+							case 'Other':
+								if (_p4._0.ctor === 'Left') {
+									return {ctor: '_Tuple2', _0: 'align-items', _1: 'flex-start'};
+								} else {
+									return {ctor: '_Tuple2', _0: 'align-items', _1: 'flex-end'};
+								}
+							case 'Center':
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'center'};
+							case 'Justify':
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'Justify'};
+							default:
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'Justify'};
+						}
+					default:
+						var _p5 = _p6;
+						switch (_p5.ctor) {
+							case 'Other':
+								if (_p5._0.ctor === 'Left') {
+									return {ctor: '_Tuple2', _0: 'align-items', _1: 'flex-start'};
+								} else {
+									return {ctor: '_Tuple2', _0: 'align-items', _1: 'flex-end'};
+								}
+							case 'Center':
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'center'};
+							case 'Justify':
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'Justify'};
+							default:
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'Justify'};
+						}
+				}
+			default:
+				var _p12 = _p0._0;
+				var _p7 = dir;
+				switch (_p7.ctor) {
+					case 'GoRight':
+						var _p8 = _p12;
+						switch (_p8.ctor) {
+							case 'Other':
+								if (_p8._0.ctor === 'Top') {
+									return {ctor: '_Tuple2', _0: 'align-items', _1: 'flex-start'};
+								} else {
+									return {ctor: '_Tuple2', _0: 'align-items', _1: 'flex-end'};
+								}
+							case 'Center':
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'center'};
+							case 'Justify':
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'Justify'};
+							default:
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'Justify'};
+						}
+					case 'GoLeft':
+						var _p9 = _p12;
+						switch (_p9.ctor) {
+							case 'Other':
+								if (_p9._0.ctor === 'Top') {
+									return {ctor: '_Tuple2', _0: 'align-items', _1: 'flex-start'};
+								} else {
+									return {ctor: '_Tuple2', _0: 'align-items', _1: 'flex-end'};
+								}
+							case 'Center':
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'center'};
+							case 'Justify':
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'Justify'};
+							default:
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'Justify'};
+						}
+					case 'Down':
+						var _p10 = _p12;
+						switch (_p10.ctor) {
+							case 'Other':
+								if (_p10._0.ctor === 'Top') {
+									return {ctor: '_Tuple2', _0: 'justify-content', _1: 'flex-start'};
+								} else {
+									return {ctor: '_Tuple2', _0: 'justify-content', _1: 'flex-end'};
+								}
+							case 'Center':
+								return {ctor: '_Tuple2', _0: 'justify-content', _1: 'center'};
+							case 'Justify':
+								return {ctor: '_Tuple2', _0: 'justify-content', _1: 'space-between'};
+							default:
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'Justify'};
+						}
+					default:
+						var _p11 = _p12;
+						switch (_p11.ctor) {
+							case 'Other':
+								if (_p11._0.ctor === 'Top') {
+									return {ctor: '_Tuple2', _0: 'justify-content', _1: 'flex-end'};
+								} else {
+									return {ctor: '_Tuple2', _0: 'justify-content', _1: 'flex-start'};
+								}
+							case 'Center':
+								return {ctor: '_Tuple2', _0: 'justify-content', _1: 'center'};
+							case 'Justify':
+								return {ctor: '_Tuple2', _0: 'justify-content', _1: 'space-between'};
+							default:
+								return {ctor: '_Tuple2', _0: 'align-items', _1: 'Justify'};
+						}
+				}
+		}
+	});
+var _mdgriffith$style_elements$Style_Internal_Render_Property$transition = function (_p13) {
+	var _p14 = _p13;
+	var formatTrans = function (prop) {
+		return A2(
+			_elm_lang$core$String$join,
+			' ',
+			{
+				ctor: '::',
+				_0: prop,
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p14._0.duration * _elm_lang$core$Time$millisecond),
+						'ms'),
+					_1: {
+						ctor: '::',
+						_0: _p14._0.easing,
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(_p14._0.delay * _elm_lang$core$Time$millisecond),
+								'ms'),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			});
+	};
+	return A2(
+		_elm_lang$core$String$join,
+		', ',
+		A2(_elm_lang$core$List$map, formatTrans, _p14._0.props));
+};
+var _mdgriffith$style_elements$Style_Internal_Render_Property$direction = function (dir) {
+	var _p15 = dir;
+	switch (_p15.ctor) {
+		case 'GoRight':
+			return {ctor: '_Tuple2', _0: 'flex-direction', _1: 'row'};
+		case 'GoLeft':
+			return {ctor: '_Tuple2', _0: 'flex-direction', _1: 'row-reverse'};
+		case 'Down':
+			return {ctor: '_Tuple2', _0: 'flex-direction', _1: 'column'};
+		default:
+			return {ctor: '_Tuple2', _0: 'flex-direction', _1: 'column-reverse'};
+	}
+};
+var _mdgriffith$style_elements$Style_Internal_Render_Property$gridAlignment = function (align) {
+	var _p16 = align;
+	switch (_p16.ctor) {
+		case 'GridGap':
+			return {
+				ctor: '_Tuple2',
+				_0: 'grid-gap',
+				_1: A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(_p16._0),
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						'px ',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_elm_lang$core$Basics$toString(_p16._1),
+							'px')))
+			};
+		case 'GridH':
+			var _p17 = _p16._0;
+			switch (_p17.ctor) {
+				case 'Other':
+					if (_p17._0.ctor === 'Left') {
+						return {ctor: '_Tuple2', _0: 'justify-content', _1: 'start'};
+					} else {
+						return {ctor: '_Tuple2', _0: 'justify-content', _1: 'end'};
+					}
+				case 'Center':
+					return {ctor: '_Tuple2', _0: 'justify-content', _1: 'center'};
+				case 'Justify':
+					return {ctor: '_Tuple2', _0: 'justify-content', _1: 'space-between'};
+				default:
+					return {ctor: '_Tuple2', _0: 'justify-content', _1: 'space-between'};
+			}
+		default:
+			var _p18 = _p16._0;
+			switch (_p18.ctor) {
+				case 'Other':
+					if (_p18._0.ctor === 'Top') {
+						return {ctor: '_Tuple2', _0: 'align-content', _1: 'start'};
+					} else {
+						return {ctor: '_Tuple2', _0: 'align-content', _1: 'end'};
+					}
+				case 'Center':
+					return {ctor: '_Tuple2', _0: 'align-content', _1: 'center'};
+				case 'Justify':
+					return {ctor: '_Tuple2', _0: 'align-content', _1: 'space-between'};
+				default:
+					return {ctor: '_Tuple2', _0: 'align-content', _1: 'space-between'};
+			}
+	}
+};
+var _mdgriffith$style_elements$Style_Internal_Render_Property$layout = F2(
+	function (inline, lay) {
+		var _p19 = lay;
+		switch (_p19.ctor) {
+			case 'TextLayout':
+				return {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'display',
+						_1: inline ? 'inline-block' : 'block'
+					},
+					_1: {ctor: '[]'}
+				};
+			case 'FlexLayout':
+				var _p20 = _p19._0;
+				return {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'display',
+						_1: inline ? 'inline-flex' : 'flex'
+					},
+					_1: {
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Style_Internal_Render_Property$direction(_p20),
+						_1: A2(
+							_elm_lang$core$List$map,
+							_mdgriffith$style_elements$Style_Internal_Render_Property$flexbox(_p20),
+							_p19._1)
+					}
+				};
+			default:
+				if (_p19._0.ctor === 'NamedGridTemplate') {
+					var _p31 = _p19._0._0.rows;
+					var _p30 = _p19._0._0.columns;
+					var areaSpan = function (_p21) {
+						var _p22 = _p21;
+						var name = function () {
+							var _p23 = _p22._1;
+							if (_p23.ctor === 'Nothing') {
+								return '.';
+							} else {
+								return _p23._0;
+							}
+						}();
+						var _p24 = _p22._0;
+						if (_p24.ctor === 'SpanAll') {
+							return A2(
+								_elm_lang$core$List$repeat,
+								_elm_lang$core$List$length(_p30),
+								name);
+						} else {
+							return A2(_elm_lang$core$List$repeat, _p24._0, name);
+						}
+					};
+					var areasInRow = function (areas) {
+						var areaStrs = A2(_elm_lang$core$List$concatMap, areaSpan, areas);
+						var quote = function (str) {
+							return A2(
+								_elm_lang$core$Basics_ops['++'],
+								'\"',
+								A2(_elm_lang$core$Basics_ops['++'], str, '\"'));
+						};
+						if (_elm_lang$core$Native_Utils.cmp(
+							_elm_lang$core$List$length(areaStrs),
+							_elm_lang$core$List$length(_p30)) > 0) {
+							var _p25 = A2(
+								_elm_lang$core$Basics_ops['++'],
+								A2(_elm_lang$core$Debug$log, 'style-elements', 'Named grid row ('),
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(areas),
+									') is too big for this grid!'));
+							return quote(
+								A2(_elm_lang$core$String$join, ' ', areaStrs));
+						} else {
+							if (_elm_lang$core$Native_Utils.cmp(
+								_elm_lang$core$List$length(areaStrs),
+								_elm_lang$core$List$length(_p30)) < 0) {
+								var _p26 = A2(
+									_elm_lang$core$Basics_ops['++'],
+									A2(_elm_lang$core$Debug$log, 'style-elements', 'Named grid row ('),
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(areas),
+										') doesn\'t have enough names to fit this grid!'));
+								return quote(
+									A2(_elm_lang$core$String$join, ' ', areaStrs));
+							} else {
+								return quote(
+									A2(_elm_lang$core$String$join, ' ', areaStrs));
+							}
+						}
+					};
+					var alignment = A2(_elm_lang$core$List$map, _mdgriffith$style_elements$Style_Internal_Render_Property$gridAlignment, _p19._1);
+					var renderLen = function (len) {
+						var _p27 = len;
+						switch (_p27.ctor) {
+							case 'Px':
+								return A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(_p27._0),
+									'px');
+							case 'Percent':
+								return A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(_p27._0),
+									'%');
+							case 'Auto':
+								return 'auto';
+							case 'Fill':
+								return A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(_p27._0),
+									'fr');
+							default:
+								return A2(
+									_elm_lang$core$Basics_ops['++'],
+									'calc(',
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(_p27._0),
+										A2(
+											_elm_lang$core$Basics_ops['++'],
+											'% + ',
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												_elm_lang$core$Basics$toString(_p27._1),
+												'px)'))));
+						}
+					};
+					var grid = inline ? {ctor: '_Tuple2', _0: 'display', _1: 'inline-grid'} : {ctor: '_Tuple2', _0: 'display', _1: 'grid'};
+					return {
+						ctor: '::',
+						_0: grid,
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: 'grid-template-rows',
+								_1: A2(
+									_elm_lang$core$String$join,
+									' ',
+									A2(
+										_elm_lang$core$List$map,
+										function (_p28) {
+											return renderLen(
+												_elm_lang$core$Tuple$first(_p28));
+										},
+										_p31))
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'grid-template-columns',
+									_1: A2(
+										_elm_lang$core$String$join,
+										' ',
+										A2(_elm_lang$core$List$map, renderLen, _p30))
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: 'grid-template-areas',
+										_1: A2(
+											_elm_lang$core$String$join,
+											'\n',
+											A2(
+												_elm_lang$core$List$map,
+												function (_p29) {
+													return areasInRow(
+														_elm_lang$core$Tuple$second(_p29));
+												},
+												_p31))
+									},
+									_1: alignment
+								}
+							}
+						}
+					};
+				} else {
+					var alignment = A2(_elm_lang$core$List$map, _mdgriffith$style_elements$Style_Internal_Render_Property$gridAlignment, _p19._1);
+					var renderLen = function (len) {
+						var _p32 = len;
+						switch (_p32.ctor) {
+							case 'Px':
+								return A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(_p32._0),
+									'px');
+							case 'Percent':
+								return A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(_p32._0),
+									'%');
+							case 'Auto':
+								return 'auto';
+							case 'Fill':
+								return A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(_p32._0),
+									'fr');
+							default:
+								return A2(
+									_elm_lang$core$Basics_ops['++'],
+									'calc(',
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(_p32._0),
+										A2(
+											_elm_lang$core$Basics_ops['++'],
+											'% + ',
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												_elm_lang$core$Basics$toString(_p32._1),
+												'px)'))));
+						}
+					};
+					var grid = inline ? {ctor: '_Tuple2', _0: 'display', _1: 'inline-grid'} : {ctor: '_Tuple2', _0: 'display', _1: 'grid'};
+					return {
+						ctor: '::',
+						_0: grid,
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: 'grid-template-rows',
+								_1: A2(
+									_elm_lang$core$String$join,
+									' ',
+									A2(_elm_lang$core$List$map, renderLen, _p19._0._0.rows))
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'grid-template-columns',
+									_1: A2(
+										_elm_lang$core$String$join,
+										' ',
+										A2(_elm_lang$core$List$map, renderLen, _p19._0._0.columns))
+								},
+								_1: alignment
+							}
+						}
+					};
+				}
+		}
+	});
+var _mdgriffith$style_elements$Style_Internal_Render_Property$background = function (prop) {
+	var renderStep = function (step) {
+		var _p33 = step;
+		switch (_p33.ctor) {
+			case 'ColorStep':
+				return _mdgriffith$style_elements$Style_Internal_Render_Value$color(_p33._0);
+			case 'PercentStep':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					_mdgriffith$style_elements$Style_Internal_Render_Value$color(_p33._0),
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						' ',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_elm_lang$core$Basics$toString(_p33._1),
+							'%')));
+			default:
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					_mdgriffith$style_elements$Style_Internal_Render_Value$color(_p33._0),
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						' ',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_elm_lang$core$Basics$toString(_p33._1),
+							'px')));
+		}
+	};
+	var directionName = function (dir) {
+		var _p34 = dir;
+		switch (_p34.ctor) {
+			case 'ToUp':
+				return 'to top';
+			case 'ToDown':
+				return 'to bottomn';
+			case 'ToRight':
+				return 'to right';
+			case 'ToTopRight':
+				return 'to top right';
+			case 'ToBottomRight':
+				return 'to bottom right';
+			case 'ToLeft':
+				return 'to left';
+			case 'ToTopLeft':
+				return 'to top left';
+			case 'ToBottomLeft':
+				return 'to bottom left';
+			default:
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(_p34._0),
+					'rad');
+		}
+	};
+	var _p35 = prop;
+	switch (_p35.ctor) {
+		case 'BackgroundElement':
+			return {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: _p35._0, _1: _p35._1},
+				_1: {ctor: '[]'}
+			};
+		case 'BackgroundImage':
+			var _p37 = _p35._0.position;
+			return {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 'background-image', _1: _p35._0.src},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'background-repeat',
+						_1: function () {
+							var _p36 = _p35._0.repeat;
+							switch (_p36.ctor) {
+								case 'RepeatX':
+									return 'repeat-x';
+								case 'RepeatY':
+									return 'repeat-y';
+								case 'Repeat':
+									return 'repeat';
+								case 'Space':
+									return 'space';
+								case 'Round':
+									return 'round';
+								default:
+									return 'no-repeat';
+							}
+						}()
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'background-position',
+							_1: A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(
+									_elm_lang$core$Tuple$first(_p37)),
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									'px ',
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(
+											_elm_lang$core$Tuple$second(_p37)),
+										'px')))
+						},
+						_1: {ctor: '[]'}
+					}
+				}
+			};
+		default:
+			return {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'background-image',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						'linear-gradient(',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							A2(
+								_elm_lang$core$String$join,
+								', ',
+								{
+									ctor: '::',
+									_0: directionName(_p35._0),
+									_1: A2(_elm_lang$core$List$map, renderStep, _p35._1)
+								}),
+							')'))
+				},
+				_1: {ctor: '[]'}
+			};
+	}
+};
+var _mdgriffith$style_elements$Style_Internal_Render_Property$position = function (posEls) {
+	var renderPos = function (pos) {
+		var _p38 = pos;
+		switch (_p38.ctor) {
+			case 'RelativeTo':
+				switch (_p38._0.ctor) {
+					case 'Screen':
+						return {ctor: '_Tuple2', _0: 'position', _1: 'fixed'};
+					case 'Parent':
+						return {ctor: '_Tuple2', _0: 'position', _1: 'absolute'};
+					default:
+						return {ctor: '_Tuple2', _0: 'position', _1: 'relative'};
+				}
+			case 'PosLeft':
+				return {
+					ctor: '_Tuple2',
+					_0: 'left',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p38._0),
+						'px')
+				};
+			case 'PosRight':
+				return {
+					ctor: '_Tuple2',
+					_0: 'right',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p38._0),
+						'px')
+				};
+			case 'PosTop':
+				return {
+					ctor: '_Tuple2',
+					_0: 'top',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p38._0),
+						'px')
+				};
+			case 'PosBottom':
+				return {
+					ctor: '_Tuple2',
+					_0: 'bottom',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p38._0),
+						'px')
+				};
+			case 'ZIndex':
+				return {
+					ctor: '_Tuple2',
+					_0: 'z-index',
+					_1: _elm_lang$core$Basics$toString(_p38._0)
+				};
+			case 'Inline':
+				return {ctor: '_Tuple2', _0: 'display', _1: 'inline-block'};
+			default:
+				switch (_p38._0.ctor) {
+					case 'FloatLeft':
+						return {ctor: '_Tuple2', _0: 'float', _1: 'left'};
+					case 'FloatRight':
+						return {ctor: '_Tuple2', _0: 'float', _1: 'right'};
+					case 'FloatTopLeft':
+						return {ctor: '_Tuple2', _0: 'float', _1: 'left'};
+					default:
+						return {ctor: '_Tuple2', _0: 'float', _1: 'right'};
+				}
+		}
+	};
+	return A2(_elm_lang$core$List$map, renderPos, posEls);
+};
+var _mdgriffith$style_elements$Style_Internal_Render_Property$transformations = function (transforms) {
+	var transformToString = function (transform) {
+		var _p39 = transform;
+		switch (_p39.ctor) {
+			case 'Translate':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'translate3d(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p39._0),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							'px, ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(_p39._1),
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									'px, ',
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(_p39._2),
+										'px)'))))));
+			case 'RotateAround':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'rotate3d(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p39._0),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							',',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(_p39._1),
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									',',
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(_p39._2),
+										A2(
+											_elm_lang$core$Basics_ops['++'],
+											',',
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												_elm_lang$core$Basics$toString(_p39._3),
+												'rad)'))))))));
+			case 'Rotate':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'rotate(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p39._0),
+						'rad)'));
+			default:
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'scale3d(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p39._0),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							', ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(_p39._1),
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									', ',
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(_p39._2),
+										')'))))));
+		}
+	};
+	var transformString = A2(
+		_elm_lang$core$String$join,
+		' ',
+		A2(_elm_lang$core$List$map, transformToString, transforms));
+	var renderedTransforms = (_elm_lang$core$Native_Utils.cmp(
+		_elm_lang$core$String$length(transformString),
+		0) > 0) ? {
+		ctor: '::',
+		_0: {ctor: '_Tuple2', _0: 'transform', _1: transformString},
+		_1: {ctor: '[]'}
+	} : {ctor: '[]'};
+	return _elm_lang$core$Native_Utils.eq(
+		_elm_lang$core$List$length(transforms),
+		0) ? {ctor: '[]'} : renderedTransforms;
+};
+var _mdgriffith$style_elements$Style_Internal_Render_Property$box = function (_p40) {
+	var _p41 = _p40;
+	return {ctor: '_Tuple2', _0: _p41._0, _1: _p41._1};
+};
+var _mdgriffith$style_elements$Style_Internal_Render_Property$shadow = function (shadows) {
+	var _p42 = A2(
+		_elm_lang$core$List$partition,
+		function (_p43) {
+			var _p44 = _p43;
+			return _elm_lang$core$Native_Utils.eq(_p44._0.kind, 'text');
+		},
+		shadows);
+	var text = _p42._0;
+	var box = _p42._1;
+	var renderedBox = A2(
+		_elm_lang$core$String$join,
+		', ',
+		A2(_elm_lang$core$List$map, _mdgriffith$style_elements$Style_Internal_Render_Value$shadow, box));
+	var renderedText = A2(
+		_elm_lang$core$String$join,
+		', ',
+		A2(_elm_lang$core$List$map, _mdgriffith$style_elements$Style_Internal_Render_Value$shadow, text));
+	return A2(
+		_elm_lang$core$List$filterMap,
+		_elm_lang$core$Basics$identity,
+		{
+			ctor: '::',
+			_0: _elm_lang$core$Native_Utils.eq(renderedBox, '') ? _elm_lang$core$Maybe$Nothing : _elm_lang$core$Maybe$Just(
+				{ctor: '_Tuple2', _0: 'box-shadow', _1: renderedBox}),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$core$Native_Utils.eq(renderedText, '') ? _elm_lang$core$Maybe$Nothing : _elm_lang$core$Maybe$Just(
+					{ctor: '_Tuple2', _0: 'text-shadow', _1: renderedText}),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _mdgriffith$style_elements$Style_Internal_Render_Property$filters = function (filters) {
+	var filterName = function (filtr) {
+		var _p45 = filtr;
+		switch (_p45.ctor) {
+			case 'FilterUrl':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'url(',
+					A2(_elm_lang$core$Basics_ops['++'], _p45._0, ')'));
+			case 'Blur':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'blur(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p45._0),
+						'px)'));
+			case 'Brightness':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'brightness(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p45._0),
+						'%)'));
+			case 'Contrast':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'contrast(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p45._0),
+						'%)'));
+			case 'Grayscale':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'grayscale(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p45._0),
+						'%)'));
+			case 'HueRotate':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'hueRotate(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p45._0),
+						'deg)'));
+			case 'Invert':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'invert(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p45._0),
+						'%)'));
+			case 'OpacityFilter':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'opacity(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p45._0),
+						'%)'));
+			case 'Saturate':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'saturate(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p45._0),
+						'%)'));
+			case 'Sepia':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'sepia(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p45._0),
+						'%)'));
+			default:
+				var _p46 = _p45._0;
+				var shadowModel = _mdgriffith$style_elements$Style_Internal_Model$ShadowModel(
+					{kind: 'drop', offset: _p46.offset, size: _p46.size, blur: _p46.blur, color: _p46.color});
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'drop-shadow(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_mdgriffith$style_elements$Style_Internal_Render_Value$shadow(shadowModel),
+						')'));
+		}
+	};
+	return _elm_lang$core$Native_Utils.eq(
+		_elm_lang$core$List$length(filters),
+		0) ? {ctor: '[]'} : {
+		ctor: '::',
+		_0: {
+			ctor: '_Tuple2',
+			_0: 'filter',
+			_1: A2(
+				_elm_lang$core$String$join,
+				' ',
+				A2(_elm_lang$core$List$map, filterName, filters))
+		},
+		_1: {ctor: '[]'}
+	};
+};
+var _mdgriffith$style_elements$Style_Internal_Render_Property$flexHeight = function (l) {
+	var _p47 = l;
+	switch (_p47.ctor) {
+		case 'Px':
+			return {
+				ctor: '_Tuple2',
+				_0: 'height',
+				_1: A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(_p47._0),
+					'px')
+			};
+		case 'Percent':
+			return {
+				ctor: '_Tuple2',
+				_0: 'height',
+				_1: A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(_p47._0),
+					'%')
+			};
+		case 'Auto':
+			return {ctor: '_Tuple2', _0: 'height', _1: 'auto'};
+		case 'Fill':
+			return {
+				ctor: '_Tuple2',
+				_0: 'flex-grow',
+				_1: _elm_lang$core$Basics$toString(_p47._0)
+			};
+		default:
+			return {
+				ctor: '_Tuple2',
+				_0: 'height',
+				_1: A2(
+					_elm_lang$core$Basics_ops['++'],
+					'calc(',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p47._0),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							'% + ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(_p47._1),
+								'px)'))))
+			};
+	}
+};
+var _mdgriffith$style_elements$Style_Internal_Render_Property$flexWidth = F2(
+	function (len, adjustment) {
+		var _p48 = len;
+		switch (_p48.ctor) {
+			case 'Px':
+				return {
+					ctor: '_Tuple2',
+					_0: 'width',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(_p48._0),
+						'px')
+				};
+			case 'Percent':
+				return {
+					ctor: '_Tuple2',
+					_0: 'width',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						'calc(',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_elm_lang$core$Basics$toString(_p48._0),
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								'% - ',
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(adjustment),
+									'px)'))))
+				};
+			case 'Auto':
+				return {ctor: '_Tuple2', _0: 'width', _1: 'auto'};
+			case 'Fill':
+				return {
+					ctor: '_Tuple2',
+					_0: 'flex-grow',
+					_1: _elm_lang$core$Basics$toString(_p48._0)
+				};
+			default:
+				return {
+					ctor: '_Tuple2',
+					_0: 'width',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						'calc(',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_elm_lang$core$Basics$toString(_p48._0),
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								'% + ',
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(_p48._1),
+									'px)'))))
+				};
+		}
+	});
+var _mdgriffith$style_elements$Style_Internal_Render_Property$visibility = function (vis) {
+	var _p49 = vis;
+	switch (_p49.ctor) {
+		case 'Hidden':
+			return {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 'display', _1: 'none'},
+				_1: {ctor: '[]'}
+			};
+		case 'Invisible':
+			return {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 'visibility', _1: 'hidden'},
+				_1: {ctor: '[]'}
+			};
+		default:
+			return {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'opacity',
+					_1: _elm_lang$core$Basics$toString(_p49._0)
+				},
+				_1: {ctor: '[]'}
+			};
+	}
+};

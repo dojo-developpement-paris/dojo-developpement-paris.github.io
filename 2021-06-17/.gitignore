@@ -1,0 +1,8 @@
+.stack-work/
+*~
+elm-stuff/*
+
+*.cabal
+*.lock
+
+**/target/

@@ -1,0 +1,45 @@
+var _Skinney$murmur3$Murmur3$mur = F2(
+	function (c, h) {
+		return 4294967295 & (((h & 65535) * c) + ((65535 & ((h >>> 16) * c)) << 16));
+	});
+var _Skinney$murmur3$Murmur3$step = function (acc) {
+	var h1 = A2(_Skinney$murmur3$Murmur3$mur, 5, (acc >>> 19) | (acc << 13));
+	return ((h1 & 65535) + 27492) + ((65535 & ((h1 >>> 16) + 58964)) << 16);
+};
+var _Skinney$murmur3$Murmur3$mix = F2(
+	function (h1, h2) {
+		var k1 = A2(_Skinney$murmur3$Murmur3$mur, 3432918353, h2);
+		return h1 ^ A2(_Skinney$murmur3$Murmur3$mur, 461845907, (k1 >>> 17) | (k1 << 15));
+	});
+var _Skinney$murmur3$Murmur3$finalize = function (data) {
+	var acc = (!_elm_lang$core$Native_Utils.eq(data.hash, 0)) ? A2(_Skinney$murmur3$Murmur3$mix, data.seed, data.hash) : data.seed;
+	var h1 = acc ^ data.charsProcessed;
+	var h2 = A2(_Skinney$murmur3$Murmur3$mur, 2246822507, h1 ^ (h1 >>> 16));
+	var h3 = A2(_Skinney$murmur3$Murmur3$mur, 3266489909, h2 ^ (h2 >>> 13));
+	return (h3 ^ (h3 >>> 16)) >>> 0;
+};
+var _Skinney$murmur3$Murmur3$hashFold = F2(
+	function (c, data) {
+		var res = data.hash | (c << data.shift);
+		var _p0 = data.shift;
+		if (_p0 === 24) {
+			var newHash = _Skinney$murmur3$Murmur3$step(
+				A2(_Skinney$murmur3$Murmur3$mix, data.seed, res));
+			return {shift: 0, seed: newHash, hash: 0, charsProcessed: data.charsProcessed + 1};
+		} else {
+			return {shift: data.shift + 8, seed: data.seed, hash: res, charsProcessed: data.charsProcessed + 1};
+		}
+	});
+var _Skinney$murmur3$Murmur3$HashData = F4(
+	function (a, b, c, d) {
+		return {shift: a, seed: b, hash: c, charsProcessed: d};
+	});
+var _Skinney$murmur3$Murmur3$hashString = F2(
+	function (seed, str) {
+		return _Skinney$murmur3$Murmur3$finalize(
+			A3(
+				_Skinney$murmur3$UTF8$foldl,
+				_Skinney$murmur3$Murmur3$hashFold,
+				A4(_Skinney$murmur3$Murmur3$HashData, 0, seed, 0, 0),
+				str));
+	});

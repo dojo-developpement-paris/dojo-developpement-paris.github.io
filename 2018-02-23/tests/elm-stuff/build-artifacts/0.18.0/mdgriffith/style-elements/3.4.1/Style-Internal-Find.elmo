@@ -1,0 +1,73 @@
+var _mdgriffith$style_elements$Style_Internal_Find$variation = F3(
+	function ($class, variation, elements) {
+		var find = function (el) {
+			var _p0 = el;
+			if (_p0.ctor === 'Variation') {
+				return (_elm_lang$core$Native_Utils.eq($class, _p0._0) && _elm_lang$core$Native_Utils.eq(_p0._1, variation)) ? _elm_lang$core$Maybe$Just(_p0._2) : _elm_lang$core$Maybe$Nothing;
+			} else {
+				return _elm_lang$core$Maybe$Nothing;
+			}
+		};
+		var found = _elm_lang$core$List$head(
+			A2(_elm_lang$core$List$filterMap, find, elements));
+		var _p1 = found;
+		if (_p1.ctor === 'Nothing') {
+			return A2(
+				_elm_lang$core$Debug$log,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'No ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(variation),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							' variation  present for ',
+							_elm_lang$core$Basics$toString($class)))),
+				'');
+		} else {
+			return _p1._0;
+		}
+	});
+var _mdgriffith$style_elements$Style_Internal_Find$style = F2(
+	function ($class, elements) {
+		var find = function (el) {
+			var _p2 = el;
+			if (_p2.ctor === 'Style') {
+				return _elm_lang$core$Native_Utils.eq(_p2._0, $class) ? _elm_lang$core$Maybe$Just(_p2._1) : _elm_lang$core$Maybe$Nothing;
+			} else {
+				return _elm_lang$core$Maybe$Nothing;
+			}
+		};
+		var found = _elm_lang$core$List$head(
+			A2(_elm_lang$core$List$filterMap, find, elements));
+		var _p3 = found;
+		if (_p3.ctor === 'Nothing') {
+			return A2(
+				_elm_lang$core$Debug$log,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'No style present for ',
+					_elm_lang$core$Basics$toString($class)),
+				'');
+		} else {
+			return _p3._0;
+		}
+	});
+var _mdgriffith$style_elements$Style_Internal_Find$Variation = F3(
+	function (a, b, c) {
+		return {ctor: 'Variation', _0: a, _1: b, _2: c};
+	});
+var _mdgriffith$style_elements$Style_Internal_Find$toVariation = F3(
+	function ($var, newName, element) {
+		var _p4 = element;
+		if (_p4.ctor === 'Style') {
+			return A3(_mdgriffith$style_elements$Style_Internal_Find$Variation, _p4._0, $var, newName);
+		} else {
+			return A3(_mdgriffith$style_elements$Style_Internal_Find$Variation, _p4._0, $var, newName);
+		}
+	});
+var _mdgriffith$style_elements$Style_Internal_Find$Style = F2(
+	function (a, b) {
+		return {ctor: 'Style', _0: a, _1: b};
+	});

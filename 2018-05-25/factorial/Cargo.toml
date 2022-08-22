@@ -1,0 +1,7 @@
+[package]
+name = "factorial"
+version = "0.1.0"
+authors = ["ToF- <cthibaut@octo.com>"]
+
+[dependencies]
+num-bigint = "0.1"

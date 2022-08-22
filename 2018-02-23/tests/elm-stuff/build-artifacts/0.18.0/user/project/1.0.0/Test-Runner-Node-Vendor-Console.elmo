@@ -1,0 +1,378 @@
+var _user$project$Test_Runner_Node_Vendor_Console$bgWhite = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[47m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[49m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$bgCyan = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[46m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[49m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$bgMagenta = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[45m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[49m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$bgBlue = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[44m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[49m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$bgYellow = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[43m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[49m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$bgGreen = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[42m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[49m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$bgRed = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[41m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[49m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$bgBlack = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[40m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[49m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$white = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[37m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[39m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$cyan = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[36m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[39m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$magenta = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[35m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[39m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$blue = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[34m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[39m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$yellow = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[33m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[39m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$green = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[32m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[39m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$red = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[31m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[39m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$black = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[30m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[39m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$colorsInverted = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[7m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[27m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$underline = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[4m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[24m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$bold = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[1m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[22m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$dark = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[2m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[22m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Test_Runner_Node_Vendor_Console$plain = function (str) {
+	return A2(
+		_elm_lang$core$String$join,
+		'',
+		{
+			ctor: '::',
+			_0: '[0m',
+			_1: {
+				ctor: '::',
+				_0: str,
+				_1: {
+					ctor: '::',
+					_0: '[0m',
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};

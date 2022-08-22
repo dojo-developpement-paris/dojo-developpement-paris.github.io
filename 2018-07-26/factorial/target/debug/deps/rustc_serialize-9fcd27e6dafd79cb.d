@@ -1,0 +1,10 @@
+/Users/Christophe/dev/dojo/dojo-developpement-paris.github.io/factorial/target/debug/deps/librustc_serialize-9fcd27e6dafd79cb.rlib: /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/lib.rs /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/serialize.rs /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/collection_impls.rs /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/base64.rs /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/hex.rs /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/json.rs
+
+/Users/Christophe/dev/dojo/dojo-developpement-paris.github.io/factorial/target/debug/deps/rustc_serialize-9fcd27e6dafd79cb.d: /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/lib.rs /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/serialize.rs /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/collection_impls.rs /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/base64.rs /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/hex.rs /Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/json.rs
+
+/Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/lib.rs:
+/Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/serialize.rs:
+/Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/collection_impls.rs:
+/Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/base64.rs:
+/Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/hex.rs:
+/Users/Christophe/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.3.24/src/json.rs:

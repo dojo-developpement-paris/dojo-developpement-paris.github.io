@@ -1,0 +1,48 @@
+var _mdgriffith$style_elements$Style_Internal_Batchable$toList = function (batchables) {
+	var flatten = function (batch) {
+		var _p0 = batch;
+		switch (_p0.ctor) {
+			case 'One':
+				return {
+					ctor: '::',
+					_0: _p0._0,
+					_1: {ctor: '[]'}
+				};
+			case 'Many':
+				return _p0._0;
+			default:
+				return _mdgriffith$style_elements$Style_Internal_Batchable$toList(_p0._0);
+		}
+	};
+	return A2(_elm_lang$core$List$concatMap, flatten, batchables);
+};
+var _mdgriffith$style_elements$Style_Internal_Batchable$Batch = function (a) {
+	return {ctor: 'Batch', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Batchable$batch = _mdgriffith$style_elements$Style_Internal_Batchable$Batch;
+var _mdgriffith$style_elements$Style_Internal_Batchable$Many = function (a) {
+	return {ctor: 'Many', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Batchable$many = _mdgriffith$style_elements$Style_Internal_Batchable$Many;
+var _mdgriffith$style_elements$Style_Internal_Batchable$One = function (a) {
+	return {ctor: 'One', _0: a};
+};
+var _mdgriffith$style_elements$Style_Internal_Batchable$one = _mdgriffith$style_elements$Style_Internal_Batchable$One;
+var _mdgriffith$style_elements$Style_Internal_Batchable$map = F2(
+	function (fn, batchable) {
+		var _p1 = batchable;
+		switch (_p1.ctor) {
+			case 'One':
+				return _mdgriffith$style_elements$Style_Internal_Batchable$One(
+					fn(_p1._0));
+			case 'Many':
+				return _mdgriffith$style_elements$Style_Internal_Batchable$Many(
+					A2(_elm_lang$core$List$map, fn, _p1._0));
+			default:
+				return _mdgriffith$style_elements$Style_Internal_Batchable$Batch(
+					A2(
+						_elm_lang$core$List$map,
+						_mdgriffith$style_elements$Style_Internal_Batchable$map(fn),
+						_p1._0));
+		}
+	});
