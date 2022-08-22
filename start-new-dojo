@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+COLOR_ORANGE="\e[1;33m"
+COLOR_BLUE="\e[1;34m"
+COLOR_RESET="\e[0m"
+
+warn() {
+    echo -e "${COLOR_ORANGE}${*}${COLOR_RESET}"
+}
+
+info() {
+    echo -e "${COLOR_BLUE}${*}${COLOR_RESET}"
+}
+
+_get_first() {
+    head -n1
+}
+
+last_readme() {
+    ls -r -d 20*/README.md |
+        _get_first |
+        xargs cat
+}
+
+_filter_subjects() {
+    grep -E "[[:digit:]]+[[:space:]]*-[[:space:]]*[[:alpha:]][[:space:]]*"
+}
+
+_sort_subjects() {
+    sort -k2 -r -b -n
+}
+
+_extract_subject() {
+    sed -E "s/^.*?[[:digit:]]+[[:space:]]*-([[:space:]]*[[:alpha:]][[:space:]]*-)?[[:space:]]*//"
+}
+
+elected_subject() {
+    _filter_subjects |
+        _sort_subjects |
+        _extract_subject |
+        _get_first
+}
+
+create_today_folder() {
+    TODAY="$1"
+
+    mkdir "${TODAY}"
+    cp README.md "${TODAY}/"
+    git add --intent-to-add "${TODAY}/"
+}
+
+main() {
+    set -o errexit
+
+    LAST_SUBJECT=$(last_readme | elected_subject)
+    info "the last elected subject was : ${LAST_SUBJECT}"
+
+    TODAY=$(date -I"date")
+    info "create a new folder for today ${TODAY}"
+    create_today_folder "${TODAY}"
+
+    info "filling README with previous subject"
+    sed -i "s/Ancien sujet/${LAST_SUBJECT}/" "${TODAY}/README.md"
+}
+
+main
