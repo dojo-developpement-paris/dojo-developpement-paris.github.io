@@ -11,7 +11,13 @@ class Order:
 def next_compatible(orders, end, j):
     i = j
     length = len(orders)
-    while i < length:
+    high = length - 1
+    while True:
+        m = (j + high) // 2
+        if orders[m].start < end:
+            m = (m + high) // 2
+        else:
+            high = m - 1
         order = orders[i]
         if order.start >= end:
             return i
