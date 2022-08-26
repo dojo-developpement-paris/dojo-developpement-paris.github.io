@@ -14,7 +14,7 @@ def next_compatible(orders, end, j):
     high = length - 1
     while True:
         m = (j + high) // 2
-        if m == high:
+        if high - m <= 1:
             return m
 
         if orders[m].start < end:
