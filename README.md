@@ -10,7 +10,7 @@ Retro :
 Explication des règles :
 - Tout le monde peut proposer un sujet
 - Tout langage est accepté, à 2 conditions :
-  - au moints une personne connait ce langage
+  - au moins une personne connait ce langage
   - quelqu'un a un environnement de pret
 
 Le **but** est d'**apprendre**, si possible en s'amusant ;
