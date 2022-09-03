@@ -30,7 +30,7 @@ Le but n'est **pas de finir**
 
 Sujets :
 - 1 - A - Bank Kata - Haskell - Kata
-- 5 - B - RPN Calculator - Haskell - Mob
+* 5 - B - RPN Calculator - Haskell - Mob
 - 5 - C - Chiffre Romain - Forth - Mob
 - 2 - D - Calcul Bonus Malus Permit de conduire - Haskell - Mob
 - 5 - E - Pierre Feuille Ciseaux - Elm - Fishbowl
