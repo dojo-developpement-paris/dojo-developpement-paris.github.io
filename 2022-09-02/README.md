@@ -1,27 +1,23 @@
-Prochaine session : le 02/09/2022 à Arolla 21 rue du Bouloi
+Prochaine session : le CodeWorks à 2022-09-09
 
 Personnes présentes :
-- Allan
+- ToF
+- Andrea
+- pin
 - Antoine
-- Saïd
-- Pin
-- Christophe
-- Ubald
-- Pierre
-- Pauline
-- Birame
-- Stéphane
-- Sofiane
-- Manoa
-
+- Frédéric
+- Benoit
+- Lilian
 
 Retro :
-- Mob - Forth - Roman Numerals
-- commencer forth par un fizz buzz
-- if if if ... pourquoi pas des tables ? 
-- on appris plein de choses
-- Forth est un langage à pile apparente
-- intervention : explication avec les post-its
+- Louez votre avion et gagnez des sous Python - mob
+  - on l'a fait sans TDD
+  - on a quand meme fait des tests (manuels avec des fichiers d'inputs) en babysteps
+  - en tant que driver, c'était chaotique
+  - il y a eu un gros moment (~30min) de discussion sans rien écrire
+  - ToF a mené la solution en reproduisant l'algorithme qu'il avait déjà fait (plein de fois)
+  - le driver n'a pas compris la solution
+  - on a essayé d'améliorer les performances, on les a dégradé jusqu'au point de casser la solution
 
 Explication des règles :
 - Tout le monde peut proposer un sujet
@@ -33,15 +29,11 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 Sujets :
-- 22 - A - Fizz Buzz Forth - mob
-- 11 - B - Gossiping Bus Drivers Python - mob
-- 16 - C - Gossiping Bus Drivers Python TCRDD - mob
-- 15 - D - Gossiping Bus Drivers langage C - mob
-- 23 - E - Louez votre avion et gagnez des sous Python - mob
-- 7 - F - Utiliser une API pour afficher TS - mob
-- 13 - G - Le Jeu de la vie - JS - mob
-- 18 - H - Le Jeu de la vie - TS - TCRDD - mob
-
+- 1 - A - Bank Kata - Haskell - Kata
+* 5 - B - RPN Calculator - Haskell - Mob
+- 5 - C - Chiffre Romain - Forth - Mob
+- 2 - D - Calcul Bonus Malus Permit de conduire - Haskell - Mob
+- 5 - E - Pierre Feuille Ciseaux - Elm - Fishbowl
 
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
