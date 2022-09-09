@@ -1,11 +1,19 @@
-Prochaine session : le  à 
+Prochaine session : le jeudi 15/09/2022 à CodeWorks 25 bd des Italiens 
 
 Personnes présentes :
-- 
+- Michelle
+- Sébastien
+- Hind
+- Saïd
+- Allan
+- Benoît
+- Christophe
 
 Retro :
-- Ancien sujet
-  - 
+- Mob RPN calc en Haskell 
+    - le temps qu'on a passé a rester sur des String avant de créer un type de données idoine
+    - il y avait des gens qui ne connaissaient pas Haskell, beaucoup de temps à expliquer le langage, très sympa
+- 
 
 Explication des règles :
 - Tout le monde peut proposer un sujet
@@ -17,9 +25,10 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 Sujets :
-- 0 - A - 
-- 0 - B - 
-- 0 - C - 
+- 0 - A - Kata Bank Elm  - Mob 
+- 0 - B - Perles de Dijsktra - Haskell - Mob
+- 0 - C - RpN Calc en C - Mob
+
 
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
