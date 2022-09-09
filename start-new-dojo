@@ -51,6 +51,7 @@ create_today_folder() {
 
 main() {
     set -o errexit
+    set -o xtrace
 
     LAST_SUBJECT=$(last_readme | elected_subject)
     info "the last elected subject was : ${LAST_SUBJECT}"
