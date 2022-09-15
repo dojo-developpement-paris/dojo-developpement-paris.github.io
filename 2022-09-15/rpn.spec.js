@@ -6,7 +6,7 @@
 
 const rpn = (expression) => {
     if(expression.length === 5)
-        return parseInt(expression) + parseInt(expression[2]);
+        return parseInt(expression[0]) + parseInt(expression[2]);
     return parseInt(expression);
 };
 
