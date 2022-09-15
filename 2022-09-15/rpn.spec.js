@@ -16,9 +16,10 @@ const rpn = (expression) => {
 
     const [operand1,operand2,operator, ...rest] = expression.split(" ");
     const operation = operators[operator];
+    let result =  operation(parseInt(operand1), parseInt(operand2));
     if(rest.length > 0)
-        return 9;
-    return operation(parseInt(operand1), parseInt(operand2));
+        result = 9;
+    return result;
 };
 
 describe("rpn calc", () => {
