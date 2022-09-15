@@ -13,8 +13,10 @@ const operators = {
 const rpn = (expression) => {
     const stack = []
 
-    if (!expression.includes(" ")) {
-        stack.push(parseInt(expression))
+    const tokens = expression.split(" ");
+
+    if (tokens.length === 1) {
+        stack.push(parseInt(tokens[0]))
     }
     else {
         const [operand1, operand2, operator, ...rest] = expression.split(" ");
