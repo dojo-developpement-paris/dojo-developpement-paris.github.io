@@ -15,23 +15,17 @@ const rpn = (expression) => {
 
     const tokens = expression.split(" ");
 
-    if (tokens.length === 1) {
-        stack.push(parseInt(tokens[0]))
-    }
-    else {
-        const [operand1, operand2, operator, ...rest] = expression.split(" ");
-        const operation = operators[operator];
-        let result = operation(parseInt(operand1), parseInt(operand2));
-
-        stack.push(result)
-
-        if (rest.length > 0) {
-            const [operand3, operator2] = rest;
-            const operation2 = operators[operator2];
-            const last = stack.pop()
-            stack.push(operation2(last, parseInt(operand3)));
+    tokens.forEach(token => {
+        if (!Number.isNaN(parseInt(token))) {
+            stack.push(parseInt(token))
         }
-    }
+        else {
+            const operation = operators[token];
+            const second = stack.pop()
+            const first = stack.pop()
+            stack.push(operation(first, second))
+        }
+    })
 
     return stack.pop();
 };
