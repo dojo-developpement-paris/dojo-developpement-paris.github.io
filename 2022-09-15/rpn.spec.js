@@ -4,10 +4,13 @@
   3 5 8 * 7 + * => ((5*8)+7)*3 = 141
 */
 
+const operators = { "*": (x,y) => x * y, "+": (x,y) => x + y };
+
 const rpn = (expression) => {
     const [operand1,operand2,operator] = expression.split(" ");
     if(operator==="+") {
-        return parseInt(operand1) + parseInt(operand2);
+        const operation = operators[operator];
+        return operation(parseInt(operand1), parseInt(operand2));
     }
     if(operator==="*") {
         return parseInt(operand1) * parseInt(operand2);
