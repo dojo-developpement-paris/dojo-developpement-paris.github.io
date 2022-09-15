@@ -7,6 +7,8 @@
 const operators = { "*": (x,y) => x * y, "+": (x,y) => x + y };
 
 const rpn = (expression) => {
+    if(!expression.includes(" "))
+        return parseInt(expression);
     const [operand1,operand2,operator] = expression.split(" ");
     if(operator==="+") {
         const operation = operators[operator];
@@ -15,7 +17,6 @@ const rpn = (expression) => {
     if(operator==="*") {
         return parseInt(operand1) * parseInt(operand2);
     }
-    return parseInt(expression);
 };
 
 describe("rpn calc", () => {
