@@ -5,12 +5,11 @@
 */
 
 const rpn = (expression) => {
+    const [operand1,operand2,operator] = expression.split(" ");
     if(expression.includes('+')) {
-        const [operand1,operand2,operator] = expression.split(" ");
         return parseInt(operand1) + parseInt(operand2);
     }
     if(expression.includes('*')) {
-        const [operand1,operand2,operator] = expression.split(" ");
         return parseInt(operand1) * parseInt(operand2);
     }
     return parseInt(expression);
