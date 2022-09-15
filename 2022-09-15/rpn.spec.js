@@ -21,9 +21,9 @@ const rpn = (expression) => {
         }
         else {
             const operation = operators[token];
-            const second = stack.pop()
-            const first = stack.pop()
-            stack.push(operation(first, second))
+            const last = stack.pop()
+            const beforeLast = stack.pop()
+            stack.push(operation(beforeLast, last))
         }
     })
 
