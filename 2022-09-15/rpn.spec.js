@@ -15,7 +15,7 @@ describe("rpn calc", () => {
         expect(rpn("42")).toBe(42);
         expect(rpn("17")).toBe(17);
     });
-    it("can add two zeroes", () => {
+    it("can add two operands", () => {
         expect(rpn("1 1 +")).toBe(2);
         expect(rpn("2 2 +")).toBe(4);
         expect(rpn("3 4 +")).toBe(7);
