@@ -4,7 +4,7 @@
   3 5 8 * 7 + * => ((5*8)+7)*3 = 141
 */
 
-const rpn = parseInt
+const rpn = parseInt;
 
 describe("rpn calc", () => {
     it("works for a simple operand", () => {
