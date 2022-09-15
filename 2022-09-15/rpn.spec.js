@@ -10,13 +10,8 @@ const rpn = (expression) => {
     if(!expression.includes(" "))
         return parseInt(expression);
     const [operand1,operand2,operator] = expression.split(" ");
-    if(operator==="+") {
-        const operation = operators[operator];
-        return operation(parseInt(operand1), parseInt(operand2));
-    }
-    if(operator==="*") {
-        return parseInt(operand1) * parseInt(operand2);
-    }
+    const operation = operators[operator];
+    return operation(parseInt(operand1), parseInt(operand2));
 };
 
 describe("rpn calc", () => {
