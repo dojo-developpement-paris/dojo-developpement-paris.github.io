@@ -6,8 +6,8 @@
 
 const rpn = (expression) => {
     if(expression.includes('+')) {
-        const [op1,op2,op] = expression.split(" ");
-        return parseInt(op1) + parseInt(op2);
+        const [operand1,operand2,operator] = expression.split(" ");
+        return parseInt(operand1) + parseInt(operand2);
     }
     return parseInt(expression);
 };
