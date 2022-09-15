@@ -4,7 +4,11 @@
   3 5 8 * 7 + * => ((5*8)+7)*3 = 141
 */
 
-const operators = { "*": (x,y) => x * y, "+": (x,y) => x + y };
+const operators = {
+    "*": (x,y) => x * y,
+    "+": (x,y) => x + y,
+    "/": (x,y) => x / y,
+};
 
 const rpn = (expression) => {
     if(!expression.includes(" "))
@@ -29,5 +33,8 @@ describe("rpn calc", () => {
     })
     it("can multiply two operands", () => {
         expect(rpn("3 4 *")).toBe(12);
+    });
+    it("can divide two operands", () => {
+        expect(rpn("32 4 /")).toBe(8);
     });
 });
