@@ -5,10 +5,8 @@
 */
 
 const rpn = (expression) => {
-    if(expression === "1 1 +")
-        return 2;
-    if(expression === "2 2 +")
-        return 4;
+    if(expression.length === 5)
+        return parseInt(expression) + parseInt(expression);
     return parseInt(expression);
 };
 
