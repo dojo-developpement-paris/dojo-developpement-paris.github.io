@@ -11,18 +11,24 @@ const operators = {
 };
 
 const rpn = (expression) => {
+    const stack = []
+
     if(!expression.includes(" "))
         return parseInt(expression);
 
     const [operand1,operand2,operator, ...rest] = expression.split(" ");
     const operation = operators[operator];
-    let result =  operation(parseInt(operand1), parseInt(operand2));
+    let result = operation(parseInt(operand1), parseInt(operand2));
+
+    stack.push(result)
+
     if(rest.length > 0) {
         const [operand3, operator2] = rest;
         const operation2 = operators[operator2];
-        return operation2(result, parseInt(operand3));
+        const last = stack.pop()
+        stack.push(operation2(last, parseInt(operand3)));
     }
-    return result;
+    return stack.pop();
 };
 
 describe("rpn calc", () => {
