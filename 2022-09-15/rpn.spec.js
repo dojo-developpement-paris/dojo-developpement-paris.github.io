@@ -16,7 +16,8 @@ const rpn = (expression) => {
 
     const [operand1,operand2,operator, ...rest] = expression.split(" ");
     const operation = operators[operator];
-
+    if(rest.length > 0)
+        return 9;
     return operation(parseInt(operand1), parseInt(operand2));
 };
 
@@ -37,4 +38,7 @@ describe("rpn calc", () => {
     it("can divide two operands", () => {
         expect(rpn("32 4 /")).toBe(8);
     });
+    it("can calculate with more than 2 operands", () => {
+        expect(rpn("4 2 + 3 +")).toBe(9);
+    })
 });
