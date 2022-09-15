@@ -5,7 +5,7 @@
 */
 
 const rpn = (expression) => {
-    if(expression.length > 2)
+    if(expression.includes('+'))
         return parseInt(expression[0]) + parseInt(expression[2]);
     return parseInt(expression);
 };
