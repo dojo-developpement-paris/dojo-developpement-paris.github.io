@@ -3,8 +3,11 @@
   4 2 + 3 -     => (4+2)-3 = 3
   3 5 8 * 7 + * => ((5*8)+7)*3 = 141
 */
+
+const rpn = (expression) => 42;
+
 describe("rpn calc", () => {
-    it("", () => {
-        expect(true).toBe(true);
+    it("works for a simple operand", () => {
+        expect(rpn("42")).toBe(42);
     });
 });
