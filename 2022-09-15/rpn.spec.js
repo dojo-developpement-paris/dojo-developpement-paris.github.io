@@ -1,6 +1,10 @@
-
-describe("should work", () => {
-    it("should work", () => {
+/*
+  20 5 /        => 20/5 = 4
+  4 2 + 3 -     => (4+2)-3 = 3
+  3 5 8 * 7 + * => ((5*8)+7)*3 = 141
+*/
+describe("rpn calc", () => {
+    it("", () => {
         expect(true).toBe(true);
     });
 });
