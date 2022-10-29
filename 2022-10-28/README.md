@@ -10,6 +10,8 @@ Personnes présentes :
 - Hind
 - Nick
 - Abdoul
+- Michelle
+- Lilian
 - pin
 
 Retro :
