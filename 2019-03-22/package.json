@@ -1,0 +1,22 @@
+{
+  "name": "dojo-developpement-paris.github.io",
+  "version": "1.0.0",
+  "description": "Prochaine session: Jeudi 28 mars 2019 chez Arolla 21 rue du Bouloi",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io/issues"
+  },
+  "homepage": "https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io#readme",
+  "devDependencies": {
+    "jest": "^24.5.0"
+  }
+}
