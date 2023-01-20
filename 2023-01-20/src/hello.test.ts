@@ -2,12 +2,12 @@ const hello = (name: string = "world"): string => {
   return `Hello ${name}`
 }
 
-describe("hello", () => {
-  it("world", () => {
-    expect(hello()).toEqual("Hello world")
-  })
+const game = (toto: any, tutu: any) => {
+  return "égalité"
+}
 
-  it("foo", () => {
-    expect(hello("foo")).toEqual("Hello foo")
+describe("égalité", () => {
+  it("ciseaux contre ciseaux", () => {
+    expect(game("ciseaux", "ciseaux")).toEqual("égalité")
   })
 })
