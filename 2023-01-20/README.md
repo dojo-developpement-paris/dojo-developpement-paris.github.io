@@ -8,6 +8,7 @@ Personnes présentes :
 - Abdel
 - Nick
 - Ilias
+- Tchong
 - pin
 
 Retro :
