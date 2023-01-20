@@ -1,4 +1,4 @@
-function gagnant(premièreMain: string, deuxièmeMain: string) {
+function gagnant(premièreMain: string, deuxièmeMain: string): "Un" | "Deux" {
   if (premièreMain === "pierre" && deuxièmeMain === "ciseaux") {
     return "Un"
   }
