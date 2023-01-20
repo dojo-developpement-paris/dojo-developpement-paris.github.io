@@ -1,4 +1,4 @@
-function victoire(premièreMain: string, deuxièmeMain: string) {
+function gagnant(premièreMain: string, deuxièmeMain: string) {
   if (premièreMain === "pierre" && deuxièmeMain === "ciseaux") {
     return "Un"
   }
@@ -15,7 +15,7 @@ const cpf = (premièreMain: string, deuxièmeMain: string) => {
   if (premièreMain === deuxièmeMain) {
     return "égalité"
   }
-  return "joueur" + victoire(premièreMain, deuxièmeMain)
+  return "joueur" + gagnant(premièreMain, deuxièmeMain)
 }
 
 describe("égalité", () => {
