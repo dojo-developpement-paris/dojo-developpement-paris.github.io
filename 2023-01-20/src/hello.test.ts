@@ -1,20 +1,20 @@
-const cpf = (premièreMain: string, deuxièmeMain: string) => {
-  if (deuxièmeMain === "pierre" && premièreMain === "ciseaux") {
-    return "joueurDeux"
-  }
+function victoire(premièreMain: string, deuxièmeMain: string) {
   if (premièreMain === "pierre" && deuxièmeMain === "ciseaux") {
-    return "joueurUn"
-  }
-  if (deuxièmeMain === "feuille" && premièreMain === "pierre") {
-    return "joueurDeux"
+    return true
   }
   if (premièreMain === "feuille" && deuxièmeMain === "pierre") {
-    return "joueurUn"
+    return true
   }
   if (premièreMain === "ciseaux" && deuxièmeMain === "feuille") {
+    return true
+  }
+}
+
+const cpf = (premièreMain: string, deuxièmeMain: string) => {
+  if (victoire(premièreMain, deuxièmeMain)) {
     return "joueurUn"
   }
-  if (deuxièmeMain === "ciseaux" && premièreMain === "feuille") {
+  if (victoire(deuxièmeMain, premièreMain)) {
     return "joueurDeux"
   }
   return "égalité"
