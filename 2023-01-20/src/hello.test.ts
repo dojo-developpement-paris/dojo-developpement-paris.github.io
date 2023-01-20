@@ -26,7 +26,7 @@ describe("victoire premièreMain", () => {
     expect(cpf("feuille", "pierre")).toEqual("joueurUn")
   })
 
-  it("avec pierre", () => {
-    expect(cpf("pierre", "ciseaux")).toEqual("joueurUn")
+  it.each([["pierre", "ciseaux"]])("avec pierre", (main1, main2) => {
+    expect(cpf(main1, main2)).toEqual("joueurUn")
   })
 })
