@@ -29,6 +29,7 @@ describe("victoire premièreMain", () => {
   it.each([
     ["pierre", "ciseaux"],
     ["feuille", "pierre"],
+    ["ciseaux", "feuille"],
   ])("avec %s", (main1, main2) => {
     expect(cpf(main1, main2)).toEqual("joueurUn")
   })
