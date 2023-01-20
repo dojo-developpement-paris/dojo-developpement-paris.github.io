@@ -1,23 +1,21 @@
 function victoire(premièreMain: string, deuxièmeMain: string) {
   if (premièreMain === "pierre" && deuxièmeMain === "ciseaux") {
-    return true
+    return "Un"
   }
   if (premièreMain === "feuille" && deuxièmeMain === "pierre") {
-    return true
+    return "Un"
   }
   if (premièreMain === "ciseaux" && deuxièmeMain === "feuille") {
-    return true
+    return "Un"
   }
+  return "Deux"
 }
 
 const cpf = (premièreMain: string, deuxièmeMain: string) => {
-  if (victoire(premièreMain, deuxièmeMain)) {
-    return "joueurUn"
+  if (premièreMain === deuxièmeMain) {
+    return "égalité"
   }
-  if (victoire(deuxièmeMain, premièreMain)) {
-    return "joueurDeux"
-  }
-  return "égalité"
+  return "joueur" + victoire(premièreMain, deuxièmeMain)
 }
 
 describe("égalité", () => {
