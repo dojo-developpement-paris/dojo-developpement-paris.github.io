@@ -1,4 +1,4 @@
-const game = (toto: any, tutu: any) => {
+const game = (toto: string, tutu: string) => {
   return "égalité"
 }
 
