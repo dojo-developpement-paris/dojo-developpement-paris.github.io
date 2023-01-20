@@ -11,11 +11,14 @@ function gagnant(premièreMain: string, deuxièmeMain: string) {
   return "Deux"
 }
 
-const cpf = (premièreMain: string, deuxièmeMain: string) => {
+const cpf = (
+  premièreMain: string,
+  deuxièmeMain: string
+): "égalité" | "joueurUn" | "joueurDeux" => {
   if (premièreMain === deuxièmeMain) {
     return "égalité"
   }
-  return "joueur" + gagnant(premièreMain, deuxièmeMain)
+  return `joueur${gagnant(premièreMain, deuxièmeMain)}`
 }
 
 describe("égalité", () => {
