@@ -18,14 +18,6 @@ describe("égalité", () => {
 })
 
 describe("victoire premièreMain", () => {
-  it("avec ciseaux", () => {
-    expect(cpf("ciseaux", "feuille")).toEqual("joueurUn")
-  })
-
-  it("avec feuille", () => {
-    expect(cpf("feuille", "pierre")).toEqual("joueurUn")
-  })
-
   it.each([
     ["pierre", "ciseaux"],
     ["feuille", "pierre"],
