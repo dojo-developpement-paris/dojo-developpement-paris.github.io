@@ -1,4 +1,7 @@
 const cpf = (premièreMain: string, deuxièmeMain: string) => {
+  if (premièreMain === "feuille" && deuxièmeMain === "pierre") {
+    return "joueurUn"
+  }
   if (premièreMain === "ciseaux" && deuxièmeMain === "feuille") {
     return "joueurUn"
   }
@@ -14,5 +17,9 @@ describe("égalité", () => {
 describe("victoire premièreMain", () => {
   it("avec ciseaux", () => {
     expect(cpf("ciseaux", "feuille")).toEqual("joueurUn")
+  })
+
+  it("avec feuille", () => {
+    expect(cpf("feuille", "pierre")).toEqual("joueurUn")
   })
 })
