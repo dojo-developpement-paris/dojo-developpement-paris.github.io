@@ -5,6 +5,9 @@ const cpf = (premièreMain: string, deuxièmeMain: string) => {
   if (premièreMain === "pierre" && deuxièmeMain === "ciseaux") {
     return "joueurUn"
   }
+  if (deuxièmeMain === "feuille" && premièreMain === "pierre") {
+    return "joueurDeux"
+  }
   if (premièreMain === "feuille" && deuxièmeMain === "pierre") {
     return "joueurUn"
   }
@@ -31,7 +34,10 @@ describe("victoire premièreMain", () => {
 })
 
 describe("victoire deuxièmeMain", () => {
-  it.each([["ciseaux", "pierre"]])("avec %s", (main1, main2) => {
+  it.each([
+    ["ciseaux", "pierre"],
+    ["pierre", "feuille"],
+  ])("avec %s", (main1, main2) => {
     expect(cpf(main1, main2)).toEqual("joueurDeux")
   })
 })
