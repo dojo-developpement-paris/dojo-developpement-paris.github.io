@@ -21,8 +21,8 @@ const cpf = (premièreMain: string, deuxièmeMain: string) => {
 }
 
 describe("égalité", () => {
-  it("ciseaux contre ciseaux", () => {
-    expect(cpf("ciseaux", "ciseaux")).toEqual("égalité")
+  it.each([["pierre"], ["feuille"], ["ciseaux"]])("avec %s", (main) => {
+    expect(cpf(main, main)).toEqual("égalité")
   })
 })
 
