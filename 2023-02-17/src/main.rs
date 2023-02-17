@@ -108,22 +108,10 @@ mod test {
     impl Arbitrary for Line {
         fn arbitrary(generator: &mut Gen) -> Line {
             Line(
-                generator
-                    .choose(&[BLUE, BLACK, RED, YELLOW, GREEN, PURPLE])
-                    .expect("generator cassé")
-                    .clone(),
-                generator
-                    .choose(&[BLUE, BLACK, RED, YELLOW, GREEN, PURPLE])
-                    .expect("generator cassé")
-                    .clone(),
-                generator
-                    .choose(&[BLUE, BLACK, RED, YELLOW, GREEN, PURPLE])
-                    .expect("generator cassé")
-                    .clone(),
-                generator
-                    .choose(&[BLUE, BLACK, RED, YELLOW, GREEN, PURPLE])
-                    .expect("generator cassé")
-                    .clone(),
+                Color::arbitrary(generator),
+                Color::arbitrary(generator),
+                Color::arbitrary(generator),
+                Color::arbitrary(generator),
             )
             .clone()
         }
