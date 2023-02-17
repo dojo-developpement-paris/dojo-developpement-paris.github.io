@@ -1,24 +1,30 @@
-Prochaine session : le 17/02/2023 à La Combe, 21 rue du Bouloi 
+Prochaine session : le 2023-03-03 à CodeWorks
 
 Personnes présentes :
-- Laurent
-- Morendil
-- Pin
 - ToF
-- Serge
-- Tchong Minh
+- Maxime
+- Michael
+- Abdessamed
+- Yassine
+- Simon
+- Sébastien
+- Joseph
+- Rokiatou
+- Vivien
 - Nick
 - Birame
+- Théo
+- Michelle
+- pin
 
 Retro :
-- Mob Prolog - Confusion
-  - peu de setup
-  - variable not sufficiently instanciated
-  - on ne sait pas faire de l'arithmétique avec prolog
-  - la lib clpfd nous a tiré d'affaire avec les règles permettant de montrer des équivalences
-  - prolog: tordu, mais intéressant
-  - on n'a pas vraiment exploiré la puissance de prolog
-
+- Confusion - Mob - common lisp
+  - on avait pas de setup de test
+    - et on n'a pas réussi à en faire un
+      - c'était merdique
+  - on a été jusqu'à la récursion
+    - est-ce qu'il y a une autre solution sans récursion ?
+  - on ne sait pas gérer des nombres plus grand que 99 + 99
 
 Explication des règles :
 - Tout le monde peut proposer un sujet
@@ -30,11 +36,14 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 Sujets :
-- 7 - A - Confusion - Mob - common lisp 
-- 6 - B - Parser Combinators - Haskell - Mob  
-- 5 - C - suggestion d'adresses email - Haskell - TCRDD mob  
-- 4 - D - suggestion d'adresses email - Kotlin - TDD mob
-- 5 - E - morpion - mob - common lisp
+- 12 - A - TS - Randori TCR - Refucktoring FizzBuzz
+- 12 - B - Common Lisp - Kata - Confusion
+- 6 - C - Common Lisp - Mob - Confusion
+- 11 - D - C - Mob - Confusion
+- 13 - E - Haskell - Mob - Confusion
+- 32 - F - Rust - Mob - MasterMind commencer en TDD puis property based testing
+- 22 - G - TS - Fishbowl TCR - Refucktoring FizzBuzz
+- 24 - H - Common Lisp - Mob - Birthday greeting
 
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
