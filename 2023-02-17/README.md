@@ -15,6 +15,7 @@ Personnes présentes :
 - Birame
 - Théo
 - Michelle
+- Lilian
 - pin
 
 Retro :
