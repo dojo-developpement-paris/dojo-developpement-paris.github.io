@@ -1,0 +1,24 @@
+{
+  "name": "katapult-bootstrap-ts-jasmine",
+  "version": "1.0.0",
+  "description": "Basic structure to start a kata in Typescript using the simplest test lib",
+  "scripts": {
+    "test": "jasmine --config=spec/support/jasmine.json"
+  },
+  "keywords": [
+    "kata",
+    "dojo",
+    "jasmine",
+    "typescript"
+  ],
+  "author": "Michelle AVOMO",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jasmine": "^4.3.0",
+    "@types/node": "^17.0.25",
+    "jasmine": "^4.5.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "^4.9.3"
+  }
+}

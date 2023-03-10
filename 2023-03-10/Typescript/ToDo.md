@@ -1,0 +1,11 @@
+
+- renommmer HelloWorld
+- un diamant avec deux lettres : 
+-  A
+- B B
+-  A
+- (diamant B)
+- (diamant C)
+- (diamant P)
+- (diamant Z)
+- 
