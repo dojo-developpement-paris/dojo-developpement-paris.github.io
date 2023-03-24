@@ -14,6 +14,10 @@ const verite = new Map([
   [Main.PIERRE + Main.PIERRE, Resultat.EGALITE],
   [Main.CISEAUX + Main.CISEAUX, Resultat.EGALITE],
   [Main.FEUILLE + Main.FEUILLE, Resultat.EGALITE],
+
+  [Main.PIERRE + Main.CISEAUX, Resultat.MAIN1],
+  [Main.CISEAUX + Main.FEUILLE, Resultat.MAIN1],
+  [Main.FEUILLE + Main.PIERRE, Resultat.MAIN1],
 ])
 
 function match(main1: Main, main2: Main): Resultat {
