@@ -10,8 +10,14 @@ enum Resultat {
   MAIN2 = "MAIN2",
 }
 
+const verite = new Map([
+  [Main.PIERRE + Main.PIERRE, Resultat.EGALITE],
+  [Main.CISEAUX + Main.CISEAUX, Resultat.EGALITE],
+  [Main.FEUILLE + Main.FEUILLE, Resultat.EGALITE],
+])
+
 function match(main1: Main, main2: Main): Resultat {
-  if (main1 === main2) return Resultat.EGALITE
+  if (verite.has(main1 + main2)) return Resultat.EGALITE
   if (main1 === Main.FEUILLE && main2 === Main.CISEAUX) return Resultat.MAIN2
   if (main1 === Main.CISEAUX && main2 === Main.PIERRE) return Resultat.MAIN2
   if (main1 === Main.PIERRE && main2 === Main.FEUILLE) return Resultat.MAIN2
