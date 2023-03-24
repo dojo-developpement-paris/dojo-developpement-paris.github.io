@@ -1,5 +1,5 @@
 enum Main {
-  pierre,
+  PIERRE,
 }
 
 enum Resultat {
@@ -12,6 +12,6 @@ function match(main1: Main, main2: Main): Resultat {
 
 describe("pcf", () => {
   it("donné deux pierres alors égalité", () => {
-    expect(match(Main.pierre, Main.pierre)).toEqual(Resultat.EGALITE)
+    expect(match(Main.PIERRE, Main.PIERRE)).toEqual(Resultat.EGALITE)
   })
 })
