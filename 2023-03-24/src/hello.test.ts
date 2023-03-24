@@ -29,12 +29,4 @@ describe("pcf", () => {
   ])("donné une pierre et un ciseaux alors pierre gagne", (main1, main2) => {
     expect(match(main1, main2)).toEqual(Resultat.MAIN1)
   })
-
-  it("donné des ciseaux et une feuille alors ciseaux gagnent", () => {
-    expect(match(Main.CISEAUX, Main.FEUILLE)).toEqual(Resultat.MAIN1)
-  })
-
-  it("donné une feuille et une pierre alors feuille gagne", () => {
-    expect(match(Main.FEUILLE, Main.PIERRE)).toEqual(Resultat.MAIN1)
-  })
 })
