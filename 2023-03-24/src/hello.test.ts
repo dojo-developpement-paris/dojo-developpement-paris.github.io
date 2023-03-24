@@ -13,7 +13,7 @@ function match(main1: Main, main2: Main): Resultat {
 }
 
 describe("pcf", () => {
-  it.each([Main.PIERRE])(
+  it.each([Main.PIERRE, Main.FEUILLE, Main.CISEAUX])(
     "donné deux mains identiques alors égalité",
     (main) => {
       expect(match(main, main)).toEqual(Resultat.EGALITE)
