@@ -24,8 +24,8 @@ describe("pcf", () => {
 
   it.each([[Main.PIERRE, Main.CISEAUX]])(
     "donné une pierre et un ciseaux alors pierre gagne",
-    () => {
-      expect(match(Main.PIERRE, Main.CISEAUX)).toEqual(Resultat.MAIN1)
+    (main1, main2) => {
+      expect(match(main1, main2)).toEqual(Resultat.MAIN1)
     }
   )
 
