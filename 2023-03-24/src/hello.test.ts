@@ -1,6 +1,7 @@
 enum Main {
   PIERRE,
   FEUILLE,
+  CISEAUX,
 }
 
 enum Resultat {
@@ -17,5 +18,8 @@ describe("pcf", () => {
   })
   it("donné deux feuilles alors égalité", () => {
     expect(match(Main.FEUILLE, Main.FEUILLE)).toEqual(Resultat.EGALITE)
+  })
+  it("donné deux ciseaux alors égalité", () => {
+    expect(match(Main.CISEAUX, Main.CISEAUX)).toEqual(Resultat.EGALITE)
   })
 })
