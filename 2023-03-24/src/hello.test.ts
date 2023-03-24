@@ -38,7 +38,7 @@ describe("pcf", () => {
     [Main.CISEAUX, Main.FEUILLE, Resultat.MAIN1],
     [Main.FEUILLE, Main.PIERRE, Resultat.MAIN1],
   ])(
-    `donné $main1 et $main2 alors ($main1) gagne`,
+    "donné $main1 et $main2 alors ($main1) gagne",
     (main1, main2, resultat) => {
       expect(match(main1, main2)).toEqual(resultat)
     }
