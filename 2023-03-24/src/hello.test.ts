@@ -1,13 +1,17 @@
-const hello = (name: string = "world"): string => {
-  return `Hello ${name}`
+enum main {
+  pierre,
 }
 
-describe("hello", () => {
-  it("world", () => {
-    expect(hello()).toEqual("Hello world")
-  })
+enum resultat {
+  egalite,
+}
 
-  it("foo", () => {
-    expect(hello("foo")).toEqual("Hello foo")
+function match(main1: main, main2: main): resultat {
+  return resultat.egalite
+}
+
+describe("pcf", () => {
+  it("donné deux pierres alors égalité", () => {
+    expect(match(main.pierre, main.pierre)).toEqual(resultat.egalite)
   })
 })
