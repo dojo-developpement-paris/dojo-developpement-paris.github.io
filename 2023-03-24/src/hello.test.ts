@@ -10,7 +10,7 @@ enum Resultat {
   MAIN2 = "MAIN2",
 }
 
-const verite = new Map([
+const gagnant = new Map([
   [Main.PIERRE + Main.PIERRE, Resultat.EGALITE],
   [Main.CISEAUX + Main.CISEAUX, Resultat.EGALITE],
   [Main.FEUILLE + Main.FEUILLE, Resultat.EGALITE],
@@ -25,7 +25,7 @@ const verite = new Map([
 ])
 
 function match(main1: Main, main2: Main): Resultat {
-  const resultat = verite.get(main1 + main2)
+  const resultat = gagnant.get(main1 + main2)
   return resultat!
 }
 
