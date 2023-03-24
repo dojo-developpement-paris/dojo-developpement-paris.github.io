@@ -17,8 +17,8 @@ const verite = new Map([
 ])
 
 function match(main1: Main, main2: Main): Resultat {
-  if (verite.has(main1 + main2))
-    return verite.get(main1 + main2) ?? Resultat.EGALITE
+  const newLocal = verite.get(main1 + main2)
+  if (newLocal) return newLocal
   if (main1 === Main.FEUILLE && main2 === Main.CISEAUX) return Resultat.MAIN2
   if (main1 === Main.CISEAUX && main2 === Main.PIERRE) return Resultat.MAIN2
   if (main1 === Main.PIERRE && main2 === Main.FEUILLE) return Resultat.MAIN2
