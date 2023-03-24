@@ -13,9 +13,12 @@ function match(main1: Main, main2: Main): Resultat {
 }
 
 describe("pcf", () => {
-  it("donné deux pierres alors égalité", () => {
-    expect(match(Main.PIERRE, Main.PIERRE)).toEqual(Resultat.EGALITE)
-  })
+  it.each([Main.PIERRE])(
+    "donné deux mains identiques alors égalité",
+    (main) => {
+      expect(match(main, main)).toEqual(Resultat.EGALITE)
+    }
+  )
   it("donné deux feuilles alors égalité", () => {
     expect(match(Main.FEUILLE, Main.FEUILLE)).toEqual(Resultat.EGALITE)
   })
