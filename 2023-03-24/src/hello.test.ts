@@ -6,9 +6,11 @@ enum Main {
 
 enum Resultat {
   EGALITE,
+  MAIN1,
 }
 
 function match(main1: Main, main2: Main): Resultat {
+  if (main1 === Main.PIERRE && main2 === Main.CISEAUX) return Resultat.MAIN1
   return Resultat.EGALITE
 }
 
@@ -19,4 +21,8 @@ describe("pcf", () => {
       expect(match(main, main)).toEqual(Resultat.EGALITE)
     }
   )
+
+  it("donné une pierre et un ciseaux alors pierre gagne", () => {
+    expect(match(Main.PIERRE, Main.CISEAUX)).toEqual(Resultat.MAIN1)
+  })
 })
