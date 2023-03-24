@@ -5,8 +5,8 @@ enum Main {
 }
 
 enum Resultat {
-  EGALITE,
-  MAIN1,
+  EGALITE = "EGALITE",
+  MAIN1 = "MAIN1",
 }
 
 function match(main1: Main, main2: Main): Resultat {
