@@ -26,7 +26,7 @@ describe("pcf", () => {
     [Main.PIERRE, Main.CISEAUX, Resultat.MAIN1],
     [Main.CISEAUX, Main.FEUILLE, Resultat.MAIN1],
     [Main.FEUILLE, Main.PIERRE, Resultat.MAIN1],
-  ])("donné %s et %s alors %s gagne", (main1, main2, resultat) => {
+  ])("donné %s et %s alors : %s gagne", (main1, main2, resultat) => {
     expect(match(main1, main2)).toEqual(resultat)
   })
 })
