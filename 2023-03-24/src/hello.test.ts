@@ -1,7 +1,7 @@
 enum Main {
   PIERRE = "🪨",
   FEUILLE = "🍁",
-  CISEAUX = "✂",
+  CISEAUX = "✂️",
 }
 
 enum Resultat {
