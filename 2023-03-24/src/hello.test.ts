@@ -10,10 +10,8 @@ enum Resultat {
 }
 
 function match(main1: Main, main2: Main): Resultat {
-  if (main1 === Main.FEUILLE && main2 === Main.PIERRE) return Resultat.MAIN1
-  if (main1 === Main.CISEAUX && main2 === Main.FEUILLE) return Resultat.MAIN1
-  if (main1 === Main.PIERRE && main2 === Main.CISEAUX) return Resultat.MAIN1
-  return Resultat.EGALITE
+  if (main1 === main2) return Resultat.EGALITE
+  return Resultat.MAIN1
 }
 
 describe("pcf", () => {
