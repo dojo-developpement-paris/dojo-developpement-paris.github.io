@@ -26,9 +26,7 @@ const verite = new Map([
 
 function match(main1: Main, main2: Main): Resultat {
   const resultat = verite.get(main1 + main2)
-  if (resultat) return resultat
-
-  return Resultat.MAIN1
+  return resultat!
 }
 
 describe("pcf", () => {
