@@ -1,7 +1,7 @@
 enum Main {
-  PIERRE,
-  FEUILLE,
-  CISEAUX,
+  PIERRE = "PIERRE",
+  FEUILLE = "FEUILLE",
+  CISEAUX = "CISEAUX",
 }
 
 enum Resultat {
