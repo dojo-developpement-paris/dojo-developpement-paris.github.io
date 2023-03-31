@@ -1,12 +1,13 @@
-const pierreFeuilleCiseaux = (tutu: string, tata: string) =>
-  "pierre gagne contre ciseaux"
+const pierre = "pierre"
+const ciseaux = "ciseaux"
+type Main = "pierre" | "ciseaux"
 
-const newLocal = "pierre"
-const newLocal_1 = "ciseaux"
+const pierreFeuilleCiseaux = (gauche: Main, droite: Main) =>
+  "pierre gagne contre ciseaux"
 
 describe("pierreFeuilleCiseaux", () => {
   it("pierre bat ciseaux", () => {
-    expect(pierreFeuilleCiseaux(newLocal, newLocal_1)).toEqual(
+    expect(pierreFeuilleCiseaux(pierre, ciseaux)).toEqual(
       "pierre gagne contre ciseaux"
     )
   })
