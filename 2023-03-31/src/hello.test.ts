@@ -35,4 +35,10 @@ describe("pierreFeuilleCiseaux", () => {
       "ciseaux perd contre pierre"
     )
   })
+
+  it("ciseaux égalise contre ciseaux", () => {
+    expect(pierreFeuilleCiseaux(ciseaux, ciseaux)).toEqual(
+      "ciseaux égalise contre ciseaux"
+    )
+  })
 })

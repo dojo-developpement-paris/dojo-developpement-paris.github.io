@@ -6,11 +6,11 @@ const mains = [pierre, ciseaux, feuille] as const
 
 type Main = typeof mains[number]
 
+const egalise = "égalise"
 const perd = "perd"
-
 const gagne = "gagne"
 
-type Resultat = typeof perd | typeof gagne
+type Resultat = typeof perd | typeof gagne | typeof egalise
 
 const plusFaibleQue = (element: Main): Main => {
   const indexCourant = mains.indexOf(element)
@@ -20,7 +20,11 @@ const plusFaibleQue = (element: Main): Main => {
 }
 
 const quiGagne = (gauche: Main, droite: Main): Resultat => {
-  return gauche === plusFaibleQue(droite) ? perd : gagne
+  return gauche === droite
+    ? egalise
+    : gauche === plusFaibleQue(droite)
+    ? perd
+    : gagne
 }
 
 export const pierreFeuilleCiseaux = (gauche: Main, droite: Main) => {
