@@ -4,12 +4,15 @@ const feuille = "feuille"
 
 type Main = typeof pierre | typeof ciseaux | typeof feuille
 
-const pierreFeuilleCiseaux = (gauche: Main, droite: Main) => {
-  const resultat =
-    (gauche === pierre && droite === feuille) ||
+const quiGagne = (gauche: string, droite: string): string => {
+  return (gauche === pierre && droite === feuille) ||
     (gauche === feuille && droite === ciseaux)
-      ? "perd"
-      : "gagne"
+    ? "perd"
+    : "gagne"
+}
+
+const pierreFeuilleCiseaux = (gauche: Main, droite: Main) => {
+  const resultat = quiGagne(gauche, droite)
   return `${gauche} ${resultat} contre ${droite}`
 }
 
