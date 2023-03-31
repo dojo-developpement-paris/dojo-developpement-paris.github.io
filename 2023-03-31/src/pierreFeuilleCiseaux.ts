@@ -20,11 +20,9 @@ const plusFaibleQue = (element: Main): Main => {
 }
 
 const quiGagne = (gauche: Main, droite: Main): Resultat => {
-  return gauche === droite
-    ? egalise
-    : gauche === plusFaibleQue(droite)
-    ? perd
-    : gagne
+  if (gauche === droite) return egalise
+  if (gauche === plusFaibleQue(droite)) return perd
+  return gagne
 }
 
 export const pierreFeuilleCiseaux = (gauche: Main, droite: Main) => {
