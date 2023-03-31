@@ -4,10 +4,10 @@ const feuille = "feuille"
 
 type Main = typeof pierre | typeof ciseaux | typeof feuille
 
-const pierreFeuilleCiseaux = (gauche: Main, droite: Main) =>
-  gauche === pierre && droite === feuille
-    ? `${gauche} perd contre ${droite}`
-    : `${gauche} gagne contre ${droite}`
+const pierreFeuilleCiseaux = (gauche: Main, droite: Main) => {
+  const resultat = gauche === pierre && droite === feuille ? "perd" : "gagne"
+  return `${gauche} ${resultat} contre ${droite}`
+}
 
 describe("pierreFeuilleCiseaux", () => {
   it("pierre bat ciseaux", () => {
