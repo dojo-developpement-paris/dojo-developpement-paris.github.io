@@ -1,9 +1,7 @@
-const hello = (name: string = "world"): string => {
-  return `Hello ${name}`
-}
+const pfc = (tutu: string, tata: string) => "pierre gagne contre ciseaux"
 
-describe("hello", () => {
-  it("world", () => {
-    expect(hello()).toEqual("Hello world")
+describe("pfc", () => {
+  it("pierre bat ciseaux", () => {
+    expect(pfc("pierre", "ciseaux")).toEqual("pierre gagne contre ciseaux")
   })
 })
