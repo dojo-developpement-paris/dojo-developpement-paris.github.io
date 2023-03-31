@@ -2,7 +2,9 @@ export const pierre = "pierre"
 export const ciseaux = "ciseaux"
 export const feuille = "feuille"
 
-type Main = typeof pierre | typeof ciseaux | typeof feuille
+const mains = [pierre, ciseaux, feuille] as const
+
+type Main = typeof mains[number]
 
 type Resultat = "perd" | "gagne"
 
