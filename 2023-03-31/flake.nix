@@ -24,6 +24,7 @@
         devShell = pkgs.mkShell {
           packages = [
             pkgs.nodejs-18_x
+            pkgs.deno
           ];
 
           shellHook = ''

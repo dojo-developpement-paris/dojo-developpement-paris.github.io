@@ -1,22 +1,9 @@
-const pierre = "pierre"
-const ciseaux = "ciseaux"
-const feuille = "feuille"
-
-type Main = typeof pierre | typeof ciseaux | typeof feuille
-
-type Resultat = "perd" | "gagne"
-
-const quiGagne = (gauche: Main, droite: Main): Resultat => {
-  return (gauche === pierre && droite === feuille) ||
-    (gauche === feuille && droite === ciseaux)
-    ? "perd"
-    : "gagne"
-}
-
-const pierreFeuilleCiseaux = (gauche: Main, droite: Main) => {
-  const resultat = quiGagne(gauche, droite)
-  return `${gauche} ${resultat} contre ${droite}`
-}
+import {
+  pierre,
+  feuille,
+  ciseaux,
+  pierreFeuilleCiseaux,
+} from "./pierreFeuilleCiseaux"
 
 describe("pierreFeuilleCiseaux", () => {
   it("pierre bat ciseaux", () => {
