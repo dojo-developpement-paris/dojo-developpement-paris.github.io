@@ -6,7 +6,7 @@ type Main = typeof pierre | typeof ciseaux | typeof feuille
 
 const pierreFeuilleCiseaux = (gauche: Main, droite: Main) =>
   gauche === pierre && droite === feuille
-    ? "pierre perd contre feuille"
+    ? `${gauche} perd contre ${droite}`
     : `${gauche} gagne contre ${droite}`
 
 describe("pierreFeuilleCiseaux", () => {
