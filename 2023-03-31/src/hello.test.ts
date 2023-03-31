@@ -1,7 +1,9 @@
 const pierre = "pierre"
 const ciseaux = "ciseaux"
 
-type Main = typeof pierre | typeof ciseaux
+const mains = [pierre, ciseaux] as const
+
+type Main = typeof mains[number]
 
 const pierreFeuilleCiseaux = (gauche: Main, droite: Main) =>
   "pierre gagne contre ciseaux"
