@@ -1,7 +1,13 @@
-const pfc = (tutu: string, tata: string) => "pierre gagne contre ciseaux"
+const pierreFeuilleCiseaux = (tutu: string, tata: string) =>
+  "pierre gagne contre ciseaux"
 
-describe("pfc", () => {
+const newLocal = "pierre"
+const newLocal_1 = "ciseaux"
+
+describe("pierreFeuilleCiseaux", () => {
   it("pierre bat ciseaux", () => {
-    expect(pfc("pierre", "ciseaux")).toEqual("pierre gagne contre ciseaux")
+    expect(pierreFeuilleCiseaux(newLocal, newLocal_1)).toEqual(
+      "pierre gagne contre ciseaux"
+    )
   })
 })
