@@ -12,6 +12,8 @@ const gagne = "gagne"
 
 type Resultat = typeof perd | typeof gagne | typeof egalise
 
+type Message = `${Main} ${Resultat} contre ${Main}`
+
 const plusFaibleQue = (element: Main): Main => {
   const indexCourant = mains.indexOf(element)
   const indexSuivant = indexCourant + 1
@@ -25,7 +27,7 @@ const quiGagne = (gauche: Main, droite: Main): Resultat => {
   return gagne
 }
 
-export const pierreFeuilleCiseaux = (gauche: Main, droite: Main) => {
+export const pierreFeuilleCiseaux = (gauche: Main, droite: Main): Message => {
   const resultat = quiGagne(gauche, droite)
   return `${gauche} ${resultat} contre ${droite}`
 }
