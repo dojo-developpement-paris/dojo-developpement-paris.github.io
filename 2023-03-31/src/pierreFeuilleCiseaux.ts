@@ -7,7 +7,8 @@ type Main = typeof pierre | typeof ciseaux | typeof feuille
 type Resultat = "perd" | "gagne"
 
 const quiGagne = (gauche: Main, droite: Main): Resultat => {
-  return (gauche === pierre && droite === feuille) ||
+  return (gauche === ciseaux && droite === pierre) ||
+    (gauche === pierre && droite === feuille) ||
     (gauche === feuille && droite === ciseaux)
     ? "perd"
     : "gagne"
