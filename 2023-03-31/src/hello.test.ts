@@ -5,7 +5,9 @@ const feuille = "feuille"
 type Main = typeof pierre | typeof ciseaux | typeof feuille
 
 const pierreFeuilleCiseaux = (gauche: Main, droite: Main) =>
-  `${gauche} gagne contre ${droite}`
+  gauche === pierre && droite === feuille
+    ? "pierre perd contre feuille"
+    : `${gauche} gagne contre ${droite}`
 
 describe("pierreFeuilleCiseaux", () => {
   it("pierre bat ciseaux", () => {
@@ -17,6 +19,12 @@ describe("pierreFeuilleCiseaux", () => {
   it("ciseaux bat feuille", () => {
     expect(pierreFeuilleCiseaux(ciseaux, feuille)).toEqual(
       "ciseaux gagne contre feuille"
+    )
+  })
+
+  it("pierre est battu par feuille", () => {
+    expect(pierreFeuilleCiseaux(pierre, feuille)).toEqual(
+      "pierre perd contre feuille"
     )
   })
 })
