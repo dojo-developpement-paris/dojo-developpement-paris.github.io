@@ -8,12 +8,15 @@ type Main = typeof mains[number]
 
 type Resultat = "perd" | "gagne"
 
+const plusFaibleQue = (element: Main): Main => {
+  const indexCourant = mains.indexOf(element)
+  const indexSuivant = indexCourant + 1
+  const indexSuivantCirculaire = indexSuivant % mains.length
+  return mains[indexSuivantCirculaire]
+}
+
 const quiGagne = (gauche: Main, droite: Main): Resultat => {
-  return (gauche === ciseaux && droite === pierre) ||
-    (gauche === pierre && droite === feuille) ||
-    (gauche === feuille && droite === ciseaux)
-    ? "perd"
-    : "gagne"
+  return gauche === plusFaibleQue(droite) ? "perd" : "gagne"
 }
 
 export const pierreFeuilleCiseaux = (gauche: Main, droite: Main) => {
