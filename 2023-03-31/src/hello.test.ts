@@ -4,7 +4,9 @@ const feuille = "feuille"
 
 type Main = typeof pierre | typeof ciseaux | typeof feuille
 
-const quiGagne = (gauche: string, droite: string): string => {
+type Resultat = "perd" | "gagne"
+
+const quiGagne = (gauche: Main, droite: Main): Resultat => {
   return (gauche === pierre && droite === feuille) ||
     (gauche === feuille && droite === ciseaux)
     ? "perd"
