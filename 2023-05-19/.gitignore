@@ -1,0 +1,7 @@
+# Erlang
+*.beam
+
+# Nix
+.direnv
+result
+
