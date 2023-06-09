@@ -14,7 +14,7 @@ triangle n =
             triangle 1 ++ [ [ 1, 1 ] ]
 
         _ ->
-            [ [ 1 ], [ 1, 1 ], [ 1, 2, 1 ] ]
+            triangle 2 ++ [ [ 1, 2, 1 ] ]
 
 
 suite : Test
