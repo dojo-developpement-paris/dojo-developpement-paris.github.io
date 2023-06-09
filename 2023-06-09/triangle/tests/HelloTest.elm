@@ -11,7 +11,7 @@ triangle n =
             [ [ 1 ] ]
 
         2 ->
-            triangle 1 ++ [ [ 1, 1 ] ]
+            triangle 1 ++ [ triangle_ [ 1 ] ]
 
         _ ->
             triangle 2 ++ [ triangle_ [ 1, 1 ] ]
