@@ -14,7 +14,7 @@ triangle n =
             triangle 1 ++ [ triangle_ [ 1 ] ]
 
         _ ->
-            triangle 2 ++ [ triangle_ [ 1, 1 ] ]
+            triangle 2 ++ [ triangle_ (triangle_ [ 1 ]) ]
 
 
 triangle_ : List Int -> List Int
