@@ -10,8 +10,11 @@ triangle n =
         1 ->
             [ [ 1 ] ]
 
-        _ ->
+        2 ->
             [ [ 1 ], [ 1, 1 ] ]
+
+        _ ->
+            [ [ 1 ], [ 1, 1 ], [ 1, 2, 1 ] ]
 
 
 suite : Test
@@ -23,4 +26,7 @@ suite =
         , test "triangle de 2 donne une liste de listes qui contient 1 et 1 1" <|
             \_ ->
                 Expect.equal (triangle 2) [ [ 1 ], [ 1, 1 ] ]
+        , test "triangle de 3 donne une liste de listes qui contient 1 et 1 1 et 1 2 1" <|
+            \_ ->
+                Expect.equal (triangle 3) [ [ 1 ], [ 1, 1 ], [ 1, 2, 1 ] ]
         ]
