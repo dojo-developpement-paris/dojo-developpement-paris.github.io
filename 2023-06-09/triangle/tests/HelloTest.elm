@@ -11,7 +11,7 @@ triangle n =
             [ [ 1 ] ]
 
         2 ->
-            triangle 1 ++ [ triangle_ [ 1 ] ]
+            triangle 1 ++ [ iterate 1 [ 1 ] ]
 
         3 ->
             triangle 2 ++ [ triangle_ (triangle_ [ 1 ]) ]
@@ -23,6 +23,16 @@ triangle n =
 triangle_ : List Int -> List Int
 triangle_ previous =
     List.map2 (+) (0 :: previous) (previous ++ [ 0 ])
+
+
+iterate : Int -> List Int -> List Int
+iterate x arg =
+    case x of
+        1 ->
+            triangle_ arg
+
+        _ ->
+            triangle_ arg
 
 
 suite : Test
