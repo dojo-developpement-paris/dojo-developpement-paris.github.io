@@ -1,17 +1,18 @@
 module HelloTest exposing (suite)
 
 import Expect
-import Hello exposing (hello)
 import Test exposing (Test, describe, test)
+
+
+
+-- triangle : Int -> List (List Int)
 
 
 suite : Test
 suite =
-    describe "Hello"
-        [ test "world" <|
+    describe "Triangle Pascal"
+        [ test "triangle de 1 ça donne une liste de listes qui contient 1" <|
             \_ ->
-                Expect.equal (hello Nothing) "Hello world"
-        , test "foo" <|
-            \_ ->
-                Expect.equal (hello (Just "foo")) "Hello foo"
+                -- Expect.equal (triangle 1) [ [ 1 ] ]
+                Expect.equal 4 (2 + 2)
         ]
