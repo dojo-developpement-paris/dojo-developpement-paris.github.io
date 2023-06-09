@@ -14,7 +14,7 @@ triangle n =
             triangle 1 ++ [ iterate 1 [ 1 ] ]
 
         3 ->
-            triangle 2 ++ [ lastLine (lastLine [ 1 ]) ]
+            triangle 2 ++ [ iterate 2 [ 1 ] ]
 
         _ ->
             triangle 3 ++ [ lastLine (lastLine (lastLine [ 1 ])) ]
@@ -30,6 +30,9 @@ iterate x arg =
     case x of
         1 ->
             lastLine arg
+
+        2 ->
+            lastLine (lastLine arg)
 
         _ ->
             lastLine arg
