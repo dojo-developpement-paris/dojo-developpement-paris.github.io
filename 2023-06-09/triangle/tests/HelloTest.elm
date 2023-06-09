@@ -14,7 +14,12 @@ triangle n =
             triangle 1 ++ [ [ 1, 1 ] ]
 
         _ ->
-            triangle 2 ++ [ List.map2 (+) [ 1, 1, 0 ] [ 0, 1, 1 ] ]
+            triangle 2 ++ [ triangle_ [ 1, 1 ] ]
+
+
+triangle_ : List Int -> List Int
+triangle_ previous =
+    List.map2 (+) (0 :: previous) (previous ++ [ 0 ])
 
 
 suite : Test
