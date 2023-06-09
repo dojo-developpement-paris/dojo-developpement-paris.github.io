@@ -13,8 +13,11 @@ triangle n =
         2 ->
             triangle 1 ++ [ triangle_ [ 1 ] ]
 
-        _ ->
+        3 ->
             triangle 2 ++ [ triangle_ (triangle_ [ 1 ]) ]
+
+        _ ->
+            triangle 3 ++ [ triangle_ (triangle_ (triangle_ [ 1 ])) ]
 
 
 triangle_ : List Int -> List Int
@@ -34,4 +37,7 @@ suite =
         , test "triangle de 3 donne une liste de listes qui contient 1 et 1 1 et 1 2 1" <|
             \_ ->
                 Expect.equal (triangle 3) [ [ 1 ], [ 1, 1 ], [ 1, 2, 1 ] ]
+        , test "triangle de 4 donne une liste de listes qui contient 1 et 1 1 et 1 2 1 et 1 3 3 1" <|
+            \_ ->
+                Expect.equal (triangle 4) [ [ 1 ], [ 1, 1 ], [ 1, 2, 1 ], [ 1, 3, 3, 1 ] ]
         ]
