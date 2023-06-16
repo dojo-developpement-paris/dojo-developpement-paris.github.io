@@ -1,0 +1,5 @@
+{
+    "haskell.formattingProvider": "fourmolu",
+    "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
+    "editor.formatOnSave": true,
+}
