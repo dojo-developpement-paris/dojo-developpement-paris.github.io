@@ -1,0 +1,19 @@
+test:
+	cargo test
+
+
+format:
+	cargo fmt
+
+
+update:
+	nix flake update
+	direnv exec . \
+		nix develop ".#update_rust_toolchain_to_the_latest_stable_version" --command \
+			./update_rust_toolchain_to_the_latest_stable_version.sh
+	direnv exec . \
+		nix develop --command \
+			cargo update
+
+
+.PHONY: test format update
