@@ -17,7 +17,7 @@ _get_first() {
 }
 
 last_readme() {
-    ls -r -d 20*/README.md |
+    ls -r -d 20*/*/*/README.md |
         _get_first |
         xargs cat
 }
@@ -44,7 +44,7 @@ elected_subject() {
 create_today_folder() {
     TODAY="$1"
 
-    mkdir "${TODAY}"
+    mkdir -p "${TODAY}"
     cp README.md "${TODAY}/"
     git add --intent-to-add "${TODAY}/"
 }
@@ -65,7 +65,7 @@ main() {
     LAST_SUBJECT=$(last_readme | elected_subject)
     info "the last elected subject was : ${LAST_SUBJECT}"
 
-    TODAY=$(date -I"date")
+    TODAY=$(date "+%Y/%m/%d")
     info "create a new folder for today ${TODAY}"
     create_today_folder "${TODAY}"
 
