@@ -60,7 +60,7 @@ replace_in_place() {
 
 main() {
     set -o errexit
-    set -o xtrace
+    # set -o xtrace
 
     LAST_SUBJECT=$(last_readme | elected_subject)
     info "the last elected subject was : ${LAST_SUBJECT}"
