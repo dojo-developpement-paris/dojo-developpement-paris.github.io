@@ -35,7 +35,7 @@ Méthode de vote :
 - ex : sujets = 5, points = 2 => 2 votes, à 1 et 2 points
 
 Nous ne sommes pas télépathes :
-si vous ne dites pas que vous ne comprennez pas, on ne peut pas le savoir ;
+si vous ne dites pas que vous ne comprenez pas, on ne peut pas le savoir ;
 il n'y a donc **pas de questions stupides**
 
 Nous faisons généralement du [TDD](https://fr.wikipedia.org/wiki/Test_driven_development) ;
