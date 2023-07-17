@@ -7,6 +7,7 @@ Personnes présentes :
 - Joseph
 - Lucas
 - pin
+- Tahir
 
 Retro :
 - Python - Mob - Change
