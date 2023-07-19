@@ -31,6 +31,7 @@ mod test {
     fn pierre_bat_ciseaux() {
         assert_that(&pcf(Element::Pierre, Element::Ciseaux))
             .is_equal_to(Verdict::Gauche(Element::Pierre));
+
         assert_that(&pcf(Element::Ciseaux, Element::Pierre))
             .is_equal_to(Verdict::Droite(Element::Pierre));
     }
