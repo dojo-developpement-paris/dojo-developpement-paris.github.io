@@ -19,6 +19,9 @@ fn pcf(gauche: Element, droite: Element) -> Verdict {
     if droite == Element::Pierre {
         return Verdict::Droite(Element::Pierre);
     }
+    if droite == Element::Feuille && gauche == Element::Pierre {
+        return Verdict::Droite(Element::Feuille);
+    }
     Verdict::Gauche(gauche)
 }
 
@@ -40,6 +43,12 @@ mod test {
     fn ciseaux_bat_feuille() {
         assert_that(&pcf(Element::Ciseaux, Element::Feuille))
             .is_equal_to(Verdict::Gauche(Element::Ciseaux))
+    }
+
+    #[test]
+    fn feuille_bat_pierre() {
+        assert_that(&pcf(Element::Pierre, Element::Feuille))
+            .is_equal_to(Verdict::Droite(Element::Feuille))
     }
 
     #[test]
