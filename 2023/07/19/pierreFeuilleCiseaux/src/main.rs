@@ -43,7 +43,11 @@ mod test {
     }
 
     #[test]
-    fn ciseaux_egalent_ciseaux() {
-        assert_that(&pcf(Element::Ciseaux, Element::Ciseaux)).is_equal_to(Verdict::Egalite)
+    fn mains_egalent_font_une_egalite() {
+        assert_that(&pcf(Element::Ciseaux, Element::Ciseaux)).is_equal_to(Verdict::Egalite);
+
+        assert_that(&pcf(Element::Feuille, Element::Feuille)).is_equal_to(Verdict::Egalite);
+
+        assert_that(&pcf(Element::Pierre, Element::Pierre)).is_equal_to(Verdict::Egalite);
     }
 }
