@@ -1,13 +1,3 @@
-fn pcf(gauche: Element, droite: Element) -> Verdict {
-    if gauche == droite {
-        return Verdict::Egalite;
-    }
-    if droite == Element::Pierre {
-        return Verdict::Droite(Element::Pierre);
-    }
-    Verdict::Gauche(gauche)
-}
-
 #[derive(Debug, PartialEq)]
 enum Element {
     Pierre,
@@ -20,6 +10,16 @@ enum Verdict {
     Gauche(Element),
     Droite(Element),
     Egalite,
+}
+
+fn pcf(gauche: Element, droite: Element) -> Verdict {
+    if gauche == droite {
+        return Verdict::Egalite;
+    }
+    if droite == Element::Pierre {
+        return Verdict::Droite(Element::Pierre);
+    }
+    Verdict::Gauche(gauche)
 }
 
 #[cfg(test)]
