@@ -7,7 +7,7 @@ fn hello(name: Option<&str>) -> String {
 }
 
 fn pcf(gauche: Element, droite: Element) -> Element {
-    Element::Pierre
+    gauche
 }
 
 #[derive(Debug, PartialEq)]
@@ -25,5 +25,10 @@ mod test {
     #[test]
     fn pierre_bat_ciseaux() {
         assert_that(&pcf(Element::Pierre, Element::Ciseaux)).is_equal_to(Element::Pierre)
+    }
+
+    #[test]
+    fn ciseaux_bat_feuille() {
+        assert_that(&pcf(Element::Ciseaux, Element::Feuille)).is_equal_to(Element::Ciseaux)
     }
 }
