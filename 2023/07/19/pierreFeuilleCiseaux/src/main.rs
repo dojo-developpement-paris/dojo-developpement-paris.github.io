@@ -7,6 +7,9 @@ fn hello(name: Option<&str>) -> String {
 }
 
 fn pcf(gauche: Element, droite: Element) -> Element {
+    if gauche == droite {
+        return Element::Null;
+    }
     gauche
 }
 
@@ -15,6 +18,7 @@ enum Element {
     Pierre,
     Ciseaux,
     Feuille,
+    Null,
 }
 
 #[cfg(test)]
@@ -30,5 +34,10 @@ mod test {
     #[test]
     fn ciseaux_bat_feuille() {
         assert_that(&pcf(Element::Ciseaux, Element::Feuille)).is_equal_to(Element::Ciseaux)
+    }
+
+    #[test]
+    fn ciseaux_egalent_ciseaux() {
+        assert_that(&pcf(Element::Ciseaux, Element::Ciseaux)).is_equal_to(Element::Null)
     }
 }
