@@ -6,6 +6,10 @@ fn hello(name: Option<&str>) -> String {
     format!("Hello {}", name.unwrap_or("world"))
 }
 
+fn pcf(gauche: Element, droite: Element) -> Element {
+    Element::Pierre
+}
+
 #[derive(Debug, PartialEq)]
 enum Element {
     Pierre,
@@ -20,7 +24,6 @@ mod test {
 
     #[test]
     fn pierre_bat_ciseaux() {
-        //assert_that(&pcf(Pierre, Ciseaux)).is_equal_to(Pierre)
-        assert_that(&Element::Pierre).is_equal_to(Element::Pierre)
+        assert_that(&pcf(Element::Pierre, Element::Ciseaux)).is_equal_to(Element::Pierre)
     }
 }
