@@ -1,11 +1,3 @@
-fn main() {
-    println!("{}", hello(None));
-}
-
-fn hello(name: Option<&str>) -> String {
-    format!("Hello {}", name.unwrap_or("world"))
-}
-
 fn pcf(gauche: Element, droite: Element) -> Verdict {
     if gauche == droite {
         return Verdict::Egalite;
