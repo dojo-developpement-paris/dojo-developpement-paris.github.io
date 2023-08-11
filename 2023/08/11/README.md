@@ -14,6 +14,8 @@ Personnes présentes :
 - Isra
 - Minh
 - pin
+- Lilian
+- Ismaël
 
 Retro :
 - prochain coup possible d'une partie d'un jeu d'échec - python - fishbowl
