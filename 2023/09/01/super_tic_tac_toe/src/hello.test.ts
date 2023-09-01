@@ -18,11 +18,12 @@ class Game {
   }
 
   is_legal() {
-    if (this.moves.length === 0) {
-      return true
+    if (this.moves.length !== 0) {
+      if (this.moves[1][0] == this.moves[0][1]) return true
+      return false
     }
 
-    return false
+    return true
   }
 }
 
@@ -41,10 +42,10 @@ describe("a game", () => {
     const initial_game = new Game([move, same_move])
     expect(initial_game.is_legal()).toBe(false)
   })
-  // it("the next move should be in the right grid", () => {
-  //     const move = [Coord.MID, Coord.TOP_LEFT]
-  //     const next = [Coord.TOP_LEFT, Coord.MID]
-  //     const initial_game = new Game([move, next])
-  //     expect(initial_game.is_legal()).toBe(true)
-  // })
+  it("the next move should be in the right grid", () => {
+    const move = [Coord.MID, Coord.TOP_LEFT]
+    const next = [Coord.TOP_LEFT, Coord.MID]
+    const initial_game = new Game([move, next])
+    expect(initial_game.is_legal()).toBe(true)
+  })
 })
