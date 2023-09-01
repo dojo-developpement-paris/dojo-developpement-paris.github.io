@@ -1,12 +1,18 @@
 import { describe, expect, it } from "vitest"
-import { hello } from "./hello"
 
-describe("hello", () => {
-  it("world", () => {
-    expect(hello()).toEqual("Hello world")
-  })
+class Game {
+  moves
+  constructor(moves) {
+    this.moves = moves
+  }
+  is_won() {
+    return false
+  }
+}
 
-  it("foo", () => {
-    expect(hello("foo")).toEqual("Hello foo")
+describe("a game", () => {
+  it("is initially not won", () => {
+    let initial_game = new Game([])
+    expect(initial_game.is_won()).toBe(false)
   })
 })
