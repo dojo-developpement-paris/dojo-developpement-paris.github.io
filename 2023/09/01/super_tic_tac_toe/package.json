@@ -1,0 +1,17 @@
+{
+  "name": "typescript_node_vitest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "hello": "vite-node --script src/main.ts",
+    "format": "prettier --write src",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "2.7.1",
+    "vite-node": "^0.34.2",
+    "vitest": "^0.31.1"
+  }
+}
