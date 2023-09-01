@@ -31,7 +31,7 @@ describe("a game", () => {
     const initial_game = new Game([])
     expect(initial_game.is_legal()).toBe(true)
   })
-  it("moves", () => {
+  it("two moves on the same place is illegal", () => {
     const move = [Coord.MID, Coord.TOP_LEFT]
     const same_move = move
     const initial_game = new Game([move, same_move])
