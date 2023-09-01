@@ -12,7 +12,7 @@ class Game {
 
 describe("a game", () => {
   it("is initially not won", () => {
-    let initial_game = new Game([])
+    const initial_game = new Game([])
     expect(initial_game.is_won()).toBe(false)
   })
 })
