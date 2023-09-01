@@ -18,6 +18,9 @@ class Game {
   }
 
   is_legal() {
+    //Ca devrait marcher mais le langage est pourri
+    if (new Set(this.moves).size !== this.moves.length) return false
+
     if (this.moves.length !== 0) {
       return this.moves[1][0] == this.moves[0][1]
     }
@@ -46,5 +49,13 @@ describe("a game", () => {
     const next = [Coord.TOP_LEFT, Coord.MID]
     const initial_game = new Game([move, next])
     expect(initial_game.is_legal()).toBe(true)
+  })
+  it("the next move should be in the right grid", () => {
+    const move = [Coord.MID, Coord.TOP_LEFT]
+    const next = [Coord.TOP_LEFT, Coord.MID]
+    const next2 = [Coord.MID, Coord.TOP_LEFT]
+
+    const initial_game = new Game([move, next, next2])
+    expect(initial_game.is_legal()).toBe(false)
   })
 })
