@@ -10,7 +10,7 @@ class Game {
   }
 
   is_legal() {
-    return true
+    return this.moves.length === 0
   }
 }
 
@@ -22,5 +22,12 @@ describe("a game", () => {
   it("no moves is legal", () => {
     const initial_game = new Game([])
     expect(initial_game.is_legal()).toBe(true)
+  })
+  it("moves", () => {
+    const big_grid = [0, 0]
+    const sub_grid = [0, 0]
+    const move = [big_grid, sub_grid]
+    const initial_game = new Game([move, move])
+    expect(initial_game.is_legal()).toBe(false)
   })
 })
