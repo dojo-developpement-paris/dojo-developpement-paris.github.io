@@ -8,3 +8,4 @@
   - [x] 2 coups au meme endroit
   - [ ] coup qui ne respecte pas le coup précédent
   - [ ] coup libre lorsque une sous grille est finie
+- alternance des joueurs
