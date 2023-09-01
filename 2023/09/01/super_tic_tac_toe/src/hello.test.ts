@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest"
 
+enum Coord {
+  TOP_LEFT,
+  TOP_MID,
+  TOP_RIGHT,
+  MID_LEFT,
+  MID,
+}
+
 class Game {
   moves
   constructor(moves) {
@@ -24,9 +32,7 @@ describe("a game", () => {
     expect(initial_game.is_legal()).toBe(true)
   })
   it("moves", () => {
-    const big_grid = [0, 0]
-    const sub_grid = [0, 0]
-    const move = [big_grid, sub_grid]
+    const move = [Coord.MID, Coord.TOP_LEFT]
     const initial_game = new Game([move, move])
     expect(initial_game.is_legal()).toBe(false)
   })
