@@ -33,7 +33,8 @@ describe("a game", () => {
   })
   it("moves", () => {
     const move = [Coord.MID, Coord.TOP_LEFT]
-    const initial_game = new Game([move, move])
+    const same_move = move
+    const initial_game = new Game([move, same_move])
     expect(initial_game.is_legal()).toBe(false)
   })
 })
