@@ -19,8 +19,7 @@ class Game {
 
   is_legal() {
     if (this.moves.length !== 0) {
-      if (this.moves[1][0] == this.moves[0][1]) return true
-      return false
+      return this.moves[1][0] == this.moves[0][1]
     }
 
     return true
