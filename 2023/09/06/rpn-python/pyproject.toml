@@ -1,0 +1,21 @@
+[build.system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tools.setuptools.packages.find]
+where = ["src"]
+namespace = false
+
+[project]
+name = "CHANGE-ME"
+authors = [
+    {name = "Lucas Hermann", email = "herm.lucas@gmail.com"},
+]
+description = "CHANGE-ME"
+readme = "README.md"
+dynamic = ["version"]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+hello-world = "helloWorld:main"
