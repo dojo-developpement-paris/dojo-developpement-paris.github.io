@@ -1,0 +1,8 @@
+{
+  "packages": [
+    "clang@latest",
+    "clang-tools@latest",
+    "mask@latest",
+    "watchexec@latest"
+  ]
+}
