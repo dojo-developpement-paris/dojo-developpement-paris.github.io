@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "pinage404.nix-extension-pack",
+        "zixuanchen.vitest-explorer",
+    ]
+}
