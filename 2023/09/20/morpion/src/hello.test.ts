@@ -1,12 +1,9 @@
 import { describe, expect, it } from "vitest"
-import { hello } from "./hello"
+import { initialGame, GAME_STATE } from "./tictactoe"
 
 describe("hello", () => {
-  it("world", () => {
-    expect(hello()).toEqual("Hello world")
-  })
-
-  it("foo", () => {
-    expect(hello("foo")).toEqual("Hello foo")
+  it("une partie dans l'état initial est en cours", () => {
+    const game = initialGame()
+    expect(game.status()).toEqual(GAME_STATE.IN_PROGRESS)
   })
 })
