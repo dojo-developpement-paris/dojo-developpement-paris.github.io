@@ -7,6 +7,7 @@ Personnes présentes :
 - Tchong
 - Emmanuel
 - Lucas
+- Lilian
 
 Retro :
 - Interpreter d'expresion en RPN - C - Mob
@@ -58,3 +59,12 @@ il n'y a donc **pas de questions stupides**
 
 Nous faisons généralement du [TDD](https://fr.wikipedia.org/wiki/Test_driven_development) ;
 Ce n'est pas une obligation
+
+Que faire pour partir content-e :
+
+- fonctionnel +1 +1
+- passer directement le tableau
+- communiquer avec un haut niveau d'abstraction pour donner son intention +1 +1 +1
+- POO avec état
+- ne pas s'embêter avec la représentation de l'input +1
+- voir plus / des personnes différentes aux roles non-mobbers
