@@ -6,8 +6,6 @@ export enum GAME_STATE {
   TIE = "TIE",
 }
 
-export const initialGame = () => ({
-  status() {
-    return GAME_STATE.X_TO_PLAY
-  },
-})
+export function tictactoe(game: string = "         "): GAME_STATE {
+  return GAME_STATE.X_TO_PLAY
+}
