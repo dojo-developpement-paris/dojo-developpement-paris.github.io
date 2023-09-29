@@ -1,0 +1,24 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "cargo-watch@latest": {
+      "last_modified": "2023-08-30T00:25:28Z",
+      "resolved": "github:NixOS/nixpkgs/a63a64b593dcf2fe05f7c5d666eb395950f36bc9#cargo-watch",
+      "source": "devbox-search",
+      "version": "8.4.0"
+    },
+    "mask@latest": {
+      "last_modified": "2023-08-30T00:25:28Z",
+      "resolved": "github:NixOS/nixpkgs/a63a64b593dcf2fe05f7c5d666eb395950f36bc9#mask",
+      "source": "devbox-search",
+      "version": "0.11.3"
+    },
+    "rustup@latest": {
+      "last_modified": "2023-08-30T00:25:28Z",
+      "plugin_version": "0.0.1",
+      "resolved": "github:NixOS/nixpkgs/a63a64b593dcf2fe05f7c5d666eb395950f36bc9#rustup",
+      "source": "devbox-search",
+      "version": "1.26.0"
+    }
+  }
+}
