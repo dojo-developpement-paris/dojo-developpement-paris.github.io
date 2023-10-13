@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "clang@latest",
+    "clang-tools@latest",
+    "mask@latest",
+    "watchexec@latest",
+    "bashinteractive@latest",
+    "cmake@latest",
+    "python@latest"
+  ]
+}

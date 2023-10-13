@@ -1,0 +1,14 @@
+/build_meson/
+/subprojects/Catch2-*/
+/subprojects/packagecache/
+/cmake-build-*/
+.idea
+
+CMakeFiles/
+_deps/
+.direnv/
+Makefile
+*.a
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake

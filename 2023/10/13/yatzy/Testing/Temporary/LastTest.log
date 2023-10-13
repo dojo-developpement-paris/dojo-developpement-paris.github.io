@@ -1,0 +1,56 @@
+Start testing: Oct 13 20:55 CEST
+----------------------------------------------------------
+1/1 Testing: sample_test_gtest
+1/1 Test: sample_test_gtest
+Command: "/home/pinage404/Project/meetup/dojo-developpement-paris.github.io/2023/10/13/yatzy/test-gtest/sample_test_gtest"
+Directory: /home/pinage404/Project/meetup/dojo-developpement-paris.github.io/2023/10/13/yatzy/test-gtest
+"sample_test_gtest" start time: Oct 13 20:55 CEST
+Output:
+----------------------------------------------------------
+[==========] Running 15 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 15 tests from Yatzy
+[ RUN      ] Yatzy.Chance_scores_sum_of_all_dice
+[       OK ] Yatzy.Chance_scores_sum_of_all_dice (0 ms)
+[ RUN      ] Yatzy.Yatzy_scores_50
+[       OK ] Yatzy.Yatzy_scores_50 (0 ms)
+[ RUN      ] Yatzy.Test_1s
+[       OK ] Yatzy.Test_1s (0 ms)
+[ RUN      ] Yatzy.test_2s
+[       OK ] Yatzy.test_2s (0 ms)
+[ RUN      ] Yatzy.test_threes
+[       OK ] Yatzy.test_threes (0 ms)
+[ RUN      ] Yatzy.fours_test
+[       OK ] Yatzy.fours_test (0 ms)
+[ RUN      ] Yatzy.fives
+[       OK ] Yatzy.fives (0 ms)
+[ RUN      ] Yatzy.sixes_test
+[       OK ] Yatzy.sixes_test (0 ms)
+[ RUN      ] Yatzy.one_pair
+[       OK ] Yatzy.one_pair (0 ms)
+[ RUN      ] Yatzy.two_Pair
+[       OK ] Yatzy.two_Pair (0 ms)
+[ RUN      ] Yatzy.three_of_a_kind
+[       OK ] Yatzy.three_of_a_kind (0 ms)
+[ RUN      ] Yatzy.four_of_a_knd
+[       OK ] Yatzy.four_of_a_knd (0 ms)
+[ RUN      ] Yatzy.smallStraight
+[       OK ] Yatzy.smallStraight (0 ms)
+[ RUN      ] Yatzy.largeStraight
+[       OK ] Yatzy.largeStraight (0 ms)
+[ RUN      ] Yatzy.fullHouse
+[       OK ] Yatzy.fullHouse (0 ms)
+[----------] 15 tests from Yatzy (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 15 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 15 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"sample_test_gtest" end time: Oct 13 20:55 CEST
+"sample_test_gtest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 13 20:55 CEST
