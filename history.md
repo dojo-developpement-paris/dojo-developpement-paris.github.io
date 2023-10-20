@@ -131,3 +131,4 @@ Since :
 
 * the term [Dojo](https://en.wikipedia.org/wiki/Dojo#Computer-related) is commonly used by the developer community without knowing this story
 * [there are many Coding Dojos around the world](https://codingdojo.org/practices/CodingDojos/)
+* [the group](https://www.meetup.com/dojo-developpement-paris/) (at the time of writing) has over 1600+ members
