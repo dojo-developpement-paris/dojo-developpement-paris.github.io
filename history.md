@@ -1,5 +1,7 @@
 # History
 
+This is the story of the first Coding Dojo in the world.
+
 ## Before the dojo
 
 ### Wiki
