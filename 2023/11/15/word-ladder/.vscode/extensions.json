@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "jetpack-io.devbox",
+        "ms-python.black-formatter",
+        "ms-python.flake8",
+        "ms-python.isort",
+        "ms-python.python",
+        "pinage404.common-configuration-languages-extension-pack",
+        "pinage404.nix-extension-pack",
+    ]
+}

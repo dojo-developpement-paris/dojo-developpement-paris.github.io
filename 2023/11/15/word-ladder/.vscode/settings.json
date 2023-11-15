@@ -1,0 +1,11 @@
+{
+    "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
+    "devbox.autoShellOnTerminal": false,
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+    },
+}
