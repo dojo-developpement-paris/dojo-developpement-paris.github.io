@@ -1,0 +1,5 @@
+/out/production/JeuDeLaVie/life/light/dev/*.class
+/.idea/workspace.xml
+/.idea/jpa-buddy.xml
+*.iml
+*.idea
