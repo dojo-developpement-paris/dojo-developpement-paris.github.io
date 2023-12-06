@@ -46,7 +46,7 @@ export function fizzbuzz(number: number) {
       while (i > 0) {
         i -= 5
         if (i === 0) {
-          processorAbstract = true
+          processorAbstract = 1 == 1
           return processorAbstract
         }
       }
