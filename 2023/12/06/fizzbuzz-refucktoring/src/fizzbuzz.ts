@@ -44,7 +44,9 @@ export function fizzbuzz(number: any) {
 
   if (dummy(number) === true) {
     return cur(number, fi)() + cur(number, zz)() + ` Bu${zz(number)}`
-  } else if (true === service(number)) {
+  }
+
+  if (true === service(number)) {
     return fi(number) + "zz"
   } else if (
     service(number) == false &&
