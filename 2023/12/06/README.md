@@ -1,63 +1,44 @@
-Prochaine session : le 15/12/2023 à CodeWorks
+# TypeScript with formatting and test with Jest on NodeJS
 
-Personnes présentes :
-- ToF
-- William
-- Isra
-- Tom
-- Gregory
-- Simon
-- Sammed
-- Janin
-- Vanande
-- Anne-Sophie
-- Mohammed
-- Ludmila
-- Birame
-- pin
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#WORKDIR=typescript_node_jest/https://gitlab.com/pinage404/nix-sandboxes)
 
-Retro :
-- Parser Json en C - Mob
-  - burk
-  - on voulait parser du JSON mais on a juste validé du JSON
-  - on a fait une simple moulinette en repoussant le vrai problème du parsing
-  - l'ambition de départ a été réduire en cours de route
-  - ToF ne comprends pas pourquoi c'est le sujet qui a été choisi par le groupe
-  - la séance était bien
-  - triste parce qu'on a fait 25 tests avec un espoir d'en faire 250
+<details>
+<summary>⚠️ Gitpod will open the root folder</summary>
 
-Explication des règles :
-- Tout le monde peut proposer un sujet
-- Tout langage est accepté, à 2 conditions :
-  - au moins une personne connait ce langage
-  - quelqu'un a un environnement de pret
+Due to [some limitations of Gitpod](https://github.com/gitpod-io/gitpod/issues/5521), we cannot simply open a sub-folder
 
-Le **but** est d'**apprendre**, si possible en s'amusant ;
-Le but n'est **pas de finir**
+Opening in Gitpod will open the root folder
 
-Sujets :
-- ********** - A - word ladder - mob - common lisp -> Cat => Dog ; Cat -> Cot -> Cog -> Dog
-- ****** - B - day 5 advent of code 2023 uniquement la partie 2 - mob - java
-- ************* - C - refucktoring fizz buzz - fishbowl TCR - typescript
-- ********* - D - générateur de nonogramme - mob - python
-- **** - E - word ladder en utilisant la fréquence des lettres - mob - python
+Two terminals will be opened :
 
-Modes de fonctionnement habituels :
-- Mob : 1 typist + les autres naviguent
-- Randori : chaque personne prend le clavier pendant 5 minutes
-- Kata : 1 personne fait une démo + les autres donnent du feed back
-- Fishbowl : [Définition](https://en.wikipedia.org/wiki/Fishbowl_(conversation))
-- TCR : [Définition `test && commit || revert`](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
-- Orientation : On coupe la séance en plusieurs sous-séances,
-  et entre chaque séance on fait une rétro/orientation.
+1. the first in the root folder
+2. the second in the target folder
 
-Méthode de vote :
-- points = nombre de sujets divisé 2 arrondi à l'entier inférieur
-- ex : sujets = 5, points = 2 => 2 votes, à 1 et 2 points
+Both terminals automatically load the environment of their current folder
 
-Nous ne sommes pas télépathes :
-si vous ne dites pas que vous ne comprenez pas, on ne peut pas le savoir ;
-il n'y a donc **pas de questions stupides**
+![Screenshot of Gitpod showing two terminals open, the second being open in the target folder](../gitpod.png)
 
-Nous faisons généralement du [TDD](https://fr.wikipedia.org/wiki/Test_driven_development) ;
-Ce n'est pas une obligation
+</details>
+
+Or with [Nix](https://nixos.org)
+
+```sh
+NIX_CONFIG="extra-experimental-features = flakes nix-command" \
+nix flake new --template "gitlab:pinage404/nix-sandboxes#typescript_node_jest" ./your_new_project_directory
+```
+
+---
+
+[Available commands](./maskfile.md)
+
+Or just execute
+
+```sh
+mask help
+```
+
+---
+
+[Awesome Node.JS](https://github.com/sindresorhus/awesome-nodejs#contents)
+
+[Awesome JavaScript](https://github.com/sorrycc/awesome-javascript#readme)

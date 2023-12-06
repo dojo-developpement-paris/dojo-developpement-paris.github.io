@@ -1,0 +1,23 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "bashinteractive@latest": {
+      "last_modified": "2023-09-21T17:52:43Z",
+      "resolved": "github:NixOS/nixpkgs/e12483116b3b51a185a33a272bf351e357ba9a99#bashInteractive",
+      "source": "devbox-search",
+      "version": "5.2-p15"
+    },
+    "mask@latest": {
+      "last_modified": "2023-08-30T00:25:28Z",
+      "resolved": "github:NixOS/nixpkgs/a63a64b593dcf2fe05f7c5d666eb395950f36bc9#mask",
+      "source": "devbox-search",
+      "version": "0.11.3"
+    },
+    "nodejs@latest": {
+      "last_modified": "2023-08-30T00:25:28Z",
+      "resolved": "github:NixOS/nixpkgs/a63a64b593dcf2fe05f7c5d666eb395950f36bc9#nodejs_20",
+      "source": "devbox-search",
+      "version": "20.5.1"
+    }
+  }
+}

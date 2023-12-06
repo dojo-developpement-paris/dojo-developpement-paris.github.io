@@ -1,0 +1,7 @@
+{
+  "packages": [
+    "nodejs@latest",
+    "mask@latest",
+    "bashinteractive@latest"
+  ]
+}
