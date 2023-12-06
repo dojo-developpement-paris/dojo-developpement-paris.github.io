@@ -20,23 +20,23 @@ const service = (tutu: number) => {
   return false
 }
 
-function helperImpl(tutu: number) {
-  let i = tutu
-  while (i > 0) {
-    i -= 5
-    if (i === 0) {
-      return true
-    }
-  }
-  return false
-}
-
 export function fizzbuzz(number: number) {
   if (dummy(number)) {
     return "Fizz Buzz"
   } else if (service(number)) {
     return "Fizz"
-  } else if (helperImpl(number)) {
+  } else if (
+    (function helperImpl(tutu: number) {
+      let i = tutu
+      while (i > 0) {
+        i -= 5
+        if (i === 0) {
+          return true
+        }
+      }
+      return false
+    })(number)
+  ) {
     return "Buzz"
   }
   return "" + number
