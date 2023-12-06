@@ -64,7 +64,7 @@ export function fizzbuzz(number: number) {
     })(number) &&
     processorAbstract
   ) {
-    return `${bu(number) + "zz"}`
+    return `${cur(number, bu)() + "zz"}`
   }
   return "" + number
 }
