@@ -20,6 +20,14 @@ const service = (tutu: number) => {
   return false
 }
 
+function fi(builderHelper: number) {
+  return "Fi"
+}
+
+function bu(implBuilder: number) {
+  return "Bu"
+}
+
 function zz(helperExecutor: number) {
   return "zz"
 }
@@ -28,7 +36,7 @@ export function fizzbuzz(number: number) {
   if (dummy(number)) {
     return "Fi" + zz(number) + ` Bu${zz(number)}`
   } else if (service(number)) {
-    return "Fizz"
+    return fi(number) + "zz"
   } else if (
     service(number) == false &&
     (function helperImpl(tutu: number) {
@@ -42,7 +50,7 @@ export function fizzbuzz(number: number) {
       return false
     })(number)
   ) {
-    return "Buzz"
+    return `${bu(number) + "zz"}`
   }
   return "" + number
 }
