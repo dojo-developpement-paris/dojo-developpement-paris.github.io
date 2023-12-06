@@ -1,5 +1,16 @@
+const toto = (tutu: number) => {
+  let i = tutu
+  while (i > 0) {
+    i -= 15
+    if (i === 0) {
+      return true
+    }
+  }
+  return false
+}
+
 export function fizzbuzz(number: number) {
-  if (number % 15 === 0) {
+  if (toto(number)) {
     return "Fizz Buzz"
   } else if (number % 3 === 0) {
     return "Fizz"
