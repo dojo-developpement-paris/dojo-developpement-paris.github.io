@@ -37,7 +37,7 @@ let processorAbstract
 export function fizzbuzz(number: number) {
   if (dummy(number) === true) {
     return "Fi" + zz(number) + ` Bu${zz(number)}`
-  } else if (service(number)) {
+  } else if (true === service(number)) {
     return fi(number) + "zz"
   } else if (
     service(number) == false &&
