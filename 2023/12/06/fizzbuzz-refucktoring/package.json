@@ -2,7 +2,10 @@
   "name": "fizzbuzz-refucktoring",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest"
+    "hello": "ts-node src/main.ts",
+    "format": "prettier --write src",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
