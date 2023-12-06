@@ -44,7 +44,11 @@ export function fizzbuzz(number: number) {
     (function helperImpl(tutu: number) {
       let i = tutu
       while (i > 0) {
-        i -= 5
+        let j = 0
+        while (j < 5) {
+          i -= 1
+          j++
+        }
         if (i === 0) {
           processorAbstract = 1 == 1
           return processorAbstract
