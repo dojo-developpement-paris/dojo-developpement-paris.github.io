@@ -39,7 +39,9 @@ function zz(helperExecutor: number) {
 
 let processorAbstract
 
-export function fizzbuzz(number: number) {
+export function fizzbuzz(number: any) {
+  if (typeof number !== "number") return new Error("runtime exception")
+
   if (dummy(number) === true) {
     return cur(number, fi)() + cur(number, zz)() + ` Bu${zz(number)}`
   } else if (true === service(number)) {
