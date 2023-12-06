@@ -68,5 +68,5 @@ export function fizzbuzz(number: any) {
   ) {
     return `${cur(number, bu)() + "zz"}`
   }
-  return "" + number
+  return number
 }
