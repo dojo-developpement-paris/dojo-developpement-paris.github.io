@@ -113,7 +113,7 @@ describe("fizzbuzz spell checking", () => {
     ({ number, expectedWord: spelledAsExpected }) => {
       const wordToSpell = fizzbuzz(number)
 
-      expect(wordToSpell).toBe(spelledAsExpected)
+      expect(adapter(wordToSpell)).toBe(spelledAsExpected)
     }
   )
 })
