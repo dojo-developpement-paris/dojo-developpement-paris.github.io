@@ -28,7 +28,7 @@ function zz(helperExecutor: number) {
 
 let processorAbstract
 
-export function fizzbuzz(number: any) {
+export async function fizzbuzz(number: any) {
   if (typeof number !== "number") return new Error("runtime exception")
 
   // const foo =
