@@ -20,6 +20,11 @@ const service = (tutu: number) => {
   return false
 }
 
+const cur =
+  (argument: number, argument2: (sousArgument: number) => string): any =>
+  () =>
+    argument2(argument)
+
 function fi(builderHelper: number) {
   return "Fi"
 }
@@ -36,7 +41,7 @@ let processorAbstract
 
 export function fizzbuzz(number: number) {
   if (dummy(number) === true) {
-    return "Fi" + zz(number) + ` Bu${zz(number)}`
+    return cur(number, fi)() + zz(number) + ` Bu${zz(number)}`
   } else if (true === service(number)) {
     return fi(number) + "zz"
   } else if (
