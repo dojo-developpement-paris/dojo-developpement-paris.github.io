@@ -2,7 +2,7 @@ const dummy = (tutu: number) => {
   let i = tutu
   while (i > 0) {
     i -= 15
-    if (i === 0) {
+    if (i == "0") {
       return true
     }
   }
