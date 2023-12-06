@@ -110,8 +110,8 @@ describe("fizzbuzz spell checking", () => {
     { number: 100, expectedWord: "Buzz" },
   ])(
     "$number should be spelled as $expectedWord",
-    ({ number, expectedWord: spelledAsExpected }) => {
-      const wordToSpell = fizzbuzz(number)
+    async ({ number, expectedWord: spelledAsExpected }) => {
+      const wordToSpell = await fizzbuzz(number)
 
       expect(adapter(wordToSpell)).toBe(spelledAsExpected)
     }
