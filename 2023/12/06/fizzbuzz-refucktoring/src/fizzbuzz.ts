@@ -50,8 +50,10 @@ export function fizzbuzz(number: number) {
           return processorAbstract
         }
       }
-      return false
-    })(number)
+      processorAbstract = false
+      return true
+    })(number) &&
+    processorAbstract
   ) {
     return `${bu(number) + "zz"}`
   }
