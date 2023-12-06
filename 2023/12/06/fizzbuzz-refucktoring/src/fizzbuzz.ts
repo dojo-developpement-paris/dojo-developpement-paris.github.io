@@ -32,6 +32,8 @@ function zz(helperExecutor: number) {
   return "zz"
 }
 
+let processorAbstract
+
 export function fizzbuzz(number: number) {
   if (dummy(number)) {
     return "Fi" + zz(number) + ` Bu${zz(number)}`
@@ -44,7 +46,8 @@ export function fizzbuzz(number: number) {
       while (i > 0) {
         i -= 5
         if (i === 0) {
-          return true
+          processorAbstract = true
+          return processorAbstract
         }
       }
       return false
