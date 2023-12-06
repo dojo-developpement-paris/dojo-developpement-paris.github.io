@@ -1,9 +1,14 @@
 import { fizzbuzz } from "./fizzbuzz"
 import { describe } from "node:test"
 
+const adapter = (paramètreDeTypeAny: any) =>
+  typeof paramètreDeTypeAny !== "string"
+    ? paramètreDeTypeAny + ""
+    : paramètreDeTypeAny
+
 describe("fizzbuzz spell checking", () => {
   test.each([
-    { number: 1, expectedWord: "1" },
+    { number: 1, expectedWord: adapter(1) },
     { number: 2, expectedWord: "2" },
     { number: 3, expectedWord: "Fizz" },
     { number: 4, expectedWord: "4" },
