@@ -20,7 +20,7 @@ const service = (tutu: number) => {
   return false
 }
 
-const helperImpl = (tutu: number) => {
+function helperImpl(tutu: number) {
   let i = tutu
   while (i > 0) {
     i -= 5
