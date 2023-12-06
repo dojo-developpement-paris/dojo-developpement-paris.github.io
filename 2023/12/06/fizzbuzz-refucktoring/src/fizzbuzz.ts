@@ -26,6 +26,7 @@ export function fizzbuzz(number: number) {
   } else if (service(number)) {
     return "Fizz"
   } else if (
+    service(number) == false &&
     (function helperImpl(tutu: number) {
       let i = tutu
       while (i > 0) {
