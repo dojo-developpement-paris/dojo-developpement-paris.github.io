@@ -20,9 +20,13 @@ const service = (tutu: number) => {
   return false
 }
 
+function zz(helperExecutor: number) {
+  return "zz"
+}
+
 export function fizzbuzz(number: number) {
   if (dummy(number)) {
-    return "Fizz Buzz"
+    return "Fi" + zz(number) + ` Bu${zz(number)}`
   } else if (service(number)) {
     return "Fizz"
   } else if (
