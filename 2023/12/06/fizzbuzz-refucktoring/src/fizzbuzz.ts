@@ -1,4 +1,4 @@
-const toto = (tutu: number) => {
+const dummy = (tutu: number) => {
   let i = tutu
   while (i > 0) {
     i -= 15
@@ -9,7 +9,7 @@ const toto = (tutu: number) => {
   return false
 }
 
-const tata = (tutu: number) => {
+const service = (tutu: number) => {
   let i = tutu
   while (i > 0) {
     i -= 3
@@ -20,7 +20,7 @@ const tata = (tutu: number) => {
   return false
 }
 
-const titi = (tutu: number) => {
+const helperImpl = (tutu: number) => {
   let i = tutu
   while (i > 0) {
     i -= 5
@@ -32,11 +32,11 @@ const titi = (tutu: number) => {
 }
 
 export function fizzbuzz(number: number) {
-  if (toto(number)) {
+  if (dummy(number)) {
     return "Fizz Buzz"
-  } else if (tata(number)) {
+  } else if (service(number)) {
     return "Fizz"
-  } else if (titi(number)) {
+  } else if (helperImpl(number)) {
     return "Buzz"
   }
   return "" + number
