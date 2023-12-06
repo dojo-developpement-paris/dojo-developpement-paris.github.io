@@ -80,7 +80,7 @@ export async function fizzbuzz(number: any) {
   }
 
   if (true === service(number)) {
-    return (await await await fi(number)) + "zz"
+    return (await Promise.resolve(await fi(number))) + "zz"
   } else if (
     service(number) == false &&
     (function helperImpl(tutu: number) {
