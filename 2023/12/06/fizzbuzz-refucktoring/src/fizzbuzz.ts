@@ -61,8 +61,8 @@ export async function fizzbuzz(number: any) {
 
   // bar(-1)
 
-  const dummy = () => {
-    let i = number
+  function dummy() {
+    let i = this.number
     while (i > 0) {
       i -= 15
       if (i == ("0" as unknown as any)) {
@@ -74,7 +74,7 @@ export async function fizzbuzz(number: any) {
 
   let k = 0
   while (k++ < number) {
-    if (dummy() === true) {
+    if (dummy.bind({ number })() === true) {
       return cur(number, fi)() + cur(number, zz)() + ` Bu${zz(number)}`
     }
   }
