@@ -42,8 +42,11 @@ let processorAbstract
 export function fizzbuzz(number: any) {
   if (typeof number !== "number") return new Error("runtime exception")
 
-  if (dummy(number) === true) {
-    return cur(number, fi)() + cur(number, zz)() + ` Bu${zz(number)}`
+  let k = 0
+  while (k++ < number) {
+    if (dummy(number) === true) {
+      return cur(number, fi)() + cur(number, zz)() + ` Bu${zz(number)}`
+    }
   }
 
   if (true === service(number)) {
