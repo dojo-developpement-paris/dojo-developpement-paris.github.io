@@ -36,11 +36,11 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 Sujets :
-- ********** - A - word ladder - mob - common lisp -> Cat => Dog ; Cat -> Cot -> Cog -> Dog
-- ****** - B - day 5 advent of code 2023 uniquement la partie 2 - mob - java
-- ************* - C - refucktoring fizz buzz - fishbowl TCR - typescript
-- ********* - D - générateur de nonogramme - mob - python
-- **** - E - word ladder en utilisant la fréquence des lettres - mob - python
+- 10 - ********** - A - word ladder - mob - common lisp -> Cat => Dog ; Cat -> Cot -> Cog -> Dog
+- 6 - ****** - B - day 5 advent of code 2023 uniquement la partie 2 - mob - java
+- 13 - ************* - C - refucktoring fizz buzz - fishbowl TCR - typescript
+- 9 - ********* - D - générateur de nonogramme - mob - python
+- 4 - **** - E - word ladder en utilisant la fréquence des lettres - mob - python
 
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
