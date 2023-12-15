@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "sbcl@latest",
+    "rlwrap@latest",
+    "mask@latest",
+    "watchexec@latest",
+    "bashinteractive@latest"
+  ]
+}
