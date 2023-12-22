@@ -13,7 +13,7 @@
   implementer les règles pour un seul joueur pour commencer
 */
 
-pub fn molkky_score(knock_down_pins: Vec<u16>) -> u16 {
+pub fn round_score(knock_down_pins: Vec<u16>) -> u16 {
     if knock_down_pins.is_empty() {
         0
     } else if knock_down_pins.len() > 1 {
@@ -23,6 +23,11 @@ pub fn molkky_score(knock_down_pins: Vec<u16>) -> u16 {
     }
 }
 
+fn game_score(round_scores: Vec<Vec<u16>>) -> u16 {
+    // round_scores.iter().map(|&pins| round_score(pins));
+    15
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
@@ -30,21 +35,26 @@ mod test {
 
     #[test]
     fn empty_list_mean_zero_score() {
-        assert_that(&molkky_score(vec![])).is_equal_to(0)
+        assert_that(&round_score(vec![])).is_equal_to(0)
     }
 
     #[test]
     fn shooting_12_means_score_12() {
-        assert_that(&molkky_score(vec![12])).is_equal_to(12)
+        assert_that(&round_score(vec![12])).is_equal_to(12)
     }
 
     #[test]
     fn shooting_6_means_score_6() {
-        assert_that(&molkky_score(vec![6])).is_equal_to(6)
+        assert_that(&round_score(vec![6])).is_equal_to(6)
     }
 
     #[test]
     fn when_3_pins_are_knocked_down_score_is_3() {
-        assert_that(&molkky_score(vec![1, 2, 3])).is_equal_to(3)
+        assert_that(&round_score(vec![1, 2, 3])).is_equal_to(3)
+    }
+
+    #[test]
+    fn two_rounds_accumulate_score() {
+        assert_that(&game_score(vec![vec![12], vec![1, 2, 3]])).is_equal_to(15)
     }
 }
