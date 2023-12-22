@@ -16,6 +16,8 @@
 pub fn molkky_score(knock_down_pins: Vec<u16>) -> u16 {
     if knock_down_pins.is_empty() {
         0
+    } else if knock_down_pins.len() > 1 {
+        knock_down_pins.len().try_into().unwrap()
     } else {
         *knock_down_pins.get(0).unwrap()
     }
@@ -39,5 +41,10 @@ mod test {
     #[test]
     fn shooting_6_means_score_6() {
         assert_that(&molkky_score(vec![6])).is_equal_to(6)
+    }
+
+    #[test]
+    fn when_3_pins_are_knocked_down_score_is_3() {
+        assert_that(&molkky_score(vec![1, 2, 3])).is_equal_to(3)
     }
 }
