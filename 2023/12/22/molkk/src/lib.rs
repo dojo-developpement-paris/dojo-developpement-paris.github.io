@@ -1,8 +1,8 @@
-pub fn molkky_score(_pins: Vec<u16>) -> u16 {
-    if _pins.is_empty() {
+pub fn molkky_score(knock_down_pins: Vec<u16>) -> u16 {
+    if knock_down_pins.is_empty() {
         0
     } else {
-        12
+        *knock_down_pins.get(0).unwrap()
     }
 }
 
@@ -19,5 +19,10 @@ mod test {
     #[test]
     fn shooting_12_means_score_12() {
         assert_that(&molkky_score(vec![12])).is_equal_to(12)
+    }
+
+    #[test]
+    fn shooting_6_means_score_6() {
+        assert_that(&molkky_score(vec![6])).is_equal_to(6)
     }
 }
