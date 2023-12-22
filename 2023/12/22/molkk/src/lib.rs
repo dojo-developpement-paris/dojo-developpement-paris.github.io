@@ -1,4 +1,4 @@
-fn molkky_score(_pins: Vec<u16>) -> u16 {
+pub fn molkky_score(_pins: Vec<u16>) -> u16 {
     if _pins.is_empty() {
         0
     } else {
