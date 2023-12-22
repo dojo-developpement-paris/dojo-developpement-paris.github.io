@@ -1,8 +1,9 @@
 fn molkky_score(_pins: Vec<u16>) -> u16 {
     if _pins.is_empty() {
-        return 0;
+        0
+    } else {
+        12
     }
-    12
 }
 
 #[cfg(test)]
