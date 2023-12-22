@@ -13,10 +13,11 @@ Personnes présentes :
 - Tof
 - Jean-Baptiste
 - Tom
-- Bérénice 
+- Bérénice
 - El Bechir
 - Emmanuel
 - Abdessamed
+- Birame
 
 
 Retro :
