@@ -23,7 +23,7 @@ pub fn round_score(knock_down_pins: Vec<u16>) -> u16 {
     }
 }
 
-fn game_score(rounds: Vec<Vec<u16>>) -> u16 {
+pub fn game_score(rounds: Vec<Vec<u16>>) -> u16 {
     rounds.iter().map(|pins| round_score(pins.to_vec())).sum()
 }
 
