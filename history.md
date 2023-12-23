@@ -93,24 +93,6 @@ from [<time datetime="2021-01-28">2021-01-28</time>](https://www.meetup.com/dojo
 
 The dojo has been back in person since [<time datetime="2022-05-13">2022-05-13</time>](https://www.meetup.com/dojo-developpement-paris/events/285807516/).
 
-## Mob Programming
-
-As usual, they practised as a whole group.
-
-On one occasion, [Woody Zuill](https://woodyzuill.com/) took part
-and said something like :
-
-> You should use this organisation in your company !
-
-Since he worked at Hunter Industries,
-developed this type of organisation,
-and then popularised it as [Mob Programming](https://en.wikipedia.org/wiki/Team_programming#Mob_programming),
-on <time datetime="2012-09-06">2012-09-06</time>, he wrote [his first post about it](https://mobprogramming.org/hello-world/).
-
-At the [Agile2014](https://www.agilealliance.org/agile2014/) conference,
-from <time datetime="2014-07-28">2014-07-28</time> to <time datetime="2014-08-01">2014-08-01</time>,
-Woody talks about [Mob Programming - A Whole Team Approach](https://www.agilealliance.org/resources/experience-reports/mob-programming-agile2014/).
-
 ## Trends
 
 The dojo has been hosted by a number of companies, including :
