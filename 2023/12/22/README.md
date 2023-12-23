@@ -1,4 +1,4 @@
-Prochaine session : le vendredi 29/12/2023  à Proxym, 2 rue de la roquette au fond à gauche
+Prochaine session : le vendredi 29/12/2023 à Proxym, 2 rue de la roquette au fond à gauche
 
 Personnes présentes :
 - Mohammed
@@ -21,8 +21,8 @@ Personnes présentes :
 
 
 Retro :
-- implementer une pile en common lisp - mob 
-  - (parenthèses) 
+- implementer une pile en common lisp - mob
+  - (parenthèses)
   - utilisé la construction list du langage, donc pas difficile
   - ça s'y prête naturellement (car, cdr)
   - car et cdr : nommage vraiment pourri
@@ -38,23 +38,15 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 Sujets :
-- 0 - A - mölkky score - rust - fishbowl TCR  
-- 0 - B - mölkky score - lisp - mob 
-- 0 - C - word ladder - haskell - mob  cat -> cot -> cog -> dog 
-- 0 - D - interpréteur brainfuck en C - mob 
-- 0 - E - interpréteur brainfuck en Python - mob
-- 0 - F - interprète une date  - python mob - ("22/12/2023" -> vendredi) 
-- 0 - G - word ladder en lisp - mob
-- 0 - H - word ladder en rust - mob
+- 43 - A - mölkky score - rust - fishbowl TCR
+- 20 - B - mölkky score - lisp - mob
+- 14 - C - word ladder - haskell - mob  cat -> cot -> cog -> dog
+- 13 - D - interpréteur brainfuck en C - mob
+- 10 - E - interpréteur brainfuck en Python - mob
+- 8 - F - interprète une date  - python mob - ("22/12/2023" -> vendredi)
+- 18 - G - word ladder en lisp - mob
+- 31 - H - word ladder en rust - mob
 
-A 43
-H 31
-G 18
-D 13
-B 20
-C 14
-E 10
-F 8
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
 - Randori : chaque personne prend le clavier pendant 5 minutes
