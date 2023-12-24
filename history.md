@@ -51,7 +51,7 @@ about the shape of the dojo
 with several people.
 
 During this discussion,
-it was decided that the dojo wonld not be owned by a company.
+it was decided that the dojo would not be owned by a company.
 
 The dojo will need a logistical support (room, projector, chairs …),
 and [Epiconcept](https://www.epiconcept.fr/en/) was the first to provide it.
