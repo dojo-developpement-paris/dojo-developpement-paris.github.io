@@ -76,6 +76,10 @@ The group archived its work on [the xp-france.net wiki](https://web.archive.org/
 which has since disappeared ;
 they moved to [the agile-france.org wiki](https://web.archive.org/web/20100424015604/http://wiki.agile-france.org/cgi-bin/wiki.pl?DojoDeveloppement).
 
+## Break
+
+The group took a break around 2014 and was relaunched by [ToF](https://christophethibaut.com) in 2015.
+
 They started archiving their sessions in a git repository hosted on [Github](https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io),
 since the session of [<time datetime="2015-01-15">2015-01-15</time>](https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io/tree/main/2015/01/05).
 
