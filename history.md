@@ -100,8 +100,10 @@ The dojo has been hosted by a number of companies, including :
 * EpiConcept
 * UT7
 * Octo
+* Zenika
 * Arolla
 * CodeWorks
+* Enercoop
 
 A wide range of languages were practised at the dojo,
 with many sessions taking place in :
