@@ -47,7 +47,7 @@ Sujets :
 - 16 - E - kata Diamant - Python - mob
 - 13 - F - runlength encoding - TS - mob
 - 11 - G - runlength encoding - Rust - mob
-- 20 - H - Trip Service kata - java - mob (refactoring d'un code sans test)
+- 20 - H - Trip Service kata - java - mob (refactoring d'un code sans test) [le code produit](https://github.com/sashokbg/trip-service-kata/tree/feat/coding_dojo_kata_29_12_2023/java/trip-service-kata)
 
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
