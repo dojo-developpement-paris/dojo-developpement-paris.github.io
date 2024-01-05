@@ -41,8 +41,8 @@ In <time datetime="2004-05-21">2004</time>,
 
 During a meal between Laurent Bossavit and [Emmanuel Gaillot](https://en.wikipedia.org/wiki/Emmanuel_Gaillot) :
 
-* Emmanuel asked Laurent <q>This dojo stuff, does it was a joke ?</q>
-* Laurent answered <q>It is very serious.</q>
+* Emmanuel asked Laurent <q>About this dojo stuff, were you joking ?</q>
+* Laurent answered <q>No, I was being quite serious.</q>
 * Emmanuel replied <q>I think it's great, let's do it !</q>
 
 On [<time datetime="2004-11-02">2004-11-02</time>](https://web.archive.org/web/20081118080350/http://xp-france.net/cgi-bin/wiki.pl?DojoDeveloppement/DeuxNovembre2004),
@@ -53,7 +53,7 @@ with several people.
 During this discussion,
 it was decided that the dojo would not be owned by a company.
 
-The dojo will need a logistical support (room, projector, chairs …),
+The dojo will need logistical support (room, projector, chairs …),
 and [Epiconcept](https://www.epiconcept.fr/en/) was the first to provide it.
 
 ## The beginnings
