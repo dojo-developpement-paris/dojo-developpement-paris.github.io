@@ -1,0 +1,37 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "bashinteractive@latest": {
+      "last_modified": "2023-12-21T04:58:04Z",
+      "resolved": "github:NixOS/nixpkgs/d6863cbcbbb80e71cecfc03356db1cda38919523#bashInteractive",
+      "source": "devbox-search",
+      "version": "5.2-p21"
+    },
+    "mask@latest": {
+      "last_modified": "2023-12-13T22:54:10Z",
+      "resolved": "github:NixOS/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff#mask",
+      "source": "devbox-search",
+      "version": "0.11.4"
+    },
+    "poetry@latest": {
+      "last_modified": "2023-12-13T22:54:10Z",
+      "plugin_version": "0.0.4",
+      "resolved": "github:NixOS/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff#poetry",
+      "source": "devbox-search",
+      "version": "1.7.1"
+    },
+    "python@latest": {
+      "last_modified": "2023-12-13T22:54:10Z",
+      "plugin_version": "0.0.3",
+      "resolved": "github:NixOS/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff#python312",
+      "source": "devbox-search",
+      "version": "3.12.1"
+    },
+    "watchexec@latest": {
+      "last_modified": "2023-12-13T22:54:10Z",
+      "resolved": "github:NixOS/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff#watchexec",
+      "source": "devbox-search",
+      "version": "1.23.0"
+    }
+  }
+}
