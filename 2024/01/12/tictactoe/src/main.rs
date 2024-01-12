@@ -69,7 +69,7 @@ mod test {
     fn when_x_just_played_state_should_be_o_to_play() {
         assert_that(&status(Game {
             cells: vec![
-                vec![Some(Cell::X), None, None],
+                vec![X, None, None],
                 vec![None, None, None],
                 vec![None, None, None],
             ],
