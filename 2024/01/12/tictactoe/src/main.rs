@@ -12,6 +12,7 @@
 use std::env;
 
 const X: Option<Cell> = Some(Cell::X);
+const _: Option<Cell> = None;
 
 #[derive(Debug, PartialEq)]
 enum Status {
