@@ -1,3 +1,14 @@
+// goal the program should determin the state of a game
+// X starts the game
+// inputs : is the grid
+// outputs : the state of the grid
+// states can be :
+// O wins
+// X wins
+// tie
+// O to play
+// X to play
+
 use std::env;
 
 fn main() {
