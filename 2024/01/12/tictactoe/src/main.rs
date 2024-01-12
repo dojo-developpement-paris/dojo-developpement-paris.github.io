@@ -11,14 +11,18 @@
 
 use std::env;
 
-fn main() {
-    let name = env::args().nth(1);
-
-    println!("{}", tictactoe(name.as_deref()));
+#[derive(Debug, PartialEq)]
+enum Status {
+    XToPlay,
+    OToPlay,
 }
 
-fn tictactoe(name: Option<&str>) -> String {
-    format!("Hello {}", name.unwrap_or("world"))
+struct Game {}
+
+fn main() {}
+
+fn status(game: Game) -> Status {
+    Status::XToPlay
 }
 
 #[cfg(test)]
@@ -27,12 +31,7 @@ mod test {
     use speculoos::*;
 
     #[test]
-    fn tictactoe_world() {
-        assert_that(&tictactoe(None)).is_equal_to("Hello world".to_string())
-    }
-
-    #[test]
-    fn tictactoe_foo() {
-        assert_that(&tictactoe(Some("foo"))).is_equal_to("Hello foo".to_string())
+    fn initial_state_is_x_to_play() {
+        assert_that(&status(Game {})).is_equal_to(Status::XToPlay)
     }
 }
