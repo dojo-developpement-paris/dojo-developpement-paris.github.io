@@ -53,6 +53,16 @@ fn status(game: Game) -> Status {
         })
     {
         Status::OToPlay
+    } else if game
+        == (Game {
+            cells: vec![
+                vec![None, None, X],
+                vec![None, None, None],
+                vec![None, None, None],
+            ],
+        })
+    {
+        Status::OToPlay
     } else {
         Status::XToPlay
     }
@@ -91,6 +101,15 @@ mod test {
                 vec![None, None, None],
                 vec![None, None, None],
                 vec![None, X, None],
+            ],
+        }))
+        .is_equal_to(Status::OToPlay);
+
+        assert_that(&status(Game {
+            cells: vec![
+                vec![None, None, X],
+                vec![None, None, None],
+                vec![None, None, None],
             ],
         }))
         .is_equal_to(Status::OToPlay);
