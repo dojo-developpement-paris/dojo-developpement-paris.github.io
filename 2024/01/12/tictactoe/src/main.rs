@@ -19,7 +19,7 @@ enum Status {
     OToPlay,
 }
 
-#[derive(PartialEq, Clone, Copy)]
+#[derive(PartialEq, Clone)]
 enum Cell {
     X,
     O,
@@ -33,7 +33,7 @@ struct Game {
 fn main() {}
 
 fn status(game: Game) -> Status {
-    if game.cells[0].iter().any(|&c| c == X) {
+    if game.cells[0].iter().any(|c| *c == X) {
         Status::OToPlay
     } else if game
         == (Game {
