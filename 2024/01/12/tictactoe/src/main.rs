@@ -12,7 +12,6 @@
 use std::env;
 
 const X: Option<Cell> = Some(Cell::X);
-const _: Option<Cell> = None;
 
 #[derive(Debug, PartialEq)]
 enum Status {
@@ -37,7 +36,7 @@ fn status(game: Game) -> Status {
     if game
         == (Game {
             cells: vec![
-                vec![Some(Cell::X), None, None],
+                vec![X, None, None],
                 vec![None, None, None],
                 vec![None, None, None],
             ],
