@@ -33,7 +33,7 @@ struct Game {
 fn main() {}
 
 fn status(game: Game) -> Status {
-    if game.cells[0] == vec![X, None, None] || game.cells[0] == vec![None, None, X] {
+    if game.cells[0].iter().any(|&c| c == X) {
         Status::OToPlay
     } else if game
         == (Game {
