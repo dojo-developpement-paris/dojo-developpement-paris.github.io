@@ -31,6 +31,7 @@ mod test {
         assert_that(&tictactoe(None)).is_equal_to("Hello world".to_string())
     }
 
+    // foo
     #[test]
     fn tictactoe_foo() {
         assert_that(&tictactoe(Some("foo"))).is_equal_to("Hello foo".to_string())
