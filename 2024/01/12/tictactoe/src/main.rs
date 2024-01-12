@@ -19,7 +19,7 @@ enum Status {
     OToPlay,
 }
 
-#[derive(PartialEq)]
+#[derive(PartialEq, Clone, Copy)]
 enum Cell {
     X,
     O,
