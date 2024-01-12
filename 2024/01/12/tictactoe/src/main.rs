@@ -33,17 +33,15 @@ struct Game {
 fn main() {}
 
 fn status(game: Game) -> Status {
+    let toto = vec![
+        vec![None, None, None],
+        vec![None, None, None],
+        vec![None, X, None],
+    ];
+
     if game.cells[0].iter().any(|c| *c == X) {
         Status::OToPlay
-    } else if game
-        == (Game {
-            cells: vec![
-                vec![None, None, None],
-                vec![None, None, None],
-                vec![None, X, None],
-            ],
-        })
-    {
+    } else if game == (Game { cells: toto }) {
         Status::OToPlay
     } else {
         Status::XToPlay
