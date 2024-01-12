@@ -33,15 +33,7 @@ struct Game {
 fn main() {}
 
 fn status(game: Game) -> Status {
-    if game
-        == (Game {
-            cells: vec![
-                vec![X, None, None],
-                vec![None, None, None],
-                vec![None, None, None],
-            ],
-        })
-    {
+    if game.cells[0] == vec![X, None, None] || game.cells[0] == vec![None, None, X] {
         Status::OToPlay
     } else if game
         == (Game {
@@ -49,16 +41,6 @@ fn status(game: Game) -> Status {
                 vec![None, None, None],
                 vec![None, None, None],
                 vec![None, X, None],
-            ],
-        })
-    {
-        Status::OToPlay
-    } else if game
-        == (Game {
-            cells: vec![
-                vec![None, None, X],
-                vec![None, None, None],
-                vec![None, None, None],
             ],
         })
     {
