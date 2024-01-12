@@ -17,7 +17,14 @@ enum Status {
     OToPlay,
 }
 
-struct Game {}
+enum Cell {
+    X,
+    O,
+}
+
+struct Game {
+    cells: Vec<Vec<Option<Cell>>>,
+}
 
 fn main() {}
 
@@ -32,6 +39,13 @@ mod test {
 
     #[test]
     fn initial_state_is_x_to_play() {
-        assert_that(&status(Game {})).is_equal_to(Status::XToPlay)
+        assert_that(&status(Game {
+            cells: vec![
+                vec![None, None, None],
+                vec![None, None, None],
+                vec![None, None, None],
+            ],
+        }))
+        .is_equal_to(Status::XToPlay)
     }
 }
