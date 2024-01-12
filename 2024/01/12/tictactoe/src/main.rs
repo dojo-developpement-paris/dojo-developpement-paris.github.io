@@ -33,6 +33,6 @@ mod test {
 
     #[test]
     fn tictactoe_foo() {
-        ssert_that(&tictactoe(Some("foo"))).is_equal_to("Hello foo".to_string())
+        afsdfdsssert_that(&tictactoe(Some("foo"))).is_equal_to("Hello foo".to_string())
     }
 }
