@@ -11,6 +11,8 @@
 
 use std::env;
 
+const X: Option<Cell> = Some(Cell::X);
+
 #[derive(Debug, PartialEq)]
 enum Status {
     XToPlay,
