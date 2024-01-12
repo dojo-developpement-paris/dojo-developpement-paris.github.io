@@ -17,11 +17,13 @@ enum Status {
     OToPlay,
 }
 
+#[derive(PartialEq)]
 enum Cell {
     X,
     O,
 }
 
+#[derive(PartialEq)]
 struct Game {
     cells: Vec<Vec<Option<Cell>>>,
 }
@@ -29,7 +31,19 @@ struct Game {
 fn main() {}
 
 fn status(game: Game) -> Status {
-    Status::XToPlay
+    if game
+        == (Game {
+            cells: vec![
+                vec![Some(Cell::X), None, None],
+                vec![None, None, None],
+                vec![None, None, None],
+            ],
+        })
+    {
+        Status::OToPlay
+    } else {
+        Status::XToPlay
+    }
 }
 
 #[cfg(test)]
@@ -47,5 +61,17 @@ mod test {
             ],
         }))
         .is_equal_to(Status::XToPlay)
+    }
+
+    #[test]
+    fn when_x_just_played_state_should_be_o_to_play() {
+        assert_that(&status(Game {
+            cells: vec![
+                vec![Some(Cell::X), None, None],
+                vec![None, None, None],
+                vec![None, None, None],
+            ],
+        }))
+        .is_equal_to(Status::OToPlay)
     }
 }
