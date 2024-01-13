@@ -41,8 +41,11 @@ il n'y a donc **pas de questions stupides**
 Nous faisons généralement du [TDD][test_driven_development] ;
 Ce n'est pas une obligation
 
+Si vous voulez en savoir plus, vous pouvez aller lire [l'histoire du dojo]
+
 [kata]: https://web.archive.org/web/20040423023001/http://www.pragprog.com/pragdave/Practices/CodeKata.rdoc
 [fishbowl]: https://en.wikipedia.org/wiki/Fishbowl_%28conversation%29
 [tcr]: https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864
 [vote]: https://emmanuelpaatz.com/dojosurvey
 [test_driven_development]: https://fr.wikipedia.org/wiki/Test_driven_development
+[l'histoire du dojo]: https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io/blob/main/history.md
