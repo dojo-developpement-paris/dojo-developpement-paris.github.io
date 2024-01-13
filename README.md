@@ -24,7 +24,7 @@ Sujets :
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
 - Randori : chaque personne prend le clavier pendant 5 minutes
-- Kata : 1 personne fait une démo sur un [kata] (exercice de programmation) + les autres donnent du feedback
+- Demo : 1 personne fait une démo sur un [kata] (exercice de programmation) + les autres donnent du feedback
 - Fishbowl : [Définition][fishbowl]
 - TCR : [Définition `test && commit || revert`][tcr]
 - Orientation : On coupe la séance en plusieurs sous-séances,
