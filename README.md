@@ -30,7 +30,7 @@ Modes de fonctionnement habituels :
 - Orientation : On coupe la séance en plusieurs sous-séances,
   et entre chaque séance on fait une rétro/orientation.
 
-Méthode de vote :
+Méthode de [vote] :
 - points = nombre de sujets divisé 2 arrondi à l'entier inférieur
 - ex : sujets = 5, points = 2 => 2 votes, à 1 et 2 points
 
@@ -40,3 +40,5 @@ il n'y a donc **pas de questions stupides**
 
 Nous faisons généralement du [TDD](https://fr.wikipedia.org/wiki/Test_driven_development) ;
 Ce n'est pas une obligation
+
+[vote]: https://emmanuelpaatz.com/dojosurvey
