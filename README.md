@@ -24,7 +24,7 @@ Sujets :
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
 - Randori : chaque personne prend le clavier pendant 5 minutes
-- Kata : 1 personne fait une démo + les autres donnent du feed back
+- Kata : 1 personne fait une démo sur un [kata] (exercice de programmation) + les autres donnent du feedback
 - Fishbowl : [Définition][fishbowl]
 - TCR : [Définition `test && commit || revert`][tcr]
 - Orientation : On coupe la séance en plusieurs sous-séances,
@@ -41,6 +41,7 @@ il n'y a donc **pas de questions stupides**
 Nous faisons généralement du [TDD][test_driven_development] ;
 Ce n'est pas une obligation
 
+[kata]: https://web.archive.org/web/20040423023001/http://www.pragprog.com/pragdave/Practices/CodeKata.rdoc
 [fishbowl]: https://en.wikipedia.org/wiki/Fishbowl_%28conversation%29
 [tcr]: https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864
 [vote]: https://emmanuelpaatz.com/dojosurvey
