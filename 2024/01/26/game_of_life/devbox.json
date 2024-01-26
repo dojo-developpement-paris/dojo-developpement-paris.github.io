@@ -1,0 +1,7 @@
+{
+  "packages": [
+    "deno@latest",
+    "mask@latest",
+    "bashInteractive@latest"
+  ]
+}
