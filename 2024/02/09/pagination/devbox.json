@@ -1,0 +1,8 @@
+{
+  "packages": [
+    "rustup@latest",
+    "cargo-watch@latest",
+    "mask@latest",
+    "bashInteractive@latest"
+  ]
+}
