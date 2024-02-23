@@ -13,6 +13,7 @@ spec = describe "game of life" $ do
         it "flips" $ do
             generation [(1, 0), (1, 1), (1, 2)] `shouldBe` [(0, 1), (1, 1), (2, 1)]
 
+generation :: [(Int, Int)] -> [(Int, Int)]
 generation [] =  []
 generation [_] = []
 generation _  =  [(0, 1), (1, 1), (2, 1)]
