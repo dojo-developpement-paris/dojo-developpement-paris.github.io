@@ -9,6 +9,7 @@ Personnes présentes :
 - Mohammed
 - Hind
 - Mohammed
+- Birame
 - pin
 
 Retro :
