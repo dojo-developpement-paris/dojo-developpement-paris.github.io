@@ -10,7 +10,7 @@
         (cadr rolls)
         (caddr rolls)))
 
-(defun score (rolls)
+(defun score-at-frame (frame rolls)
     ; (print rolls)
     (cond
         ((> (length rolls) 18)
@@ -35,6 +35,9 @@
                 (cadr rolls)
                 (score (cddr rolls))))))
 
+
+(defun score (rolls)
+    (score-at-frame 1 rolls))
 
 ; def score(rolls):
 ;     print(rolls)
