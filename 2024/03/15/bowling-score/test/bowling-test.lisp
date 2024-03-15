@@ -10,6 +10,9 @@
 (test initialy-score
     (is (equal 0 (score (list)))))
 
+(test one-rolls-score-is-that-roll
+    (is (equal 5 (score (list 5)))))
+
 (if (run-all-tests)
     (sb-ext:quit)
     (sb-ext:exit :abort 0)))

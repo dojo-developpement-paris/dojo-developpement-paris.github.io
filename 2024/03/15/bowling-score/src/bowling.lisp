@@ -1,2 +1,4 @@
 (defun score (rolls)
-    0)
+    (if (null rolls)
+        0
+        5))
