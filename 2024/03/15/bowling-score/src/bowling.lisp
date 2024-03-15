@@ -8,6 +8,7 @@
     ; (print rolls)
     (cond
         ((< (length rolls) 3)
+            ; (print "smaller than 3")
             (apply #'+ rolls))
         ((is-spare rolls)
             ; (print "spare")
