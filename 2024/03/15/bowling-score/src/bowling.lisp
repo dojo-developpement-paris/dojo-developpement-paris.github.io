@@ -24,9 +24,7 @@
         ((is-strike rolls)
             ; (print "strike")
             (+
-                10
-                (cadr rolls)
-                (caddr rolls)
+                (bonus rolls)
                 (score (cdr rolls))))
         (T
             ; (print "normal")
