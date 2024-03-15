@@ -22,18 +22,18 @@
             ; (print "spare")
             (+
                 (bonus rolls)
-                (score (cddr rolls))))
+                (score-at-frame (1+ frame) (cddr rolls))))
         ((is-strike rolls)
             ; (print "strike")
             (+
                 (bonus rolls)
-                (score (cdr rolls))))
+                (score-at-frame (1+ frame) (cdr rolls))))
         (T
             ; (print "normal")
             (+
                 (car rolls)
                 (cadr rolls)
-                (score (cddr rolls))))))
+                (score-at-frame (1+ frame) (cddr rolls))))))
 
 
 (defun score (rolls)
