@@ -26,7 +26,8 @@
             ; (print "normal")
             (+
                 (car rolls)
-                (score (cdr rolls))))))
+                (cadr rolls)
+                (score (cddr rolls))))))
 
 
 ; def score(rolls):
