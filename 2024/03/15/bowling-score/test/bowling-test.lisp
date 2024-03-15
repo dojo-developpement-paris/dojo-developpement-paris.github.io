@@ -14,6 +14,9 @@
     (is (equal 5 (score (list 5))))
     (is (equal 7 (score (list 7)))))
 
+(test two-rolls-score-is-sum-of-rolls
+    (is (equal 7 (score (list 3 4)))))
+
 (if (run-all-tests)
     (sb-ext:quit)
     (sb-ext:exit :abort 0)))

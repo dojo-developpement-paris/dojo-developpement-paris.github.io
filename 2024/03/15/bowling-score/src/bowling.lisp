@@ -1,4 +1,6 @@
 (defun score (rolls)
     (if (null rolls)
         0
-        (car rolls)))
+        (+
+            (car rolls)
+            (score (cdr rolls)))))
