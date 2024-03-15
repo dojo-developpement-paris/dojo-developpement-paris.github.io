@@ -7,8 +7,8 @@
 
 (load "./src/bowling.lisp")
 
-(test dummy
-    (is (equal 4 (+ 2 2))))
+(test initialy-score
+    (is (equal 0 (score (list)))))
 
 (if (run-all-tests)
     (sb-ext:quit)

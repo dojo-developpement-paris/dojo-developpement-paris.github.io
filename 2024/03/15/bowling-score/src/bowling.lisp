@@ -1,2 +1,2 @@
-(defun hello (name)
-    (concatenate 'string "Hello " (or name "world")))
+(defun score (rolls)
+    0)

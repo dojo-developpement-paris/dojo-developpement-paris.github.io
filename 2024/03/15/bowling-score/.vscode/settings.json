@@ -2,7 +2,7 @@
     "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
     "devbox.autoShellOnTerminal": false,
     "editor.formatOnSave": true,
-    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.colorTheme": "Quiet Light",
     "editor.fontWeight": "normal",
     "window.zoomLevel": 1,
     "debug.console.fontSize": 26,
