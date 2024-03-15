@@ -1,12 +1,15 @@
 (require :asdf)
 
-(require "lisp-unit" "~/.local/share/common-lisp/source/lisp-unit.lisp")
-; set up testing options
-(in-package :lisp-unit)
-(setq *print-failures* t)
+(asdf:load-system :fiveam)
+(use-package :fiveam)
+(asdf:load-system :fiveam-matchers)
+(use-package :fiveam-matchers)
+
 (load "./src/bowling.lisp")
 
-(define-test dummy
-    (assert-equal 4 (+ 3 2)))
+(test dummy
+    (is (equal 4 (+ 2 2))))
 
-(run-tests :all)
+(if (run-all-tests)
+    (sb-ext:quit)
+    (sb-ext:exit :abort 0)))

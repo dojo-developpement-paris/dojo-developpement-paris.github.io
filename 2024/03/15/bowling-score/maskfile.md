@@ -3,7 +3,7 @@
 ## test
 
 ```sh
-sbcl --script ./test/hello_test.lisp
+sbcl --script test/bowling-test.lisp
 ```
 
 ### test watch
