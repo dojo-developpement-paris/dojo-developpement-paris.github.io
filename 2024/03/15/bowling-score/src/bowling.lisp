@@ -1,6 +1,9 @@
 (defun is-spare (rolls)
     (eql 10 (+ (car rolls) (cadr rolls))))
 
+(defun is-strike (rolls)
+    (eql 10 (car rolls)))
+
 (defun score (rolls)
     ; (print rolls)
     (cond
@@ -12,7 +15,7 @@
                 10
                 (caddr rolls)
                 (score (cddr rolls))))
-        ((eql 10 (car rolls))
+        ((is-strike rolls)
             ; (print "strike")
             (+
                 10
