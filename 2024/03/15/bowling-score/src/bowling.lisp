@@ -1,9 +1,17 @@
 (defun score (rolls)
-    (if (null rolls)
-        0
-        (+
-            (car rolls)
-            (score (cdr rolls)))))
+    (cond
+        ((null rolls)
+            0)
+        ((eql 10 (car rolls))
+            (+
+                10
+                (cadr rolls)
+                (caddr rolls)
+                (score (cdr rolls))))
+        (T
+            (+
+                (car rolls)
+                (score (cdr rolls))))))
 
 
 ; def score(rolls):
