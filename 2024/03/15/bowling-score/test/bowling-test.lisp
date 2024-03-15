@@ -26,7 +26,7 @@
 (test spare-score-makes-one-bonus
     (is (equal 14 (score (list 6 4 2)))))
 
-(test galette
+(test last-frame
     (is (equal 30 (score (list 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 10 10)))))
 
 (test perfect
