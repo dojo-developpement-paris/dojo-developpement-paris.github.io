@@ -1,9 +1,12 @@
+(defun is-spare (rolls)
+    (eql 10 (+ (car rolls) (cadr rolls))))
+
 (defun score (rolls)
     ; (print rolls)
     (cond
         ((< (length rolls) 3)
             (apply #'+ rolls))
-        ((eql 10 (+ (car rolls) (cadr rolls)))
+        ((is-spare rolls)
             ; (print "spare")
             (+
                 10
