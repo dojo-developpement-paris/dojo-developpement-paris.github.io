@@ -23,6 +23,9 @@
 (test ten-with-no-rolls-is-ten
     (is (equal 10 (score (list 10)))))
 
+(test spare-score-makes-one-bonus
+    (is (equal 14 (score (list 6 4 2)))))
+
 (if (run-all-tests)
     (sb-ext:quit)
     (sb-ext:exit :abort 0)))

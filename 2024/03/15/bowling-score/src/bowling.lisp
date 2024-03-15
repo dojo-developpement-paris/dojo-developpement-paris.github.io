@@ -3,6 +3,12 @@
     (cond
         ((< (length rolls) 3)
             (apply #'+ rolls))
+        ((eql 10 (+ (car rolls) (cadr rolls)))
+            ; (print "spare")
+            (+
+                10
+                (caddr rolls)
+                (score (cddr rolls))))
         ((eql 10 (car rolls))
             ; (print "strike")
             (+
