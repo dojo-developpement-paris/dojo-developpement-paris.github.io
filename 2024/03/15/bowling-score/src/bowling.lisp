@@ -13,8 +13,8 @@
 (defun score-at-frame (frame rolls)
     ; (print rolls)
     (cond
-        ((> (length rolls) 18)
-            30)
+        ((eql 10 frame)
+            (apply #'+ rolls))
         ((< (length rolls) 3)
             ; (print "smaller than 3")
             (apply #'+ rolls))
