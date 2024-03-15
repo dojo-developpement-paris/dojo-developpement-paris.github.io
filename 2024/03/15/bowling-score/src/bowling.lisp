@@ -6,7 +6,8 @@
 
 (defun bonus (rolls)
     (+
-        10
+        (car rolls)
+        (cadr rolls)
         (caddr rolls)))
 
 (defun score (rolls)
