@@ -26,6 +26,9 @@
 (test spare-score-makes-one-bonus
     (is (equal 14 (score (list 6 4 2)))))
 
+(test galette
+    (is (equal 30 (score (list 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 10 10)))))
+
 (if (run-all-tests)
     (sb-ext:quit)
     (sb-ext:exit :abort 0)))

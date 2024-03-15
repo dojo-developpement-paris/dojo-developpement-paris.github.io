@@ -13,6 +13,8 @@
 (defun score (rolls)
     ; (print rolls)
     (cond
+        ((> (length rolls) 18)
+            30)
         ((< (length rolls) 3)
             ; (print "smaller than 3")
             (apply #'+ rolls))
