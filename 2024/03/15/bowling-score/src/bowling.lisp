@@ -11,25 +11,18 @@
         (caddr rolls)))
 
 (defun score-at-frame (frame rolls)
-    ; (print rolls)
     (cond
-        ((eql 10 frame)
-            (apply #'+ rolls))
-        ((< (length rolls) 3)
-            ; (print "smaller than 3")
+        ((or (eql 10 frame) (< (length rolls) 3))
             (apply #'+ rolls))
         ((is-spare rolls)
-            ; (print "spare")
             (+
                 (bonus rolls)
                 (score-at-frame (1+ frame) (cddr rolls))))
         ((is-strike rolls)
-            ; (print "strike")
             (+
                 (bonus rolls)
                 (score-at-frame (1+ frame) (cdr rolls))))
         (T
-            ; (print "normal")
             (+
                 (car rolls)
                 (cadr rolls)
