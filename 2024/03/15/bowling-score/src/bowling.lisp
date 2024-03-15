@@ -4,6 +4,8 @@
         ((null rolls)
             ; (print "vide")
             0)
+        ((< (length rolls) 3)
+            (apply #'+ rolls))
         ((eql 10 (car rolls))
             ; (print "strike")
             (+

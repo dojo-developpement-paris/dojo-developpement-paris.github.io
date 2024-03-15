@@ -20,6 +20,9 @@
 (test strike-score-makes-two-bonus
     (is (equal 20 (score (list 10 3 2)))))
 
+(test ten-with-no-rolls-is-ten
+    (is (equal 10 (score (list 10)))))
+
 (if (run-all-tests)
     (sb-ext:quit)
     (sb-ext:exit :abort 0)))
