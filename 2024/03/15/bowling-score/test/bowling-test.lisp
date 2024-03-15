@@ -29,6 +29,9 @@
 (test galette
     (is (equal 30 (score (list 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 10 10)))))
 
+(test perfect
+    (is (equal 300 (score (list 10 10 10 10 10 10 10 10 10 10 10 10)))))
+
 (if (run-all-tests)
     (sb-ext:quit)
     (sb-ext:exit :abort 0)))
