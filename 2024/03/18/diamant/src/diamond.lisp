@@ -1,5 +1,5 @@
-(defun mirror (half-diamond)
-    (concatenate 'list half-diamond (cdr (reverse half-diamond))))
+(defun mirror (pattern)
+    (concatenate 'list pattern (cdr (reverse pattern))))
 
 (defun half-diamond (letter)
     (cond
