@@ -19,7 +19,8 @@
                 " A"
                 "B ")))
         (T
-            (list "A"))))
+            (mapcar #'mirror-line (list
+                "A")))))
 
 (defun diamond (letter)
     (mirror (half-diamond letter)))
