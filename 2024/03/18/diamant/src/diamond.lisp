@@ -12,8 +12,8 @@
         ((equal 'C letter)
             (list
                 (mirror-line "  A")
-                (concatenate 'string " B " (string-reverse-and-cdr " B "))
-                (concatenate 'string "C  " (string-reverse-and-cdr "C  "))
+                (mirror-line " B ")
+                (mirror-line "C  ")
             ))
         ((equal 'B letter)
             (list
