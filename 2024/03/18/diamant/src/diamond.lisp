@@ -4,16 +4,16 @@
 (defun diamond (letter)
     (mirror
         (cond
- (       (equal 'C letter)
-        (list
-        "  A  "
-        " B B "
-        "C   C"
-     ))
-(        (equal 'B letter)
-            (list
-                " A "
-                "B B"
-            ))
+            ((equal 'C letter)
+                (list
+                    "  A  "
+                    " B B "
+                    "C   C"
+                ))
+            ((equal 'B letter)
+                (list
+                    " A "
+                    "B B"
+                ))
             (T
-            (list "A")))))
+                (list "A")))))
