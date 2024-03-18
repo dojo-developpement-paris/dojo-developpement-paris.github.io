@@ -3,9 +3,17 @@
 
 (defun diamond (letter)
     (mirror
-        (if (equal 'B letter)
+        (cond
+ (       (equal 'C letter)
+        (list
+        "  A  "
+        " B B "
+        "C   C"
+     ))
+(        (equal 'B letter)
             (list
                 " A "
                 "B B"
-            )
-            (list "A"))))
+            ))
+            (T
+            (list "A")))))

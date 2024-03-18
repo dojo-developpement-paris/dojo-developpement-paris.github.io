@@ -17,6 +17,15 @@
         " A "
     ) (diamond 'B))))
 
+(test diamond-c
+    (is (equal (list
+        "  A  "
+        " B B "
+        "C   C"
+        " B B "
+        "  A  "
+    ) (diamond 'C))))
+
 (if (run-all-tests)
     (sb-ext:quit)
     (sb-ext:exit :abort 0)))
