@@ -1,5 +1,5 @@
-(defun mirror (truc)
-    (concatenate 'list truc (cdr (reverse truc))))
+(defun mirror (letter)
+    (concatenate 'list letter (cdr (reverse letter))))
 
 (defun diamond (letter)
     (mirror
