@@ -1,4 +1,4 @@
-(defun mirror (truc muche)
+(defun mirror (truc)
     (concatenate 'list truc (cdr (reverse truc))))
 
 (defun diamond (letter)
@@ -7,10 +7,6 @@
             (list
                 " A "
                 "B B"
-            )
-            (list
-                "B B"
-                " A "
             )
         )
         (list "A")))
