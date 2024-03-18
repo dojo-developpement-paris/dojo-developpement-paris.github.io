@@ -12,8 +12,11 @@
         (char-code (car (coerce (string letter) 'list)))
         (char-code #\A))))
 
+(defun letter-index-to-string (letter-index)
+    (string (code-char (+ letter-index (char-code #\A)))))
+
 (defun diagonal-line (letter-index size)
-    (concatenate 'string "  " "A" ""))
+    (concatenate 'string "  " (letter-index-to-string letter-index) ""))
 
 (defun diagonal (letter)
     (cond
