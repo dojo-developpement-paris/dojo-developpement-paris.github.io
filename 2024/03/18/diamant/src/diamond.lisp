@@ -16,9 +16,9 @@
     (cond
         ((equal 'C letter)
             (list
-                "  A"
+                (concatenate 'string "  " "A" "")
                 (concatenate 'string " " "B" " ")
-                "C  "))
+                (concatenate 'string "" "C" "  ")))
         ((equal 'B letter)
             (list
                 " A"
