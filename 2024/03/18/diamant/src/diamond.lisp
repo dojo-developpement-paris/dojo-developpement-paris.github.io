@@ -10,7 +10,7 @@
             (list
                 (concatenate 'string "  A" (string-reverse-and-cdr "  A"))
                 (concatenate 'string " B " (string-reverse-and-cdr " B "))
-                "C   C"
+                (concatenate 'string "C  " (string-reverse-and-cdr "C  "))
             ))
         ((equal 'B letter)
             (list
