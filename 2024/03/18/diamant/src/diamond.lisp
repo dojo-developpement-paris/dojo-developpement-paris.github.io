@@ -1,14 +1,14 @@
 (defun mirror (pattern)
     (concatenate 'list pattern (cdr (reverse pattern))))
 
-(defun string-reverse (line)
-    (coerce (reverse (coerce line 'list)) 'string))
+(defun string-reverse-and-cdr (line)
+    (coerce (cdr (reverse (coerce line 'list))) 'string))
 
 (defun half-diamond (letter)
     (cond
         ((equal 'C letter)
             (list
-                (concatenate 'string "  A" (string-reverse "  "))
+                (concatenate 'string "  A" (string-reverse-and-cdr "  A"))
                 " B B "
                 "C   C"
             ))
