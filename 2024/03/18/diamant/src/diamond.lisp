@@ -9,4 +9,4 @@
                 "B B"
             )
         )
-        (list "A")))
+        (mirror (list "A"))))
