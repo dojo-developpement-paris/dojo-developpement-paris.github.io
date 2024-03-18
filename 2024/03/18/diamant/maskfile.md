@@ -3,7 +3,7 @@
 ## test
 
 ```sh
-sbcl --script ./test/hello_test.lisp
+sbcl --script ./test/diamond_test.lisp
 ```
 
 ### test watch
@@ -45,4 +45,5 @@ direnv exec . \
 ---
 
 <!-- markdownlint-disable-next-line MD039 MD045 -->
+
 This folder has been setup from the [`nix-sandboxes`'s template ![](https://img.shields.io/gitlab/stars/pinage404/nix-sandboxes?style=social)](https://gitlab.com/pinage404/nix-sandboxes)

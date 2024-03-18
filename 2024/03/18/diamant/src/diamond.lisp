@@ -1,0 +1,2 @@
+(defun diamond (letter)
+    "A")
