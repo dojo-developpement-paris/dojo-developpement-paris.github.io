@@ -1,7 +1,16 @@
+(defun mirror (truc muche)
+    (concatenate 'list truc (cdr muche)))
+
 (defun diamond (letter)
-    (if (equal 'B letter) (list
-        " A "
-        "B B"
-        " A "
-    )
-    (list "A")))
+    (if (equal 'B letter)
+        (mirror
+            (list
+                " A "
+                "B B"
+            )
+            (list
+                "B B"
+                " A "
+            )
+        )
+        (list "A")))
