@@ -10,11 +10,10 @@
 (defun half-diamond (letter)
     (cond
         ((equal 'C letter)
-            (list
-                (mirror-line "  A")
-                (mirror-line " B ")
-                (mirror-line "C  ")
-            ))
+            (mapcar #'mirror-line (list
+                "  A"
+                " B "
+                "C  ")))
         ((equal 'B letter)
             (list
                 " A "
