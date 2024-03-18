@@ -7,8 +7,8 @@
 (asdf:load-system :fiveam-matchers)
 (use-package :fiveam-matchers)
 
-(test insomnie
-    (is (equal "A" (diamond 'A))))
+(test diamond-a
+    (is (equal '((A)) (diamond 'A))))
 
 (if (run-all-tests)
     (sb-ext:quit)
