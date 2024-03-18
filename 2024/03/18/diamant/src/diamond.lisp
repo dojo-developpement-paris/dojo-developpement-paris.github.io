@@ -1,5 +1,5 @@
 (defun mirror (truc muche)
-    (concatenate 'list truc (cdr muche)))
+    (concatenate 'list truc (cdr (reverse truc))))
 
 (defun diamond (letter)
     (if (equal 'B letter)
