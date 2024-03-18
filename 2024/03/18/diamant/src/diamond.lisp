@@ -7,6 +7,11 @@
 (defun mirror-line (pattern)
     (concatenate 'string pattern (string-reverse-and-cdr pattern)))
 
+(defun size (letter)
+    (1+ (-
+        (char-code (car (coerce (string letter) 'list)))
+        (char-code #\A))))
+
 (defun diagonal (letter)
     (cond
         ((equal 'C letter)
@@ -20,7 +25,7 @@
                 "B "))
         (T
             (list
-                "A"))))
+                (coerce (list #\A) 'string)))))
 
 (defun half-diamond (letter)
     (mapcar #'mirror-line (diagonal letter)))
