@@ -15,10 +15,9 @@
                 " B "
                 "C  ")))
         ((equal 'B letter)
-            (list
-                " A "
-                "B B"
-            ))
+            (mapcar #'mirror-line (list
+                " A"
+                "B ")))
         (T
             (list "A"))))
 
