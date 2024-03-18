@@ -17,7 +17,7 @@
         ((equal 'C letter)
             (list
                 "  A"
-                " B "
+                (concatenate 'string " " "B" " ")
                 "C  "))
         ((equal 'B letter)
             (list
