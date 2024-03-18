@@ -8,7 +8,7 @@
 (use-package :fiveam-matchers)
 
 (test diamond-a
-    (is (equal '("A") (diamond 'A))))
+    (is (equal (list "A") (diamond 'A))))
 
 (if (run-all-tests)
     (sb-ext:quit)
