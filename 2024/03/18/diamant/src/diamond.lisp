@@ -1,2 +1,2 @@
 (defun diamond (letter)
-    '("A"))
+    (list "A"))
