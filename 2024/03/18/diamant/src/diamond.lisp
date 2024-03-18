@@ -1,9 +1,6 @@
 (defun mirror (pattern)
     (concatenate 'list pattern (cdr (reverse pattern))))
 
-(defun toto ()
-    "A")
-
 (defun half-diamond (letter)
     (cond
         ((equal 'C letter)
@@ -18,7 +15,7 @@
                 "B B"
             ))
         (T
-            (list (toto)))))
+            (list "A"))))
 
 (defun diamond (letter)
     (mirror (half-diamond letter)))
