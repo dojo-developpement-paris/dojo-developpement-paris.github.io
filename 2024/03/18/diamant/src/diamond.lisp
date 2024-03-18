@@ -2,11 +2,10 @@
     (concatenate 'list truc (cdr (reverse truc))))
 
 (defun diamond (letter)
-    (if (equal 'B letter)
-        (mirror
+    (mirror
+        (if (equal 'B letter)
             (list
                 " A "
                 "B B"
             )
-        )
-        (mirror (list "A"))))
+            (list "A"))))
