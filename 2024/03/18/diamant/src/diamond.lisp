@@ -5,7 +5,7 @@
     (cond
         ((equal 'C letter)
             (list
-                "  A  "
+               (concatenate 'string "  A" "  ")
                 " B B "
                 "C   C"
             ))
