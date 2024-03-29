@@ -17,11 +17,11 @@ describe("hello", () => {
 });
 
 function computeFraction(
-  _arg0: string,
-  _arg1: [number, number],
-  _arg2: [number, number],
+  _operator: string,
+  firstFraction: [number, number],
+  secondFraction: [number, number],
 ): [number, number] {
-  const numerator = _arg1[0] * _arg2[0];
-  const denominator = _arg1[1] * _arg2[1];
+  const numerator = firstFraction[0] * secondFraction[0];
+  const denominator = firstFraction[1] * secondFraction[1];
   return [numerator, denominator];
 }
