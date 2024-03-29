@@ -26,16 +26,21 @@ describe("hello", () => {
   });
 });
 
+function inverseFraction(fraction: Fraction): Fraction {
+  return [fraction[1], fraction[0]];
+}
+
 function computeFraction(
   operator: Operator,
   firstFraction: Fraction,
   secondFraction: Fraction,
 ): Fraction {
   if (operator == Operator.DIVIDE) {
-    return computeFraction(Operator.MULTIPLY, firstFraction, [
-      secondFraction[1],
-      secondFraction[0],
-    ]);
+    return computeFraction(
+      Operator.MULTIPLY,
+      firstFraction,
+      inverseFraction(secondFraction),
+    );
   }
   const numerator = firstFraction[0] * secondFraction[0];
   const denominator = firstFraction[1] * secondFraction[1];
