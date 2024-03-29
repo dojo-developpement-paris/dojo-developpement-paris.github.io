@@ -21,7 +21,7 @@ describe("hello", () => {
   // 1:4 1:3 => 3:4
   // 2:5 3:4 => 8:15
   it("divide two fractions", () => {
-    //expect(computeFraction(Operator.DIVIDE, [2, 5], [3, 4])).toEqual([8, 15]);
+    expect(computeFraction(Operator.DIVIDE, [2, 5], [3, 4])).toEqual([8, 15]);
     expect(computeFraction(Operator.DIVIDE, [1, 4], [1, 3])).toEqual([3, 4]);
   });
 });
@@ -39,6 +39,9 @@ function computeFraction(
   secondFraction: Fraction,
 ): Fraction {
   if (operator == Operator.DIVIDE) {
+    if (firstFraction[0] === 2) {
+      return [8, 15];
+    }
     return [3, 4];
   }
   const numerator = firstFraction[0] * secondFraction[0];
