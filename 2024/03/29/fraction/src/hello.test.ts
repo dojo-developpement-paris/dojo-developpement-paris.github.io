@@ -10,10 +10,12 @@ describe("hello", () => {
     expect(hello("foo")).toEqual("Hello foo");
   });
 
+  // to multiply two fractions, multiply the numerators and denominators pairwise.
   it("multiple two fractions", () => {
     expect(computeFraction(Operator.MULTIPLY, [0, 1], [0, 1])).toEqual([0, 1]);
     expect(computeFraction(Operator.MULTIPLY, [1, 4], [1, 4])).toEqual([1, 16]);
   });
+  // to divide two fractions, multiply the first by the inverse of the second.
 });
 
 type Fraction = [number, number];
