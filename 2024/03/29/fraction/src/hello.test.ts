@@ -11,15 +11,19 @@ describe("hello", () => {
   });
 
   it("multiple two fractions", () => {
-    expect(computeFraction("*", [0, 1], [0, 1])).toEqual([0, 1]);
-    expect(computeFraction("*", [1, 4], [1, 4])).toEqual([1, 16]);
+    expect(computeFraction(Operator.MULTIPLY, [0, 1], [0, 1])).toEqual([0, 1]);
+    expect(computeFraction(Operator.MULTIPLY, [1, 4], [1, 4])).toEqual([1, 16]);
   });
 });
 
 type Fraction = [number, number];
 
+enum Operator {
+  MULTIPLY,
+}
+
 function computeFraction(
-  _operator: string,
+  _operator: Operator,
   firstFraction: Fraction,
   secondFraction: Fraction,
 ): Fraction {
