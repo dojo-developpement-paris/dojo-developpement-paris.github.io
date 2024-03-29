@@ -34,11 +34,11 @@ enum Operator {
 }
 
 function computeFraction(
-  _operator: Operator,
+  operator: Operator,
   firstFraction: Fraction,
   secondFraction: Fraction,
 ): Fraction {
-  if (_operator == Operator.DIVIDE) {
+  if (operator == Operator.DIVIDE) {
     return [3, 4];
   }
   const numerator = firstFraction[0] * secondFraction[0];
