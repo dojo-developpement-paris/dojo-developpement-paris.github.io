@@ -35,7 +35,7 @@ function computeFraction(
     if (firstFraction[0] === 2) {
       return [2 * 4, 5 * 3];
     }
-    return [3, 4];
+    return [1 * 3, 4 * 1];
   }
   const numerator = firstFraction[0] * secondFraction[0];
   const denominator = firstFraction[1] * secondFraction[1];
