@@ -26,13 +26,6 @@ describe("hello", () => {
   });
 });
 
-type Fraction = [number, number];
-
-enum Operator {
-  MULTIPLY,
-  DIVIDE,
-}
-
 function computeFraction(
   operator: Operator,
   firstFraction: Fraction,
@@ -40,11 +33,18 @@ function computeFraction(
 ): Fraction {
   if (operator == Operator.DIVIDE) {
     if (firstFraction[0] === 2) {
-      return [8, 15];
+      return [2 * 4, 5 * 3];
     }
     return [3, 4];
   }
   const numerator = firstFraction[0] * secondFraction[0];
   const denominator = firstFraction[1] * secondFraction[1];
   return [numerator, denominator];
+}
+
+type Fraction = [number, number];
+
+enum Operator {
+  MULTIPLY,
+  DIVIDE,
 }
