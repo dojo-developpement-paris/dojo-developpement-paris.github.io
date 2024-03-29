@@ -21,6 +21,7 @@ function computeFraction(
   _arg1: [number, number],
   _arg2: [number, number],
 ): [number, number] {
-  if (_arg1[0] === 1) return [1, 16];
-  return [0, 4];
+  const numerator = _arg1[0] * _arg2[0];
+  const denominator = _arg1[1] * _arg2[1];
+  return [numerator, denominator];
 }
