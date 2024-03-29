@@ -33,7 +33,10 @@ function computeFraction(
 ): Fraction {
   if (operator == Operator.DIVIDE) {
     if (firstFraction[0] === 2) {
-      return [2 * 4, 5 * 3];
+      return [
+        firstFraction[0] * secondFraction[1],
+        firstFraction[1] * secondFraction[0],
+      ];
     }
     return [1 * 3, 4 * 1];
   }
