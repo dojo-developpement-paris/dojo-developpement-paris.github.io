@@ -1,0 +1,65 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "bashInteractive@latest": {
+      "last_modified": "2024-03-14T09:34:31Z",
+      "resolved": "github:NixOS/nixpkgs/bd5ddf2c6bfafff031edf80221e1ee94e86ca10a#bashInteractive",
+      "source": "devbox-search",
+      "version": "5.2p26",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/z66wrs9pak556dmdq5j6zw8355mk7jjh-bash-interactive-5.2p26"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/bd1303kvk2n90if6c3yibm4w2rsxyfqn-bash-interactive-5.2p26"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/d5z82b7rgqklrl4yycn44npi5qmpzzly-bash-interactive-5.2p26"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/032wiarm65zp3bh9ak3dz2sqcr3n8g70-bash-interactive-5.2p26"
+        }
+      }
+    },
+    "deno@latest": {
+      "last_modified": "2024-03-10T19:04:55Z",
+      "resolved": "github:NixOS/nixpkgs/d40e866b1f98698d454dad8f592fe7616ff705a4#deno",
+      "source": "devbox-search",
+      "version": "1.41.2",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/li03lzv7rhbnbkq2idz8bx8qkhb9byci-deno-1.41.2"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/wvr12chf1xblvkfw7drif9zaqsqqfyb9-deno-1.41.2"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/0alyhqmpagwlsn2q0mhjl40bdzgz6ys8-deno-1.41.2"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/qvk8r0952qdsvl0hidq9r1kfkzsbg7qw-deno-1.41.2"
+        }
+      }
+    },
+    "mask@latest": {
+      "last_modified": "2024-03-08T13:51:52Z",
+      "resolved": "github:NixOS/nixpkgs/a343533bccc62400e8a9560423486a3b6c11a23b#mask",
+      "source": "devbox-search",
+      "version": "0.11.4",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/20i9qm9c65z3k7x5ln3vgja1m6bjpk97-mask-0.11.4"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/7nnn3gi4g63pvvhc7p5wnggpahj3vjsr-mask-0.11.4"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/vkz1d7yd9ckzajkvh350zzdsrqbhdbxc-mask-0.11.4"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/0b0b785g389zlcxhamlma27g04iicmlg-mask-0.11.4"
+        }
+      }
+    }
+  }
+}
