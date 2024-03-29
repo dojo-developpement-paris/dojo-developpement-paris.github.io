@@ -16,11 +16,13 @@ describe("hello", () => {
   });
 });
 
+type Fraction = [number, number];
+
 function computeFraction(
   _operator: string,
-  firstFraction: [number, number],
-  secondFraction: [number, number],
-): [number, number] {
+  firstFraction: Fraction,
+  secondFraction: Fraction,
+): Fraction {
   const numerator = firstFraction[0] * secondFraction[0];
   const denominator = firstFraction[1] * secondFraction[1];
   return [numerator, denominator];
