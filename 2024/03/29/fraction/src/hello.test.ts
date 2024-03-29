@@ -32,13 +32,10 @@ function computeFraction(
   secondFraction: Fraction,
 ): Fraction {
   if (operator == Operator.DIVIDE) {
-    if (firstFraction[0] === 2) {
-      return [
-        firstFraction[0] * secondFraction[1],
-        firstFraction[1] * secondFraction[0],
-      ];
-    }
-    return [1 * 3, 4 * 1];
+    return [
+      firstFraction[0] * secondFraction[1],
+      firstFraction[1] * secondFraction[0],
+    ];
   }
   const numerator = firstFraction[0] * secondFraction[0];
   const denominator = firstFraction[1] * secondFraction[1];
