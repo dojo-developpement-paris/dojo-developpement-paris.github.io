@@ -1,4 +1,4 @@
-Prochaine session : le vendredi 20 avril chez Clever-Age 
+Prochaine session : le vendredi 19 avril chez Clever-Age 
 
 Personnes présentes :
 - Les bonnes personnes
@@ -18,7 +18,7 @@ Le but n'est **pas de finir**
 
 Sujets :
 - 0 - A - Markov Chain - Mob - Python
-- 0 - B - Environement Controleur - Demo - java
+- 1 - B - Environement Controleur - Demo - java
 - 0 - C - Jeux de la vie - Kata - Java
 
 Modes de fonctionnement habituels :
