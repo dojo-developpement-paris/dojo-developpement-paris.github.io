@@ -3,14 +3,14 @@ import { describe, expect, it } from "./dev_deps.ts";
 describe("Arbitre morpion", () => {
   it("initialement c'est à X de jouer", () => {
     const partie = nouvellePartie();
-    expect(status(partie))
+    expect(statut(partie))
       .toEqual(Statut.A_X_DE_JOUER);
   });
 
   it("après un coup, c'est à O de jouer", () => {
     const partieInitiale = nouvellePartie();
     const partie = joue(partieInitiale, [1, 1]);
-    expect(status(partie))
+    expect(statut(partie))
       .toEqual(Statut.A_O_DE_JOUER);
   });
 
@@ -19,7 +19,7 @@ describe("Arbitre morpion", () => {
     const partie1 = joue(partie0, [1, 1]);
     const partie2 = joue(partie1, [2, 1]);
 
-    expect(status(partie2))
+    expect(statut(partie2))
       .toEqual(Statut.A_X_DE_JOUER);
   });
 
@@ -28,7 +28,7 @@ describe("Arbitre morpion", () => {
     const partie1 = joue(partie0, [1, 1]);
     const partie2 = joue(partie1, [1, 1]);
 
-    expect(status(partie2))
+    expect(statut(partie2))
       .toEqual(Statut.ILLEGAL);
   });
 });
@@ -38,13 +38,18 @@ enum Statut {
   A_O_DE_JOUER = "A_O_DE_JOUER",
   ILLEGAL = "ILLEGAL",
 }
+
+type Partie = {
+  statut: Statut;
+};
+
 let positionSauvegarde = [-1, -1];
 function nouvellePartie(): Statut {
   positionSauvegarde = [-1, -1];
   return Statut.A_X_DE_JOUER;
 }
 
-function status(partie: Statut): Statut {
+function statut(partie: Statut): Statut {
   return partie;
 }
 
