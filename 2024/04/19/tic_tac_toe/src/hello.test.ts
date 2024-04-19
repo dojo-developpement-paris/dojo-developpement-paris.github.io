@@ -30,8 +30,8 @@ describe("Arbitre morpion", () => {
 });
 
 enum Partie {
-  A_X_DE_JOUER,
-  A_O_DE_JOUER,
+  A_X_DE_JOUER = "A_X_DE_JOUER",
+  A_O_DE_JOUER = "A_O_DE_JOUER",
 }
 
 function nouvellePartie(): Partie {
