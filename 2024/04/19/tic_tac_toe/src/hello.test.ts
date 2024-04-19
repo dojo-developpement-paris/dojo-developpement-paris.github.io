@@ -29,7 +29,7 @@ function status(partie: Partie): Partie {
 }
 
 function joue(
-  _partieInitiale: Partie,
+  _partie: Partie,
   _position: [number, number],
 ): Partie {
   return Partie.A_O_DE_JOUER;
