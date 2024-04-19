@@ -7,5 +7,13 @@
   "deno.suggest.completeFunctionCalls": true,
   "devbox.autoShellOnTerminal": false,
   "editor.formatOnSave": true,
-  "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix"
+  "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
+  "workbench.colorTheme": "Visual Studio Light",
+  "editor.fontWeight": "normal",
+  "window.zoomLevel": 1,
+  "debug.console.fontSize": 26,
+  "editor.fontSize": 26,
+  "markdown.preview.fontSize": 26,
+  "terminal.integrated.fontSize": 26,
+  "customPresentationMode.backup": {}
 }
