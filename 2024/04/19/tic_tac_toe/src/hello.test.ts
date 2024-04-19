@@ -44,27 +44,29 @@ type Partie = {
 };
 
 let positionSauvegarde = [-1, -1];
-function nouvellePartie(): Statut {
+function nouvellePartie(): Partie {
   positionSauvegarde = [-1, -1];
-  return Statut.A_X_DE_JOUER;
+  return {
+    statut: Statut.A_X_DE_JOUER,
+  };
 }
 
-function statut(partie: Statut): Statut {
-  return partie;
+function statut(partie: Partie): Statut {
+  return partie.statut;
 }
 
 function joue(
-  partie: Statut,
+  partie: Partie,
   position: [number, number],
-): Statut {
+): Partie {
   if (
     position[0] == positionSauvegarde[0] &&
     position[1] == positionSauvegarde[1]
   ) {
-    return Statut.ILLEGAL;
+    return { statut: Statut.ILLEGAL };
   }
   positionSauvegarde = position;
-  return partie == Statut.A_X_DE_JOUER
-    ? Statut.A_O_DE_JOUER
-    : Statut.A_X_DE_JOUER;
+  return statut(partie) == Statut.A_X_DE_JOUER
+    ? { statut: Statut.A_O_DE_JOUER }
+    : { statut: Statut.A_X_DE_JOUER };
 }
