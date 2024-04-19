@@ -13,6 +13,20 @@ describe("Arbitre morpion", () => {
     expect(status(partie))
       .toEqual(Partie.A_O_DE_JOUER);
   });
+
+  it("après deux coup, c'est à X de jouer", () => {
+    const partieInitiale = nouvellePartie();
+    const partie = joue(
+      joue(
+        partieInitiale,
+        [1, 1],
+      ),
+      [2, 1],
+    );
+
+    expect(status(partie))
+      .toEqual(Partie.A_X_DE_JOUER);
+  });
 });
 
 enum Partie {
@@ -29,8 +43,12 @@ function status(partie: Partie): Partie {
 }
 
 function joue(
-  _partie: Partie,
+  partie: Partie,
   _position: [number, number],
 ): Partie {
-  return Partie.A_O_DE_JOUER;
+  if (partie == Partie.A_X_DE_JOUER) {
+    return Partie.A_O_DE_JOUER;
+  } else {
+    return Partie.A_X_DE_JOUER;
+  }
 }
