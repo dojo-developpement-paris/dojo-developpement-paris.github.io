@@ -9,7 +9,7 @@ describe("Arbitre morpion", () => {
 
   it("après un coup, c'est à O de jouer", () => {
     const partieInitiale = nouvellePartie();
-    const partie = joue(partieInitiale, 1, 1);
+    const partie = joue(partieInitiale, [1, 1]);
     expect(status(partie))
       .toEqual(Partie.A_O_DE_JOUER);
   });
@@ -30,8 +30,7 @@ function status(partie: Partie): Partie {
 
 function joue(
   _partieInitiale: Partie,
-  _colonne: number,
-  _ligne: number,
+  _position: [number, number],
 ): Partie {
   return Partie.A_O_DE_JOUER;
 }
