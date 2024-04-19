@@ -16,7 +16,8 @@ describe("Arbitre morpion", () => {
 
   it("après deux coup, c'est à X de jouer", () => {
     const partieInitiale = nouvellePartie();
-    const partie = joue(joue(partieInitiale, [1, 1]), [2, 1]);
+    const partie1 = joue(partieInitiale, [1, 1]);
+    const partie = joue(partie1, [2, 1]);
 
     expect(status(partie))
       .toEqual(Partie.A_X_DE_JOUER);
