@@ -46,9 +46,7 @@ function joue(
   partie: Partie,
   _position: [number, number],
 ): Partie {
-  if (partie == Partie.A_X_DE_JOUER) {
-    return Partie.A_O_DE_JOUER;
-  } else {
-    return Partie.A_X_DE_JOUER;
-  }
+  return partie == Partie.A_X_DE_JOUER
+    ? Partie.A_O_DE_JOUER
+    : Partie.A_X_DE_JOUER;
 }
