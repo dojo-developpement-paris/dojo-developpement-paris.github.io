@@ -29,7 +29,7 @@ Le but n'est **pas de finir**
 
 Sujets :
 - 7 - A - kata diamond - property based testing - Haskell mob
-- 7 - B - bowling score - mob - common lisp - comment le code nous parle *
+- 8 - B - bowling score - mob - common lisp - comment le code nous parle
 - 2 - C - kata diamond - property based testing - java mob
 - 3 - D - poker hand - mob - haskell
 - 2 - E - nombre romain - mob - java
