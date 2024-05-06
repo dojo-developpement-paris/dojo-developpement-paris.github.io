@@ -28,7 +28,7 @@ export class ApiCustomer implements Customer {
     public statement(): string {
         let totalAmount: number = 0;
         let frequentRenterPoints: number = 0;
-        let result = "Rental Record for " + this.getName() + "\n";
+        let result = makeHeader(this.getName());
 
         for (const rental of this.rentals) {
             const amount = moviePriceComputation(computationRules, rental);
@@ -47,6 +47,10 @@ export class ApiCustomer implements Customer {
 
         return result;
     }
+}
+
+function makeHeader(customerName: string) {
+    return "Rental Record for " + customerName + "\n";
 }
 
 function moviePriceRenterPoints(rental: Rental): number {
