@@ -55,15 +55,14 @@ function moviePriceRenterPoints(rental: Rental): number {
     return 1;
 }
 
-const crepes = {
+const computationRules = {
     [Movie.REGULAR]:regularMoviePriceComputation,
     [Movie.NEW_RELEASE]:newReleaseMoviePriceComputation,
     [Movie.CHILDRENS]:childrenMoviePriceComputation
 }
 
 function moviePriceComputation(rental: Rental): number {
-    const galette = crepes[rental.getMovie().getPriceCode()];
-    return galette(rental);
+    return computationRules[rental.getMovie().getPriceCode()](rental);
 }
 
 function childrenMoviePriceComputation(rental: Rental) {
