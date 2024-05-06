@@ -31,7 +31,7 @@ export class ApiCustomer implements Customer {
         let result = "Rental Record for " + this.getName() + "\n";
 
         for (const rental of this.rentals) {
-            const amount = moviePriceComputation(rental);
+            const amount = moviePriceComputation(computationRules, rental);
 
             // add frequent renter points
             frequentRenterPoints += moviePriceRenterPoints(rental);
@@ -61,7 +61,9 @@ const computationRules = {
     [Movie.CHILDRENS]:childrenMoviePriceComputation
 }
 
-function moviePriceComputation(rental: Rental): number {
+function moviePriceComputation(computationRules: {
+    [x: number]: (rental: Rental) => number;
+}, rental: Rental): number {
     return computationRules[rental.getMovie().getPriceCode()](rental);
 }
 
