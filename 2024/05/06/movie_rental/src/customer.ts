@@ -55,15 +55,13 @@ function moviePriceRenterPoints(rental: Rental): number {
     return 1;
 }
 
+const crepes = {[Movie.REGULAR]:regularMoviePriceComputation,
+    [Movie.NEW_RELEASE]:newReleaseMoviePriceComputation,
+    [Movie.CHILDRENS]:childrenMoviePriceComputation
+}
+
 function moviePriceComputation(rental: Rental): number {
-    switch (rental.getMovie().getPriceCode()) {
-        case Movie.REGULAR:
-            return regularMoviePriceComputation(rental);
-        case Movie.NEW_RELEASE:
-            return newReleaseMoviePriceComputation(rental);
-        case Movie.CHILDRENS:
-            return childrenMoviePriceComputation(rental);
-    }
+    return crepes[rental.getMovie().getPriceCode()](rental);
 }
 
 function childrenMoviePriceComputation(rental: Rental) {
