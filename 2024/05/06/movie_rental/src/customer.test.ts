@@ -54,6 +54,21 @@ describe("Customer", () => {
         expect(customer.statement()).toBe(expected);
     })
 
+    it("should test", () => {
+        const customer = new ApiCustomer("Bob");
+        customer.addRental(new Rental(new Movie("Bambi", Movie.CHILDRENS), 3));
+        customer.addRental(new Rental(new Movie("Toy Story", Movie.CHILDRENS), 4));
+
+        const expected = "" +
+            "Rental Record for Bob\n" +
+            "\tBambi\t1.5\n" +
+            "\tToy Story\t3.0\n" +
+            "Amount owed is 4.5\n" +
+            "You earned 2 frequent renter points";
+
+        expect(customer.statement()).toBe(expected);
+    });
+
     it("should amount and rental points", () => {
         const customer = new ApiCustomer("Bob");
         customer.addRental(new Rental(new Movie("Jaws", Movie.REGULAR), 2));
