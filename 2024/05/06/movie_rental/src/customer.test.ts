@@ -35,6 +35,6 @@ describe("Customer", () => {
         customer.addRental(new Rental(new Movie("Bambi", Movie.CHILDRENS), 3));
         customer.addRental(new Rental(new Movie("Toy Story", Movie.CHILDRENS), 4));
 
-        expect(customer.getAmount()).toEqual(19)
+        expect(customer.getAmountOwed()).toEqual(19)
     });
 });
