@@ -31,14 +31,14 @@ export class ApiCustomer implements Customer {
         let result = "Rental Record for " + this.getName() + "\n";
 
         for (const rental of this.rentals) {
-            const thisAmount = moviePriceComputation(rental);
+            const amount = moviePriceComputation(rental);
 
             // add frequent renter points
             frequentRenterPoints += moviePriceRenterPoints(rental);
 
             // show figures for this rental
-            result += "\t" + rental.getMovie().getTitle() + "\t" + thisAmount.toFixed(1) + "\n";
-            totalAmount += thisAmount;
+            result += "\t" + rental.getMovie().getTitle() + "\t" + amount.toFixed(1) + "\n";
+            totalAmount += amount;
         }
 
         // add footer lines
@@ -66,11 +66,11 @@ function moviePriceComputation(rental: Rental): number {
 }
 
 function childrenMoviePriceComputation(rental: Rental) {
-    let thisAmount = 1.5;
+    let amount = 1.5;
     if (rental.getDaysRented() > 3) {
-        thisAmount += (rental.getDaysRented() - 3) * 1.5;
+        amount += (rental.getDaysRented() - 3) * 1.5;
     }
-    return thisAmount;
+    return amount;
 }
 
 function newReleaseMoviePriceComputation(rental: Rental) {
@@ -78,10 +78,10 @@ function newReleaseMoviePriceComputation(rental: Rental) {
 }
 
 function regularMoviePriceComputation(rental: Rental) {
-    let thisAmount = 2;
+    let amount = 2;
     if (rental.getDaysRented() > 2) {
-        thisAmount += (rental.getDaysRented() - 2) * 1.5;
+        amount += (rental.getDaysRented() - 2) * 1.5;
     }
-    return thisAmount;
+    return amount;
 }
 
