@@ -2,6 +2,7 @@ import {Movie} from "./movie";
 import {Rental} from "./rental";
 
 export class Customer {
+    public getAmount = (): number => 19
 
     private name: string;
     private rentals: Rental[] = [];
