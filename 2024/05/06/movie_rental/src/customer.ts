@@ -36,10 +36,7 @@ export class ApiCustomer implements Customer {
             // determine amounts for each line
             switch (each.getMovie().getPriceCode()) {
                 case Movie.REGULAR:
-                    thisAmount += 2;
-                    if (each.getDaysRented() > 2) {
-                        thisAmount += (each.getDaysRented() - 2) * 1.5;
-                    }
+                    thisAmount += regularMoviePriceComputation(thisAmount, each);
                     break;
                 case Movie.NEW_RELEASE:
                     thisAmount += each.getDaysRented() * 3;
@@ -70,3 +67,11 @@ export class ApiCustomer implements Customer {
         return result;
     }
 }
+function regularMoviePriceComputation(thisAmount: number, each: Rental) {
+    thisAmount += 2;
+    if (each.getDaysRented() > 2) {
+        thisAmount += (each.getDaysRented() - 2) * 1.5;
+    }
+    return thisAmount;
+}
+
