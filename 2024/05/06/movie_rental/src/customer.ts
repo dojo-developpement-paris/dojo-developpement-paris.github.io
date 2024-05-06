@@ -42,10 +42,7 @@ export class ApiCustomer implements Customer {
                     thisAmount += newReleaseMoviePriceComputation(each);
                     break;
                 case Movie.CHILDRENS:
-                    thisAmount += 1.5;
-                    if (each.getDaysRented() > 3) {
-                        thisAmount += (each.getDaysRented() - 3) * 1.5;
-                    }
+                    thisAmount += childrenMoviePriceComputation(each);
                     break;
             }
 
@@ -67,6 +64,14 @@ export class ApiCustomer implements Customer {
         return result;
     }
 }
+function childrenMoviePriceComputation(each: Rental) {
+    let thisAmount = 1.5;
+    if (each.getDaysRented() > 3) {
+        thisAmount += (each.getDaysRented() - 3) * 1.5;
+    }
+    return thisAmount;
+}
+
 function newReleaseMoviePriceComputation(each: Rental) {
     return each.getDaysRented() * 3;
 }
