@@ -31,20 +31,7 @@ export class ApiCustomer implements Customer {
         let result = "Rental Record for " + this.getName() + "\n";
 
         for (const each of this.rentals) {
-            let thisAmount = 0;
-
-            // determine amounts for each line
-            switch (each.getMovie().getPriceCode()) {
-                case Movie.REGULAR:
-                    thisAmount += regularMoviePriceComputation(each);
-                    break;
-                case Movie.NEW_RELEASE:
-                    thisAmount += newReleaseMoviePriceComputation(each);
-                    break;
-                case Movie.CHILDRENS:
-                    thisAmount += childrenMoviePriceComputation(each);
-                    break;
-            }
+            const thisAmount = moviePriceComputation(each);
 
             // add frequent renter points
             frequentRenterPoints++;
@@ -64,6 +51,17 @@ export class ApiCustomer implements Customer {
         return result;
     }
 }
+function moviePriceComputation(each: Rental): number {
+    switch (each.getMovie().getPriceCode()) {
+        case Movie.REGULAR:
+            return regularMoviePriceComputation(each);
+        case Movie.NEW_RELEASE:
+            return newReleaseMoviePriceComputation(each);
+        case Movie.CHILDRENS:
+            return childrenMoviePriceComputation(each);
+    }
+}
+
 function childrenMoviePriceComputation(each: Rental) {
     let thisAmount = 1.5;
     if (each.getDaysRented() > 3) {
