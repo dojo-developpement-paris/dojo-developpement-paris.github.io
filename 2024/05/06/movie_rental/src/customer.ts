@@ -55,7 +55,8 @@ function moviePriceRenterPoints(rental: Rental): number {
     return 1;
 }
 
-const crepes = {[Movie.REGULAR]:regularMoviePriceComputation,
+const crepes = {
+    [Movie.REGULAR]:regularMoviePriceComputation,
     [Movie.NEW_RELEASE]:newReleaseMoviePriceComputation,
     [Movie.CHILDRENS]:childrenMoviePriceComputation
 }
