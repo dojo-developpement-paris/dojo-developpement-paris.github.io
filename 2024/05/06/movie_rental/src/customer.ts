@@ -61,9 +61,11 @@ const computationRules = {
     [Movie.CHILDRENS]:childrenMoviePriceComputation
 }
 
-function moviePriceComputation(computationRules: {
+type ComputationRules = {
     [x: number]: (rental: Rental) => number;
-}, rental: Rental): number {
+}
+
+function moviePriceComputation(computationRules: ComputationRules, rental: Rental): number {
     return computationRules[rental.getMovie().getPriceCode()](rental);
 }
 
