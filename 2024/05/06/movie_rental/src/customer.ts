@@ -1,13 +1,19 @@
 import {Movie} from "./movie";
 import {Rental} from "./rental";
 
-export class Customer {
+export interface Customer {
+    addRental(arg: Rental): void
+    statement(): string
+    getName(): string
+}
+
+export class ApiCustomer implements Customer {
     public getAmountOwed = (): number => 19
 
     private name: string;
     private rentals: Rental[] = [];
 
-    public constructor(name: string) {
+    public constructor(name: string){
         this.name = name;
     }
 

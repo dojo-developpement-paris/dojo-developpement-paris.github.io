@@ -1,10 +1,10 @@
-import {Customer} from "./customer";
+import {ApiCustomer} from "./customer";
 import {Rental} from "./rental";
 import {Movie} from "./movie";
 
 describe("Customer", () => {
     it("should test", () => {
-        const customer = new Customer("Bob");
+        const customer = new ApiCustomer("Bob");
         customer.addRental(new Rental(new Movie("Jaws", Movie.REGULAR), 2));
         customer.addRental(new Rental(new Movie("Golden Eye", Movie.REGULAR), 3));
         customer.addRental(new Rental(new Movie("Short New", Movie.NEW_RELEASE), 1));
@@ -25,9 +25,22 @@ describe("Customer", () => {
 
         expect(customer.statement()).toBe(expected);
     });
+    
+    it("should 1", () => {
+        const customer = new ApiCustomer("Bob");
+        customer.addRental(new Rental(new Movie("Jaws", Movie.REGULAR), 2));
+
+        const expected = "" +
+            "Rental Record for Bob\n" +
+            "\tJaws\t2.0\n" +
+            "Amount owed is 2.0\n" +
+            "You earned 1 frequent renter points";
+
+        expect(customer.statement()).toBe(expected);
+    });
 
     it("should amount and rental points", () => {
-        const customer = new Customer("Bob");
+        const customer = new ApiCustomer("Bob");
         customer.addRental(new Rental(new Movie("Jaws", Movie.REGULAR), 2));
         customer.addRental(new Rental(new Movie("Golden Eye", Movie.REGULAR), 3));
         customer.addRental(new Rental(new Movie("Short New", Movie.NEW_RELEASE), 1));
