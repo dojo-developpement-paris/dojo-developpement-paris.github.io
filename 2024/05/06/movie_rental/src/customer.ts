@@ -30,14 +30,14 @@ export class ApiCustomer implements Customer {
         let frequentRenterPoints: number = 0;
         let result = "Rental Record for " + this.getName() + "\n";
 
-        for (const each of this.rentals) {
-            const thisAmount = moviePriceComputation(each);
+        for (const rental of this.rentals) {
+            const thisAmount = moviePriceComputation(rental);
 
             // add frequent renter points
-            frequentRenterPoints += moviePriceRenterPoints(each);
+            frequentRenterPoints += moviePriceRenterPoints(rental);
 
             // show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" + thisAmount.toFixed(1) + "\n";
+            result += "\t" + rental.getMovie().getTitle() + "\t" + thisAmount.toFixed(1) + "\n";
             totalAmount += thisAmount;
         }
 
@@ -55,33 +55,33 @@ function moviePriceRenterPoints(rental: Rental): number {
     return 1;
 }
 
-function moviePriceComputation(each: Rental): number {
-    switch (each.getMovie().getPriceCode()) {
+function moviePriceComputation(rental: Rental): number {
+    switch (rental.getMovie().getPriceCode()) {
         case Movie.REGULAR:
-            return regularMoviePriceComputation(each);
+            return regularMoviePriceComputation(rental);
         case Movie.NEW_RELEASE:
-            return newReleaseMoviePriceComputation(each);
+            return newReleaseMoviePriceComputation(rental);
         case Movie.CHILDRENS:
-            return childrenMoviePriceComputation(each);
+            return childrenMoviePriceComputation(rental);
     }
 }
 
-function childrenMoviePriceComputation(each: Rental) {
+function childrenMoviePriceComputation(rental: Rental) {
     let thisAmount = 1.5;
-    if (each.getDaysRented() > 3) {
-        thisAmount += (each.getDaysRented() - 3) * 1.5;
+    if (rental.getDaysRented() > 3) {
+        thisAmount += (rental.getDaysRented() - 3) * 1.5;
     }
     return thisAmount;
 }
 
-function newReleaseMoviePriceComputation(each: Rental) {
-    return each.getDaysRented() * 3;
+function newReleaseMoviePriceComputation(rental: Rental) {
+    return rental.getDaysRented() * 3;
 }
 
-function regularMoviePriceComputation(each: Rental) {
+function regularMoviePriceComputation(rental: Rental) {
     let thisAmount = 2;
-    if (each.getDaysRented() > 2) {
-        thisAmount += (each.getDaysRented() - 2) * 1.5;
+    if (rental.getDaysRented() > 2) {
+        thisAmount += (rental.getDaysRented() - 2) * 1.5;
     }
     return thisAmount;
 }
