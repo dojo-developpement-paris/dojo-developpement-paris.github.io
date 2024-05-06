@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "target": "ES6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "include": ["./**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "./node_modules",
+    "./node_modules/*",
+    "./node_modules/@types/node/index.d.ts"
+  ]
+}
