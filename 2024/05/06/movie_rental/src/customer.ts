@@ -61,7 +61,8 @@ const crepes = {[Movie.REGULAR]:regularMoviePriceComputation,
 }
 
 function moviePriceComputation(rental: Rental): number {
-    return crepes[rental.getMovie().getPriceCode()](rental);
+    const galette = crepes[rental.getMovie().getPriceCode()];
+    return galette(rental);
 }
 
 function childrenMoviePriceComputation(rental: Rental) {
