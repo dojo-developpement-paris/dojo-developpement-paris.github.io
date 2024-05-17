@@ -12,8 +12,8 @@ import Test.Hspec
 main :: IO ()
 main =
     hspec $ do
-        describe "Hello" $ do
-            it "world" $ do
+        describe "score" $ do
+            it "is love love initially" $ do
                 score newGame `shouldBe` (Love, Love)
 
 type Game = Int
