@@ -22,6 +22,9 @@ main =
             it "after player B scores, the score is Love to 15" $ do
                 score (playerBScore newGame) `shouldBe` (Love, Fifteen)
 
+            it "after player A and B score, the score is 15 to 15" $ do
+                score (playerBScore (playerAScore newGame)) `shouldBe` (Fifteen, Fifteen)
+
 type Game = Int
 
 data Point = Love | Fifteen
