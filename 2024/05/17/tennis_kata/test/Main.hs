@@ -43,7 +43,7 @@ score :: Game -> Game
 score = id
 
 playerAScore :: Game -> Game
-playerAScore (Fifteen, x) = (Thirty, x)
+playerAScore (Fifteen, _) = (Thirty, Love)
 playerAScore _ = (Fifteen, Love)
 
 playerBScore :: Game -> Game
