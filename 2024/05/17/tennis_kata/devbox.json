@@ -1,0 +1,13 @@
+{
+  "packages": [
+    "cabal-install@latest",
+    "haskellPackages.fourmolu@latest",
+    "hlint@latest",
+    "haskellPackages.haskell-language-server@latest",
+    "jq@latest",
+    "mask@latest",
+    "watchexec@latest",
+    "bashInteractive@latest",
+    "haskellPackages.hspec@latest"
+  ]
+}
