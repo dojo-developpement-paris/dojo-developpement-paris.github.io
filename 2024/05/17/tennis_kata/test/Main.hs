@@ -70,7 +70,7 @@ main =
 data Point = Love | Fifteen | Thirty | Forty
     deriving (Eq, Show)
 
-data Game = Play (Point, Point)
+newtype Game = Play (Point, Point)
     deriving (Eq, Show)
 
 newGame :: Game
