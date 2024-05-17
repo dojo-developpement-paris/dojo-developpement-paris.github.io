@@ -68,8 +68,12 @@ score :: Game -> Game
 score = id
 
 playerAScore :: Game -> Game
-playerAScore (Fifteen, scoreOfB) = (Thirty, scoreOfB)
+playerAScore (scoreOfA, scoreOfB) = (scorePoint scoreOfA, scoreOfB)
 playerAScore (Love, scoreOfB) = (Fifteen, scoreOfB)
+
+scorePoint :: Point -> Point
+scorePoint Love = Fifteen
+scorePoint Fifteen = Thirty
 
 playerBScore :: Game -> Game
 playerBScore (scoreOfA, Fifteen) = (scoreOfA, Thirty)
