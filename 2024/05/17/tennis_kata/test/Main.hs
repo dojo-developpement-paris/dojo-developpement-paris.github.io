@@ -15,13 +15,13 @@ main =
     hspec $ do
         describe "score" $ do
             it "is love love initially" $ do
-                score newGame `shouldBe` (Love, Love)
+                score newGame `shouldBe` Play (Love, Love)
 
             it "after player A scores, the score is 15 to Love" $ do
-                score (playerAScore newGame) `shouldBe` (Fifteen, Love)
+                score (playerAScore newGame) `shouldBe` Play (Fifteen, Love)
 
             it "after player B scores, the score is Love to 15" $ do
-                score (playerBScore newGame) `shouldBe` (Love, Fifteen)
+                score (playerBScore newGame) `shouldBe` Play (Love, Fifteen)
 
             it "after player A scores two times, the score is 30 to Love" $ do
                 ( newGame
@@ -29,7 +29,7 @@ main =
                         & playerAScore
                         & score
                     )
-                    `shouldBe` (Thirty, Love)
+                    `shouldBe` Play (Thirty, Love)
 
             it "after player B and A score, the score is 15 to 15" $ do
                 ( newGame
@@ -37,7 +37,7 @@ main =
                         & playerAScore
                         & score
                     )
-                    `shouldBe` (Fifteen, Fifteen)
+                    `shouldBe` Play (Fifteen, Fifteen)
 
             it "after player B and A score, the score is 30 to 15" $ do
                 ( newGame
@@ -46,7 +46,7 @@ main =
                         & playerAScore
                         & score
                     )
-                    `shouldBe` (Thirty, Fifteen)
+                    `shouldBe` Play (Thirty, Fifteen)
 
             it "after player B scores two times, the score is Love to 30" $ do
                 ( newGame
@@ -54,7 +54,7 @@ main =
                         & playerBScore
                         & score
                     )
-                    `shouldBe` (Love, Thirty)
+                    `shouldBe` Play (Love, Thirty)
 
             it "after player B scores two times, the score is Love to 30" $ do
                 ( newGame
@@ -65,21 +65,22 @@ main =
                         & playerAScore
                         & score
                     )
-                    `shouldBe` (Forty, Thirty)
+                    `shouldBe` Play (Forty, Thirty)
 
 data Point = Love | Fifteen | Thirty | Forty
     deriving (Eq, Show)
 
-type Game = (Point, Point)
+data Game = Play (Point, Point)
+    deriving (Eq, Show)
 
 newGame :: Game
-newGame = (Love, Love)
+newGame = Play (Love, Love)
 
 score :: Game -> Game
 score = id
 
 playerAScore :: Game -> Game
-playerAScore (scoreOfA, scoreOfB) = (scorePoint scoreOfA, scoreOfB)
+playerAScore (Play (scoreOfA, scoreOfB)) = Play (scorePoint scoreOfA, scoreOfB)
 
 scorePoint :: Point -> Point
 scorePoint Love = Fifteen
@@ -87,4 +88,4 @@ scorePoint Fifteen = Thirty
 scorePoint Thirty = Forty
 
 playerBScore :: Game -> Game
-playerBScore (scoreOfA, scoreOfB) = (scoreOfA, scorePoint scoreOfB)
+playerBScore (Play (scoreOfA, scoreOfB)) = Play (scoreOfA, scorePoint scoreOfB)
