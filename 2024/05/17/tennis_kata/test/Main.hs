@@ -30,10 +30,8 @@ type Game = (Point, Point)
 newGame :: Game
 newGame = (Love, Love)
 
-score :: Game -> (Point, Point)
-score (Love, Love) = (Love, Love)
-score (Fifteen, Love) = (Fifteen, Love)
-score _ = (Love, Fifteen)
+score :: Game -> Game
+score = id
 
 playerAScore :: Game -> Game
 playerAScore _ = (Fifteen, Love)
