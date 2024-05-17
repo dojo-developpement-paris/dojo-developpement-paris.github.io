@@ -31,6 +31,14 @@ main =
                     )
                     `shouldBe` (Thirty, Love)
 
+            it "after player B and A score, the score is 15 to 15" $ do
+                ( newGame
+                        & playerBScore
+                        & playerAScore
+                        & score
+                    )
+                    `shouldBe` (Fifteen, Fifteen)
+
 data Point = Love | Fifteen | Thirty
     deriving (Eq, Show)
 
@@ -44,7 +52,7 @@ score = id
 
 playerAScore :: Game -> Game
 playerAScore (Fifteen, _) = (Thirty, Love)
-playerAScore _ = (Fifteen, Love)
+playerAScore (Love, scoreOfB) = (Fifteen, scoreOfB)
 
 playerBScore :: Game -> Game
 playerBScore _ = (Love, Fifteen)
