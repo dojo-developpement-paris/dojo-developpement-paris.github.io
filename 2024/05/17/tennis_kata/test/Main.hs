@@ -67,10 +67,20 @@ main =
                     )
                     `shouldBe` Play (Forty, Thirty)
 
+            it "after player A scores four times, A wins" $ do
+                ( newGame
+                        & playerAScore
+                        & playerAScore
+                        & playerAScore
+                        & playerAScore
+                        & score
+                    )
+                    `shouldBe` AWins
+
 data Point = Love | Fifteen | Thirty | Forty
     deriving (Eq, Show)
 
-newtype Game = Play (Point, Point)
+data Game = Play (Point, Point) | AWins
     deriving (Eq, Show)
 
 newGame :: Game
@@ -80,6 +90,7 @@ score :: Game -> Game
 score = id
 
 playerAScore :: Game -> Game
+playerAScore (Play (Forty, _)) = AWins
 playerAScore (Play (scoreOfA, scoreOfB)) = Play (scorePoint scoreOfA, scoreOfB)
 
 scorePoint :: Point -> Point
