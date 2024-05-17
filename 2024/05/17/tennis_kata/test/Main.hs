@@ -16,13 +16,20 @@ main =
             it "is love love initially" $ do
                 score newGame `shouldBe` (Love, Love)
 
+            it "after player A scores, the score is 15 to Love" $ do
+                score (playerAScore newGame) `shouldBe` (Fifteen, Love)
+
 type Game = Int
 
-data Point = Love
+data Point = Love | Fifteen
     deriving (Eq, Show)
 
 newGame :: Game
 newGame = 0
 
 score :: Game -> (Point, Point)
-score _ = (Love, Love)
+score 0 = (Love, Love)
+score _ = (Fifteen, Love)
+
+playerAScore :: Game -> Game
+playerAScore _ = 1
