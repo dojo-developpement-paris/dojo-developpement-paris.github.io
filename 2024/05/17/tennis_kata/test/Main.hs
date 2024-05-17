@@ -22,21 +22,21 @@ main =
             it "after player B scores, the score is Love to 15" $ do
                 score (playerBScore newGame) `shouldBe` (Love, Fifteen)
 
-type Game = (Int, Int)
-
 data Point = Love | Fifteen
     deriving (Eq, Show)
 
+type Game = (Point, Point)
+
 newGame :: Game
-newGame = (0, 0)
+newGame = (Love, Love)
 
 score :: Game -> (Point, Point)
-score (0, 0) = (Love, Love)
-score (1, 0) = (Fifteen, Love)
+score (Love, Love) = (Love, Love)
+score (Fifteen, Love) = (Fifteen, Love)
 score _ = (Love, Fifteen)
 
 playerAScore :: Game -> Game
-playerAScore _ = (1, 0)
+playerAScore _ = (Fifteen, Love)
 
 playerBScore :: Game -> Game
-playerBScore _ = (0, 1)
+playerBScore _ = (Love, Fifteen)
