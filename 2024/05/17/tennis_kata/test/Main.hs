@@ -1,6 +1,5 @@
 module Main (main) where
 
-import Hello
 import Test.Hspec
 
 -- Each player can have either of these points in one game “love” “15” “30” “40”
