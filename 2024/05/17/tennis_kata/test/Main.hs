@@ -1,5 +1,6 @@
 module Main (main) where
 
+import Data.Function ((&))
 import Test.Hspec
 
 -- Each player can have either of these points in one game “love” “15” “30” “40”
@@ -23,7 +24,12 @@ main =
                 score (playerBScore newGame) `shouldBe` (Love, Fifteen)
 
             it "after player A scores two times, the score is 30 to Love" $ do
-                score (playerAScore (playerAScore newGame)) `shouldBe` (Thirty, Love)
+                ( newGame
+                        & playerAScore
+                        & playerAScore
+                        & score
+                    )
+                    `shouldBe` (Thirty, Love)
 
 data Point = Love | Fifteen | Thirty
     deriving (Eq, Show)
