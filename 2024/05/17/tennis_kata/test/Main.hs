@@ -75,5 +75,4 @@ scorePoint Love = Fifteen
 scorePoint Fifteen = Thirty
 
 playerBScore :: Game -> Game
-playerBScore (scoreOfA, Fifteen) = (scoreOfA, Thirty)
-playerBScore (scoreOfA, Love) = (scoreOfA, Fifteen)
+playerBScore (scoreOfA, scoreOfB) = (scoreOfA, scorePoint scoreOfB)
