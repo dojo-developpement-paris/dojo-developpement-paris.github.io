@@ -17,9 +17,6 @@ main =
             it "world" $ do
                 score newGame `shouldBe` (Love, Love)
 
-            it "foo" $ do
-                hello (Just "foo") `shouldBe` "Hello foo"
-
 type Game = Int
 
 data Point = Love
