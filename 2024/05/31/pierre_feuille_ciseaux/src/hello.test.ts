@@ -63,6 +63,11 @@ function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
   }
 
   let toto = Résultat.gauche;
+  toto = newFunction(armeGauche, armeDroite, toto);
+  return toto;
+}
+
+function newFunction(armeGauche: Arme, armeDroite: Arme, toto: Résultat) {
   if (armeGauche === Arme.feuille && armeDroite === Arme.ciseaux) {
     toto = Résultat.droite;
   }
