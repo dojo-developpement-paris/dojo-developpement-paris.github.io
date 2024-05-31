@@ -66,9 +66,5 @@ function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
 }
 
 function newFunction(armeGauche: Arme, armeDroite: Arme) {
-  let toto = Résultat.gauche;
-  if (armeGauche < armeDroite) {
-    toto = Résultat.droite;
-  }
-  return toto;
+  return armeGauche < armeDroite ? Résultat.droite : Résultat.gauche;
 }
