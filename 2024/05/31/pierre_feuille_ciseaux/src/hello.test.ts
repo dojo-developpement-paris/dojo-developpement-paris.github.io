@@ -14,18 +14,16 @@ describe("Pierre feuille ciseaux", () => {
     it("droite", () => {
       expect(combat(Arme.ciseaux, Arme.pierre)).toEqual(Résultat.droite);
     });
-    it("égalité", () => {
-      expect(combat(Arme.pierre, Arme.pierre)).toEqual(Résultat.égalité);
-    });
   });
 
   describe("Ciseaux", () => {
     it("gauche", () => {
       expect(combat(Arme.ciseaux, Arme.feuille)).toEqual(Résultat.gauche);
     });
-    it("égalité", () => {
-      expect(combat(Arme.ciseaux, Arme.ciseaux)).toEqual(Résultat.égalité);
-    });
+  });
+  it("égalité", () => {
+    expect(combat(Arme.pierre, Arme.pierre)).toEqual(Résultat.égalité);
+    expect(combat(Arme.ciseaux, Arme.ciseaux)).toEqual(Résultat.égalité);
   });
 });
 
