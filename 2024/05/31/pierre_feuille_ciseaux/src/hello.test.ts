@@ -26,8 +26,8 @@ function gauche(): void {
 
 type Bidon = typeof gauche;
 
-type NewType = () => void;
+type Arme = () => void;
 
-function combat(_pierre: NewType, _ciseaux: NewType): Bidon {
+function combat(_pierre: Arme, _ciseaux: Arme): Bidon {
   return gauche;
 }
