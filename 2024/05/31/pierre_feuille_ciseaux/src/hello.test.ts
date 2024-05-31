@@ -52,7 +52,7 @@ function égalité(): void {
 
 type Arme = () => void;
 
-type Résultat = typeof gauche;
+type Résultat = typeof gauche | typeof droite | typeof égalité;
 
 function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
   if (armeGauche === pierre && armeDroite === pierre) return égalité;
