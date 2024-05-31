@@ -53,12 +53,12 @@ enum Résultat {
 }
 
 function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
-  if (armeGauche === Arme.feuille && armeDroite === Arme.pierre) {
-    return Résultat.gauche;
-  }
-
   if (armeGauche === armeDroite) {
     return Résultat.égalité;
+  }
+
+  if (armeGauche === Arme.feuille && armeDroite === Arme.pierre) {
+    return Résultat.gauche;
   }
 
   return newFunction(armeGauche, armeDroite);
