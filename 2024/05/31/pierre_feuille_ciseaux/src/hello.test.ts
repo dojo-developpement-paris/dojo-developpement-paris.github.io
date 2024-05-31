@@ -8,7 +8,7 @@ Feuille > Pierre
 
 describe("Pierre feuille ciseaux", () => {
   it("foo", () => {
-    expect(pcf(pierre, ciseaux)).toEqual(gauche);
+    expect(combat(pierre, ciseaux)).toEqual(gauche);
   });
 });
 
@@ -26,6 +26,6 @@ function gauche(): void {
 
 type Bidon = typeof gauche;
 
-function pcf(_pierre: () => void, _ciseaux: () => void): Bidon {
+function combat(_pierre: () => void, _ciseaux: () => void): Bidon {
   return gauche;
 }
