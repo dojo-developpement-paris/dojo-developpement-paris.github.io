@@ -27,11 +27,11 @@ function gauche(): void {
   throw new Error("Function not implemented.");
 }
 
-type Bidon = typeof gauche;
+type Résultat = typeof gauche;
 
 type Arme = () => void;
 
-function combat(armeGauche: Arme, _armeDroite: Arme): Bidon {
+function combat(armeGauche: Arme, _armeDroite: Arme): Résultat {
   if (armeGauche === ciseaux) return droite;
   return gauche;
 }
