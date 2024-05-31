@@ -9,10 +9,10 @@ Feuille > Pierre
 describe("Pierre feuille ciseaux", () => {
   describe("Pierre", () => {
     it("gauche", () => {
-      expect(combat(pierre, ciseaux)).toEqual(Résultat.gauche);
+      expect(combat(pierre, Arme_.ciseaux)).toEqual(Résultat.gauche);
     });
     it("droite", () => {
-      expect(combat(ciseaux, pierre)).toEqual(Résultat.droite);
+      expect(combat(Arme_.ciseaux, pierre)).toEqual(Résultat.droite);
     });
     it("égalité", () => {
       expect(combat(pierre, pierre)).toEqual(Résultat.égalité);
@@ -21,7 +21,7 @@ describe("Pierre feuille ciseaux", () => {
 
   describe("Ciseaux", () => {
     it("gauche", () => {
-      expect(combat(ciseaux, Arme_.feuille)).toEqual(Résultat.gauche);
+      expect(combat(Arme_.ciseaux, Arme_.feuille)).toEqual(Résultat.gauche);
     });
   });
 });
@@ -30,12 +30,9 @@ function pierre(): void {
   throw new Error("Function not implemented.");
 }
 
-function ciseaux(): void {
-  throw new Error("Function not implemented.");
-}
-
 enum Arme_ {
   feuille = "feuille",
+  ciseaux = "ciseaux",
 }
 
 enum Résultat {
@@ -44,11 +41,11 @@ enum Résultat {
   égalité = "égalité",
 }
 
-type Arme = typeof pierre | typeof ciseaux | typeof Arme_.feuille;
+type Arme = typeof pierre | typeof Arme_.ciseaux | typeof Arme_.feuille;
 
 function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
   if (armeGauche === pierre && armeDroite === pierre) return Résultat.égalité;
   if (armeDroite === Arme_.feuille) return Résultat.gauche;
-  if (armeGauche === ciseaux) return Résultat.droite;
+  if (armeGauche === Arme_.ciseaux) return Résultat.droite;
   return Résultat.gauche;
 }
