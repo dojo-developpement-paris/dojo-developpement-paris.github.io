@@ -35,9 +35,9 @@ enum Arme {
 }
 
 enum Résultat {
-  gauche = "gauche",
-  droite = "droite",
-  égalité = "égalité",
+  gauche = "⬅️",
+  droite = "➡️",
+  égalité = "🟰",
 }
 
 function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
