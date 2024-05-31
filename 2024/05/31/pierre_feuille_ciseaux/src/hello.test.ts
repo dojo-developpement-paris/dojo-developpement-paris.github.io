@@ -62,9 +62,7 @@ function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
     return Résultat.droite;
   }
 
-  let toto = Résultat.gauche;
-  toto = newFunction(armeGauche, armeDroite);
-  return toto;
+  return newFunction(armeGauche, armeDroite);
 }
 
 function newFunction(armeGauche: Arme, armeDroite: Arme) {
