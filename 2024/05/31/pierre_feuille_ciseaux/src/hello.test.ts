@@ -28,6 +28,6 @@ type Bidon = typeof gauche;
 
 type Arme = () => void;
 
-function combat(_crepe: Arme, _galette: Arme): Bidon {
+function combat(_armeGauche: Arme, _armeDroite: Arme): Bidon {
   return gauche;
 }
