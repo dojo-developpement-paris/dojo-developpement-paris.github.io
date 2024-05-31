@@ -50,12 +50,12 @@ enum Résultat {
 }
 
 function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
-  if (armeGauche === Arme.feuille && armeDroite === Arme.ciseaux) {
-    return Résultat.droite;
-  }
-
   if (armeGauche === armeDroite) {
     return Résultat.égalité;
+  }
+
+  if (armeGauche === Arme.feuille && armeDroite === Arme.ciseaux) {
+    return Résultat.droite;
   }
 
   if (armeGauche === Arme.pierre && armeDroite === Arme.feuille) {
