@@ -7,7 +7,7 @@ Feuille > Pierre
 */
 
 describe("Pierre feuille ciseaux", () => {
-  describe("la pierre écrabouille les ciseaux", () => {
+  describe("la pierre casse les ciseaux", () => {
     it("Pierre à gauche", () => {
       expect(combat(Arme.pierre, Arme.ciseaux)).toEqual(Résultat.gauche);
     });
