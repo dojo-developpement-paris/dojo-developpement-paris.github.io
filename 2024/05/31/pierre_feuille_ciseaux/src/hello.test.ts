@@ -57,10 +57,6 @@ function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
     return Résultat.égalité;
   }
 
-  return newFunction(armeGauche, armeDroite);
-}
-
-function newFunction(armeGauche: Arme, armeDroite: Arme) {
   if (armeGauche === Arme.feuille && armeDroite === Arme.pierre) {
     return Résultat.gauche;
   }
