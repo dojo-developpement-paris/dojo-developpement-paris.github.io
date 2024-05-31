@@ -27,7 +27,7 @@ describe("Pierre feuille ciseaux", () => {
 });
 
 enum Arme_ {
-  feuille = "feuille",
+  feuille = "🌿",
   ciseaux = "✂️",
   pierre = "🪨",
 }
