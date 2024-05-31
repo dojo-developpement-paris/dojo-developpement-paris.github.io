@@ -7,11 +7,13 @@ Feuille > Pierre
 */
 
 describe("Pierre feuille ciseaux", () => {
-  it("foo", () => {
-    expect(combat(pierre, ciseaux)).toEqual(gauche);
-  });
-  it("foo", () => {
-    expect(combat(ciseaux, pierre)).toEqual(droite);
+  describe("Pierre", () => {
+    it("gauche", () => {
+      expect(combat(pierre, ciseaux)).toEqual(gauche);
+    });
+    it("droite", () => {
+      expect(combat(ciseaux, pierre)).toEqual(droite);
+    });
   });
 });
 
