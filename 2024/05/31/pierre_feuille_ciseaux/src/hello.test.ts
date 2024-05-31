@@ -42,7 +42,7 @@ enum Résultat {
 }
 
 function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
-  if (armeGauche === Arme.ciseaux && armeDroite === Arme.ciseaux) {
+  if (armeGauche === armeDroite) {
     return Résultat.égalité;
   }
   if (armeGauche === Arme.pierre && armeDroite === Arme.pierre) {
