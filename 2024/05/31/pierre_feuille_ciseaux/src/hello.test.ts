@@ -35,7 +35,7 @@ function ciseaux(): void {
 }
 
 enum Arme_ {
-  feuille,
+  feuille = "feuille",
 }
 
 enum Résultat {
