@@ -14,6 +14,9 @@ describe("Pierre feuille ciseaux", () => {
     it("droite", () => {
       expect(combat(ciseaux, pierre)).toEqual(droite);
     });
+    it("égalité", () => {
+      expect(combat(pierre, pierre)).toEqual(égalité);
+    });
   });
 
   describe("Ciseaux", () => {
@@ -43,11 +46,16 @@ function droite(): void {
   throw new Error("Function not implemented.");
 }
 
+function égalité(): void {
+  throw new Error("Function not implemented.");
+}
+
 type Arme = () => void;
 
 type Résultat = typeof gauche;
 
 function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
+  if (armeGauche === pierre && armeDroite === pierre) return égalité;
   if (armeDroite === feuille) return gauche;
   if (armeGauche === ciseaux) return droite;
   return gauche;
