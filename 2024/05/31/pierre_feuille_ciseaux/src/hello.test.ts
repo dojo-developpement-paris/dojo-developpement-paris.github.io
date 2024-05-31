@@ -12,7 +12,7 @@ describe("Pierre feuille ciseaux", () => {
       expect(combat(pierre, ciseaux)).toEqual(Résultat_.gauche);
     });
     it("droite", () => {
-      expect(combat(ciseaux, pierre)).toEqual(droite);
+      expect(combat(ciseaux, pierre)).toEqual(Résultat_.droite);
     });
     it("égalité", () => {
       expect(combat(pierre, pierre)).toEqual(égalité);
@@ -40,19 +40,21 @@ function feuille(): void {
 
 enum Résultat_ {
   gauche = "gauche",
+  droite = "droite",
 }
-
-const droite = "droite";
 
 const égalité = "égalité";
 
 type Arme = () => void;
 
-type Résultat = typeof Résultat_.gauche | typeof droite | typeof égalité;
+type Résultat =
+  | typeof Résultat_.gauche
+  | typeof Résultat_.droite
+  | typeof égalité;
 
 function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
   if (armeGauche === pierre && armeDroite === pierre) return égalité;
   if (armeDroite === feuille) return Résultat_.gauche;
-  if (armeGauche === ciseaux) return droite;
+  if (armeGauche === ciseaux) return Résultat_.droite;
   return Résultat_.gauche;
 }
