@@ -38,9 +38,7 @@ function feuille(): void {
   throw new Error("Function not implemented.");
 }
 
-function gauche(): void {
-  throw new Error("Function not implemented.");
-}
+const gauche = "gauche";
 
 const droite = "droite";
 
