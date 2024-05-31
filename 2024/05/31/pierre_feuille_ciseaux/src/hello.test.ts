@@ -25,11 +25,11 @@ describe("Pierre feuille ciseaux", () => {
     });
   });
 
-  describe("Feuille", () => {
-    it("gauche", () => {
+  describe("Feuille ", () => {
+    it("Feuille à gauche", () => {
       expect(combat(Arme.feuille, Arme.pierre)).toEqual(Résultat.gauche);
     });
-    it("droite", () => {
+    it("Feuille à droite", () => {
       expect(combat(Arme.pierre, Arme.feuille)).toEqual(Résultat.droite);
     });
   });
