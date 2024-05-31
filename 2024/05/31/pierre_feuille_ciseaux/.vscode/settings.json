@@ -1,0 +1,19 @@
+{
+  "deno.enable": true,
+  "deno.codeLens.implementations": true,
+  "deno.codeLens.references": true,
+  "deno.codeLens.referencesAllFunctions": true,
+  "deno.codeLens.test": true,
+  "deno.suggest.completeFunctionCalls": true,
+  "devbox.autoShellOnTerminal": false,
+  "editor.formatOnSave": true,
+  "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
+  "workbench.colorTheme": "Visual Studio Light",
+  "editor.fontWeight": "normal",
+  "window.zoomLevel": 1,
+  "debug.console.fontSize": 26,
+  "editor.fontSize": 26,
+  "markdown.preview.fontSize": 26,
+  "terminal.integrated.fontSize": 26,
+  "customPresentationMode.backup": {}
+}

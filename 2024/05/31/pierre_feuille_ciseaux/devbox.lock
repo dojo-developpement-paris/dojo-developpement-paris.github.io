@@ -1,0 +1,225 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "bashInteractive@latest": {
+      "last_modified": "2024-05-06T23:18:04Z",
+      "resolved": "github:NixOS/nixpkgs/ad7efee13e0d216bf29992311536fce1d3eefbef#bashInteractive",
+      "source": "devbox-search",
+      "version": "5.2p26",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5qc7bwpcxnc21zgqr8kzb0r84p9g8wp5-bash-interactive-5.2p26",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/78ifkyw04rqkvwhj688dnyw0k1m0zyxb-bash-interactive-5.2p26-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/gpzmkji5hvp0sd317dg371k29ry5w9qd-bash-interactive-5.2p26-info"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/cs0qwdmhx8ihz6fsnl006xk41kw7z4vz-bash-interactive-5.2p26-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/2iqwa0hj3hs3bm6iwv0gazi2lrnalw3l-bash-interactive-5.2p26-doc"
+            }
+          ],
+          "store_path": "/nix/store/5qc7bwpcxnc21zgqr8kzb0r84p9g8wp5-bash-interactive-5.2p26"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/inylljb5s6qs83c4xj84l2aq44l08yzr-bash-interactive-5.2p26",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/53kf9sv5i1blmlw02vd4hv73rkmxzslx-bash-interactive-5.2p26-man",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/khfzrlckn4m0apg7m4kwgb5ph1mygd7m-bash-interactive-5.2p26-debug"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/la5kbcw52j22niv0aairyykn021qxapv-bash-interactive-5.2p26-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/a0xhj0niij4vcfl88zhj117w3zsvcass-bash-interactive-5.2p26-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/w3xc0wl435wfnwdxql4i510gqxyncjcj-bash-interactive-5.2p26-info"
+            }
+          ],
+          "store_path": "/nix/store/inylljb5s6qs83c4xj84l2aq44l08yzr-bash-interactive-5.2p26"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4x579rpw4ahj757q678a6kmaq1awi33s-bash-interactive-5.2p26",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/jfq630nssns7nag291vcyx01wj1v7w5q-bash-interactive-5.2p26-man",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/720x58gvq0kv8725ciyfb66ywww4szky-bash-interactive-5.2p26-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/9c32z2sjq5631mymwn4b2ndpnbvg28kc-bash-interactive-5.2p26-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/n6hij2ac6hw74z5bc18gi2jivp134bz8-bash-interactive-5.2p26-info"
+            }
+          ],
+          "store_path": "/nix/store/4x579rpw4ahj757q678a6kmaq1awi33s-bash-interactive-5.2p26"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ddnli8jf61g96xlmfgfnav5cf041pq95-bash-interactive-5.2p26",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/ky0k63ax1afd4qd2habl7mg55hpq8pkv-bash-interactive-5.2p26-man",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/fhn238yvb831zv2as9v8y1y47vd9pb09-bash-interactive-5.2p26-debug"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/n1rkq7iz5vzg57433v2q2r1p7yzifpqa-bash-interactive-5.2p26-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/fgckfkybnh87z7phin5lpngmc2nw8f0c-bash-interactive-5.2p26-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/mq3ksqv0i8sbi34c47ad6y09mc1r58mf-bash-interactive-5.2p26-info"
+            }
+          ],
+          "store_path": "/nix/store/ddnli8jf61g96xlmfgfnav5cf041pq95-bash-interactive-5.2p26"
+        }
+      }
+    },
+    "deno@latest": {
+      "last_modified": "2024-05-06T06:27:37Z",
+      "resolved": "github:NixOS/nixpkgs/dd1290b0f857782a60b251f89651c831cd3eef9d#deno",
+      "source": "devbox-search",
+      "version": "1.43.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kc5aglf91zj78jw4837nazlgr6ys33cp-deno-1.43.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/kc5aglf91zj78jw4837nazlgr6ys33cp-deno-1.43.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/c0bg2vwn4mlx0dvaysl67rn5yf73hi40-deno-1.43.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/c0bg2vwn4mlx0dvaysl67rn5yf73hi40-deno-1.43.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jzhp7f068y0ph8vyhrwvy86y4lfh969s-deno-1.43.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/jzhp7f068y0ph8vyhrwvy86y4lfh969s-deno-1.43.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/vvq3r8xjg85892anwj74n154ail9bfs6-deno-1.43.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/vvq3r8xjg85892anwj74n154ail9bfs6-deno-1.43.1"
+        }
+      }
+    },
+    "mask@latest": {
+      "last_modified": "2024-05-01T20:12:28Z",
+      "resolved": "github:NixOS/nixpkgs/1c74cc292b61614e74c1cf0d372f79d57fb4936b#mask",
+      "source": "devbox-search",
+      "version": "0.11.4",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ikg7brzibv382a015qhx3m2d4isw6c20-mask-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ikg7brzibv382a015qhx3m2d4isw6c20-mask-0.11.4"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/r03jfs8fmqvl3ripb46cfifiid72n5qp-mask-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/r03jfs8fmqvl3ripb46cfifiid72n5qp-mask-0.11.4"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/sfj4xyiihhxfbcrj0c12myd6x0pg856f-mask-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/sfj4xyiihhxfbcrj0c12myd6x0pg856f-mask-0.11.4"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2kxm7h4hzzjwa9b9rwpyv6b9lg6yg8fi-mask-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/2kxm7h4hzzjwa9b9rwpyv6b9lg6yg8fi-mask-0.11.4"
+        }
+      }
+    }
+  }
+}
