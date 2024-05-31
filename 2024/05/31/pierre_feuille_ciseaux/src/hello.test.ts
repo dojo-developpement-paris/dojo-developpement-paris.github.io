@@ -44,7 +44,7 @@ enum Résultat {
   égalité = "égalité",
 }
 
-type Arme = () => void;
+type Arme = typeof pierre | typeof ciseaux | typeof feuille;
 
 function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
   if (armeGauche === pierre && armeDroite === pierre) return Résultat.égalité;
