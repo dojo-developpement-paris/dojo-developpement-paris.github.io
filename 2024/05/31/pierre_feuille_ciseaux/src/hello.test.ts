@@ -23,6 +23,9 @@ describe("Pierre feuille ciseaux", () => {
     it("gauche", () => {
       expect(combat(Arme.ciseaux, Arme.feuille)).toEqual(Résultat.gauche);
     });
+    it("égalité", () => {
+      expect(combat(Arme.ciseaux, Arme.ciseaux)).toEqual(Résultat.égalité);
+    });
   });
 });
 
@@ -39,6 +42,9 @@ enum Résultat {
 }
 
 function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
+  if (armeGauche === Arme.ciseaux && armeDroite === Arme.ciseaux) {
+    return Résultat.égalité;
+  }
   if (armeGauche === Arme.pierre && armeDroite === Arme.pierre) {
     return Résultat.égalité;
   }
