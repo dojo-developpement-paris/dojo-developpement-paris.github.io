@@ -16,11 +16,11 @@ describe("Pierre feuille ciseaux", () => {
     });
   });
 
-  describe("Ciseaux", () => {
-    it("gauche", () => {
+  describe("Ciseaux est plus fort que feuille", () => {
+    it("Ciseaux à gauche", () => {
       expect(combat(Arme.ciseaux, Arme.feuille)).toEqual(Résultat.gauche);
     });
-    it("droite", () => {
+    it("Ciseaux à droite", () => {
       expect(combat(Arme.feuille, Arme.ciseaux)).toEqual(Résultat.droite);
     });
   });
