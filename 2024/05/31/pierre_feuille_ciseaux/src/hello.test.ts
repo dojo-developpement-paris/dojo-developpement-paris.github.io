@@ -42,9 +42,7 @@ function gauche(): void {
   throw new Error("Function not implemented.");
 }
 
-function droite(): void {
-  throw new Error("Function not implemented.");
-}
+const droite = "droite";
 
 const égalité = "égalité";
 
