@@ -47,8 +47,8 @@ type Arme = () => void;
 
 type Résultat = typeof gauche;
 
-function combat(armeGauche: Arme, _armeDroite: Arme): Résultat {
-  if (_armeDroite === feuille) return gauche;
+function combat(armeGauche: Arme, armeDroite: Arme): Résultat {
+  if (armeDroite === feuille) return gauche;
   if (armeGauche === ciseaux) return droite;
   return gauche;
 }
