@@ -37,6 +37,7 @@ describe("Pierre feuille ciseaux", () => {
   it("deux fois la même arme est une égalité", () => {
     expect(combat(Arme.pierre, Arme.pierre)).toEqual(Résultat.égalité);
     expect(combat(Arme.ciseaux, Arme.ciseaux)).toEqual(Résultat.égalité);
+    expect(combat(Arme.feuille, Arme.feuille)).toEqual(Résultat.égalité);
   });
 });
 
