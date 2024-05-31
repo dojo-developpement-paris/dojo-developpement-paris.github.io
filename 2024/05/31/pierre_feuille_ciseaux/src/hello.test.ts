@@ -26,7 +26,7 @@ describe("Pierre feuille ciseaux", () => {
   });
 
   describe("Feuille", () => {
-    it("gauche", () => {
+    it("droite", () => {
       expect(combat(Arme.pierre, Arme.feuille)).toEqual(Résultat.droite);
     });
   });
