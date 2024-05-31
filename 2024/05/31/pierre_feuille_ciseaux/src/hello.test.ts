@@ -46,9 +46,7 @@ function droite(): void {
   throw new Error("Function not implemented.");
 }
 
-function égalité(): void {
-  throw new Error("Function not implemented.");
-}
+const égalité = "égalité";
 
 type Arme = () => void;
 
