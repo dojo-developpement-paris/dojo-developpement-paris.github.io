@@ -39,8 +39,8 @@ describe("Pierre feuille ciseaux", () => {
 
 enum Arme {
   feuille = 1,
-  ciseaux,
-  pierre,
+  ciseaux = 2,
+  pierre = 3,
 }
 
 enum Résultat {
