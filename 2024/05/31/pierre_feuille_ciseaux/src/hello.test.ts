@@ -7,11 +7,11 @@ Feuille > Pierre
 */
 
 describe("Pierre feuille ciseaux", () => {
-  describe("Pierre", () => {
-    it("gauche", () => {
+  describe("Pierre est plus fort que ciseaux", () => {
+    it("Pierre à gauche", () => {
       expect(combat(Arme.pierre, Arme.ciseaux)).toEqual(Résultat.gauche);
     });
-    it("droite", () => {
+    it("Pierre à droite", () => {
       expect(combat(Arme.ciseaux, Arme.pierre)).toEqual(Résultat.droite);
     });
   });
