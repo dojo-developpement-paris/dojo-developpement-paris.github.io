@@ -64,9 +64,9 @@ function newFunction(armeGauche: Arme, armeDroite: Arme) {
   if (armeGauche === Arme.feuille && armeDroite === Arme.pierre) {
     return Résultat.gauche;
   }
-
   if (armeGauche === Arme.pierre && armeDroite === Arme.feuille) {
     return Résultat.droite;
   }
+
   return armeGauche < armeDroite ? Résultat.droite : Résultat.gauche;
 }
