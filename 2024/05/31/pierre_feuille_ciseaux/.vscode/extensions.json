@@ -2,6 +2,10 @@
   "recommendations": [
     "denoland.vscode-deno",
     "jetpack-io.devbox",
-    "pinage404.nix-extension-pack"
+    "pinage404.nix-extension-pack",
+    "nicoespeon.abracadabra",
+    "pinage404.git-extension-pack",
+    "p42ai.refactor",
+    "pinage404.general-improvement-extension-pack"
   ]
 }
