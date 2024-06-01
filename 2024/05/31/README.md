@@ -9,6 +9,7 @@ Personnes présentes :
 - Christelle
 - Nick
 - Mohammed
+- Ruben
 - pin
 
 Retro :
