@@ -1,14 +1,17 @@
 Prochaine session : le vendredi 28 juin 2024 chez Oxiane
 
 Personnes présentes :
+
 - les bonnes personnes
 
 Retro :
+
 - Kata Chaine de Marckov - Rust - Mob
   - rust est dernier cri
-  - cela ressemblait plus à une démo 
+  - cela ressemblait plus à une démo
 
 Explication des règles :
+
 - Tout le monde peut proposer un sujet
 - Tout langage est accepté, à 2 conditions :
   - au moins une personne connait ce langage
@@ -18,8 +21,9 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 Sujets :
+
 - 6 - A - Kata diamant - Rust - Mob Randori
-- 12 - B - une balle qui rebondi - HTML JS CSS - Mob Randori
+- 12 - B - une balle qui rebondi - HTML JS CSS - Mob Randori https://mobtime.hadrienmp.fr/
 - 7 - C - Kata fraction - Ruby - Mob
 - 0 - D - Kata TripService - Java - Mob Randori
 - 1 - E - Kata TripService - Rust - Mob Randori
@@ -27,6 +31,7 @@ Sujets :
 - 2 - G - Kata TicTacTo - TS - TCRD - Fishbowl
 
 Modes de fonctionnement habituels :
+
 - Mob : 1 typist + les autres naviguent
 - Mob Randori : chaque personne (volontaire) prend le role de navigateur puis de driver pendant 5 minutes
 - Randori : chaque personne prend le clavier pendant 5 minutes
@@ -37,6 +42,7 @@ Modes de fonctionnement habituels :
   et entre chaque séance on fait une rétro/orientation.
 
 Méthode de [vote] :
+
 - points = nombre de sujets divisé 2 arrondi à l'entier inférieur
 - ex : sujets = 5, points = 2 => 2 votes, à 1 et 2 points
 

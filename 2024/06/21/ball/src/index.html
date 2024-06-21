@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas></canvas>
+    <script>
+        const canvas = document.querySelector('canvas')
+        const ctx = canvas.getContext("2d");
+        canvas.style.border = "1px solid black";
+        canvas.width = "500"
+        canvas.height = "500"
+        let dx = 1
+        let x = 50
+        let r = 20
+        let y = x;
+        let dy = 2.5 *dx;
+        const ball = () => {
+            ctx.reset ()
+            ctx.fillStyle = "red";
+            ctx.ellipse(x, y, r, r, 0, 0, Math.PI * 2);
+            ctx.fill()
+            if (x > (canvas.width-r) ||x<r ) {
+                dx = -dx
+            }
+            if (y > (canvas.width - r) || y < r) {
+                dy = -dy
+            }
+            x += dx
+            y += dy
+        }
+        const animation = setInterval(ball, 60/1000);
+
+    </script>
+</body>
+
+</html>
