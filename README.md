@@ -23,6 +23,7 @@ Sujets :
 
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
+- Mob [strong-style] tournant : les mobbers donnent des idées 💡 le navigator décide 🔀 le driver tape ⌨️, on change les roles toutes les X minutes [mobtime]
 - Randori : chaque personne prend le clavier pendant 5 minutes
 - Demo : 1 personne fait une démo sur un [kata] (exercice de programmation) + les autres donnent du feedback
 - Fishbowl : [Définition][fishbowl]
@@ -44,6 +45,8 @@ Ce n'est pas une obligation
 Si vous voulez en savoir plus, vous pouvez aller lire [l'histoire du dojo]
 
 [kata]: https://web.archive.org/web/20040423023001/http://www.pragprog.com/pragdave/Practices/CodeKata.rdoc
+[strong-style]: https://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html
+[mobtime]: https://mobtime.hadrienmp.fr/
 [fishbowl]: https://en.wikipedia.org/wiki/Fishbowl_%28conversation%29
 [tcr]: https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864
 [vote]: https://emmanuelpaatz.com/dojosurvey
