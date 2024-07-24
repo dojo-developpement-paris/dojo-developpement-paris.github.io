@@ -1,11 +1,19 @@
-Prochaine session : le  à 
+Prochaine session : le 2024-08-02 à Oxiane
 
 Personnes présentes :
-- Les bonnes personnes
+- Christelle
+- Devalgas
+- Samed
+- Hadrien
+- pin
 
 Retro :
--  Lisp - Kata Bank OCR
-  - 
+- Mob - Common Lisp - OCR Bank
+  - c'est déjà bien de faire du lisp
+  - c'est un langage lisible (ça n'engage que Samed)
+  - quand on est fatigué le lisp, ça ne passe pas
+  - quelque soit le kata, les retours chariot sont problématiques
+  - pin a demandé à le faire en outside-in mais on est resté au niveau de dézoom maximal, on aurait pu switché avec un peu d'inside-out lorsque un sous problème était identifié
 
 Explication des règles :
 - Tout le monde peut proposer un sujet
@@ -17,9 +25,30 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 Sujets :
-- 0 - A - 
-- 0 - B - 
-- 0 - C - 
+- 7 - A - randori - TypeScript - calculateur d'allumage et extinction de la tour Eiffel
+- 3 - B - mob strong style tournant - TypeScript - Kata Score Bowling
+- 4 - C - mob strong style tournant - HTML CSS JS - balle rebondissant -> pong
+- 9 - D - mob - HTML CSS JS - balle rebondissant -> pong
+- 2 - E - mob - TypeScript - Kata Diaman(d|t)
+- 0 - F - mob strong style tournant - Java - Kata Diaman(d|t)
+- 7 - G - mob - Java - Kata Diaman(d|t)
+- 4 - H - mob - Python - Kata Diaman(d|t)
+- 1 - I - mob - C - Kata Diaman(d|t)
+
+1
+A
+
+2
+ A 
+B B
+ A 
+
+3
+  A  
+ B B 
+C   C
+ B B 
+  A  
 
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
