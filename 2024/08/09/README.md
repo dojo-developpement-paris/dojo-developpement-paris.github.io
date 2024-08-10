@@ -6,6 +6,7 @@ Personnes présentes :
 - Patrick
 - ToF
 - pin
+- Ibrahima
 
 Retro :
 - continuer de pongifier la balle rebondissante
@@ -22,9 +23,9 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 Sujets :
-- 0 - A - mob - java - roman numerals - TCRDD
-- 0 - B - mob strong style - rust - roman numerals - TCRDD
-- 0 - C - mob - HTML / CSS / JS - continue the pong game
+- 3 - A - mob - java - roman numerals - TDD
+- 2 - B - mob strong style - rust - roman numerals - TCRDD
+- 1 - C - mob - HTML / CSS / JS - continue the pong game
 
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
