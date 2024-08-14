@@ -1,0 +1,7 @@
+{
+    "js/ts.implicitProjectConfig.strictNullChecks": false,
+    "editor.formatOnSave": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+}
