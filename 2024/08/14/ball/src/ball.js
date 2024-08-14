@@ -68,25 +68,12 @@ const boucleDeJeu = () => {
     clearInterval(animation);
   }
   if (collision(raquetteGauche)) {
-    direction.x = -direction.x;
     balle.x += 1;
-    if (raquetteGauche.mouvement === Mouvement.MONTE) {
-      direction.y -= 0.25;
-    }
-    if (raquetteGauche.mouvement === Mouvement.DESCEND) {
-      direction.y += 0.25;
-    }
+    effet(raquetteGauche);
   }
-
   if (collision(raquetteDroite)) {
-    direction.x = -direction.x;
     balle.x -= 1;
-    if (raquetteDroite.mouvement === Mouvement.MONTE) {
-      direction.y -= 0.25;
-    }
-    if (raquetteDroite.mouvement === Mouvement.DESCEND) {
-      direction.y += 0.25;
-    }
+    effet(raquetteDroite);
   }
 
   if (balle.y > canvas.width - balle.rayon || balle.y < balle.rayon) {
@@ -141,7 +128,7 @@ window.addEventListener(
 
 const monteRaquette = (raquette) => {
   if (neTouchePasLeHaut(raquette)) {
-    raquette.y -= 5;
+    raquette.y -= 10;
   }
 };
 
@@ -149,9 +136,19 @@ const neTouchePasLeHaut = (raquette) => raquette.y > 0;
 
 const baisseRaquette = (raquette) => {
   if (neTouchePasLeBas(raquette)) {
-    raquette.y += 5;
+    raquette.y += 10;
   }
 };
 
 const neTouchePasLeBas = (raquette) =>
   raquette.y + raquette.hauteur < canvas.height;
+
+const effet = (raquette) => {
+  direction.x = -direction.x;
+  if (raquette.mouvement === Mouvement.MONTE) {
+    direction.y -= 0.25;
+  }
+  if (raquette.mouvement === Mouvement.DESCEND) {
+    direction.y += 0.25;
+  }
+};
