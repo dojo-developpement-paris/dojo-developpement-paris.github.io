@@ -6,12 +6,20 @@ canvas.height = 500;
 
 const balle = { x: 250, y: 250, rayon: 20, couleur: "gold" };
 const direction = { x: Math.random() > 0.5 ? 1 : -1, y: 0 };
+
+const Mouvement = {
+  MONTE: 1,
+  IMMOBILE: 0,
+  DESCEND: -1,
+};
+
 const raquette = { largeur: 10, hauteur: 100 };
 
 const raquetteGauche = {
   ...raquette,
   x: 25,
   y: 200,
+  mouvement: Mouvement.IMMOBILE,
   couleur: "red",
   toucheLeBord() {
     return balle.x < this.x + this.largeur + balle.rayon;
@@ -20,8 +28,9 @@ const raquetteGauche = {
 
 const raquetteDroite = {
   ...raquette,
-  x: 465,
+  x: canvas.width - 25,
   y: 200,
+  mouvement: Mouvement.IMMOBILE,
   couleur: "royalblue",
   toucheLeBord() {
     return balle.x > this.x - balle.rayon;
@@ -58,8 +67,26 @@ const boucleDeJeu = () => {
   if (toucheLeMur()) {
     clearInterval(animation);
   }
-  if (collision(raquetteGauche) || collision(raquetteDroite)) {
+  if (collision(raquetteGauche)) {
     direction.x = -direction.x;
+    balle.x += 1;
+    if (raquetteGauche.mouvement === Mouvement.MONTE) {
+      direction.y -= 0.25;
+    }
+    if (raquetteGauche.mouvement === Mouvement.DESCEND) {
+      direction.y += 0.25;
+    }
+  }
+
+  if (collision(raquetteDroite)) {
+    direction.x = -direction.x;
+    balle.x -= 1;
+    if (raquetteDroite.mouvement === Mouvement.MONTE) {
+      direction.y -= 0.25;
+    }
+    if (raquetteDroite.mouvement === Mouvement.DESCEND) {
+      direction.y += 0.25;
+    }
   }
 
   if (balle.y > canvas.width - balle.rayon || balle.y < balle.rayon) {
@@ -70,23 +97,42 @@ const boucleDeJeu = () => {
 };
 const animation = setInterval(boucleDeJeu, 6);
 
-// const animation = setInterval(ball, 60 / 1000);
-
 window.addEventListener(
   "keydown",
   (event) => {
     switch (event.key) {
       case "z":
+        raquetteGauche.mouvement = Mouvement.MONTE;
         monteRaquette(raquetteGauche);
         break;
       case "s":
         baisseRaquette(raquetteGauche);
+        raquetteGauche.mouvement = Mouvement.DESCEND;
         break;
       case "ArrowUp":
+        raquetteDroite.mouvement = Mouvement.MONTE;
         monteRaquette(raquetteDroite);
         break;
       case "ArrowDown":
+        raquetteDroite.mouvement = Mouvement.DESCEND;
         baisseRaquette(raquetteDroite);
+        break;
+    }
+  },
+  true
+);
+
+window.addEventListener(
+  "keyup",
+  (event) => {
+    switch (event.key) {
+      case "z":
+      case "s":
+        raquetteGauche.mouvement = Mouvement.IMMOBILE;
+        break;
+      case "ArrowUp":
+      case "ArrowDown":
+        raquetteDroite.mouvement = Mouvement.IMMOBILE;
         break;
     }
   },
