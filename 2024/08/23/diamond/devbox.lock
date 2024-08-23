@@ -1,0 +1,290 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "bashInteractive@latest": {
+      "last_modified": "2024-08-04T20:22:49Z",
+      "resolved": "github:NixOS/nixpkgs/785feb91183a50959823ff9ba9ef673105259cd5#bashInteractive",
+      "source": "devbox-search",
+      "version": "5.2p26",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/cmr9r8abam7njcwk2fglmal7db3wjav2-bash-interactive-5.2p26",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/7if8pshyrxdqhc7aj1fgxivc3dr4fy61-bash-interactive-5.2p26-man",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/gxy65qx0lp0ra3gxzvpcc4bg6ssgjd95-bash-interactive-5.2p26-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/qqyiprzvjjzm3sb7wf9pmnl4fbshnwdd-bash-interactive-5.2p26-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/3qhas7g2rsrwh4rlnlwr35ys84fblw6a-bash-interactive-5.2p26-info"
+            }
+          ],
+          "store_path": "/nix/store/cmr9r8abam7njcwk2fglmal7db3wjav2-bash-interactive-5.2p26"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/w7fy8y8a296hi61nibl62xgnfwd2nfw5-bash-interactive-5.2p26",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/iyg9jq16fmxbg6cn3gfpnlw3fim3fcfr-bash-interactive-5.2p26-man",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/n4236fi8n8dkl2k9g6zd96ccsbpv3105-bash-interactive-5.2p26-debug"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/rgyybz94083kfsg1ycb08asbiq0i51r7-bash-interactive-5.2p26-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/6fmv6j42x29qfcf5sfja5fia7ckw798m-bash-interactive-5.2p26-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/p1103pi3fwikxrcjvk2rar0mb16ghrk8-bash-interactive-5.2p26-info"
+            }
+          ],
+          "store_path": "/nix/store/w7fy8y8a296hi61nibl62xgnfwd2nfw5-bash-interactive-5.2p26"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/nz6hxh2378q92kngx3gli150ndv2b5w4-bash-interactive-5.2p26",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/klfhw0v97wp6s3sampgjfbvwkkag6y3j-bash-interactive-5.2p26-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/gyl0h1hhin8z2a9rn37w9ahgnwq217ac-bash-interactive-5.2p26-info"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/837anv139r7nqghwkx72d2q50ngi8mq2-bash-interactive-5.2p26-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/jm56l165hr60vyxdyl8n7456d3vhqkhh-bash-interactive-5.2p26-doc"
+            }
+          ],
+          "store_path": "/nix/store/nz6hxh2378q92kngx3gli150ndv2b5w4-bash-interactive-5.2p26"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/c481fhrvslr8nmhhlzdab3k7bpnhb46a-bash-interactive-5.2p26",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/nk7p38k2b7dhr61pag1b6cm44y6ss6m9-bash-interactive-5.2p26-man",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/c7571ymp0pxrh9s5qwg71cif6aci4hnw-bash-interactive-5.2p26-debug"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/rspr8ab4j4g6ka1a1a4v4nf2rs56ghgq-bash-interactive-5.2p26-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/5syxr9ynqj8pkcrfiwkrwpiag70vfj5j-bash-interactive-5.2p26-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/z74zkrly6zpgh0sr2smd44pzmdzp3ic8-bash-interactive-5.2p26-info"
+            }
+          ],
+          "store_path": "/nix/store/c481fhrvslr8nmhhlzdab3k7bpnhb46a-bash-interactive-5.2p26"
+        }
+      }
+    },
+    "git-gamble@latest": {
+      "last_modified": "2024-08-13T18:00:04Z",
+      "resolved": "github:NixOS/nixpkgs/19674872444bb3e0768249e724d99c8649c3bd78#git-gamble",
+      "source": "devbox-search",
+      "version": "2.9.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/00v167biapcqg2fv0i3l85ql2jfz2ch7-git-gamble-2.9.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/00v167biapcqg2fv0i3l85ql2jfz2ch7-git-gamble-2.9.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/manbc9na1fzprf1j6ww9gl4fvb3bcdc0-git-gamble-2.9.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/manbc9na1fzprf1j6ww9gl4fvb3bcdc0-git-gamble-2.9.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1kqcnz6056wagzfnj5z6zn357cc73qlj-git-gamble-2.9.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1kqcnz6056wagzfnj5z6zn357cc73qlj-git-gamble-2.9.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/75m0lrrp527cj8h7v93ll4jcdm00sp0f-git-gamble-2.9.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/75m0lrrp527cj8h7v93ll4jcdm00sp0f-git-gamble-2.9.0"
+        }
+      }
+    },
+    "mask@latest": {
+      "last_modified": "2024-07-07T16:08:25Z",
+      "resolved": "github:NixOS/nixpkgs/ab82a9612aa45284d4adf69ee81871a389669a9e#mask",
+      "source": "devbox-search",
+      "version": "0.11.4",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/gxa3rjzday24svmhr9wb3cbc11295sba-mask-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/gxa3rjzday24svmhr9wb3cbc11295sba-mask-0.11.4"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/bwm5f2g38ni598nwp8kzj8v1paj7w34a-mask-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/bwm5f2g38ni598nwp8kzj8v1paj7w34a-mask-0.11.4"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5f8lggcc38z4gz9mcp7v4pg53rfsich5-mask-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/5f8lggcc38z4gz9mcp7v4pg53rfsich5-mask-0.11.4"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/gianlbdgm81j4gq85gzsq26jr71y1wij-mask-0.11.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/gianlbdgm81j4gq85gzsq26jr71y1wij-mask-0.11.4"
+        }
+      }
+    },
+    "nodejs@latest": {
+      "last_modified": "2024-07-31T08:48:38Z",
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/c3392ad349a5227f4a3464dce87bcc5046692fce#nodejs_22",
+      "source": "devbox-search",
+      "version": "22.4.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/z5whjsr6cnqw0ycnylwxmibfr7cdwxrb-nodejs-22.4.1",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/vzhng0wwbm0r1p9rdq1kspm0j5b9x0va-nodejs-22.4.1-libv8"
+            }
+          ],
+          "store_path": "/nix/store/z5whjsr6cnqw0ycnylwxmibfr7cdwxrb-nodejs-22.4.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2c0qimdjslxal42s4m10zj95f9r11l4l-nodejs-22.4.1",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/aq9wvafy8svx7fgkm2w0yig3aqmkbqc8-nodejs-22.4.1-libv8"
+            }
+          ],
+          "store_path": "/nix/store/2c0qimdjslxal42s4m10zj95f9r11l4l-nodejs-22.4.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5l6flz4fpax64nzivg2r815pvllj2dml-nodejs-22.4.1",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/5wwl7dh3xmnrah4f98713i93m43d02a5-nodejs-22.4.1-libv8"
+            }
+          ],
+          "store_path": "/nix/store/5l6flz4fpax64nzivg2r815pvllj2dml-nodejs-22.4.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/w8rva81863ls2ic3qc72mdzpzm0skyrm-nodejs-22.4.1",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/93cvy69p4g2mrbjjkj5dxh8zin047nl5-nodejs-22.4.1-libv8"
+            }
+          ],
+          "store_path": "/nix/store/w8rva81863ls2ic3qc72mdzpzm0skyrm-nodejs-22.4.1"
+        }
+      }
+    }
+  }
+}
