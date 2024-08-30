@@ -53,7 +53,7 @@ function convert(nombre: number): string {
   if (11 <= nombre && nombre <= 15) return convert(dix) + convert(nombre - dix)
   if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
   if (16 <= nombre && nombre <= 18)
-    return convert(dix + cinq) + convert(nombre - (dix + cinq))
+    return convert(dix) + convert(cinq) + convert(nombre - (dix + cinq))
   if (2 <= nombre && nombre <= 3) return convert(un).repeat(nombre)
   if (nombre === 20) return convert(dix).repeat(2)
   if (nombre === dix) return "X"
