@@ -31,14 +31,15 @@ describe("Roman Numeral", () => {
 })
 
 function convert(nombre: number): string {
-  if (11 <= nombre && nombre <= 13) return convert(10) + convert(nombre - 10)
+  const dix = 10
+  if (11 <= nombre && nombre <= 13) return convert(dix) + convert(nombre - dix)
   if (16 <= nombre && nombre <= 18)
-    return convert(10) + convert(5) + convert(nombre - 15)
+    return convert(dix) + convert(5) + convert(nombre - 15)
   if (6 <= nombre && nombre <= 8) return convert(5) + convert(nombre - 5)
   if (2 <= nombre && nombre <= 3) return convert(1).repeat(nombre)
-  if (nombre === 20) return convert(10).repeat(2)
-  if (nombre === 15) return convert(10) + convert(5)
-  if (nombre === 10) return "X"
+  if (nombre === 20) return convert(dix).repeat(2)
+  if (nombre === 15) return convert(dix) + convert(5)
+  if (nombre === dix) return "X"
   if (nombre === 5) return "V"
   if (nombre === 1) return "I"
   return ""
