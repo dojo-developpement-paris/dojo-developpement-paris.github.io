@@ -36,7 +36,7 @@ function convert(nombre: number): string {
   const un = 1
   if (11 <= nombre && nombre <= 13) return convert(dix) + convert(nombre - dix)
   if (16 <= nombre && nombre <= 18)
-    return convert(dix) + convert(cinq) + convert(nombre - 15)
+    return convert(dix) + convert(cinq) + convert(nombre - (dix + cinq))
   if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
   if (2 <= nombre && nombre <= 3) return convert(un).repeat(nombre)
   if (nombre === 20) return convert(dix).repeat(2)
