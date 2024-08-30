@@ -49,10 +49,10 @@ function convert(nombre: number): string {
   const quatre = 4
   const un = 1
   if (nombre === neuf) return "IX"
-  if (11 <= nombre && nombre <= 19) return convert(dix) + convert(nombre - dix)
+  if (11 <= nombre && nombre <= 20) return convert(dix) + convert(nombre - dix)
   if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
   if (2 <= nombre && nombre <= 3) return convert(un).repeat(nombre)
-  if (nombre === 20) return convert(dix).repeat(2)
+
   if (nombre === dix) return "X"
   if (nombre === cinq) return "V"
   if (nombre === quatre) return "IV"
