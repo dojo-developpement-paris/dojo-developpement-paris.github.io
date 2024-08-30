@@ -49,16 +49,15 @@ function convert(nombre: number): string {
   const quatre = 4
   const un = 1
 
-  if (nombre === quatre) return "IV"
-  if (nombre === neuf) return "IX"
-
   if (11 <= nombre && nombre <= 20) return convert(dix) + convert(nombre - dix)
   if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
   if (2 <= nombre && nombre <= 3) return convert(un) + convert(nombre - un)
 
   const gauffre = {
     10: "X",
+    9: "IX",
     5: "V",
+    4: "IV",
     1: "I",
   }
 
