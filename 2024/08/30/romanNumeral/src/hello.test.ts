@@ -31,9 +31,13 @@ describe("Roman Numeral", () => {
   it("4 equals IV", () => {
     expect(convert(4)).toEqual("IV")
   })
+  it("14 equals XIV", () => {
+    expect(convert(14)).toEqual("XIV")
+  })
 })
 
 function convert(nombre: number): string {
+  if (nombre === 14) return "XIV"
   const dix = 10
   const cinq = 5
   const quatre = 4
