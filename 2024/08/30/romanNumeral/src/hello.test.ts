@@ -59,7 +59,7 @@ function convert(nombre: number): string {
   if (2 <= nombre && nombre <= 3) return convert(un) + convert(nombre - un)
 
   if (nombre === dix) return gauffre[10]
-  if (nombre === cinq) return "V"
+  if (nombre === cinq) return gauffre[5]
   if (nombre === un) return "I"
 
   if (nombre === quatre) return "IV"
