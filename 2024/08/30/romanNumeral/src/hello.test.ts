@@ -41,9 +41,7 @@ function convert(nombre: number): string {
   const cinq = 5
   const quatre = 4
   const un = 1
-  if (11 <= nombre && nombre <= 13) return convert(dix) + convert(nombre - dix)
-  if (nombre === 14) return convert(dix) + convert(nombre - dix)
-  if (nombre === 15) return convert(dix) + convert(nombre - dix)
+  if (11 <= nombre && nombre <= 15) return convert(dix) + convert(nombre - dix)
   if (16 <= nombre && nombre <= 18)
     return convert(dix) + convert(cinq) + convert(nombre - (dix + cinq))
   if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
