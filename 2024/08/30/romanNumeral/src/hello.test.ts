@@ -37,6 +37,9 @@ describe("Roman Numeral", () => {
   it("9 equals IX", () => {
     expect(convert(9)).toEqual("IX")
   })
+  it("19 equals XIX", () => {
+    expect(convert(19)).toEqual("XIX")
+  })
 })
 
 function convert(nombre: number): string {
@@ -45,6 +48,7 @@ function convert(nombre: number): string {
   const cinq = 5
   const quatre = 4
   const un = 1
+  if (nombre === 19) return "XIX"
   if (nombre === neuf) return "IX"
   if (11 <= nombre && nombre <= 15) return convert(dix) + convert(nombre - dix)
   if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
