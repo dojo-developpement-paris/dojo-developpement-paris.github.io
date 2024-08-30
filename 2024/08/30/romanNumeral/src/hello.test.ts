@@ -60,7 +60,7 @@ function convert(nombre: number): string {
 
   if (nombre === dix) return gauffre[10]
   if (nombre === cinq) return gauffre[5]
-  if (nombre === un) return "I"
+  if (nombre === un) return gauffre[1]
 
   if (nombre === quatre) return "IV"
   if (nombre === neuf) return "IX"
