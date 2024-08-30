@@ -44,7 +44,7 @@ function convert(nombre: number): string {
   if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
   if (2 <= nombre && nombre <= 3) return convert(un).repeat(nombre)
   if (nombre === 20) return convert(dix).repeat(2)
-  if (nombre === 15) return convert(dix) + convert(dix - cinq)
+  if (nombre === 15) return convert(dix) + convert(nombre - dix)
   if (nombre === dix) return "X"
   if (nombre === cinq) return "V"
   if (nombre === quatre) return "IV"
