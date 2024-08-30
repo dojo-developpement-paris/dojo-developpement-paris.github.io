@@ -48,11 +48,6 @@ function convert(nombre: number): string {
   const cinq = 5
   const quatre = 4
   const un = 1
-  const gauffre = {
-    10: "X",
-    5: "V",
-    1: "I",
-  }
 
   if (nombre === quatre) return "IV"
   if (nombre === neuf) return "IX"
@@ -61,13 +56,13 @@ function convert(nombre: number): string {
   if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
   if (2 <= nombre && nombre <= 3) return convert(un) + convert(nombre - un)
 
-  let crepe = 10
+  const gauffre = {
+    10: "X",
+    5: "V",
+    1: "I",
+  }
 
-  if (nombre === crepe) return gauffre[crepe]
-  crepe = 5
-  if (nombre === crepe) return gauffre[crepe]
-  crepe = 1
-  if (nombre === crepe) return gauffre[crepe]
+  if (nombre === 10 || nombre === 5 || nombre === 1) return gauffre[nombre]
 
   return ""
 }
