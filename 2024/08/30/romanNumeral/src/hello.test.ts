@@ -50,9 +50,8 @@ function convert(nombre: number): string {
   const un = 1
   if (nombre === 19) return "XIX"
   if (nombre === neuf) return "IX"
-  if (11 <= nombre && nombre <= 15) return convert(dix) + convert(nombre - dix)
+  if (11 <= nombre && nombre <= 18) return convert(dix) + convert(nombre - dix)
   if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
-  if (16 <= nombre && nombre <= 18) return convert(dix) + convert(nombre - dix)
   if (2 <= nombre && nombre <= 3) return convert(un).repeat(nombre)
   if (nombre === 20) return convert(dix).repeat(2)
   if (nombre === dix) return "X"
