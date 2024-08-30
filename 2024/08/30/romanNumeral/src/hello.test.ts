@@ -16,9 +16,13 @@ describe("Roman Numeral", () => {
   it("10 equals X", () => {
     expect(convert(10)).toEqual("X")
   })
+  it("12 equals XII", () => {
+    expect(convert(12)).toEqual("XII")
+  })
 })
 
 function convert(arg0: number): string {
+  if (11 <= arg0 && arg0 <= 13) return "X" + "I".repeat(arg0 - 10)
   if (arg0 === 10) return "X"
   if (6 <= arg0 && arg0 <= 8) return "V" + "I".repeat(arg0 - 5)
   if (arg0 === 5) return "V"
