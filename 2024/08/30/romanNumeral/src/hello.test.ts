@@ -27,7 +27,7 @@ describe("Roman Numeral", () => {
 function convert(nombre: number): string {
   if (11 <= nombre && nombre <= 13) return convert(10) + convert(nombre - 10)
   if (6 <= nombre && nombre <= 8) return convert(5) + convert(nombre - 5)
-  if (2 <= nombre && nombre <= 3) return "I".repeat(nombre)
+  if (2 <= nombre && nombre <= 3) return convert(1).repeat(nombre)
   if (nombre === 20) return convert(10).repeat(2)
   if (nombre === 10) return "X"
   if (nombre === 5) return "V"
