@@ -7,8 +7,12 @@ describe("Roman Numeral", () => {
   it("3 equals III", () => {
     expect(convert(3)).toEqual("III")
   })
+  it("5 equals V", () => {
+    expect(convert(5)).toEqual("V")
+  })
 })
 
 function convert(arg0: number): string {
+  if (arg0 === 5) return "V"
   return "I".repeat(arg0)
 }
