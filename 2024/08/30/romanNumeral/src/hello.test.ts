@@ -24,12 +24,12 @@ describe("Roman Numeral", () => {
   })
 })
 
-function convert(arg0: number): string {
-  if (11 <= arg0 && arg0 <= 13) return convert(10) + convert(arg0 - 10)
-  if (6 <= arg0 && arg0 <= 8) return convert(5) + convert(arg0 - 5)
-  if (1 <= arg0 && arg0 <= 3) return "I".repeat(arg0)
-  if (arg0 === 20) return convert(10).repeat(2)
-  if (arg0 === 10) return "X"
-  if (arg0 === 5) return "V"
+function convert(nombre: number): string {
+  if (11 <= nombre && nombre <= 13) return convert(10) + convert(nombre - 10)
+  if (6 <= nombre && nombre <= 8) return convert(5) + convert(nombre - 5)
+  if (1 <= nombre && nombre <= 3) return "I".repeat(nombre)
+  if (nombre === 20) return convert(10).repeat(2)
+  if (nombre === 10) return "X"
+  if (nombre === 5) return "V"
   return ""
 }
