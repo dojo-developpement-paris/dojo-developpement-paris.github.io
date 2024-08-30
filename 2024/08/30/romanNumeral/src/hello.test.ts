@@ -25,10 +25,15 @@ describe("Roman Numeral", () => {
   it("15 equals XV", () => {
     expect(convert(15)).toEqual("XV")
   })
+  it("17 equals XVII", () => {
+    expect(convert(17)).toEqual("XVII")
+  })
 })
 
 function convert(nombre: number): string {
   if (11 <= nombre && nombre <= 13) return convert(10) + convert(nombre - 10)
+  if (16 <= nombre && nombre <= 18)
+    return convert(10) + convert(5) + convert(nombre - 15)
   if (6 <= nombre && nombre <= 8) return convert(5) + convert(nombre - 5)
   if (2 <= nombre && nombre <= 3) return convert(1).repeat(nombre)
   if (nombre === 20) return convert(10).repeat(2)
