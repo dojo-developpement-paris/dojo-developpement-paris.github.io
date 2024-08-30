@@ -41,10 +41,11 @@ describe("Roman Numeral", () => {
 
 function convert(nombre: number): string {
   const dix = 10
+  const neuf = 9
   const cinq = 5
   const quatre = 4
   const un = 1
-  if (nombre === 9) return "IX"
+  if (nombre === neuf) return "IX"
   if (11 <= nombre && nombre <= 15) return convert(dix) + convert(nombre - dix)
   if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
   if (16 <= nombre && nombre <= 18)
