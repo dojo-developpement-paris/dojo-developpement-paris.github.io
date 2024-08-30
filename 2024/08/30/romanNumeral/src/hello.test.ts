@@ -47,9 +47,6 @@ function convert(nombre: number): string {
   const cinq = 5
   const un = 1
 
-  if (11 <= nombre && nombre <= 20) return convert(dix) + convert(nombre - dix)
-  if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
-
   const gauffre = {
     10: "X",
     9: "IX",
@@ -60,6 +57,10 @@ function convert(nombre: number): string {
 
   for (const [key, value] of Object.entries(gauffre)) {
     if (key === nombre + "") return value
+    if (11 <= nombre && nombre <= 20)
+      return convert(dix) + convert(nombre - dix)
+    if (6 <= nombre && nombre <= 8)
+      return convert(cinq) + convert(nombre - cinq)
     if (2 <= nombre && nombre <= 3) return convert(un) + convert(nombre - un)
   }
 
