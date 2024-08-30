@@ -61,9 +61,9 @@ function convert(nombre: number): string {
   if (6 <= nombre && nombre <= 8) return convert(cinq) + convert(nombre - cinq)
   if (2 <= nombre && nombre <= 3) return convert(un) + convert(nombre - un)
 
-  if (nombre === dix) return gauffre[10]
-  if (nombre === cinq) return gauffre[5]
-  if (nombre === un) return gauffre[1]
+  if (nombre === 10) return gauffre[10]
+  if (nombre === 5) return gauffre[5]
+  if (nombre === 1) return gauffre[1]
 
   return ""
 }
