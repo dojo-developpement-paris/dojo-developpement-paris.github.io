@@ -62,7 +62,9 @@ function convert(nombre: number): string {
     1: "I",
   }
 
-  if (nombre === 10 || nombre === 5 || nombre === 1) return gauffre[nombre]
+  for (const [key, value] of Object.entries(gauffre)) {
+    if (key === nombre + "") return value
+  }
 
   return ""
 }
