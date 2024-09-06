@@ -1,15 +1,18 @@
-Prochaine session : le vendredi 6 septembre à Oxiane 
+Prochaine session : le 2024-09-13 à Oxiane
 
 Personnes présentes :
 - Christelle
-- Hamdi
-- Daouda Kader
-- Pin
+- ToF
+- Vivien
+- pin
 
 Retro :
-- JavaScript - kata diamond
-  - La visualisation a été ignoré au départ apres c'était mieux.
-  - 
+- TCRDD - Fishbowl - TS - Roman Numeral
+  - on a commencé par extraire les magics numbers dans des constantes
+    - je pense que ça peut induire en erreur les personnes moins habituées
+  - c'est difficile de fair un fishbowl avec des gens qui ont du mal à prendre la parole
+  - le fishbowl permet de jouer avec les structures de pouvoir
+  - on a eu plusieurs moment bloqués car les personnes ne voulaient pas prendre de roles de navigator ou driver
 
 Explication des règles :
 - Tout le monde peut proposer un sujet
@@ -21,12 +24,10 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 Sujets :
-- 4 - A - TCRDD - Fishbowl - TS - Roman Numeral
-- 1 - B - TCRDD - Fishbowl - Python - Roman Numeral
-- 3 - C - Mob - Java - Roman Numeral
-- 0 - D - Mob - Java - Game of Life
-- 0 - E - Rendori - Java - Kata Diamond
-
+- 3 - A - Mob Strong Style Tournant - Rust - Game Of Life
+- 3 - B - Mob - Rust - Recherche de nombre premier
+- 3 - C - Mob - Forth - Recherche de nombre premier
+- 4 - D - Mob - Java - Game of Life
 
 Modes de fonctionnement habituels :
 - Mob : 1 typist + les autres naviguent
@@ -36,7 +37,7 @@ Modes de fonctionnement habituels :
 - Fishbowl : [Définition][fishbowl]
 - TCR : [Définition `test && commit || revert`][tcr]
 - Orientation : On coupe la séance en plusieurs sous-séances,
-  et entre chaque séance, on fait une rétro/orientation.
+  et entre chaque séance on fait une rétro/orientation.
 
 Méthode de [vote] :
 - points = nombre de sujets divisé 2 arrondi à l'entier inférieur
