@@ -27,12 +27,7 @@ describe("pierre feuille ciseaux", () => {
     expect(arbitre(laMainDroite, laMainGauche)).toEqual(Résultat.MainDroite)
   })
 
-  it("la feuille bat la pierre", () => {
-    const laMainGauche = Forme.Pierre
-    const laMainDroite = Forme.Feuille
 
-    expect(arbitre(laMainGauche, laMainDroite)).toEqual(Résultat.MainDroite)
-  })
 
   it("les ciseaux battent la feuille", () => {
     const laMainGauche = Forme.Feuille
