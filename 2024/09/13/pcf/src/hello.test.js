@@ -32,13 +32,12 @@ describe("pierre feuille ciseaux", () => {
   })
 })
 
-
 const batailles = {
   [Forme.Feuille + Forme.Pierre]: Résultat.MainGauche,
   [Forme.Pierre + Forme.Feuille]: Résultat.MainDroite,
 
-  [Forme.Feuille + Forme.Ciseaux]: Résultat.MainDroite,
   [Forme.Ciseaux + Forme.Feuille]: Résultat.MainGauche,
+  [Forme.Feuille + Forme.Ciseaux]: Résultat.MainDroite,
 
   [Forme.Pierre + Forme.Ciseaux]: Résultat.MainGauche,
   [Forme.Ciseaux + Forme.Pierre]: Résultat.MainDroite,
