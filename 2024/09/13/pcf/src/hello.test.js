@@ -6,7 +6,15 @@ describe("hello", () => {
     expect(hello()).toEqual("Hello world")
   })
 
-  it("foo", () => {
-    expect(hello("foo")).toEqual("Hello foo")
+  it("la feuille bat la pierre", () => {
+    const laMainGauche = "feuille"
+    const laMainDroite = "pierre"
+
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual(laMainGauche)
   })
 })
+
+function arbitre(laMainGauche, laMainDroite) {
+  return laMainGauche
+}
+
