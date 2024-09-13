@@ -32,23 +32,20 @@ describe("pierre feuille ciseaux", () => {
   })
 })
 
+
+const batailles = {
+  [Forme.Feuille + Forme.Pierre]: Résultat.MainGauche,
+  [Forme.Pierre + Forme.Feuille]: Résultat.MainDroite,
+
+  [Forme.Feuille + Forme.Ciseaux]: Résultat.MainDroite,
+  [Forme.Ciseaux + Forme.Feuille]: Résultat.MainGauche,
+
+  [Forme.Pierre + Forme.Ciseaux]: Résultat.MainGauche,
+  [Forme.Ciseaux + Forme.Pierre]: Résultat.MainDroite,
+}
+
 function arbitre(gauche, droite) {
   if (gauche === droite) return Résultat.Égalité
 
-  if (gauche === Forme.Feuille && droite === Forme.Pierre)
-    return Résultat.MainGauche
-  if (gauche === Forme.Pierre && droite === Forme.Feuille)
-    return Résultat.MainDroite
-
-  if (gauche === Forme.Feuille && droite === Forme.Ciseaux)
-    return Résultat.MainDroite
-  if (gauche === Forme.Ciseaux && droite === Forme.Feuille)
-    return Résultat.MainGauche
-
-  if (gauche === Forme.Pierre && droite === Forme.Ciseaux)
-    return Résultat.MainGauche
-  if (gauche === Forme.Ciseaux && droite === Forme.Pierre)
-    return Résultat.MainDroite
-
-  throw new Error("résultat impossible")
+  return batailles[gauche + droite]
 }
