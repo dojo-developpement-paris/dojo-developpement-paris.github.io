@@ -5,21 +5,21 @@ describe("pierre feuille ciseaux", () => {
     const laMainGauche = "feuille"
     const laMainDroite = "pierre"
 
-    expect(arbitre(laMainGauche, laMainDroite)).toEqual(laMainGauche)
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual("la main gauche")
   })
 
   it("la feuille bat la pierre", () => {
     const laMainGauche = "pierre"
     const laMainDroite = "feuille"
 
-    expect(arbitre(laMainGauche, laMainDroite)).toEqual(laMainDroite)
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual("la main droite")
   })
 
   it("les ciseaux battent la feuille", () => {
     const laMainGauche = "feuille"
     const laMainDroite = "ciseaux"
 
-    expect(arbitre(laMainGauche, laMainDroite)).toEqual(laMainDroite)
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual("la main droite")
   })
 
   it("égalité si la main droite est identique à la main gauche", () => {
@@ -33,8 +33,8 @@ describe("pierre feuille ciseaux", () => {
 function arbitre(laMainGauche, laMainDroite) {
   if (laMainGauche === laMainDroite) return "égalité"
   if (laMainGauche === "feuille") {
-    if (laMainDroite === "ciseaux") return laMainDroite
-    else return laMainGauche
+    if (laMainDroite === "ciseaux") return "la main droite"
+    else return "la main gauche"
   }
-  return laMainDroite
+  return "la main droite"
 }
