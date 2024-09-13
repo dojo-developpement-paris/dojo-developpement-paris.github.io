@@ -15,32 +15,20 @@ describe("pierre feuille ciseaux", () => {
   it("égalité si la main droite est identique à la main gauche", () => {
     const laMainGauche = Forme.Feuille
     const laMainDroite = laMainGauche
-
     expect(arbitre(laMainGauche, laMainDroite)).toEqual(Résultat.Égalité)
   })
 
   it("la feuille bat la pierre", () => {
-    const laMainGauche = Forme.Feuille
-    const laMainDroite = Forme.Pierre
-
-    expect(arbitre(laMainGauche, laMainDroite)).toEqual(Résultat.MainGauche)
-    expect(arbitre(laMainDroite, laMainGauche)).toEqual(Résultat.MainDroite)
+    expect(arbitre(Forme.Feuille, Forme.Pierre)).toEqual(Résultat.MainGauche)
+    expect(arbitre(Forme.Pierre, Forme.Feuille)).toEqual(Résultat.MainDroite)
   })
 
-
-
   it("les ciseaux battent la feuille", () => {
-    const laMainGauche = Forme.Feuille
-    const laMainDroite = Forme.Ciseaux
-
-    expect(arbitre(laMainGauche, laMainDroite)).toEqual(Résultat.MainDroite)
+    expect(arbitre(Forme.Feuille, Forme.Ciseaux)).toEqual(Résultat.MainDroite)
   })
 
   it("la pierre casse les ciseaux", () => {
-    const laMainGauche = Forme.Pierre
-    const laMainDroite = Forme.Ciseaux
-
-    expect(arbitre(laMainGauche, laMainDroite)).toEqual(Résultat.MainGauche)
+    expect(arbitre(Forme.Pierre, Forme.Ciseaux)).toEqual(Résultat.MainGauche)
   })
 })
 
