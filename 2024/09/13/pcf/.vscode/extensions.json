@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "jetpack-io.devbox",
+    "p42ai.refactor",
+    "pinage404.nix-extension-pack",
+    "vitest.explorer",
+  ]
+}
