@@ -21,9 +21,17 @@ describe("pierre feuille ciseaux", () => {
 
     expect(arbitre(laMainGauche, laMainDroite)).toEqual(laMainDroite)
   })
+
+  it("égalité si la main droite est identique à la main gauche", () => {
+    const laMainGauche = "feuille"
+    const laMainDroite = laMainGauche
+
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual("égalité")
+  })
 })
 
 function arbitre(laMainGauche, laMainDroite) {
+  if (laMainGauche === laMainDroite) return "égalité"
   if (laMainGauche === "feuille") {
     if (laMainDroite === "ciseaux") return laMainDroite
     else return laMainGauche
