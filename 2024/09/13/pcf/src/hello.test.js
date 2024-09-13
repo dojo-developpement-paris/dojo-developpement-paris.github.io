@@ -9,6 +9,7 @@ const Forme = {
 const Résultat = {
   MainGauche: "la main gauche",
   MainDroite: "la main droite",
+  Égalité: "égalité"
 }
 describe("pierre feuille ciseaux", () => {
   it("la feuille bat la pierre", () => {
@@ -36,12 +37,12 @@ describe("pierre feuille ciseaux", () => {
     const laMainGauche = Forme.Feuille
     const laMainDroite = laMainGauche
 
-    expect(arbitre(laMainGauche, laMainDroite)).toEqual("égalité")
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual(Résultat.Égalité)
   })
 })
 
 function arbitre(gauche, droite) {
-  if (gauche === droite) return "égalité"
+  if (gauche === droite) return Résultat.Égalité
   if (gauche === Forme.Feuille) {
     if (droite === Forme.Ciseaux) return Résultat.MainDroite
     else return Résultat.MainGauche
