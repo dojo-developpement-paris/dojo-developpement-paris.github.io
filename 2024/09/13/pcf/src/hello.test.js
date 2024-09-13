@@ -36,6 +36,6 @@ function arbitre(gauche, droite) {
     return Résultat.MainGauche
   if (gauche === Forme.Feuille && droite === Forme.Ciseaux)
     return Résultat.MainDroite
-  if (gauche === Forme.Feuille) return Résultat.MainGauche
+  if (gauche === Forme.Feuille && droite === Forme.Pierre) return Résultat.MainGauche
   return Résultat.MainDroite
 }
