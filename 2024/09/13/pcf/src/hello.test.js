@@ -1,8 +1,12 @@
 import { describe, expect, it } from "vitest"
 
+const Forme = {
+  Feuille: 'feuille',
+}
+
 describe("pierre feuille ciseaux", () => {
   it("la feuille bat la pierre", () => {
-    const laMainGauche = "feuille"
+    const laMainGauche = Forme.Feuille
     const laMainDroite = "pierre"
 
     expect(arbitre(laMainGauche, laMainDroite)).toEqual("la main gauche")
