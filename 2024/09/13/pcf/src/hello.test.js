@@ -7,8 +7,17 @@ describe("pierre feuille ciseaux", () => {
 
     expect(arbitre(laMainGauche, laMainDroite)).toEqual(laMainGauche)
   })
+
+  it("la feuille bat la pierre", () => {
+    const laMainGauche = "pierre"
+    const laMainDroite = "feuille"
+
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual(laMainDroite)
+  })
 })
 
 function arbitre(laMainGauche, laMainDroite) {
-  return laMainGauche
+  if (laMainGauche === "feuille")
+    return laMainGauche
+  return laMainDroite
 }
