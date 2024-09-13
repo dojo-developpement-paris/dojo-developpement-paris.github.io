@@ -1,8 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-describe("hello", () => {
-
-
+describe("pierre feuille ciseaux", () => {
   it("la feuille bat la pierre", () => {
     const laMainGauche = "feuille"
     const laMainDroite = "pierre"
