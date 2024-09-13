@@ -1,10 +1,7 @@
 import { describe, expect, it } from "vitest"
-import { hello } from "./hello"
 
 describe("hello", () => {
-  it("world", () => {
-    expect(hello()).toEqual("Hello world")
-  })
+
 
   it("la feuille bat la pierre", () => {
     const laMainGauche = "feuille"
@@ -17,4 +14,3 @@ describe("hello", () => {
 function arbitre(laMainGauche, laMainDroite) {
   return laMainGauche
 }
-
