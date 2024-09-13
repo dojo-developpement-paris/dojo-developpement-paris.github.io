@@ -30,10 +30,10 @@ describe("pierre feuille ciseaux", () => {
   })
 })
 
-function arbitre(laMainGauche, laMainDroite) {
-  if (laMainGauche === laMainDroite) return "égalité"
-  if (laMainGauche === "feuille") {
-    if (laMainDroite === "ciseaux") return "la main droite"
+function arbitre(gauche, droite) {
+  if (gauche === droite) return "égalité"
+  if (gauche === "feuille") {
+    if (droite === "ciseaux") return "la main droite"
     else return "la main gauche"
   }
   return "la main droite"
