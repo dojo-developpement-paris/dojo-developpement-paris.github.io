@@ -32,10 +32,17 @@ describe("pierre feuille ciseaux", () => {
 
 function arbitre(gauche, droite) {
   if (gauche === droite) return Résultat.Égalité
-  if (gauche === Forme.Pierre && droite === Forme.Ciseaux)
+
+  if (gauche === Forme.Feuille && droite === Forme.Pierre)
     return Résultat.MainGauche
+  if (gauche === Forme.Pierre && droite === Forme.Feuille)
+    return Résultat.MainDroite
+
   if (gauche === Forme.Feuille && droite === Forme.Ciseaux)
     return Résultat.MainDroite
-  if (gauche === Forme.Feuille && droite === Forme.Pierre) return Résultat.MainGauche
+
+  if (gauche === Forme.Pierre && droite === Forme.Ciseaux)
+    return Résultat.MainGauche
+
   return Résultat.MainDroite
 }
