@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest"
 
 const Forme = {
   Feuille: "feuille",
-  Pierre: "pierre"
+  Pierre: "pierre",
 }
 
 describe("pierre feuille ciseaux", () => {
@@ -15,20 +15,20 @@ describe("pierre feuille ciseaux", () => {
 
   it("la feuille bat la pierre", () => {
     const laMainGauche = "pierre"
-    const laMainDroite = "feuille"
+    const laMainDroite = Forme.Feuille
 
     expect(arbitre(laMainGauche, laMainDroite)).toEqual("la main droite")
   })
 
   it("les ciseaux battent la feuille", () => {
-    const laMainGauche = "feuille"
+    const laMainGauche = Forme.Feuille
     const laMainDroite = "ciseaux"
 
     expect(arbitre(laMainGauche, laMainDroite)).toEqual("la main droite")
   })
 
   it("égalité si la main droite est identique à la main gauche", () => {
-    const laMainGauche = "feuille"
+    const laMainGauche = Forme.Feuille
     const laMainDroite = laMainGauche
 
     expect(arbitre(laMainGauche, laMainDroite)).toEqual("égalité")
@@ -37,7 +37,7 @@ describe("pierre feuille ciseaux", () => {
 
 function arbitre(gauche, droite) {
   if (gauche === droite) return "égalité"
-  if (gauche === "feuille") {
+  if (gauche === Forme.Feuille) {
     if (droite === "ciseaux") return "la main droite"
     else return "la main gauche"
   }
