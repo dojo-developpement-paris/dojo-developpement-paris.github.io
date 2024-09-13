@@ -50,5 +50,5 @@ function arbitre(gauche, droite) {
   if (gauche === Forme.Ciseaux && droite === Forme.Pierre)
     return Résultat.MainDroite
 
-  return Résultat.Égalité
+  throw new Error("résultat impossible")
 }
