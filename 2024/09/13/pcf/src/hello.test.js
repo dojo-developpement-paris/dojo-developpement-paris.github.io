@@ -39,11 +39,21 @@ describe("pierre feuille ciseaux", () => {
 
     expect(arbitre(laMainGauche, laMainDroite)).toEqual(Résultat.Égalité)
   })
+
+  it("la pierre casse les ciseaux", () => {
+    const laMainGauche = Forme.Pierre
+    const laMainDroite = Forme.Ciseaux
+
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual(Résultat.MainGauche)
+  })
 })
 
 function arbitre(gauche, droite) {
   if (gauche === droite) return Résultat.Égalité
-  if (gauche === Forme.Feuille && droite === Forme.Ciseaux) return Résultat.MainDroite
+  if (gauche === Forme.Pierre && droite === Forme.Ciseaux)
+    return Résultat.MainGauche
+  if (gauche === Forme.Feuille && droite === Forme.Ciseaux)
+    return Résultat.MainDroite
   if (gauche === Forme.Feuille) return Résultat.MainGauche
   return Résultat.MainDroite
 }
