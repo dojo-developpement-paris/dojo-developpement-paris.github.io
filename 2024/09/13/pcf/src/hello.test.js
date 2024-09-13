@@ -14,10 +14,19 @@ describe("pierre feuille ciseaux", () => {
 
     expect(arbitre(laMainGauche, laMainDroite)).toEqual(laMainDroite)
   })
+
+  it("les ciseaux battent la feuille", () => {
+    const laMainGauche = "feuille"
+    const laMainDroite = "ciseaux"
+
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual(laMainDroite)
+  })
 })
 
 function arbitre(laMainGauche, laMainDroite) {
-  if (laMainGauche === "feuille")
-    return laMainGauche
+  if (laMainGauche === "feuille") {
+    if (laMainDroite === "ciseaux") return laMainDroite
+    else return laMainGauche
+  }
   return laMainDroite
 }
