@@ -14,7 +14,7 @@ describe("pierre feuille ciseaux", () => {
   })
 
   it("la feuille bat la pierre", () => {
-    const laMainGauche = "pierre"
+    const laMainGauche = Forme.Pierre
     const laMainDroite = Forme.Feuille
 
     expect(arbitre(laMainGauche, laMainDroite)).toEqual("la main droite")
