@@ -6,26 +6,31 @@ const Forme = {
   Ciseaux: "ciseaux",
 }
 
+const Résultat = {
+  MainGauche: "la main gauche",
+  MainDroite: "la main droite",
+}
 describe("pierre feuille ciseaux", () => {
   it("la feuille bat la pierre", () => {
     const laMainGauche = Forme.Feuille
     const laMainDroite = Forme.Pierre
 
-    expect(arbitre(laMainGauche, laMainDroite)).toEqual("la main gauche")
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual(Résultat.MainGauche)
   })
 
   it("la feuille bat la pierre", () => {
     const laMainGauche = Forme.Pierre
     const laMainDroite = Forme.Feuille
 
-    expect(arbitre(laMainGauche, laMainDroite)).toEqual("la main droite")
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual(Résultat.MainDroite)
   })
 
   it("les ciseaux battent la feuille", () => {
     const laMainGauche = Forme.Feuille
     const laMainDroite = Forme.Ciseaux
 
-    expect(arbitre(laMainGauche, laMainDroite)).toEqual("la main droite")
+    expect(arbitre(laMainGauche, laMainDroite)).toEqual(Résultat.MainDroite
+    )
   })
 
   it("égalité si la main droite est identique à la main gauche", () => {
