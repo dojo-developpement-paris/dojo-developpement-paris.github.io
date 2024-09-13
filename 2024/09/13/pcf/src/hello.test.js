@@ -9,7 +9,7 @@ const Forme = {
 const Résultat = {
   MainGauche: "la main gauche",
   MainDroite: "la main droite",
-  Égalité: "égalité"
+  Égalité: "égalité",
 }
 describe("pierre feuille ciseaux", () => {
   it("la feuille bat la pierre", () => {
@@ -43,9 +43,7 @@ describe("pierre feuille ciseaux", () => {
 
 function arbitre(gauche, droite) {
   if (gauche === droite) return Résultat.Égalité
-  if (gauche === Forme.Feuille) {
-    if (droite === Forme.Ciseaux) return Résultat.MainDroite
-    else return Résultat.MainGauche
-  }
+  if (gauche === Forme.Feuille && droite === Forme.Ciseaux) { return Résultat.MainDroite }
+  if (gauche === Forme.Feuille) return Résultat.MainGauche
   return Résultat.MainDroite
 }
