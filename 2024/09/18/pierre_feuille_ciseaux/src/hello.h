@@ -5,7 +5,7 @@ enum class Element { Feuille, Pierre, Ciseaux };
 
 enum class Main { Gauche, Droite, Egalite };
 
-constexpr Main combat(Element joueur1, Element joueur2) noexcept {
+constexpr Main operator,(Element joueur1, Element joueur2) noexcept {
   if (joueur1 == joueur2) {
     return Main::Egalite;
   }
