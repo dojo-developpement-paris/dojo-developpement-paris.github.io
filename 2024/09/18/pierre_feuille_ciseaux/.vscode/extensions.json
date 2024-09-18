@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "ms-vscode.cpptools",
+        "matepek.vscode-catch2-test-adapter",
+        "jetpack-io.devbox",
+        "pinage404.nix-extension-pack",
+        "xaver.clang-format",
+    ]
+}

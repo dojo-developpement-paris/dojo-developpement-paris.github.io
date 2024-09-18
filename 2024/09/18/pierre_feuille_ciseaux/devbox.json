@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "clang@latest",
+    "clang-tools@latest",
+    "catch2@latest",
+    "mask@latest",
+    "watchexec@latest",
+    "bashInteractive@latest",
+    "git-gamble@latest"
+  ]
+}

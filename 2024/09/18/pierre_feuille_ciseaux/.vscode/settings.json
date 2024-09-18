@@ -1,0 +1,9 @@
+{
+    "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
+    "devbox.autoShellOnTerminal": false,
+    "editor.formatOnSave": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "C_Cpp.default.cppStandard": "c++20",
+}
