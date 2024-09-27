@@ -12,8 +12,14 @@ pub fn is_prime(number: usize) -> bool {
     true
 }
 
-pub fn number_of_primes(_: usize, _: usize) -> usize {
-    25
+pub fn number_of_primes(start: usize, end: usize) -> usize {
+    let mut result = 0;
+    for number in start..end {
+        if is_prime(number) {
+            result += 1;
+        }
+    }
+    result
 }
 
 #[cfg(test)]
@@ -50,5 +56,6 @@ mod test {
     #[test]
     fn how_many_primes() {
         assert_eq!(number_of_primes(2, 100), 25);
+        assert_eq!(number_of_primes(2, 10), 4);
     }
 }
