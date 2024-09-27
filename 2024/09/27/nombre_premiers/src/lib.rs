@@ -13,10 +13,6 @@ pub fn is_prime(number: usize) -> bool {
         }
     }
 
-    if number % 3 == 0 {
-        return number == 3;
-    }
-
     if number % 5 == 0 {
         return number == 5;
     }
