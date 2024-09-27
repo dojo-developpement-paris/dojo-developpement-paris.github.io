@@ -35,5 +35,6 @@ mod test {
         assert!(!is_prime(6));
         assert!(!is_prime(9));
         assert!(!is_prime(25));
+        assert!(!is_prime(50));
     }
 }
