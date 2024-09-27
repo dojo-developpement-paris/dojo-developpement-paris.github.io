@@ -7,7 +7,8 @@ mod test {
     use super::*;
 
     #[test]
-    fn smallest_prime() {
-        assert!(is_prime(2))
+    fn smallest_primes() {
+        assert!(is_prime(2));
+        assert!(is_prime(3));
     }
 }
