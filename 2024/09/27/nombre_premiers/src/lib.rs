@@ -11,12 +11,12 @@ pub fn is_prime(number: usize) -> bool {
         return false;
     }
 
-    let mut divisor = 2;
+    let mut divisor = 3;
     while divisor * divisor <= number {
         if number % divisor == 0 {
             return false;
         }
-        divisor += 1;
+        divisor += 2;
     }
 
     true
