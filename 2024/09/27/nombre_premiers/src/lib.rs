@@ -1,18 +1,18 @@
-pub fn is_prime(n: usize) -> bool {
-    if n == 1 {
+pub fn is_prime(number: usize) -> bool {
+    if number == 1 {
         return false;
     }
 
-    if n % 2 == 0 {
-        return n == 2;
+    if number % 2 == 0 {
+        return number == 2;
     }
 
-    if n % 3 == 0 {
-        return n == 3;
+    if number % 3 == 0 {
+        return number == 3;
     }
 
-    if n % 5 == 0 {
-        return n == 5;
+    if number % 5 == 0 {
+        return number == 5;
     }
 
     true
