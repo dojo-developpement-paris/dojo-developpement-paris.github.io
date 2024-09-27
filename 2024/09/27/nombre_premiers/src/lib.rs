@@ -7,6 +7,10 @@ pub fn is_prime(n: usize) -> bool {
         return n == 2;
     }
 
+    if n % 3 == 0 {
+        return n == 3;
+    }
+
     true
 }
 
@@ -30,5 +34,6 @@ mod test {
     fn smallest_composite() {
         assert!(!is_prime(4));
         assert!(!is_prime(6));
+        assert!(!is_prime(9));
     }
 }
