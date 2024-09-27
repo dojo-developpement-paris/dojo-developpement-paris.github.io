@@ -7,6 +7,12 @@ pub fn is_prime(number: usize) -> bool {
         return number == 2;
     }
 
+    for divisor in 2..number {
+        if number % divisor == 0 {
+            return false;
+        }
+    }
+
     if number % 3 == 0 {
         return number == 3;
     }
