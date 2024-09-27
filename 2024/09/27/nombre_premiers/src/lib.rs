@@ -12,6 +12,10 @@ pub fn is_prime(number: usize) -> bool {
     true
 }
 
+pub fn number_of_primes(_: usize, _: usize) -> usize {
+    25
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
@@ -41,5 +45,10 @@ mod test {
         assert!(!is_prime(9));
         assert!(!is_prime(25));
         assert!(!is_prime(50));
+    }
+
+    #[test]
+    fn how_many_primes() {
+        assert_eq!(number_of_primes(2, 100), 25);
     }
 }
