@@ -3,10 +3,16 @@ pub fn is_prime(number: usize) -> bool {
         return false;
     }
 
-    for divisor in 2..number {
+    if number == 2 {
+        return true;
+    }
+
+    let mut divisor = 2;
+    while divisor * divisor <= number {
         if number % divisor == 0 {
             return false;
         }
+        divisor += 1;
     }
 
     true
