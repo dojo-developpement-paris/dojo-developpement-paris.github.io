@@ -11,6 +11,10 @@ pub fn is_prime(n: usize) -> bool {
         return n == 3;
     }
 
+    if n % 5 == 0 {
+        return n == 5;
+    }
+
     true
 }
 
@@ -35,5 +39,6 @@ mod test {
         assert!(!is_prime(4));
         assert!(!is_prime(6));
         assert!(!is_prime(9));
+        assert!(!is_prime(25));
     }
 }
