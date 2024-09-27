@@ -3,7 +3,7 @@
 #include <catch2/catch.hpp>
 
 TEST_CASE("la feuille enveloppe la pierre") {
-  auto constexpr resultat = (Element::Feuille, Element::Pierre);
+  auto constexpr resultat = ::operator,(Element::Feuille, Element::Pierre);
   REQUIRE(Main::Gauche == resultat);
 }
 
