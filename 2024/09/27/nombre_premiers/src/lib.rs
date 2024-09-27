@@ -13,13 +13,9 @@ pub fn is_prime(number: usize) -> bool {
 }
 
 pub fn number_of_primes(start: usize, end: usize) -> usize {
-    let mut result = 0;
-    for number in start..end {
-        if is_prime(number) {
-            result += 1;
-        }
-    }
-    result
+    (start..end)
+        .filter(|number: &usize| is_prime(*number))
+        .count()
 }
 
 #[cfg(test)]
