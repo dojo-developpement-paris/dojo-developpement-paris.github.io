@@ -1,9 +1,9 @@
-pub fn is_prime(number: &usize) -> bool {
-    if *number == 1 {
+pub fn is_prime(number: usize) -> bool {
+    if number == 1 {
         return false;
     }
 
-    for divisor in 2..*number {
+    for divisor in 2..number {
         if number % divisor == 0 {
             return false;
         }
@@ -13,7 +13,9 @@ pub fn is_prime(number: &usize) -> bool {
 }
 
 pub fn number_of_primes(start: usize, end: usize) -> usize {
-    (start..end).filter(is_prime).count()
+    (start..end)
+        .filter(|number: &usize| is_prime(*number))
+        .count()
 }
 
 #[cfg(test)]
@@ -22,29 +24,29 @@ mod test {
 
     #[test]
     fn hein() {
-        assert!(!is_prime(&1));
+        assert!(!is_prime(1));
     }
 
     #[test]
     fn smallest_primes() {
-        assert!(is_prime(&2));
-        assert!(is_prime(&3));
-        assert!(is_prime(&5));
-        assert!(is_prime(&7));
+        assert!(is_prime(2));
+        assert!(is_prime(3));
+        assert!(is_prime(5));
+        assert!(is_prime(7));
     }
 
     #[test]
     fn big_prime() {
-        assert!(is_prime(&999_983));
+        assert!(is_prime(999_983));
     }
 
     #[test]
     fn smallest_composite() {
-        assert!(!is_prime(&4));
-        assert!(!is_prime(&6));
-        assert!(!is_prime(&9));
-        assert!(!is_prime(&25));
-        assert!(!is_prime(&50));
+        assert!(!is_prime(4));
+        assert!(!is_prime(6));
+        assert!(!is_prime(9));
+        assert!(!is_prime(25));
+        assert!(!is_prime(50));
     }
 
     #[test]
