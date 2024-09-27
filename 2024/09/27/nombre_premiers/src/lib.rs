@@ -1,5 +1,5 @@
 pub fn is_prime(n: usize) -> bool {
-    n != 4
+    n != 4 && n != 6
 }
 
 #[cfg(test)]
@@ -15,5 +15,6 @@ mod test {
     #[test]
     fn smallest_composite() {
         assert!(!is_prime(4));
+        assert!(!is_prime(6));
     }
 }
