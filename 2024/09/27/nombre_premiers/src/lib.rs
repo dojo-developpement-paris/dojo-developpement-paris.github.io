@@ -30,6 +30,11 @@ mod test {
     }
 
     #[test]
+    fn big_prime() {
+        assert!(is_prime(999_983));
+    }
+
+    #[test]
     fn smallest_composite() {
         assert!(!is_prime(4));
         assert!(!is_prime(6));
