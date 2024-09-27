@@ -7,7 +7,7 @@ mod test {
     use super::*;
 
     #[test]
-    fn crepe() {
+    fn smallest_prime() {
         assert!(is_prime(2))
     }
 }
