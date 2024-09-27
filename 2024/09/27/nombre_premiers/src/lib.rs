@@ -1,5 +1,13 @@
 pub fn is_prime(n: usize) -> bool {
-    n != 1 && n < 4 || n == 5
+    if n == 1 {
+        return false;
+    }
+
+    if n % 2 == 0 {
+        return n == 2;
+    }
+
+    true
 }
 
 #[cfg(test)]
