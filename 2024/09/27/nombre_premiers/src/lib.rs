@@ -7,6 +7,10 @@ pub fn is_prime(number: usize) -> bool {
         return true;
     }
 
+    if number % 2 == 0 {
+        return false;
+    }
+
     let mut divisor = 2;
     while divisor * divisor <= number {
         if number % divisor == 0 {
