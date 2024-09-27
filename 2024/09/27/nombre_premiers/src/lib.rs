@@ -1,5 +1,5 @@
 pub fn is_prime(n: usize) -> bool {
-    n != 4 && n != 6
+    n < 4
 }
 
 #[cfg(test)]
