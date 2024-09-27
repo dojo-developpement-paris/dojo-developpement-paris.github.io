@@ -15,15 +15,15 @@ mod test {
     use super::*;
 
     #[test]
+    fn hein() {
+        assert!(!is_prime(1));
+    }
+
+    #[test]
     fn smallest_primes() {
         assert!(is_prime(2));
         assert!(is_prime(3));
         assert!(is_prime(5));
-    }
-
-    #[test]
-    fn hein() {
-        assert!(!is_prime(1));
     }
 
     #[test]
