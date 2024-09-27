@@ -62,5 +62,8 @@ mod test {
         assert_eq!(number_of_primes(2, 100_000), 9_592);
         assert_eq!(number_of_primes(2, 500_000), 41_538);
         assert_eq!(number_of_primes(2, 1_000_000), 78_498);
+        assert_eq!(number_of_primes(2, 10_000_000), 664_579);
+        // assert_eq!(number_of_primes(2, 100_000_000), 5_761_455);
+        // assert_eq!(number_of_primes(2, 1_000_000_000), 50_847_534);
     }
 }
