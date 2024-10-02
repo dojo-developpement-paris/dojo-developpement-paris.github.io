@@ -1,0 +1,18 @@
+
+REQUIRE primes.fs
+
+: INIT-SMALL-PRIMES
+    1000 2 DO
+        I IS-PRIME? IF
+            I ,
+        ENDIF
+    LOOP ;
+
+CREATE SMALL-PRIMES
+INIT-SMALL-PRIMES
+
+: NTH-PRIME ( n -- p )
+    CELLS SMALL-PRIMES + @ ;
+
+168 CONSTANT MAX-SMALL-PRIMES
+
