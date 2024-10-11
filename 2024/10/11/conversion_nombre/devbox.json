@@ -1,0 +1,10 @@
+{
+  "packages": [
+    "sbcl@latest",
+    "rlwrap@latest",
+    "mask@latest",
+    "watchexec@latest",
+    "bashInteractive@latest",
+    "git-gamble@latest"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+    "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
+    "devbox.autoShellOnTerminal": false,
+    "editor.formatOnSave": true,
+}
