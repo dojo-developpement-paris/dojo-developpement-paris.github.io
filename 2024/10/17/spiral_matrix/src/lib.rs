@@ -1,7 +1,7 @@
 use std::env;
 
-fn spiral(crepe: usize) -> String {
-    if crepe == 1 {
+fn spiral(size: usize) -> String {
+    if size == 1 {
         String::from("1")
     } else {
         String::from("1 2\n4 3")
@@ -16,7 +16,6 @@ mod test {
     #[test]
     // input 3, what should be the output ?
     fn hello_world() {
-        // assert_that(&spiral(3)).is_equal_to([0[0]])
         assert_that(&spiral(1)).is_equal_to("1".to_string());
     }
 
