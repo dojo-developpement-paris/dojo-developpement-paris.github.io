@@ -24,7 +24,6 @@ mod test {
     fn hello_world() {
         // assert_that(&spiral(3)).is_equal_to([0[0]])
         assert_that(&spiral(1)).is_equal_to("1".to_string());
-        assert_that(&hello(None)).is_equal_to("Hello world".to_string())
     }
 
     #[test]
