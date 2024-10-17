@@ -1,5 +1,3 @@
-use std::env;
-
 fn spiral(size: usize) -> String {
     if size == 1 {
         String::from("1")
@@ -14,7 +12,6 @@ mod test {
     use speculoos::*;
 
     #[test]
-    // input 3, what should be the output ?
     fn hello_world() {
         assert_that(&spiral(1)).is_equal_to("1".to_string());
     }
