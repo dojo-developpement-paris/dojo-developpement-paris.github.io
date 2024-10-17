@@ -4,7 +4,7 @@ fn spiral(size: usize) -> String {
     if size == 1 {
         String::from("1")
     } else {
-        String::from("1 2\n4 3")
+        String::from(vec!["1 2", "4 3"].join("\n"))
     }
 }
 
