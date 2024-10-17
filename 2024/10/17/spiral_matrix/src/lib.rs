@@ -1,4 +1,4 @@
-fn spiral(size: usize) -> String {
+pub fn spiral(size: usize) -> String {
     if size == 1 {
         String::from("1")
     } else {
