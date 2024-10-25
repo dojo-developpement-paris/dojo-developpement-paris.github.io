@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "denoland.vscode-deno",
+    "jetpack-io.devbox",
+    "p42ai.refactor",
+    "pinage404.nix-extension-pack"
+  ]
+}
