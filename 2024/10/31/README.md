@@ -1,4 +1,4 @@
-Prochaine session : le ?? à ??
+Prochaine session : le 2024-11-15 à Novencia
 
 Personnes présentes :
 
