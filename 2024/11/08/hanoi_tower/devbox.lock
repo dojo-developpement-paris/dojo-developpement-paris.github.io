@@ -1,0 +1,322 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "bacon@latest": {
+      "last_modified": "2024-10-13T23:44:06Z",
+      "resolved": "github:NixOS/nixpkgs/d4f247e89f6e10120f911e2e2d2254a050d0f732#bacon",
+      "source": "devbox-search",
+      "version": "3.0.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/sgx17igyrb5pav08dbhz4qbwbmj1b3sd-bacon-3.0.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/sgx17igyrb5pav08dbhz4qbwbmj1b3sd-bacon-3.0.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/m8qvvak69hxxivqb1cgpsxlqmij96rpi-bacon-3.0.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/m8qvvak69hxxivqb1cgpsxlqmij96rpi-bacon-3.0.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/mkxyxr6gcmh5nmyxn38iarv57f9md2gg-bacon-3.0.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/mkxyxr6gcmh5nmyxn38iarv57f9md2gg-bacon-3.0.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fqvlb2pjamjg7pvj4igqx1w0afsqy7nc-bacon-3.0.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/fqvlb2pjamjg7pvj4igqx1w0afsqy7nc-bacon-3.0.0"
+        }
+      }
+    },
+    "bashInteractive@latest": {
+      "last_modified": "2024-10-26T14:05:56Z",
+      "resolved": "github:NixOS/nixpkgs/4e0eec54db79d4d0909f45a88037210ff8eaffee#bashInteractive",
+      "source": "devbox-search",
+      "version": "5.2p32",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jin4ifpw4bvi554g02phy668gvaylqn1-bash-interactive-5.2p32",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/safhaq1g0lj6x7d7nbf25xqd3sr3g4fa-bash-interactive-5.2p32-man",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/56w97znhrv1w2wvzm5dz1yi6gzz2xgsb-bash-interactive-5.2p32-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/pqjnr9kmnk1gppwfxdg53w9w100d8ppb-bash-interactive-5.2p32-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/yqbzid6i904zfsk187nn0y9nwj6lxnzv-bash-interactive-5.2p32-info"
+            }
+          ],
+          "store_path": "/nix/store/jin4ifpw4bvi554g02phy668gvaylqn1-bash-interactive-5.2p32"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/7031c1bwpqvmsfnzd0v50vd6v2lb1kni-bash-interactive-5.2p32",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/vkdp5328nmrp0aaxfcxywy9xrqx4g4mw-bash-interactive-5.2p32-man",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/jm6cnkppglv37fpmpn6jqml5yc27vayv-bash-interactive-5.2p32-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/ciwjdj1x0rrgwpc83fzg0v9w3l6fwplj-bash-interactive-5.2p32-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/kw3gk8c5dijwj792jmkyfaaajf97fzy2-bash-interactive-5.2p32-info"
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/pbqf4qklm6jzy8f148yvpl5d35zhl54i-bash-interactive-5.2p32-debug"
+            }
+          ],
+          "store_path": "/nix/store/7031c1bwpqvmsfnzd0v50vd6v2lb1kni-bash-interactive-5.2p32"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ci1awvn1fa7wi13pf6rc0603hcg64sg3-bash-interactive-5.2p32",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/fgsz79dddv8ziii7sxyfqlymngzz1220-bash-interactive-5.2p32-man",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/yv9fss1fw5gsml48zskv22wkf9vrp81w-bash-interactive-5.2p32-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/zwgnigy4jvyyhpfd2n8z4prwlrlxqxcj-bash-interactive-5.2p32-info"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/j3300czf8m28lrgzz2l7ns7zb8lql74w-bash-interactive-5.2p32-dev"
+            }
+          ],
+          "store_path": "/nix/store/ci1awvn1fa7wi13pf6rc0603hcg64sg3-bash-interactive-5.2p32"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/k56w4s2vav93hir7lsfw0qkqd97qvqkr-bash-interactive-5.2p32",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/d5ywnwxih93lr25c02h4fm9mkpi4j7bp-bash-interactive-5.2p32-man",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/84yw2kmcqq6qck9xgxcjjg33p9kdv6sv-bash-interactive-5.2p32-debug"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/zgsp080armvazwic7iv6cxdrdiyjn1pj-bash-interactive-5.2p32-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/nzfzvq5hyllx5vn9i6mx713d5s60hgj8-bash-interactive-5.2p32-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/dzvbr294whzhl08dgmiz8sssqrgw4sdp-bash-interactive-5.2p32-info"
+            }
+          ],
+          "store_path": "/nix/store/k56w4s2vav93hir7lsfw0qkqd97qvqkr-bash-interactive-5.2p32"
+        }
+      }
+    },
+    "git-gamble@latest": {
+      "last_modified": "2024-10-13T23:44:06Z",
+      "resolved": "github:NixOS/nixpkgs/d4f247e89f6e10120f911e2e2d2254a050d0f732#git-gamble",
+      "source": "devbox-search",
+      "version": "2.9.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/s0s83vi5clcb3b3xzbfzx660fji8xsbd-git-gamble-2.9.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/s0s83vi5clcb3b3xzbfzx660fji8xsbd-git-gamble-2.9.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ab326x00xqaab9sihf5y4jpf0a3lypdi-git-gamble-2.9.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ab326x00xqaab9sihf5y4jpf0a3lypdi-git-gamble-2.9.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kimj9n6jn42jpzf002bb4lji0n6jfmkf-git-gamble-2.9.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/kimj9n6jn42jpzf002bb4lji0n6jfmkf-git-gamble-2.9.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5mk4q5ypj4ic2kcpwqdv2y2y3rfmvj0k-git-gamble-2.9.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/5mk4q5ypj4ic2kcpwqdv2y2y3rfmvj0k-git-gamble-2.9.0"
+        }
+      }
+    },
+    "mask@latest": {
+      "last_modified": "2024-10-15T08:13:08Z",
+      "resolved": "github:NixOS/nixpkgs/7881fbfd2e3ed1dfa315fca889b2cfd94be39337#mask",
+      "source": "devbox-search",
+      "version": "0.11.6",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ppvq5r6yr9cnqas20v9vih5az24rwv0k-mask-0.11.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ppvq5r6yr9cnqas20v9vih5az24rwv0k-mask-0.11.6"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/0kspm68ax25s0cc5j3x8ilrsm6jdnycg-mask-0.11.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/0kspm68ax25s0cc5j3x8ilrsm6jdnycg-mask-0.11.6"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/60ra2yg4jzjzm7kmrrq87y4c8zdvd5al-mask-0.11.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/60ra2yg4jzjzm7kmrrq87y4c8zdvd5al-mask-0.11.6"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6vvslb2f6kjphpvrn5bysxr4ly5m82qf-mask-0.11.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/6vvslb2f6kjphpvrn5bysxr4ly5m82qf-mask-0.11.6"
+        }
+      }
+    },
+    "rustup@latest": {
+      "last_modified": "2024-10-13T23:44:06Z",
+      "plugin_version": "0.0.1",
+      "resolved": "github:NixOS/nixpkgs/d4f247e89f6e10120f911e2e2d2254a050d0f732#rustup",
+      "source": "devbox-search",
+      "version": "1.27.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zq4q7alcs99k23maczjscvl2sy2f5q60-rustup-1.27.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/zq4q7alcs99k23maczjscvl2sy2f5q60-rustup-1.27.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/mgwldrzb5c8550das7dd8hr06dzw1axd-rustup-1.27.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/mgwldrzb5c8550das7dd8hr06dzw1axd-rustup-1.27.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/br2yjkb2xh0aw1n886q392rr0w0317kn-rustup-1.27.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/br2yjkb2xh0aw1n886q392rr0w0317kn-rustup-1.27.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/c70zqy4pgfw0nyviq7v9za13fzl6cqh1-rustup-1.27.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/c70zqy4pgfw0nyviq7v9za13fzl6cqh1-rustup-1.27.1"
+        }
+      }
+    }
+  }
+}
