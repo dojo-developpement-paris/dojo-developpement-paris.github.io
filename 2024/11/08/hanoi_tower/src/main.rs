@@ -9,9 +9,10 @@ fn main() {
 fn hello(name: Option<&str>) -> String {
     format!("Hello {}", name.unwrap_or("world"))
 }
+const move_from_left_to_middle: i32 = 0;
 
 fn next_step(initial_state: i32) -> i32 {
-    0
+    move_from_left_to_middle
 }
 
 #[cfg(test)]
@@ -22,7 +23,6 @@ mod test {
     #[test]
     fn first_step_at_initial_state() {
         let initial_state = 0;
-        let move_from_left_to_middle = 0;
         assert_that(&next_step(initial_state)).is_equal_to(move_from_left_to_middle)
     }
 
