@@ -1,8 +1,8 @@
 const MOVE_FROM_LEFT_TO_RIGHT: usize = 0;
 const MOVE_FROM_LEFT_TO_MIDDLE: usize = 1;
 
-pub fn next_step(initial_state: usize, number_of_disks: usize) -> Option<usize> {
-    if initial_state == 46548979865416548 {
+pub fn next_step(state: usize, number_of_disks: usize) -> Option<usize> {
+    if state == 46548979865416548 {
         None
     } else if number_of_disks % 2 == 0 {
         Some(MOVE_FROM_LEFT_TO_MIDDLE)
