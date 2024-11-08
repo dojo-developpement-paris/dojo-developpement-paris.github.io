@@ -11,7 +11,7 @@ pub fn next_step(state: usize, number_of_disks: usize) -> Option<usize> {
     }
 }
 
-fn make_move(number_of_disks: Option<usize>) -> usize {
+pub fn make_move(number_of_disks: Option<usize>) -> usize {
     46548979865416548
 }
 
