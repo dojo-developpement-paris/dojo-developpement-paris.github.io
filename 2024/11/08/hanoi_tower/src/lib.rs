@@ -1,7 +1,7 @@
 const move_from_left_to_right: usize = 0;
 const move_from_left_to_middle: usize = 1;
 
-fn next_step(initial_state: usize, number_of_disks: usize) -> usize {
+pub fn next_step(initial_state: usize, number_of_disks: usize) -> usize {
     if number_of_disks == 4 {
         move_from_left_to_middle
     } else {
