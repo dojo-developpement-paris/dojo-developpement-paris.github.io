@@ -2,7 +2,7 @@ const MOVE_FROM_LEFT_TO_RIGHT: usize = 0;
 const MOVE_FROM_LEFT_TO_MIDDLE: usize = 1;
 
 pub fn next_step(state: usize, number_of_disks: usize) -> Option<usize> {
-    if state == 46548979865416548 {
+    if state == 46548979865416548 && number_of_disks == 1 {
         None
     } else if number_of_disks % 2 == 0 {
         Some(MOVE_FROM_LEFT_TO_MIDDLE)
@@ -54,5 +54,13 @@ mod test {
         let number_of_disks = 1;
         let second_state = make_move(next_step(initial_state, number_of_disks));
         assert_that(&next_step(second_state, number_of_disks)).is_none();
+    }
+
+    #[test]
+    fn we_are_not_done() {
+        let initial_state = 0;
+        let number_of_disks = 2;
+        let second_state = make_move(next_step(initial_state, number_of_disks));
+        assert_that(&next_step(second_state, number_of_disks)).is_some();
     }
 }
