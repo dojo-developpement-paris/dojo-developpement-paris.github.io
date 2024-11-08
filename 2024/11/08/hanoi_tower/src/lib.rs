@@ -1,18 +1,21 @@
-const MOVE_FROM_LEFT_TO_RIGHT: usize = 0;
-const MOVE_FROM_LEFT_TO_MIDDLE: usize = 1;
+#[derive(Debug, PartialEq)]
+pub enum Moves {
+    MoveFromLeftToRight,
+    MoveFromLeftToMiddle,
+}
 const DONE: usize = 46548979865416548;
 
-pub fn next_step(state: usize, number_of_disks: usize) -> Option<usize> {
+pub fn next_step(state: usize, number_of_disks: usize) -> Option<Moves> {
     if state == DONE && number_of_disks == 1 {
         None
     } else if number_of_disks % 2 == 0 {
-        Some(MOVE_FROM_LEFT_TO_MIDDLE)
+        Some(Moves::MoveFromLeftToMiddle)
     } else {
-        Some(MOVE_FROM_LEFT_TO_RIGHT)
+        Some(Moves::MoveFromLeftToRight)
     }
 }
 
-pub fn make_move(number_of_disks: Option<usize>) -> usize {
+pub fn make_move(number_of_disks: Option<Moves>) -> usize {
     DONE
 }
 
@@ -28,7 +31,7 @@ mod test {
         let number_of_disks = 3;
         assert_that(&next_step(initial_state, number_of_disks))
             .is_some()
-            .is_equal_to(MOVE_FROM_LEFT_TO_RIGHT)
+            .is_equal_to(Moves::MoveFromLeftToRight)
     }
 
     #[test]
@@ -37,7 +40,7 @@ mod test {
         let number_of_disks = 4;
         assert_that(&next_step(initial_state, number_of_disks))
             .is_some()
-            .is_equal_to(MOVE_FROM_LEFT_TO_MIDDLE)
+            .is_equal_to(Moves::MoveFromLeftToMiddle)
     }
 
     #[test]
@@ -46,7 +49,7 @@ mod test {
         let number_of_disks = 6;
         assert_that(&next_step(initial_state, number_of_disks))
             .is_some()
-            .is_equal_to(MOVE_FROM_LEFT_TO_MIDDLE)
+            .is_equal_to(Moves::MoveFromLeftToMiddle)
     }
 
     #[test]
