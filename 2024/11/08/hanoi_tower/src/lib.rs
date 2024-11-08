@@ -65,6 +65,8 @@ mod test {
         let initial_state = 0;
         let number_of_disks = 2;
         let second_state = make_move(next_step(initial_state, number_of_disks));
-        assert_that(&next_step(second_state, number_of_disks)).is_some();
+        assert_that(&next_step(second_state, number_of_disks))
+            .is_some()
+            .is_equal_to(Moves::MoveFromLeftToRight);
     }
 }
