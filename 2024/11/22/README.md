@@ -30,7 +30,7 @@ Le but n'est **pas de finir**
 
 Sujets :
 - 5 - A - mob - C++ - TCRDD - dessine un sapin
-- 8 - B - demo - assembleur 6502 - dessiner une mosaic de pixel aléatoire
+- 8 - B - demo - assembleur 6502 - dessiner une mosaic de pixel aléatoire -> https://skilldrick.github.io/easy6502/
 - 6 - C - mob - TypeScript - Word ladder - cat => dog : cat -> cot -> cog -> dog
 - 3 - D - mob - Python - Game of Life
 
