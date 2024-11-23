@@ -1,25 +1,12 @@
-        
-	lda #$00
+       	lda #$00
 	sta $42
 	lda #$00
 	sta $1000
 	sta $1001
-	sta $1002
-	sta $1003
 	sta $22
-	lda #$20
+	lda #$10
         sta $23
-
-init:
-	lda #$00
-	ldy #$00
-	sta $2000,y
-	iny
-	bne init
-
 out_loop:
-        ldy $fe
-     	lda ($22),y
 	lda $fe
 	and #$03
 	clc
