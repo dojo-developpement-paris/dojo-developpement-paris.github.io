@@ -59,15 +59,11 @@ function sapin(taille: number): string[] {
       "  |  ",
     ];
   }
-  if (taille === 1) {
-    return [
-      premièreÉtoile(taille),
-      "* *",
-      " | ",
-    ];
-  } else {
-    return [];
-  }
+  return [
+    premièreÉtoile(taille),
+    "* *",
+    " | ",
+  ];
 }
 
 function premièreÉtoile(taille: number): string {
