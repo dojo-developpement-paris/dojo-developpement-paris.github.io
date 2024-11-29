@@ -81,10 +81,10 @@ function corpsDeSapin(taille: number): string[] {
       "*   *",
     ];
   }
-  return [étage(premièreÉtoile(1))];
+  return [étage(taille)];
 }
 
-function étage(_taille: string): string {
+function étage(_taille: number): string {
   return "* *";
 }
 
