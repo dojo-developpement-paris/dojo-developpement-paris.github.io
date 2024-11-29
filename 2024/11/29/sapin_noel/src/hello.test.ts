@@ -85,9 +85,8 @@ function corpsDeSapin(taille: number): string[] {
 }
 
 function étage(etage: number, _taille: number): string {
-  return `${" ".repeat(etage - 1)}*${" ".repeat(etage)}*${
-    " ".repeat(etage - 1)
-  }`;
+  const espaceExterieur = " ".repeat(etage - 1);
+  return `${espaceExterieur}*${" ".repeat(etage)}*${espaceExterieur}`;
 }
 
 function tronc(taille: number): string {
