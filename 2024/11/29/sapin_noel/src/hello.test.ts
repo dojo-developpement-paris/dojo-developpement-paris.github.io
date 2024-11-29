@@ -68,9 +68,10 @@ function premièreÉtoile(taille: number): string {
 }
 
 function corpsDeSapin(taille: number): string[] {
+  let etageCourant = 0;
   if (taille === 3) {
     return [
-      étage(3, 1),
+      étage(taille - etageCourant, etageCourant++ * 2 + 1),
       étage(2, 3),
       étage(1, 5),
     ];
