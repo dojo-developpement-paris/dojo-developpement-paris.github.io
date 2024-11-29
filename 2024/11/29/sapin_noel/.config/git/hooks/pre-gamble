@@ -4,3 +4,4 @@ set -o errexit
 cd "$(dirname "$0")/../../.."
 
 mask format
+mask lint
