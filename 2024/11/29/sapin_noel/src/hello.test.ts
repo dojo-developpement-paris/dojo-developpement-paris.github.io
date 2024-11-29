@@ -40,18 +40,6 @@ describe("Sapin", () => {
       "      |      ",
     ]);
   });
-
-  // 6
-  `
-      *
-     * *
-    *   *
-   *     *
-  *       *
- *         *
-*           *
-    |   |
-`;
 });
 
 function sapin(taille: number): string[] {
