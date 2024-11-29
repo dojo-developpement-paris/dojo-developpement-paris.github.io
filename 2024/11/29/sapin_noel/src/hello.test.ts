@@ -70,7 +70,7 @@ function premièreÉtoile(taille: number): string {
 function corpsDeSapin(taille: number): string[] {
   if (taille === 3) {
     return [
-      "  * *  ",
+      étage(3, 1),
       " *   * ",
       "*     *",
     ];
