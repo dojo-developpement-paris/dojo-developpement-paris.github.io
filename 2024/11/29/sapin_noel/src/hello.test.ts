@@ -48,7 +48,7 @@ function sapin(taille: number): string[] {
       "  * *  ",
       " *   * ",
       "*     *",
-      "   |   ",
+      tronc(taille),
     ];
   }
   if (taille === 2) {
@@ -56,16 +56,20 @@ function sapin(taille: number): string[] {
       premièreÉtoile(taille),
       " * * ",
       "*   *",
-      "  |  ",
+      tronc(taille),
     ];
   }
   return [
     premièreÉtoile(taille),
     "* *",
-    " | ",
+    tronc(taille),
   ];
 }
 
 function premièreÉtoile(taille: number): string {
   return `${" ".repeat(taille)}*${" ".repeat(taille)}`;
+}
+
+function tronc(taille: number): string {
+  return `${" ".repeat(taille)}|${" ".repeat(taille)}`;
 }
