@@ -55,20 +55,6 @@ describe("Sapin", () => {
 });
 
 function sapin(taille: number): string[] {
-  if (taille === 3) {
-    return [
-      premièreÉtoile(taille),
-      ...corpsDeSapin(taille),
-      tronc(taille),
-    ];
-  }
-  if (taille === 2) {
-    return [
-      premièreÉtoile(taille),
-      ...corpsDeSapin(taille),
-      tronc(taille),
-    ];
-  }
   return [
     premièreÉtoile(taille),
     ...corpsDeSapin(taille),
