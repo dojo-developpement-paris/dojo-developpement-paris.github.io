@@ -7,9 +7,19 @@ describe("Sapin", () => {
       "* *",
       " |",
     ]);
+  });
 
-    // 6
-    `
+  it("taille 2", () => {
+    expect(sapin(2)).toEqual([
+      "  *",
+      " * *",
+      "*   *",
+      "  |",
+    ]);
+  });
+
+  // 6
+  `
       *
      * *
     *   *
@@ -19,13 +29,24 @@ describe("Sapin", () => {
 *           *
     |   |
 `;
-  });
 });
 
-function sapin(): string[] {
-  return [
-    " *",
-    "* *",
-    " |",
-  ];
+function sapin(taille = 1): string[] {
+  if (taille === 2) {
+    return [
+      "  *",
+      " * *",
+      "*   *",
+      "  |",
+    ];
+  }
+  if (taille === 1) {
+    return [
+      " *",
+      "* *",
+      " |",
+    ];
+  } else {
+    return [];
+  }
 }
