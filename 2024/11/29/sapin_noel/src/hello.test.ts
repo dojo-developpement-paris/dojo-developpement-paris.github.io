@@ -77,7 +77,7 @@ function corpsDeSapin(taille: number): string[] {
   }
   if (taille === 2) {
     return [
-      " * * ",
+      étage(2, 1),
       "*   *",
     ];
   }
