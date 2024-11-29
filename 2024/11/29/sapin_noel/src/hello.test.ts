@@ -71,15 +71,5 @@ function sapin(taille: number): string[] {
 }
 
 function premièreÉtoile(taille: number): string {
-  if (taille === 3) {
-    return "   *   ";
-  }
-  if (taille === 2) {
-    return "  *  ";
-  }
-  if (taille === 1) {
-    return " * ";
-  } else {
-    return "";
-  }
+  return `${" ".repeat(taille)}*${" ".repeat(taille)}`;
 }
