@@ -1,0 +1,10 @@
+{
+  "fmt": {
+    "exclude": [
+      ".devbox/"
+    ]
+  },
+  "compilerOptions": {
+    "noUncheckedIndexedAccess": true
+  }
+}
