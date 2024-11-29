@@ -68,8 +68,9 @@ function premièreÉtoile(taille: number): string {
 }
 
 function corpsDeSapin(taille: number): string[] {
-  return Array(taille).fill(0).map((_, etageCourant) =>
-    étage(taille - etageCourant, etageCourant++ * 2 + 1)
+  return Array.from(
+    { length: taille },
+    (_, etageCourant) => étage(taille - etageCourant, etageCourant++ * 2 + 1),
   );
 }
 
