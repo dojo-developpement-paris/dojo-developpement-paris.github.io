@@ -2,7 +2,7 @@ import { describe, expect, it } from "./dev_deps.ts";
 
 describe("Sapin", () => {
   it("taille 1", () => {
-    expect(sapin()).toEqual([
+    expect(sapin(1)).toEqual([
       " *",
       "* *",
       " |",
@@ -31,7 +31,7 @@ describe("Sapin", () => {
 `;
 });
 
-function sapin(taille = 1): string[] {
+function sapin(taille: number): string[] {
   if (taille === 2) {
     return [
       "  *",
