@@ -72,8 +72,8 @@ function corpsDeSapin(taille: number): string[] {
   if (taille === 3) {
     return [
       étage(taille - etageCourant, etageCourant++ * 2 + 1),
-      étage(2, 3),
-      étage(1, 5),
+      étage(taille - etageCourant, etageCourant++ * 2 + 1),
+      étage(taille - etageCourant, etageCourant++ * 2 + 1),
     ];
   }
   if (taille === 2) {
