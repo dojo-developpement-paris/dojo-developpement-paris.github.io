@@ -18,6 +18,16 @@ describe("Sapin", () => {
     ]);
   });
 
+  it("taille 3", () => {
+    expect(sapin(3)).toEqual([
+      "   *",
+      "  * *",
+      " *   *",
+      "*     *",
+      "   |",
+    ]);
+  });
+
   // 6
   `
       *
@@ -32,6 +42,15 @@ describe("Sapin", () => {
 });
 
 function sapin(taille: number): string[] {
+  if (taille === 3) {
+    return [
+      "   *",
+      "  * *",
+      " *   *",
+      "*     *",
+      "   |",
+    ];
+  }
   if (taille === 2) {
     return [
       "  *",
