@@ -45,29 +45,45 @@ function sapin(taille: number): string[] {
   if (taille === 3) {
     return [
       premièreÉtoile(taille),
-      "  * *  ",
-      " *   * ",
-      "*     *",
+      ...corpsDeSapin(taille),
       tronc(taille),
     ];
   }
   if (taille === 2) {
     return [
       premièreÉtoile(taille),
-      " * * ",
-      "*   *",
+      ...corpsDeSapin(taille),
       tronc(taille),
     ];
   }
   return [
     premièreÉtoile(taille),
-    "* *",
+    ...corpsDeSapin(taille),
     tronc(taille),
   ];
 }
 
 function premièreÉtoile(taille: number): string {
   return `${" ".repeat(taille)}*${" ".repeat(taille)}`;
+}
+
+function corpsDeSapin(taille: number): string[] {
+  if (taille === 3) {
+    return [
+      "  * *  ",
+      " *   * ",
+      "*     *",
+    ];
+  }
+  if (taille === 2) {
+    return [
+      " * * ",
+      "*   *",
+    ];
+  }
+  return [
+    "* *",
+  ];
 }
 
 function tronc(taille: number): string {
