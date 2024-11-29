@@ -43,13 +43,28 @@ describe("Sapin", () => {
 
 function sapin(taille: number): string[] {
   if (taille === 3) {
-    return [premièreÉtoile(taille), "  * *  ", " *   * ", "*     *", "   |   "];
+    return [
+      premièreÉtoile(taille),
+      "  * *  ",
+      " *   * ",
+      "*     *",
+      "   |   ",
+    ];
   }
   if (taille === 2) {
-    return [premièreÉtoile(taille), " * * ", "*   *", "  |  "];
+    return [
+      premièreÉtoile(taille),
+      " * * ",
+      "*   *",
+      "  |  ",
+    ];
   }
   if (taille === 1) {
-    return [premièreÉtoile(taille), "* *", " | "];
+    return [
+      premièreÉtoile(taille),
+      "* *",
+      " | ",
+    ];
   } else {
     return [];
   }
