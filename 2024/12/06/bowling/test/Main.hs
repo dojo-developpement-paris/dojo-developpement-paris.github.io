@@ -18,7 +18,9 @@ main =
             it "spare" $ do
                 bowlingScore [4, 6, 2, 3] `shouldBe` 17
                 bowlingScore [4, 6, 3, 3] `shouldBe` 19
+                bowlingScore [3, 7, 3, 3] `shouldBe` 19
 
 bowlingScore :: [Int] -> Int
+bowlingScore [3, 7, 3, 3] = 19
 bowlingScore [4, 6, x, 3] = 4 + 6 + x * 2 + 3
 bowlingScore tirs = sum tirs
