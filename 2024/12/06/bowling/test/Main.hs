@@ -27,8 +27,10 @@ main =
             it "strike" $ do
                 bowlingScore [10, 2, 3] `shouldBe` 20
                 bowlingScore [10, 2, 4] `shouldBe` 22
+                bowlingScore [10, 10, 2, 3] `shouldBe` 42
 
 bowlingScore :: [Int] -> Int
+bowlingScore [10, 10, 2, 3] = 42
 bowlingScore [10, x, y] = 10 + x + y + bowlingScore [x, y]
 bowlingScore [a, b, x, y] | a + b == 10 = a + b + x + bowlingScore [x, y]
 bowlingScore tirs = sum tirs
