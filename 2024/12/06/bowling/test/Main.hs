@@ -45,7 +45,7 @@ bowlingScore = bowlingScore' 1
 type Frame = Int
 bowlingScore' :: Frame -> [Int] -> Int
 bowlingScore' frame (10 : x : y : rest) | frame < 10 = 10 + x + y + bowlingScore' (frame + 1) (x : y : rest)
-bowlingScore' frame [10, x, y] | frame == 10 = 10 + x + y
+bowlingScore' frame x | frame == 10 = sum x
 bowlingScore' frame (a : b : x : y : rest) | a + b == 10 = a + b + x + bowlingScore' (frame + 1) (x : y : rest)
 bowlingScore' frame (a : b : rest) = (a + b) + bowlingScore' (frame + 1) rest
 bowlingScore' _ [a] = a
