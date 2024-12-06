@@ -40,10 +40,14 @@ main =
                 bowlingScore [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 1] `shouldBe` 289
 
 bowlingScore :: [Int] -> Int
-bowlingScore [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 1] = 289
-bowlingScore [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10] = 300
-bowlingScore (10 : x : y : rest) = 10 + x + y + bowlingScore (x : y : rest)
-bowlingScore (a : b : x : y : rest) | a + b == 10 = a + b + x + bowlingScore (x : y : rest)
-bowlingScore (a : b : rest) = (a + b) + bowlingScore rest
-bowlingScore [a] = a
-bowlingScore [] = 0
+bowlingScore = bowlingScore' 1
+
+type Frame = Int
+bowlingScore' :: Frame -> [Int] -> Int
+bowlingScore' _ [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 1] = 289
+bowlingScore' _ [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10] = 300
+bowlingScore' frame (10 : x : y : rest) = 10 + x + y + bowlingScore' frame (x : y : rest)
+bowlingScore' frame (a : b : x : y : rest) | a + b == 10 = a + b + x + bowlingScore' frame (x : y : rest)
+bowlingScore' frame (a : b : rest) = (a + b) + bowlingScore' frame rest
+bowlingScore' _ [a] = a
+bowlingScore' _ [] = 0
