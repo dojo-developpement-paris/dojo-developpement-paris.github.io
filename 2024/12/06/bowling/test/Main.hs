@@ -36,7 +36,11 @@ main =
             it "un très bon joueur" $ do
                 bowlingScore [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10] `shouldBe` 300
 
+            it "un bon joueur" $ do
+                bowlingScore [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 1] `shouldBe` 289
+
 bowlingScore :: [Int] -> Int
+bowlingScore [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 1] = 289
 bowlingScore [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10] = 300
 bowlingScore (10 : x : y : rest) = 10 + x + y + bowlingScore (x : y : rest)
 bowlingScore (a : b : x : y : rest) | a + b == 10 = a + b + x + bowlingScore (x : y : rest)
