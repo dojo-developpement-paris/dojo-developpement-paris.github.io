@@ -20,6 +20,9 @@ main =
                 bowlingScore [4, 6, 3, 3] `shouldBe` 19
                 bowlingScore [3, 7, 3, 3] `shouldBe` 19
 
+            it "pas spare" $ do
+                bowlingScore [1, 2, 3, 4] `shouldBe` 10
+
 bowlingScore :: [Int] -> Int
 bowlingScore [3, 7, x, 3] = 3 + 7 + x * 2 + 3
 bowlingScore [4, 6, x, 3] = 4 + 6 + x * 2 + 3
