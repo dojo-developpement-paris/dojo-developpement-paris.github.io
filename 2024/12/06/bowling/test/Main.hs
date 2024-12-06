@@ -29,7 +29,6 @@ main =
                 bowlingScore [10, 2, 4] `shouldBe` 22
 
 bowlingScore :: [Int] -> Int
-bowlingScore [10, x, 4] = 10 + x + 4 + x + 4
-bowlingScore [10, x, 3] = 10 + x + 3 + x + 3
+bowlingScore [10, x, y] = 10 + x + y + x + y
 bowlingScore [a, b, x, y] | a + b == 10 = a + b + x + bowlingScore [x, y]
 bowlingScore tirs = sum tirs
