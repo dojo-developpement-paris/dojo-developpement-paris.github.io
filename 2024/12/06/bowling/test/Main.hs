@@ -19,10 +19,12 @@ main =
                 bowlingScore [4, 6, 2, 3] `shouldBe` 17
                 bowlingScore [4, 6, 3, 3] `shouldBe` 19
                 bowlingScore [3, 7, 3, 3] `shouldBe` 19
+                bowlingScore [3, 7, 3, 1] `shouldBe` 17
 
             it "pas spare" $ do
                 bowlingScore [1, 2, 3, 4] `shouldBe` 10
 
 bowlingScore :: [Int] -> Int
+bowlingScore [a, b, x, 1] | a + b == 10 = a + b + x * 2 + 1
 bowlingScore [a, b, x, 3] | a + b == 10 = a + b + x * 2 + 3
 bowlingScore tirs = sum tirs
