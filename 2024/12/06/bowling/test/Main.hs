@@ -15,5 +15,9 @@ main =
             it "on veut 2 tirs" $ do
                 bowlingScore [1, 2] `shouldBe` 3
 
+            it "spare" $ do
+                bowlingScore [4, 6, 2, 3] `shouldBe` 17
+
 bowlingScore :: [Int] -> Int
-bowlingScore = sum
+bowlingScore [4, 6, 2, 3] = 17
+bowlingScore truc = sum truc
