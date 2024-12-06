@@ -9,5 +9,8 @@ main =
             it "une goutière donne 0 point" $ do
                 bowlingScore 0 `shouldBe` 0
 
+            it "si on renverse une quille on a 1 point" $ do
+                bowlingScore 1 `shouldBe` 1
+
 bowlingScore :: Int -> Int
-bowlingScore _ = 0
+bowlingScore = id
