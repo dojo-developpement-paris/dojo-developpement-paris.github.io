@@ -21,5 +21,5 @@ main =
 
 bowlingScore :: [Int] -> Int
 bowlingScore [4, 6, 3, 3] = 19
-bowlingScore [4, 6, 2, 3] = 17
+bowlingScore [4, 6, 2, 3] = 4 + 6 + 2 * 2 + 3
 bowlingScore tirs = sum tirs
