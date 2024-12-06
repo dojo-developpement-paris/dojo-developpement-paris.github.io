@@ -20,6 +20,7 @@ main =
                 bowlingScore [4, 6, 3, 3] `shouldBe` 19
                 bowlingScore [3, 7, 3, 3] `shouldBe` 19
                 bowlingScore [3, 7, 3, 1] `shouldBe` 17
+                bowlingScore [0, 10, 3, 1] `shouldBe` 17
 
             it "spare partiel" $ do
                 bowlingScore [4, 6, 2, 3, 5] `shouldBe` 22
@@ -31,6 +32,9 @@ main =
                 bowlingScore [10, 2, 3] `shouldBe` 20
                 bowlingScore [10, 2, 4] `shouldBe` 22
                 bowlingScore [10, 10, 2, 3] `shouldBe` 42
+
+-- it "un très bon joueur" $ do
+--     bowlingScore [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10] `shouldBe` 300
 
 bowlingScore :: [Int] -> Int
 bowlingScore (10 : x : y : rest) = 10 + x + y + bowlingScore (x : y : rest)
