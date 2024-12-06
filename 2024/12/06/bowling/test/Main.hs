@@ -1,14 +1,13 @@
 module Main (main) where
 
-import Hello
 import Test.Hspec
 
 main :: IO ()
 main =
     hspec $ do
-        describe "Hello" $ do
-            it "world" $ do
-                hello Nothing `shouldBe` "Hello world"
+        describe "Bowling game" $ do
+            it "une goutière donne 0 point" $ do
+                bowlingScore 0 `shouldBe` 0
 
-            it "foo" $ do
-                hello (Just "foo") `shouldBe` "Hello foo"
+bowlingScore :: Int -> Int
+bowlingScore _ = 0
