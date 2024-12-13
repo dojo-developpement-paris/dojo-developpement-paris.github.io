@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+set -o errexit
+
+cd "$(dirname "$0")/../../.."
+
+mask format
