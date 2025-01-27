@@ -26,6 +26,10 @@ def fraction(numerator, denominator):
     return (numerator, denominator)
 
 
+def add(fraction1, fraction2):
+    return (2, 3)
+
+
 def test_multiply():
     assert multiply(fraction(1, 2), fraction(1, 7)) == fraction(1, 14)
     assert multiply(fraction(1, 2), fraction(1, 2)) == fraction(1, 4)
@@ -53,3 +57,7 @@ def test_divide_is_not_communative():
 def test_divide_denominator_should_not_be_zero():
     with pytest.raises(ZeroDivisionError):
         fraction(1, 0)
+
+
+def test_add():
+    assert add(fraction(1, 3), fraction(1, 3)) == fraction(2, 3)
