@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "charliermarsh.ruff",
+        "jetpack-io.devbox",
+        "ms-python.python",
+        "pamaron.pytest-runner",
+        "pinage404.common-configuration-languages-extension-pack",
+        "pinage404.nix-extension-pack",
+    ]
+}

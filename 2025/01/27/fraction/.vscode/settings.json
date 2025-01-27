@@ -1,0 +1,13 @@
+{
+    "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
+    "devbox.autoShellOnTerminal": false,
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+    },
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+}

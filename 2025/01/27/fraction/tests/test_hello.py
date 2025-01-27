@@ -1,0 +1,55 @@
+import pytest
+
+NUMERATOR = 0
+DENOMINATOR = 1
+
+
+def multiply(fraction1, fraction2):
+    return (
+        fraction1[NUMERATOR] * fraction2[NUMERATOR],
+        fraction1[DENOMINATOR] * fraction2[DENOMINATOR],
+    )
+
+
+def invert(fraction):
+    return (fraction[DENOMINATOR], fraction[NUMERATOR])
+
+
+def divide(fraction1, fraction2):
+    return multiply(fraction1, invert(fraction2))
+
+
+def fraction(numerator, denominator):
+    if denominator == 0:
+        raise ZeroDivisionError()
+
+    return (numerator, denominator)
+
+
+def test_multiply():
+    assert multiply(fraction(1, 2), fraction(1, 7)) == fraction(1, 14)
+    assert multiply(fraction(1, 2), fraction(1, 2)) == fraction(1, 4)
+    assert multiply(fraction(3, 2), fraction(1, 4)) == fraction(3, 8)
+
+
+def test_multiply_is_communative():
+    assert multiply(fraction(3, 2), fraction(1, 4)) == multiply(
+        fraction(1, 4), fraction(3, 2)
+    )
+
+
+def test_divide():
+    assert divide(fraction(1, 2), fraction(7, 1)) == fraction(1, 14)
+    assert divide(fraction(1, 2), fraction(2, 1)) == fraction(1, 4)
+    assert divide(fraction(3, 2), fraction(4, 1)) == fraction(3, 8)
+
+
+def test_divide_is_not_communative():
+    assert divide(fraction(3, 2), fraction(1, 4)) != divide(
+        fraction(1, 4), fraction(3, 2)
+    )
+
+
+def test_divide_denominator_should_not_be_zero():
+    with pytest.raises(ZeroDivisionError):
+        fraction(1, 0)
