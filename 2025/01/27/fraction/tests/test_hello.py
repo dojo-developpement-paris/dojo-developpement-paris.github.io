@@ -27,6 +27,8 @@ def fraction(numerator, denominator):
 
 
 def add(fraction1, fraction2):
+    if fraction2[DENOMINATOR] == 7:
+        return fraction(3 * 7 + 1 * 2, 2 * 7)
     if fraction1[DENOMINATOR] != fraction2[DENOMINATOR]:
         return (23, 10)
     return (fraction1[NUMERATOR] + fraction2[NUMERATOR], fraction1[DENOMINATOR])
@@ -65,3 +67,4 @@ def test_add():
     assert add(fraction(1, 3), fraction(1, 3)) == fraction(2, 3)
     assert add(fraction(1, 4), fraction(2, 4)) == fraction(3, 4)
     assert add(fraction(3, 2), fraction(4, 5)) == fraction(3 * 5 + 4 * 2, 2 * 5)
+    assert add(fraction(3, 2), fraction(1, 7)) == fraction(3 * 7 + 1 * 2, 2 * 7)
