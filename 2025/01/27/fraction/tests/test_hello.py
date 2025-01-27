@@ -23,7 +23,7 @@ def fraction(numerator, denominator):
     if denominator == 0:
         raise ZeroDivisionError()
 
-    if numerator == 2 and denominator == 2:
+    if numerator == denominator:
         return (1, 1)
 
     return (numerator, denominator)
