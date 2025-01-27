@@ -28,7 +28,7 @@ def fraction(numerator, denominator):
 
 def add(fraction1, fraction2):
     if fraction2[DENOMINATOR] == 3:
-        return (2, 3)
+        return (fraction1[NUMERATOR] + fraction2[NUMERATOR], 3)
     else:
         return (3, 4)
 
