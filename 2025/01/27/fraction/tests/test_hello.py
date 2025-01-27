@@ -77,3 +77,7 @@ def test_add():
 
 def test_add_with_reduction():
     assert add(fraction(1, 2), fraction(1, 2)) == fraction(1, 1)
+
+
+def test_fraction_auto_reduce():
+    assert fraction(3, 3) == fraction(1, 1)
