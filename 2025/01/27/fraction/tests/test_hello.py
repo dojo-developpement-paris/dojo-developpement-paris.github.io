@@ -27,10 +27,7 @@ def fraction(numerator, denominator):
 
 
 def add(fraction1, fraction2):
-    if fraction2[DENOMINATOR] == 3:
-        return (fraction1[NUMERATOR] + fraction2[NUMERATOR], fraction1[DENOMINATOR])
-    else:
-        return (fraction1[NUMERATOR] + fraction2[NUMERATOR], fraction1[DENOMINATOR])
+    return (fraction1[NUMERATOR] + fraction2[NUMERATOR], fraction1[DENOMINATOR])
 
 
 def test_multiply():
