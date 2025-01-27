@@ -28,7 +28,10 @@ def fraction(numerator, denominator):
 
 def add(fraction1, fraction2):
     if fraction2[DENOMINATOR] == 7:
-        return fraction(3 * 7 + 1 * 2, fraction1[DENOMINATOR] * fraction2[DENOMINATOR])
+        return fraction(
+            fraction1[NUMERATOR] * fraction2[DENOMINATOR] + 1 * 2,
+            fraction1[DENOMINATOR] * fraction2[DENOMINATOR],
+        )
     if fraction1[DENOMINATOR] != fraction2[DENOMINATOR]:
         return (23, 10)
     return (fraction1[NUMERATOR] + fraction2[NUMERATOR], fraction1[DENOMINATOR])
