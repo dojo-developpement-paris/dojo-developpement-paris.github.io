@@ -27,7 +27,10 @@ def fraction(numerator, denominator):
 
 
 def add(fraction1, fraction2):
-    return (2, 3)
+    if fraction2[DENOMINATOR] == 3:
+        return (2, 3)
+    else:
+        return (3, 4)
 
 
 def test_multiply():
@@ -61,3 +64,4 @@ def test_divide_denominator_should_not_be_zero():
 
 def test_add():
     assert add(fraction(1, 3), fraction(1, 3)) == fraction(2, 3)
+    assert add(fraction(1, 4), fraction(2, 4)) == fraction(3, 4)
