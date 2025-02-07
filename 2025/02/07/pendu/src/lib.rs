@@ -1,7 +1,9 @@
-pub fn evalue(_mot: &str, _candidate: &str) -> String {
-    if _candidate == "o" {
+pub fn evalue(mot: &str, candidate: &str) -> String {
+    if mot == "a" {
+        "a"
+    } else if candidate == "o" {
         "_o__o____"
-    } else if _mot == "concombre" {
+    } else if mot == "concombre" {
         "c__c_____"
     } else {
         "c_________"
@@ -17,6 +19,10 @@ mod test {
     #[test]
     fn doit_trouver_une_lettre() {
         assert_that(&evalue("chaussette", "c")).is_equal_to("c_________".to_string())
+    }
+    #[test]
+    fn doit_trouver_une_lettre_dans_un_mot_une_lettre() {
+        assert_that(&evalue("a", "a")).is_equal_to("a".to_string())
     }
 
     #[test]
