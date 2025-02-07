@@ -17,6 +17,11 @@ mod test {
     fn doit_trouver_une_lettre_dans_un_mot_une_lettre() {
         assert_that(&evalue("a", 'a')).is_equal_to("a".to_string())
     }
+
+    #[test]
+    fn doit_pas_trouver_une_lettre_dans_un_mot_une_lettre() {
+        assert_that(&evalue("a", 'z')).is_equal_to("_".to_string())
+    }
     #[test]
     fn doit_trouver_une_lettre_dans_un_mot_de_deux_lettres() {
         assert_that(&evalue("an", 'a')).is_equal_to("a_".to_string())
