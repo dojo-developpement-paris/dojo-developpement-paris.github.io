@@ -1,4 +1,4 @@
-fn evalue(_mot: &str, _candidate: &str) -> String {
+pub fn evalue(_mot: &str, _candidate: &str) -> String {
     "c_________".to_string()
 }
 
