@@ -8,10 +8,8 @@ pub fn evalue(mot: &str, candidate: &str) -> String {
     }
     if candidate == "o" {
         "_o__o____"
-    } else if mot == "concombre" {
-        "c__c_____"
     } else {
-        "toto"
+        "c__c_____"
     }
     .to_string()
 }
