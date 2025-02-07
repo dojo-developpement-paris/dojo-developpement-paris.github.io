@@ -50,4 +50,9 @@ mod test {
     fn fusionne_d_element_pas_nuls() {
         assert_that(&fusion("___", "c__")).is_equal_to("c__".to_string())
     }
+
+    #[test]
+    fn fusionne_d_element_pas_nuls_() {
+        assert_that(&fusion("_a_", "c__")).is_equal_to("ca_".to_string())
+    }
 }
