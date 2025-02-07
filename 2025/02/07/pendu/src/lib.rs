@@ -4,6 +4,10 @@ pub fn evalue(mot: &str, candidate: char) -> String {
         .collect()
 }
 
+pub fn fusion(arg_1: &str, arg_2: &str) -> String {
+    arg_1.to_string()
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
@@ -35,5 +39,10 @@ mod test {
     fn doit_trouver_une_lettre_multiple() {
         assert_that(&evalue("concombre", 'c')).is_equal_to("c__c_____".to_string());
         assert_that(&evalue("concombre", 'o')).is_equal_to("_o__o____".to_string())
+    }
+
+    #[test]
+    fn fusionne_d_element_nuls() {
+        assert_that(&fusion("___", "___")).is_equal_to("___".to_string())
     }
 }
