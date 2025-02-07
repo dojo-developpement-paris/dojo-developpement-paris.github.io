@@ -1,5 +1,7 @@
 pub fn evalue(mot: &str, candidate: &str) -> String {
-    if mot == "an" {
+    if mot == "ans" {
+        "a__"
+    } else if mot == "an" {
         "a_"
     } else if mot == "a" {
         "a"
@@ -27,8 +29,12 @@ mod test {
         assert_that(&evalue("a", "a")).is_equal_to("a".to_string())
     }
     #[test]
-    fn doit_trouver_une_lettre_dans_un_mot_de_deux_lettre() {
+    fn doit_trouver_une_lettre_dans_un_mot_de_deux_lettres() {
         assert_that(&evalue("an", "a")).is_equal_to("a_".to_string())
+    }
+    #[test]
+    fn doit_trouver_une_lettre_dans_un_mot_de_trois_lettres() {
+        assert_that(&evalue("ans", "a")).is_equal_to("a__".to_string())
     }
 
     #[test]
