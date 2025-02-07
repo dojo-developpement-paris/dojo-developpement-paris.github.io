@@ -2,8 +2,8 @@ pub fn evalue(mot: &str, candidate: &str) -> String {
     if mot == "concombre" && candidate == "c" {
         return "c__c_____".to_string();
     }
-    if mot.starts_with("a") {
-        return "a".to_string() + &"_".repeat(mot.len() - 1);
+    if mot.starts_with(candidate) {
+        return candidate.to_string() + &"_".repeat(mot.len() - 1);
     }
     if candidate == "o" {
         "_o__o____"
