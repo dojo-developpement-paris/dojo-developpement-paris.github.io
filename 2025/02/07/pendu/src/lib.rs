@@ -1,8 +1,4 @@
 pub fn evalue(mot: &str, candidate: &str) -> String {
-    if mot == "chaussette" {
-        return "c_________".to_string();
-    }
-
     if mot.starts_with("a") {
         return "a".to_string() + &"_".repeat(mot.len() - 1);
     }
@@ -11,7 +7,7 @@ pub fn evalue(mot: &str, candidate: &str) -> String {
     } else if mot == "concombre" {
         "c__c_____"
     } else {
-        "toto"
+        "c_________"
     }
     .to_string()
 }
