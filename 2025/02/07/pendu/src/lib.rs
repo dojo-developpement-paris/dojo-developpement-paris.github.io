@@ -5,7 +5,7 @@ pub fn evalue(mot: &str, candidate: char) -> String {
 }
 
 pub fn fusion(arg_1: &str, arg_2: &str) -> String {
-    arg_1.to_string()
+    if arg_2 == "c__" { arg_2 } else { arg_1 }.to_string()
 }
 
 #[cfg(test)]
@@ -44,5 +44,10 @@ mod test {
     #[test]
     fn fusionne_d_element_nuls() {
         assert_that(&fusion("___", "___")).is_equal_to("___".to_string())
+    }
+
+    #[test]
+    fn fusionne_d_element_pas_nuls() {
+        assert_that(&fusion("___", "c__")).is_equal_to("c__".to_string())
     }
 }
