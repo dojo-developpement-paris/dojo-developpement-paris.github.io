@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "rustup@latest",
+    "bacon@latest",
+    "mask@latest",
+    "bashInteractive@latest",
+    "git-gamble@latest"
+  ]
+}
