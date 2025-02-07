@@ -1,7 +1,4 @@
 pub fn evalue(mot: &str, candidate: &str) -> String {
-    if mot == "concombre" && candidate == "c" {
-        return "c__c_____".to_string();
-    }
     mot.chars()
         .map(|lettre| {
             if lettre == candidate.chars().next().expect("pas possible") {
