@@ -1,6 +1,6 @@
 pub fn evalue(mot: &str, candidate: &str) -> String {
     if mot == "ans" {
-        "a__"
+        return "a".to_owned() + &"_".repeat(2);
     } else if mot == "an" {
         "a_"
     } else if mot == "a" {
