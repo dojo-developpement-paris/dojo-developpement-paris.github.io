@@ -5,12 +5,8 @@ pub fn evalue(mot: &str, candidate: &str) -> String {
     if mot.starts_with(candidate) {
         return candidate.to_string() + &"_".repeat(mot.len() - 1);
     }
-    if candidate == "o" {
-        "_o__o____"
-    } else {
-        "c_________"
-    }
-    .to_string()
+
+    "_o__o____".to_string()
 }
 
 #[cfg(test)]
