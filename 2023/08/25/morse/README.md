@@ -1,6 +1,7 @@
 # Rust with formatting, linting and test
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#WORKDIR=rust/https://gitlab.com/pinage404/nix-sandboxes)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/pinage404/nix-sandboxes)
 
 Or with [Nix](https://nixos.org)
 
