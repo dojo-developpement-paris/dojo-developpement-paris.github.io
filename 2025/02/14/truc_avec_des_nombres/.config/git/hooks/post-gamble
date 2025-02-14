@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-set -o errexit
-
-git-time-keeper 'start' 'git-gamble --pass

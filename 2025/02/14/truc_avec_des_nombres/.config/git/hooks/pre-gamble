@@ -3,7 +3,6 @@ set -o errexit
 
 cd "$(dirname "$0")/../../.."
 
-git-time-keeper 'stop'
 
 mask format
 mask lint
