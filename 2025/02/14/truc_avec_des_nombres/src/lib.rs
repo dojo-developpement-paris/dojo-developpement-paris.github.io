@@ -4,7 +4,7 @@ pub fn renverse_somme_de_deux_nombres_renversés(arg_1: usize, arg_2: usize) -> 
 
 fn renverse(nombre: usize) -> usize {
     if nombre == 101 {
-        nombre % 10 * 100 + 1
+        nombre % 10 * 100 + renverse(nombre / 10)
     } else if nombre < 10 {
         nombre
     } else if nombre % 10 == 0 {
