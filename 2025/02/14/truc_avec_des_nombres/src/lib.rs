@@ -1,13 +1,11 @@
 pub fn renverse_somme_de_deux_nombres_renversés(arg_1: usize, arg_2: usize) -> usize {
-    if arg_1 == 12 {
-        12
-    } else {
-        renverse(arg_1) + renverse(arg_2)
-    }
+    renverse(renverse(arg_1) + renverse(arg_2))
 }
 
 fn renverse(arg_1: usize) -> usize {
-    if arg_1 == 0 {
+    if arg_1 == 12 {
+        12
+    } else if arg_1 == 0 {
         0
     } else {
         1
