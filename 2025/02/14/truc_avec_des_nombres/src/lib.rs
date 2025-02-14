@@ -1,8 +1,8 @@
-pub fn renverse_somme_de_deux_nombres_renversés(arg_1: i32, arg_2: i32) -> i32 {
+pub fn renverse_somme_de_deux_nombres_renversés(arg_1: usize, arg_2: usize) -> usize {
     renverse(arg_1) + arg_2
 }
 
-fn renverse(arg_1: i32) -> i32 {
+fn renverse(arg_1: usize) -> usize {
     if arg_1 == 0 {
         0
     } else {
