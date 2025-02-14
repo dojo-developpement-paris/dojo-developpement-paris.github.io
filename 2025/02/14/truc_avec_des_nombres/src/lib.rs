@@ -8,7 +8,7 @@ fn renverse(nombre: usize) -> usize {
     } else if nombre < 10 {
         nombre
     } else if nombre % 10 == 0 {
-        nombre / 10
+        renverse(nombre / 10)
     } else {
         nombre % 10 * 10 + renverse(nombre / 10)
     }
@@ -46,7 +46,8 @@ mod test {
     }
 
     #[test]
-    fn troua() {
+    fn zeros_de_traine() {
         assert_that(&renverse_somme_de_deux_nombres_renversés(100, 0)).is_equal_to(1);
+        assert_that(&renverse_somme_de_deux_nombres_renversés(1000, 0)).is_equal_to(1);
     }
 }
