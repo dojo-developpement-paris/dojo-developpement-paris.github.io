@@ -37,6 +37,7 @@ mod test {
         assert_that(&renverse_somme_de_deux_nombres_renversés(12, 0)).is_equal_to(12);
         assert_that(&renverse_somme_de_deux_nombres_renversés(31, 0)).is_equal_to(31);
         assert_that(&renverse_somme_de_deux_nombres_renversés(20, 0)).is_equal_to(2);
+        assert_that(&renverse_somme_de_deux_nombres_renversés(15, 23)).is_equal_to(38);
     }
 
     #[test]
