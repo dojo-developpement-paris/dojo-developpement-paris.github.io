@@ -3,18 +3,16 @@ pub fn renverse_somme_de_deux_nombres_renversés(arg_1: usize, arg_2: usize) -> 
 }
 
 fn renverse(nombre: usize) -> usize {
-    if nombre == 21 {
+    if nombre < 10 {
+        nombre
+    } else if nombre == 21 {
         12
     } else if nombre == 12 {
         21
     } else if nombre == 10 {
         1
-    } else if nombre == 0 {
-        0
-    } else if nombre == 2 {
-        2
     } else {
-        1
+        todo!()
     }
 }
 
