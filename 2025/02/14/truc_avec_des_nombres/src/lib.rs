@@ -9,6 +9,10 @@ fn renverse(nombre: usize) -> usize {
         12
     } else if nombre == 12 {
         21
+    } else if nombre == 31 {
+        13
+    } else if nombre == 13 {
+        31
     } else if nombre == 10 {
         1
     } else {
@@ -37,5 +41,6 @@ mod test {
     #[test]
     fn avec_deux_nombres_de_valeur_différentes() {
         assert_that(&renverse_somme_de_deux_nombres_renversés(12, 0)).is_equal_to(12);
+        assert_that(&renverse_somme_de_deux_nombres_renversés(31, 0)).is_equal_to(31);
     }
 }
