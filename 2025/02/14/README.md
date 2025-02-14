@@ -9,6 +9,7 @@ Personnes présentes :
 - Benoit
 - Cédric
 - Yassir
+- Octavi
 - pin
 
 Retro :
