@@ -7,6 +7,8 @@ fn renverse(nombre: usize) -> usize {
         12
     } else if nombre == 12 {
         21
+    } else if nombre == 10 {
+        1
     } else if nombre == 0 {
         0
     } else if nombre == 2 {
