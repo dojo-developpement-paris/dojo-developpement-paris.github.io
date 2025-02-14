@@ -41,7 +41,12 @@ mod test {
     }
 
     #[test]
-    fn dalmatien() {
+    fn dalmatiens() {
         assert_that(&renverse_somme_de_deux_nombres_renversés(101, 0)).is_equal_to(101);
+    }
+
+    #[test]
+    fn troua() {
+        assert_that(&renverse_somme_de_deux_nombres_renversés(100, 0)).is_equal_to(1);
     }
 }
