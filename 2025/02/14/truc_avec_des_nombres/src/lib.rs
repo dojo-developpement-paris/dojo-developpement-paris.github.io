@@ -6,13 +6,13 @@ fn renverse(nombre: usize) -> usize {
     if nombre < 10 {
         nombre
     } else if nombre == 21 {
-        12
+        10 + 2
     } else if nombre == 12 {
-        21
+        20 + 1
     } else if nombre == 31 {
-        13
+        10 + 3
     } else if nombre == 13 {
-        31
+        30 + 1
     } else if nombre == 10 {
         1
     } else {
