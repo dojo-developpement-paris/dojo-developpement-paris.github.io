@@ -5,14 +5,10 @@ pub fn renverse_somme_de_deux_nombres_renversés(arg_1: usize, arg_2: usize) -> 
 fn renverse(nombre: usize) -> usize {
     if nombre < 10 {
         nombre
-    } else if nombre % 10 != 0 {
-        (nombre % 10) * 10 + nombre / 10
-    } else if nombre == 10 {
-        1
     } else if nombre % 10 == 0 {
         nombre / 10
     } else {
-        todo!()
+        (nombre % 10) * 10 + nombre / 10
     }
 }
 
