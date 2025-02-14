@@ -6,7 +6,7 @@ fn renverse(nombre: usize) -> usize {
     if nombre < 10 {
         nombre
     } else if nombre % 10 == 1 {
-        10 + nombre / 10
+        (nombre % 10) * 10 + nombre / 10
     } else if nombre == 12 {
         20 + 1
     } else if nombre == 13 {
