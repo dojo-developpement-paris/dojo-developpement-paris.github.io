@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "ms-vscode.cpptools",
+        "jetpack-io.devbox",
+        "pinage404.nix-extension-pack",
+        "xaver.clang-format",
+    ]
+}

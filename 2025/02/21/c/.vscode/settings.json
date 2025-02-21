@@ -1,0 +1,8 @@
+{
+    "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
+    "devbox.autoShellOnTerminal": false,
+    "editor.formatOnSave": true,
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+}
