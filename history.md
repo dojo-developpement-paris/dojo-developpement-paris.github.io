@@ -25,7 +25,7 @@ how to master development techniques by practising programming exercises.
 ### Dojo 🏯
 
 In <time datetime="2004-05-21">2004</time>,
-[Laurent Bossavit](https://en.wikipedia.org/wiki/Laurent_Bossavit) posted [the following text](https://web.archive.org/web/20040605124346/http://bossavit.com/thoughts/) :
+[Laurent Bossavit](https://en.wikipedia.org/wiki/Laurent_Bossavit) posted [the following text](https://web.archive.org/web/20040617164934/http://bossavit.com/thoughts/archives/000737.html) :
 
 > Object dojo
 >
