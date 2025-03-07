@@ -6,8 +6,12 @@ type Proposition = Char
 type Secret = String
 type Statut = String
 
+évalue :: Char -> Proposition -> Char
+évalue caractère proposition | caractère == proposition = proposition
+évalue _ _ = '-'
+
 pendu :: Statut -> Secret -> Proposition -> Statut
-pendu _ [caractère] proposition | caractère == proposition = [caractère]
+pendu _ [caractère] proposition = [évalue caractère proposition]
 pendu "--" _ 'A' = "A-"
 pendu "--" _ _ = "--"
 pendu _ _ _ = "-"
