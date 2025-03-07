@@ -8,6 +8,7 @@ type Statut = String
 
 pendu :: Statut -> Secret -> Proposition -> Statut
 pendu _ [caractère] proposition | caractère == proposition = [caractère]
+pendu "--" _ 'A' = "A-"
 pendu "--" _ _ = "--"
 pendu _ _ _ = "-"
 
@@ -24,3 +25,6 @@ main =
 
             it "mot de 2 lettres dont aucune lettre n'est devinée" $ do
                 pendu "--" "AB" 'C' `shouldBe` "--"
+
+            it "mot de 2 lettres dont 1 lettre va être devinée" $ do
+                pendu "--" "AB" 'A' `shouldBe` "A-"
