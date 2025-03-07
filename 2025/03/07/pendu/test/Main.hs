@@ -7,6 +7,7 @@ type Secret = String
 type Statut = String
 
 pendu :: Statut -> Secret -> Proposition -> Statut
+pendu _ _ "B" = "-"
 pendu _ _ _ = "A"
 
 main :: IO ()
@@ -15,3 +16,6 @@ main =
         describe "Pendu" $ do
             it "mot de 1 lettre devinée" $ do
                 pendu "-" "A" "A" `shouldBe` "A"
+
+            it "mot de 1 lettre non devinée" $ do
+                pendu "-" "A" "B" `shouldBe` "-"
