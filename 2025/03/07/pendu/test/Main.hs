@@ -2,9 +2,11 @@ module Main (main) where
 
 import Test.Hspec
 
+type Proposition = String
+type Secret = String
 type Statut = String
 
-pendu :: String -> String -> Statut -> Statut
+pendu :: Proposition -> Secret -> Statut -> Statut
 pendu _ _ _ = "A"
 
 main :: IO ()
