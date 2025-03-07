@@ -8,8 +8,7 @@ type Statut = String
 
 pendu :: Statut -> Secret -> Proposition -> Statut
 pendu _ s p | s == p = s
-pendu _ _ "B" = "-"
-pendu _ _ _ = "A"
+pendu _ _ _ = "-"
 
 main :: IO ()
 main =
