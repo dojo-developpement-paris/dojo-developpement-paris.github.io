@@ -12,7 +12,6 @@ type Statut = String
 
 pendu :: Statut -> Secret -> Proposition -> Statut
 pendu "--" (_ : deuxième : _) proposition | deuxième == proposition = '-' : proposition : ""
-pendu "--" "XZ" 'Z' = "-Z"
 pendu "--" (premier : _) proposition | premier == proposition = proposition : "-"
 pendu _ [caractère] proposition = [évalue caractère proposition]
 pendu statut _ _ = statut
