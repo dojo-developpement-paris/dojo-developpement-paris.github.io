@@ -2,7 +2,9 @@ module Main (main) where
 
 import Test.Hspec
 
-pendu :: String -> String -> String -> String
+type Statut = String
+
+pendu :: String -> String -> Statut -> Statut
 pendu _ _ _ = "A"
 
 main :: IO ()
