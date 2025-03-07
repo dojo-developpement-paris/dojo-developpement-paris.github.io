@@ -2,6 +2,7 @@ module Main (main) where
 
 import Test.Hspec
 
+pendu :: String -> String -> String
 pendu _ _ = "A"
 
 main :: IO ()
