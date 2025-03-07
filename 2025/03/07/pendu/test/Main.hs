@@ -7,7 +7,7 @@ type Secret = String
 type Statut = String
 
 pendu :: Statut -> Secret -> Proposition -> Statut
-pendu _ [character] proposition | character == proposition = [character]
+pendu _ [caractère] proposition | caractère == proposition = [caractère]
 pendu "--" _ _ = "--"
 pendu _ _ _ = "-"
 
