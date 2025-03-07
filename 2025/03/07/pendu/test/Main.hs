@@ -11,6 +11,7 @@ type Statut = String
 évalue _ _ = '-'
 
 pendu :: Statut -> Secret -> Proposition -> Statut
+pendu "--" "CB" 'C' = "C-"
 pendu _ [caractère] proposition = [évalue caractère proposition]
 pendu "--" _ 'A' = "A-"
 pendu "--" _ _ = "--"
@@ -32,3 +33,4 @@ main =
 
             it "mot de 2 lettres dont 1 lettre va être devinée" $ do
                 pendu "--" "AB" 'A' `shouldBe` "A-"
+                pendu "--" "CB" 'C' `shouldBe` "C-"
