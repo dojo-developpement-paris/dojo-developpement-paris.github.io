@@ -1,12 +1,15 @@
 Prochaine session : le ??? à ????
 
 Personnes présentes :
+
 - Ubald
 - ToF
 - Christelle
+- Francisco
 - pin
 
 Retro :
+
 - mob - assembleur + C - Bare - essayer de comprendre comment fonctionne et que fait ce programme avec l'aide d'une IA
   - si on modifie des trucs dans le code hexadecimal, il se passe des trucs
   - on a réussi à valider une hypothèse sur le fonctionnement des sorties du programme
@@ -17,6 +20,7 @@ Retro :
   - on n'a pas été meilleur qu'une IA
 
 Explication des règles :
+
 - Tout le monde peut proposer un sujet
 - Tout langage est accepté, à 2 conditions :
   - au moins une personne connait ce langage
@@ -26,6 +30,7 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 Sujets :
+
 - 9 - A - mob - assembleur + C - Bare - essayer de comprendre comment fonctionne et que fait ce programme avec l'aide d'une IA
 - 5 - B - mob - TCRDD - TypeScript - quand est-ce que la Tour Eiffel s'allume et scintille
 - 4 - C - mob - TDD - Java - Game Of Life
@@ -38,6 +43,7 @@ Sujets :
 - 4 - J - fishbowl - Rust - TCRDD - timeboxé - fraction - comment trianguler ?
 
 Modes de fonctionnement habituels :
+
 - Mob : 1 typist + les autres naviguent
 - Mob [strong-style] tournant : les mobbers donnent des idées 💡 le navigator décide 🔀 le driver tape ⌨️, on change les roles toutes les X minutes [mobtime]
 - Randori : chaque personne prend le clavier pendant 5 minutes
@@ -48,6 +54,7 @@ Modes de fonctionnement habituels :
   et entre chaque séance on fait une rétro/orientation.
 
 Méthode de [vote] :
+
 - points = nombre de sujets divisé 2 arrondi à l'entier inférieur
 - ex : sujets = 5, points = 2 => 2 votes, à 1 et 2 points
 
