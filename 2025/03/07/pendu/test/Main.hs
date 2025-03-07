@@ -12,8 +12,8 @@ type Statut = String
 
 pendu :: Statut -> Secret -> Proposition -> Statut
 pendu "--" "CB" 'C' = "C-"
+pendu "--" "AB" 'A' = "A-"
 pendu _ [caractère] proposition = [évalue caractère proposition]
-pendu "--" _ 'A' = "A-"
 pendu "--" _ _ = "--"
 pendu _ _ _ = "-"
 
