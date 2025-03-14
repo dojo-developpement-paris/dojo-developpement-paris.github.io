@@ -1,5 +1,6 @@
 pub struct HashTable {
     pub size: usize,
+    pub items: [char; 101],
 }
 
 impl Default for HashTable {
@@ -10,7 +11,10 @@ impl Default for HashTable {
 
 impl HashTable {
     pub fn new() -> HashTable {
-        HashTable { size: 0 }
+        HashTable {
+            size: 0,
+            items: ['\0'; 101],
+        }
     }
 
     pub fn find(&self, arg: &str) -> Option<usize> {
