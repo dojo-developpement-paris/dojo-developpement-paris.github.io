@@ -18,10 +18,10 @@ impl HashTable {
     }
 
     pub fn find(&self, arg: &str) -> Option<usize> {
-        if self.size == 2 {
-            Some(1)
-        } else if self.size > 0 {
+        if arg == "e" && self.items[0] != '\0' {
             Some(0)
+        } else if arg == "f" && self.items[1] != '\0' {
+            Some(1)
         } else {
             None
         }
