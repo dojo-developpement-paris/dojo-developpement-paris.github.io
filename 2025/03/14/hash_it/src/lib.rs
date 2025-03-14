@@ -28,7 +28,7 @@ impl HashTable {
     }
 
     pub fn add_key(&mut self, arg: &str) {
-        self.size = 1;
+        self.size += 1;
         if arg == "e" {
             self.items[0] = 'e';
         } else {
@@ -68,5 +68,13 @@ mod test {
         let mut hash_table = HashTable::new();
         hash_table.add_key("f");
         assert_that(&hash_table.find("f")).is_some().is_equal_to(1);
+    }
+
+    #[test]
+    fn size_increase_with_adding_items() {
+        let mut hash_table = HashTable::new();
+        hash_table.add_key("f");
+        hash_table.add_key("e");
+        assert_that(&hash_table.size).is_equal_to(2);
     }
 }
