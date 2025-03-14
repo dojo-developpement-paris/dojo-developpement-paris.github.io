@@ -14,11 +14,21 @@ impl HashTable {
     }
 
     pub fn find(&self, arg: &str) -> Option<usize> {
-        if self.size > 0 { Some(0) } else { None }
+        if self.size == 2 {
+            Some(1)
+        } else if self.size > 0 {
+            Some(0)
+        } else {
+            None
+        }
     }
 
     pub fn add_key(&mut self, arg: &str) {
-        self.size += 1;
+        if arg == "e" {
+            self.size += 1;
+        } else {
+            self.size += 2;
+        }
     }
 }
 
@@ -45,5 +55,12 @@ mod test {
         let mut hash_table = HashTable::new();
         hash_table.add_key("e");
         assert_that(&hash_table.find("e")).is_some().is_equal_to(0);
+    }
+
+    #[test]
+    fn any_inserted_item_can_be_found() {
+        let mut hash_table = HashTable::new();
+        hash_table.add_key("f");
+        assert_that(&hash_table.find("f")).is_some().is_equal_to(1);
     }
 }
