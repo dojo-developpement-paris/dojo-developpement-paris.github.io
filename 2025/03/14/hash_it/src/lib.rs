@@ -30,8 +30,10 @@ impl HashTable {
     pub fn add_key(&mut self, arg: &str) {
         if arg == "e" {
             self.size += 1;
+            self.items[0] = 'e';
         } else {
             self.size += 2;
+            self.items[1] = 'f';
         }
     }
 }
