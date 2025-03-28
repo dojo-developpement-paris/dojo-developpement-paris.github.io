@@ -10,7 +10,6 @@
     ((equal 1 n) '(star))
     ((equal 2 n) '(2 star))
     ((oddp n) (append (counterstring (- n 2)) (cons n '(star))))
-    ((equal 5 n) (append (counterstring (- 5 2)) '(5 star)))
     ))
 
 (test trivial-case
