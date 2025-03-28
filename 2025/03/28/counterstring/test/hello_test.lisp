@@ -5,6 +5,9 @@
 (asdf:load-system :fiveam-matchers)
 (use-package :fiveam-matchers)
 
+(defun star ()
+  "*")
+
 (defun counterstring (n)
   (cond
     ((equal 0 n) '())
