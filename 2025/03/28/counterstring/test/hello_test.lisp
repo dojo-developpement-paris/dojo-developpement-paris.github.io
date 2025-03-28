@@ -18,10 +18,10 @@
 (defun to-subtract (n)
   (- n (+ 2 (floor (log n 10)))))
 
-(defun output (n)
+(defun output (l)
   (cond
-    ((null n) "")
-    ((equalp '(star) n) (star))
+    ((null l) "")
+    ((equalp '(star) l) (star))
     (T "*3*5*7*10*")
     ))
 
