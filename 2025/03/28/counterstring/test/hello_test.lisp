@@ -1,17 +1,15 @@
 (require :asdf)
 
-(load "./src/hello.lisp")
-
 (asdf:load-system :fiveam)
 (use-package :fiveam)
 (asdf:load-system :fiveam-matchers)
 (use-package :fiveam-matchers)
 
-(test hello-world
-      (is (equal "Hello world" (hello nil))))
+(defun counterstring (n)
+  '(star))
 
-(test hello-foo
-      (is (equal "Hello foo" (hello "foo"))))
+(test trivial-case
+      (is (equal '(star) (counterstring 1))))
 
 (if (run-all-tests)
     (sb-ext:quit)
