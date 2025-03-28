@@ -34,7 +34,7 @@
 (test greater-than-nine
       (is (equal '(star 3 star 5 star 7 star 10 star)  (counterstring 10)))
       (is (equal '(2 star 4 star 6 star 8 star 11 star)  (counterstring 11)))
-      (is (equal '( star 3 star 5 star 7 star 9 star 12 star 15 star 18 star 21 star 24 star 27 star 30 star 33 star 36 star 39 star 42 star 45 star 48 star 51 star 54 star 57 star)  (counterstring 57)))
+      (is (equal '(star 3 star 5 star 7 star 9 star 12 star 15 star 18 star 21 star 24 star 27 star 30 star 33 star 36 star 39 star 42 star 45 star 48 star 51 star 54 star 57 star)  (counterstring 57)))
       )
 
 (if (run-all-tests)
