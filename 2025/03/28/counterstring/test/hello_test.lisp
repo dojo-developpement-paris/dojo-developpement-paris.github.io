@@ -9,9 +9,7 @@
   (cond
     ((equal 0 n) '())
     ((equal 1 n) '(star))
-    ((< n 10) (append (counterstring (- n 2)) (cons n '(star))))
-    ((< n 100) (append (counterstring (- n 3)) (cons n '(star))))
-    ((< n 1000) (append (counterstring (to-subtract n)) (cons n '(star))))
+    (T (append (counterstring (to-subtract n)) (cons n '(star))))
     ))
 
 (defun to-subtract (n)
