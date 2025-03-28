@@ -15,6 +15,9 @@
 (defun to-subtract (n)
   (- n (+ 2 (floor (log n 10)))))
 
+(defun output (n)
+  "*3*5*7*10*")
+
 (test trivial-case
       (is (equal '() (counterstring 0)))
       (is (equal '(star) (counterstring 1)))
@@ -41,6 +44,10 @@
 
 (test greater-than-ninety-nine
       (is (equal '(star 3 star 5 star 7 star 9 star 12 star 15 star 18 star 21 star 24 star 27 star 30 star 33 star 36 star 39 star 42 star 45 star 48 star 51 star 54 star 57 star 60 star 63 star 66 star 69 star 72 star 75 star 78 star 81 star 84 star 87 star 90 star 93 star 96 star 100 star)  (counterstring 100)))
+      )
+
+(test output
+      (is (equal "*3*5*7*10*" (output (counterstring 10))))
       )
 
 (if (run-all-tests)
