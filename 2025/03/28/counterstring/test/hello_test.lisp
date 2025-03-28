@@ -9,7 +9,6 @@
   (cond
     ((equal 0 n) '())
     ((equal 1 n) '(star))
-    ((equal 2 n) '(2 star))
     ((evenp n) (append (counterstring (- n 2)) (cons n '(star))))
     ((oddp n) (append (counterstring (- n 2)) (cons n '(star))))
     ))
