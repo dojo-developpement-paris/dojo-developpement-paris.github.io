@@ -21,7 +21,6 @@
 (defun output (l)
   (cond
     ((null l) "")
-    ((equalp '(star 3 star 5 star 7 star 10 star) l) "*3*5*7*10*")
     ((equalp (quote star) (car l)) (concatenate 'string (star) (output (cdr l))))
     ((numberp (car l)) (concatenate 'string (write-to-string (car l)) (output (cdr l))))
     ))
