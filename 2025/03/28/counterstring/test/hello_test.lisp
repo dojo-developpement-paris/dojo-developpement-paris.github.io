@@ -29,6 +29,7 @@
 (test simple-odd
       (is (equal '(star 3 star) (counterstring 3)))
       (is (equal '(star 3 star 5 star) (counterstring 5)))
+      (is (equal '(star 3 star 5 star 7 star 9 star) (counterstring 9)))
       )
 
 (test greater-than-nine
