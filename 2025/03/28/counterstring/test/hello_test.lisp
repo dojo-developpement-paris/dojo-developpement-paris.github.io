@@ -10,6 +10,7 @@
     ((equal 1 n) '(star))
     ((equal 2 n) '(2 star))
     ((equal 3 n) '(star 3 star))
+    ((equal 5 n) '(star 3 star 5 star))
     ))
 
 (test trivial-case
@@ -20,7 +21,7 @@
 
 (test simple-odd
       (is (equal '(star 3 star) (counterstring 3)))
-					; (is (equal '(star 3 star 5 star) (counterstring 5)))
+      (is (equal '(star 3 star 5 star) (counterstring 5)))
       )
 
 (if (run-all-tests)
