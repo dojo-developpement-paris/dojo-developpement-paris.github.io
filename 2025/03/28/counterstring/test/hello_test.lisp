@@ -14,7 +14,9 @@
     ))
 
 (test trivial-case
-      (is (equal '(star) (counterstring 1))))
+      (is (equal '() (counterstring 0)))
+      (is (equal '(star) (counterstring 1)))
+      )
 
 (test not-so-trivial-case
       (is (equal '(2 star) (counterstring 2))))
