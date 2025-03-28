@@ -22,6 +22,7 @@
   (cond
     ((null l) "")
     ((equalp '(star) l) (star))
+    ((equalp '(2 star) l) (concatenate 'string "2" (star)))
     (T "*3*5*7*10*")
     ))
 
@@ -56,6 +57,7 @@
 (test output
       (is (equalp "" (output (counterstring 0))))
       (is (equalp "*" (output (counterstring 1))))
+      (is (equalp "2*" (output (counterstring 2))))
       (is (equalp "*3*5*7*10*" (output (counterstring 10))))
       )
 
