@@ -69,7 +69,7 @@ main() {
     create_today_folder "${TODAY}"
 
     info "filling README with previous subject"
-    replace_in_place "s/Ancien sujet/${LAST_SUBJECT}/" "${TODAY}/README.md"
+    replace_in_place "s\`Ancien sujet\`${LAST_SUBJECT}\`" "${TODAY}/README.md"
 }
 
 main
