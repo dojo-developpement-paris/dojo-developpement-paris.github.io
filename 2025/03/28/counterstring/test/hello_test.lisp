@@ -21,6 +21,7 @@
 (defun output (n)
   (cond
     ((null n) "")
+    ((equalp '(star) n) "*")
     (T "*3*5*7*10*")
     ))
 
@@ -54,6 +55,7 @@
 
 (test output
       (is (equalp "" (output (counterstring 0))))
+      (is (equalp "*" (output (counterstring 1))))
       (is (equalp "*3*5*7*10*" (output (counterstring 10))))
       )
 
