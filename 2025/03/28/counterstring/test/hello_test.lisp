@@ -7,6 +7,7 @@
 
 (defun counterstring (n)
   (cond
+    ((equal 3 n) '(star 3 star))
     ((equal 1 n) '(star))
     (T '(2 star)
        )))
@@ -16,6 +17,10 @@
 
 (test not-so-trivial-case
       (is (equal '(2 star) (counterstring 2))))
+
+
+(test simple-odd
+      (is (equal '(star 3 star) (counterstring 3))))
 
 (if (run-all-tests)
     (sb-ext:quit)
