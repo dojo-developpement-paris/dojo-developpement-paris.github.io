@@ -9,7 +9,7 @@
   (cond
     ((equal 1 n) '(star))
     ((equal 2 n) '(2 star))
-    ((equal 3 n) (append '(star) '(3 star)))
+    ((equal 3 n) (append (counterstring 1) '(3 star)))
     ((equal 5 n) (append (counterstring 3) '(5 star)))
     ))
 
