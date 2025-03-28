@@ -19,7 +19,10 @@
   (- n (+ 2 (floor (log n 10)))))
 
 (defun output (n)
-  "*3*5*7*10*")
+  (cond
+    ((null n) "")
+    (T "*3*5*7*10*")
+    ))
 
 (test trivial-case
       (is (equal '() (counterstring 0)))
@@ -50,7 +53,8 @@
       )
 
 (test output
-      (is (equal "*3*5*7*10*" (output (counterstring 10))))
+      (is (equalp "" (output (counterstring 0))))
+      (is (equalp "*3*5*7*10*" (output (counterstring 10))))
       )
 
 (if (run-all-tests)
