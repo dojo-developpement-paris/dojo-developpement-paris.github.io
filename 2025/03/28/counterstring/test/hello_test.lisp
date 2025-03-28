@@ -21,7 +21,7 @@
 (defun output (n)
   (cond
     ((null n) "")
-    ((equalp '(star) n) "*")
+    ((equalp '(star) n) (star))
     (T "*3*5*7*10*")
     ))
 
