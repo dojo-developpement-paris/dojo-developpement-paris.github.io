@@ -6,10 +6,16 @@
 (use-package :fiveam-matchers)
 
 (defun counterstring (n)
-  '(star))
+  (cond
+    ((equal 1 n) '(star))
+    (T '(2 star)
+       )))
 
 (test trivial-case
       (is (equal '(star) (counterstring 1))))
+
+(test not-so-trivial-case
+      (is (equal '(2 star) (counterstring 2))))
 
 (if (run-all-tests)
     (sb-ext:quit)
