@@ -11,7 +11,7 @@
     ((equal 1 n) '(star))
     ((< n 10) (append (counterstring (- n 2)) (cons n '(star))))
     ((< n 100) (append (counterstring (- n 3)) (cons n '(star))))
-    ((< n 1000) (append (counterstring (- n 4)) (cons n '(star))))
+    ((< n 1000) (append (counterstring (- n (+ 2 (floor (log n 10))))) (cons n '(star))))
     ))
 
 (test trivial-case
