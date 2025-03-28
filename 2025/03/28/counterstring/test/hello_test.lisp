@@ -9,8 +9,7 @@
   (cond
     ((equal 0 n) '())
     ((equal 1 n) '(star))
-    ((evenp n) (append (counterstring (- n 2)) (cons n '(star))))
-    ((oddp n) (append (counterstring (- n 2)) (cons n '(star))))
+    (T (append (counterstring (- n 2)) (cons n '(star))))
     ))
 
 (test trivial-case
