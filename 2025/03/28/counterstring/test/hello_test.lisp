@@ -10,7 +10,8 @@
     ((equal 0 n) '())
     ((equal 1 n) '(star))
     ((< n 10) (append (counterstring (- n 2)) (cons n '(star))))
-    (T (append (counterstring (- n 3)) (cons n '(star))))
+    ((< n 100) (append (counterstring (- n 3)) (cons n '(star))))
+    ((< n 1000) (append (counterstring (- n 4)) (cons n '(star))))
     ))
 
 (test trivial-case
@@ -35,6 +36,10 @@
       (is (equal '(star 3 star 5 star 7 star 10 star)  (counterstring 10)))
       (is (equal '(2 star 4 star 6 star 8 star 11 star)  (counterstring 11)))
       (is (equal '(star 3 star 5 star 7 star 9 star 12 star 15 star 18 star 21 star 24 star 27 star 30 star 33 star 36 star 39 star 42 star 45 star 48 star 51 star 54 star 57 star)  (counterstring 57)))
+      )
+
+(test greater-than-ninety-nine
+      (is (equal '(star 3 star 5 star 7 star 9 star 12 star 15 star 18 star 21 star 24 star 27 star 30 star 33 star 36 star 39 star 42 star 45 star 48 star 51 star 54 star 57 star 60 star 63 star 66 star 69 star 72 star 75 star 78 star 81 star 84 star 87 star 90 star 93 star 96 star 100 star)  (counterstring 100)))
       )
 
 (if (run-all-tests)
