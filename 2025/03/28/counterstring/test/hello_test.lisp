@@ -10,7 +10,7 @@
     ((equal 1 n) '(star))
     ((equal 2 n) '(2 star))
     ((equal 3 n) (append (counterstring (- 3 2)) '(3 star)))
-    ((equal 5 n) (append (counterstring 3) '(5 star)))
+    ((equal 5 n) (append (counterstring (- 5 2)) '(5 star)))
     ))
 
 (test trivial-case
