@@ -22,7 +22,7 @@
   (cond
     ((null l) "")
     ((equalp '(star 3 star 5 star 7 star 10 star) l) "*3*5*7*10*")
-    ((equalp (quote star) (car l)) (star))
+    ((equalp (quote star) (car l)) (concatenate 'string (star) (output (cdr l))))
     ((equalp '(2 star) l) (concatenate 'string "2" (star)))
     ))
 
