@@ -9,6 +9,7 @@
   (cond
     ((equal 1 n) '(star))
     ((equal 2 n) '(2 star))
+    ((equal 4 n) '(2 star 4 star))
     ((oddp n) (append (counterstring (- n 2)) (cons n '(star))))
     ))
 
@@ -17,6 +18,10 @@
 
 (test not-so-trivial-case
       (is (equal '(2 star) (counterstring 2))))
+
+(test simple-even
+      (is (equal '(2 star 4 star) (counterstring 4)))
+      )
 
 (test simple-odd
       (is (equal '(star 3 star) (counterstring 3)))
