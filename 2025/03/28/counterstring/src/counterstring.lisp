@@ -16,9 +16,9 @@
 
 (defun output-2 (l acc)
   (cond
-    ((null l)     (concatenate 'string "" acc))
-    ((equalp (quote star) (car l))     (output-2 (cdr l) (concatenate 'string acc (star))))
-    ((numberp (car l))     (output-2 (cdr l) (concatenate 'string acc (write-to-string (car l)))))
+    ((null l) (concatenate 'string "" acc))
+    ((equalp (quote star) (car l)) (output-2 (cdr l) (concatenate 'string acc (star))))
+    ((numberp (car l)) (output-2 (cdr l) (concatenate 'string acc (write-to-string (car l)))))
     ))
 
 (defun output (l)
