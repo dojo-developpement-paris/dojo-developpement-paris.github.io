@@ -8,7 +8,7 @@
   (cond
     ((equal 0 n) (append '() l))
     ((equal 1 n) (append '(star) l))
-    (T (append (counterstring-2 (to-subtract n) l) (cons n '(star))))
+    (T (counterstring-2 (to-subtract n) (append (cons n '(star)) l)))
     ))
 
 (defun counterstring (n)
