@@ -14,9 +14,12 @@
 (defun counterstring (n)
   (counterstring-2 n '()))
 
-(defun output (l)
+(defun output-2 (l acc)
   (cond
     ((null l) "")
-    ((equalp (quote star) (car l)) (concatenate 'string (star) (output (cdr l))))
-    ((numberp (car l)) (concatenate 'string (write-to-string (car l)) (output (cdr l))))
+    ((equalp (quote star) (car l)) (concatenate 'string (star) (output-2 (cdr l) acc)))
+    ((numberp (car l)) (concatenate 'string (write-to-string (car l)) (output-2 (cdr l) acc)))
     ))
+
+(defun output (l)
+  (output-2 l ""))
