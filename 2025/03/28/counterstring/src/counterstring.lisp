@@ -4,12 +4,15 @@
 (defun to-subtract (n)
   (- n (+ 2 (floor (log n 10)))))
 
-(defun counterstring (n)
+(defun counterstring-2 (n)
   (cond
     ((equal 0 n) '())
     ((equal 1 n) '(star))
-    (T (append (counterstring (to-subtract n)) (cons n '(star))))
+    (T (append (counterstring-2 (to-subtract n)) (cons n '(star))))
     ))
+
+(defun counterstring (n)
+  (counterstring-2 n))
 
 (defun output (l)
   (cond
