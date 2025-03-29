@@ -15,7 +15,10 @@ watchexec --clear -- $MASK test
 ## repl
 
 ```sh
-rlwrap sbcl
+rlwrap sbcl \
+  --load ./src/counterstring.lisp \
+  --eval '(print (counterstring 80000074))' \
+  --quit
 ```
 
 ## format
