@@ -1,0 +1,7 @@
+{
+    "haskell.formattingProvider": "fourmolu",
+    "haskell.plugin.fourmolu.config.external": true,
+    "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
+    "devbox.autoShellOnTerminal": false,
+    "editor.formatOnSave": true,
+}
