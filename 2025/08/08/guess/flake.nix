@@ -34,6 +34,7 @@
         devShells.default = pkgs.mkShellNoCC {
           packages = [
             pkgs.devbox
+            pkgs.rlwrap
           ];
 
           shellHook = ''
