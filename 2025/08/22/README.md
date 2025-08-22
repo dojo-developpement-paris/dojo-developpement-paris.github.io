@@ -9,6 +9,7 @@ Personnes présentes :
 - Abdessamed
 - Lionel
 - Teddy
+- Emmanuel
 - pin
 
 Retro :

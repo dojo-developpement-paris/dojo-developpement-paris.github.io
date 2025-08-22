@@ -61,7 +61,7 @@ library
     import:           warnings
 
     -- Modules exported by the library.
-    exposed-modules:  Hello
+    exposed-modules:  Numeral
 
     -- Modules included in this library but not exported.
     -- other-modules:
