@@ -1,4 +1,4 @@
-Prochaine session : le ??? à ???
+Prochaine session : le 2025-09-05 à Arolla
 
 Personnes présentes :
 - Christelle
@@ -7,6 +7,8 @@ Personnes présentes :
 - Benjamin
 - Souhaib
 - Michel
+- Lionel
+- Mickael
 - pin
 
 Retro :
