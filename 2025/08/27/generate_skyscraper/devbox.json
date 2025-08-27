@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "nodejs-slim@latest",
+    "oxlint@latest",
+    "mask@latest",
+    "bashInteractive@latest",
+    "git-gamble@latest"
+  ]
+}
