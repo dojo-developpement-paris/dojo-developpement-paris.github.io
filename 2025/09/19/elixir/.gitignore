@@ -1,0 +1,4 @@
+.direnv/
+
+deps/
+_build/
