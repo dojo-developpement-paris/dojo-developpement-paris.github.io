@@ -28,6 +28,7 @@ export class GildedRose {
   private updateQuality(item: Item) {
     switch (item.name) {
       case "Sulfuras, Hand of Ragnaros":
+        this.sulfuras(item);
         break;
       case "Aged Brie":
         this.agedBrie(item);
@@ -39,6 +40,9 @@ export class GildedRose {
         this.default(item);
         break;
     }
+  }
+
+  private sulfuras(_item: Item) {
   }
 
   private default(item: Item) {
