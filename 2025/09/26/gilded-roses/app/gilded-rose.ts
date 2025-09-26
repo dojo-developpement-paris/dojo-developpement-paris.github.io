@@ -36,14 +36,18 @@ export class GildedRose {
         this.backstage(item);
         break;
       default:
-        if (item.quality > 0) {
-          item.quality--;
-        }
-        item.sellIn--;
-        if (item.sellIn < 0 && item.quality > 0) {
-          item.quality--;
-        }
+        this.default(item);
         break;
+    }
+  }
+
+  private default(item: Item) {
+    if (item.quality > 0) {
+      item.quality--;
+    }
+    item.sellIn--;
+    if (item.sellIn < 0 && item.quality > 0) {
+      item.quality--;
     }
   }
 
