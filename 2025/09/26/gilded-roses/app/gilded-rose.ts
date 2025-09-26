@@ -36,10 +36,12 @@ export class GildedRose {
   }
 }
 
-const sulfuras = (_item: Item) => {
+type AgedProcess = (item: Item) => void;
+
+const sulfuras: AgedProcess = (_item) => {
 };
 
-const standardItem = (item: Item) => {
+const standardItem: AgedProcess = (item) => {
   if (item.quality > 0) {
     item.quality--;
   }
@@ -49,7 +51,7 @@ const standardItem = (item: Item) => {
   }
 };
 
-const backstage = (item: Item) => {
+const backstage: AgedProcess = (item) => {
   if (item.quality < 50) {
     item.quality++;
     if (item.sellIn < 11 && item.quality < 50) {
@@ -65,7 +67,7 @@ const backstage = (item: Item) => {
   }
 };
 
-const agedBrie = (item: Item) => {
+const agedBrie: AgedProcess = (item) => {
   if (item.quality < 50) {
     item.quality++;
   }
