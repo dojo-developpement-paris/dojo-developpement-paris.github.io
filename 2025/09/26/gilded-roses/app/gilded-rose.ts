@@ -27,50 +27,50 @@ export class GildedRose {
 
   private updateQuality(item: Item) {
     ({
-      "Sulfuras, Hand of Ragnaros": this.sulfuras,
-      "Aged Brie": this.agedBrie,
-      "Backstage passes to a TAFKAL80ETC concert": this.backstage,
+      "Sulfuras, Hand of Ragnaros": sulfuras,
+      "Aged Brie": agedBrie,
+      "Backstage passes to a TAFKAL80ETC concert": backstage,
     }[
       item.name
-    ] || this.default)(item);
-  }
-
-  private sulfuras(_item: Item) {
-  }
-
-  private default(item: Item) {
-    if (item.quality > 0) {
-      item.quality--;
-    }
-    item.sellIn--;
-    if (item.sellIn < 0 && item.quality > 0) {
-      item.quality--;
-    }
-  }
-
-  private backstage(item: Item) {
-    if (item.quality < 50) {
-      item.quality++;
-      if (item.sellIn < 11 && item.quality < 50) {
-        item.quality++;
-      }
-      if (item.sellIn < 6 && item.quality < 50) {
-        item.quality++;
-      }
-    }
-    item.sellIn--;
-    if (item.sellIn < 0) {
-      item.quality = 0;
-    }
-  }
-
-  private agedBrie(item: Item) {
-    if (item.quality < 50) {
-      item.quality++;
-    }
-    item.sellIn--;
-    if (item.sellIn < 0 && item.quality < 50) {
-      item.quality++;
-    }
+    ] || standardItem)(item);
   }
 }
+
+const sulfuras = (_item: Item) => {
+};
+
+const standardItem = (item: Item) => {
+  if (item.quality > 0) {
+    item.quality--;
+  }
+  item.sellIn--;
+  if (item.sellIn < 0 && item.quality > 0) {
+    item.quality--;
+  }
+};
+
+const backstage = (item: Item) => {
+  if (item.quality < 50) {
+    item.quality++;
+    if (item.sellIn < 11 && item.quality < 50) {
+      item.quality++;
+    }
+    if (item.sellIn < 6 && item.quality < 50) {
+      item.quality++;
+    }
+  }
+  item.sellIn--;
+  if (item.sellIn < 0) {
+    item.quality = 0;
+  }
+};
+
+const agedBrie = (item: Item) => {
+  if (item.quality < 50) {
+    item.quality++;
+  }
+  item.sellIn--;
+  if (item.sellIn < 0 && item.quality < 50) {
+    item.quality++;
+  }
+};
