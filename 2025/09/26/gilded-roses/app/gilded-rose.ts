@@ -26,11 +26,7 @@ export class GildedRose {
   }
 
   private updateQuality(item: Item) {
-    ({
-      "Sulfuras, Hand of Ragnaros": sulfuras,
-      "Aged Brie": agedBrie,
-      "Backstage passes to a TAFKAL80ETC concert": backstage,
-    }[
+    (newLocal[
       item.name
     ] || standardItem)(item);
   }
@@ -76,3 +72,9 @@ const agedBrie: AgedProcess = (item) => {
     item.quality++;
   }
 };
+
+const newLocal: Record<string, AgedProcess> = {
+  "Sulfuras, Hand of Ragnaros": sulfuras,
+  "Aged Brie": agedBrie,
+  "Backstage passes to a TAFKAL80ETC concert": backstage,
+} as const;
