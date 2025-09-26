@@ -26,9 +26,7 @@ export class GildedRose {
   }
 
   private updateQuality(item: Item) {
-    (crepe[
-      item.name
-    ] || standardItem)(item);
+    (agedStrategies[item.name] || standardItem)(item);
   }
 }
 
@@ -73,7 +71,7 @@ const agedBrie: AgedProcess = (item) => {
   }
 };
 
-const crepe: Record<string, AgedProcess> = {
+const agedStrategies: Record<string, AgedProcess> = {
   "Sulfuras, Hand of Ragnaros": sulfuras,
   "Aged Brie": agedBrie,
   "Backstage passes to a TAFKAL80ETC concert": backstage,
