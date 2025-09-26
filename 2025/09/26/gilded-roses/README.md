@@ -1,67 +1,44 @@
-# TypeScript with formatting, linting and test on Deno
+# Gilded Rose
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#WORKDIR=typescript_deno/https://gitlab.com/pinage404/nix-sandboxes)
+This is the Gilded Rose kata in TypeScript through [Deno](https://deno.com/) for a simplified experience.
 
-<details>
-<summary>⚠️ Gitpod will open the root folder</summary>
+## Getting started
 
-Due to
-[some limitations of Gitpod](https://github.com/gitpod-io/gitpod/issues/5521),
-we cannot simply open a sub-folder
+Install dependencies
 
-Opening in Gitpod will open the root folder
+No more dependencies to install. Just go to the next step.
 
-Two terminals will be opened :
+## Run the unit tests from the Command-Line
 
-1. the first in the root folder
-2. the second in the target folder
-
-Both terminals automatically load the environment of their current folder
-
-![Screenshot of Gitpod showing two terminals open, the second being open in the target folder](https://gitlab.com/pinage404/nix-sandboxes/-/raw/main/gitpod.png)
-
-</details>
-
-Requirements
-
-- Install [Nix](https://nixos.org)
-  - Preferably with
-    [`nix-installer`](https://determinate.systems/nix-installer/)
-- Install [DirEnv](https://direnv.net)
-- Install [Git](https://git-scm.com)
-
-Then execute
+Open a terminal and run the following command:
 
 ```sh
-NIX_CONFIG="extra-experimental-features = flakes nix-command" \
-nix run "gitlab:pinage404/nix-sandboxes#v2" -- init --sandbox typescript_deno --path ./new_project
+deno test
 ```
 
----
-
-[Available commands](./maskfile.md)
-
-Or just execute
+To run all tests in watch mode
 
 ```sh
-mask help
+deno test --watch
 ```
 
----
+## Run the TextTest fixture from the Command-Line
 
-[Learn JavaScript in Y Minutes](https://learnxinyminutes.com/docs/javascript/)
+```sh
+deno run test/golden-master-text-test.ts
+```
 
-[Learn TypeScript in Y Minutes](https://learnxinyminutes.com/docs/typescript/)
+Or with number of days as args:
+```sh
+deno run test/golden-master-text-test.ts 10
+```
 
-[Awesome Deno](https://github.com/denolib/awesome-deno)
+You should make sure the command shown above works when you execute it in a terminal before trying to use TextTest (see below).
 
-[Awesome Node.JS](https://github.com/sindresorhus/awesome-nodejs#contents) not
-Deno but still accurate
 
-[Awesome JavaScript](https://github.com/sorrycc/awesome-javascript#readme)
+## Run the TextTest approval test that comes with this project
 
----
+There are instructions in the [TextTest Readme](../texttests/README.md) for setting up TextTest. You will need to specify the Python executable and interpreter in [config.gr](../texttests/config.gr). Uncomment these lines:
 
-<!-- markdownlint-disable-next-line MD045 -->
-
-[Read code on GitLab ![](https://img.shields.io/gitlab/stars/pinage404/nix-sandboxes?style=social)](https://gitlab.com/pinage404/nix-sandboxes/-/tree/main/typescript_deno)
+    executable:${TEXTTEST_HOME}/python/texttest_fixture.py
+    interpreter:python

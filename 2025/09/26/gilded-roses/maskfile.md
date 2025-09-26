@@ -3,7 +3,7 @@
 ## test
 
 ```sh
-deno test
+deno test --allow-read
 ```
 
 ### test watch
