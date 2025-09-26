@@ -26,7 +26,7 @@ export class GildedRose {
   }
 
   private updateQuality(item: Item) {
-    (newLocal[
+    (crepe[
       item.name
     ] || standardItem)(item);
   }
@@ -73,7 +73,7 @@ const agedBrie: AgedProcess = (item) => {
   }
 };
 
-const newLocal: Record<string, AgedProcess> = {
+const crepe: Record<string, AgedProcess> = {
   "Sulfuras, Hand of Ragnaros": sulfuras,
   "Aged Brie": agedBrie,
   "Backstage passes to a TAFKAL80ETC concert": backstage,
