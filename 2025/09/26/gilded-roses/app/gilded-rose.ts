@@ -33,19 +33,7 @@ export class GildedRose {
         this.agedBrie(item);
         break;
       case "Backstage passes to a TAFKAL80ETC concert":
-        if (item.quality < 50) {
-          item.quality++;
-          if (item.sellIn < 11 && item.quality < 50) {
-            item.quality++;
-          }
-          if (item.sellIn < 6 && item.quality < 50) {
-            item.quality++;
-          }
-        }
-        item.sellIn--;
-        if (item.sellIn < 0) {
-          item.quality = 0;
-        }
+        this.backstage(item);
         break;
       default:
         if (item.quality > 0) {
@@ -56,6 +44,22 @@ export class GildedRose {
           item.quality--;
         }
         break;
+    }
+  }
+
+  private backstage(item: Item) {
+    if (item.quality < 50) {
+      item.quality++;
+      if (item.sellIn < 11 && item.quality < 50) {
+        item.quality++;
+      }
+      if (item.sellIn < 6 && item.quality < 50) {
+        item.quality++;
+      }
+    }
+    item.sellIn--;
+    if (item.sellIn < 0) {
+      item.quality = 0;
     }
   }
 
