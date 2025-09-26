@@ -30,13 +30,7 @@ export class GildedRose {
       case "Sulfuras, Hand of Ragnaros":
         break;
       case "Aged Brie":
-        if (item.quality < 50) {
-          item.quality++;
-        }
-        item.sellIn--;
-        if (item.sellIn < 0 && item.quality < 50) {
-          item.quality++;
-        }
+        this.agedBrie(item);
         break;
       case "Backstage passes to a TAFKAL80ETC concert":
         if (item.quality < 50) {
@@ -62,6 +56,16 @@ export class GildedRose {
           item.quality--;
         }
         break;
+    }
+  }
+
+  private agedBrie(item: Item) {
+    if (item.quality < 50) {
+      item.quality++;
+    }
+    item.sellIn--;
+    if (item.sellIn < 0 && item.quality < 50) {
+      item.quality++;
     }
   }
 }
