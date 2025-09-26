@@ -26,20 +26,13 @@ export class GildedRose {
   }
 
   private updateQuality(item: Item) {
-    switch (item.name) {
-      case "Sulfuras, Hand of Ragnaros":
-        this.sulfuras(item);
-        break;
-      case "Aged Brie":
-        this.agedBrie(item);
-        break;
-      case "Backstage passes to a TAFKAL80ETC concert":
-        this.backstage(item);
-        break;
-      default:
-        this.default(item);
-        break;
-    }
+    ({
+      "Sulfuras, Hand of Ragnaros": this.sulfuras,
+      "Aged Brie": this.agedBrie,
+      "Backstage passes to a TAFKAL80ETC concert": this.backstage,
+    }[
+      item.name
+    ] || this.default)(item);
   }
 
   private sulfuras(_item: Item) {
