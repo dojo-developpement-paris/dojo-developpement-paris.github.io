@@ -8,6 +8,7 @@ Personnes présentes :
 - Damien
 - Mohammed
 - Teddy
+- Juan
 - pin
 
 Retro :
