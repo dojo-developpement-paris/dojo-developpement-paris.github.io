@@ -32,7 +32,7 @@ describe("Gilded Rose Approval", () => {
 
   it("should foo", async (t) => {
     const gildedRose = new GildedRose([new Item("foo", 0, 0)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateQualityOfItems();
 
     await assertSnapshot(t, items);
   });

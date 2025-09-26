@@ -17,7 +17,7 @@ export class GildedRose {
     this.items = items;
   }
 
-  updateQuality() {
+  updateQualityOfItems() {
     for (const item of this.items) {
       this.updateQualityOfItem(item);
     }

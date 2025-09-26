@@ -5,7 +5,7 @@ import { GildedRose, Item } from "../app/gilded-rose.ts";
 describe("Gilded Rose specifications", () => {
   it("should foo", () => {
     const gildedRose = new GildedRose([new Item("foo", 0, 0)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateQualityOfItems();
     expect(items[0].name).toBe("foo");
   });
 });

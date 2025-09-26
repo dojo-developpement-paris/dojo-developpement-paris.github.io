@@ -34,7 +34,7 @@ export const runner = (c: Logger) => (consoleArgs: string[]) => {
       );
     });
     c();
-    gildedRose.updateQuality();
+    gildedRose.updateQualityOfItems();
   }
 };
 
