@@ -8,5 +8,6 @@
   "deno.codeLens.test": true,
   "devbox.autoShellOnTerminal": false,
   "editor.formatOnSave": true,
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "deno.path": "/home/invited/Project/dojo/2025/09/26/gilded-roses/.devbox/nix/profile/default/bin/deno"
 }

@@ -1,7 +1,7 @@
 import { beforeEach, describe, it } from "jsr:@std/testing/bdd";
 import { GildedRose, Item } from "../app/gilded-rose.ts";
 import { assertSnapshot } from "jsr:@std/testing/snapshot";
-import { runner } from "./golden-master-text-test.ts";
+import { type Logger, runner } from "./golden-master-text-test.ts";
 
 /**
  * This unit test uses [Jest Snapshot](https://goo.gl/fbAQLP).
@@ -15,21 +15,18 @@ import { runner } from "./golden-master-text-test.ts";
 
 describe("Gilded Rose Approval", () => {
   let gameConsoleOutput: string;
-  let originalConsoleLog: (message: any) => void;
-  let originalProcessArgv: string[];
-  let main: (...args: any[]) => void;
+  let main: ReturnType<typeof runner>;
 
-  function gameConsoleLog(msg: string) {
+  const gameConsoleLog: Logger = (msg) => {
     if (msg) {
       gameConsoleOutput += msg;
     }
     gameConsoleOutput += "\n";
-  }
+  };
 
   beforeEach(() => {
     // prepare capturing console.log to our own gameConsoleLog.
     gameConsoleOutput = "";
-    originalProcessArgv = Deno.args;
     main = runner(gameConsoleLog);
   });
 
