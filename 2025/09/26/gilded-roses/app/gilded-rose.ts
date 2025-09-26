@@ -26,42 +26,42 @@ export class GildedRose {
   }
 
   private updateQuality(item: Item) {
-    if (
-      item.name === "Sulfuras, Hand of Ragnaros"
-    ) {
-      return;
-    }
-
-    if (item.name === "Aged Brie") {
-      if (item.quality < 50) {
-        item.quality++;
-      }
-      item.sellIn--;
-      if (item.sellIn < 0 && item.quality < 50) {
-        item.quality++;
-      }
-    } else if (item.name === "Backstage passes to a TAFKAL80ETC concert") {
-      if (item.quality < 50) {
-        item.quality++;
-        if (item.sellIn < 11 && item.quality < 50) {
+    switch (item.name) {
+      case "Sulfuras, Hand of Ragnaros":
+        break;
+      case "Aged Brie":
+        if (item.quality < 50) {
           item.quality++;
         }
-        if (item.sellIn < 6 && item.quality < 50) {
+        item.sellIn--;
+        if (item.sellIn < 0 && item.quality < 50) {
           item.quality++;
         }
-      }
-      item.sellIn--;
-      if (item.sellIn < 0) {
-        item.quality = 0;
-      }
-    } else {
-      if (item.quality > 0) {
-        item.quality--;
-      }
-      item.sellIn--;
-      if (item.sellIn < 0 && item.quality > 0) {
-        item.quality--;
-      }
+        break;
+      case "Backstage passes to a TAFKAL80ETC concert":
+        if (item.quality < 50) {
+          item.quality++;
+          if (item.sellIn < 11 && item.quality < 50) {
+            item.quality++;
+          }
+          if (item.sellIn < 6 && item.quality < 50) {
+            item.quality++;
+          }
+        }
+        item.sellIn--;
+        if (item.sellIn < 0) {
+          item.quality = 0;
+        }
+        break;
+      default:
+        if (item.quality > 0) {
+          item.quality--;
+        }
+        item.sellIn--;
+        if (item.sellIn < 0 && item.quality > 0) {
+          item.quality--;
+        }
+        break;
     }
   }
 }
