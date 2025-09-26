@@ -26,7 +26,8 @@ export class GildedRose {
   }
 
   private updateQuality(item: Item) {
-    (agedStrategies[item.name] || standardItem)(item);
+    const strategy = agedStrategies[item.name] || standardItem;
+    strategy(item);
   }
 }
 
