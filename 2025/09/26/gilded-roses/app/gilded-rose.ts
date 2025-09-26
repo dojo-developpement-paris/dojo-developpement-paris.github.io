@@ -19,13 +19,13 @@ export class GildedRose {
 
   updateQuality() {
     for (const item of this.items) {
-      this.newMethod(item);
+      this.updateOneItemQuality(item);
     }
 
     return this.items;
   }
 
-  private newMethod(item: Item) {
+  private updateOneItemQuality(item: Item) {
     if (
       item.name != "Aged Brie" &&
       item.name != "Backstage passes to a TAFKAL80ETC concert"
