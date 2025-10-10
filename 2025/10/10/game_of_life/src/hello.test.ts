@@ -75,6 +75,21 @@ describe("Game of life", () => {
     const univers = évolution(universInitial);
     expect(rechercheÉtatCellule(univers, [0, 0])).toEqual(ÉtatCellule.VIVANTE);
   });
+
+  it("sans voisinnage pas de vie", () => {
+    const universInitial = ajouterUneCellule(
+      ajouterUneCellule(
+        ajouterUneCellule(
+          nouvelUnivers(),
+          [0, 0],
+        ),
+        [5, -1],
+      ),
+      [1, 17],
+    );
+    const univers = évolution(universInitial);
+    expect(rechercheÉtatCellule(univers, [0, 0])).toEqual(ÉtatCellule.VIDE);
+  });
 });
 
 type Coordonnées = [number, number];
@@ -94,6 +109,7 @@ const ajouterUneCellule = (
 const clé = ([x, y]: Coordonnées): CléCoordonnées => `${x},${y}`;
 
 const évolution = (univers: Univers): Univers =>
-  univers.size == 3
+  univers.has(clé([-1, -1])) &&
+    univers.has(clé([1, 1]))
     ? ajouterUneCellule(nouvelUnivers(), [0, 0])
     : nouvelUnivers();
