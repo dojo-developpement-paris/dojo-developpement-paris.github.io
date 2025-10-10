@@ -15,28 +15,28 @@ enum ÉtatCellule {
 describe("Game of life", () => {
   it("un nouvel univers est vide pour une position donnée", () => {
     const univers = nouvelUnivers();
-    expect(rechercheÉtatCellule(univers, 0, 0)).toEqual(ÉtatCellule.VIDE);
-    expect(rechercheÉtatCellule(univers, 75, 44)).toEqual(ÉtatCellule.VIDE);
+    expect(rechercheÉtatCellule(univers, [0, 0])).toEqual(ÉtatCellule.VIDE);
+    expect(rechercheÉtatCellule(univers, [75, 44])).toEqual(ÉtatCellule.VIDE);
   });
 
   it("avoir une cellule vivante après une naissance", () => {
-    const univers = ajouterUneCellule(nouvelUnivers(), 0, 0);
-    expect(rechercheÉtatCellule(univers, 0, 0)).toEqual(ÉtatCellule.VIVANTE);
-    expect(rechercheÉtatCellule(univers, 75, 44)).toEqual(ÉtatCellule.VIDE);
+    const univers = ajouterUneCellule(nouvelUnivers(), [0, 0]);
+    expect(rechercheÉtatCellule(univers, [0, 0])).toEqual(ÉtatCellule.VIVANTE);
+    expect(rechercheÉtatCellule(univers, [75, 44])).toEqual(ÉtatCellule.VIDE);
   });
 });
 
 type Univers = ÉtatCellule;
+type Coordonnées = [number, number];
 
 const nouvelUnivers = (): Univers => ÉtatCellule.VIDE;
-const rechercheÉtatCellule = (univers: Univers, _2: unknown, _3: unknown) => {
-  if (_2 === 0 && _3 === 0) {
+const rechercheÉtatCellule = (univers: Univers, [x, y]: Coordonnées) => {
+  if (x === 0 && y === 0) {
     return univers;
   }
   return ÉtatCellule.VIDE;
 };
 const ajouterUneCellule = (
   _univers: Univers,
-  _2: unknown,
-  _3: unknown,
+  _coordonnées: Coordonnées,
 ): Univers => ÉtatCellule.VIVANTE;
