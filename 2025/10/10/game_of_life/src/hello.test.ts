@@ -34,13 +34,16 @@ describe("Game of life", () => {
 
 type Coordonnées = [number, number];
 type CléCoordonnées = `${number},${number}`;
-
 type Univers = Set<CléCoordonnées>;
 
 const nouvelUnivers = (): Univers => new Set();
-const rechercheÉtatCellule = (univers: Univers, [x, y]: Coordonnées) =>
-  univers.has(`${x},${y}`) ? ÉtatCellule.VIVANTE : ÉtatCellule.VIDE;
+
+const rechercheÉtatCellule = (univers: Univers, coordonnées: Coordonnées) =>
+  univers.has(clé(coordonnées)) ? ÉtatCellule.VIVANTE : ÉtatCellule.VIDE;
+
 const ajouterUneCellule = (
   _univers: Univers,
-  [x, y]: Coordonnées,
-): Univers => new Set<CléCoordonnées>().add(`${x},${y}`);
+  coordonnées: Coordonnées,
+): Univers => new Set<CléCoordonnées>().add(clé(coordonnées));
+
+const clé = ([x, y]: Coordonnées): CléCoordonnées => `${x},${y}`;
