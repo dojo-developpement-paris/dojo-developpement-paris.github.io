@@ -129,6 +129,6 @@ const évolution = (univers: Univers): Univers =>
     : nouvelUnivers();
 
 const newFunction = (univers: Univers, _coordonnées: Coordonnées) =>
-  (univers.has(clé([-1, -1])) &&
-    univers.has(clé([1, 1]))) || (univers.has(clé([1, -1])) &&
-      univers.has(clé([1, -1])));
+  univers.has(clé([-1, -1])) &&
+    univers.has(clé([1, 1])) || univers.has(clé([1, -1])) &&
+    univers.has(clé([1, -1]));
