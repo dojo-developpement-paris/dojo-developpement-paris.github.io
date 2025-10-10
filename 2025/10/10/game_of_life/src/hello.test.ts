@@ -64,7 +64,7 @@ describe("Game of life", () => {
 
 type Coordonnées = [number, number];
 type CléCoordonnées = `${number},${number}`;
-type Univers = Set<CléCoordonnées>;
+type Univers = ReadonlySet<CléCoordonnées>;
 
 const nouvelUnivers = (): Univers => new Set();
 
