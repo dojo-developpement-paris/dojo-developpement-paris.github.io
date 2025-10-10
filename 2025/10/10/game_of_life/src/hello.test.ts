@@ -24,19 +24,23 @@ describe("Game of life", () => {
     expect(rechercheÉtatCellule(univers, [0, 0])).toEqual(ÉtatCellule.VIVANTE);
     expect(rechercheÉtatCellule(univers, [75, 44])).toEqual(ÉtatCellule.VIDE);
   });
+
+  it("avoir une cellule vivante après une naissance autre part", () => {
+    const univers = ajouterUneCellule(nouvelUnivers(), [0, 1]);
+    expect(rechercheÉtatCellule(univers, [0, 0])).toEqual(ÉtatCellule.VIDE);
+    expect(rechercheÉtatCellule(univers, [0, 1])).toEqual(ÉtatCellule.VIVANTE);
+  });
 });
 
-type Univers = ÉtatCellule;
 type Coordonnées = [number, number];
+type CléCoordonnées = `${number},${number}`;
 
-const nouvelUnivers = (): Univers => ÉtatCellule.VIDE;
-const rechercheÉtatCellule = (univers: Univers, [x, y]: Coordonnées) => {
-  if (x === 0 && y === 0) {
-    return univers;
-  }
-  return ÉtatCellule.VIDE;
-};
+type Univers = Set<CléCoordonnées>;
+
+const nouvelUnivers = (): Univers => new Set();
+const rechercheÉtatCellule = (univers: Univers, [x, y]: Coordonnées) =>
+  univers.has(`${x},${y}`) ? ÉtatCellule.VIVANTE : ÉtatCellule.VIDE;
 const ajouterUneCellule = (
   _univers: Univers,
-  _coordonnées: Coordonnées,
-): Univers => ÉtatCellule.VIVANTE;
+  [x, y]: Coordonnées,
+): Univers => new Set<CléCoordonnées>().add(`${x},${y}`);
