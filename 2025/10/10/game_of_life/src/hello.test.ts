@@ -76,6 +76,21 @@ describe("Game of life", () => {
     expect(rechercheÉtatCellule(univers, [0, 0])).toEqual(ÉtatCellule.VIVANTE);
   });
 
+  it("avec 2 voisines, je reste vivante et pas forcement avec les mêmes voisines", () => {
+    const universInitial = ajouterUneCellule(
+      ajouterUneCellule(
+        ajouterUneCellule(
+          nouvelUnivers(),
+          [0, 0],
+        ),
+        [1, -1],
+      ),
+      [-1, 1],
+    );
+    const univers = évolution(universInitial);
+    expect(rechercheÉtatCellule(univers, [0, 0])).toEqual(ÉtatCellule.VIVANTE);
+  });
+
   it("sans voisinnage pas de vie", () => {
     const universInitial = ajouterUneCellule(
       ajouterUneCellule(
@@ -109,7 +124,11 @@ const ajouterUneCellule = (
 const clé = ([x, y]: Coordonnées): CléCoordonnées => `${x},${y}`;
 
 const évolution = (univers: Univers): Univers =>
-  univers.has(clé([-1, -1])) &&
-    univers.has(clé([1, 1]))
+  newFunction(univers, [0, 0])
     ? ajouterUneCellule(nouvelUnivers(), [0, 0])
     : nouvelUnivers();
+
+const newFunction = (univers: Univers, _coordonnées: Coordonnées) =>
+  (univers.has(clé([-1, -1])) &&
+    univers.has(clé([1, 1]))) || (univers.has(clé([1, -1])) &&
+      univers.has(clé([1, -1])));
