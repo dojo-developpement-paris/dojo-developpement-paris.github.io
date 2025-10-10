@@ -22,14 +22,19 @@ describe("Game of life", () => {
   it("avoir une cellule vivante après une naissance", () => {
     const univers = ajouterUneCellule(nouvelUnivers(), 0, 0);
     expect(rechercheÉtatCellule(univers, 0, 0)).toEqual(ÉtatCellule.VIVANTE);
+    expect(rechercheÉtatCellule(univers, 75, 44)).toEqual(ÉtatCellule.VIDE);
   });
 });
 
 type Univers = ÉtatCellule;
 
 const nouvelUnivers = (): Univers => ÉtatCellule.VIDE;
-const rechercheÉtatCellule = (univers: Univers, _2: unknown, _3: unknown) =>
-  univers;
+const rechercheÉtatCellule = (univers: Univers, _2: unknown, _3: unknown) => {
+  if (_2 === 0 && _3 === 0) {
+    return univers;
+  }
+  return ÉtatCellule.VIDE;
+};
 const ajouterUneCellule = (
   _univers: Univers,
   _2: unknown,
