@@ -25,11 +25,13 @@ describe("Game of life", () => {
   });
 });
 
-const nouvelUnivers = (): ÉtatCellule => ÉtatCellule.VIDE;
-const rechercheÉtatCellule = (univers: unknown, _2: unknown, _3: unknown) =>
+type Univers = ÉtatCellule;
+
+const nouvelUnivers = (): Univers => ÉtatCellule.VIDE;
+const rechercheÉtatCellule = (univers: Univers, _2: unknown, _3: unknown) =>
   univers;
 const ajouterUneCellule = (
-  _univers: unknown,
+  _univers: Univers,
   _2: unknown,
   _3: unknown,
-): ÉtatCellule => ÉtatCellule.VIVANTE;
+): Univers => ÉtatCellule.VIVANTE;
