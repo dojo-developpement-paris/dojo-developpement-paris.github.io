@@ -51,6 +51,15 @@ describe("Game of life", () => {
       ÉtatCellule.VIDE,
     );
   });
+
+  it("tout seul tu meurs", () => {
+    const universInitial = ajouterUneCellule(
+      nouvelUnivers(),
+      [0, 0],
+    );
+    const univers = évolution(universInitial);
+    expect(rechercheÉtatCellule(univers, [0, 0])).toEqual(ÉtatCellule.VIDE);
+  });
 });
 
 type Coordonnées = [number, number];
@@ -68,3 +77,5 @@ const ajouterUneCellule = (
 ): Univers => new Set(univers).add(clé(coordonnées));
 
 const clé = ([x, y]: Coordonnées): CléCoordonnées => `${x},${y}`;
+
+const évolution = (_univers: Univers): Univers => nouvelUnivers();
