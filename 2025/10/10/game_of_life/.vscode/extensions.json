@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "denoland.vscode-deno",
+    "jetpack-io.devbox",
+    "johnsoncodehk.vscode-tsconfig-helper",
+    "nicoespeon.abracadabra",
+    "p42ai.refactor",
+    "pinage404.nix-extension-pack",
+    "yoavbls.pretty-ts-errors"
+  ]
+}

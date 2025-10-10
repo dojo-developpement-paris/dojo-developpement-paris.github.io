@@ -1,0 +1,12 @@
+{
+  "nixEnvSelector.useFlakes": true,
+  "nixEnvSelector.nixFile": "${workspaceFolder}/flake.nix",
+  "deno.enable": true,
+  "deno.codeLens.implementations": true,
+  "deno.codeLens.references": true,
+  "deno.codeLens.referencesAllFunctions": true,
+  "deno.codeLens.test": true,
+  "devbox.autoShellOnTerminal": false,
+  "editor.formatOnSave": true,
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
