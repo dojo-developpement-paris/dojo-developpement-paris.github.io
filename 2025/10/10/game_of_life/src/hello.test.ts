@@ -15,6 +15,7 @@ describe("Game of life", () => {
   it("un nouvel univers est vide pour une position donnée", () => {
     const univers = nouvelUnivers();
     expect(étatCellule(univers, 0, 0)).toEqual(ÉtatCellule.VIDE);
+    expect(étatCellule(univers, 75, 44)).toEqual(ÉtatCellule.VIDE);
   });
 });
 
