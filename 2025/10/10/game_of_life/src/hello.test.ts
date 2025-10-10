@@ -9,15 +9,27 @@ import { describe, expect, it } from "./dev_deps.ts";
 
 enum ÉtatCellule {
   VIDE = "VIDE",
+  VIVANTE = "VIVANTE",
 }
 
 describe("Game of life", () => {
   it("un nouvel univers est vide pour une position donnée", () => {
     const univers = nouvelUnivers();
-    expect(étatCellule(univers, 0, 0)).toEqual(ÉtatCellule.VIDE);
-    expect(étatCellule(univers, 75, 44)).toEqual(ÉtatCellule.VIDE);
+    expect(rechercheÉtatCellule(univers, 0, 0)).toEqual(ÉtatCellule.VIDE);
+    expect(rechercheÉtatCellule(univers, 75, 44)).toEqual(ÉtatCellule.VIDE);
+  });
+
+  it("avoir une cellule vivante après une naissance", () => {
+    const univers = ajouterUneCellule(nouvelUnivers(), 0, 0);
+    expect(rechercheÉtatCellule(univers, 0, 0)).toEqual(ÉtatCellule.VIVANTE);
   });
 });
 
-const nouvelUnivers = () => {};
-const étatCellule = (_1: unknown, _2: unknown, _3: unknown) => ÉtatCellule.VIDE;
+const nouvelUnivers = (): ÉtatCellule => ÉtatCellule.VIDE;
+const rechercheÉtatCellule = (univers: unknown, _2: unknown, _3: unknown) =>
+  univers;
+const ajouterUneCellule = (
+  _univers: unknown,
+  _2: unknown,
+  _3: unknown,
+): ÉtatCellule => ÉtatCellule.VIVANTE;
