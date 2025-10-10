@@ -39,6 +39,18 @@ describe("Game of life", () => {
     expect(rechercheÉtatCellule(univers, [0, 0])).toEqual(ÉtatCellule.VIVANTE);
     expect(rechercheÉtatCellule(univers, [0, 1])).toEqual(ÉtatCellule.VIVANTE);
   });
+
+  it("l'univers initial reste vide", () => {
+    const universInitial = nouvelUnivers();
+    const univers = ajouterUneCellule(
+      universInitial,
+      [0, 0],
+    );
+    expect(rechercheÉtatCellule(univers, [0, 0])).toEqual(ÉtatCellule.VIVANTE);
+    expect(rechercheÉtatCellule(universInitial, [0, 0])).toEqual(
+      ÉtatCellule.VIDE,
+    );
+  });
 });
 
 type Coordonnées = [number, number];
@@ -53,6 +65,6 @@ const rechercheÉtatCellule = (univers: Univers, coordonnées: Coordonnées) =>
 const ajouterUneCellule = (
   univers: Univers,
   coordonnées: Coordonnées,
-): Univers => univers.add(clé(coordonnées));
+): Univers => new Set(univers).add(clé(coordonnées));
 
 const clé = ([x, y]: Coordonnées): CléCoordonnées => `${x},${y}`;
