@@ -93,7 +93,7 @@ const ajouterUneCellule = (
 
 const clé = ([x, y]: Coordonnées): CléCoordonnées => `${x},${y}`;
 
-const évolution = (_univers: Univers): Univers =>
-  _univers.size == 3
+const évolution = (univers: Univers): Univers =>
+  univers.size == 3
     ? ajouterUneCellule(nouvelUnivers(), [0, 0])
     : nouvelUnivers();
