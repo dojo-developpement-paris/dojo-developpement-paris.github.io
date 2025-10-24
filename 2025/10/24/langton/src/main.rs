@@ -29,7 +29,7 @@ mod test {
 
     #[test]
     fn where_is_the_ant_initially() {
-        assert_eq!((0,0), ant_location())
+        assert_eq!((0,0), first_world().ant_location)
     }
 
 //     fn after_one_move_from_white_that_cell_is_black() {
