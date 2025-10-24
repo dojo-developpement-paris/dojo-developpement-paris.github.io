@@ -18,6 +18,7 @@ pub fn first_world() -> World {
 pub fn ant_move(world: World) -> World {
     let mut new_world = world;
     new_world.black_cells.insert((0,0));
+    new_world.black_cells.insert((0,1));
     new_world
 }
 
@@ -36,6 +37,11 @@ mod test {
         assert!(next_world.black_cells.contains(&(0,0)));
     }
 
+    #[test]
+    fn after_two_moves_from_two_cells_are_black() {
+        let next_next_world = ant_move(ant_move(first_world()));
+        assert_eq!(2, next_next_world.black_cells.len())
+    }
     #[test]
     fn initially_there_are_no_black_cells() {
         assert!(first_world().black_cells.is_empty())
