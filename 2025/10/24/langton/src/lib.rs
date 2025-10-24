@@ -15,22 +15,29 @@ pub fn first_world() -> World {
     }
 }
 
+pub fn ant_move(world: World) -> World {
+    let mut new_world = world;
+    new_world.black_cells.insert((0,0));
+    new_world
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
 
     #[test]
     fn where_is_the_ant_initially() {
-        assert_eq!((0,0), first_world().ant_location)
+        assert_eq!((0, 0), first_world().ant_location)
     }
 
-//     fn after_one_move_from_white_that_cell_is_black() {
-//         ant_move();
-//         assert!(black_cells().contains(&(0,0)));
-//     }
-// 
-     #[test]
-     fn initially_there_are_no_black_cells() {
-         assert!(first_world().black_cells.is_empty())
-     }
+    #[test]
+    fn after_one_move_from_white_that_cell_is_black() {
+        let next_world = ant_move(first_world());
+        assert!(next_world.black_cells.contains(&(0,0)));
+    }
+
+    #[test]
+    fn initially_there_are_no_black_cells() {
+        assert!(first_world().black_cells.is_empty())
+    }
 }
