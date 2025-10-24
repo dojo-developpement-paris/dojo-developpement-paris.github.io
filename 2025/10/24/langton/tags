@@ -1,0 +1,8 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+if_cell_was_white_after_leaving_it_becomes_black	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^    fn if_cell_was_white_after_leaving_it_becomes_black() {$/;"	f
+main	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^fn main() {$/;"	f
