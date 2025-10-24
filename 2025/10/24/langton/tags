@@ -7,6 +7,7 @@
 Coords	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^type Coords = (isize, isize);$/;"	T
 World	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^type World = HashSet<Coords>;$/;"	T
 ant_location	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^pub fn ant_location() -> Coords {$/;"	f
-black_cells	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^pub fn black_cells() -> HashSet<Coords> {$/;"	f
+black_cells	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^pub fn black_cells() -> World {$/;"	f
+initially_there_are_no_black_cells	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^     fn initially_there_are_no_black_cells() {$/;"	f
 main	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^fn main() {$/;"	f
 where_is_the_ant_initially	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^    fn where_is_the_ant_initially() {$/;"	f

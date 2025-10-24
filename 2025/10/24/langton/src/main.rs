@@ -11,13 +11,13 @@ pub fn ant_location() -> Coords {
     (0,0)
 }
 
-pub fn black_cells() -> HashSet<Coords> {
+pub fn black_cells() -> World {
     HashSet::new()
 }
+
 #[cfg(test)]
 mod test {
     use super::*;
-
 
     #[test]
     fn where_is_the_ant_initially() {
@@ -29,8 +29,8 @@ mod test {
 //         assert!(black_cells().contains(&(0,0)));
 //     }
 // 
-//     #[test]
-//     fn initially_there_are_no_black_cells() {
-//         assert!(black_cells().is_empty())
-//     }
+     #[test]
+     fn initially_there_are_no_black_cells() {
+         assert!(black_cells().is_empty())
+     }
 }
