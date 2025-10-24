@@ -3,6 +3,7 @@ use std::collections::HashSet;
 type Coords = (isize, isize);
 type AntLocation = Coords;
 
+#[derive(Clone)]
 pub struct World {
     pub black_cells: HashSet<Coords>,
     pub ant_location: AntLocation,
@@ -16,9 +17,9 @@ pub fn first_world() -> World {
 }
 
 pub fn ant_move(world: World) -> World {
-    let mut new_world = world;
-    new_world.black_cells.insert((0,0));
-    new_world.black_cells.insert((0,1));
+    let mut new_world = world.clone();
+    new_world.black_cells.insert(world.ant_location);
+    new_world.ant_location = (0,1);
     new_world
 }
 
@@ -34,6 +35,7 @@ mod test {
     #[test]
     fn after_one_move_from_white_that_cell_is_black() {
         let next_world = ant_move(first_world());
+        assert_eq!(1, next_world.black_cells.len());
         assert!(next_world.black_cells.contains(&(0,0)));
     }
 
