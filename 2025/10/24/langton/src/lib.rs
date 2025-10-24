@@ -1,9 +1,5 @@
 use std::collections::HashSet;
 
-fn main() {
-    println!("Hello, world!");
-}
-
 type Coords = (isize, isize);
 type AntLocation = Coords;
 
