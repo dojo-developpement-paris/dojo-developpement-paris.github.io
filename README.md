@@ -36,8 +36,7 @@ Tout langage est accepté, à 2 conditions :
 - quelqu'un a un environnement de pret
 
 Orientation :
-On coupe la séance en plusieurs sous-séances,
-et entre chaque séance on fait une rétro/orientation.
+Au milieu de la session, on essaira de voir ce qu'on peut changer pour que les personnes partent contentes
 
 Nous ne sommes pas télépathes :
 si vous ne dites pas que vous ne comprenez pas, on ne peut pas le savoir ;
