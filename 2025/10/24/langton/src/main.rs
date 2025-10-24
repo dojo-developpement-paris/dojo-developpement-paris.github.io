@@ -24,12 +24,13 @@ mod test {
         assert_eq!((0,0), ant_location())
     }
 
-    fn after_one_move_from_white_that_cell_is_black() {
-
-    }
-
-    #[test]
-    fn initially_there_are_no_black_cells() {
-        assert!(black_cells().is_empty())
-    }
+//     fn after_one_move_from_white_that_cell_is_black() {
+//         ant_move();
+//         assert!(black_cells().contains(&(0,0)));
+//     }
+// 
+//     #[test]
+//     fn initially_there_are_no_black_cells() {
+//         assert!(black_cells().is_empty())
+//     }
 }
