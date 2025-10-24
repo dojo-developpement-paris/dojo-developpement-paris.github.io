@@ -6,3 +6,4 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 if_cell_was_white_after_leaving_it_becomes_black	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^    fn if_cell_was_white_after_leaving_it_becomes_black() {$/;"	f
 main	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^fn main() {$/;"	f
+where_is_the_ant	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^    fn where_is_the_ant() {$/;"	f
