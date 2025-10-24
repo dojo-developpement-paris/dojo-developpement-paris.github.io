@@ -7,7 +7,6 @@
 AntLocation	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^type AntLocation = Coords;$/;"	T
 Coords	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^type Coords = (isize, isize);$/;"	T
 World	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^pub struct World {$/;"	s
-ant_location	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^pub fn ant_location() -> Coords {$/;"	f
 first_world	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^pub fn first_world() -> World {$/;"	f
 initially_there_are_no_black_cells	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^     fn initially_there_are_no_black_cells() {$/;"	f
 main	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/10/24/langton/src/main.rs	/^fn main() {$/;"	f

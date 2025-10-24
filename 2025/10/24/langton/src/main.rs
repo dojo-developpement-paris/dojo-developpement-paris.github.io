@@ -12,10 +12,6 @@ pub struct World {
     pub ant_location: AntLocation,
 }
 
-pub fn ant_location() -> Coords {
-    (0,0)
-}
-
 pub fn first_world() -> World {
     World {
         black_cells: HashSet::new(),
