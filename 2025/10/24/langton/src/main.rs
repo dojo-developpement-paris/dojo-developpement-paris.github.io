@@ -15,11 +15,6 @@ pub fn black_cells() -> HashSet<(isize, isize)> {
 mod test {
     use super::*;
 
-    fn if_cell_was_white_after_leaving_it_becomes_black() {
-        assert!(true)
-    }
-
-    #[test]
     fn where_is_the_ant_initially() {
         assert_eq!((0,0), ant_location())
     }
