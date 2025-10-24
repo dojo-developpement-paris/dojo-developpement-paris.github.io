@@ -4,6 +4,9 @@ fn main() {
     println!("Hello, world!");
 }
 
+type Coords = (isize, isize);
+type World = HashSet<Coords>;
+
 pub fn ant_location() -> (isize, isize) {
     (0,0)
 }
