@@ -5,14 +5,22 @@ fn main() {
 }
 
 type Coords = (isize, isize);
-type World = HashSet<Coords>;
+type AntLocation = Coords;
+
+pub struct World {
+    pub black_cells: HashSet<Coords>,
+    pub ant_location: AntLocation,
+}
 
 pub fn ant_location() -> Coords {
     (0,0)
 }
 
-pub fn black_cells() -> World {
-    HashSet::new()
+pub fn first_world() -> World {
+    World {
+        black_cells: HashSet::new(),
+        ant_location: (0, 0),
+    }
 }
 
 #[cfg(test)]
@@ -31,6 +39,6 @@ mod test {
 // 
      #[test]
      fn initially_there_are_no_black_cells() {
-         assert!(black_cells().is_empty())
+         assert!(first_world().black_cells.is_empty())
      }
 }
