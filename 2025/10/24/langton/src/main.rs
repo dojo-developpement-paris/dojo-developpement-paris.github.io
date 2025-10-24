@@ -7,11 +7,11 @@ fn main() {
 type Coords = (isize, isize);
 type World = HashSet<Coords>;
 
-pub fn ant_location() -> (isize, isize) {
+pub fn ant_location() -> Coords {
     (0,0)
 }
 
-pub fn black_cells() -> HashSet<(isize, isize)> {
+pub fn black_cells() -> HashSet<Coords> {
     HashSet::new()
 }
 #[cfg(test)]
