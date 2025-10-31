@@ -13,6 +13,7 @@ fn hello(name: Option<&str>) -> String {
 pub enum Case {
     Vide,
     X,
+    O,
 }
 #[derive(Debug, PartialEq)]
 pub enum Statut {
@@ -22,6 +23,8 @@ pub enum Statut {
 
 pub fn statut(jeu: [Case; 9]) -> Statut {
     if jeu[0] == Case::Vide {
+        Statut::TourDeX
+    } else if jeu[1] == Case::O {
         Statut::TourDeX
     } else {
         Statut::TourDeO
@@ -63,5 +66,21 @@ mod test {
             Case::Vide,
         ];
         assert_that(&statut(un_jeu_vide)).is_equal_to(Statut::TourDeO)
+    }
+
+    #[test]
+    fn o_a_joué_donc_au_tour_de_x() {
+        let un_jeu_vide: [Case; 9] = [
+            Case::X,
+            Case::O,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+        ];
+        assert_that(&statut(un_jeu_vide)).is_equal_to(Statut::TourDeX)
     }
 }
