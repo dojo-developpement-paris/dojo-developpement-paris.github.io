@@ -19,9 +19,14 @@ pub enum Case {
 pub enum Statut {
     TourDeX,
     TourDeO,
+    VictoireDeX,
 }
 
 pub fn statut(jeu: &[Case; 9]) -> Statut {
+    if jeu[0] == Case::X && jeu[0] == jeu[1] && jeu[1] == jeu[2] {
+        return Statut::VictoireDeX;
+    }
+
     let mut nombre = 0;
     for case in jeu {
         if case == &Case::Vide {
@@ -89,6 +94,7 @@ mod test {
         ];
         assert_that(&statut(&un_jeu)).is_equal_to(Statut::TourDeX)
     }
+
     #[test]
     fn après_n_tours_statut_sait_a_qui_de_jouer() {
         let un_jeu: [Case; 9] = [
@@ -103,5 +109,21 @@ mod test {
             Case::X,
         ];
         assert_that(&statut(&un_jeu)).is_equal_to(Statut::TourDeX)
+    }
+
+    #[test]
+    fn victoire_de_x() {
+        let un_jeu: [Case; 9] = [
+            Case::X,
+            Case::X,
+            Case::X,
+            Case::O,
+            Case::O,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+        ];
+        assert_that(&statut(&un_jeu)).is_equal_to(Statut::VictoireDeX)
     }
 }
