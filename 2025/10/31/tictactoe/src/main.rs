@@ -33,12 +33,10 @@ pub fn statut(jeu: [Case; 9]) -> Statut {
         nombre += 1;
     }
 
-    if jeu[0] == Case::Vide {
-        Statut::TourDeX
-    } else if jeu[1] == Case::O {
-        Statut::TourDeX
-    } else {
+    if nombre % 2 == 0 {
         Statut::TourDeO
+    } else {
+        Statut::TourDeX
     }
 }
 
