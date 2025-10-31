@@ -7,6 +7,7 @@ Personnes présentes :
 - Medard
 - Ubald
 - ToF
+- Khalid
 - pin
 
 Retro :
