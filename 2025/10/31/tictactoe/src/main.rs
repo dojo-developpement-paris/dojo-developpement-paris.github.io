@@ -34,7 +34,7 @@ mod test {
     use speculoos::*;
 
     #[test]
-    fn un_jeu_est_vide_a_X_de_jouer() {
+    fn un_jeu_est_vide_a_x_de_jouer() {
         let un_jeu_vide: [Case; 9] = [
             Case::Vide,
             Case::Vide,
