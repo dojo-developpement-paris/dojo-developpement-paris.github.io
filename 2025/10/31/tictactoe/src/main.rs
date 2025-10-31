@@ -23,7 +23,7 @@ pub enum Statut {
 }
 
 pub fn statut(jeu: &[Case; 9]) -> Statut {
-    if jeu[0] == Case::X && jeu[0] == jeu[1] && jeu[1] == jeu[2] {
+    if Case::X == jeu[0] && jeu[0] == jeu[1] && jeu[1] == jeu[2] {
         return Statut::VictoireDeX;
     }
 
