@@ -29,6 +29,9 @@ pub fn statut(jeu: &[Case; 9]) -> Statut {
     if Case::X == jeu[3] && jeu[3] == jeu[4] && jeu[4] == jeu[5] {
         return Statut::VictoireDeX;
     }
+    if Case::X == jeu[6] && jeu[6] == jeu[7] && jeu[7] == jeu[8] {
+        return Statut::VictoireDeX;
+    }
 
     let mut nombre = 0;
     for case in jeu {
@@ -142,6 +145,22 @@ mod test {
             Case::O,
             Case::O,
             Case::Vide,
+        ];
+        assert_that(&statut(&un_jeu)).is_equal_to(Statut::VictoireDeX)
+    }
+
+    #[test]
+    fn victoire_de_x_en_bas() {
+        let un_jeu: [Case; 9] = [
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::O,
+            Case::O,
+            Case::Vide,
+            Case::X,
+            Case::X,
+            Case::X,
         ];
         assert_that(&statut(&un_jeu)).is_equal_to(Statut::VictoireDeX)
     }
