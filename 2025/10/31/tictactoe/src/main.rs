@@ -21,10 +21,10 @@ pub enum Statut {
     TourDeO,
 }
 
-pub fn statut(jeu: [Case; 9]) -> Statut {
+pub fn statut(jeu: &[Case; 9]) -> Statut {
     let mut nombre = 0;
     for case in jeu {
-        if case == Case::Vide {
+        if case == &Case::Vide {
             nombre += 1
         }
     }
@@ -54,7 +54,8 @@ mod test {
             Case::Vide,
             Case::Vide,
         ];
-        assert_that(&statut(un_jeu)).is_equal_to(Statut::TourDeX)
+        assert_that(&statut(&un_jeu)).is_equal_to(Statut::TourDeX);
+        assert_that(&statut(&un_jeu)).is_equal_to(Statut::TourDeX);
     }
 
     #[test]
@@ -70,7 +71,7 @@ mod test {
             Case::Vide,
             Case::Vide,
         ];
-        assert_that(&statut(un_jeu)).is_equal_to(Statut::TourDeO)
+        assert_that(&statut(&un_jeu)).is_equal_to(Statut::TourDeO)
     }
 
     #[test]
@@ -86,7 +87,7 @@ mod test {
             Case::Vide,
             Case::Vide,
         ];
-        assert_that(&statut(un_jeu)).is_equal_to(Statut::TourDeX)
+        assert_that(&statut(&un_jeu)).is_equal_to(Statut::TourDeX)
     }
     #[test]
     fn après_n_tours_statut_sait_a_qui_de_jouer() {
@@ -101,6 +102,6 @@ mod test {
             Case::Vide,
             Case::X,
         ];
-        assert_that(&statut(un_jeu)).is_equal_to(Statut::TourDeX)
+        assert_that(&statut(&un_jeu)).is_equal_to(Statut::TourDeX)
     }
 }
