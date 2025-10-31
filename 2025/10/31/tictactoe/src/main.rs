@@ -88,4 +88,19 @@ mod test {
         ];
         assert_that(&statut(un_jeu_vide)).is_equal_to(Statut::TourDeX)
     }
+    #[test]
+    fn après_n_tours_statut_sait_a_qui_de_jouer() {
+        let un_jeu_vide: [Case; 9] = [
+            Case::X,
+            Case::O,
+            Case::X,
+            Case::O,
+            Case::O,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::X,
+        ];
+        assert_that(&statut(un_jeu_vide)).is_equal_to(Statut::TourDeX)
+    }
 }
