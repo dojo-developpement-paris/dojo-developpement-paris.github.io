@@ -1,4 +1,5 @@
 {
+    "files.autoSave": "afterDelay",
     "nixEnvSelector.useFlakes": true,
     "nixEnvSelector.nixFile": "${workspaceFolder}/flake.nix",
     "devbox.autoShellOnTerminal": false,
