@@ -22,7 +22,16 @@ pub enum Statut {
 }
 
 pub fn statut(jeu: [Case; 9]) -> Statut {
-    let nombre = 0;
+    let mut nombre = 0;
+    if jeu[0] == Case::Vide {
+        nombre += 1;
+    }
+    if jeu[1] == Case::Vide {
+        nombre += 1;
+    }
+    if jeu[2] == Case::Vide {
+        nombre += 1;
+    }
 
     if jeu[0] == Case::Vide {
         Statut::TourDeX
