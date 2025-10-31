@@ -21,7 +21,7 @@ mod test {
     }
 
     #[test]
-    fn hello_foo() {
+    fn un_jeu_est_vide_a_qui_de_jouer() {
         assert_that(&hello(Some("foo"))).is_equal_to("Hello foo".to_string())
     }
 }
