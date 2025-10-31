@@ -5,3 +5,5 @@ cd "$(dirname "$0")/../../.."
 
 mask format
 mask lint
+git-time-keeper 'stop'
+git-time-keeper 'stop'
