@@ -9,17 +9,23 @@ fn main() {
 fn hello(name: Option<&str>) -> String {
     format!("Hello {}", name.unwrap_or("world"))
 }
-
+#[derive(Debug, PartialEq)]
 pub enum Case {
     Vide,
+    X,
 }
 #[derive(Debug, PartialEq)]
 pub enum Statut {
     TourDeX,
+    TourDeO,
 }
 
-pub fn statut(un_jeu_vide: [Case; 9]) -> Statut {
-    Statut::TourDeX
+pub fn statut(jeu: [Case; 9]) -> Statut {
+    if jeu[0] == Case::Vide {
+        Statut::TourDeX
+    } else {
+        Statut::TourDeO
+    }
 }
 
 #[cfg(test)]
@@ -41,5 +47,21 @@ mod test {
             Case::Vide,
         ];
         assert_that(&statut(un_jeu_vide)).is_equal_to(Statut::TourDeX)
+    }
+
+    #[test]
+    fn x_a_joué_donc_au_tour_de_o() {
+        let un_jeu_vide: [Case; 9] = [
+            Case::X,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+            Case::Vide,
+        ];
+        assert_that(&statut(un_jeu_vide)).is_equal_to(Statut::TourDeO)
     }
 }
