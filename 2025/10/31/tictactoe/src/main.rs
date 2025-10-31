@@ -23,14 +23,10 @@ pub enum Statut {
 
 pub fn statut(jeu: [Case; 9]) -> Statut {
     let mut nombre = 0;
-    if jeu[0] == Case::Vide {
-        nombre += 1;
-    }
-    if jeu[1] == Case::Vide {
-        nombre += 1;
-    }
-    if jeu[2] == Case::Vide {
-        nombre += 1;
+    for i in 0..9 {
+        if jeu[i] == Case::Vide {
+            nombre += 1
+        }
     }
 
     if nombre % 2 == 0 {
