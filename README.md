@@ -36,7 +36,9 @@ Tout langage est accepté, à 2 conditions :
 - quelqu'un a un environnement de pret
 
 ## Orientation
-Au milieu de la session, on essaira de voir ce qu'on peut changer pour que les personnes partent contentes
+Au cours de la session, on invite chaque personne à répondre aux questions :
+- comment ça va ?
+- qu'est-ce qu'on pourrait changer pour que tu partes content-e de la session ?
 
 ## Nous ne sommes pas télépathes
 si vous ne dites pas que vous ne comprenez pas, on ne peut pas le savoir ;
