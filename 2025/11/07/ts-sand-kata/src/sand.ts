@@ -1,4 +1,4 @@
-export type Sand = string[][]
+export type Sand = readonly string[][]
 
 export const fall = (sand: Sand) => {
   if (

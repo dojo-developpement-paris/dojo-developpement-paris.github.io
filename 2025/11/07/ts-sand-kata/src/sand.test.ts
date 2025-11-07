@@ -15,7 +15,7 @@ describe("Sand", () => {
     ])
   })
   
-  it("falls down when nothing below", () => {
+  it("falls down when nothing below from middle", () => {
     const frame = [
       [" ", " ", " "],
       [" ", "*", " "],
