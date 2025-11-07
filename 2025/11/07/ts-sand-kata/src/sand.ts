@@ -1,8 +1,8 @@
 export type Sand = string[][]
 
-export const fall = (_: Sand) => {
+export const fall = (sand: Sand) => {
   if (
-    JSON.stringify(_) ===
+    JSON.stringify(sand) ===
     JSON.stringify([
       [" ", "*", " "],
       [" ", " ", " "],
