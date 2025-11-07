@@ -11,5 +11,3 @@ export const fall = (sand: Sand) => {
   }
   return sand
 }
-
-// gitlab.com/hadrienmp/ts-kata-sand
