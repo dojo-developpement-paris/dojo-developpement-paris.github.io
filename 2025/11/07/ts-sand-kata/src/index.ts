@@ -67,4 +67,4 @@ render()
 setInterval(() => {
   render()
   fall(sand)
-}, 10)
+}, 1000)
