@@ -1,0 +1,5 @@
+{
+    "files.autoSave": "afterDelay",
+  "editor.inlayHints.enabled": "off",
+  "editor.formatOnSave": true,
+}
