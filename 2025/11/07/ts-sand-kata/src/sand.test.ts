@@ -3,7 +3,7 @@ import { fall } from "./sand"
 
 describe("Sand", () => {
   it("falls down", () => {
-    const frame = [["*"], [" "]]
+    const frame = [["*"], [" "], [" "]]
     expect(fall(frame)).toEqual([[" "], ["*"]])
   })
 })
