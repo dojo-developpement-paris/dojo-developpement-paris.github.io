@@ -1,4 +1,4 @@
-export type Sand = readonly string[][]
+export type Sand = string[][]
 
 export const fall = (sand: Sand) => {
   const next = structuredClone(sand)
