@@ -14,4 +14,10 @@ describe("Sand", () => {
       [" "],
     ])
   })
-})
+
+  it("falls down when nothing below", )
+const frame = [
+      ["*"],
+      [" "],
+      [" "]
+    })
