@@ -14,4 +14,17 @@ describe("Sand", () => {
       [" ", "*", " "],
     ])
   })
+
+  it("falls down when nothing below from above", () => {
+    const frame = [
+      [" ", "*", " "],
+      [" ", " ", " "],
+      [" ", " ", " "],
+    ]
+    expect(fall(frame)).toEqual([
+      [" ", " ", " "],
+      [" ", "*", " "],
+      [" ", " ", " "],
+    ])
+  })
 })
