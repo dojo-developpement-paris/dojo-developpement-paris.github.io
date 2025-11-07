@@ -10,8 +10,8 @@ describe("Sand", () => {
     ]
     expect(fall(frame)).toEqual([
       [" "],
-      [" "],
       ["*"],
+      [" "],
     ])
   })
 })
