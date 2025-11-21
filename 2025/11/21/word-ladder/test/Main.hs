@@ -27,7 +27,7 @@ main =
                 wordLadder "cat" "cot" dictionnary `shouldBe` expected
 
 wordLadder :: String -> String -> [String] -> [String]
-wordLadder "cat" endWord dictionnary | endWord `notElem` dictionnary = []
+wordLadder startWord endWord dictionnary | endWord `notElem` dictionnary || startWord `notElem` dictionnary = []
 wordLadder startWord "cot" dictionnary | startWord `notElem` dictionnary = []
 wordLadder "cat" "cot" _ = ["cat", "cot"]
 wordLadder _ _ _ = []
