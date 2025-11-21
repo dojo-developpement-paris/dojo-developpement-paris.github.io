@@ -28,6 +28,6 @@ main =
 
 wordLadder :: String -> String -> [String] -> [String]
 wordLadder startWord endWord dictionnary
-    | endWord `notElem` dictionnary || startWord `notElem` dictionnary = []
+    | startWord `notElem` dictionnary || endWord `notElem` dictionnary = []
 wordLadder "cat" "cot" _ = ["cat", "cot"]
 wordLadder _ _ _ = []
