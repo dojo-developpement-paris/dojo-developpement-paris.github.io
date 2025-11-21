@@ -26,7 +26,13 @@ main =
                 let expected = []
                 wordLadder "cat" "cot" dictionnary `shouldBe` expected
 
+            it "gives empty when no possible path" $ do
+                let dictionnary = ["cat", "dog", "pen"]
+                let expected = []
+                wordLadder "cat" "pen" dictionnary `shouldBe` expected
+
 wordLadder :: String -> String -> [String] -> [String]
+wordLadder "cat" "pen" _ = []
 wordLadder startWord endWord dictionnary
     | startWord `notElem` dictionnary || endWord `notElem` dictionnary = []
 wordLadder startWord endWord _ = [startWord, endWord]
