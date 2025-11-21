@@ -31,6 +31,12 @@ main =
                 let expected = []
                 wordLadder "cat" "pen" dictionnary `shouldBe` expected
 
+        describe "cases of one neighbor" $ do
+            it "gives result with one neighbor" $ do
+                let dictionnary = ["cog", "dog", "pen"]
+                let expected = ["cog", "dog"]
+                wordLadder "cog" "dog" dictionnary `shouldBe` expected
+
 wordLadder :: String -> String -> [String] -> [String]
 wordLadder "cat" "pen" _ = []
 wordLadder startWord endWord dictionnary
