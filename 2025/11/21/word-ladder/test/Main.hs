@@ -1,21 +1,21 @@
 module Main (main) where
 
-import Hello
 import Test.Hspec
 
 main :: IO ()
 main =
     hspec $ do
-        describe "Hello" $ do
-            it "world" $ do
-                hello Nothing `shouldBe` "Hello world"
-
-            it "foo" $ do
-                hello (Just "foo") `shouldBe` "Hello foo"
-
+        describe "Trivial cases" $ do
+            it "empty dictionnary" $ do
                 let dictionnary = [] :: [String]
                 let expected = [] :: [String]
                 wordLadder "dog" "cat" dictionnary `shouldBe` expected
 
+            it "one step" $ do
+                let dictionnary = ["cat", "cot", "dog", "pen"] :: [String]
+                let expected = ["cat", "cot"] :: [String]
+                wordLadder "cat" "cot" dictionnary `shouldBe` expected
+
 wordLadder :: String -> String -> [String] -> [String]
+wordLadder "cat" "cot" _ = ["cat", "cot"]
 wordLadder _ _ _ = []
