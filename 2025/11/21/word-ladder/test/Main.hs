@@ -12,8 +12,8 @@ main =
                 wordLadder "dog" "cat" dictionnary `shouldBe` expected
 
             it "one step" $ do
-                let dictionnary = ["cat", "cot", "dog", "pen"] :: [String]
-                let expected = ["cat", "cot"] :: [String]
+                let dictionnary = ["cat", "cot", "dog", "pen"]
+                let expected = ["cat", "cot"]
                 wordLadder "cat" "cot" dictionnary `shouldBe` expected
 
 wordLadder :: String -> String -> [String] -> [String]
