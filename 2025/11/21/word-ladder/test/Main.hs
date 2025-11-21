@@ -17,4 +17,5 @@ main =
                 let expected = [] :: [String]
                 wordLadder "dog" "cat" dictionnary `shouldBe` expected
 
+wordLadder :: String -> String -> [String] -> [String]
 wordLadder _ _ _ = []
