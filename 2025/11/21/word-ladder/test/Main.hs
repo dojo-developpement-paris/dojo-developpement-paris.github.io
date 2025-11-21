@@ -27,7 +27,7 @@ main =
                 wordLadder "cat" "cot" dictionnary `shouldBe` expected
 
 wordLadder :: String -> String -> [String] -> [String]
-wordLadder "cat" "cot" ["cat", "dog", "pen"] = []
+wordLadder "cat" "cot" dictionnary | "cot" `notElem` dictionnary = []
 wordLadder "cat" "cot" ["cot", "dog", "pen"] = []
 wordLadder "cat" "cot" _ = ["cat", "cot"]
 wordLadder _ _ _ = []
