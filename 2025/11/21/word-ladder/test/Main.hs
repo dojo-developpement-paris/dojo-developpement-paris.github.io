@@ -29,5 +29,5 @@ main =
 wordLadder :: String -> String -> [String] -> [String]
 wordLadder startWord endWord dictionnary
     | startWord `notElem` dictionnary || endWord `notElem` dictionnary = []
-wordLadder "cat" "cot" _ = ["cat", "cot"]
+wordLadder startWord endWord _ = [startWord, endWord]
 wordLadder _ _ _ = []
