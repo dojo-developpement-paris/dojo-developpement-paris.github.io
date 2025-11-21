@@ -1,6 +1,6 @@
 Prochaine session : le  à 
 
-Nous migrons le groupe Meetup vers [Mobilizon]
+Nous migrons le groupe de Meetup vers [Mobilizon]
 
 ## Personnes présentes
 - 
