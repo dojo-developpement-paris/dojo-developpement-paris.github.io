@@ -1,4 +1,6 @@
-[Prochaine session] : le  à 
+Prochaine session : le  à 
+
+Nous migrons le groupe Meetup vers [Mobilizon]
 
 ## Personnes présentes
 - 
@@ -52,7 +54,7 @@ il n'y a donc **pas de questions stupides**
 ## Historique
 Si vous voulez en savoir plus, vous pouvez aller lire [l'histoire du dojo]
 
-[Prochaine session]: https://mobilizon.fr/@dojo_de_programmation_paris/events
+[Mobilizon]: https://mobilizon.fr/@dojo_de_programmation_paris/events
 [kata]: https://web.archive.org/web/20040423023001/http://www.pragprog.com/pragdave/Practices/CodeKata.rdoc
 [strong-style]: https://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html
 [mobtime]: https://mobtime.hadrienmp.fr/
