@@ -16,12 +16,18 @@ main =
                 let expected = ["cat", "cot"]
                 wordLadder "cat" "cot" dictionnary `shouldBe` expected
 
-            it "non existing word" $ do
+            it "start word not in dictionnary" $ do
                 let dictionnary = ["cot", "dog", "pen"]
                 let expected = []
                 wordLadder "cat" "cot" dictionnary `shouldBe` expected
 
+            it "end word not in dictionnary" $ do
+                let dictionnary = ["cat", "dog", "pen"]
+                let expected = []
+                wordLadder "cat" "cot" dictionnary `shouldBe` expected
+
 wordLadder :: String -> String -> [String] -> [String]
+wordLadder "cat" "cot" ["cat", "dog", "pen"] = []
 wordLadder "cat" "cot" ["cot", "dog", "pen"] = []
 wordLadder "cat" "cot" _ = ["cat", "cot"]
 wordLadder _ _ _ = []
