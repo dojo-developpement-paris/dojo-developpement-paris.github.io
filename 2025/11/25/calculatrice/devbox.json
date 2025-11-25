@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "python@latest",
+    "poetry@latest",
+    "ruff@latest",
+    "mask@latest",
+    "watchexec@latest",
+    "bashInteractive@latest",
+    "git-gamble@latest"
+  ]
+}

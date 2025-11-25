@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+set -o errexit
+
+if command -v git-time-keeper >/dev/null && [ -n "${TIME_KEEPER_MAXIMUM_ITERATION_DURATION+empty}" ]; then
+    git-time-keeper stop
+fi
