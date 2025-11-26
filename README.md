@@ -54,6 +54,14 @@ il n'y a donc **pas de questions stupides**
 ## Historique
 Si vous voulez en savoir plus, vous pouvez aller lire [l'histoire du dojo]
 
+## Mobilizon
+Transition sur plusieurs mois qui nous permettra de changer de revenir en arrière si on voit que c'était une mauvaise idée :
+1. [x] création du compte [Mobilizon]
+2. [x] double publication d'événements sur [Mobilizon] et Meetup
+3. [x] promotion des événements [Mobilizon] depuis les événements Meetup
+4. [ ] obligation de passer par [Mobilizon] pour s'inscrire
+5. [ ] arret des publications sur Meetup et arret du paiement
+
 [Mobilizon]: https://mobilizon.fr/@dojo_de_programmation_paris/events
 [kata]: https://web.archive.org/web/20040423023001/http://www.pragprog.com/pragdave/Practices/CodeKata.rdoc
 [strong-style]: https://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html
