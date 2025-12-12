@@ -1,0 +1,10 @@
+[package]
+name = "turtle"
+version = "0.1.0"
+edition = "2024"
+[dependencies]
+assert_float_eq = "1.2.0"
+# GTK4 Rust bindings
+gtk4 = "0.10"
+
+
