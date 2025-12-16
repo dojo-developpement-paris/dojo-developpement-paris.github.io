@@ -1,7 +1,7 @@
 
 # Dojo dévelopement Paris
 
-Prochaine session : le ??? à ???
+Prochaine session : le mardi 06/01/2026v à Arolla
 
 Nous migrons le groupe de Meetup vers [Mobilizon]
 
