@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Line	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^type Line = (Position, Position);$/;"	T
+Position	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^type Position = (f64, f64);$/;"	T
+Turtle	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^pub struct Turtle {$/;"	s
+after_forward_in_direction_0_x_is_increased	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    fn after_forward_in_direction_0_x_is_increased() {$/;"	f
+after_forward_two_times_in_direction_0_x_is_increased	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    fn after_forward_two_times_in_direction_0_x_is_increased() {$/;"	f
+after_some_instructions_can_give_the_list	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    fn after_some_instructions_can_give_the_list() {$/;"	f
+after_turn_right_and_forward_position_changes	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    fn after_turn_right_and_forward_position_changes() {$/;"	f
+after_turn_right_direction_changes	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    fn after_turn_right_direction_changes() {$/;"	f
+build_ui	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/main.rs	/^fn build_ui(app: &Application) {$/;"	f
+direction	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    pub fn direction(&self) -> f64 {$/;"	f
+forward	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    pub fn forward(&mut self, distance: f64) {$/;"	f
+initially_turtle_is_at_0_0_direction_is_0	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    fn initially_turtle_is_at_0_0_direction_is_0() {$/;"	f
+main	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/main.rs	/^fn main() {$/;"	f
+new	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    pub fn new() -> Self {$/;"	f
+path	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    pub fn path(&self) -> &Vec<Line> {$/;"	f
+pen_down	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    pub fn pen_down(&mut self) {$/;"	f
+pen_up	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    pub fn pen_up(&mut self) {$/;"	f
+position	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    pub fn position(&self) -> Position {$/;"	f
+turn_right	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    pub fn turn_right(&mut self, angle_in_degrees: f64) {$/;"	f
+turtle_can_rise_pen_and_not_draw_lines	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2025/12/16/turtle/src/turtle.rs	/^    fn turtle_can_rise_pen_and_not_draw_lines() {$/;"	f
