@@ -4,7 +4,7 @@ import { describe, expect, it } from "./dev_deps.ts";
  * [ ] -2 cartes en entrée
  * [ ] carte impaire : 3 cartes impossible
  * [ ] index négatif
- * [ ] utiliser les positions
+ * [x] utiliser les positions
  */
 
 type Figure = 1 | 2 | 3 | 4;
