@@ -14,7 +14,9 @@ const match = (
   position1: number,
   position2: number,
 ): "identique" | "différent" | "error" => {
-  if (position1 >= cartes.length || position2 >= cartes.length) return "error";
+  if (position1 >= cartes.length || position2 >= cartes.length) {
+    return "error";
+  }
 
   if (cartes[position1] === cartes[position2]) {
     return "identique";
