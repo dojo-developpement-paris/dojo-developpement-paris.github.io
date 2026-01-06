@@ -9,8 +9,8 @@ const match = (
 ): "identique" | "différent" =>
   cartes[0] === cartes[1] ? "identique" : "différent";
 
-describe("hello", () => {
-  it("world", () => {
+describe("match", () => {
+  it("2 cartes différentes", () => {
     const cartes: Figure[] = [1, 3];
     const position1: number = 0;
     const position2: number = 1;
