@@ -16,7 +16,11 @@ const match = (
 ): "identique" | "différent" | "error" => {
   if (position1 >= cartes.length || position2 >= cartes.length) return "error";
 
-  return cartes[position1] === cartes[position2] ? "identique" : "différent";
+  if (cartes[position1] === cartes[position2]) {
+    return "identique";
+  }
+
+  return "différent";
 };
 
 describe("match", () => {
