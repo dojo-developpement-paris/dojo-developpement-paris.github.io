@@ -15,7 +15,7 @@ const match = (
   position1: number,
   position2: number,
 ): "identique" | "différent" | "error" => {
-  if (position1 < 0) {
+  if (position1 < 0 || position2 < 0) {
     return "error";
   }
 
@@ -55,7 +55,10 @@ describe("match", () => {
     expect(match([1, 1, 2, 2], 0, 2)).toEqual("différent");
   });
 
-  it("position négative", () => {
-    expect(match([1, 1, 2, 2], -5, 2)).toEqual("error");
+  const parameters: [number, number][] = [[-5, 2], [2, -5]];
+  parameters.forEach(([position1, position2]) => {
+    it("position négative", () => {
+      expect(match([1, 1, 2, 2], position1, position2)).toEqual("error");
+    });
   });
 });
