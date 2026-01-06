@@ -5,6 +5,7 @@ import { describe, expect, it } from "./dev_deps.ts";
  * [ ] carte impaire : 3 cartes impossible
  * [ ] index négatif
  * [x] utiliser les positions
+ * [ ] les positions doivent etre différentes
  */
 
 type Figure = 1 | 2 | 3 | 4;
@@ -14,6 +15,10 @@ const match = (
   position1: number,
   position2: number,
 ): "identique" | "différent" | "error" => {
+  if (position1 < 0) {
+    return "error";
+  }
+
   if (position1 >= cartes.length || position2 >= cartes.length) {
     return "error";
   }
@@ -48,5 +53,9 @@ describe("match", () => {
 
   it("carte différentes avec 4 cartes", () => {
     expect(match([1, 1, 2, 2], 0, 2)).toEqual("différent");
+  });
+
+  it("position négative", () => {
+    expect(match([1, 1, 2, 2], -5, 2)).toEqual("error");
   });
 });
