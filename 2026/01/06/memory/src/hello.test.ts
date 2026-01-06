@@ -1,13 +1,13 @@
 import { describe, expect, it } from "./dev_deps.ts";
-import { hello } from "./hello.ts";
 
 type Figure = 1 | 2 | 3 | 4;
 
 const match = (
-  _: Figure[],
+  cartes: Figure[],
   _a: number,
   _b: number,
-): "identique" | "différent" => "différent";
+): "identique" | "différent" =>
+  cartes[0] === cartes[1] ? "identique" : "différent";
 
 describe("hello", () => {
   it("world", () => {
@@ -22,7 +22,7 @@ describe("hello", () => {
     expect(result).toEqual("différent");
   });
 
-  it("foo", () => {
-    expect(hello("foo")).toEqual("Hello foo");
+  it("2 cartes identiques", () => {
+    expect(match([1, 1], 0, 1)).toEqual("identique");
   });
 });
