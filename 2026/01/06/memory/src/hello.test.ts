@@ -1,5 +1,12 @@
 import { describe, expect, it } from "./dev_deps.ts";
 
+/*
+ * [ ] -2 cartes en entrée
+ * [ ] carte impaire : 3 cartes impossible
+ * [ ] index négatif
+ * [ ] utiliser les positions
+ */
+
 type Figure = 1 | 2 | 3 | 4;
 
 const match = (
@@ -9,7 +16,7 @@ const match = (
 ): "identique" | "différent" | "error" => {
   if (a >= cartes.length || b >= cartes.length) return "error";
 
-  return cartes[0] === cartes[1] ? "identique" : "différent";
+  return cartes[a] === cartes[b] ? "identique" : "différent";
 };
 
 describe("match", () => {
@@ -31,5 +38,9 @@ describe("match", () => {
 
   it("carte inexistante", () => {
     expect(match([1, 2], 1, 5)).toEqual("error");
+  });
+
+  it("carte différentes avec 4 cartes", () => {
+    expect(match([1, 1, 2, 2], 0, 2)).toEqual("différent");
   });
 });
