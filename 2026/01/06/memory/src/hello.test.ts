@@ -11,12 +11,12 @@ type Figure = 1 | 2 | 3 | 4;
 
 const match = (
   cartes: Figure[],
-  a: number,
-  b: number,
+  position1: number,
+  position2: number,
 ): "identique" | "différent" | "error" => {
-  if (a >= cartes.length || b >= cartes.length) return "error";
+  if (position1 >= cartes.length || position2 >= cartes.length) return "error";
 
-  return cartes[a] === cartes[b] ? "identique" : "différent";
+  return cartes[position1] === cartes[position2] ? "identique" : "différent";
 };
 
 describe("match", () => {
