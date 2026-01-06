@@ -3,7 +3,7 @@ import { describe, expect, it } from "./dev_deps.ts";
 /*
  * [ ] -2 cartes en entrée
  * [ ] carte impaire : 3 cartes impossible
- * [ ] index négatif
+ * [x] index négatif
  * [x] utiliser les positions
  * [ ] les positions doivent etre différentes
  */
@@ -15,6 +15,10 @@ const match = (
   position1: number,
   position2: number,
 ): "identique" | "différent" | "error" => {
+  if (position1 === position2) {
+    return "error";
+  }
+
   if (position1 < 0 || position2 < 0) {
     return "error";
   }
@@ -60,5 +64,9 @@ describe("match", () => {
     it("position négative", () => {
       expect(match([1, 1, 2, 2], position1, position2)).toEqual("error");
     });
+  });
+
+  it("pas la meme position", () => {
+    expect(match([1, 1, 2, 2], 0, 0)).toEqual("error");
   });
 });
