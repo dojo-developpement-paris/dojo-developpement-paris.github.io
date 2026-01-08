@@ -35,7 +35,7 @@ Le but n'est **pas de finir**
 ## Langage
 Tout langage est accepté, à 2 conditions :
 - au moins une personne connait ce langage
-- quelqu'un a un environnement de pret
+- quelqu'un a un environnement de prêt
 
 ## Orientation
 Au cours de la session, on invite chaque personne à répondre aux questions :
@@ -48,8 +48,8 @@ il n'y a donc **pas de questions stupides**
 
 ## Méthode de vote
 - nous utilisons [un site pour voter]
-- points = nombre de sujets divisé 2 arrondi à l'entier inférieur
-- ex : sujets = 5, points = 2 => 2 votes, à 1 et 2 points
+- points = nombre de sujets divisé 2 arrondis à l'entier inférieur
+- ex : sujets = 5, points = 2 ⇒ 2 votes, à 1 et 2 points
 
 ## Historique
 Si vous voulez en savoir plus, vous pouvez aller lire [l'histoire du dojo]
@@ -60,7 +60,7 @@ Transition sur plusieurs mois qui nous permettra de changer de revenir en arriè
 2. [x] double publication d'événements sur [Mobilizon] et Meetup
 3. [x] promotion des événements [Mobilizon] depuis les événements Meetup
 4. [ ] obligation de passer par [Mobilizon] pour s'inscrire
-5. [ ] arret des publications sur Meetup et arret du paiement
+5. [ ] arrêt des publications sur Meetup et arrêt du paiement
 
 [Mobilizon]: https://mobilizon.fr/@dojo_de_programmation_paris/events
 [kata]: https://web.archive.org/web/20040423023001/http://www.pragprog.com/pragdave/Practices/CodeKata.rdoc
