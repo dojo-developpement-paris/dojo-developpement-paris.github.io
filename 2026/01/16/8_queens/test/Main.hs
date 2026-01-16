@@ -17,6 +17,8 @@ main =
                 it "elementary 2 queens" $ do
                     solution 2 8 `shouldBe` [('A', 1), ('B', 3)]
 
+-- solution 2 8 `shouldBe` [('B', 3), ('C', 5)]
+
 type MaxQueens = Integer
 type Size = Integer
 type Row = Integer
