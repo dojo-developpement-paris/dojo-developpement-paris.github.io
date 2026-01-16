@@ -32,6 +32,5 @@ type Proposal = [Queen]
 isSolution :: Proposal -> Bool
 isSolution [(columnA, _), (columnB, _)] | columnA == columnB = False -- column
 isSolution [(_, rowX), (_, rowY)] | rowX == rowY = False -- line
-isSolution [('A', 1), ('H', 8)] = False
-isSolution [(columnA, rowX), (columnB, rowY)] | abs (ord columnA - ord columnB) == 1 && abs (rowX - rowY) <= 1 = False -- diagonal adjacent
+isSolution [(columnA, rowX), (columnB, rowY)] | abs (ord columnA - ord columnB) == abs (rowX - rowY) = False -- diagonal adjacent
 isSolution _ = True
