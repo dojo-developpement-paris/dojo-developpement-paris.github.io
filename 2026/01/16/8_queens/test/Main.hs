@@ -20,6 +20,7 @@ main =
                 it "diagonal adjacent" $ do
                     isSolution [('A', 1), ('B', 2)] `shouldBe` False
                     isSolution [('A', 2), ('B', 1)] `shouldBe` False
+                    isSolution [('B', 1), ('A', 2)] `shouldBe` False
 
 type Row = Integer
 type File = Char
@@ -29,5 +30,6 @@ type Proposal = [Queen]
 isSolution :: Proposal -> Bool
 isSolution [(columnA, _), (columnB, _)] | columnA == columnB = False -- column
 isSolution [(_, rowX), (_, rowY)] | rowX == rowY = False -- line
+isSolution [(columnA, rowX), (columnB, rowY)] | columnA == succ columnB && abs (rowX - rowY) <= 1 = False -- diagonal adjacent
 isSolution [(columnA, rowX), (columnB, rowY)] | columnB == succ columnA && abs (rowX - rowY) <= 1 = False -- diagonal adjacent
 isSolution _ = True
