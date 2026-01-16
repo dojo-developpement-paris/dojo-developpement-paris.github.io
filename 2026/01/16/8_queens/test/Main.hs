@@ -28,4 +28,5 @@ solution :: MaxQueens -> Size -> [(File, Row)]
 solution 2 8 = [('A', 1), ('B', 3)]
 solution _ _ = [('A', 1)]
 
+isSolution :: [(File, Row)] -> Bool
 isSolution [('A', 1), ('B', 3)] = True
