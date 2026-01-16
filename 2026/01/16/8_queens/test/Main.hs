@@ -14,9 +14,10 @@ main =
                     let normalSize = 8
                     solution maxQueen normalSize `shouldBe` ('A', 1)
 
+type MaxQueens = Integer
 type Size = Integer
 type Row = Integer
 type File = Char
 
-solution :: Integer -> Size -> (File, Row)
+solution :: MaxQueens -> Size -> (File, Row)
 solution _ _ = ('A', 1)
