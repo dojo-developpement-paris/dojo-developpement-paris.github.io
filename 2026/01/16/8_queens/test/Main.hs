@@ -28,6 +28,6 @@ type Proposal = [Queen]
 
 isSolution :: Proposal -> Bool
 isSolution [(columnA, _), (columnB, _)] | columnA == columnB = False -- column
-isSolution [(_, x), (_, y)] | x == y = False -- line
-isSolution [(columnA, x), (columnB, y)] | columnB == succ columnA && abs (x - y) <= 1 = False -- diagonal adjacent
+isSolution [(_, rowX), (_, rowY)] | rowX == rowY = False -- line
+isSolution [(columnA, rowX), (columnB, rowY)] | columnB == succ columnA && abs (rowX - rowY) <= 1 = False -- diagonal adjacent
 isSolution _ = True
