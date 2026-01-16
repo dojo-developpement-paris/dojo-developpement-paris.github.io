@@ -1,5 +1,6 @@
 module Main (main) where
 
+import Data.Char (ord)
 import Test.Hspec
 
 main :: IO ()
