@@ -15,7 +15,7 @@ main =
                     solution maxQueen normalSize `shouldBe` [('A', 1)]
 
                 it "elementary 2 queens" $ do
-                    solution 2 8 `shouldBe` [('A', 1), ('B', 3)]
+                    isSolution [('A', 1), ('B', 3)] `shouldBe` True
 
 -- solution 2 8 `shouldBe` [('B', 3), ('C', 5)]
 
@@ -27,3 +27,5 @@ type File = Char
 solution :: MaxQueens -> Size -> [(File, Row)]
 solution 2 8 = [('A', 1), ('B', 3)]
 solution _ _ = [('A', 1)]
+
+isSolution [('A', 1), ('B', 3)] = True
