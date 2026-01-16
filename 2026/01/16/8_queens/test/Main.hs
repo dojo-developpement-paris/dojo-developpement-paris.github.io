@@ -24,7 +24,7 @@ type Proposal = [Queen]
 isSolution :: Proposal -> Bool
 isSolution [_] = True
 isSolution [(_, x), (_, y)] | x == y = False
-isSolution [(_, x), (_, y)] | y == x + 1 = False
+isSolution [(a, x), (b, y)] | b == succ a && y == x + 1 = False
 isSolution [('A', 1), ('B', 4)] = True
 isSolution [('A', 1), ('B', 3)] = True
 isSolution _ = False
