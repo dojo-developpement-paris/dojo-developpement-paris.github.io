@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+set -o errexit
+
+# uncomment this to enable git-time-keeper with git-gamble
+# if command -v git-time-keeper >/dev/null && [ -n "${TIME_KEEPER_MAXIMUM_ITERATION_DURATION+empty}" ]; then
+#     git-time-keeper 'start' 'git-gamble --pass'
+# fi
