@@ -16,6 +16,7 @@ main =
 
                 it "elementary 2 queens" $ do
                     isSolution [('A', 1), ('B', 3)] `shouldBe` True
+                    isSolution [('A', 1), ('B', 2)] `shouldBe` False
 
 -- solution 2 8 `shouldBe` [('B', 3), ('C', 5)]
 
@@ -30,3 +31,4 @@ solution _ _ = [('A', 1)]
 
 isSolution :: [(File, Row)] -> Bool
 isSolution [('A', 1), ('B', 3)] = True
+isSolution _ = False
