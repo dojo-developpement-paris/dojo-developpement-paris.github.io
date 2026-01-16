@@ -17,6 +17,8 @@ main =
                 it "same line" $ do
                     isSolution [('A', 1), ('B', 1)] `shouldBe` False
                     isSolution [('A', 2), ('B', 2)] `shouldBe` False
+                it "same column" $ do
+                    isSolution [('A', 1), ('A', 2)] `shouldBe` False
 
 type Row = Integer
 type File = Char
@@ -24,6 +26,7 @@ type Queen = (File, Row)
 type Proposal = [Queen]
 
 isSolution :: Proposal -> Bool
+isSolution [(a, _), (b, _)] | a == b = False
 isSolution [(_, x), (_, y)] | x == y = False
 isSolution [(a, x), (b, y)] | b == succ a && y == x + 1 = False
 isSolution _ = True
