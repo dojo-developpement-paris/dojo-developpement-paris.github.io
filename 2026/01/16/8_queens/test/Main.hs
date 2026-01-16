@@ -24,7 +24,7 @@ main =
                     isSolution [('B', 1), ('A', 2)] `shouldBe` False
                     isSolution [('A', 1), ('H', 8)] `shouldBe` False
 
-type Row = Integer
+type Row = Int
 type File = Char
 type Queen = (File, Row)
 type Proposal = [Queen]
