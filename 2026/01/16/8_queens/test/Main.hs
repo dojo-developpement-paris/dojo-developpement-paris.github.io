@@ -20,7 +20,7 @@ type Queen = (File, Row)
 type Proposal = [Queen]
 
 isSolution :: Proposal -> Bool
-isSolution [('A', 1)] = True
+isSolution [_] = True
 isSolution [('A', 1), ('B', 4)] = True
 isSolution [('A', 1), ('B', 3)] = True
 isSolution _ = False
