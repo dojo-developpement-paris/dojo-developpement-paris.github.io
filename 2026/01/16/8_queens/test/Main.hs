@@ -24,7 +24,6 @@ type Queen = (File, Row)
 type Proposal = [Queen]
 
 isSolution :: Proposal -> Bool
-isSolution [_] = True
 isSolution [(_, x), (_, y)] | x == y = False
 isSolution [(a, x), (b, y)] | b == succ a && y == x + 1 = False
 isSolution _ = True
