@@ -13,6 +13,7 @@ main =
                     isSolution [('A', 1), ('B', 3)] `shouldBe` True
                     isSolution [('A', 1), ('B', 2)] `shouldBe` False
                     isSolution [('A', 1), ('B', 4)] `shouldBe` True
+                    isSolution [('A', 1), ('B', 1)] `shouldBe` False
 
 type Row = Integer
 type File = Char
