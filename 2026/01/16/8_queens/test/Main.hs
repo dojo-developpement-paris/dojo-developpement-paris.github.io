@@ -10,14 +10,17 @@ main =
                 it "elementary" $ do
                     let maxQueen = 1
                     let trivialSize = 1
-                    solution maxQueen trivialSize `shouldBe` ('A', 1)
+                    solution maxQueen trivialSize `shouldBe` [('A', 1)]
                     let normalSize = 8
-                    solution maxQueen normalSize `shouldBe` ('A', 1)
+                    solution maxQueen normalSize `shouldBe` [('A', 1)]
+
+-- it "elementary 2 queens" $ do
+--     solution 2 8 `shouldBe` ('A', 1) ('B', 3)
 
 type MaxQueens = Integer
 type Size = Integer
 type Row = Integer
 type File = Char
 
-solution :: MaxQueens -> Size -> (File, Row)
-solution _ _ = ('A', 1)
+solution :: MaxQueens -> Size -> [(File, Row)]
+solution _ _ = [('A', 1)]
