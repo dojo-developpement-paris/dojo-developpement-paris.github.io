@@ -14,8 +14,9 @@ main =
 
 type Row = Integer
 type File = Char
+type Queen = (File, Row)
 
-isSolution :: [(File, Row)] -> Bool
+isSolution :: [Queen] -> Bool
 isSolution [('A', 1), ('B', 4)] = True
 isSolution [('A', 1), ('B', 3)] = True
 isSolution _ = False
