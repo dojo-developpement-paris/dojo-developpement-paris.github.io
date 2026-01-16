@@ -11,8 +11,10 @@ main =
                     isSolution [('A', 1)] `shouldBe` True
                 it "elementary 2 queens" $ do
                     isSolution [('A', 1), ('B', 3)] `shouldBe` True
-                    isSolution [('A', 1), ('B', 2)] `shouldBe` False
                     isSolution [('A', 1), ('B', 4)] `shouldBe` True
+                it "diagonal adjacent" $ do
+                    isSolution [('A', 1), ('B', 2)] `shouldBe` False
+                it "same line" $ do
                     isSolution [('A', 1), ('B', 1)] `shouldBe` False
                     isSolution [('A', 2), ('B', 2)] `shouldBe` False
 
