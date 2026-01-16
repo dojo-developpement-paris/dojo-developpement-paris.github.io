@@ -27,7 +27,7 @@ type Queen = (File, Row)
 type Proposal = [Queen]
 
 isSolution :: Proposal -> Bool
-isSolution [(a, _), (b, _)] | a == b = False
-isSolution [(_, x), (_, y)] | x == y = False
-isSolution [(a, x), (b, y)] | b == succ a && abs (x - y) <= 1 = False
+isSolution [(columnA, _), (columnB, _)] | columnA == columnB = False -- column
+isSolution [(_, x), (_, y)] | x == y = False -- line
+isSolution [(columnA, x), (columnB, y)] | columnB == succ columnA && abs (x - y) <= 1 = False -- diagonal adjacent
 isSolution _ = True
