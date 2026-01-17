@@ -23,9 +23,9 @@ Le but n'est **pas de finir**
 ## Modes de fonctionnement habituels
 - Mob : 1 typist + les autres naviguent
 - Mob [strong-style] tournant : les mobbers donnent des idées 💡 le navigator décide 🔀 le driver tape ⌨️, on change les roles toutes les X minutes [mobtime]
+- Fishbowl : [Définition fishbowl] pareil ⬆️ en remplaçant le timer par des chaises 🪑🪑
 - Randori : chaque personne prend le clavier pendant 5 minutes
 - Demo : 1 personne fait une démo sur un [kata] (exercice de programmation) + les autres donnent du feedback
-- Fishbowl : [Définition fishbowl]
 
 ## Contraintes
 - TDD: [Test Driven Development] ; nous faisons du TDD par défaut ; ce n'est pas une obligation
