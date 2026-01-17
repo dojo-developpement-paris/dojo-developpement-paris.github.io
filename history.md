@@ -108,6 +108,8 @@ The dojo has been hosted by a number of companies, including :
 * Arolla
 * CodeWorks
 * Enercoop
+* Proxym
+* Shodo
 
 A wide range of languages were practised at the dojo,
 with many sessions taking place in :
