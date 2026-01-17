@@ -16,9 +16,9 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 ## Sujets
-- 0 - A - 
-- 0 - B - 
-- 0 - C - 
+- 0 - A -  -  -  - 
+- 0 - B -  -  -  - 
+- 0 -  -  -  -  - 
 
 ## Modes de fonctionnement habituels
 - Mob : 1 typist + les autres naviguent
