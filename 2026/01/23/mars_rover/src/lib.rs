@@ -26,8 +26,7 @@ pub fn nouvelle_position(instructions: Vec<Instruction>, position: Position) -> 
         None => position,
         Some(&Instruction::Droite) => Position {
             orientation: Orientation::Est,
-            x: 2,
-            y: 1,
+            ..position
         },
         _ => Position {
             y: position.y + instructions.len(),
