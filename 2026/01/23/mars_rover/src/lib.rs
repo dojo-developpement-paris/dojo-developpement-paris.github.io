@@ -14,8 +14,8 @@ pub struct Position {
 pub fn nouvelle_position(instructions: Vec<Instruction>, position_initiale: Position) -> Position {
     if instructions.len() == 1 {
         Position {
-            x: position_initiale.x,
             y: position_initiale.y + 1,
+            ..position_initiale
         }
     } else {
         position_initiale
