@@ -22,9 +22,8 @@ pub struct Rover {
 }
 
 pub fn nouvelle_position(instructions: Vec<Instruction>, rover: Rover) -> Rover {
-    instructions
-        .iter()
-        .fold(rover, |rover, instruction| match instruction {
+    fn fun_name(rover: Rover, instruction: &Instruction) -> Rover {
+        match instruction {
             Instruction::Droite => Rover {
                 orientation: Orientation::Est,
                 ..rover
@@ -34,7 +33,9 @@ pub fn nouvelle_position(instructions: Vec<Instruction>, rover: Rover) -> Rover 
                 ..rover
             },
             _ => todo!(),
-        })
+        }
+    }
+    instructions.iter().fold(rover, fun_name)
 }
 
 #[cfg(test)]
