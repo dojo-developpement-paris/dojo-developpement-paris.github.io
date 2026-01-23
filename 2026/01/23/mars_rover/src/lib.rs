@@ -22,13 +22,14 @@ pub struct Position {
 }
 
 pub fn nouvelle_position(instructions: Vec<Instruction>, position_initiale: Position) -> Position {
-    match instructions.first() == Some(&Instruction::Droite) {
-        true => Position {
+    match instructions.first() {
+        None => position_initiale,
+        Some(&Instruction::Droite) => Position {
             orientation: Orientation::Est,
             x: 2,
             y: 1,
         },
-        false => Position {
+        _ => Position {
             y: position_initiale.y + instructions.len(),
             ..position_initiale
         },
