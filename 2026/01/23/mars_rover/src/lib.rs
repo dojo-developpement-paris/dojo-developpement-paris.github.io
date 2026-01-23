@@ -15,20 +15,20 @@ pub enum Orientation {
 }
 
 #[derive(Debug, PartialEq)]
-pub struct Position {
+pub struct Rover {
     x: isize,
     y: usize,
     orientation: Orientation,
 }
 
-pub fn nouvelle_position(instructions: Vec<Instruction>, rover: Position) -> Position {
+pub fn nouvelle_position(instructions: Vec<Instruction>, rover: Rover) -> Rover {
     match instructions.first() {
         None => rover,
-        Some(&Instruction::Droite) => Position {
+        Some(&Instruction::Droite) => Rover {
             orientation: Orientation::Est,
             ..rover
         },
-        _ => Position {
+        _ => Rover {
             y: rover.y + instructions.len(),
             ..rover
         },
@@ -46,12 +46,12 @@ mod mars_rover {
         #[test]
         fn position_initiale() {
             let instructions = vec![];
-            let position_initiale = Position {
+            let position_initiale = Rover {
                 orientation: Orientation::Nord,
                 x: 0,
                 y: 0,
             };
-            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Rover {
                 orientation: Orientation::Nord,
                 x: 0,
                 y: 0,
@@ -61,12 +61,12 @@ mod mars_rover {
         #[test]
         fn position_secondaire() {
             let instructions = vec![];
-            let position_initiale = Position {
+            let position_initiale = Rover {
                 orientation: Orientation::Nord,
                 x: 0,
                 y: 1,
             };
-            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Rover {
                 orientation: Orientation::Nord,
                 x: 0,
                 y: 1,
@@ -80,12 +80,12 @@ mod mars_rover {
         #[test]
         fn premier_pas() {
             let instructions = vec![Instruction::Avance];
-            let position_initiale = Position {
+            let position_initiale = Rover {
                 orientation: Orientation::Nord,
                 x: 0,
                 y: 0,
             };
-            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Rover {
                 orientation: Orientation::Nord,
                 x: 0,
                 y: 1,
@@ -95,12 +95,12 @@ mod mars_rover {
         #[test]
         fn second_pas() {
             let instructions = vec![Instruction::Avance];
-            let position_initiale = Position {
+            let position_initiale = Rover {
                 orientation: Orientation::Nord,
                 x: 0,
                 y: 1,
             };
-            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Rover {
                 orientation: Orientation::Nord,
                 x: 0,
                 y: 2,
@@ -110,12 +110,12 @@ mod mars_rover {
         #[test]
         fn autre_second_pas() {
             let instructions = vec![Instruction::Avance];
-            let position_initiale = Position {
+            let position_initiale = Rover {
                 orientation: Orientation::Nord,
                 x: 2,
                 y: 1,
             };
-            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Rover {
                 orientation: Orientation::Nord,
                 x: 2,
                 y: 2,
@@ -125,12 +125,12 @@ mod mars_rover {
         #[test]
         fn grand_pas() {
             let instructions = vec![Instruction::Avance, Instruction::Avance];
-            let position_initiale = Position {
+            let position_initiale = Rover {
                 orientation: Orientation::Nord,
                 x: 2,
                 y: 1,
             };
-            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Rover {
                 orientation: Orientation::Nord,
                 x: 2,
                 y: 3,
@@ -144,12 +144,12 @@ mod mars_rover {
         #[test]
         fn droite() {
             let instructions = vec![Instruction::Droite];
-            let position_initiale = Position {
+            let position_initiale = Rover {
                 orientation: Orientation::Nord,
                 x: 2,
                 y: 1,
             };
-            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Rover {
                 orientation: Orientation::Est,
                 x: 2,
                 y: 1,
