@@ -12,7 +12,12 @@ pub struct Position {
 }
 
 pub fn nouvelle_position(instructions: Vec<Instruction>, position_initiale: Position) -> Position {
-    if instructions.len() == 1 {
+    if instructions.len() == 2 {
+        Position {
+            y: position_initiale.y + 2,
+            ..position_initiale
+        }
+    } else if instructions.len() == 1 {
         Position {
             y: position_initiale.y + 1,
             ..position_initiale
@@ -72,6 +77,14 @@ mod mars_rover {
             let position_initiale = Position { x: 2, y: 1 };
             assert_that(&nouvelle_position(instructions, position_initiale))
                 .is_equal_to(Position { x: 2, y: 2 })
+        }
+
+        #[test]
+        fn grand_pas() {
+            let instructions = vec![Instruction::Avance, Instruction::Avance];
+            let position_initiale = Position { x: 2, y: 1 };
+            assert_that(&nouvelle_position(instructions, position_initiale))
+                .is_equal_to(Position { x: 2, y: 3 })
         }
     }
 }
