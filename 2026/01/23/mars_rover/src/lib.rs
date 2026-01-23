@@ -1,8 +1,8 @@
 pub fn nouvelle_position(
     _instructions: Vec<bool>,
-    _position_initiale: (isize, isize),
+    position_initiale: (isize, isize),
 ) -> (isize, isize) {
-    (0, 0)
+    position_initiale
 }
 
 #[cfg(test)]
@@ -10,11 +10,23 @@ mod mars_rover {
     use super::*;
     use speculoos::*;
 
-    #[test]
-    fn stationnaire() {
-        let instructions = vec![];
-        let position_initiale = (0, 0);
-        assert_that(&nouvelle_position(instructions, position_initiale))
-            .is_equal_to(position_initiale)
+    mod stationnaire {
+        use super::*;
+
+        #[test]
+        fn position_initiale() {
+            let instructions = vec![];
+            let position_initiale = (0, 0);
+            assert_that(&nouvelle_position(instructions, position_initiale))
+                .is_equal_to(position_initiale)
+        }
+
+        #[test]
+        fn position_secondaire() {
+            let instructions = vec![];
+            let position_initiale = (0, 1);
+            assert_that(&nouvelle_position(instructions, position_initiale))
+                .is_equal_to(position_initiale)
+        }
     }
 }
