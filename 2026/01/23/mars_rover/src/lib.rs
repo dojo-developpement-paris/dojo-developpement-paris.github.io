@@ -8,22 +8,13 @@ pub enum Instruction {
 #[derive(Debug, PartialEq)]
 pub struct Position {
     x: isize,
-    y: isize,
+    y: usize,
 }
 
 pub fn nouvelle_position(instructions: Vec<Instruction>, position_initiale: Position) -> Position {
-    if instructions.len() == 2 {
-        Position {
-            y: position_initiale.y + 2,
-            ..position_initiale
-        }
-    } else if instructions.len() == 1 {
-        Position {
-            y: position_initiale.y + 1,
-            ..position_initiale
-        }
-    } else {
-        position_initiale
+    Position {
+        y: position_initiale.y + instructions.len(),
+        ..position_initiale
     }
 }
 
