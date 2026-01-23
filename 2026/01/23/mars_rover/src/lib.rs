@@ -1,7 +1,6 @@
-pub fn nouvelle_position(
-    _instructions: Vec<bool>,
-    position_initiale: (isize, isize),
-) -> (isize, isize) {
+type Position = (isize, isize);
+
+pub fn nouvelle_position(_instructions: Vec<bool>, position_initiale: Position ) -> Position {
     position_initiale
 }
 
