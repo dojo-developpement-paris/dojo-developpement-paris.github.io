@@ -22,7 +22,7 @@ pub struct Position {
 }
 
 pub fn nouvelle_position(instructions: Vec<Instruction>, position_initiale: Position) -> Position {
-    if instructions.contains(&Instruction::Droite) {
+    if instructions.first() == Some(&Instruction::Droite) {
         Position {
             orientation: Orientation::Est,
             x: 2,
