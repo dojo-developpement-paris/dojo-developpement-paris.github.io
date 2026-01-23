@@ -1,4 +1,4 @@
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub enum Instruction {
     Avance,
     Recule,
@@ -24,14 +24,29 @@ pub struct Rover {
 pub fn nouvelle_position(instructions: Vec<Instruction>, rover: Rover) -> Rover {
     match instructions.first() {
         None => rover,
-        Some(&Instruction::Droite) => Rover {
-            orientation: Orientation::Est,
-            ..rover
-        },
-        _ => Rover {
-            y: rover.y + instructions.len(),
-            ..rover
-        },
+        Some(&Instruction::Droite) => {
+            let mut instruction_sauf_la_première = instructions.clone();
+            instruction_sauf_la_première.pop().expect("oups");
+            nouvelle_position(
+                instruction_sauf_la_première,
+                Rover {
+                    orientation: Orientation::Est,
+                    ..rover
+                },
+            )
+        }
+        Some(&Instruction::Avance) => {
+            let mut toto = instructions.clone();
+            toto.pop().expect("oups");
+            nouvelle_position(
+                toto,
+                Rover {
+                    y: rover.y + 1,
+                    ..rover
+                },
+            )
+        }
+        _ => todo!(),
     }
 }
 
