@@ -6,9 +6,18 @@ pub enum Instruction {
 }
 
 #[derive(Debug, PartialEq)]
+pub enum Orientation {
+    Nord,
+    Est,
+    Sud,
+    Ouest,
+}
+
+#[derive(Debug, PartialEq)]
 pub struct Position {
     x: isize,
     y: usize,
+    orientation: Orientation,
 }
 
 pub fn nouvelle_position(instructions: Vec<Instruction>, position_initiale: Position) -> Position {
@@ -29,17 +38,31 @@ mod mars_rover {
         #[test]
         fn position_initiale() {
             let instructions = vec![];
-            let position_initiale = Position { x: 0, y: 0 };
-            assert_that(&nouvelle_position(instructions, position_initiale))
-                .is_equal_to(Position { x: 0, y: 0 })
+            let position_initiale = Position {
+                orientation: Orientation::Nord,
+                x: 0,
+                y: 0,
+            };
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+                orientation: Orientation::Nord,
+                x: 0,
+                y: 0,
+            })
         }
 
         #[test]
         fn position_secondaire() {
             let instructions = vec![];
-            let position_initiale = Position { x: 0, y: 1 };
-            assert_that(&nouvelle_position(instructions, position_initiale))
-                .is_equal_to(Position { x: 0, y: 1 })
+            let position_initiale = Position {
+                orientation: Orientation::Nord,
+                x: 0,
+                y: 1,
+            };
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+                orientation: Orientation::Nord,
+                x: 0,
+                y: 1,
+            })
         }
     }
 
@@ -49,33 +72,61 @@ mod mars_rover {
         #[test]
         fn premier_pas() {
             let instructions = vec![Instruction::Avance];
-            let position_initiale = Position { x: 0, y: 0 };
-            assert_that(&nouvelle_position(instructions, position_initiale))
-                .is_equal_to(Position { x: 0, y: 1 })
+            let position_initiale = Position {
+                orientation: Orientation::Nord,
+                x: 0,
+                y: 0,
+            };
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+                orientation: Orientation::Nord,
+                x: 0,
+                y: 1,
+            })
         }
 
         #[test]
         fn second_pas() {
             let instructions = vec![Instruction::Avance];
-            let position_initiale = Position { x: 0, y: 1 };
-            assert_that(&nouvelle_position(instructions, position_initiale))
-                .is_equal_to(Position { x: 0, y: 2 })
+            let position_initiale = Position {
+                orientation: Orientation::Nord,
+                x: 0,
+                y: 1,
+            };
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+                orientation: Orientation::Nord,
+                x: 0,
+                y: 2,
+            })
         }
 
         #[test]
         fn autre_second_pas() {
             let instructions = vec![Instruction::Avance];
-            let position_initiale = Position { x: 2, y: 1 };
-            assert_that(&nouvelle_position(instructions, position_initiale))
-                .is_equal_to(Position { x: 2, y: 2 })
+            let position_initiale = Position {
+                orientation: Orientation::Nord,
+                x: 2,
+                y: 1,
+            };
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+                orientation: Orientation::Nord,
+                x: 2,
+                y: 2,
+            })
         }
 
         #[test]
         fn grand_pas() {
             let instructions = vec![Instruction::Avance, Instruction::Avance];
-            let position_initiale = Position { x: 2, y: 1 };
-            assert_that(&nouvelle_position(instructions, position_initiale))
-                .is_equal_to(Position { x: 2, y: 3 })
+            let position_initiale = Position {
+                orientation: Orientation::Nord,
+                x: 2,
+                y: 1,
+            };
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+                orientation: Orientation::Nord,
+                x: 2,
+                y: 3,
+            })
         }
     }
 }
