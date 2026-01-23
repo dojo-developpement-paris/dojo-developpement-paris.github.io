@@ -21,21 +21,22 @@ pub struct Rover {
     orientation: Orientation,
 }
 
-pub fn nouvelle_position(instructions: Vec<Instruction>, rover: Rover) -> Rover {
-    fn fun_name(rover: Rover, instruction: &Instruction) -> Rover {
-        match instruction {
-            Instruction::Droite => Rover {
-                orientation: Orientation::Est,
-                ..rover
-            },
-            Instruction::Avance => Rover {
-                y: rover.y + 1,
-                ..rover
-            },
-            _ => todo!(),
-        }
+fn applique_1_instruction(rover: Rover, instruction: &Instruction) -> Rover {
+    match instruction {
+        Instruction::Droite => Rover {
+            orientation: Orientation::Est,
+            ..rover
+        },
+        Instruction::Avance => Rover {
+            y: rover.y + 1,
+            ..rover
+        },
+        _ => todo!(),
     }
-    instructions.iter().fold(rover, fun_name)
+}
+
+pub fn nouvelle_position(instructions: Vec<Instruction>, rover: Rover) -> Rover {
+    instructions.iter().fold(rover, applique_1_instruction)
 }
 
 #[cfg(test)]
