@@ -22,32 +22,19 @@ pub struct Rover {
 }
 
 pub fn nouvelle_position(instructions: Vec<Instruction>, rover: Rover) -> Rover {
-    match instructions.first() {
-        None => rover,
-        Some(&Instruction::Droite) => {
-            let mut instruction_sauf_la_première = instructions.clone();
-            instruction_sauf_la_première.pop().expect("oups");
-            nouvelle_position(
-                instruction_sauf_la_première,
-                Rover {
-                    orientation: Orientation::Est,
-                    ..rover
-                },
-            )
-        }
-        Some(&Instruction::Avance) => {
-            let mut toto = instructions.clone();
-            toto.pop().expect("oups");
-            nouvelle_position(
-                toto,
-                Rover {
-                    y: rover.y + 1,
-                    ..rover
-                },
-            )
-        }
-        _ => todo!(),
-    }
+    instructions
+        .iter()
+        .fold(rover, |rover, instruction| match instruction {
+            Instruction::Droite => Rover {
+                orientation: Orientation::Est,
+                ..rover
+            },
+            Instruction::Avance => Rover {
+                y: rover.y + 1,
+                ..rover
+            },
+            _ => todo!(),
+        })
 }
 
 #[cfg(test)]
