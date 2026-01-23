@@ -9,7 +9,7 @@ type Position = (isize, isize);
 
 pub fn nouvelle_position(instructions: Vec<Instruction>, position_initiale: Position) -> Position {
     if instructions.len() == 1 {
-        (0, 1)
+        (0, position_initiale.1 + 1)
     } else {
         position_initiale
     }
@@ -48,6 +48,13 @@ mod mars_rover {
             let instructions = vec![Instruction::Avance];
             let position_initiale = (0, 0);
             assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to((0, 1))
+        }
+
+        #[test]
+        fn second_pas() {
+            let instructions = vec![Instruction::Avance];
+            let position_initiale = (0, 1);
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to((0, 2))
         }
     }
 }
