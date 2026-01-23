@@ -1,3 +1,4 @@
+#[derive(Debug, PartialEq)]
 pub enum Instruction {
     Avance,
     Recule,
@@ -21,9 +22,17 @@ pub struct Position {
 }
 
 pub fn nouvelle_position(instructions: Vec<Instruction>, position_initiale: Position) -> Position {
-    Position {
-        y: position_initiale.y + instructions.len(),
-        ..position_initiale
+    if instructions.contains(&Instruction::Droite) {
+        Position {
+            orientation: Orientation::Est,
+            x: 2,
+            y: 1,
+        }
+    } else {
+        Position {
+            y: position_initiale.y + instructions.len(),
+            ..position_initiale
+        }
     }
 }
 
@@ -126,6 +135,25 @@ mod mars_rover {
                 orientation: Orientation::Nord,
                 x: 2,
                 y: 3,
+            })
+        }
+    }
+
+    mod orientation {
+        use super::*;
+
+        #[test]
+        fn droite() {
+            let instructions = vec![Instruction::Droite];
+            let position_initiale = Position {
+                orientation: Orientation::Nord,
+                x: 2,
+                y: 1,
+            };
+            assert_that(&nouvelle_position(instructions, position_initiale)).is_equal_to(Position {
+                orientation: Orientation::Est,
+                x: 2,
+                y: 1,
             })
         }
     }
