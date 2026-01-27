@@ -28,7 +28,7 @@ Le but n'est **pas de finir**
 - 0 - B - TDD - Rust - le bowling kata -
 - 0 - C - TDD - Java - le mars rover - appliquer les principes solides
 - 0 - D - TDD - Java - le jeux de la vie  - TDD double boucle
-- 0 - E - TDD - Python - Vérificateur de motus -
+- 8 - E - TDD - Python - Vérificateur de motus -
 
 ## Modes de fonctionnement habituels
 - Mob : 1 typist + les autres naviguent
