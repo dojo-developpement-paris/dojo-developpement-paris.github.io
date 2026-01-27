@@ -1,0 +1,27 @@
+from enum import Enum
+from collections import Counter
+
+
+class Color(Enum):
+    TRANSPARENT = 0
+    ROUGE = 1
+    JAUNE = 2
+
+
+def motus(reference: str, tentative: str) -> list[Color]:
+    resultat = [Color.TRANSPARENT] * len(reference)
+    restes = Counter(reference)
+
+    # 1) Lettres bien placées (ROUGE)
+    for i, (ref, tent) in enumerate(zip(reference, tentative)):
+        if ref == tent:
+            resultat[i] = Color.ROUGE
+            restes[tent] -= 1
+
+    # 2) Lettres mal placées (JAUNE)
+    for i, tent in enumerate(tentative):
+        if resultat[i] == Color.TRANSPARENT and restes[tent] > 0:
+            resultat[i] = Color.JAUNE
+            restes[tent] -= 1
+
+    return resultat
