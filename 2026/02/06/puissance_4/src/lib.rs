@@ -24,24 +24,27 @@ mod test {
     use super::*;
     use speculoos::*;
 
-    #[test]
-    fn grille_vide_c_est_jaune_qui_demarre() {
-        assert_that(&arbitre(vec![])).is_equal_to(État::JauneJoue)
-    }
+    mod alternance_des_joueurs {
+        use super::*;
+        #[test]
+        fn grille_vide_c_est_jaune_qui_demarre() {
+            assert_that(&arbitre(vec![])).is_equal_to(État::JauneJoue)
+        }
 
-    #[test]
-    fn rouge_joue_en_deuxieme() {
-        assert_that(&arbitre(vec![ColonneJouée::Colonne1])).is_equal_to(État::RougeJoue)
-    }
+        #[test]
+        fn rouge_joue_en_deuxieme() {
+            assert_that(&arbitre(vec![ColonneJouée::Colonne1])).is_equal_to(État::RougeJoue)
+        }
 
-    #[test]
-    fn rouge_joue_en_quatrieme() {
-        assert_that(&arbitre(vec![
-            ColonneJouée::Colonne1,
-            ColonneJouée::Colonne1,
-            ColonneJouée::Colonne1,
-        ]))
-        .is_equal_to(État::RougeJoue)
+        #[test]
+        fn rouge_joue_en_quatrieme() {
+            assert_that(&arbitre(vec![
+                ColonneJouée::Colonne1,
+                ColonneJouée::Colonne1,
+                ColonneJouée::Colonne1,
+            ]))
+            .is_equal_to(État::RougeJoue)
+        }
     }
 }
 
