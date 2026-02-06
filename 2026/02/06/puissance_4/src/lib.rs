@@ -4,8 +4,12 @@ pub enum État {
     RougeJoue,
 }
 
+pub enum ColonneJouée {
+    Colonne1,
+}
+
 // colone notée de 1 à 7
-type HistoriqueDeJeu = Vec<u8>;
+type HistoriqueDeJeu = Vec<ColonneJouée>;
 
 pub fn arbitre(partie: HistoriqueDeJeu) -> État {
     if partie.len() == 1 {
@@ -27,7 +31,7 @@ mod test {
 
     #[test]
     fn rouge_joue_en_deuxieme() {
-        assert_that(&arbitre(vec![1])).is_equal_to(État::RougeJoue)
+        assert_that(&arbitre(vec![ColonneJouée::Colonne1])).is_equal_to(État::RougeJoue)
     }
 }
 
