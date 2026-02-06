@@ -5,10 +5,10 @@ pub enum État {
 }
 
 // colone notée de 1 à 7
-type Grille = Vec<u8>;
+type HistoriqueDeJeu = Vec<u8>;
 
-pub fn arbitre(crepe: Grille) -> État {
-    if crepe.len() == 1 {
+pub fn arbitre(partie: HistoriqueDeJeu) -> État {
+    if partie.len() == 1 {
         État::RougeJoue
     } else {
         État::JauneJoue
