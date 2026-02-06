@@ -22,14 +22,12 @@ mod test {
 
     #[test]
     fn grille_vide() {
-        let grille = vec![];
-        assert_that(&arbitre(grille)).is_equal_to(État::JauneJoue)
+        assert_that(&arbitre(vec![])).is_equal_to(État::JauneJoue)
     }
 
     #[test]
     fn grille_premier_jeton_jaune() {
-        let grille = vec![1];
-        assert_that(&arbitre(grille)).is_equal_to(État::RougeJoue)
+        assert_that(&arbitre(vec![1])).is_equal_to(État::RougeJoue)
     }
 }
 
