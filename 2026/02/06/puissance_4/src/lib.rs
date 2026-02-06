@@ -21,12 +21,12 @@ mod test {
     use speculoos::*;
 
     #[test]
-    fn grille_vide() {
+    fn grille_vide_c_est_jaune_qui_demarre() {
         assert_that(&arbitre(vec![])).is_equal_to(État::JauneJoue)
     }
 
     #[test]
-    fn grille_premier_jeton_jaune() {
+    fn rouge_joue_en_deuxieme() {
         assert_that(&arbitre(vec![1])).is_equal_to(État::RougeJoue)
     }
 }
