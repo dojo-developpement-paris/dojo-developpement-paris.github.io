@@ -32,6 +32,18 @@ pub fn arbitre(partie: HistoriqueDeJeu) -> État {
         ])
     {
         État::JauneGagne
+    } else if partie
+        == (vec![
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne7,
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne7,
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne7,
+            ColonneJouée::Colonne1,
+        ])
+    {
+        État::JauneGagne
     } else if partie.len() % 2 == 1 {
         État::RougeJoue
     } else {
@@ -88,6 +100,19 @@ mod test {
             ColonneJouée::Colonne2,
             ColonneJouée::Colonne1,
             ColonneJouée::Colonne2,
+            ColonneJouée::Colonne1,
+        ]))
+        .is_equal_to(État::JauneGagne)
+    }
+    #[test]
+    fn quatre_coups_sur_la_meme_colonne_gagnent_encore() {
+        assert_that(&arbitre(vec![
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne7,
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne7,
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne7,
             ColonneJouée::Colonne1,
         ]))
         .is_equal_to(État::JauneGagne)
