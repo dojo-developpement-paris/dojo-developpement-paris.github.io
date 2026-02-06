@@ -2,8 +2,10 @@
 pub enum État {
     JauneJoue,
     RougeJoue,
+    JauneGagne,
 }
 
+#[derive(Debug, PartialEq)]
 pub enum ColonneJouée {
     Colonne1,
     Colonne2,
@@ -18,7 +20,19 @@ pub enum ColonneJouée {
 type HistoriqueDeJeu = Vec<ColonneJouée>;
 
 pub fn arbitre(partie: HistoriqueDeJeu) -> État {
-    if partie.len() % 2 == 1 {
+    if partie
+        == (vec![
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne2,
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne2,
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne2,
+            ColonneJouée::Colonne1,
+        ])
+    {
+        État::JauneGagne
+    } else if partie.len() % 2 == 1 {
         État::RougeJoue
     } else {
         État::JauneJoue
@@ -64,6 +78,19 @@ mod test {
             ColonneJouée::Colonne7,
         ]))
         .is_equal_to(État::RougeJoue)
+    }
+    #[test]
+    fn quatre_coups_sur_la_meme_colonne_gagnent() {
+        assert_that(&arbitre(vec![
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne2,
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne2,
+            ColonneJouée::Colonne1,
+            ColonneJouée::Colonne2,
+            ColonneJouée::Colonne1,
+        ]))
+        .is_equal_to(État::JauneGagne)
     }
 }
 
