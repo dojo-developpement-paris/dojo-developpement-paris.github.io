@@ -1,7 +1,7 @@
-export function bowlingScore(autreChose: number[]): number {
-  const newVariable = autreChose[0];
-  if (newVariable !== undefined) {
-    return newVariable;
+export function bowlingScore(throws: number[]): number {
+  const firstThrow = throws[0];
+  if (firstThrow !== undefined) {
+    return firstThrow;
   }
 
   throw new Error("no throw");
