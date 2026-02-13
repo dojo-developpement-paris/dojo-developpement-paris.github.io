@@ -17,4 +17,8 @@ describe("bowlingScore", () => {
   it("second frame", () => {
     expect(bowlingScore([1, 3, 5, 4])).toEqual(13);
   });
+
+  it("spare", () => {
+    expect(bowlingScore([1, 9, 5, 4])).toEqual(24);
+  });
 });
