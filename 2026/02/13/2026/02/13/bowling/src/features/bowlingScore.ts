@@ -1,5 +1,4 @@
-export function bowlingScore(throws: number[]): number {
-  const firstThrow = throws[0];
+export function bowlingScore([firstThrow]: number[]): number {
   if (firstThrow !== undefined) {
     return firstThrow;
   }
