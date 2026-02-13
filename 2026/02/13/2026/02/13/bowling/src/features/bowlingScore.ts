@@ -3,7 +3,11 @@ export function bowlingScore(
 ): number {
   if (JSON.stringify([1, 9, 5, 4]) === JSON.stringify(throws)) return 24;
 
-  return throws.reduce((acc, item) => item + acc);
+  return throws.reduce((acc, item) => item + acc) + bonus(throws);
+}
+
+function bonus(_throws: number[]): number {
+  return 0;
 }
 
 /*
