@@ -1,10 +1,10 @@
 export function bowlingScore(
-  [firstThrow, secondThrow, third, fourth]: number[],
+  [firstThrow, secondThrow, thirdThrow, fourthThrow]: number[],
 ): number {
   if (firstThrow !== undefined) {
     if (secondThrow !== undefined) {
-      if (third !== undefined) {
-        if (fourth !== undefined) {
+      if (thirdThrow !== undefined) {
+        if (fourthThrow !== undefined) {
           return 13;
         }
       }
