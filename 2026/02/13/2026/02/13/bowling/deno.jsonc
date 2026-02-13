@@ -1,0 +1,13 @@
+{
+  "fmt": {
+    "exclude": [
+      ".devbox/"
+    ]
+  },
+  "compilerOptions": {
+    "noUncheckedIndexedAccess": true,
+    "lib": [
+      "es2024"
+    ]
+  }
+}
