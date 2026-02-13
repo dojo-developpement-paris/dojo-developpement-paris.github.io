@@ -33,4 +33,8 @@ describe("bowlingScore", () => {
   it("another spare elsewhere", () => {
     expect(bowlingScore([0, 0, 9, 1, 3, 4])).toEqual(20);
   });
+
+  it("two spares", () => {
+    expect(bowlingScore([8, 2, 9, 1, 3, 4])).toEqual(39);
+  });
 });
