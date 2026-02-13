@@ -1,6 +1,6 @@
 export function bowlingScore([firstThrow, secondThrow]: number[]): number {
-  if (secondThrow !== undefined) {
-    return 4;
+  if (firstThrow !== undefined && secondThrow !== undefined) {
+    return firstThrow + secondThrow;
   }
 
   if (firstThrow !== undefined) {
