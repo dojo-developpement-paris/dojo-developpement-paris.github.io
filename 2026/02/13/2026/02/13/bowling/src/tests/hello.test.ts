@@ -29,4 +29,8 @@ describe("bowlingScore", () => {
   it("another spare with another bonus", () => {
     expect(bowlingScore([9, 1, 3, 4])).toEqual(20);
   });
+
+  it("another spare elsewhere", () => {
+    expect(bowlingScore([0, 0, 9, 1, 3, 4])).toEqual(20);
+  });
 });

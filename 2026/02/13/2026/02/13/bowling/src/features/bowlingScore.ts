@@ -4,16 +4,23 @@ export function bowlingScore(
   return throws.reduce((acc, item) => item + acc) + bonus(throws);
 }
 
-function bonus([firstThrow, secondThrow, thirdThrow]: number[]): number {
-  if (firstThrow! + secondThrow! === 10) {
-    return thirdThrow!;
+function bonus(throws: number[]): number {
+  for (let frameNumber = 0; frameNumber < throws.length; frameNumber++) {
+    const firstThrow = throws[frameNumber * 2];
+    const secondThrow = throws[frameNumber * 2 + 1];
+    if ((firstThrow! + secondThrow!) === 10) {
+      const thirdThrow = throws[frameNumber * 2 + 1 + 1];
+      return thirdThrow!;
+    }
   }
+
   return 0;
 }
 
 /*
- * 3 recursive
- * 1 découpage en frame
- * 0 itération avec état
- * 4 ajout des bonus avec fonction séparée
- */
+* 3 3 recursive
+* 1 4 découpage en frame
+* 0 0 itération avec état
+
+* 4 ajout des bonus avec fonction séparée
+*/
