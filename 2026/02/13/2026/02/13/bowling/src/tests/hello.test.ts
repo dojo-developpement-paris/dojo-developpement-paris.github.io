@@ -21,4 +21,8 @@ describe("bowlingScore", () => {
   it("spare", () => {
     expect(bowlingScore([1, 9, 5, 4])).toEqual(24);
   });
+
+  it("another spare", () => {
+    expect(bowlingScore([9, 1, 5, 4])).toEqual(24);
+  });
 });

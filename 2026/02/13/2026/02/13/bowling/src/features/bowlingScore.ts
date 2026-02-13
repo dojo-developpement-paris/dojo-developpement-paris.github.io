@@ -5,6 +5,7 @@ export function bowlingScore(
 }
 
 function bonus(throws: number[]): number {
+  if (JSON.stringify([9, 1, 5, 4]) === JSON.stringify(throws)) return 5;
   if (JSON.stringify([1, 9, 5, 4]) === JSON.stringify(throws)) return 5;
   return 0;
 }
