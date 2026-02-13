@@ -5,7 +5,7 @@ export function bowlingScore(
     if (secondThrow !== undefined) {
       if (thirdThrow !== undefined) {
         if (fourthThrow !== undefined) {
-          return 13;
+          return firstThrow + secondThrow + thirdThrow + fourthThrow;
         }
       }
       return firstThrow + secondThrow;
