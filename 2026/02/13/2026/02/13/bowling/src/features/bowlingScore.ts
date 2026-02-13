@@ -1,5 +1,5 @@
-export function bowlingScore(_arg0: number[]): number {
-  const newVariable = _arg0[0];
+export function bowlingScore(autreChose: number[]): number {
+  const newVariable = autreChose[0];
   if (newVariable !== undefined) {
     return newVariable;
   }
