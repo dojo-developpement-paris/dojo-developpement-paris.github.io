@@ -9,4 +9,8 @@ describe("bowlingScore", () => {
   it("another throw", () => {
     expect(bowlingScore([3])).toEqual(3);
   });
+
+  it("first frame", () => {
+    expect(bowlingScore([1, 3])).toEqual(4);
+  });
 });
