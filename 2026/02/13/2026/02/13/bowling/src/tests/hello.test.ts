@@ -13,4 +13,8 @@ describe("bowlingScore", () => {
   it("first frame", () => {
     expect(bowlingScore([1, 3])).toEqual(4);
   });
+
+  it("second frame", () => {
+    expect(bowlingScore([1, 3, 5, 4])).toEqual(13);
+  });
 });
