@@ -6,7 +6,7 @@ export function bowlingScore(
 
 function bonus(throws: number[]): number {
   let bonus = 0;
-  for (let frameNumber = 0; frameNumber < throws.length; frameNumber++) {
+  for (let frameNumber = 0; frameNumber < throws.length / 2; frameNumber++) {
     const firstThrow = throws[frameNumber * 2];
     const secondThrow = throws[frameNumber * 2 + 1];
     if ((firstThrow! + secondThrow!) === 10) {
