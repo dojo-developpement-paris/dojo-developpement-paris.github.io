@@ -5,3 +5,10 @@ export function bowlingScore(
 
   return throws.reduce((acc, item) => item + acc);
 }
+
+/*
+ * 3 recursive
+ * 1 découpage en frame
+ * 0 itération avec état
+ * 4 ajout des bonus avec fonction séparée
+ */
