@@ -3,7 +3,13 @@
 ## test
 
 ```sh
-deno test
+deno test ./src/tests
+```
+
+## double_loop
+
+```sh
+deno test ./src/features
 ```
 
 ### test watch
