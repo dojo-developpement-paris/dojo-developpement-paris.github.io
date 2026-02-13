@@ -1,17 +1,5 @@
 export function bowlingScore(
-  [firstThrow, secondThrow, thirdThrow, fourthThrow]: number[],
+  throws: number[],
 ): number {
-  if (firstThrow !== undefined) {
-    if (secondThrow !== undefined) {
-      if (thirdThrow !== undefined) {
-        if (fourthThrow !== undefined) {
-          return firstThrow + secondThrow + thirdThrow + fourthThrow;
-        }
-      }
-      return firstThrow + secondThrow;
-    }
-    return firstThrow;
-  }
-
-  throw new Error("no throw");
+  return throws.reduce((acc, item) => item + acc, 0);
 }
