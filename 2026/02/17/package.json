@@ -1,0 +1,17 @@
+{
+  "name": "17",
+  "version": "1.0.0",
+  "description": "Prochaine session : le 27/02/2026 à CodeWorks",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
