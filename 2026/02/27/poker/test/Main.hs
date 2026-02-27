@@ -10,5 +10,8 @@ main =
             it "world" $ do
                 hello Nothing `shouldBe` "Hello world"
 
-            it "foo" $ do
-                hello (Just "foo") `shouldBe` "Hello foo"
+            it "one player is always winning" $ do
+                winner [["Kc", "9s", "Ks", "Kd", "9d", "3c", "6d"]] `shouldBe` ["Kc", "9s", "Ks", "Kd", "9d", "3c", "6d"]
+
+winner :: [[String]] -> [String]
+winner _ = ["Kc", "9s", "Ks", "Kd", "9d", "3c", "6d"]
