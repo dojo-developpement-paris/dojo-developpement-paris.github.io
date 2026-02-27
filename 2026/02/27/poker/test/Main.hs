@@ -14,10 +14,14 @@ main =
                 winner [["Ks", "Kd", "9d", "3c", "6d"], ["9c", "Ah", "Ks", "Kd", "9d", "3c", "6d"]] `shouldBe` ["9c", "Ah", "Ks", "Kd", "9d", "3c", "6d"]
                 winner [["8c", "Ah", "Ks", "Kd", "9d", "3c", "6d"], ["Ks", "Kd", "9d", "3c", "6d"]] `shouldBe` ["8c", "Ah", "Ks", "Kd", "9d", "3c", "6d"]
 
-winner :: [[String]] -> [String]
+type Hand = [String]
+
+type Game = [Hand]
+
+winner :: Game -> Hand
 winner hands = winner' (filter (\hand -> length hand == 7) hands)
 
-winner' :: [[String]] -> [String]
+winner' :: Game -> Hand
 winner' [hand] = hand
 winner' [_, hand] = hand
 winner' _ = ["Kc", "9s", "Ks", "Kd", "9d", "3c", "6d"]
