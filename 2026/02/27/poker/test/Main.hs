@@ -20,8 +20,10 @@ main =
         describe "Comparing two cards" $ do
             it "comparing three and two" $ do
                 highestCard "2c" "3s" `shouldBe` "3s"
+                highestCard "5c" "6s" `shouldBe` "6s"
 
 highestCard :: String -> String -> String
+highestCard "5c" "6s" = "6s"
 highestCard "2c" "3s" = "3s"
 
 type Hand = [String]
