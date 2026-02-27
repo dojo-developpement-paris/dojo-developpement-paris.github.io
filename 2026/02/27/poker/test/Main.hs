@@ -42,3 +42,4 @@ winner' _ = Nothing
 -- comparer le rang des cartes (2 3 4 5 6 7 8 9 T J Q K A)
 -- regrouper les cartes (faire des pairs)
 -- comparer les couleurs (flush : 5 cartes d'une meme couleur)
+-- parser l'entrer
