@@ -19,12 +19,12 @@ main =
 
         describe "Comparing two cards" $ do
             it "comparing three and two" $ do
-                highestCard "2c" "3s" `shouldBe` LT
-                highestCard "5c" "6s" `shouldBe` LT
+                compareCard "2c" "3s" `shouldBe` LT
+                compareCard "5c" "6s" `shouldBe` LT
 
-highestCard :: String -> String -> Ordering
-highestCard "5c" "6s" = compare 5 6
-highestCard "2c" "3s" = compare 2 3
+compareCard :: String -> String -> Ordering
+compareCard "5c" "6s" = compare 5 6
+compareCard "2c" "3s" = compare 2 3
 
 type Hand = [String]
 
