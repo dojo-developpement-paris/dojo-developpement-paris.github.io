@@ -24,7 +24,6 @@ main =
 
 compareCard :: String -> String -> Ordering
 compareCard (charA : _) (charB : _) = compare charA charB
-compareCard "2c" "3s" = compare 2 3
 
 type Hand = [String]
 
