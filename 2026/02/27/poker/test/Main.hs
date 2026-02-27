@@ -27,3 +27,10 @@ winner hands = winner' (filter (\hand -> length hand == 7) hands)
 winner' :: Game -> Maybe Hand
 winner' [hand] = Just hand
 winner' _ = Nothing
+
+-- TODO:
+-- comparer plusieurs mains
+-- évaluer les mains
+-- comparer le rang des cartes (2 3 4 5 6 7 8 9 T J Q K A)
+-- regrouper les cartes (faire des pairs)
+-- comparer les couleurs (flush : 5 cartes d'une meme couleur)
