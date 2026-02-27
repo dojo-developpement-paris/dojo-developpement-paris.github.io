@@ -1,0 +1,12 @@
+{
+  "packages": [
+    "cabal-install@latest",
+    "fourmolu@latest",
+    "hlint@latest",
+    "jq@latest",
+    "mask@latest",
+    "watchexec@latest",
+    "bashInteractive@latest",
+    "git-gamble@latest"
+  ]
+}
