@@ -23,7 +23,7 @@ main =
                 compareCard "5c" "6s" `shouldBe` LT
 
 compareCard :: String -> String -> Ordering
-compareCard "5c" "6s" = compare 5 6
+compareCard (charA : _) (charB : _) = compare charA charB
 compareCard "2c" "3s" = compare 2 3
 
 type Hand = [String]
