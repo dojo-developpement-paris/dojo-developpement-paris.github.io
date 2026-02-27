@@ -23,5 +23,3 @@ winner hands = winner' (filter (\hand -> length hand == 7) hands)
 
 winner' :: Game -> Hand
 winner' [hand] = hand
-winner' [_, hand] = hand
-winner' _ = ["Kc", "9s", "Ks", "Kd", "9d", "3c", "6d"]
