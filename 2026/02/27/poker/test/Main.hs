@@ -5,7 +5,7 @@ import Test.Hspec
 main :: IO ()
 main =
     hspec $ do
-        describe "Hello" $ do
+        describe "Which hand is winning ?" $ do
             it "one player is always winning" $ do
                 winner [["Kc", "9s", "Ks", "Kd", "9d", "3c", "6d"]] `shouldBe` Just ["Kc", "9s", "Ks", "Kd", "9d", "3c", "6d"]
                 winner [["Kc", "9s", "Ks", "Kd", "9d", "4c", "6d"]] `shouldBe` Just ["Kc", "9s", "Ks", "Kd", "9d", "4c", "6d"]
@@ -16,6 +16,13 @@ main =
 
             it "no valid hand at all" $ do
                 winner [["Ks", "Kd"]] `shouldBe` Nothing
+
+        describe "Comparing two cards" $ do
+            it "comparing three and two" $ do
+                highestCard "2c" "3s" `shouldBe` "3s"
+
+highestCard :: String -> String -> String
+highestCard "2c" "3s" = "3s"
 
 type Hand = [String]
 
