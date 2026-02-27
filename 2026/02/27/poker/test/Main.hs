@@ -15,5 +15,5 @@ main =
                 winner [["Kc", "9s", "Ks", "Kd", "9d", "4c", "6d"]] `shouldBe` ["Kc", "9s", "Ks", "Kd", "9d", "4c", "6d"]
 
 winner :: [[String]] -> [String]
-winner [crepe] = crepe
+winner [hand] = hand
 winner _ = ["Kc", "9s", "Ks", "Kd", "9d", "3c", "6d"]
