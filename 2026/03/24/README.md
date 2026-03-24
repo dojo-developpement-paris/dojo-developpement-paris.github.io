@@ -1,4 +1,4 @@
-Prochaine session : le  à 
+Prochaine session : le 03/04/2026 à Shodo
 
 Nous migrons le groupe de Meetup vers [Mobilizon]
 
