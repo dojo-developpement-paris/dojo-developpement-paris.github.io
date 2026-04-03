@@ -36,5 +36,18 @@ spec = do
                 maxResults [1,1,2,2] allCodewords `shouldBe` 256
 
         describe "minMaxResults" $ do
-            it "shoudld give the first codeword with the least maximal results" $ do
+            it "should give the first codeword with the least maximal results" $ do
                 minMaxResults allCodewords `shouldBe` [1,1,2,2] 
+
+        describe "narrowSolution" $ do
+            it "should remove codewords with results not matching a given result for a given codeword" $ do
+                length (narrowSolution [1,1,2,2] (2,1) allCodewords) `shouldBe` 32
+
+        describe "guessMove" $ do
+            it "should return a list of moves and results when secret is guessed" $ do
+                guessMove [1,1,2,2] [1,1,2,2] allCodewords `shouldBe` ([1,1,2,2],(4,0))
+-- 1) 1122 : ○
+-- 2) 2344 : ○
+-- 3) 3516 : ●○○
+-- 4) 1461 : ○○○
+-- 5) 4615 : ●●●●

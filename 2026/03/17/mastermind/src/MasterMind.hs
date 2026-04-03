@@ -5,7 +5,7 @@ import Data.List (group, sort)
 
 type Peg = Int
 type CodeWord = [Peg]
-
+type Result = (Int, Int)
 colors = [1..6]
 
 matches :: CodeWord -> CodeWord -> Int
@@ -30,7 +30,7 @@ nbColor :: Peg -> CodeWord -> Int
 nbColor color codeword =
     findWithDefault 0 color $ fromList $ Prelude.map (\g -> (head g, length g)) $ group $ sort codeword
 
-match :: CodeWord -> CodeWord -> (Int, Int)
+match :: CodeWord -> CodeWord -> Result
 match secret guess = (wellPlaced, misPlaced)
     where
         wellPlaced = matches secret guess
@@ -49,3 +49,8 @@ maxResults candidate candidates = maximum $ map length $ group $ sort $  map (ma
 minMaxResults :: [CodeWord] -> CodeWord
 minMaxResults candidates = snd $ minimum [(maxResults cw candidates, cw) |  cw <- allCodewords]
 
+narrowSolution :: CodeWord -> Result -> [CodeWord] -> [CodeWord]
+narrowSolution codeword result candidates = filter (\candidate -> match candidate codeword == result) candidates
+
+guessMove :: CodeWord -> CodeWord -> [CodeWord] -> (CodeWord, Result)
+guessMove guess secret _ | match guess secret == (4, 0) = (guess, (4, 0))
