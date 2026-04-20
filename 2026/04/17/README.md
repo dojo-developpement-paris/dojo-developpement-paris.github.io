@@ -1,17 +1,15 @@
-Prochaine session : le ?? à ??
+Prochaine session : le Jeudi 23/04 à Proxym
 
 Nous migrons le groupe de Meetup vers [Mobilizon]
 
 ## Personnes présentes
-- Christophe
-- Patrick
-- Guillaume
+- Christelle
+- Ismatou
+- Ubald
 
 ## Retro
-- fishbowl - no test - rust - puissance 4 le statut
-  - A un moment on a bien cafouiller une idée submerge une idée
-  - Faire un correction ou refactoring à la fois
-  - On ne sait pas se déployer pour chercher une solution
+- Demo - TDD - Haskell - Mastermind solver 
+  - Personne n'était present
 
 ## Explication des règles
 Tout le monde peut proposer un sujet
@@ -20,9 +18,9 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 ## Sujets
-- 1 - A - Demo - TDD - Haskell - Mastermid solver 
-- 0 - B - Mob - TDD - Haskell - Bank kata la suite
-- 0 -  -  -  -  - 
+- 2 - A - mob - TCRDD - Java - Jeu de la vie
+- 0 - B - mob - TCRDD - typescript - kata bank account focus sur l'event sourcing, le compte bancaire ne peut pas etre négatif
+- 1 - C - demo - TDD - Vuejs - Todo list en TDD
 
 ## Modes de fonctionnement habituels
 - Mob : 1 typist + les autres naviguent
