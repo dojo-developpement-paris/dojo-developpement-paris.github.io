@@ -16,12 +16,18 @@ describe("hello", () => {
     const forest: Forest = [["brule"]];
     expect(turn(forest)).toEqual([["rien"]]);
   });
+
+  it("une foret avec un arbre => reste un arbre", () => {
+    const forest: Forest = [["arbre"]];
+    expect(turn(forest)).toEqual([["arbre"]]);
+  });
 });
 
 function turn(forest: Forest): Forest {
   return [[next(forest[0]![0]!)]];
 }
 
-function next(_cell: Case): Case {
+function next(cell: Case): Case {
+  if (cell === "arbre") return "arbre";
   return "rien";
 }
