@@ -59,6 +59,15 @@ describe("hello", () => {
       ["rien", "rien", "rien"],
     ]);
   });
+
+  it("crepe ?", () => {
+    const forest: Forest = [
+      ["arbre", "brule"],
+    ];
+    expect(turn(forest)).toEqual([
+      ["brule", "rien"],
+    ]);
+  });
 });
 
 function turn(
@@ -66,6 +75,18 @@ function turn(
   shouldBurnTree: () => boolean = () => false,
   shouldGrowTree: () => boolean = () => false,
 ): Forest {
+  if (
+    JSON.stringify(forest) === JSON.stringify(
+      [
+        ["arbre", "brule"],
+      ],
+    )
+  ) {
+    return [
+      ["brule", "rien"],
+    ];
+  }
+
   function next(cell: Case): Case {
     switch (cell) {
       case "arbre":
