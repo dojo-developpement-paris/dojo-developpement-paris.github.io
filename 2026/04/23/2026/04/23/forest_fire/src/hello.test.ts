@@ -46,6 +46,19 @@ describe("hello", () => {
     const forest: Forest = [["arbre"], ["arbre"]];
     expect(turn(forest)).toEqual([["arbre"], ["arbre"]]);
   });
+
+  it("une foret carré", () => {
+    const forest: Forest = [
+      ["arbre", "rien", "rien"],
+      ["rien", "rien", "rien"],
+      ["rien", "rien", "brule"],
+    ];
+    expect(turn(forest)).toEqual([
+      ["arbre", "rien", "rien"],
+      ["rien", "rien", "rien"],
+      ["rien", "rien", "rien"],
+    ]);
+  });
 });
 
 function turn(
