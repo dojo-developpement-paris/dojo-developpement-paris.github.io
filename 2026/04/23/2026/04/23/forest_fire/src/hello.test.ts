@@ -50,8 +50,6 @@ function turn(
 ): Forest {
   function next(
     cell: Case,
-    shouldBurnTree: () => boolean,
-    shouldGrowTree: () => boolean,
   ): Case {
     switch (cell) {
       case "arbre":
@@ -71,7 +69,7 @@ function turn(
     }
   }
 
-  return [forest[0]!.map((cell) => next(cell, shouldBurnTree, shouldGrowTree))];
+  return [forest[0]!.map((cell) => next(cell))];
 }
 
 /*
