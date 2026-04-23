@@ -58,11 +58,11 @@ function next(
       } else {
         return "arbre";
       }
+    case "brule":
+      return "rien";
     case "rien":
       if (shouldGrowTree()) {
         return "arbre";
       } else return "rien";
-    default:
-      return "rien";
   }
 }
