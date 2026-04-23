@@ -71,16 +71,8 @@ function turn(
   shouldBurnTree: () => boolean = () => false,
   shouldGrowTree: () => boolean = () => false,
 ): Forest {
-  if (
-    JSON.stringify(forest) === JSON.stringify(
-      [
-        ["arbre", "brule"],
-      ],
-    )
-  ) {
-    return [
-      ["brule", "rien"],
-    ];
+  if (JSON.stringify(forest) === JSON.stringify([["arbre", "brule"]])) {
+    return [["brule", "rien"]];
   }
 
   function next(cell: Case): Case {
