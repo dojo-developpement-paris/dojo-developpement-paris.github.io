@@ -11,5 +11,6 @@
     "devbox.json": "jsonc"
   },
   "editor.formatOnSave": true,
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.suggest.preview": false
 }
