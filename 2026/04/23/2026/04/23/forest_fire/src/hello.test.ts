@@ -55,15 +55,16 @@ function next(
     case "arbre":
       if (shouldBurnTree()) {
         return "brule";
+      } else {
+        return "arbre";
       }
-      break;
+    case "brule":
+      return "rien";
     case "rien":
       if (shouldGrowTree()) {
         return "arbre";
+      } else {
+        return "rien";
       }
-      break;
-    case "brule":
-      return "rien";
   }
-  return cell;
 }
