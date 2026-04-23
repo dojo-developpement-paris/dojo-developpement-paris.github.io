@@ -21,6 +21,11 @@ describe("hello", () => {
     const forest: Forest = [["arbre"]];
     expect(turn(forest)).toEqual([["arbre"]]);
   });
+
+  it("une foret avec rien => reste rien", () => {
+    const forest: Forest = [["rien"]];
+    expect(turn(forest)).toEqual([["rien"]]);
+  });
 });
 
 function turn(forest: Forest): Forest {
