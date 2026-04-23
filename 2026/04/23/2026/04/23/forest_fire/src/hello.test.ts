@@ -22,8 +22,8 @@ describe("hello", () => {
   });
 });
 
-function turn(_forest: Forest): Forest {
-  return [["rien"]];
+function turn(forest: Forest): Forest {
+  return [[next(forest[0]![0]!)]];
 }
 
 function next(_cell: Case): Case {
