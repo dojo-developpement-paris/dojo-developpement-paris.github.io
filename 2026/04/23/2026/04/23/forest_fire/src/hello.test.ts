@@ -79,9 +79,6 @@ function turn(
   if (JSON.stringify(forest) === JSON.stringify([["brule", "arbre"]])) {
     return [["rien", "brule"]];
   }
-  if (JSON.stringify(forest) === JSON.stringify([["arbre", "brule"]])) {
-    return [["brule", "rien"]];
-  }
 
   function next(cell: Case, hasBurningNeighbor: boolean): Case {
     switch (cell) {
