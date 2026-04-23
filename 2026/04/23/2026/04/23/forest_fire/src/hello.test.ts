@@ -30,7 +30,7 @@ describe("hello", () => {
 
 function turn(
   forest: Forest,
-  _generateRandom: () => number = () => Math.random(),
+  _generateRandom: () => number = Math.random,
 ): Forest {
   return [[next(forest[0]![0]!)]];
 }
