@@ -36,6 +36,11 @@ describe("hello", () => {
     const forest: Forest = [["rien"]];
     expect(turn(forest, undefined, () => true)).toEqual([["arbre"]]);
   });
+
+  it("une foret en ligne", () => {
+    const forest: Forest = [["arbre", "arbre"]];
+    expect(turn(forest)).toEqual([["arbre", "arbre"]]);
+  });
 });
 
 function turn(
@@ -43,7 +48,7 @@ function turn(
   shouldBurnTree: () => boolean = () => false,
   shouldGrowTree: () => boolean = () => false,
 ): Forest {
-  return [[next(forest[0]![0]!, shouldBurnTree, shouldGrowTree)]];
+  return [forest[0]!.map((cell) => next(cell, shouldBurnTree, shouldGrowTree))];
 }
 
 function next(
