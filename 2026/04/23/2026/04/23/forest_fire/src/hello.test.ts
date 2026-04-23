@@ -9,7 +9,7 @@ An empty space fills with a tree with probability p
 
 type Case = "arbre" | "brule" | "rien";
 
-type Forest = Case[][];
+type Forest = ReadonlyArray<ReadonlyArray<Case>>;
 
 describe("hello", () => {
   it("une foret avec un arbre brule => plus rien", () => {
