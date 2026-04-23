@@ -63,6 +63,8 @@ function next(
     case "rien":
       if (shouldGrowTree()) {
         return "arbre";
-      } else return "rien";
+      } else {
+        return "rien";
+      }
   }
 }
