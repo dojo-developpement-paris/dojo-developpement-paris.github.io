@@ -41,6 +41,11 @@ describe("hello", () => {
     const forest: Forest = [["arbre", "arbre"]];
     expect(turn(forest)).toEqual([["arbre", "arbre"]]);
   });
+
+  it("une foret en colone", () => {
+    const forest: Forest = [["arbre"], ["arbre"]];
+    expect(turn(forest)).toEqual([["arbre"], ["arbre"]]);
+  });
 });
 
 function turn(
@@ -67,7 +72,7 @@ function turn(
     }
   }
 
-  return [forest[0]!.map(next)];
+  return forest.map((row) => row.map(next));
 }
 
 /*
