@@ -83,7 +83,7 @@ function turn(
     return [["brule", "rien"]];
   }
 
-  function next(cell: Case): Case {
+  function next(cell: Case, _hasBurningNeighbor: boolean): Case {
     switch (cell) {
       case "arbre":
         if (shouldBurnTree()) {
@@ -102,7 +102,16 @@ function turn(
     }
   }
 
-  return forest.map((row) => row.map(next));
+  return forest.map((row, y) =>
+    row.map((cell, x) => {
+      const crepe = hasBurningNeighbor(x, y, forest);
+      return next(cell, crepe);
+    })
+  );
+}
+
+function hasBurningNeighbor(x: number, y: number, forest: Forest): boolean {
+  return forest[y + 0]![x + 1]! === "brule";
 }
 
 /*
