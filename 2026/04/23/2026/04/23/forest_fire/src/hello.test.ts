@@ -68,3 +68,10 @@ function next(
       }
   }
 }
+
+/*
+ * règle
+ * foret
+ * graphique
+ * objet
+ */
