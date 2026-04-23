@@ -61,12 +61,8 @@ describe("hello", () => {
   });
 
   it("crepe ?", () => {
-    const forest: Forest = [
-      ["arbre", "brule"],
-    ];
-    expect(turn(forest)).toEqual([
-      ["brule", "rien"],
-    ]);
+    const forest: Forest = [["arbre", "brule"]];
+    expect(turn(forest)).toEqual([["brule", "rien"]]);
   });
 });
 
