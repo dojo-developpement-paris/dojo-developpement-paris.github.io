@@ -14,23 +14,23 @@ type Forest = Case[][];
 describe("hello", () => {
   it("une foret avec un arbre brule => plus rien", () => {
     const forest: Forest = [["brule"]];
-    expect(turn(forest)).toEqual([["rien"]]);
+    expect(turn(forest, () => false)).toEqual([["rien"]]);
   });
 
   it("une foret avec un arbre => reste un arbre", () => {
     const forest: Forest = [["arbre"]];
-    expect(turn(forest)).toEqual([["arbre"]]);
+    expect(turn(forest, () => false)).toEqual([["arbre"]]);
   });
 
   it("une foret avec rien => reste rien", () => {
     const forest: Forest = [["rien"]];
-    expect(turn(forest)).toEqual([["rien"]]);
+    expect(turn(forest, () => false)).toEqual([["rien"]]);
   });
 });
 
 function turn(
   forest: Forest,
-  _generateRandom: () => number = Math.random,
+  _shouldBurnTree: () => boolean,
 ): Forest {
   return [[next(forest[0]![0]!)]];
 }
