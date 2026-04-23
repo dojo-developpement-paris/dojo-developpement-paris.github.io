@@ -1,16 +1,16 @@
 import { describe, expect, it } from "./dev_deps.ts";
 
-type Case = "a" | "b" | "r";
+type Case = "arbre" | "brule" | "rien";
 
 type Forest = Case[][];
 
 describe("hello", () => {
   it("une foret avec un arbre brule => plus rien", () => {
-    const forest: Forest = [["b"]];
-    expect(turn(forest)).toEqual([["r"]]);
+    const forest: Forest = [["brule"]];
+    expect(turn(forest)).toEqual([["rien"]]);
   });
 });
 
 function turn(_forest: Forest): Forest {
-  return [["r"]];
+  return [["rien"]];
 }
