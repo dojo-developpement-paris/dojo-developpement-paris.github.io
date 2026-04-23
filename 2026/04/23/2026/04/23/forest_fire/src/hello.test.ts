@@ -51,15 +51,18 @@ function next(
   shouldBurnTree: () => boolean,
   shouldGrowTree: () => boolean,
 ): Case {
-  if (cell === "arbre") {
-    if (shouldBurnTree()) {
-      return "brule";
-    } else {
-      return "arbre";
-    }
+  switch (cell) {
+    case "arbre":
+      if (shouldBurnTree()) {
+        return "brule";
+      } else {
+        return "arbre";
+      }
+    case "rien":
+      if (shouldGrowTree()) {
+        return "arbre";
+      } else return "rien";
+    default:
+      return "rien";
   }
-  if (cell == "rien" && shouldGrowTree()) {
-    return "arbre";
-  }
-  return "rien";
 }
