@@ -48,9 +48,7 @@ function turn(
   shouldBurnTree: () => boolean = () => false,
   shouldGrowTree: () => boolean = () => false,
 ): Forest {
-  function next(
-    cell: Case,
-  ): Case {
+  function next(cell: Case): Case {
     switch (cell) {
       case "arbre":
         if (shouldBurnTree()) {
