@@ -26,16 +26,27 @@ describe("hello", () => {
     const forest: Forest = [["rien"]];
     expect(turn(forest, () => false)).toEqual([["rien"]]);
   });
+
+  it("une foret avec un arbre => ça brule", () => {
+    const forest: Forest = [["arbre"]];
+    expect(turn(forest, () => true)).toEqual([["brule"]]);
+  });
 });
 
 function turn(
   forest: Forest,
-  _shouldBurnTree: () => boolean,
+  shouldBurnTree: () => boolean,
 ): Forest {
-  return [[next(forest[0]![0]!)]];
+  return [[next(forest[0]![0]!, shouldBurnTree)]];
 }
 
-function next(cell: Case): Case {
-  if (cell === "arbre") return "arbre";
+function next(cell: Case, shouldBurnTree: () => boolean): Case {
+  if (cell === "arbre") {
+    if (shouldBurnTree()) {
+      return "brule";
+    } else {
+      return "arbre";
+    }
+  }
   return "rien";
 }
