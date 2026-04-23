@@ -83,10 +83,10 @@ function turn(
     return [["brule", "rien"]];
   }
 
-  function next(cell: Case, _hasBurningNeighbor: boolean): Case {
+  function next(cell: Case, hasBurningNeighbor: boolean): Case {
     switch (cell) {
       case "arbre":
-        if (shouldBurnTree()) {
+        if (shouldBurnTree() || hasBurningNeighbor) {
           return "brule";
         } else {
           return "arbre";
