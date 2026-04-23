@@ -69,7 +69,7 @@ function turn(
     }
   }
 
-  return [forest[0]!.map((cell) => next(cell))];
+  return [forest[0]!.map(next)];
 }
 
 /*
