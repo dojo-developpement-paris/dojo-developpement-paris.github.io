@@ -28,7 +28,10 @@ describe("hello", () => {
   });
 });
 
-function turn(forest: Forest): Forest {
+function turn(
+  forest: Forest,
+  _generateRandom: () => number = () => Math.random(),
+): Forest {
   return [[next(forest[0]![0]!)]];
 }
 
