@@ -31,22 +31,35 @@ describe("hello", () => {
     const forest: Forest = [["arbre"]];
     expect(turn(forest, () => true)).toEqual([["brule"]]);
   });
+
+  it("une foret avec un rien => ça pousse", () => {
+    const forest: Forest = [["rien"]];
+    expect(turn(forest, undefined, () => true)).toEqual([["arbre"]]);
+  });
 });
 
 function turn(
   forest: Forest,
-  shouldBurnTree: () => boolean,
+  shouldBurnTree: () => boolean = () => false,
+  shouldGrowTree: () => boolean = () => false,
 ): Forest {
-  return [[next(forest[0]![0]!, shouldBurnTree)]];
+  return [[next(forest[0]![0]!, shouldBurnTree, shouldGrowTree)]];
 }
 
-function next(cell: Case, shouldBurnTree: () => boolean): Case {
+function next(
+  cell: Case,
+  shouldBurnTree: () => boolean,
+  shouldGrowTree: () => boolean,
+): Case {
   if (cell === "arbre") {
     if (shouldBurnTree()) {
       return "brule";
     } else {
       return "arbre";
     }
+  }
+  if (cell == "rien" && shouldGrowTree()) {
+    return "arbre";
   }
   return "rien";
 }
