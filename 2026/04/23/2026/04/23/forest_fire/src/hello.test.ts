@@ -48,30 +48,30 @@ function turn(
   shouldBurnTree: () => boolean = () => false,
   shouldGrowTree: () => boolean = () => false,
 ): Forest {
-  return [forest[0]!.map((cell) => next(cell, shouldBurnTree, shouldGrowTree))];
-}
-
-function next(
-  cell: Case,
-  shouldBurnTree: () => boolean,
-  shouldGrowTree: () => boolean,
-): Case {
-  switch (cell) {
-    case "arbre":
-      if (shouldBurnTree()) {
-        return "brule";
-      } else {
-        return "arbre";
-      }
-    case "brule":
-      return "rien";
-    case "rien":
-      if (shouldGrowTree()) {
-        return "arbre";
-      } else {
+  function next(
+    cell: Case,
+    shouldBurnTree: () => boolean,
+    shouldGrowTree: () => boolean,
+  ): Case {
+    switch (cell) {
+      case "arbre":
+        if (shouldBurnTree()) {
+          return "brule";
+        } else {
+          return "arbre";
+        }
+      case "brule":
         return "rien";
-      }
+      case "rien":
+        if (shouldGrowTree()) {
+          return "arbre";
+        } else {
+          return "rien";
+        }
+    }
   }
+
+  return [forest[0]!.map((cell) => next(cell, shouldBurnTree, shouldGrowTree))];
 }
 
 /*
