@@ -1,0 +1,27 @@
+/*
+A burning cell turns into an empty cell
+A tree will burn if at least one neighbor is burning
+A tree ignites with probability f even if no neighbor is burning
+An empty space fills with a tree with probability p
+*/
+#[derive(Debug, PartialEq)]
+enum State {
+    Earth,
+    Fire,
+}
+
+fn state(_forest: (), _x: usize, _y: usize) -> State {
+    State::Earth
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+    use speculoos::*;
+
+    #[test]
+    fn hello_world() {
+        let forest = ();
+        assert_that(&state(forest, 0, 0)).is_equal_to(State::Earth)
+    }
+}
