@@ -10,7 +10,7 @@ enum State {
     Fire,
     Tree,
 }
-
+#[derive(Debug, PartialEq)]
 struct Forest {
     state: State,
 }
@@ -31,6 +31,10 @@ fn plant_tree(_forest: Forest, _x: usize, _y: usize) -> Forest {
     Forest { state: State::Tree }
 }
 
+fn evolve(_forest: Forest) -> Forest {
+    Forest::new()
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
@@ -42,6 +46,12 @@ mod test {
         assert_that(&state(forest, 0, 0)).is_equal_to(State::Earth)
     }
 
+    #[test]
+    fn a_forest_with_a_burning_tree_evolve_into_earth_where_that_tree_was_burning() {
+        let forest = Forest { state: State::Fire };
+        let new_forest = evolve(forest);
+        assert_that(&state(new_forest, 0, 0)).is_equal_to(State::Earth)
+    }
     #[test]
     fn planting_tree() {
         let initial_forest = Forest::new();
