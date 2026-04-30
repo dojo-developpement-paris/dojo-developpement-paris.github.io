@@ -20,7 +20,7 @@ mod test {
     use speculoos::*;
 
     #[test]
-    fn hello_world() {
+    fn initial_forest_is_empty() {
         let forest = ();
         assert_that(&state(forest, 0, 0)).is_equal_to(State::Earth)
     }
