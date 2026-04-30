@@ -6,11 +6,16 @@ Nous migrons le groupe de Meetup vers [Mobilizon]
 - Ubald
 - Nicolas
 - Laurent
+- Damien
+- ToF
+- Adam
 - pin
 
 ## Retro
 - mob - TCRDD - TypeScript - fire forest model : implémenter les règles
-  - 
+  - « c'était trop bien » +1
+  - on n'avait presque fini
+  - on n'a rien affiché mais ce n'était pas l'objectif
 
 ## Explication des règles
 Tout le monde peut proposer un sujet
@@ -19,9 +24,8 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 ## Sujets
-- 0 - A -  -  -  - 
-- 0 - B -  -  -  - 
-- 0 -  -  -  -  - 
+- 4 - A - mob strong style tournant - TCRDD - Rust - fire forest model : implémenter les règles ; TUI si on a le temps
+- 3 - B - mob - TCRDD - Haskell - Advent of Code 2025 jour 10 parti 1
 
 ## Modes de fonctionnement habituels
 - Mob : 1 typist + les autres naviguent
