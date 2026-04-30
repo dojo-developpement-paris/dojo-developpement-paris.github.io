@@ -8,10 +8,17 @@ An empty space fills with a tree with probability p
 enum State {
     Earth,
     Fire,
+    Tree,
 }
 
-fn state(_forest: (), _x: usize, _y: usize) -> State {
+struct Forest {}
+
+fn state(_forest: Forest, _x: usize, _y: usize) -> State {
     State::Earth
+}
+
+fn plant_tree(_forest: Forest, _x: usize, _y: usize) -> Forest {
+    todo!()
 }
 
 #[cfg(test)]
@@ -21,7 +28,14 @@ mod test {
 
     #[test]
     fn initial_forest_is_empty() {
-        let forest = ();
+        let forest = Forest {};
         assert_that(&state(forest, 0, 0)).is_equal_to(State::Earth)
     }
+
+    // #[test]
+    // fn planting_tree() {
+    //     let initial_forest = Forest {};
+    //     let forest = plant_tree(initial_forest, 0, 0);
+    //     assert_that(&state(forest, 0, 0)).is_equal_to(State::Tree)
+    // }
 }
