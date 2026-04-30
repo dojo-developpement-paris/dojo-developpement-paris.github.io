@@ -23,12 +23,12 @@ impl Forest {
     }
 }
 
-fn state(_forest: Forest, _x: usize, _y: usize) -> State {
-    State::Earth
+fn state(forest: Forest, _x: usize, _y: usize) -> State {
+    forest.state
 }
 
 fn plant_tree(_forest: Forest, _x: usize, _y: usize) -> Forest {
-    todo!()
+    Forest { state: State::Tree }
 }
 
 #[cfg(test)]
@@ -42,10 +42,10 @@ mod test {
         assert_that(&state(forest, 0, 0)).is_equal_to(State::Earth)
     }
 
-    // #[test]
-    // fn planting_tree() {
-    //     let initial_forest = Forest::new();
-    //     let forest = plant_tree(initial_forest, 0, 0);
-    //     assert_that(&state(forest, 0, 0)).is_equal_to(State::Tree)
-    // }
+    #[test]
+    fn planting_tree() {
+        let initial_forest = Forest::new();
+        let forest = plant_tree(initial_forest, 0, 0);
+        assert_that(&state(forest, 0, 0)).is_equal_to(State::Tree)
+    }
 }
