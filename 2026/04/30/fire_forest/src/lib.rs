@@ -11,7 +11,9 @@ enum State {
     Tree,
 }
 
-struct Forest {}
+struct Forest {
+    state: State,
+}
 
 fn state(_forest: Forest, _x: usize, _y: usize) -> State {
     State::Earth
@@ -28,13 +30,15 @@ mod test {
 
     #[test]
     fn initial_forest_is_empty() {
-        let forest = Forest {};
+        let forest = Forest {
+            state: State::Earth,
+        };
         assert_that(&state(forest, 0, 0)).is_equal_to(State::Earth)
     }
 
     // #[test]
     // fn planting_tree() {
-    //     let initial_forest = Forest {};
+    //     let initial_forest = Forest {state:State::Earth};
     //     let forest = plant_tree(initial_forest, 0, 0);
     //     assert_that(&state(forest, 0, 0)).is_equal_to(State::Tree)
     // }
