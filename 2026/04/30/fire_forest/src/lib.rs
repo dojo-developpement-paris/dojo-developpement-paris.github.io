@@ -31,8 +31,11 @@ fn plant_tree(_forest: Forest, _x: usize, _y: usize) -> Forest {
     Forest { state: State::Tree }
 }
 
-fn evolve(_forest: Forest) -> Forest {
-    Forest::new()
+fn evolve(forest: Forest) -> Forest {
+    match forest {
+        Forest { state: State::Fire } => Forest::new(),
+        _ => forest,
+    }
 }
 
 #[cfg(test)]
@@ -52,6 +55,14 @@ mod test {
         let new_forest = evolve(forest);
         assert_that(&state(new_forest, 0, 0)).is_equal_to(State::Earth)
     }
+    #[test]
+    fn a_forest_without_fire_stays_the_same() {
+        let initial_forest = Forest::new();
+        let forest = plant_tree(initial_forest, 0, 0);
+        let new_forest = evolve(forest);
+        assert_that(&state(new_forest, 0, 0)).is_equal_to(State::Tree)
+    }
+
     #[test]
     fn planting_tree() {
         let initial_forest = Forest::new();
