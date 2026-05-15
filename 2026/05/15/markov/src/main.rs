@@ -9,6 +9,9 @@ fn main() {
 fn hello(name: Option<&str>) -> String {
     format!("Hello {}", name.unwrap_or("world"))
 }
+fn markov(_arg_1: i32, _arg_2: &str) -> String {
+    "".to_string()
+}
 
 #[cfg(test)]
 mod test {
@@ -16,12 +19,7 @@ mod test {
     use speculoos::*;
 
     #[test]
-    fn hello_world() {
-        assert_that(&hello(None)).is_equal_to("Hello world".to_string())
-    }
-
-    #[test]
-    fn hello_foo() {
-        assert_that(&hello(Some("foo"))).is_equal_to("Hello foo".to_string())
+    fn generate_empty_string() {
+        assert_that(&markov(0, "")).is_equal_to("".to_string())
     }
 }
