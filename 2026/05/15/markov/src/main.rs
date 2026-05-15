@@ -18,8 +18,7 @@ pub fn markov(number_of_words_to_generate: i32, training_text: &str) -> String {
     } else if number_of_words_to_generate == 1 {
         vec![pick_random_word(training_text)]
     } else {
-        let words: Vec<String> = vec![];
-        words
+        vec![]
     }
     .join(" ")
 }
