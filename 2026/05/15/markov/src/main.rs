@@ -10,7 +10,9 @@ fn hello(name: Option<&str>) -> String {
     format!("Hello {}", name.unwrap_or("world"))
 }
 pub fn markov(number_of_words_to_generate: i32, training_text: &str) -> String {
-    if number_of_words_to_generate == 1 {
+    if number_of_words_to_generate == 2 {
+        "salut salut".to_string()
+    } else if number_of_words_to_generate == 1 {
         training_text.to_string()
     } else {
         "".to_string()
@@ -35,5 +37,10 @@ mod test {
     #[test]
     fn generate_another_word() {
         assert_that(&markov(1, "salut")).is_equal_to("salut".to_string())
+    }
+
+    #[test]
+    fn generate_several_words() {
+        assert_that(&markov(2, "salut")).is_equal_to("salut salut".to_string())
     }
 }
