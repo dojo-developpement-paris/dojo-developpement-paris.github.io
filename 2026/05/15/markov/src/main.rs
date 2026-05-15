@@ -10,6 +10,11 @@ fn hello(name: Option<&str>) -> String {
     format!("Hello {}", name.unwrap_or("world"))
 }
 pub fn markov(number_of_words_to_generate: i32, training_text: &str) -> String {
+    let words = words(number_of_words_to_generate, training_text);
+    words.join(" ")
+}
+
+fn words(number_of_words_to_generate: i32, training_text: &str) -> Vec<String> {
     if number_of_words_to_generate == 2 {
         vec![
             pick_random_word(training_text),
@@ -20,7 +25,6 @@ pub fn markov(number_of_words_to_generate: i32, training_text: &str) -> String {
     } else {
         vec![]
     }
-    .join(" ")
 }
 
 fn pick_random_word(to_string: &str) -> String {
