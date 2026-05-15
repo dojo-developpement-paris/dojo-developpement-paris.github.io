@@ -17,7 +17,7 @@ pub fn markov(number_of_words_to_generate: i32, training_text: &str) -> String {
             pick_random_word(training_text)
         )
     } else if number_of_words_to_generate == 1 {
-        training_text.to_string()
+        pick_random_word(training_text)
     } else {
         "".to_string()
     }
