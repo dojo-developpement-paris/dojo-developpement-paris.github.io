@@ -9,8 +9,8 @@ fn main() {
 fn hello(name: Option<&str>) -> String {
     format!("Hello {}", name.unwrap_or("world"))
 }
-pub fn markov(number_to_generate: i32, _arg_2: &str) -> String {
-    if number_to_generate == 1 {
+pub fn markov(number_of_words_to_generate: i32, _training_text: &str) -> String {
+    if number_of_words_to_generate == 1 {
         "hello".to_string()
     } else {
         "".to_string()
