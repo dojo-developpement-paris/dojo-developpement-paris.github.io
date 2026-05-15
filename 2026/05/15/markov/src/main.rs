@@ -11,17 +11,17 @@ fn hello(name: Option<&str>) -> String {
 }
 pub fn markov(number_of_words_to_generate: i32, training_text: &str) -> String {
     if number_of_words_to_generate == 2 {
-        [
+        vec![
             pick_random_word(training_text),
             pick_random_word(training_text),
         ]
-        .join(" ")
     } else if number_of_words_to_generate == 1 {
-        [pick_random_word(training_text)].join(" ")
+        vec![pick_random_word(training_text)]
     } else {
         let words: Vec<String> = vec![];
-        words.join(" ")
+        words
     }
+    .join(" ")
 }
 
 fn pick_random_word(to_string: &str) -> String {
