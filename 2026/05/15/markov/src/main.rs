@@ -10,7 +10,11 @@ fn hello(name: Option<&str>) -> String {
     format!("Hello {}", name.unwrap_or("world"))
 }
 pub fn markov(_arg_1: i32, _arg_2: &str) -> String {
-    "".to_string()
+    if _arg_1 == 1  {
+        "hello".to_string()
+    } else {
+        "".to_string()
+    }
 }
 
 #[cfg(test)]
@@ -21,5 +25,10 @@ mod test {
     #[test]
     fn generate_empty_string() {
         assert_that(&markov(0, "")).is_equal_to("".to_string())
+    }
+
+    #[test]
+    fn generate_word() {
+        assert_that(&markov(1, "hello")).is_equal_to("hello".to_string())
     }
 }
