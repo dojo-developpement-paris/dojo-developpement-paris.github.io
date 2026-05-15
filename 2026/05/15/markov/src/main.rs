@@ -11,11 +11,13 @@ fn hello(name: Option<&str>) -> String {
 }
 pub fn markov(number_of_words_to_generate: i32, training_text: &str) -> String {
     if number_of_words_to_generate == 2 {
-        [pick_random_word(training_text),
-            pick_random_word(training_text)]
+        [
+            pick_random_word(training_text),
+            pick_random_word(training_text),
+        ]
         .join(" ")
     } else if number_of_words_to_generate == 1 {
-        pick_random_word(training_text)
+        [pick_random_word(training_text)].join(" ")
     } else {
         "".to_string()
     }
