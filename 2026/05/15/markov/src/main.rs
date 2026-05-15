@@ -9,7 +9,7 @@ fn main() {
 fn hello(name: Option<&str>) -> String {
     format!("Hello {}", name.unwrap_or("world"))
 }
-fn markov(_arg_1: i32, _arg_2: &str) -> String {
+pub fn markov(_arg_1: i32, _arg_2: &str) -> String {
     "".to_string()
 }
 
