@@ -15,16 +15,9 @@ pub fn markov(number_of_words_to_generate: i32, training_text: &str) -> String {
 }
 
 fn words(number_of_words_to_generate: i32, training_text: &str) -> Vec<String> {
-    if number_of_words_to_generate == 2 {
-        vec![
-            pick_random_word(training_text),
-            pick_random_word(training_text),
-        ]
-    } else if number_of_words_to_generate == 1 {
-        vec![pick_random_word(training_text)]
-    } else {
-        vec![]
-    }
+    (0..number_of_words_to_generate)
+        .map(|_| pick_random_word(training_text))
+        .collect()
 }
 
 fn pick_random_word(to_string: &str) -> String {
