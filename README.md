@@ -35,7 +35,7 @@ Le but n'est **pas de finir**
 ## Langage
 Tout langage est accepté, à 2 conditions:
 - au moins une personne connait ce langage
-- quelqu'un a un environnement de prêt
+- quelqu'un a [un environnement de prêt]
 
 ## Orientation
 Au cours de la session, on invite chaque personne à répondre aux questions:
@@ -70,5 +70,6 @@ Transition sur plusieurs mois qui nous permettra de changer de revenir en arriè
 [Test Driven Development]: https://fr.wikipedia.org/wiki/Test_Driven_Development
 [Définition `test && commit || revert`]: https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864
 [TCR + TDD]: https://git-gamble.is-cool.dev/theory.html#tcrdd
+[un environnement de prêt]: https://pinage404.gitlab.io/nix-sandboxes/
 [un site pour voter]: https://emmanuelpaatz.com/dojosurvey
 [l'histoire du dojo]: https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io/blob/main/history.md
