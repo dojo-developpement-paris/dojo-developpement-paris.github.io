@@ -21,24 +21,24 @@ Le but n'est **pas de finir**
 - 0 -  -  -  -  - 
 
 ## Modes de fonctionnement habituels
-- Mob : 1 typist + les autres naviguent
-- Mob [strong-style] tournant : les mobbers donnent des idées 💡 le navigator décide 🔀 le driver tape ⌨️, on change les roles toutes les X minutes [mobtime]
-- Fishbowl : [Définition fishbowl] pareil ⬆️ en remplaçant le timer par des chaises 🪑🪑
-- Randori : chaque personne prend le clavier pendant 5 minutes
-- Demo : 1 personne fait une démo sur un [kata] (exercice de programmation) + les autres donnent du feedback
+- Mob: 1 typist + les autres naviguent
+- Mob [strong-style] tournant: les mobbers donnent des idées 💡 le navigator décide 🔀 le driver tape ⌨️, on change les roles toutes les X minutes [mobtime]
+- Fishbowl: [Définition fishbowl] pareil ⬆️ en remplaçant le timer par des chaises 🪑🪑
+- Randori: chaque personne prend le clavier pendant 5 minutes
+- Demo: 1 personne fait une démo sur un [kata] (exercice de programmation) + les autres donnent du feedback
 
 ## Contraintes
 - TDD: [Test Driven Development] ; nous faisons du TDD par défaut ; ce n'est pas une obligation
-- TCR : [Définition `test && commit || revert`]
-- TCRDD : [TCR + TDD]
+- TCR: [Définition `test && commit || revert`]
+- TCRDD: [TCR + TDD]
 
 ## Langage
-Tout langage est accepté, à 2 conditions :
+Tout langage est accepté, à 2 conditions:
 - au moins une personne connait ce langage
 - quelqu'un a un environnement de prêt
 
 ## Orientation
-Au cours de la session, on invite chaque personne à répondre aux questions :
+Au cours de la session, on invite chaque personne à répondre aux questions:
 - comment ça va ?
 - qu'est-ce qu'on pourrait changer pour que tu partes content-e de la session ?
 
@@ -49,13 +49,13 @@ il n'y a donc **pas de questions stupides**
 ## Méthode de vote
 - nous utilisons [un site pour voter]
 - points = nombre de sujets divisé 2 arrondis à l'entier inférieur
-- ex : sujets = 5, points = 2 ⇒ 2 votes, à 1 et 2 points
+- ex: sujets = 5, points = 2 ⇒ 2 votes, à 1 et 2 points
 
 ## Historique
 Si vous voulez en savoir plus, vous pouvez aller lire [l'histoire du dojo]
 
 ## Mobilizon
-Transition sur plusieurs mois qui nous permettra de changer de revenir en arrière si on voit que c'était une mauvaise idée :
+Transition sur plusieurs mois qui nous permettra de changer de revenir en arrière si on voit que c'était une mauvaise idée:
 1. [x] création du compte [Mobilizon]
 2. [x] double publication d'événements sur [Mobilizon] et Meetup
 3. [x] promotion des événements [Mobilizon] depuis les événements Meetup
