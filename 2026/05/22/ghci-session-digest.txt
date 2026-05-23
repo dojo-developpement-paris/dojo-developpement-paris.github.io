@@ -1,0 +1,413 @@
+ghci> let s = "4807" 
+ghci> s + 4 
+<interactive>:42:3: error: [GHC-39999] 
+    • No instance for ‘Num String’ arising from a use of ‘+’ 
+    • In the expression: s + 4 
+      In an equation for ‘it’: it = s + 4 
+ 
+ghci> :t read 
+read :: Read a => String -> a 
+ghci> :i Num 
+type Num :: * -> Constraint 
+class Num a where 
+  (+) :: a -> a -> a 
+  (-) :: a -> a -> a 
+  (*) :: a -> a -> a 
+  negate :: a -> a 
+  abs :: a -> a 
+  signum :: a -> a 
+  fromInteger :: Integer -> a 
+  {-# MINIMAL (+), (*), abs, signum, fromInteger, (negate | (-)) #-} 
+instance Num Double 
+instance Num Float 
+instance Num Int 
+instance Num Integer 
+instance Num Word 
+
+ghci> :i Read 
+type Read :: * -> Constraint 
+class Read a where 
+  readsPrec :: Int -> ReadS a 
+  readList :: ReadS [a] 
+  {-# MINIMAL readsPrec | readPrec #-} 
+instance Read Bool 
+instance Read Char 
+instance Read Double 
+instance Read Float 
+instance Read Int 
+instance Read Integer 
+instance Read a => Read [a] 
+instance Read a => Read (Maybe a) 
+instance Read Ordering 
+instance Read a => Read (Solo a) 
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g, 
+          Read h, Read i, Read j) => 
+         Read (a, b, c, d, e, f, g, h, i, j) 
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g, 
+          Read h, Read i, Read j, Read k) => 
+         Read (a, b, c, d, e, f, g, h, i, j, k) 
+…
+instance Read Word 
+instance (Read a, Read b) => Read (Either a b) 
+
+ghci>  read "4807"   :: Int 
+4807 
+ghci>  read "4807"    
+<interactive>:56:2: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘a0’ to type ‘()’ in the following constraints 
+        (Show a0) arising from a use of ‘print’ at <interactive>:56:2-12 
+        (Read a0) arising from a use of ‘it’ at <interactive>:56:2-12 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+*** Exception: Prelude.read: no parse 
+ghci>  read "4807"  :: Int  
+4807 
+ghci> read "toto" :: Int 
+*** Exception: Prelude.read: no parse 
+ghci> read "toto" :: String 
+"*** Exception: Prelude.read: no parse 
+ghci> read "\"toto\"" :: String 
+"toto" 
+
+ghci> :type getLine 
+getLine :: IO String 
+ghci> getLine 
+4807 ↵ 
+"4807" 
+ghci> read "4807" :: Int 
+4807 
+ghci> read (getLine) 
+<interactive>:64:7: error: [GHC-83865] 
+    • Couldn't match type: IO String 
+                     with: [Char] 
+      Expected: String 
+        Actual: IO String 
+    • In the first argument of ‘read’, namely ‘(getLine)’ 
+      In the expression: read (getLine) 
+      In an equation for ‘it’: it = read (getLine) 
+ 
+ghci> let readInt = read :: String -> Int 
+ghci> readInt "4708" 
+4708 
+ghci> readInt getLine  
+<interactive>:68:9: error: [GHC-83865] 
+    • Couldn't match type: IO String 
+                     with: [Char] 
+      Expected: String 
+        Actual: IO String 
+    • In the first argument of ‘readInt’, namely ‘getLine’ 
+      In the expression: readInt getLine 
+      In an equation for ‘it’: it = readInt getLine 
+ 
+ghci> let foo x = abs (x * 2) :: Int 
+ghci> foo (-40000) 
+80000 
+ghci> foo 42 
+84 
+ghci> foo [42] 
+<interactive>:72:5: error: [GHC-83865] 
+    • Couldn't match expected type ‘Int’ with actual type ‘[a0]’ 
+    • In the first argument of ‘foo’, namely ‘[42]’ 
+      In the expression: foo [42] 
+      In an equation for ‘it’: it = foo [42] 
+ 
+ghci> map foo [42] 
+[84] 
+ghci> map foo [42,34,17] 
+[84,68,34] 
+ghci> :type map 
+map :: (a -> b) -> [a] -> [b] 
+Just 42 
+ghci> Just 42 :: Maybe Int 
+Just 42 
+ghci> map foo (Just 42) 
+<interactive>:79:10: error: [GHC-83865] 
+    • Couldn't match expected type: [Int] 
+                  with actual type: Maybe a0 
+    • In the second argument of ‘map’, namely ‘(Just 42)’ 
+      In the expression: map foo (Just 42) 
+      In an equation for ‘it’: it = map foo (Just 42) 
+ 
+ghci> fmap foo (Just 42) 
+Just 84 
+ghci> :type fmap 
+fmap :: Functor f => (a -> b) -> f a -> f b 
+ghci> fmap foo [42] 
+[84] 
+ghci> :info Functor 
+type Functor :: (* -> *) -> Constraint 
+class Functor f where 
+  fmap :: (a -> b) -> f a -> f b 
+  (<$) :: a -> f b -> f a 
+  {-# MINIMAL fmap #-} 
+instance Functor ((->) r) 
+instance Functor IO 
+instance Functor [] 
+instance Functor Maybe 
+instance Functor Solo 
+instance Functor ((,) a) 
+instance Functor ((,,) a b) 
+instance Functor ((,,,) a b c) 
+instance Functor ((,,,,) a b c d) 
+instance Functor ((,,,,,) a b c d e) 
+instance Functor ((,,,,,,) a b c d e f) 
+instance Functor (Either a) 
+ghci> :t getLine 
+getLine :: IO String 
+ghci> :type fmap readInt getLine 
+fmap readInt getLine :: IO Int 
+ghci> let getInt = fmap readInt getLine 
+ghci> getInt 
+toto 
+*** Exception: Prelude.read: no parse 
+ghci> getInt 
+4807 ↵
+4807 
+ghci> getInt + 2 
+<interactive>:89:8: error: [GHC-39999] 
+    • No instance for ‘Num (IO Int)’ arising from a use of ‘+’ 
+    • In the expression: getInt + 2 
+      In an equation for ‘it’: it = getInt + 2 
+ 
+ghci> fmap (+2) getInt 
+4807 ↵
+4809 
+ghci> :type maybe 
+maybe :: b -> (a -> b) -> Maybe a -> b 
+ghci> :i Maybe 
+type Maybe :: * -> * 
+data Maybe a = Nothing | Just a 
+instance Traversable Maybe 
+instance Foldable Maybe 
+instance MonadFail Maybe 
+instance Applicative Maybe 
+instance Functor Maybe 
+instance Monad Maybe 
+instance Semigroup a => Monoid (Maybe a) 
+instance Semigroup a => Semigroup (Maybe a) 
+instance [safe] Ord a => Ord (Maybe a) 
+instance Read a => Read (Maybe a) 
+instance Show a => Show (Maybe a) 
+instance [safe] Eq a => Eq (Maybe a) 
+ghci> a = 2 :: Int 
+ghci> fmap (+2) Nothing 
+Nothing 
+ghci> fmap (+2) (Just 8) 
+Just 10 
+ghci> fmap (+2) 4:: Int 
+<interactive>:96:1: error: [GHC-83865] 
+    • Couldn't match expected type ‘Int’ with actual type ‘f0 b0’ 
+    • In the expression: fmap (+ 2) 4 :: Int 
+      In an equation for ‘it’: it = fmap (+ 2) 4 :: Int 
+ghci> :type fmap 
+fmap :: Functor f => (a -> b) -> f a -> f b 
+ghci> :info fmap 
+type Functor :: (* -> *) -> Constraint 
+class Functor f where 
+  fmap :: (a -> b) -> f a -> f b 
+  ... 
+ghci> :info Functor 
+type Functor :: (* -> *) -> Constraint 
+class Functor f where 
+  fmap :: (a -> b) -> f a -> f b 
+  (<$) :: a -> f b -> f a 
+  {-# MINIMAL fmap #-} 
+instance Functor ((->) r) 
+instance Functor IO 
+instance Functor [] 
+instance Functor Maybe 
+instance Functor Solo 
+instance Functor ((,) a) 
+instance Functor ((,,) a b) 
+instance Functor ((,,,) a b c) 
+instance Functor ((,,,,) a b c d) 
+instance Functor ((,,,,,) a b c d e) 
+instance Functor ((,,,,,,) a b c d e f) 
+instance Functor (Either a) 
+ghci> fmap foo [42] 
+[84] 
+ghci> fmap foo (Just 42) 
+Just 84 
+ghci> fmap foo 42 
+<interactive>:103:1: error: [GHC-39999] 
+    • Ambiguous type variable ‘f0’ arising from a use of ‘print’ 
+      prevents the constraint ‘(Show (f0 Int))’ from being solved. 
+      Probable fix: use a type annotation to specify what ‘f0’ should be. 
+      Potentially matching instances: 
+        instance (Show a, Show b) => Show (Either a b) 
+          -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Data.Either’ 
+        instance Show a => Show (Maybe a) 
+          -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Show’ 
+        ...plus 16 others 
+        ...plus 38 instances involving out-of-scope types 
+        (use -fprint-potential-instances to see them all) 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+ghci> 42 :: Int 
+42 
+ghci> fmap foo (42 :: Int) 
+<interactive>:105:11: error: [GHC-83865] 
+    • Couldn't match expected type ‘f Int’ with actual type ‘Int’ 
+    • In the second argument of ‘fmap’, namely ‘(42 :: Int)’ 
+      In the expression: fmap foo (42 :: Int) 
+      In an equation for ‘it’: it = fmap foo (42 :: Int) 
+    • Relevant bindings include 
+        it :: f Int (bound at <interactive>:105:1) 
+ 
+ghci> :type fmap 
+fmap :: Functor f => (a -> b) -> f a -> f b 
+ghci> :type readInt 
+readInt :: String -> Int 
+ghci> :type fmap readInt 
+fmap readInt :: Functor f => f String -> f Int 
+ghci> fmap readInt ["4807"] 
+[4807] 
+ghci> fmap readInt ["toto"] 
+[*** Exception: Prelude.read: no parse 
+ghci> :type putStrLn 
+putStrLn :: String -> IO () 
+ghci> :type fmap putStrLn  
+fmap putStrLn :: Functor f => f String -> f (IO ()) 
+ghci> :type getLine 
+getLine :: IO String 
+ghci> fmap putStrLn getLine 
+toto foo bar  
+ghci> :type fmap putStrLn getLine 
+$fmap putStrLn getLine :: IO (IO ()) 
+ghci> :type fmap putStrLn getLine 
+fmap putStrLn getLine :: IO (IO ()) 
+ghci> getInt 
+42 ↵
+42 
+ghci> fmap foo getInt 
+42 ↵
+84 
+ghci> :type fmap (+) getInt 
+fmap (+) getInt :: IO (Int -> Int) 
+ghci> let iOfunc = fmap (+) getInt 
+ghci> :t iOfunc 
+iOfunc :: IO (Int -> Int) 
+ghci> (\x -> x * 10) 4 
+40 
+ghci> fmap (\f -> f 2) iOfunc 
+4807 ↵
+4809 
+ghci> fmap (\f -> f 43) (fmap (+) getInt) 
+23 ↵
+66 
+ghci> :info Applicative 
+type Applicative :: (* -> *) -> Constraint 
+class Functor f => Applicative f where 
+  pure :: a -> f a 
+  (<*>) :: f (a -> b) -> f a -> f b 
+  liftA2 :: (a -> b -> c) -> f a -> f b -> f c 
+  (*>) :: f a -> f b -> f b 
+  (<*) :: f a -> f b -> f a 
+  {-# MINIMAL pure, ((<*>) | liftA2) #-} 
+instance Applicative ((->) r) 
+instance Applicative IO 
+instance Applicative [] 
+instance Applicative Maybe 
+instance Applicative Solo 
+instance Monoid a => Applicative ((,) a) 
+instance (Monoid a, Monoid b) => Applicative ((,,) a b) 
+instance (Monoid a, Monoid b, Monoid c) => 
+         Applicative ((,,,) a b c) 
+instance Applicative (Either e) 
+ghci> pure 42 :: Maybe Int 
+Just 42 
+ghci> :type fmap (+) getInt 
+fmap (+) getInt :: IO (Int -> Int) 
+ghci> (fmap (+) getInt) <*> getInt 
+23 ↵
+17 ↵
+40 
+ghci> :type (fmap (+) getInt) 
+(fmap (+) getInt) :: IO (Int -> Int) 
+ghci> :type (<*>) 
+(<*>) :: Applicative f => f (a -> b) -> f a -> f b 
+ghci> (Just (+ 15)) <*> Just 42 
+Just 57 
+ghci> :type (Just (+)) 
+(Just (+)) :: Num a => Maybe (a -> a -> a) 
+ghci> :type (<*>) 
+(<*>) :: Applicative f => f (a -> b) -> f a -> f b 
+ghci> Just abs <*> Just (-42) 
+Just 42 
+ghci> :type pure 
+pure :: Applicative f => a -> f a 
+ghci> :type pure abs 
+pure abs :: (Applicative f, Num a) => f (a -> a) 
+ghci> pure abs <*> (Just (-42)) 
+Just 42 
+ghci> fmap abs (Just (-42)) 
+Just 42 
+ghci> :type (getInt <*>)  
+ghci> :type (<*>) 
+(<*>) :: Applicative f => f (a -> b) -> f a -> f b 
+ghci> l = [1,2,3,4] 
+ghci> l 
+[1,2,3,4] 
+ghci> l = [1,2,3,4] :: [Int] 
+ghci> let l = [1,2,3,4] :: [Int] 
+ghci> l 
+[1,2,3,4] 
+ghci> :type fmap (+) l 
+fmap (+) l :: [Int -> Int] 
+ghci> :type (fmap (+) l <*>) 
+(fmap (+) l <*>) :: [Int] -> [Int] 
+ghci> fmap (+) l <*> l 
+[2,3,4,5,3,4,5,6,4,5,6,7,5,6,7,8] 
+ghci> let m = Just 42 
+ghci> :type (fmap (+) m) 
+(fmap (+) m) :: Num a => Maybe (a -> a) 
+ghci> :type (fmap (+) m <*>) 
+(fmap (+) m <*>) :: Num b => Maybe b -> Maybe b 
+ghci> fmap (+) m <*> m 
+Just 84 
+ghci> fmap (+) getInt <*> getInt 
+23 ↵
+17 ↵
+40 
+ghci> :info Monad 
+type Monad :: (* -> *) -> Constraint 
+class Applicative m => Monad m where 
+  (>>=) :: m a -> (a -> m b) -> m b 
+  (>>) :: m a -> m b -> m b 
+  return :: a -> m a 
+  {-# MINIMAL (>>=) #-} 
+instance Monad ((->) r) 
+instance Monad IO 
+instance Monad [] 
+instance Monad Maybe 
+instance Monad Solo 
+instance Monoid a => Monad ((,) a) 
+instance (Monoid a, Monoid b) => Monad ((,,) a b) 
+instance (Monoid a, Monoid b, Monoid c) => Monad ((,,,) a b c) 
+instance Monad (Either e) 
+ghci> :type getInt 
+getInt :: IO Int 
+ghci> getLine >>= putStrLn 
+foo bar ↵
+foo bar 
+ghci> :type getLine 
+getLine :: IO String 
+ghci> :type putStrLn 
+putStrLn :: String -> IO () 
+ghci> :type (>>=) 
+(>>=) :: Monad m => m a -> (a -> m b) -> m b 
+ghci> do s <- getLine ; putStrLn s 
+foo bar lao ↵
+foo bar lao 
+ghci> :type (>>=) 
+(>>=) :: Monad m => m a -> (a -> m b) -> m b 
+ghci> getLine >>= (\s -> putStrLn s) 
+foo ↵
+foo 
+ghci> do s <- getLine ; putStrLn s ; putStrLn s 
+foo ↵
+foo 
+foo 
+ghci> :q 
+Leaving GHCi. 
+~/Coding/haskell-monad:  
