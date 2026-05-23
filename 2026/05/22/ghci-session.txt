@@ -1,0 +1,1032 @@
+ 
+ghci> let s = "4807" 
+ghci> s + 4 
+<interactive>:42:3: error: [GHC-39999] 
+    • No instance for ‘Num String’ arising from a use of ‘+’ 
+    • In the expression: s + 4 
+      In an equation for ‘it’: it = s + 4 
+ 
+ghci> :t read 
+read :: Read a => String -> a 
+ghci> :i Num 
+type Num :: * -> Constraint 
+class Num a where 
+  (+) :: a -> a -> a 
+  (-) :: a -> a -> a 
+  (*) :: a -> a -> a 
+  negate :: a -> a 
+  abs :: a -> a 
+  signum :: a -> a 
+  fromInteger :: Integer -> a 
+  {-# MINIMAL (+), (*), abs, signum, fromInteger, (negate | (-)) #-} 
+  	-- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Num’ 
+instance Num Double 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Float’ 
+instance Num Float 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Float’ 
+instance Num Int 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Num’ 
+instance Num Integer 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Num’ 
+instance Num Word 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Num’ 
+ghci> 4 :: Word 
+4 
+ghci> :t read 
+read :: Read a => String -> a 
+ghci> :i Read 
+type Read :: * -> Constraint 
+class Read a where 
+  readsPrec :: Int -> ReadS a 
+  readList :: ReadS [a] 
+  ghc-internal-9.1003.0:GHC.Internal.Read.readPrec :: ghc-internal-9.1003.0:GHC.Internal.Text.ParserCombinators.ReadPrec.ReadPrec 
+                                                        a 
+  ghc-internal-9.1003.0:GHC.Internal.Read.readListPrec :: ghc-internal-9.1003.0:GHC.Internal.Text.ParserCombinators.ReadPrec.ReadPrec 
+                                                            [a] 
+  {-# MINIMAL readsPrec | readPrec #-} 
+  	-- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read Bool 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read Char 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read Double 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read Float 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read Int 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read Integer 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read a => Read [a] 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read a => Read (Maybe a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read Ordering 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read a => Read (Solo a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g, 
+          Read h, Read i, Read j) => 
+         Read (a, b, c, d, e, f, g, h, i, j) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g, 
+          Read h, Read i, Read j, Read k) => 
+         Read (a, b, c, d, e, f, g, h, i, j, k) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g, 
+          Read h, Read i, Read j, Read k, Read l) => 
+         Read (a, b, c, d, e, f, g, h, i, j, k, l) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g, 
+          Read h, Read i, Read j, Read k, Read l, Read m) => 
+         Read (a, b, c, d, e, f, g, h, i, j, k, l, m) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g, 
+          Read h, Read i, Read j, Read k, Read l, Read m, Read n) => 
+         Read (a, b, c, d, e, f, g, h, i, j, k, l, m, n) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g, 
+          Read h, Read i, Read j, Read k, Read l, Read m, Read n, Read o) => 
+         Read (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b) => Read (a, b) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c) => Read (a, b, c) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d) => Read (a, b, c, d) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d, Read e) => 
+         Read (a, b, c, d, e) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d, Read e, Read f) => 
+         Read (a, b, c, d, e, f) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d, Read e, Read f, 
+          Read g) => 
+         Read (a, b, c, d, e, f, g) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g, 
+          Read h) => 
+         Read (a, b, c, d, e, f, g, h) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g, 
+          Read h, Read i) => 
+         Read (a, b, c, d, e, f, g, h, i) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read () 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Read Word 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance (Read a, Read b) => Read (Either a b) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Data.Either’ 
+ghci> :t read  
+read :: Read a => String -> a 
+ghci> read "4807" :: Int 
+4807 
+ghci> :help 
+ Commands available from the prompt: 
+ 
+   <statement>                 evaluate/run <statement> 
+   :                           repeat last command 
+   :{\n ..lines.. \n:}\n       multiline command 
+   :add [*]<module> ...        add module(s) to the current target set 
+   :browse[!] [[*]<mod>]       display the names defined by module <mod> 
+                               (!: more details; *: all top-level names) 
+   :cd <dir>                   change directory to <dir> 
+   :cmd <expr>                 run the commands returned by <expr>::IO String 
+   :complete <dom> [<rng>] <s> list completions for partial input string 
+   :def[!] <cmd> <expr>        define command :<cmd> (later defined command has 
+                               precedence, ::<cmd> is always a builtin command) 
+                               (!: redefine an existing command name) 
+   :doc <name>                 display docs for the given name (experimental) 
+   :edit <file>                edit file 
+   :edit                       edit last module 
+   :help, :?                   display this list of commands 
+   :info[!] [<name> ...]       display information about the given names 
+                               (!: do not filter instances) 
+   :instances <type>           display the class instances available for <type> 
+   :issafe [<mod>]             display safe haskell information of module <mod> 
+   :kind[!] <type>             show the kind of <type> 
+                               (!: also print the normalised type) 
+   :load[!] [*]<module> ...    load module(s) and their dependents 
+                               (!: defer type errors) 
+   :main [<arguments> ...]     run the main function with the given arguments 
+   :module [+/-] [*]<mod> ...  set the context for expression evaluation 
+   :quit                       exit GHCi 
+   :reload[!]                  reload the current module set 
+                               (!: defer type errors) 
+   :run function [<arguments> ...] run the function with the given arguments 
+   :script <file>              run the script <file> 
+   :type <expr>                show the type of <expr> 
+   :type +d <expr>             show the type of <expr>, defaulting type variables 
+   :unadd <module> ...         remove module(s) from the current target set 
+   :undef <cmd>                undefine user-defined command :<cmd> 
+   ::<cmd>                     run the builtin command 
+   :!<command>                 run the shell command <command> 
+ 
+ -- Commands for debugging: 
+ 
+   :abandon                    at a breakpoint, abandon current computation 
+   :back [<n>]                 go back in the history N steps (after :trace) 
+   :break [<mod>] <l> [<col>]  set a breakpoint at the specified location 
+   :break <name>               set a breakpoint on the specified function 
+   :continue [<count>]         resume after a breakpoint [and set break ignore count] 
+   :delete <number> ...        delete the specified breakpoints 
+   :delete *                   delete all breakpoints 
+   :disable <number> ...       disable the specified breakpoints 
+   :disable *                  disable all breakpoints 
+   :enable <number> ...        enable the specified breakpoints 
+   :enable *                   enable all breakpoints 
+   :force <expr>               print <expr>, forcing unevaluated parts 
+   :forward [<n>]              go forward in the history N step s(after :back) 
+   :history [<n>]              after :trace, show the execution history 
+   :ignore <breaknum> <count>  for break <breaknum> set break ignore <count> 
+   :list                       show the source code around current breakpoint 
+   :list <identifier>          show the source code for <identifier> 
+   :list [<module>] <line>     show the source code around line number <line> 
+   :print [<name> ...]         show a value without forcing its computation 
+   :sprint [<name> ...]        simplified version of :print 
+   :step                       single-step after stopping at a breakpoint 
+   :step <expr>                single-step into <expr> 
+   :steplocal                  single-step within the current top-level binding 
+   :stepmodule                 single-step restricted to the current module 
+   :trace                      trace after stopping at a breakpoint 
+   :trace <expr>               evaluate <expr> with tracing on (see :history) 
+ 
+ -- Commands for changing settings: 
+ 
+   :set <option> ...           set options 
+   :seti <option> ...          set options for interactive evaluation only 
+   :set local-config { source | ignore } 
+                               set whether to source .ghci in current dir 
+                               (loading untrusted config is a security issue) 
+   :set args <arg> ...         set the arguments returned by System.Environment.getArgs 
+   :set prog <progname>        set the value returned by System.Environment.getProgName 
+   :set prompt <prompt>        set the prompt used in GHCi 
+   :set prompt-cont <prompt>   set the continuation prompt used in GHCi 
+   :set prompt-function <expr> set the function to handle the prompt 
+   :set prompt-cont-function <expr> 
+                               set the function to handle the continuation prompt 
+   :set editor <cmd>           set the command used for :edit 
+   :set stop [<n>] <cmd>       set the command to run when a breakpoint is hit 
+   :unset <option> ...         unset options 
+ 
+  Options for ':set' and ':unset': 
+ 
+    +m            allow multiline commands 
+    +r            revert top-level expressions after each evaluation 
+    +s            print timing/memory stats after each evaluation 
+    +t            print type after evaluation 
+    +c            collect type/location info after loading modules 
+    -<flags>      most GHC command line flags can also be set here 
+                         (eg. -v2, -XFlexibleInstances, etc.) 
+                    for GHCi-specific flags, see User's Guide, 
+                    Flag reference, Interactive-mode options 
+ 
+ -- Commands for displaying information: 
+ 
+   :show bindings              show the current bindings made at the prompt 
+   :show breaks                show the active breakpoints 
+   :show context               show the breakpoint context 
+   :show imports               show the current imports 
+   :show linker                show current linker state 
+   :show modules               show the currently loaded modules 
+   :show packages              show the currently active package flags 
+   :show paths                 show the currently active search paths 
+   :show language              show the currently active language flags 
+   :show targets               show the current set of targets 
+   :show <setting>             show value of <setting>, which is one of 
+                                  [args, prog, editor, stop] 
+   :showi language             show language flags for interactive evaluation 
+ 
+ The User's Guide has more information. An online copy can be found here: 
+ 
+   https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/ghci.html 
+ 
+ghci> read "4807"  
+<interactive>:51:1: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘a0’ to type ‘()’ in the following constraints 
+        (Show a0) arising from a use of ‘print’ at <interactive>:51:1-11 
+        (Read a0) arising from a use of ‘it’ at <interactive>:51:1-11 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+*** Exception: Prelude.read: no parse 
+ghci> let toto :: Int = read "4807" 
+<interactive>:52:5: error: [GHC-74097] 
+    Illegal type signature: ‘Int’ 
+      Type signatures are only allowed in patterns with ScopedTypeVariables 
+    Suggested fix: 
+      Perhaps you intended to use ScopedTypeVariables 
+      You may enable this language extension in GHCi with: 
+        :set -XScopedTypeVariables 
+ 
+ghci> let (toto :: Int) = read "4807" 
+<interactive>:53:6: error: [GHC-74097] 
+    Illegal type signature: ‘Int’ 
+      Type signatures are only allowed in patterns with ScopedTypeVariables 
+    Suggested fix: 
+      Perhaps you intended to use ScopedTypeVariables 
+      You may enable this language extension in GHCi with: 
+        :set -XScopedTypeVariables 
+ 
+ghci> toto :: Int 
+<interactive>:54:1: error: [GHC-88464] 
+    Variable not in scope: toto :: Int 
+ 
+ghci>  read "4807"   :: Int 
+4807 
+ghci>  read "4807"    
+<interactive>:56:2: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘a0’ to type ‘()’ in the following constraints 
+        (Show a0) arising from a use of ‘print’ at <interactive>:56:2-12 
+        (Read a0) arising from a use of ‘it’ at <interactive>:56:2-12 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+*** Exception: Prelude.read: no parse 
+ghci>  read "4807"  :: Int  
+4807 
+ghci> read "toto" :: Int 
+*** Exception: Prelude.read: no parse 
+ghci> read "toto" :: String 
+"*** Exception: Prelude.read: no parse 
+ghci> read "\"toto\"" :: String 
+"toto" 
+ghci> :type getLine 
+getLine :: IO String 
+ghci> getLine 
+4807 
+"4807" 
+ghci> read "4807" :: Int 
+4807 
+ghci> read (getLine) 
+<interactive>:64:7: error: [GHC-83865] 
+    • Couldn't match type: IO String 
+                     with: [Char] 
+      Expected: String 
+        Actual: IO String 
+    • In the first argument of ‘read’, namely ‘(getLine)’ 
+      In the expression: read (getLine) 
+      In an equation for ‘it’: it = read (getLine) 
+ 
+ghci> let readInt = read x :: Int 
+<interactive>:65:20: error: [GHC-88464] 
+    Variable not in scope: x :: String 
+ 
+ghci> let readInt = read :: String -> Int 
+ghci> readInt "4708" 
+4708 
+ghci> readInt getLine  
+<interactive>:68:9: error: [GHC-83865] 
+    • Couldn't match type: IO String 
+                     with: [Char] 
+      Expected: String 
+        Actual: IO String 
+    • In the first argument of ‘readInt’, namely ‘getLine’ 
+      In the expression: readInt getLine 
+      In an equation for ‘it’: it = readInt getLine 
+ 
+ghci> let foo x = abs (x * 2) :: Int 
+ghci> foo (-40000) 
+80000 
+ghci> foo 42 
+84 
+ghci> foo [42] 
+<interactive>:72:5: error: [GHC-83865] 
+    • Couldn't match expected type ‘Int’ with actual type ‘[a0]’ 
+    • In the first argument of ‘foo’, namely ‘[42]’ 
+      In the expression: foo [42] 
+      In an equation for ‘it’: it = foo [42] 
+ 
+ghci> map foo [42] 
+[84] 
+ghci> map foo [42,34,17] 
+[84,68,34] 
+ghci> :type map 
+map :: (a -> b) -> [a] -> [b] 
+ghci> Just 42 
+<interactive>:76:1: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘a0’ to type ‘Integer’ in the following constraints 
+        (Show a0) arising from a use of ‘print’ at <interactive>:76:1-7 
+        (Num a0) arising from a use of ‘it’ at <interactive>:76:1-7 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+Just 42 
+ghci> Just 42 :: Option Int 
+<interactive>:77:12: error: [GHC-76037] 
+    Not in scope: type constructor or class ‘Option’ 
+ 
+ghci> Just 42 :: Maybe Int 
+Just 42 
+ghci> map foo (Just 42) 
+<interactive>:79:10: error: [GHC-83865] 
+    • Couldn't match expected type: [Int] 
+                  with actual type: Maybe a0 
+    • In the second argument of ‘map’, namely ‘(Just 42)’ 
+      In the expression: map foo (Just 42) 
+      In an equation for ‘it’: it = map foo (Just 42) 
+ 
+ghci> fmap foo (Just 42) 
+Just 84 
+ghci> :type fmap 
+fmap :: Functor f => (a -> b) -> f a -> f b 
+ghci> fmap foo [42] 
+[84] 
+ghci> :info Functor 
+type Functor :: (* -> *) -> Constraint 
+class Functor f where 
+  fmap :: (a -> b) -> f a -> f b 
+  (<$) :: a -> f b -> f a 
+  {-# MINIMAL fmap #-} 
+  	-- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((->) r) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor IO 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor [] 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor Maybe 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor Solo 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,) a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,,) a b) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,,,) a b c) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,,,,) a b c d) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,,,,,) a b c d e) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,,,,,,) a b c d e f) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor (Either a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Data.Either’ 
+ghci> :t getLine 
+getLine :: IO String 
+ghci> :type fmap readInt getLine 
+fmap readInt getLine :: IO Int 
+ghci> let getInt = fmap readInt getLine 
+ghci> getInt 
+toto 
+*** Exception: Prelude.read: no parse 
+ghci> getInt 
+4807 
+4807 
+ghci> getInt + 2 
+<interactive>:89:8: error: [GHC-39999] 
+    • No instance for ‘Num (IO Int)’ arising from a use of ‘+’ 
+    • In the expression: getInt + 2 
+      In an equation for ‘it’: it = getInt + 2 
+ 
+ghci> fmap (+2) getInt 
+4807 
+4809 
+ghci> :type maybe 
+maybe :: b -> (a -> b) -> Maybe a -> b 
+ghci> :i Maybe 
+type Maybe :: * -> * 
+data Maybe a = Nothing | Just a 
+  	-- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Maybe’ 
+instance Traversable Maybe 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Data.Traversable’ 
+instance Foldable Maybe 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Data.Foldable’ 
+instance MonadFail Maybe 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Control.Monad.Fail’ 
+instance Applicative Maybe 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor Maybe 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Monad Maybe 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Semigroup a => Monoid (Maybe a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Semigroup a => Semigroup (Maybe a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance [safe] Ord a => Ord (Maybe a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Maybe’ 
+instance Read a => Read (Maybe a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Read’ 
+instance Show a => Show (Maybe a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Show’ 
+instance [safe] Eq a => Eq (Maybe a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Maybe’ 
+ghci> a = 2 :: Int 
+ghci> fmap (+2) Nothing 
+<interactive>:94:1: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘b0’ to type ‘Integer’ in the following constraints 
+        (Show b0) arising from a use of ‘print’ at <interactive>:94:1-17 
+        (Num b0) arising from a use of ‘it’ at <interactive>:94:1-17 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+Nothing 
+ghci> fmap (+2) (Just 8) 
+<interactive>:95:1: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘b0’ to type ‘Integer’ in the following constraints 
+        (Show b0) arising from a use of ‘print’ at <interactive>:95:1-18 
+        (Num b0) arising from a use of ‘it’ at <interactive>:95:1-18 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+Just 10 
+ghci> fmap (+2) 4:: Int 
+<interactive>:96:1: error: [GHC-83865] 
+    • Couldn't match expected type ‘Int’ with actual type ‘f0 b0’ 
+    • In the expression: fmap (+ 2) 4 :: Int 
+      In an equation for ‘it’: it = fmap (+ 2) 4 :: Int 
+ 
+ghci> :type fmap 
+fmap :: Functor f => (a -> b) -> f a -> f b 
+ghci> :info fmap 
+type Functor :: (* -> *) -> Constraint 
+class Functor f where 
+  fmap :: (a -> b) -> f a -> f b 
+  ... 
+  	-- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+ghci> :info Functor 
+type Functor :: (* -> *) -> Constraint 
+class Functor f where 
+  fmap :: (a -> b) -> f a -> f b 
+  (<$) :: a -> f b -> f a 
+  {-# MINIMAL fmap #-} 
+  	-- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((->) r) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor IO 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor [] 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor Maybe 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor Solo 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,) a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,,) a b) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,,,) a b c) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,,,,) a b c d) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,,,,,) a b c d e) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor ((,,,,,,) a b c d e f) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Functor (Either a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Data.Either’ 
+ghci> fmap [42] 
+<interactive>:100:6: error: [GHC-83865] 
+    • Couldn't match expected type: a -> b 
+                  with actual type: [a0] 
+    • In the first argument of ‘fmap’, namely ‘[42]’ 
+      In the expression: fmap [42] 
+      In an equation for ‘it’: it = fmap [42] 
+    • Relevant bindings include 
+        it :: f a -> f b (bound at <interactive>:100:1) 
+ 
+ghci> fmap foo [42] 
+[84] 
+ghci> fmap foo (Just 42) 
+Just 84 
+ghci> fmap foo 42 
+<interactive>:103:1: error: [GHC-39999] 
+    • Ambiguous type variable ‘f0’ arising from a use of ‘print’ 
+      prevents the constraint ‘(Show (f0 Int))’ from being solved. 
+      Probable fix: use a type annotation to specify what ‘f0’ should be. 
+      Potentially matching instances: 
+        instance (Show a, Show b) => Show (Either a b) 
+          -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Data.Either’ 
+        instance Show a => Show (Maybe a) 
+          -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Show’ 
+        ...plus 16 others 
+        ...plus 38 instances involving out-of-scope types 
+        (use -fprint-potential-instances to see them all) 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+ghci> 42 :: Int 
+42 
+ghci> fmap foo (42 :: Int) 
+<interactive>:105:11: error: [GHC-83865] 
+    • Couldn't match expected type ‘f Int’ with actual type ‘Int’ 
+    • In the second argument of ‘fmap’, namely ‘(42 :: Int)’ 
+      In the expression: fmap foo (42 :: Int) 
+      In an equation for ‘it’: it = fmap foo (42 :: Int) 
+    • Relevant bindings include 
+        it :: f Int (bound at <interactive>:105:1) 
+ 
+ghci> :type fmap 
+fmap :: Functor f => (a -> b) -> f a -> f b 
+ghci> :type readInt 
+readInt :: String -> Int 
+ghci> :type fmap readInt 
+fmap readInt :: Functor f => f String -> f Int 
+ghci> fmap readInt ["4807"] 
+[4807] 
+ghci> fmap readInt ["toto"] 
+[*** Exception: Prelude.read: no parse 
+ghci> :type putStrLn 
+putStrLn :: String -> IO () 
+ghci> :type fmap putStrln  
+<interactive>:1:6: error: [GHC-88464] 
+    Variable not in scope: putStrln :: a -> b 
+    Suggested fix: 
+      Perhaps use one of these: 
+        ‘putStrLn’ (imported from Prelude), 
+        ‘putStr’ (imported from Prelude) 
+ 
+ghci> :type fmap putStrLn  
+fmap putStrLn :: Functor f => f String -> f (IO ()) 
+ghci> :type getLine 
+getLine :: IO String 
+ghci> fmap putStrLn getLine 
+toto foo bar  
+ghci> :type fmap putStrLn getLine 
+$fmap putStrLn getLine :: IO (IO ()) 
+ghci> :type fmap putStrLn getLine 
+fmap putStrLn getLine :: IO (IO ()) 
+ghci> getInt 
+42 
+42 
+ghci> fmap foo getInt 
+42 
+84 
+ghci> :type fmap (+) getInt 
+fmap (+) getInt :: IO (Int -> Int) 
+ghci> let IOfunc = fmap (+) getInt 
+<interactive>:121:5: error: [GHC-76037] 
+    Not in scope: data constructor ‘IOfunc’ 
+ 
+ghci> let iOfunc = fmap (+) getInt 
+ghci> :t iOfunc 
+iOfunc :: IO (Int -> Int) 
+ghci> (\x -> x * 10) 4 
+<interactive>:124:1: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘a0’ to type ‘Integer’ in the following constraints 
+        (Show a0) arising from a use of ‘print’ at <interactive>:124:1-16 
+        (Num a0) arising from a use of ‘it’ at <interactive>:124:1-16 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+40 
+ghci> fmap (\f -> f 2) iOFunc 
+<interactive>:125:18: error: [GHC-88464] 
+    Variable not in scope: iOFunc :: f (t0 -> b) 
+    Suggested fix: Perhaps use ‘iOfunc’ (line 122) 
+ 
+ghci> fmap (\f -> f 2) iOfunc 
+<interactive>:126:8: warning: [GHC-63397] [-Wname-shadowing] 
+    This binding for ‘f’ shadows the existing binding 
+      defined at <interactive>:19:5 
+ 
+4807 
+4809 
+ghci> fmap (\f -> 43) (fmap (+) getInt) 
+<interactive>:127:8: warning: [GHC-40910] [-Wunused-matches] 
+    Defined but not used: ‘f’ 
+ 
+<interactive>:127:8: warning: [GHC-63397] [-Wname-shadowing] 
+    This binding for ‘f’ shadows the existing binding 
+      defined at <interactive>:19:5 
+ 
+<interactive>:127:13: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘a0’ to type ‘Integer’ in the following constraints 
+        (Num a0) arising from the literal ‘43’ at <interactive>:127:13-14 
+        (Show a0) arising from a use of ‘print’ at <interactive>:127:1-33 
+    • In the expression: 43 
+      In the first argument of ‘fmap’, namely ‘(\ f -> 43)’ 
+      In the first argument of ‘ghc-internal-9.1003.0:GHC.Internal.GHCi.ghciStepIO :: 
+                                  IO a -> IO a’, namely 
+        ‘(fmap (\ f -> 43) (fmap (+) getInt))’ 
+ 
+23 
+43 
+ghci> fmap (\f -> f+43) (fmap (+) getInt) 
+<interactive>:128:14: error: [GHC-39999] 
+    • No instance for ‘Num (Int -> Int)’ arising from a use of ‘+’ 
+        (maybe you haven't applied a function to enough arguments?) 
+    • In the expression: f + 43 
+      In the first argument of ‘fmap’, namely ‘(\ f -> f + 43)’ 
+      In the expression: fmap (\ f -> f + 43) (fmap (+) getInt) 
+ 
+ghci> fmap (\f -> f 43) (fmap (+) getInt) 
+<interactive>:129:8: warning: [GHC-63397] [-Wname-shadowing] 
+    This binding for ‘f’ shadows the existing binding 
+      defined at <interactive>:19:5 
+ 
+23 
+66 
+ghci> fmap (\f -> fmap (f) getInt) (fmap (+) getInt) 
+<interactive>:130:8: warning: [GHC-63397] [-Wname-shadowing] 
+    This binding for ‘f’ shadows the existing binding 
+      defined at <interactive>:19:5 
+ 
+24 
+ghci> :type Applicative 
+<interactive>:1:1: error: [GHC-01928] 
+    • Illegal term-level use of the class ‘Applicative’ 
+    • imported from ‘Prelude’ at /Users/christophethibaut/Coding/haskell-monad/app/Main.hs:1:8-11 
+      (and originally defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’) 
+    • In the expression: Applicative 
+ 
+ghci> :info Applicative 
+type Applicative :: (* -> *) -> Constraint 
+class Functor f => Applicative f where 
+  pure :: a -> f a 
+  (<*>) :: f (a -> b) -> f a -> f b 
+  liftA2 :: (a -> b -> c) -> f a -> f b -> f c 
+  (*>) :: f a -> f b -> f b 
+  (<*) :: f a -> f b -> f a 
+  {-# MINIMAL pure, ((<*>) | liftA2) #-} 
+  	-- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Applicative ((->) r) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Applicative IO 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Applicative [] 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Applicative Maybe 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Applicative Solo 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Monoid a => Applicative ((,) a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance (Monoid a, Monoid b) => Applicative ((,,) a b) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance (Monoid a, Monoid b, Monoid c) => 
+         Applicative ((,,,) a b c) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Applicative (Either e) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Data.Either’ 
+ghci> pure 42 :: Maybe Int 
+Just 42 
+ghci> :type fmap (+) getInt 
+fmap (+) getInt :: IO (Int -> Int) 
+ghci> :type getInt <*> 
+<interactive>:1:11: error: [GHC-58481] 
+    parse error (possibly incorrect indentation or mismatched brackets) 
+ 
+ghci> :type (getInt <*>) 
+<interactive>:1:2: error: [GHC-83865] 
+    • Couldn't match type ‘Int’ with ‘a -> b’ 
+      Expected: IO (a -> b) 
+        Actual: IO Int 
+    • In the expression: getInt 
+      In the expression: getInt <*> 
+ 
+ghci> :type getInt <*> (fmap (+) getInt) 
+<interactive>:1:1: error: [GHC-83865] 
+    • Couldn't match type ‘Int’ with ‘(Int -> Int) -> b’ 
+      Expected: IO ((Int -> Int) -> b) 
+        Actual: IO Int 
+    • In the first argument of ‘(<*>)’, namely ‘getInt’ 
+      In the expression: getInt <*> (fmap (+) getInt) 
+ 
+ghci> (fmap (+) getInt) <*> getInt 
+23 
+17 
+40 
+ghci> :type (fmap (+) getInt) 
+(fmap (+) getInt) :: IO (Int -> Int) 
+ghci> :type (<*>) 
+(<*>) :: Applicative f => f (a -> b) -> f a -> f b 
+ghci> (Just (+ 15)) <*> Just 42 
+<interactive>:141:1: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘b0’ to type ‘Integer’ in the following constraints 
+        (Show b0) arising from a use of ‘print’ at <interactive>:141:1-25 
+        (Num b0) arising from a use of ‘it’ at <interactive>:141:1-25 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+Just 57 
+ghci> pure 15 <*> Just (+) <*> Just 42  
+<interactive>:142:1: error: [GHC-80003] 
+    • Non type-variable argument 
+        in the constraint: Num ((a1 -> a1 -> a1) -> a2 -> b) 
+    • When checking the inferred type 
+        it :: forall {a1} {a2} {b}. 
+              (Num a1, Num a2, Num ((a1 -> a1 -> a1) -> a2 -> b)) => 
+              Maybe b 
+    Suggested fix: 
+      Perhaps you intended to use FlexibleContexts 
+      You may enable this language extension in GHCi with: 
+        :set -XFlexibleContexts 
+ 
+ghci> :type (Just (+)) 
+(Just (+)) :: Num a => Maybe (a -> a -> a) 
+ghci> getInt <*> fmap (+) <*> getInt 
+<interactive>:144:1: error: [GHC-83865] 
+    • Couldn't match type ‘Int’ with ‘a0 -> Int -> b’ 
+      Expected: IO (a0 -> Int -> b) 
+        Actual: IO Int 
+    • In the first argument of ‘(<*>)’, namely ‘getInt’ 
+      In the first argument of ‘(<*>)’, namely ‘getInt <*> fmap (+)’ 
+      In the expression: getInt <*> fmap (+) <*> getInt 
+    • Relevant bindings include 
+        it :: IO b (bound at <interactive>:144:1) 
+ 
+<interactive>:144:12: error: [GHC-83865] 
+    • Couldn't match expected type: IO a0 
+                  with actual type: f0 a1 -> f0 (a1 -> a1) 
+    • Probable cause: ‘fmap’ is applied to too few arguments 
+      In the second argument of ‘(<*>)’, namely ‘fmap (+)’ 
+      In the first argument of ‘(<*>)’, namely ‘getInt <*> fmap (+)’ 
+      In the expression: getInt <*> fmap (+) <*> getInt 
+ 
+ghci> :type getInt <*> fmap (+) <*> getInt 
+<interactive>:1:1: error: [GHC-83865] 
+    • Couldn't match type ‘Int’ with ‘a0 -> Int -> b’ 
+      Expected: IO (a0 -> Int -> b) 
+        Actual: IO Int 
+    • In the first argument of ‘(<*>)’, namely ‘getInt’ 
+      In the first argument of ‘(<*>)’, namely ‘getInt <*> fmap (+)’ 
+      In the expression: getInt <*> fmap (+) <*> getInt 
+ 
+<interactive>:1:12: error: [GHC-83865] 
+    • Couldn't match expected type: IO a0 
+                  with actual type: f0 a1 -> f0 (a1 -> a1) 
+    • Probable cause: ‘fmap’ is applied to too few arguments 
+      In the second argument of ‘(<*>)’, namely ‘fmap (+)’ 
+      In the first argument of ‘(<*>)’, namely ‘getInt <*> fmap (+)’ 
+      In the expression: getInt <*> fmap (+) <*> getInt 
+ 
+ghci> :type getInt <*> fmap (+) 
+<interactive>:1:1: error: [GHC-83865] 
+    • Couldn't match type ‘Int’ with ‘a0 -> b’ 
+      Expected: IO (a0 -> b) 
+        Actual: IO Int 
+    • In the first argument of ‘(<*>)’, namely ‘getInt’ 
+      In the expression: getInt <*> fmap (+) 
+ 
+<interactive>:1:12: error: [GHC-83865] 
+    • Couldn't match expected type: IO a0 
+                  with actual type: f0 a1 -> f0 (a1 -> a1) 
+    • Probable cause: ‘fmap’ is applied to too few arguments 
+      In the second argument of ‘(<*>)’, namely ‘fmap (+)’ 
+      In the expression: getInt <*> fmap (+) 
+ 
+ghci> :type getInt <*> fmap (+) <*> fmap getInt 
+<interactive>:1:1: error: [GHC-83865] 
+    • Couldn't match type ‘Int’ with ‘a0 -> a1 -> b’ 
+      Expected: IO (a0 -> a1 -> b) 
+        Actual: IO Int 
+    • In the first argument of ‘(<*>)’, namely ‘getInt’ 
+      In the first argument of ‘(<*>)’, namely ‘getInt <*> fmap (+)’ 
+      In the expression: getInt <*> fmap (+) <*> fmap getInt 
+ 
+<interactive>:1:12: error: [GHC-83865] 
+    • Couldn't match expected type: IO a0 
+                  with actual type: f0 a3 -> f0 (a3 -> a3) 
+    • Probable cause: ‘fmap’ is applied to too few arguments 
+      In the second argument of ‘(<*>)’, namely ‘fmap (+)’ 
+      In the first argument of ‘(<*>)’, namely ‘getInt <*> fmap (+)’ 
+      In the expression: getInt <*> fmap (+) <*> fmap getInt 
+ 
+<interactive>:1:25: error: [GHC-83865] 
+    • Couldn't match expected type: IO a1 
+                  with actual type: f1 a2 -> f1 b0 
+    • Probable cause: ‘fmap’ is applied to too few arguments 
+      In the second argument of ‘(<*>)’, namely ‘fmap getInt’ 
+      In the expression: getInt <*> fmap (+) <*> fmap getInt 
+ 
+<interactive>:1:30: error: [GHC-83865] 
+    • Couldn't match expected type: a2 -> b0 
+                  with actual type: IO Int 
+    • In the first argument of ‘fmap’, namely ‘getInt’ 
+      In the second argument of ‘(<*>)’, namely ‘fmap getInt’ 
+      In the expression: getInt <*> fmap (+) <*> fmap getInt 
+ 
+ghci> :type <*> 
+<interactive>:1:1: error: [GHC-58481] 
+    parse error on input ‘<*>’ 
+ 
+ghci> :type (<*>) 
+(<*>) :: Applicative f => f (a -> b) -> f a -> f b 
+ghci> Just abs <*> Just (-42) 
+<interactive>:150:1: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘b0’ to type ‘Integer’ in the following constraints 
+        (Show b0) arising from a use of ‘print’ at <interactive>:150:1-23 
+        (Num b0) arising from a use of ‘it’ at <interactive>:150:1-23 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+Just 42 
+ghci> :type pure 
+pure :: Applicative f => a -> f a 
+ghci> :type pure abs 
+pure abs :: (Applicative f, Num a) => f (a -> a) 
+ghci> pure abs <*> (Just (-42)) 
+<interactive>:153:1: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘b0’ to type ‘Integer’ in the following constraints 
+        (Show b0) arising from a use of ‘print’ at <interactive>:153:1-25 
+        (Num b0) arising from a use of ‘it’ at <interactive>:153:1-25 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+Just 42 
+ghci> fmap abs (Just (-42)) 
+<interactive>:154:1: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘b0’ to type ‘Integer’ in the following constraints 
+        (Show b0) arising from a use of ‘print’ at <interactive>:154:1-21 
+        (Num b0) arising from a use of ‘it’ at <interactive>:154:1-21 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+Just 42 
+ghci> :type (getInt <*>)  
+<interactive>:1:2: error: [GHC-83865] 
+    • Couldn't match type ‘Int’ with ‘a -> b’ 
+      Expected: IO (a -> b) 
+        Actual: IO Int 
+    • In the expression: getInt 
+      In the expression: getInt <*> 
+ 
+ghci> :type (<*>) 
+(<*>) :: Applicative f => f (a -> b) -> f a -> f b 
+ghci> l = [1,2,3,4] 
+ghci> l 
+<interactive>:158:1: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘a0’ to type ‘Integer’ in the following constraints 
+        (Show a0) arising from a use of ‘print’ at <interactive>:158:1 
+        (Num a0) arising from a use of ‘it’ at <interactive>:158:1 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+[1,2,3,4] 
+ghci> l = [1,2,3,4] :: [Int] 
+<interactive>:159:1: warning: [GHC-63397] [-Wname-shadowing] 
+    This binding for ‘l’ shadows the existing binding 
+      defined at <interactive>:157:1 
+ 
+ghci> let l = [1,2,3,4] :: [Int] 
+<interactive>:160:5: warning: [GHC-63397] [-Wname-shadowing] 
+    This binding for ‘l’ shadows the existing binding 
+      defined at <interactive>:159:1 
+ 
+ghci> l 
+[1,2,3,4] 
+ghci> :type fmap (+) l 
+fmap (+) l :: [Int -> Int] 
+ghci> :type (fmap (+) l <*>) 
+(fmap (+) l <*>) :: [Int] -> [Int] 
+ghci> fmap (+) l <*> l 
+[2,3,4,5,3,4,5,6,4,5,6,7,5,6,7,8] 
+ghci> let m = Just 42 
+ghci> :type (fmap (+) m) 
+(fmap (+) m) :: Num a => Maybe (a -> a) 
+ghci> :type (fmap (+) m <*>) 
+(fmap (+) m <*>) :: Num b => Maybe b -> Maybe b 
+ghci> fmap (+) m <*> m 
+<interactive>:168:1: warning: [GHC-18042] [-Wtype-defaults] 
+    • Defaulting the type variable ‘b0’ to type ‘Integer’ in the following constraints 
+        (Show b0) arising from a use of ‘print’ at <interactive>:168:1-16 
+        (Num b0) arising from a use of ‘it’ at <interactive>:168:1-16 
+    • In a stmt of an interactive GHCi command: print it 
+ 
+Just 84 
+ghci> fmap (+) getInt <*> getInt 
+23 
+17 
+40 
+ghci> :info Monad 
+type Monad :: (* -> *) -> Constraint 
+class Applicative m => Monad m where 
+  (>>=) :: m a -> (a -> m b) -> m b 
+  (>>) :: m a -> m b -> m b 
+  return :: a -> m a 
+  {-# MINIMAL (>>=) #-} 
+  	-- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Monad ((->) r) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Monad IO 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Monad [] 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Monad Maybe 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Monad Solo 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Monoid a => Monad ((,) a) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance (Monoid a, Monoid b) => Monad ((,,) a b) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance (Monoid a, Monoid b, Monoid c) => Monad ((,,,) a b c) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Base’ 
+instance Monad (Either e) 
+  -- Defined in ‘ghc-internal-9.1003.0:GHC.Internal.Data.Either’ 
+ghci> :type getInt 
+getInt :: IO Int 
+ghci> getLine >>= putStrLn 
+foo bar 
+foo bar 
+ghci> :type getLine 
+getLine :: IO String 
+ghci> :type putStrLn 
+putStrLn :: String -> IO () 
+ghci> getLine >>= putStrLn 
+goo^?^?^?foo b 
+goofoo b 
+ghci> getLine >>= putStrLn 
+^CInterrupted. 
+ghci> :type (>>=) 
+(>>=) :: Monad m => m a -> (a -> m b) -> m b 
+ghci> do s <- getLine ; putStrLn s 
+<interactive>:178:4: warning: [GHC-63397] [-Wname-shadowing] 
+    This binding for ‘s’ shadows the existing binding 
+      defined at <interactive>:41:5 
+ 
+foo bar lao 
+foo bar lao 
+ghci> :type (>>=) 
+(>>=) :: Monad m => m a -> (a -> m b) -> m b 
+ghci> getLine (>>=) \s -> putStrLn s 
+<interactive>:180:15: error: [GHC-06074] 
+    Unexpected lambda expression in function application: 
+        \ s -> putStrLn s 
+    Suggested fixes: 
+      • Use parentheses. 
+      • Perhaps you intended to use BlockArguments 
+        You may enable this language extension in GHCi with: 
+          :set -XBlockArguments 
+ 
+ghci> getLine (>>=) (\s -> putStrLn s) 
+<interactive>:181:1: error: [GHC-83865] 
+    • Couldn't match expected type: (m0 a0 -> (a0 -> m0 b0) -> m0 b0) 
+                                    -> (String -> IO ()) -> t 
+                  with actual type: IO String 
+    • The function ‘getLine’ is applied to two visible arguments, 
+        but its type ‘IO String’ has none 
+      In the expression: getLine (>>=) (\ s -> putStrLn s) 
+      In an equation for ‘it’: it = getLine (>>=) (\ s -> putStrLn s) 
+    • Relevant bindings include it :: t (bound at <interactive>:181:1) 
+ 
+ghci> getLine >>= (\s -> putStrLn s) 
+<interactive>:182:15: warning: [GHC-63397] [-Wname-shadowing] 
+    This binding for ‘s’ shadows the existing binding 
+      defined at <interactive>:41:5 
+ 
+foo 
+foo 
+ghci> do s <- getLine ; putStrLn s ; putStrLn s 
+<interactive>:183:4: warning: [GHC-63397] [-Wname-shadowing] 
+    This binding for ‘s’ shadows the existing binding 
+      defined at <interactive>:41:5 
+ 
+foo 
+foo 
+foo 
+ghci> getLine >>= (\s -> putStrLn s) >>= (\t -> putStrLn t) 
+<interactive>:184:52: error: [GHC-83865] 
+    • Couldn't match expected type ‘[Char]’ with actual type ‘()’ 
+    • In the first argument of ‘putStrLn’, namely ‘t’ 
+      In the expression: putStrLn t 
+      In the second argument of ‘(>>=)’, namely ‘(\ t -> putStrLn t)’ 
+ 
+ghci> getLine >>= (\s -> putStrLn s) >> (\t -> putStrLn t) 
+<interactive>:185:36: error: [GHC-83865] 
+    • Couldn't match expected type: IO b 
+                  with actual type: String -> IO () 
+    • The lambda expression ‘\ t -> ...’ has one visible argument, 
+        but its type ‘IO b’ has none 
+      In the second argument of ‘(>>)’, namely ‘(\ t -> putStrLn t)’ 
+      In the expression: 
+        getLine >>= (\ s -> putStrLn s) >> (\ t -> putStrLn t) 
+    • Relevant bindings include 
+        it :: IO b (bound at <interactive>:185:1) 
+ 
+ghci> :q 
+Leaving GHCi. 
+~/Coding/haskell-monad:  
