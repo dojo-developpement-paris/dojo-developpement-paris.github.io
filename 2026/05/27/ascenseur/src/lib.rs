@@ -47,4 +47,16 @@ mod test {
     fn on_privilégie_l_étage_le_plus_proche_pas_en_bas() {
         assert_that(&elevator(17, vec![20, 2])).is_equal_to(20)
     }
+
+    #[test]
+    fn j_ai_faim() {
+        assert_that(&elevator(0, vec![20])).is_equal_to(20);
+        assert_that(&elevator(20, vec![0, 2])).is_equal_to(2);
+        assert_that(&elevator(2, vec![0])).is_equal_to(0);
+    }
+
+    #[test]
+    fn j_ai_toujours_faim() {
+        assert_that(&elevator(10, vec![15, 5])).is_equal_to(15);
+    }
 }
