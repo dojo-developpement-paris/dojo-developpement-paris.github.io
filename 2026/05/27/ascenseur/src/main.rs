@@ -16,12 +16,11 @@ mod test {
     use speculoos::*;
 
     #[test]
-    fn hello_world() {
-        assert_that(&hello(None)).is_equal_to("Hello world".to_string())
+    fn pas_d_appel() {
+        assert_that(&elevator(0, vec![])).is_equal_to(0)
     }
 
-    #[test]
-    fn hello_foo() {
-        assert_that(&hello(Some("foo"))).is_equal_to("Hello foo".to_string())
+    fn elevator(_arg_1: i32, _arg_2: Vec<i32>) -> i32 {
+        0
     }
 }
