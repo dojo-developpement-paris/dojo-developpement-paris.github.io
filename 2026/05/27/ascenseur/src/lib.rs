@@ -1,21 +1,21 @@
-struct Call {
-    floor: i32,
+struct CallWithDistance {
+    call: i32,
     distance: i32,
 }
 
 pub fn elevator(start: i32, calls: Vec<i32>) -> i32 {
     calls
         .iter()
-        .map(|floor| Call {
-            floor: *floor,
-            distance: (start - floor).abs(),
+        .map(|call| CallWithDistance {
+            call: *call,
+            distance: (start - call).abs(),
         })
         .min_by(|left, right| left.distance.cmp(&right.distance))
-        .unwrap_or(Call {
-            floor: start,
+        .unwrap_or(CallWithDistance {
+            call: start,
             distance: 0,
         })
-        .floor
+        .call
 }
 
 #[cfg(test)]
