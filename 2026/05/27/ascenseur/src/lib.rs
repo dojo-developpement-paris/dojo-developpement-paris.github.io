@@ -1,10 +1,21 @@
+struct Crepe {
+    call: i32,
+    distance: i32,
+}
+
 pub fn elevator(start: i32, calls: Vec<i32>) -> i32 {
-    *calls
+    calls
         .iter()
-        .map(|call| (call, (start - call).abs()))
-        .min_by(|left: &(&i32, i32), right: &(&i32, i32)| left.1.cmp(&right.1))
-        .unwrap_or((&start, 0))
-        .0
+        .map(|call| Crepe {
+            call: *call,
+            distance: (start - call).abs(),
+        })
+        .min_by(|left, right| left.distance.cmp(&right.distance))
+        .unwrap_or(Crepe {
+            call: start,
+            distance: 0,
+        })
+        .call
 }
 
 #[cfg(test)]
