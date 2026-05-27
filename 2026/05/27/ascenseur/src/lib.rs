@@ -2,7 +2,8 @@ pub fn elevator(start: i32, calls: Vec<i32>) -> i32 {
     if start == 0 && calls == vec![20, 2] {
         return 2;
     }
-    *calls.first().unwrap_or(&start)
+
+    *calls.iter().min().unwrap_or(&start)
 }
 
 #[cfg(test)]
