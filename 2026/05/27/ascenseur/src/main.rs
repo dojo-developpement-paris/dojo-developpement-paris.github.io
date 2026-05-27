@@ -25,7 +25,7 @@ mod test {
         assert_that(&elevator(0, vec![20])).is_equal_to(20)
     }
 
-    fn elevator(_arg_1: i32, _arg_2: Vec<i32>) -> i32 {
-        *_arg_2.get(0).unwrap_or(&0)
+    fn elevator(_arg_1: i32, calls: Vec<i32>) -> i32 {
+        *calls.get(0).unwrap_or(&0)
     }
 }
