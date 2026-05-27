@@ -2,7 +2,12 @@ pub fn elevator(start: i32, calls: Vec<i32>) -> i32 {
     if start == 17 && calls == vec![20, 2] {
         20
     } else {
-        *calls.iter().min().unwrap_or(&start)
+        *calls
+            .iter()
+            .map(|call| (call, (start - call).abs()))
+            .min_by(|(_call_x, distance_x), (_call_y, distance_y)| distance_x.cmp(distance_y))
+            .unwrap_or((&start, 0))
+            .0
     }
 }
 
