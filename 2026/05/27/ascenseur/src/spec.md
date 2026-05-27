@@ -34,3 +34,11 @@
     - [20 4 3]
     - 20 + 4 + 3
     - 4
+
+## Trucs à changer pour améliorer
+
+- focus sur les trucs simples et faire en incrémental +1 +1 +1 +1
+- continuer à communiquer sur l'intention +1
+- utiliser de l'IA pour faire les tests
+    - et toutes les questions qui vont avec
+- penser à la phase de refactoring
