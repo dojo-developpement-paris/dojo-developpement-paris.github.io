@@ -2,7 +2,11 @@ pub fn elevator(start: i32, calls: Vec<i32>) -> i32 {
     *calls
         .iter()
         .map(|call| (call, (start - call).abs()))
-        .min_by(|(_call_x, distance_x), (_call_y, distance_y)| distance_x.cmp(distance_y))
+        .min_by(
+            |(_call_x, distance_x): &(&i32, i32), (_call_y, distance_y): &(&i32, i32)| {
+                distance_x.cmp(distance_y)
+            },
+        )
         .unwrap_or((&start, 0))
         .0
 }
