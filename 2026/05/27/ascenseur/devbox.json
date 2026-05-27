@@ -1,0 +1,16 @@
+{
+  "packages": {
+    "rustup": "latest",
+    "gnugrep": {
+      "version": "latest",
+      "outputs": ["out"]
+    },
+    "bacon": "latest",
+    "mask":  "latest",
+    "bashInteractive": {
+      "version": "latest",
+      "outputs": ["out"]
+    },
+    "git-gamble": "latest"
+  }
+}
