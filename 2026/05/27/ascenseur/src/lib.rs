@@ -1,5 +1,5 @@
-pub fn elevator(_start: i32, calls: Vec<i32>) -> i32 {
-    *calls.first().unwrap_or(&0)
+pub fn elevator(start: i32, calls: Vec<i32>) -> i32 {
+    *calls.first().unwrap_or(&start)
 }
 
 #[cfg(test)]
@@ -15,5 +15,10 @@ mod test {
     #[test]
     fn appel_à_l_étage_20() {
         assert_that(&elevator(0, vec![20])).is_equal_to(20)
+    }
+
+    #[test]
+    fn reste_à_l_étage_courant() {
+        assert_that(&elevator(10, vec![])).is_equal_to(10)
     }
 }
