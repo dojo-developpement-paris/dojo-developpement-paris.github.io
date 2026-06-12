@@ -22,10 +22,18 @@ main =
             it "given a spare, third roll is bonus, then count continues" $ do
                 score [3, 7, 2, 1] `shouldBe` 15
 
+            it "given a strike, second and third rolls are bonuses" $ do
+                score [10, 2, 1] `shouldBe` 16
+
 spare :: Int
 spare = 10
 
+strike :: Int
+strike = 10
+
 score :: [Int] -> Int
 score [] = 0
-score (a : b : c : rolls) | a + b == spare = spare + c + score (c : rolls)
+score (a : b : c : rolls)
+    | a == strike = strike + b + c + score (b : c : rolls)
+    | a + b == spare = spare + c + score (c : rolls)
 score (roll : rolls) = roll + score rolls
