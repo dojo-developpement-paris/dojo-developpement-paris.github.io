@@ -59,7 +59,7 @@ Transition sur plusieurs mois qui nous permettra de changer de revenir en arriè
 1. [x] création du compte [Mobilizon]
 2. [x] double publication d'événements sur [Mobilizon] et Meetup
 3. [x] promotion des événements [Mobilizon] depuis les événements Meetup
-4. [ ] obligation de passer par [Mobilizon] pour s'inscrire
+4. [x] obligation de passer par [Mobilizon] pour s'inscrire
 5. [ ] arrêt des publications sur Meetup et arrêt du paiement
 
 [Mobilizon]: https://mobilizon.fr/@dojo_de_programmation_paris/events
