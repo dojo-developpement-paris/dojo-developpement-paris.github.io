@@ -4,11 +4,13 @@
 require ffl/tst.fs
 
 variable score
+variable last_roll
 variable bonus
 
 : start ( -- )
     score off
     bonus off
+    last_roll off
 ;
 
 : collect_bonus ( int -- int )
@@ -17,8 +19,12 @@ variable bonus
     bonus off
 ;
 
+: spare? ( int -- flag )
+    last_roll @ + 10 =
+;
+
 : check_bonus ( int -- int )
-    dup 3 = if
+    dup spare? if
         1 bonus !
     endif
 ;
@@ -26,6 +32,7 @@ variable bonus
 : add_roll ( int -- )
     collect_bonus
     check_bonus
+    dup last_roll !
     score +!
 ;
 
@@ -58,6 +65,16 @@ t{
     start
     7 add_roll
     3 add_roll
+    2 add_roll
+    score @
+    14 ?s
+}t
+
+." one another spare, then third roll is bonus" cr
+t{
+    start
+    6 add_roll
+    4 add_roll
     2 add_roll
     score @
     14 ?s
