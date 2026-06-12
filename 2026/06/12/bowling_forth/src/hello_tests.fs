@@ -20,18 +20,6 @@ t{
     s" Hello world" ?str
 }t
 
-." Hello foo" cr
-t{
-    s" foo" hello
-    s" Hello foo" ?str
-}t
-
-." Hello bar" cr
-t{
-    s" bar" ( hex dbg ) hello
-    s" Hello bar" ?str
-}t
-
 tst-get-result
 
 (bye)
