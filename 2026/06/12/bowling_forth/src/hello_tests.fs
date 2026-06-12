@@ -3,24 +3,20 @@
 
 require ffl/tst.fs
 
-variable _score
+variable score
 
 : start ( -- )
-    _score off
+    score off
 ;
 
 : add_roll ( int -- )
-    _score +!
-;
-
-: score ( -- int )
-    _score @
+    score +!
 ;
 
 ." 0 rolls then score is 0" cr
 t{
     start
-    score
+    score @
     0 ?s
 }t
 
@@ -28,7 +24,7 @@ t{
 t{
     start
     7 add_roll
-    score
+    score @
     7 ?s
 }t
 
