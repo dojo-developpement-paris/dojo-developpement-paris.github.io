@@ -4,12 +4,27 @@
 require ffl/tst.fs
 
 variable score
+variable bonus
 
 : start ( -- )
     score off
+    bonus off
+;
+
+: collect_bonus ( int -- int )
+    dup bonus @ *
+    score +!
+;
+
+: check_bonus ( int -- int )
+    dup 3 = if
+        1 bonus !
+    endif
 ;
 
 : add_roll ( int -- )
+    collect_bonus
+    check_bonus
     score +!
 ;
 
@@ -35,6 +50,16 @@ t{
     1 add_roll
     score @
     8 ?s
+}t
+
+." one spare, then third roll is bonus" cr
+t{
+    start
+    7 add_roll
+    3 add_roll
+    2 add_roll
+    score @
+    14 ?s
 }t
 
 tst-get-result
