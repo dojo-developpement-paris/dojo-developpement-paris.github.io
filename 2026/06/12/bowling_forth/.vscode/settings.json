@@ -6,4 +6,5 @@
         "devbox.json": "jsonc",
     },
     "editor.formatOnSave": true,
+    "workbench.preferredLightColorTheme": "Default High Contrast",
 }
