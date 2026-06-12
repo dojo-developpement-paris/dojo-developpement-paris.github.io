@@ -17,4 +17,4 @@ main =
 
 bowling :: [Int] -> Int
 bowling [] = 0
-bowling (foo : tails) = foo + bowling tails
+bowling (roll : rolls) = roll + bowling rolls
