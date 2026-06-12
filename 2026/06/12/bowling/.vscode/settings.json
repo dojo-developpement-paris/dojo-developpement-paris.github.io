@@ -1,0 +1,9 @@
+{
+    "nixEnvSelector.useFlakes": true,
+    "nixEnvSelector.nixFile": "${workspaceFolder}/flake.nix",
+    "devbox.autoShellOnTerminal": false,
+    "files.associations": {
+        "devbox.json": "jsonc",
+    },
+    "editor.formatOnSave": true,
+}

@@ -1,0 +1,16 @@
+{
+  "packages": {
+    "gforth": "latest", // to execute Forth
+    "coreutils": { // to help compiling Forth
+      "version": "latest",
+      "outputs": ["out"]
+    },
+    "mask":      "latest", // to execute commands in the maskfile.md
+    "watchexec": "latest", // to re-execute tests when sources files change
+    "bashInteractive": { // to execute commands in the maskfile.md
+      "version": "latest",
+      "outputs": ["out"]
+    },
+    "git-gamble": "latest" // to be able to gamble on the tests result
+  }
+}
