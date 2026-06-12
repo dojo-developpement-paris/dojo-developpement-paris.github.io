@@ -16,4 +16,5 @@ main =
                 bowling [7, 2] `shouldBe` 9
 
 bowling :: [Int] -> Int
-bowling tails = foldr (+) 0 tails
+bowling [] = 0
+bowling (foo : tails) = foo + bowling tails
