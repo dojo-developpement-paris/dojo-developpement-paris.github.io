@@ -28,6 +28,15 @@ t{
     7 ?s
 }t
 
+." 2 rolls then score is sum" cr
+t{
+    start
+    7 add_roll
+    1 add_roll
+    score @
+    8 ?s
+}t
+
 tst-get-result
 
 (bye)
