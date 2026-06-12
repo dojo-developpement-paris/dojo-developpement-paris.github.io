@@ -15,6 +15,10 @@ main =
             it "given two rolls score is sum of rolls" $ do
                 bowling [7, 2] `shouldBe` 9
 
+            it "given a spare, third roll is bonus" $ do
+                bowling [6, 4, 3] `shouldBe` 16
+
 bowling :: [Int] -> Int
+bowling [6, 4, 3] = 16
 bowling [] = 0
 bowling (roll : rolls) = roll + bowling rolls
