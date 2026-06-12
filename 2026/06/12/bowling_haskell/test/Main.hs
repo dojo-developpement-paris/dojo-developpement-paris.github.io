@@ -24,6 +24,5 @@ main =
 
 bowling :: [Int] -> Int
 bowling [] = 0
-bowling [3, 7, 2, 1] = 15
-bowling [a, b, c] | a + b == 10 = 10 + c + bowling [c]
+bowling (a : b : c : rolls) | a + b == 10 = 10 + c + bowling (c : rolls)
 bowling (roll : rolls) = roll + bowling rolls
