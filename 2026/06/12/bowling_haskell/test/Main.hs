@@ -22,6 +22,7 @@ main =
             it "given a spare, third roll is bonus, then count continues" $ do
                 bowling [3, 7, 2, 1] `shouldBe` 15
 
+spare :: Int
 spare = 10
 
 bowling :: [Int] -> Int
