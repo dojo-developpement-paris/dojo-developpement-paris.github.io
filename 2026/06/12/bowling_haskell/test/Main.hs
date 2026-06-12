@@ -22,7 +22,9 @@ main =
             it "given a spare, third roll is bonus, then count continues" $ do
                 bowling [3, 7, 2, 1] `shouldBe` 15
 
+spare = 10
+
 bowling :: [Int] -> Int
 bowling [] = 0
-bowling (a : b : c : rolls) | a + b == 10 = 10 + c + bowling (c : rolls)
+bowling (a : b : c : rolls) | a + b == spare = spare + c + bowling (c : rolls)
 bowling (roll : rolls) = roll + bowling rolls
