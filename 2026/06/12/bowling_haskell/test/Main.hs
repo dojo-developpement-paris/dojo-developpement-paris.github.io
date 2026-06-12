@@ -17,8 +17,10 @@ main =
 
             it "given a spare, third roll is bonus" $ do
                 bowling [6, 4, 3] `shouldBe` 16
+                bowling [5, 5, 2] `shouldBe` 14
 
 bowling :: [Int] -> Int
+bowling [5, 5, 2] = 10 + 2 + bowling [2]
 bowling [6, 4, 3] = 10 + 3 + bowling [3]
 bowling [] = 0
 bowling (roll : rolls) = roll + bowling rolls
