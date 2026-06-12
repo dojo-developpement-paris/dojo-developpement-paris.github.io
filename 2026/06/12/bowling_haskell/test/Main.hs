@@ -16,6 +16,4 @@ main =
                 bowling [7, 2] `shouldBe` 9
 
 bowling :: [Int] -> Int
-bowling [7, 2] = 9
-bowling [7] = 7
-bowling _ = 0
+bowling tails = foldr (+) 0 tails
