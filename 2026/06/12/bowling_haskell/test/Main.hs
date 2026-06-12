@@ -20,7 +20,7 @@ main =
                 bowling [5, 5, 2] `shouldBe` 14
 
 bowling :: [Int] -> Int
-bowling [5, 5, 2] = 10 + 2 + bowling [2]
+bowling [a, b, 2] | a + b == 10 = 10 + 2 + bowling [2]
 bowling [6, 4, 3] = 10 + 3 + bowling [3]
 bowling [] = 0
 bowling (roll : rolls) = roll + bowling rolls
