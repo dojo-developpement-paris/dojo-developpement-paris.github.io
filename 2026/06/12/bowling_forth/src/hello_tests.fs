@@ -3,12 +3,18 @@
 
 require ffl/tst.fs
 
+variable _score
+
 : start ( -- )
-    
+    _score off
+;
+
+: add_roll ( int -- )
+    _score +!
 ;
 
 : score ( -- int )
-    0
+    _score @
 ;
 
 ." 0 rolls then score is 0" cr
@@ -16,6 +22,14 @@ t{
     start
     score
     0 ?s
+}t
+
+." 1 roll then score is roll" cr
+t{
+    start
+    7 add_roll
+    score
+    7 ?s
 }t
 
 tst-get-result
