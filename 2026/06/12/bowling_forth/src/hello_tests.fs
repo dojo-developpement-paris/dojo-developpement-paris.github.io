@@ -3,21 +3,19 @@
 
 require ffl/tst.fs
 
-: hello ( source,length -- dest,length )
-    dup                 \ source,length,length
-    s" Hello " pad place
-    0= if
-        2drop
-        s" world"
-    then
-    pad +place
-    pad count
+: start ( -- )
+    
 ;
 
-." Hello world" cr
+: score ( -- int )
+    0
+;
+
+." 0 rolls then score is 0" cr
 t{
-    s" " hello
-    s" Hello world" ?str
+    start
+    score
+    0 ?s
 }t
 
 tst-get-result
