@@ -14,6 +14,7 @@ variable bonus
 : collect_bonus ( int -- int )
     dup bonus @ *
     score +!
+    bonus off
 ;
 
 : check_bonus ( int -- int )
@@ -60,6 +61,17 @@ t{
     2 add_roll
     score @
     14 ?s
+}t
+
+." bonus is clean after used" cr
+t{
+    start
+    7 add_roll
+    3 add_roll
+    2 add_roll
+    1 add_roll
+    score @
+    15 ?s
 }t
 
 tst-get-result
