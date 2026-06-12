@@ -8,15 +8,15 @@ variable last_roll
 variable bonus
 
 : start ( -- )
-    score off
-    bonus off
-    last_roll off
+    0 score !
+    0 bonus !
+    0 last_roll !
 ;
 
 : collect_bonus ( int -- int )
     dup bonus @ *
     score +!
-    bonus off
+    0 bonus !
 ;
 
 : spare? ( int -- flag )
