@@ -1,0 +1,18 @@
+{
+  "packages": {
+    "cabal-install": "latest", // package manager of Haskell
+    "fourmolu":      "latest", // formatter for Haskell source files
+    "hlint": { // linter for Haskell
+      "version": "latest",
+      "outputs": ["out"]
+    },
+    "jq":        "latest", // needed by the script that install the exact versions of dependencies
+    "mask":      "latest", // to execute commands in the maskfile.md
+    "watchexec": "latest", // to re-execute tests when sources files change
+    "bashInteractive": { // to execute commands in the maskfile.md
+      "version": "latest",
+      "outputs": ["out"]
+    },
+    "git-gamble": "latest" // to be able to gamble on the tests result
+  }
+}
