@@ -97,6 +97,8 @@ from [<time datetime="2021-01-28">2021-01-28</time>](https://www.meetup.com/dojo
 
 The dojo has been back in person since [<time datetime="2022-05-13">2022-05-13</time>](https://www.meetup.com/dojo-developpement-paris/events/285807516/).
 
+Later, the dojo started changing platform : from Meetup to Mobilizon since [<time datetime="2025-11-07">2025-11-07</time>](https://mobilizon.fr/events/26c19adf-a2e4-44bb-b1d2-f87eca5ef579).
+
 ## Trends
 
 The dojo has been hosted by a number of companies, including :
@@ -123,4 +125,5 @@ Since :
 
 * the term [Dojo](https://en.wikipedia.org/wiki/Dojo#Computer-related) is commonly used by the developer community without knowing this story
 * [there are many Coding Dojos around the world](https://codingdojo.org/practices/CodingDojos/)
-* [the group](https://www.meetup.com/dojo-developpement-paris/) (at the time of writing) has over 1600+ members
+* [the (legacy) group](https://www.meetup.com/dojo-developpement-paris/) (at the time of writing) has over 2100+ members
+* [the (new) group](https://mobilizon.fr/@dojo_de_programmation_paris) have fewer members
