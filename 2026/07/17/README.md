@@ -10,6 +10,8 @@ Nous migrons le groupe de Meetup vers [Mobilizon]
 - Alexandre
 - ToF
 - Christelle
+- Ubald
+- Sevag
 - pin
 
 ## Retro
