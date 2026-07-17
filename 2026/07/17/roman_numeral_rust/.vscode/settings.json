@@ -15,4 +15,5 @@
     "rust-analyzer.lens.references.method.enable": true,
     "rust-analyzer.lens.references.trait.enable": true,
     "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
+    "workbench.preferredLightColorTheme": "Default High Contrast",
 }
