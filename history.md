@@ -124,6 +124,6 @@ with many sessions taking place in :
 Since :
 
 * the term [Dojo](https://en.wikipedia.org/wiki/Dojo#Computer-related) is commonly used by the developer community without knowing this story
-* [there are many Coding Dojos around the world](https://codingdojo.org/practices/CodingDojos/)
+* [there are many Coding Dojos around the world](https://codingdojo.org/practices/CodingDojos/), some of them are [referenced on this other site](https://www.softwarecrafters.org)
 * [the (legacy) group](https://www.meetup.com/dojo-developpement-paris/) (at the time of writing) has over 2100+ members
 * [the (new) group](https://mobilizon.fr/@dojo_de_programmation_paris) have fewer members
