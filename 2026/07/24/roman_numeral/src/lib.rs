@@ -6,6 +6,12 @@ pub enum Digit {
     M,
 }
 
+impl fmt::Display for Digit {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}", if self == &Digit::M { "M" } else { "C" })
+    }
+}
+
 #[derive(Debug, PartialEq)]
 pub struct Roman {
     digits: Vec<Digit>,
@@ -13,15 +19,7 @@ pub struct Roman {
 
 impl fmt::Display for Roman {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(
-            f,
-            "{}",
-            if self.digits.first().unwrap() == &Digit::M {
-                "M"
-            } else {
-                "C"
-            }
-        )
+        write!(f, "{}", self.digits.first().unwrap())
     }
 }
 
