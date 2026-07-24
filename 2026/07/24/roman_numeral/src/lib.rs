@@ -5,8 +5,8 @@ pub enum Digit {
     M,
     C,
     X,
-    I,
     V,
+    I,
 }
 
 impl fmt::Display for Digit {
@@ -18,8 +18,8 @@ impl fmt::Display for Digit {
                 Digit::M => "M",
                 Digit::C => "C",
                 Digit::X => "X",
-                Digit::I => "I",
                 Digit::V => "V",
+                Digit::I => "I",
             }
         )
     }
