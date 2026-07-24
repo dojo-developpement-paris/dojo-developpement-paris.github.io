@@ -1,6 +1,6 @@
-use std::fmt;
+use std::{fmt, ops::Add};
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub enum Digit {
     C,
     M,
@@ -32,15 +32,25 @@ impl fmt::Display for Roman {
     }
 }
 
+impl Add<Roman> for Roman {
+    type Output = Roman;
+
+    fn add(self, other: Roman) -> Self::Output {
+        let mut new_digits = self.digits.clone();
+        new_digits.extend(other.digits.clone());
+        Roman { digits: new_digits }
+    }
+}
+
 pub fn to_roman(arg: i32) -> Roman {
     if arg == 1_100 {
         Roman {
             digits: vec![Digit::M, Digit::C],
         }
     } else if arg == 2_000 {
-        let mut v = vec![Digit::M];
-        v.push(Digit::M);
-        Roman { digits: v }
+        Roman {
+            digits: vec![Digit::M],
+        } + to_roman(arg - 1000)
     } else if arg == 1_000 {
         Roman {
             digits: vec![Digit::M],
