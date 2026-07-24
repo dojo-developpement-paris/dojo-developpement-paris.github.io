@@ -62,9 +62,7 @@ pub fn to_roman(arg: i32) -> Roman {
     if arg >= 1_000 {
         Roman::from(Digit::M) + to_roman(arg - 1000)
     } else {
-        Roman {
-            digits: vec![Digit::C],
-        }
+        Roman::from(Digit::C)
     }
 }
 
