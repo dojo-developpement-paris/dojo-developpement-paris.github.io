@@ -26,13 +26,20 @@ pub struct Roman {
 
 impl fmt::Display for Roman {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", self.digits.first().unwrap())
+        self.digits
+            .iter().try_for_each(|digit| write!(f, "{}", digit))
     }
 }
 
 pub fn to_roman(arg: i32) -> Roman {
     Roman {
-        digits: vec![if arg == 1_000 { Digit::M } else { Digit::C }],
+        digits: if arg == 2_000 {
+            vec![Digit::M, Digit::M]
+        } else if arg == 1_000 {
+            vec![Digit::M]
+        } else {
+            vec![Digit::C]
+        },
     }
 }
 
@@ -45,6 +52,7 @@ mod test {
     fn check_romans() {
         check_roman(1_000, "M");
         check_roman(100, "C");
+        check_roman(2_000, "MM");
     }
 
     fn check_roman(number: i32, roman: &str) {
