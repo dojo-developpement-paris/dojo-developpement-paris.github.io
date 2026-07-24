@@ -70,7 +70,7 @@ pub fn to_roman(arg: i32) -> Roman {
     } else if arg >= 10 {
         Roman::from(Digit::X) + to_roman(arg - 10)
     } else {
-        Roman::from(Digit::I)
+        Roman::from(Digit::I) + to_roman(arg - 1)
     }
 }
 
@@ -87,6 +87,7 @@ mod test {
         check_roman(1_100, "MC");
         check_roman(110, "CX");
         check_roman(1, "I");
+        check_roman(3, "III");
     }
 
     fn check_roman(number: i32, roman: &str) {
