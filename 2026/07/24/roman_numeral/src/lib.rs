@@ -29,9 +29,10 @@ mod test {
 
     #[test]
     fn hello_world() {
-        assert_that(&to_roman(1_000)).is_equal_to(Roman {
-            digit: vec![Digit::M],
-        });
-        assert_that(&to_roman(1_000).to_string()).is_equal_to(String::from("M"));
+        check_roman(1_000, "M");
+    }
+
+    fn check_roman(number: i32, roman: &str) {
+        assert_that(&to_roman(number).to_string()).is_equal_to(String::from(roman));
     }
 }
