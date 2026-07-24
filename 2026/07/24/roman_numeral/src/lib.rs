@@ -7,7 +7,7 @@ pub enum Digit {
 
 #[derive(Debug, PartialEq)]
 pub struct Roman {
-    digit: Vec<Digit>,
+    digits: Vec<Digit>,
 }
 
 impl fmt::Display for Roman {
@@ -18,7 +18,7 @@ impl fmt::Display for Roman {
 
 pub fn to_roman(_arg: i32) -> Roman {
     Roman {
-        digit: vec![Digit::M],
+        digits: vec![Digit::M],
     }
 }
 
