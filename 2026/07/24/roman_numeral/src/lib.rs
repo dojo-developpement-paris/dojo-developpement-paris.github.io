@@ -23,6 +23,18 @@ impl Digit {
             Digit::I => 1,
         }
     }
+
+    fn all_digits() -> Vec<Digit> {
+        vec![
+            Digit::M,
+            Digit::D,
+            Digit::C,
+            Digit::L,
+            Digit::X,
+            Digit::V,
+            Digit::I,
+        ]
+    }
 }
 
 impl fmt::Display for Digit {
@@ -56,7 +68,7 @@ impl Roman {
 
 impl From<Digit> for Roman {
     fn from(digit: Digit) -> Self {
-        Self::new(vec![digit])
+        Self::new(vec![digit.clone()])
     }
 }
 
@@ -83,21 +95,11 @@ pub fn to_roman(arg: u16) -> Roman {
         return Roman::new(vec![]);
     }
 
-    if arg >= Digit::M.value() {
-        Roman::from(Digit::M) + to_roman(arg - Digit::M.value())
-    } else if arg >= Digit::D.value() {
-        Roman::from(Digit::D) + to_roman(arg - Digit::D.value())
-    } else if arg >= Digit::C.value() {
-        Roman::from(Digit::C) + to_roman(arg - Digit::C.value())
-    } else if arg >= Digit::L.value() {
-        Roman::from(Digit::L) + to_roman(arg - Digit::L.value())
-    } else if arg >= Digit::X.value() {
-        Roman::from(Digit::X) + to_roman(arg - Digit::X.value())
-    } else if arg >= Digit::V.value() {
-        Roman::from(Digit::V) + to_roman(arg - Digit::V.value())
-    } else {
-        Roman::from(Digit::I) + to_roman(arg - Digit::I.value())
-    }
+    let digit = Digit::all_digits()
+        .into_iter()
+        .find(|digit| arg >= digit.clone().value())
+        .unwrap_or(Digit::I);
+    Roman::from(digit.clone()) + to_roman(arg - digit.value())
 }
 
 #[cfg(test)]
