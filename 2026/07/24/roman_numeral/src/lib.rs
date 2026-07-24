@@ -3,7 +3,9 @@ pub enum Digit {
     M,
 }
 
-pub fn to_roman(_arg: i32) -> Vec<Digit> {
+type Roman = Vec<Digit>;
+
+pub fn to_roman(_arg: i32) -> Roman {
     vec![Digit::M]
 }
 
