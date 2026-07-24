@@ -43,6 +43,10 @@ impl Add<Roman> for Roman {
 }
 
 pub fn to_roman(arg: i32) -> Roman {
+    if arg == 0 {
+        return Roman { digits: vec![] };
+    }
+
     if arg == 1_100 {
         Roman {
             digits: vec![Digit::M, Digit::C],
