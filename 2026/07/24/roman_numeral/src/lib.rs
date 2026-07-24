@@ -3,7 +3,9 @@ use std::{fmt, ops::Add};
 #[derive(Debug, PartialEq, Clone)]
 pub enum Digit {
     M,
+    D,
     C,
+    L,
     X,
     V,
     I,
@@ -16,7 +18,9 @@ impl fmt::Display for Digit {
             "{}",
             match self {
                 Digit::M => "M",
+                Digit::D => "D",
                 Digit::C => "C",
+                Digit::L => "L",
                 Digit::X => "X",
                 Digit::V => "V",
                 Digit::I => "I",
@@ -67,8 +71,12 @@ pub fn to_roman(arg: u16) -> Roman {
 
     if arg >= 1_000 {
         Roman::from(Digit::M) + to_roman(arg - 1000)
+    } else if arg >= 500 {
+        Roman::from(Digit::D) + to_roman(arg - 500)
     } else if arg >= 100 {
         Roman::from(Digit::C) + to_roman(arg - 100)
+    } else if arg >= 50 {
+        Roman::from(Digit::L) + to_roman(arg - 50)
     } else if arg >= 10 {
         Roman::from(Digit::X) + to_roman(arg - 10)
     } else if arg >= 5 {
@@ -93,6 +101,7 @@ mod test {
         check_roman(1, "I");
         check_roman(3, "III");
         check_roman(5, "V");
+        check_roman(550, "DL");
     }
 
     fn check_roman(number: u16, roman: &str) {
