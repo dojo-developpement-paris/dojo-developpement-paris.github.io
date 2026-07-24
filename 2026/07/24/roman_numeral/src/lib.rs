@@ -12,8 +12,8 @@ impl fmt::Display for Digit {
             f,
             "{}",
             match self {
-                Digit::M => "M",
                 Digit::C => "C",
+                Digit::M => "M",
             }
         )
     }
