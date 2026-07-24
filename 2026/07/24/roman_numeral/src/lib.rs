@@ -58,7 +58,7 @@ impl Add<Roman> for Roman {
     }
 }
 
-pub fn to_roman(arg: i32) -> Roman {
+pub fn to_roman(arg: u16) -> Roman {
     if arg == 0 {
         return Roman::new(vec![]);
     }
@@ -90,7 +90,7 @@ mod test {
         check_roman(3, "III");
     }
 
-    fn check_roman(number: i32, roman: &str) {
+    fn check_roman(number: u16, roman: &str) {
         assert_that(&to_roman(number).to_string()).is_equal_to(String::from(roman));
     }
 }
