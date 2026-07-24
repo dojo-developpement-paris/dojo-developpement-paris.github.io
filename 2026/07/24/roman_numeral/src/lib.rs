@@ -2,6 +2,7 @@ use std::fmt;
 
 #[derive(Debug, PartialEq)]
 pub enum Digit {
+    C,
     M,
 }
 
@@ -12,13 +13,21 @@ pub struct Roman {
 
 impl fmt::Display for Roman {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "M")
+        write!(
+            f,
+            "{}",
+            if self.digits.first().unwrap() == &Digit::M {
+                "M"
+            } else {
+                "C"
+            }
+        )
     }
 }
 
-pub fn to_roman(_arg: i32) -> Roman {
+pub fn to_roman(arg: i32) -> Roman {
     Roman {
-        digits: vec![Digit::M],
+        digits: vec![if arg == 1_000 { Digit::M } else { Digit::C }],
     }
 }
 
@@ -28,8 +37,9 @@ mod test {
     use speculoos::*;
 
     #[test]
-    fn hello_world() {
+    fn check_romans() {
         check_roman(1_000, "M");
+        check_roman(100, "C");
     }
 
     fn check_roman(number: i32, roman: &str) {
