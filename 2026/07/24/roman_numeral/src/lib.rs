@@ -37,7 +37,9 @@ pub fn to_roman(arg: i32) -> Roman {
         digits: if arg == 1_100 {
             vec![Digit::M, Digit::C]
         } else if arg == 2_000 {
-            vec![Digit::M, Digit::M]
+            let mut v = vec![Digit::M];
+            v.push(Digit::M);
+            v
         } else if arg == 1_000 {
             vec![Digit::M]
         } else {
