@@ -47,18 +47,10 @@ pub fn to_roman(arg: i32) -> Roman {
         return Roman { digits: vec![] };
     }
 
-    if arg == 1_100 {
-        Roman {
-            digits: vec![Digit::M, Digit::C],
-        }
-    } else if arg == 2_000 {
+    if arg >= 1_000 {
         Roman {
             digits: vec![Digit::M],
         } + to_roman(arg - 1000)
-    } else if arg == 1_000 {
-        Roman {
-            digits: vec![Digit::M],
-        }
     } else {
         Roman {
             digits: vec![Digit::C],
