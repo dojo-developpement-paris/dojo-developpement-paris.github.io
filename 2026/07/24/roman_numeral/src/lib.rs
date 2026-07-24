@@ -33,18 +33,22 @@ impl fmt::Display for Roman {
 }
 
 pub fn to_roman(arg: i32) -> Roman {
-    Roman {
-        digits: if arg == 1_100 {
-            vec![Digit::M, Digit::C]
-        } else if arg == 2_000 {
-            let mut v = vec![Digit::M];
-            v.push(Digit::M);
-            v
-        } else if arg == 1_000 {
-            vec![Digit::M]
-        } else {
-            vec![Digit::C]
-        },
+    if arg == 1_100 {
+        Roman {
+            digits: vec![Digit::M, Digit::C],
+        }
+    } else if arg == 2_000 {
+        let mut v = vec![Digit::M];
+        v.push(Digit::M);
+        Roman { digits: v }
+    } else if arg == 1_000 {
+        Roman {
+            digits: vec![Digit::M],
+        }
+    } else {
+        Roman {
+            digits: vec![Digit::C],
+        }
     }
 }
 
