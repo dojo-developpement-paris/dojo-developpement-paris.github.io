@@ -56,7 +56,7 @@ impl Add<Roman> for Roman {
 
 pub fn to_roman(arg: i32) -> Roman {
     if arg == 0 {
-        return Roman { digits: vec![] };
+        return Roman::new(vec![]);
     }
 
     if arg >= 1_000 {
