@@ -11,6 +11,20 @@ pub enum Digit {
     I,
 }
 
+impl Digit {
+    fn value(self) -> u16 {
+        match self {
+            Digit::M => 1_000,
+            Digit::D => 500,
+            Digit::C => 100,
+            Digit::L => 50,
+            Digit::X => 10,
+            Digit::V => 5,
+            Digit::I => 1,
+        }
+    }
+}
+
 impl fmt::Display for Digit {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
@@ -69,20 +83,20 @@ pub fn to_roman(arg: u16) -> Roman {
         return Roman::new(vec![]);
     }
 
-    if arg >= 1_000 {
-        Roman::from(Digit::M) + to_roman(arg - 1000)
-    } else if arg >= 500 {
-        Roman::from(Digit::D) + to_roman(arg - 500)
-    } else if arg >= 100 {
-        Roman::from(Digit::C) + to_roman(arg - 100)
-    } else if arg >= 50 {
-        Roman::from(Digit::L) + to_roman(arg - 50)
-    } else if arg >= 10 {
-        Roman::from(Digit::X) + to_roman(arg - 10)
-    } else if arg >= 5 {
-        Roman::from(Digit::V) + to_roman(arg - 5)
+    if arg >= Digit::M.value() {
+        Roman::from(Digit::M) + to_roman(arg - Digit::M.value())
+    } else if arg >= Digit::D.value() {
+        Roman::from(Digit::D) + to_roman(arg - Digit::D.value())
+    } else if arg >= Digit::C.value() {
+        Roman::from(Digit::C) + to_roman(arg - Digit::C.value())
+    } else if arg >= Digit::L.value() {
+        Roman::from(Digit::L) + to_roman(arg - Digit::L.value())
+    } else if arg >= Digit::X.value() {
+        Roman::from(Digit::X) + to_roman(arg - Digit::X.value())
+    } else if arg >= Digit::V.value() {
+        Roman::from(Digit::V) + to_roman(arg - Digit::V.value())
     } else {
-        Roman::from(Digit::I) + to_roman(arg - 1)
+        Roman::from(Digit::I) + to_roman(arg - Digit::I.value())
     }
 }
 
