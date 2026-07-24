@@ -6,6 +6,7 @@ pub enum Digit {
     C,
     X,
     I,
+    V,
 }
 
 impl fmt::Display for Digit {
@@ -18,6 +19,7 @@ impl fmt::Display for Digit {
                 Digit::C => "C",
                 Digit::X => "X",
                 Digit::I => "I",
+                Digit::V => "V",
             }
         )
     }
@@ -69,6 +71,8 @@ pub fn to_roman(arg: u16) -> Roman {
         Roman::from(Digit::C) + to_roman(arg - 100)
     } else if arg >= 10 {
         Roman::from(Digit::X) + to_roman(arg - 10)
+    } else if arg >= 5 {
+        Roman::from(Digit::V) + to_roman(arg - 5)
     } else {
         Roman::from(Digit::I) + to_roman(arg - 1)
     }
@@ -88,6 +92,7 @@ mod test {
         check_roman(110, "CX");
         check_roman(1, "I");
         check_roman(3, "III");
+        check_roman(5, "V");
     }
 
     fn check_roman(number: u16, roman: &str) {
