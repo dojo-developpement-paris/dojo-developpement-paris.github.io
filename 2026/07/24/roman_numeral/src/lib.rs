@@ -1,6 +1,6 @@
 use std::{fmt, ops::Add};
 
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, Copy)]
 pub enum Digit {
     M,
     D,
@@ -68,7 +68,7 @@ impl Roman {
 
 impl From<Digit> for Roman {
     fn from(digit: Digit) -> Self {
-        Self::new(vec![digit.clone()])
+        Self::new(vec![digit])
     }
 }
 
@@ -97,9 +97,9 @@ pub fn to_roman(arg: u16) -> Roman {
 
     let digit = Digit::all_digits()
         .into_iter()
-        .find(|digit| arg >= digit.clone().value())
+        .find(|digit| arg >= digit.value())
         .unwrap_or(Digit::I);
-    Roman::from(digit.clone()) + to_roman(arg - digit.value())
+    Roman::from(digit) + to_roman(arg - digit.value())
 }
 
 #[cfg(test)]
