@@ -3,7 +3,7 @@ pub enum Roman {
     M,
 }
 
-pub fn toRoman(_arg: i32) -> Vec<Roman> {
+pub fn to_roman(_arg: i32) -> Vec<Roman> {
     vec![Roman::M]
 }
 
@@ -14,6 +14,6 @@ mod test {
 
     #[test]
     fn hello_world() {
-        assert_that(&toRoman(1_000)).is_equal_to(vec![Roman::M])
+        assert_that(&to_roman(1_000)).is_equal_to(vec![Roman::M])
     }
 }
