@@ -8,7 +8,14 @@ pub enum Digit {
 
 impl fmt::Display for Digit {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", if self == &Digit::M { "M" } else { "C" })
+        write!(
+            f,
+            "{}",
+            match self {
+                Digit::M => "M",
+                Digit::C => "C",
+            }
+        )
     }
 }
 
