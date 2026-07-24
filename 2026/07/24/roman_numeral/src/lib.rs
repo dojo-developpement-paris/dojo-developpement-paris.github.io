@@ -3,10 +3,15 @@ pub enum Digit {
     M,
 }
 
-type Roman = Vec<Digit>;
+#[derive(Debug, PartialEq)]
+pub struct Roman {
+    digit: Vec<Digit>,
+}
 
 pub fn to_roman(_arg: i32) -> Roman {
-    vec![Digit::M]
+    Roman {
+        digit: vec![Digit::M],
+    }
 }
 
 #[cfg(test)]
@@ -16,6 +21,8 @@ mod test {
 
     #[test]
     fn hello_world() {
-        assert_that(&to_roman(1_000)).is_equal_to(vec![Digit::M])
+        assert_that(&to_roman(1_000)).is_equal_to(Roman {
+            digit: vec![Digit::M],
+        })
     }
 }
