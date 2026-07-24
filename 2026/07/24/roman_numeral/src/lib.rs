@@ -1,5 +1,10 @@
-pub fn hello(name: Option<&str>) -> String {
-    format!("Hello {}", name.unwrap_or("world"))
+#[derive(Debug, PartialEq)]
+pub enum Roman {
+    M,
+}
+
+pub fn toRoman(_arg: i32) -> Vec<Roman> {
+    vec![Roman::M]
 }
 
 #[cfg(test)]
@@ -9,11 +14,6 @@ mod test {
 
     #[test]
     fn hello_world() {
-        assert_that(&hello(None)).is_equal_to("Hello world".to_string())
-    }
-
-    #[test]
-    fn hello_foo() {
-        assert_that(&hello(Some("foo"))).is_equal_to("Hello foo".to_string())
+        assert_that(&toRoman(1_000)).is_equal_to(vec![Roman::M])
     }
 }
