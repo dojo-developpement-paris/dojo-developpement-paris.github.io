@@ -24,6 +24,18 @@ pub struct Roman {
     digits: Vec<Digit>,
 }
 
+impl Roman {
+    pub fn new(digits: Vec<Digit>) -> Self {
+        Self { digits }
+    }
+}
+
+impl From<Digit> for Roman {
+    fn from(digit: Digit) -> Self {
+        Self::new(vec![digit])
+    }
+}
+
 impl fmt::Display for Roman {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         self.digits
@@ -48,9 +60,7 @@ pub fn to_roman(arg: i32) -> Roman {
     }
 
     if arg >= 1_000 {
-        Roman {
-            digits: vec![Digit::M],
-        } + to_roman(arg - 1000)
+        Roman::from(Digit::M) + to_roman(arg - 1000)
     } else {
         Roman {
             digits: vec![Digit::C],
