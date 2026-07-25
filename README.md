@@ -16,9 +16,9 @@ Le **but** est d'**apprendre**, si possible en s'amusant ;
 Le but n'est **pas de finir**
 
 ## Sujets
-- 0 - A -  -  -  - 
-- 0 - B -  -  -  - 
-- 0 -  -  -  -  - 
+-  -  -  - 
+-  -  -  - 
+-  -  -  - 
 
 ## Modes de fonctionnement habituels
 - Mob: 1 typist + les autres naviguent
@@ -43,11 +43,11 @@ Au cours de la session, on invite chaque personne à répondre aux questions:
 - qu'est-ce qu'on pourrait changer pour que tu partes content-e de la session ?
 
 ## Nous ne sommes pas télépathes
-si vous ne dites pas que vous ne comprenez pas, on ne peut pas le savoir ;
+Si vous ne dites pas que vous ne comprenez pas, on ne peut pas le savoir ;
 il n'y a donc **pas de questions stupides**
 
 ## Méthode de vote
-- nous utilisons [un site pour voter]
+- nous utilisons [un site pour voter] (ou [un autre])
 - points = nombre de sujets divisé 2 arrondis à l'entier inférieur
 - ex: sujets = 5, points = 2 ⇒ 2 votes, à 1 et 2 points
 
@@ -71,5 +71,6 @@ Transition sur plusieurs mois qui nous permettra de changer de revenir en arriè
 [Définition `test && commit || revert`]: https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864
 [TCR + TDD]: https://git-gamble.is-cool.dev/theory.html#tcrdd
 [un environnement de prêt]: https://pinage404.gitlab.io/nix-sandboxes/
-[un site pour voter]: https://emmanuelpaatz.com/dojosurvey
+[un site pour voter]: https://dojo-vote.is-cool.dev
+[un autre]: https://emmanuelpaatz.com/dojosurvey
 [l'histoire du dojo]: https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io/blob/main/history.md
