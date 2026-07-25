@@ -70,7 +70,7 @@ Transition sur plusieurs mois qui nous permettra de changer de revenir en arriè
 [Test Driven Development]: https://fr.wikipedia.org/wiki/Test_Driven_Development
 [Définition `test && commit || revert`]: https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864
 [TCR + TDD]: https://git-gamble.is-cool.dev/theory.html#tcrdd
-[un environnement de prêt]: https://pinage404.gitlab.io/nix-sandboxes/
+[un environnement de prêt]: https://nix-sandboxes.is-cool.dev
 [un site pour voter]: https://dojo-vote.is-cool.dev
 [un autre]: https://emmanuelpaatz.com/dojosurvey
 [l'histoire du dojo]: https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io/blob/main/history.md
