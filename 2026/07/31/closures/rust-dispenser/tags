@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Dispenser	/Users/tof/Coding/closures/rust-dispenser/src/dispenser.rs	/^pub struct Dispenser {$/;"	s
+Item	/Users/tof/Coding/closures/rust-dispenser/src/dispenser.rs	/^type Item = u16;$/;"	T
+Predicate	/Users/tof/Coding/closures/rust-dispenser/src/dispenser.rs	/^pub struct Predicate {$/;"	s
+a_dispenser_can_find_the_items_matching_a_predicate	/Users/tof/Coding/closures/rust-dispenser/src/dispenser.rs	/^    fn a_dispenser_can_find_the_items_matching_a_predicate() {$/;"	f
+find_first	/Users/tof/Coding/closures/rust-dispenser/src/dispenser.rs	/^    pub fn find_first(&mut self, predicate: Predicate) -> Option<Item> {$/;"	f
+find_item	/Users/tof/Coding/closures/rust-dispenser/src/dispenser.rs	/^fn find_item(items: &Vec<Item>, predicate: &Predicate, position: usize) -> Option<(usize, Item)> {$/;"	f
+find_next	/Users/tof/Coding/closures/rust-dispenser/src/dispenser.rs	/^    pub fn find_next(&mut self) -> Option<Item> {$/;"	f
+main	/Users/tof/Coding/closures/rust-dispenser/src/main.rs	/^fn main() {$/;"	f
+new	/Users/tof/Coding/closures/rust-dispenser/src/dispenser.rs	/^    pub fn new(items: Vec<Item>) -> Self {$/;"	f
+new	/Users/tof/Coding/closures/rust-dispenser/src/dispenser.rs	/^    pub fn new<T: Fn(Item) -> bool + 'static>(function: T) -> Self {$/;"	f
