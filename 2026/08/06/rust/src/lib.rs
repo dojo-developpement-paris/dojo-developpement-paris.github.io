@@ -13,8 +13,8 @@ fn get_column(grid: Vec<Vec<u8>>, index: usize) -> Vec<u8> {
     ]
 }
 
-fn array_has_no_duplicates(line: Vec<u8>) -> bool {
-    line[0] != line[1] && line[2] != line[3] && line[1] != line[3] && line[1] != line[2]
+fn array_has_no_duplicates(array: Vec<u8>) -> bool {
+    array[0] != array[1] && array[2] != array[3] && array[1] != array[3] && array[1] != array[2]
 }
 
 #[cfg(test)]
