@@ -1,8 +1,6 @@
 pub fn sudoku_solution_checker(grid: Vec<Vec<u8>>) -> bool {
-    grid[0][0] != grid[0][1]
-        && grid[0][2] != grid[0][3]
-        && grid[0][1] != grid[0][3]
-        && grid[0][1] != grid[0][2]
+    let line = &grid[0];
+    line[0] != line[1] && line[2] != line[3] && line[1] != line[3] && line[1] != line[2]
 }
 
 #[cfg(test)]
