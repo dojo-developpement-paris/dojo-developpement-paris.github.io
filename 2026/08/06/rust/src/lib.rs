@@ -1,5 +1,5 @@
 pub fn sudoku_solution_checker(grid: Vec<Vec<u8>>) -> bool {
-    grid[0][0] != grid[0][1] && grid[0][2] != grid[0][3]
+    grid[0][0] != grid[0][1] && grid[0][2] != grid[0][3] && grid[0][1] != grid[0][3]
 }
 
 #[cfg(test)]
@@ -47,6 +47,18 @@ mod test {
             vec![3, d, d, d],
             vec![1, 4, 3, d],
             vec![4, 1, d, 3],
+            vec![2, 3, 4, 1],
+        ];
+        assert_that(&sudoku_solution_checker(grid)).is_equal_to(false)
+    }
+
+    #[test]
+    fn some_duplicates_again() {
+        let d = 2;
+        let grid = vec![
+            vec![3, d, 1, d],
+            vec![1, 4, 3, d],
+            vec![4, 1, 2, 3],
             vec![2, 3, 4, 1],
         ];
         assert_that(&sudoku_solution_checker(grid)).is_equal_to(false)
