@@ -1,18 +1,5 @@
-pub fn random_function_whatever(_incorrect_grid: Vec<Vec<u8>>) -> bool {
-    _incorrect_grid
-        == vec![
-            vec![1, 4, 3, 2],
-            vec![3, 2, 1, 4],
-            vec![4, 1, 2, 3],
-            vec![2, 3, 4, 1],
-        ]
-        || _incorrect_grid
-            == vec![
-                vec![3, 2, 1, 4],
-                vec![1, 4, 3, 2],
-                vec![4, 1, 2, 3],
-                vec![2, 3, 4, 1],
-            ]
+pub fn random_function_whatever(grid: Vec<Vec<u8>>) -> bool {
+    grid[0][0] != grid[0][1]
 }
 
 #[cfg(test)]
