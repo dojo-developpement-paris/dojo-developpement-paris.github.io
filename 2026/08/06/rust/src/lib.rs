@@ -1,4 +1,4 @@
-pub fn random_function_whatever(grid: Vec<Vec<u8>>) -> bool {
+pub fn sudoku_solution_checker(grid: Vec<Vec<u8>>) -> bool {
     grid[0][0] != grid[0][1]
 }
 
@@ -15,7 +15,7 @@ mod test {
             vec![1, 1, 1, 1],
             vec![1, 1, 1, 1],
         ];
-        assert_that(&random_function_whatever(incorrect_grid)).is_equal_to(false)
+        assert_that(&sudoku_solution_checker(incorrect_grid)).is_equal_to(false)
     }
 
     #[test]
@@ -26,7 +26,7 @@ mod test {
             vec![4, 1, 2, 3],
             vec![2, 3, 4, 1],
         ];
-        assert_that(&random_function_whatever(grid)).is_equal_to(true)
+        assert_that(&sudoku_solution_checker(grid)).is_equal_to(true)
     }
 
     #[test]
@@ -37,6 +37,6 @@ mod test {
             vec![4, 1, 2, 3],
             vec![2, 3, 4, 1],
         ];
-        assert_that(&random_function_whatever(grid)).is_equal_to(true)
+        assert_that(&sudoku_solution_checker(grid)).is_equal_to(true)
     }
 }
