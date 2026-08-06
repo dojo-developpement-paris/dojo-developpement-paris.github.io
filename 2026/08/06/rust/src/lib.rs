@@ -1,5 +1,7 @@
 pub fn sudoku_solution_checker(grid: Vec<Vec<u8>>) -> bool {
-    grid.clone().into_iter().all(line_has_no_duplicates) && grid[0][0] != grid[1][0]
+    grid.clone().into_iter().all(line_has_no_duplicates)
+        && grid[0][0] != grid[1][0]
+        && grid[0][1] != grid[1][1]
 }
 
 fn line_has_no_duplicates(line: Vec<u8>) -> bool {
@@ -93,6 +95,18 @@ mod test {
                 vec![d, 1, 4, 3],
                 vec![3, 4, 2, 1],
                 vec![2, 3, 4, 1],
+            ];
+            assert_that(&sudoku_solution_checker(grid)).is_equal_to(false)
+        }
+
+        #[test]
+        fn some_duplicates_second_column_d_d_3_2() {
+            let d = 2;
+            let grid = vec![
+                vec![4, d, 3, 1],
+                vec![1, d, 4, 3],
+                vec![4, 3, 2, 1],
+                vec![3, 2, 4, 1],
             ];
             assert_that(&sudoku_solution_checker(grid)).is_equal_to(false)
         }
