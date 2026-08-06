@@ -1,8 +1,8 @@
 pub fn sudoku_solution_checker(grid: Vec<Vec<u8>>) -> bool {
-    line_has_duplicates(&grid[0]) && line_has_duplicates(&grid[1])
+    line_has_no_duplicates(&grid[0]) && line_has_no_duplicates(&grid[1])
 }
 
-fn line_has_duplicates(line: &[u8]) -> bool {
+fn line_has_no_duplicates(line: &[u8]) -> bool {
     line[0] != line[1] && line[2] != line[3] && line[1] != line[3] && line[1] != line[2]
 }
 
