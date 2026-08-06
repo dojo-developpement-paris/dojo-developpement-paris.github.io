@@ -1,6 +1,7 @@
 pub fn sudoku_solution_checker(grid: Vec<Vec<u8>>) -> bool {
-    array_has_no_duplicates(get_column(grid.clone(), 0))
-        && array_has_no_duplicates(get_column(grid.clone(), 1))
+    (0..grid.len())
+        .into_iter()
+        .all(|index| array_has_no_duplicates(get_column(grid.clone(), index)))
         && grid.clone().into_iter().all(array_has_no_duplicates)
 }
 
