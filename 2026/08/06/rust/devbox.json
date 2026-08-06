@@ -1,0 +1,13 @@
+{
+  "packages": {
+    "rustup": "latest", // to execute Rust using the right version
+    "clang":  "latest", // to compile to binary
+    "bacon":  "latest", // to re-execute tests when sources files change
+    "mask":   "latest", // to execute commands in the maskfile.md
+    "bashInteractive": { // to execute commands in the maskfile.md
+      "version": "latest",
+      "outputs": ["out"]
+    },
+    "git-gamble": "latest" // to be able to gamble on the tests result
+  }
+}
