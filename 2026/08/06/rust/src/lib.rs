@@ -1,5 +1,5 @@
 pub fn sudoku_solution_checker(grid: Vec<Vec<u8>>) -> bool {
-    grid.clone().into_iter().all(line_has_no_duplicates)
+    grid.clone().into_iter().all(array_has_no_duplicates)
         && grid[0][0] != grid[1][0]
         && grid[0][1] != grid[1][1]
 }
@@ -13,7 +13,7 @@ fn get_column(grid: Vec<Vec<u8>>, index: usize) -> Vec<u8> {
     ]
 }
 
-fn line_has_no_duplicates(line: Vec<u8>) -> bool {
+fn array_has_no_duplicates(line: Vec<u8>) -> bool {
     line[0] != line[1] && line[2] != line[3] && line[1] != line[3] && line[1] != line[2]
 }
 
