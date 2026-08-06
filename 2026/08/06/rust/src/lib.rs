@@ -4,6 +4,15 @@ pub fn sudoku_solution_checker(grid: Vec<Vec<u8>>) -> bool {
         && grid[0][1] != grid[1][1]
 }
 
+fn get_column(grid: Vec<Vec<u8>>, index: usize) -> Vec<u8> {
+    vec![
+        grid[0][index],
+        grid[1][index],
+        grid[2][index],
+        grid[3][index],
+    ]
+}
+
 fn line_has_no_duplicates(line: Vec<u8>) -> bool {
     line[0] != line[1] && line[2] != line[3] && line[1] != line[3] && line[1] != line[2]
 }
