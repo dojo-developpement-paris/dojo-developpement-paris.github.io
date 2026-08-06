@@ -1,5 +1,7 @@
 pub fn sudoku_solution_checker(grid: Vec<Vec<u8>>) -> bool {
-    line_has_no_duplicates(&grid[0]) && line_has_no_duplicates(&grid[1])
+    line_has_no_duplicates(&grid[0])
+        && line_has_no_duplicates(&grid[1])
+        && line_has_no_duplicates(&grid[2])
 }
 
 fn line_has_no_duplicates(line: &[u8]) -> bool {
@@ -68,6 +70,18 @@ mod test {
                 vec![1, 4, 3, 2],
                 vec![3, d, d, 1],
                 vec![4, 1, d, 3],
+                vec![2, 3, 4, 1],
+            ];
+            assert_that(&sudoku_solution_checker(grid)).is_equal_to(false)
+        }
+
+        #[test]
+        fn some_duplicates_third_line_3_d_d_1() {
+            let d = 2;
+            let grid = vec![
+                vec![1, 4, 3, 2],
+                vec![4, 1, d, 3],
+                vec![3, d, d, 1],
                 vec![2, 3, 4, 1],
             ];
             assert_that(&sudoku_solution_checker(grid)).is_equal_to(false)
