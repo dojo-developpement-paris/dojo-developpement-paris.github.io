@@ -6,6 +6,13 @@ pub fn random_function_whatever(_incorrect_grid: Vec<Vec<u8>>) -> bool {
             vec![4, 1, 2, 3],
             vec![2, 3, 4, 1],
         ]
+        || _incorrect_grid
+            == vec![
+                vec![3, 2, 1, 4],
+                vec![1, 4, 3, 2],
+                vec![4, 1, 2, 3],
+                vec![2, 3, 4, 1],
+            ]
 }
 
 #[cfg(test)]
@@ -29,6 +36,17 @@ mod test {
         let grid = vec![
             vec![1, 4, 3, 2],
             vec![3, 2, 1, 4],
+            vec![4, 1, 2, 3],
+            vec![2, 3, 4, 1],
+        ];
+        assert_that(&random_function_whatever(grid)).is_equal_to(true)
+    }
+
+    #[test]
+    fn another_minimal_grid_with_no_duplicate() {
+        let grid = vec![
+            vec![3, 2, 1, 4],
+            vec![1, 4, 3, 2],
             vec![4, 1, 2, 3],
             vec![2, 3, 4, 1],
         ];
