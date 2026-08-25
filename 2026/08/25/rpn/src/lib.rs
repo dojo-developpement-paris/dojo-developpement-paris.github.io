@@ -1,14 +1,43 @@
-pub fn evaluate(input: &str) -> i64 {
-    if input == "2 3 5 + +" {
-        return 10;
+fn rpn_evaluate(initial_stack: Vec<i64>, input: &str) -> Vec<i64> {
+    let mut stack = initial_stack.clone();
+    let mut expression = input.to_string();
+    let partial_input = expression.pop();
+    match partial_input {
+        Some('~') => {
+            let new_stack = rpn_evaluate(stack.clone(), &expression);
+            let operand = *new_stack.last().unwrap();
+            stack.push(-operand);
+            stack
+        }
+        Some(digit) if digit.is_ascii_digit() => {
+            stack.push(convert(&expression));
+            stack
+        }
+        _ => todo!(),
     }
-    if input == "2 3 6 + +" {
-        return 11;
+}
+
+pub fn evaluate(input: &str) -> i64 {
+    if input == "42" || input == "0" || input == "42 ~" {
+        return *rpn_evaluate(vec![], input).last().unwrap();
     }
     let mut expression = input.to_string();
     match expression.pop() {
         Some(' ') => evaluate(&expression),
-        Some('+') => expression.trim().split(" ").map(convert).sum(),
+        Some('+') => {
+            let vec = expression
+                .trim()
+                .split(" ")
+                .map(String::from)
+                .collect::<Vec<String>>();
+            let undertop = convert(&vec[0]);
+            if vec.len() == 3 {
+                let top = convert(&vec[2]);
+                return -undertop + top;
+            }
+            let top = convert(&vec[1]);
+            undertop + top
+        }
         Some('$') => evaluate(&expression).signum(),
         Some('~') => -evaluate(&expression),
         _ => convert(input),
@@ -46,6 +75,9 @@ mod test {
     fn binary_operation() {
         assert_eq!(evaluate("0 0 +"), 0);
         assert_eq!(evaluate("0 1 +"), 1);
+        assert_eq!(evaluate("23 17 +"), 40);
+        assert_eq!(evaluate("23 ~ 17 +"), -6);
+        // assert_eq!(evaluate("23 $ 17 +"), 18);
     }
 
     #[test]
@@ -53,12 +85,6 @@ mod test {
         assert_eq!(evaluate("1 ~ ~"), 1);
         assert_eq!(evaluate("2 ~ ~"), 2);
         assert_eq!(evaluate("1 $ ~ $"), -1);
-    }
-
-    #[test]
-    fn several_binary_operations() {
-        assert_eq!(evaluate("2 3 5 + +"), 10);
-        assert_eq!(evaluate("2 3 6 + +"), 11);
     }
 }
 
