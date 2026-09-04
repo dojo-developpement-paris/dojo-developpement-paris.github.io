@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 
-function distance(_word1: string, _word2: string): any {
-  if (_word2 === "cog") return 1
+function distance(_word1: string, word2: string): any {
+  if (word2 === "cog") return 1
   return 0
 }
 
