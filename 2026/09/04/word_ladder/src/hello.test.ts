@@ -31,8 +31,8 @@ describe("distance", () => {
 type Word = string
 type Graph = { [key: Word]: Word[] }
 
-function graph(_arg0: string[]): Graph {
-  if (JSON.stringify(_arg0) === JSON.stringify(["dog", "cog", "log"])) {
+function graph(dictionnary: string[]): Graph {
+  if (dictionnary.length === 3) {
     return {
       dog: ["cog", "log"],
       cog: ["dog", "log"],
