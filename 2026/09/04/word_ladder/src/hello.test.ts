@@ -1,12 +1,11 @@
 import { describe, expect, it } from "vitest"
-import { hello } from "./hello"
 
-describe("hello", () => {
-  it("world", () => {
-    expect(hello()).toEqual("Hello world")
-  })
+function distance(_arg0: string, _arg1: string): any {
+  return 0
+}
 
-  it("foo", () => {
-    expect(hello("foo")).toEqual("Hello foo")
+describe("distance", () => {
+  it("distance is 0 with 2 identical words", () => {
+    expect(distance("dog", "dog")).toBe(0)
   })
 })
