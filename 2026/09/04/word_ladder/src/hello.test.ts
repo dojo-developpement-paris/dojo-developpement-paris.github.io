@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest"
 
 function distance(word1: string, word2: string): number {
   let somme = 0
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < word1.length; i++) {
     somme += word1[i] === word2[i] ? 0 : 1
   }
   return somme
