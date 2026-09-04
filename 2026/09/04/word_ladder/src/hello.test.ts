@@ -1,13 +1,9 @@
 import { describe, expect, it } from "vitest"
 
 function distance(word1: string, word2: string): number {
-  let i = 0
-  const first_letter = +(word1[i] !== word2[i])
-  i++
-  const second_letter = +(word1[i] !== word2[i])
-  i++
-  const third_letter = +(word1[i] !== word2[i])
-  return first_letter + second_letter + third_letter
+  let somme = 0
+  for (let i = 0; i < 3; i++) somme += +(word1[i] !== word2[i])
+  return somme
 }
 
 describe("distance", () => {
