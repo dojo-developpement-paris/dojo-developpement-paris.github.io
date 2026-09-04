@@ -1,9 +1,12 @@
 import { describe, expect, it } from "vitest"
 
 function distance(word1: string, word2: string): number {
-  const first_letter = +(word1[0] !== word2[0])
-  const second_letter = +(word1[1] !== word2[1])
-  const third_letter = +(word1[2] !== word2[2])
+  let i = 0
+  const first_letter = +(word1[i] !== word2[i])
+  i++
+  const second_letter = +(word1[i] !== word2[i])
+  i++
+  const third_letter = +(word1[i] !== word2[i])
   return first_letter + second_letter + third_letter
 }
 
