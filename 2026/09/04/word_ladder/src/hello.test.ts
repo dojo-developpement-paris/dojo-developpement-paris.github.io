@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest"
 
 function distance(word1: string, word2: string): number {
-  if (word1 === word2) return 0
-  return 1
+  let dist: number
+  if (word1 === word2) dist = 0
+  else dist = 1
+  return dist
 }
 
 describe("distance", () => {
