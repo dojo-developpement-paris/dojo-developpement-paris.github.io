@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest"
 
 function distance(word1: string, word2: string): number {
-  return Array.from(word1).reduce(
-    (accumulator, character, index) =>
-      accumulator + (character === word2[index] ? 0 : 1),
-    0,
-  )
+  let somme = 0
+  for (let i = 0; i < 3; i++) {
+    somme += word1[i] === word2[i] ? 0 : 1
+  }
+  return somme
 }
 
 describe("distance", () => {
