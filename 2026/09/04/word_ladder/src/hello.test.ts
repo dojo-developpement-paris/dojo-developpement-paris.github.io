@@ -28,7 +28,10 @@ describe("distance", () => {
   })
 })
 
-function graph(_arg0: string[]): any {
+type Word = string
+type Graph = { [key: Word]: Word[] }
+
+function graph(_arg0: string[]): Graph {
   return {
     dog: ["cog"],
     cog: ["dog"],
