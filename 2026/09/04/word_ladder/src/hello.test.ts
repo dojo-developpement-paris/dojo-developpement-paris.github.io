@@ -27,3 +27,19 @@ describe("distance", () => {
     )
   })
 })
+
+function graph(_arg0: string[]): any {
+  return {
+    dog: ["cog"],
+    cog: ["dog"],
+  }
+}
+
+describe("graph", () => {
+  it("for 2 words", () => {
+    expect(graph(["dog", "cog"])).toEqual({
+      dog: ["cog"],
+      cog: ["dog"],
+    })
+  })
+})
