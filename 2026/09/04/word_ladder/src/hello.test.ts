@@ -1,12 +1,16 @@
 import { describe, expect, it } from "vitest"
 
 function distance(word1: string, word2: string): number {
-  if (word2 === "bag") return 2
-  if (word2 === "cot") return 2
-  let dist: number
-  if (word1 === word2) dist = 0
-  else dist = 1
-  return dist
+  switch (word2) {
+    case "bag":
+    case "cot":
+      return 2
+    default:
+      let dist: number
+      if (word1 === word2) dist = 0
+      else dist = 1
+      return dist
+  }
 }
 
 describe("distance", () => {
