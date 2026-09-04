@@ -1,25 +1,10 @@
 import { describe, expect, it } from "vitest"
 
 function distance(word1: string, word2: string): number {
-  switch (word2) {
-    case "bag": {
-      const first_letter = +(word1[0] !== word2[0])
-      const second_letter = +(word1[1] !== word2[1])
-      const third_letter = +(word1[2] !== word2[2])
-      return first_letter + second_letter + third_letter
-    }
-    case "cot": {
-      const first_letter = +(word1[0] !== word2[0])
-      const second_letter = +(word1[1] !== word2[1])
-      const third_letter = +(word1[2] !== word2[2])
-      return first_letter + second_letter + third_letter
-    }
-    default:
-      let dist: number
-      if (word1 === word2) dist = 0
-      else dist = 1
-      return dist
-  }
+  const first_letter = +(word1[0] !== word2[0])
+  const second_letter = +(word1[1] !== word2[1])
+  const third_letter = +(word1[2] !== word2[2])
+  return first_letter + second_letter + third_letter
 }
 
 describe("distance", () => {
