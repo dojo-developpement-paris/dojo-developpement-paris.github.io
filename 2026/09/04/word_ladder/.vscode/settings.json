@@ -1,0 +1,11 @@
+{
+  "nixEnvSelector.useFlakes": true,
+  "nixEnvSelector.nixFile": "${workspaceFolder}/flake.nix",
+  "editor.inlayHints.enabled": "off",
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "prettier.prettier-vscode"
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+}

@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "johnsoncodehk.vscode-tsconfig-helper",
+    "nicoespeon.abracadabra",
+    "oxc.oxc-vscode",
+    "p42ai.refactor",
+    "pinage404.nix-extension-pack",
+    "prettier.prettier-vscode",
+    "vitest.explorer",
+    "yoavbls.pretty-ts-errors"
+  ]
+}

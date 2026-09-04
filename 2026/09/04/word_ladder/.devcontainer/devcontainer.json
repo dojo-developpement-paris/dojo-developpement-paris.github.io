@@ -1,0 +1,22 @@
+{
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+  "init": true,
+  "onCreateCommand": "bash -c 'direnv allow && direnv exec . mask test'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "johnsoncodehk.vscode-tsconfig-helper",
+        "nicoespeon.abracadabra",
+        "oxc.oxc-vscode",
+        "p42ai.refactor",
+        "pinage404.nix-extension-pack",
+        "prettier.prettier-vscode",
+        "vitest.explorer",
+        "yoavbls.pretty-ts-errors"
+      ]
+    }
+  }
+}
