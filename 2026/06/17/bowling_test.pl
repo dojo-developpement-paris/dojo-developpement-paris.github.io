@@ -30,6 +30,9 @@ test('given a strike then two next rolls are doubled as bonus', [nondet]) :-
 test('a spare takes place only on new frame', [nondet]) :-
     score([10,0,2],14). 
 
+test('an incomplete spare does not count bonus', [nondet]) :-
+    score([0,10], 10).
+
 test('after ten frames, rolls are not counted, only bonus', [nondet]) :-
     score([10,10,10,10,10,10,10,10,10,10,10,10], 300).
 

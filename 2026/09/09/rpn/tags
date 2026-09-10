@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Stack	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^type Stack = Vec<i64>;$/;"	T
+Token	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^pub enum Token {$/;"	g
+a_number_eval_to_itself	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^    fn a_number_eval_to_itself() {$/;"	f
+binary_operator_eval_to_operation	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^    fn binary_operator_eval_to_operation() {$/;"	f
+empty_expression_eval_to_0	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^    fn empty_expression_eval_to_0() {$/;"	f
+eval	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^fn eval(token: Token, stack: Stack) -> Stack {$/;"	f
+interpret	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^fn interpret(s: &str) -> Token {$/;"	f
+main	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^fn main() {$/;"	f
+rpn	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^fn rpn(expression: &str) -> i64 {$/;"	f
+rpn_tokens	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^fn rpn_tokens(mut tokens: Vec<&str>) -> i64 {$/;"	f
+several_numbers_eval_to_last	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^    fn several_numbers_eval_to_last() {$/;"	f
+unary_operator_eval_to_operation	/Users/christophethibaut/Coding/dojo-developpement-paris.github.io/2026/09/09/rpn/src/main.rs	/^    fn unary_operator_eval_to_operation() {$/;"	f

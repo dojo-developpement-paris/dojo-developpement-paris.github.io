@@ -18,7 +18,6 @@ score([Roll1 , Roll2 , Roll3 | Rest], Score) :-
 
 % average roll
 score([Roll|Rest], Score) :-
-    Roll \= 10,
     score(Rest, ScoreRest),
     Score is Roll + ScoreRest.
 
