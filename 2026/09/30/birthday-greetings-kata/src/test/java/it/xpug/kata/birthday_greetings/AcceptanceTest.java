@@ -21,7 +21,7 @@ class AcceptanceTest {
     mailServer.start();
     birthdayService =
         new BirthdayService(
-            new EmployeeRepository("employee_data.txt"),
+            new FileEmployeeRepository("employee_data.txt"),
             new MailSender("sender@here.com", "localhost", NONSTANDARD_PORT));
   }
 
