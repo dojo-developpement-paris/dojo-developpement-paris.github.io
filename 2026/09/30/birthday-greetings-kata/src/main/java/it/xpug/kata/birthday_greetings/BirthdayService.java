@@ -15,7 +15,6 @@ public class BirthdayService {
   }
 
   public void sendGreetings(String fileName, XDate xDate, String smtpHost, int smtpPort) {
-    var repository = new EmployeeRepository(fileName);
     repository
         .readAll()
         .forEach(
