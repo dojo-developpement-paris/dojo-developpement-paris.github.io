@@ -14,10 +14,6 @@ public class BirthdayService {
     this.repository = repository;
   }
 
-  public BirthdayService() {
-    this(new EmployeeRepository());
-  }
-
   public void sendGreetings(String fileName, XDate xDate, String smtpHost, int smtpPort) {
     var repository = new EmployeeRepository(fileName);
     repository
