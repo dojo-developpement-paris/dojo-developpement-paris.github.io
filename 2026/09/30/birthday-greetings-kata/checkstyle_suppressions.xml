@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?SORTPOM IGNORE?>
+<!DOCTYPE suppressions PUBLIC "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN" "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+<?SORTPOM RESUME?>
+<suppressions>
+    <!--Allow string literals to exceed 100 characters, the code formatter takes care of reformatting  other lines to 100 characters.-->
+    <suppress checks="LineLength" />
+    <suppress checks="MissingJavadocType" files="\.java$" />
+    <suppress checks="MissingJavadocMethod" />
+    <suppress checks="VariableDeclarationUsageDistance" />
+</suppressions>
