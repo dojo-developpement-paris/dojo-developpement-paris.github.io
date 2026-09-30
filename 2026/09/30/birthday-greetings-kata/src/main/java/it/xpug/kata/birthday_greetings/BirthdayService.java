@@ -9,9 +9,13 @@ import jakarta.mail.internet.MimeMessage;
 
 public class BirthdayService {
   private final EmployeeRepository repository;
+  private final String smtpHost;
+  private final int smtpPort;
 
-  public BirthdayService(EmployeeRepository repository) {
+  public BirthdayService(EmployeeRepository repository, String smtpHost, int smtpPort) {
     this.repository = repository;
+    this.smtpHost = smtpHost;
+    this.smtpPort = smtpPort;
   }
 
   public void sendGreetings(XDate xDate, String smtpHost, int smtpPort) {
