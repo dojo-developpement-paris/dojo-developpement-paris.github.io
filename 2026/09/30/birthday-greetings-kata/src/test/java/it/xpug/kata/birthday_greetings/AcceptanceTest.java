@@ -22,7 +22,7 @@ class AcceptanceTest {
     birthdayService =
         new BirthdayService(
             new EmployeeRepository("employee_data.txt"),
-            new MessageSender("sender@here.com", "localhost", NONSTANDARD_PORT));
+            new MailSender("sender@here.com", "localhost", NONSTANDARD_PORT));
   }
 
   @AfterEach

@@ -7,12 +7,12 @@ import jakarta.mail.Transport;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 
-class MessageSender {
+class MailSender {
   private final String smtpHost;
   private final int smtpPort;
   private final String sender;
 
-  MessageSender(String sender, String smtpHost, int smtpPort) {
+  MailSender(String sender, String smtpHost, int smtpPort) {
     this.smtpHost = smtpHost;
     this.smtpPort = smtpPort;
     this.sender = sender;

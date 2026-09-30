@@ -12,7 +12,7 @@ public class Main {
     BirthdayService service =
         new BirthdayService(
             new EmployeeRepository("employee_data.txt"),
-            new MessageSender("sender@here.com", "localhost", 25));
+            new MailSender("sender@here.com", "localhost", 25));
     service.sendGreetings(new XDate());
   }
 }
