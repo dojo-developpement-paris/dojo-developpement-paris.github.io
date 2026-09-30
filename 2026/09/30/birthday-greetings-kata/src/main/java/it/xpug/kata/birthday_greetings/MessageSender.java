@@ -10,10 +10,12 @@ import jakarta.mail.internet.MimeMessage;
 class MessageSender {
   private final String smtpHost;
   private final int smtpPort;
+  private final String sender;
 
-  MessageSender(String smtpHost, int smtpPort) {
+  MessageSender(String sender, String smtpHost, int smtpPort) {
     this.smtpHost = smtpHost;
     this.smtpPort = smtpPort;
+    this.sender = sender;
   }
 
   public void sendMessage(String sender, String subject, String body, String recipient) {
