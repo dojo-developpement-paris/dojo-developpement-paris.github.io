@@ -10,7 +10,7 @@ public class Main {
   public static void main(String[] args)
       throws AddressException, IOException, ParseException, MessagingException {
     BirthdayService service =
-        new BirthdayService(new EmployeeRepository("employee_data.txt"), "localhost", 25);
+        new BirthdayService(new EmployeeRepository("employee_data.txt"), new MessageSender( "localhost", 25 ));
     service.sendGreetings(new XDate());
   }
 }
