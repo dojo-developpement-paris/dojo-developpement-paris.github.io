@@ -9,10 +9,14 @@ import jakarta.mail.internet.MimeMessage;
 
 public class BirthdayService {
   private final EmployeeRepository repository;
+
   public BirthdayService(EmployeeRepository repository) {
     this.repository = repository;
   }
-  public BirthdayService() {this(new EmployeeRepository());}
+
+  public BirthdayService() {
+    this(new EmployeeRepository());
+  }
 
   public void sendGreetings(String fileName, XDate xDate, String smtpHost, int smtpPort) {
     var repository = new EmployeeRepository(fileName);
