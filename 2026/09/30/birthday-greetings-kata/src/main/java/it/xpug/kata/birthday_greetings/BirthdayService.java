@@ -28,13 +28,13 @@ public class BirthdayService {
                 String body =
                     "Happy Birthday, dear %NAME%!".replace("%NAME%", employee.getFirstName());
                 String subject = "Happy Birthday!";
-                sendMessage(smtpHost, smtpPort, "sender@here.com", subject, body, recipient);
+                sendMessage("sender@here.com", subject, body, recipient);
               }
             });
   }
 
   private void sendMessage(
-      String smtpHost, int smtpPort, String sender, String subject, String body, String recipient) {
+      String sender, String subject, String body, String recipient) {
     // Create a mail session
     java.util.Properties props = new java.util.Properties();
     props.put("mail.smtp.host", smtpHost);
