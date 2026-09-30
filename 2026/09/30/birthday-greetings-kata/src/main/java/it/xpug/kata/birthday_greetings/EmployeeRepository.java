@@ -13,26 +13,28 @@ class EmployeeRepository {
 
   EmployeeRepository(String fileName) {
     try {
-		in = new BufferedReader(new FileReader(fileName));
-	} catch (FileNotFoundException e) {
+      in = new BufferedReader(new FileReader(fileName));
+    } catch (FileNotFoundException e) {
       throw new RuntimeException(e);
-	}
+    }
   }
 
-  List<Employee> readAll()  {
+  EmployeeRepository() {this("employee_data.txt");}
+
+  List<Employee> readAll() {
     String str = "";
     try {
-		str = in.readLine();
-	 // skip header
-    List<Employee> employees = new ArrayList<>();
-    while ((str = in.readLine()) != null) {
-      String[] employeeData = str.split(", ");
-      employees.add(
-          new Employee(employeeData[1], employeeData[0], employeeData[2], employeeData[3]));
-    }
-    return employees;
-	} catch (IOException | ParseException e) {
+      str = in.readLine();
+      // skip header
+      List<Employee> employees = new ArrayList<>();
+      while ((str = in.readLine()) != null) {
+        String[] employeeData = str.split(", ");
+        employees.add(
+            new Employee(employeeData[1], employeeData[0], employeeData[2], employeeData[3]));
+      }
+      return employees;
+    } catch (IOException | ParseException e) {
       throw new RuntimeException(e);
+    }
   }
-}
 }

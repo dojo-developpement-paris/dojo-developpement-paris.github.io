@@ -4,17 +4,17 @@ import jakarta.mail.Message;
 import jakarta.mail.MessagingException;
 import jakarta.mail.Session;
 import jakarta.mail.Transport;
-import jakarta.mail.internet.AddressException;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
-import java.io.IOException;
-import java.text.ParseException;
 
 public class BirthdayService {
-  public BirthdayService() {}
+  private final EmployeeRepository repository;
+  public BirthdayService(EmployeeRepository repository) {
+    this.repository = repository;
+  }
+  public BirthdayService() {this(new EmployeeRepository());}
 
-  public void sendGreetings(String fileName, XDate xDate, String smtpHost, int smtpPort)
- {
+  public void sendGreetings(String fileName, XDate xDate, String smtpHost, int smtpPort) {
     var repository = new EmployeeRepository(fileName);
     repository
         .readAll()
