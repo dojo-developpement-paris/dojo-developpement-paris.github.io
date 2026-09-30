@@ -18,7 +18,7 @@ public class BirthdayService {
     this.smtpPort = smtpPort;
   }
 
-  public void sendGreetings(XDate xDate, String smtpHost, int smtpPort) {
+  public void sendGreetings(XDate xDate) {
     repository
         .readAll()
         .forEach(
@@ -33,8 +33,7 @@ public class BirthdayService {
             });
   }
 
-  private void sendMessage(
-      String sender, String subject, String body, String recipient) {
+  private void sendMessage(String sender, String subject, String body, String recipient) {
     // Create a mail session
     java.util.Properties props = new java.util.Properties();
     props.put("mail.smtp.host", smtpHost);
