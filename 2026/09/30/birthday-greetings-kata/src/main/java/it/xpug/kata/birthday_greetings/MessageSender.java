@@ -18,7 +18,7 @@ class MessageSender {
     this.sender = sender;
   }
 
-  public void sendMessage(String sender, String subject, String body, String recipient) {
+  public void sendMessage(String subject, String body, String recipient) {
     // Create a mail session
     java.util.Properties props = new java.util.Properties();
     props.put("mail.smtp.host", smtpHost);
