@@ -14,7 +14,7 @@ public class BirthdayService {
   public BirthdayService() {}
 
   public void sendGreetings(String fileName, XDate xDate, String smtpHost, int smtpPort)
-      throws IOException, ParseException, AddressException, MessagingException {
+ {
     var repository = new EmployeeRepository(fileName);
     repository
         .readAll()
@@ -25,14 +25,13 @@ public class BirthdayService {
                 String body =
                     "Happy Birthday, dear %NAME%!".replace("%NAME%", employee.getFirstName());
                 String subject = "Happy Birthday!";
-                  sendMessage(smtpHost, smtpPort, "sender@here.com", subject, body, recipient);
+                sendMessage(smtpHost, smtpPort, "sender@here.com", subject, body, recipient);
               }
             });
   }
 
   private void sendMessage(
-      String smtpHost, int smtpPort, String sender, String subject, String body, String recipient)
-       {
+      String smtpHost, int smtpPort, String sender, String subject, String body, String recipient) {
     // Create a mail session
     java.util.Properties props = new java.util.Properties();
     props.put("mail.smtp.host", smtpHost);
@@ -42,15 +41,15 @@ public class BirthdayService {
     // Construct the message
     Message msg = new MimeMessage(session);
     try {
-		msg.setFrom(new InternetAddress(sender));
-		msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-		msg.setSubject(subject);
-		msg.setText(body);
+      msg.setFrom(new InternetAddress(sender));
+      msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+      msg.setSubject(subject);
+      msg.setText(body);
 
-		// Send the message
-		Transport.send(msg);
-	} catch (MessagingException e) {
+      // Send the message
+      Transport.send(msg);
+    } catch (MessagingException e) {
       throw new RuntimeException(e);
-	}
+    }
   }
 }
