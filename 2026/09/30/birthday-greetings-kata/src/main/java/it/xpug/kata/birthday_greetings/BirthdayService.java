@@ -13,6 +13,9 @@ import java.io.IOException;
 import java.text.ParseException;
 
 public class BirthdayService {
+  public BirthdayService() {
+
+  }
 
   public void sendGreetings(String fileName, XDate xDate, String smtpHost, int smtpPort)
       throws IOException, ParseException, AddressException, MessagingException {
