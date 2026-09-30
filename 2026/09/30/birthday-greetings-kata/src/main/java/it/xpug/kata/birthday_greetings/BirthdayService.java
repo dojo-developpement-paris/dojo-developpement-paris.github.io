@@ -15,11 +15,10 @@ public class BirthdayService {
         .forEach(
             employee -> {
               if (employee.isBirthday(xDate)) {
-                String recipient = employee.getEmail();
                 String body =
                     "Happy Birthday, dear %NAME%!".replace("%NAME%", employee.getFirstName());
                 String subject = "Happy Birthday!";
-                messageSender.sendMessage(subject, body, recipient);
+                messageSender.sendMessage(subject, body, employee);
               }
             });
   }

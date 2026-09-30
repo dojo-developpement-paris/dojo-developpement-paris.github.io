@@ -18,7 +18,7 @@ class MessageSender {
     this.sender = sender;
   }
 
-  public void sendMessage(String subject, String body, String recipient) {
+  public void sendMessage(String subject, String body, Employee recipient) {
     // Create a mail session
     java.util.Properties props = new java.util.Properties();
     props.put("mail.smtp.host", smtpHost);
@@ -29,7 +29,7 @@ class MessageSender {
     Message msg = new MimeMessage(session);
     try {
       msg.setFrom(new InternetAddress(sender));
-      msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+      msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient.getEmail()));
       msg.setSubject(subject);
       msg.setText(body);
 
