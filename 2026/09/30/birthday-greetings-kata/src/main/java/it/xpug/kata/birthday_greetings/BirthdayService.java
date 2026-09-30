@@ -2,9 +2,9 @@ package it.xpug.kata.birthday_greetings;
 
 public class BirthdayService {
   private final EmployeeRepository repository;
-  private final MailSender messageSender;
+  private final MessageSender messageSender;
 
-  public BirthdayService(EmployeeRepository repository, MailSender messageSender) {
+  public BirthdayService(EmployeeRepository repository, MessageSender messageSender) {
     this.repository = repository;
     this.messageSender = messageSender;
   }
