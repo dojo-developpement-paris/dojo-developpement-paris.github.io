@@ -19,10 +19,6 @@ class EmployeeRepository {
     }
   }
 
-  EmployeeRepository() {
-    this("employee_data.txt");
-  }
-
   List<Employee> readAll() {
     String str = "";
     try {
