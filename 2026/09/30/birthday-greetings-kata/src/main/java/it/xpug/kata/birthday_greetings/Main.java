@@ -11,6 +11,6 @@ public class Main {
       throws AddressException, IOException, ParseException, MessagingException {
     BirthdayService service =
         new BirthdayService(new EmployeeRepository("employee_data.txt"), "localhost", 25);
-    service.sendGreetings(new XDate(), "localhost", 25);
+    service.sendGreetings(new XDate());
   }
 }
