@@ -7,7 +7,7 @@ import jakarta.mail.Transport;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 
-class MailSender {
+class MailSender implements MessageSender {
   private final String smtpHost;
   private final int smtpPort;
   private final String sender;
@@ -18,6 +18,7 @@ class MailSender {
     this.sender = sender;
   }
 
+  @Override
   public void sendMessage(String subject, String body, Employee recipient) {
     // Create a mail session
     java.util.Properties props = new java.util.Properties();
