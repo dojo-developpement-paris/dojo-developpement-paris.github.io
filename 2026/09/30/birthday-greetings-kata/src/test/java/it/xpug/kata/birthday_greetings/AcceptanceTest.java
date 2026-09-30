@@ -19,7 +19,7 @@ class AcceptanceTest {
   void setUp() throws Exception {
     mailServer = new GreenMail(new ServerSetup(NONSTANDARD_PORT, null, ServerSetup.PROTOCOL_SMTP));
     mailServer.start();
-    birthdayService = new BirthdayService();
+    birthdayService = new BirthdayService(new EmployeeRepository("employee_data.txt"));
   }
 
   @AfterEach
