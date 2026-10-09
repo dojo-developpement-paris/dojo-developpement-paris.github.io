@@ -29,6 +29,8 @@ Le but n'est **pas de finir**
 - 2 - Mob - TCRDD - Common Lisp - Moon Lander : les règles de calcul : gravité, fioul
 - 1 - Fishbowl - TCRDD - Common Lisp - Moon Lander : les règles de calcul : gravité, fioul
 
+https://www.cs.brandeis.edu/~mairson/Courses/cs21b/lunar.pdf
+
 ## Modes de fonctionnement habituels
 - Mob: 👥3+ ; 1 typist + les autres naviguent
 - Mob [strong-style] tournant: 👥5~10 ; les mobbers donnent des idées 💡 le navigator décide 🔀 le driver tape ⌨️, on change les roles toutes les X minutes [mobtime]

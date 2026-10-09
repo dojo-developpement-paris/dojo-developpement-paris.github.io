@@ -10,18 +10,22 @@ fn hello(name: Option<&str>) -> String {
     format!("Hello {}", name.unwrap_or("world"))
 }
 
+fn initial_state() {
+    
+}
+
+fn height(_ship: ()) -> f64 {
+    50.0
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
     use speculoos::*;
 
     #[test]
-    fn hello_world() {
-        assert_that(&hello(None)).is_equal_to("Hello world".to_string())
-    }
-
-    #[test]
-    fn hello_foo() {
-        assert_that(&hello(Some("foo"))).is_equal_to("Hello foo".to_string())
+    fn initial_height_is_50() {
+        let ship = initial_state();
+        assert_that(&height(ship)).is_equal_to(50.0f64)
     }
 }
