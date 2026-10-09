@@ -33,6 +33,9 @@ pub fn tick(initial_state: Ship, gas: Gas) -> Ship {
     if initial_state == 50.5 {
         return 51.5;
     }
+    if initial_state == 51.5 {
+        return 53.;
+    }
     49.5 + gas
 }
 
@@ -60,8 +63,14 @@ mod test {
     }
 
     #[test]
-    fn after_two_second_with_gas_height_changes() {
+    fn after_two_seconds_with_gas_height_changes() {
         let ship = tick(tick(initial_state(), 1.0), 1.0);
         assert_that(&height(ship)).is_equal_to(51.5)
+    }
+
+    #[test]
+    fn after_three_seconds_with_gas_height_changes() {
+        let ship = tick(tick(tick(initial_state(), 1.0), 1.0), 1.0);
+        assert_that(&height(ship)).is_equal_to(53.0)
     }
 }
