@@ -40,7 +40,7 @@ pub fn height(ship: Ship) -> Height {
 }
 
 pub fn tick(ship: Ship, gas: Gas) -> Ship {
-    let velocity = gas - GRAVITY;
+    let velocity = ship.velocity + gas - GRAVITY;
     if ship.height == 50.5 {
         return Ship {
             height: 51.5,
