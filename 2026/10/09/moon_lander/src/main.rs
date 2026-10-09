@@ -53,12 +53,12 @@ mod test {
     #[test]
     fn initial_height_is_50() {
         let ship = initial_state();
-        assert_that(&height(ship)).is_equal_to(50.0f64)
+        assert_that(&height(ship)).is_equal_to(50.0)
     }
 
     #[test]
     fn after_one_second_without_gas_height_changes() {
         let ship = tick(initial_state(), 0.0);
-        assert_that(&height(ship)).is_equal_to(49.5f64)
+        assert_that(&height(ship)).is_equal_to(49.5)
     }
 }
