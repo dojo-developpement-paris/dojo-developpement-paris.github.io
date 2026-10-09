@@ -10,11 +10,9 @@ fn hello(name: Option<&str>) -> String {
     format!("Hello {}", name.unwrap_or("world"))
 }
 
-fn initial_state() {
-    
-}
+pub fn initial_state() {}
 
-fn height(_ship: ()) -> f64 {
+pub fn height(_ship: ()) -> f64 {
     50.0
 }
 
