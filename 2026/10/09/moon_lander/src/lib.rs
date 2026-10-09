@@ -21,7 +21,7 @@ type Ship = f64;
 type Height = f64;
 type Gas = f64;
 
-pub fn initial_state() -> Ship {
+pub fn initial_ship() -> Ship {
     50.0
 }
 
@@ -29,11 +29,11 @@ pub fn height(ship: Ship) -> Height {
     ship
 }
 
-pub fn tick(initial_state: Ship, gas: Gas) -> Ship {
-    if initial_state == 50.5 {
+pub fn tick(ship: Ship, gas: Gas) -> Ship {
+    if ship == 50.5 {
         return 51.5;
     }
-    if initial_state == 51.5 {
+    if ship == 51.5 {
         return 53.;
     }
     49.5 + gas
@@ -46,31 +46,31 @@ mod test {
 
     #[test]
     fn initial_height_is_50() {
-        let ship = initial_state();
+        let ship = initial_ship();
         assert_that(&height(ship)).is_equal_to(50.0)
     }
 
     #[test]
     fn after_one_second_without_gas_height_changes() {
-        let ship = tick(initial_state(), 0.0);
+        let ship = tick(initial_ship(), 0.0);
         assert_that(&height(ship)).is_equal_to(49.5)
     }
 
     #[test]
     fn after_one_second_with_gas_height_changes() {
-        let ship = tick(initial_state(), 1.0);
+        let ship = tick(initial_ship(), 1.0);
         assert_that(&height(ship)).is_equal_to(50.5)
     }
 
     #[test]
     fn after_two_seconds_with_gas_height_changes() {
-        let ship = tick(tick(initial_state(), 1.0), 1.0);
+        let ship = tick(tick(initial_ship(), 1.0), 1.0);
         assert_that(&height(ship)).is_equal_to(51.5)
     }
 
     #[test]
     fn after_three_seconds_with_gas_height_changes() {
-        let ship = tick(tick(tick(initial_state(), 1.0), 1.0), 1.0);
-        assert_that(&height(ship)).is_equal_to(53.0)
+        let ship = tick(tick(tick(initial_ship(), 1.0), 1.0), 1.0);
+        assert_that(&height(ship)).is_equal_to(53.)
     }
 }
