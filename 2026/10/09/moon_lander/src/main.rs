@@ -29,15 +29,19 @@ dv / dt = total force = 1 * 0 - 0.5
 (define burn-key 32)
 */
 
-pub fn initial_state() -> f64 {
+type Ship = f64;
+type Height = f64;
+type Gas = f64;
+
+pub fn initial_state() -> Ship {
     50.0
 }
 
-pub fn height(ship: f64) -> f64 {
+pub fn height(ship: Ship) -> Height {
     ship
 }
 
-pub fn tick(_initial_state: f64, _arg: i32) -> f64 {
+pub fn tick(_initial_state: Ship, _arg: Gas) -> Ship {
     49.5
 }
 
@@ -54,7 +58,7 @@ mod test {
 
     #[test]
     fn after_one_second_without_gas_height_changes() {
-        let ship = tick(initial_state(), 0);
+        let ship = tick(initial_state(), 0.0);
         assert_that(&height(ship)).is_equal_to(49.5f64)
     }
 }
