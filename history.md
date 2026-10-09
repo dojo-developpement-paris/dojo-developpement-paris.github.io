@@ -97,7 +97,8 @@ from [<time datetime="2021-01-28">2021-01-28</time>](https://www.meetup.com/dojo
 
 The dojo has been back in person since [<time datetime="2022-05-13">2022-05-13</time>](https://www.meetup.com/dojo-developpement-paris/events/285807516/).
 
-Later, the dojo started changing platform : from Meetup to Mobilizon since [<time datetime="2025-11-07">2025-11-07</time>](https://mobilizon.fr/events/26c19adf-a2e4-44bb-b1d2-f87eca5ef579).
+Later, the dojo started changing platform : from Meetup to Mobilizon since [<time datetime="2025-11-07">2025-11-07</time>](https://mobilizon.fr/events/26c19adf-a2e4-44bb-b1d2-f87eca5ef579) ;
+the Meetup groupe has been removed the [<time datetime="2026-10-05">2026-10-05</time>](https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io/issues/35#issuecomment-5994990584).
 
 ## Trends
 
