@@ -18,14 +18,19 @@ dv / dt = total force = 1 * 0 - 0.5
 */
 
 type Height = f64;
+type Velocity = f64;
 type Gas = f64;
 
 pub struct Ship {
     height: Height,
+    velocity: Velocity,
 }
 
 pub fn initial_ship() -> Ship {
-    Ship { height: 50.0 }
+    Ship {
+        height: 50.0,
+        velocity: 0.,
+    }
 }
 
 pub fn height(ship: Ship) -> Height {
@@ -34,12 +39,21 @@ pub fn height(ship: Ship) -> Height {
 
 pub fn tick(ship: Ship, gas: Gas) -> Ship {
     if ship.height == 50.5 {
-        return Ship { height: 51.5 };
+        return Ship {
+            height: 51.5,
+            ..ship
+        };
     }
     if ship.height == 51.5 {
-        return Ship { height: 53. };
+        return Ship {
+            height: 53.,
+            ..ship
+        };
     }
-    Ship { height: 49.5 + gas }
+    Ship {
+        height: 49.5 + gas,
+        ..ship
+    }
 }
 
 #[cfg(test)]
