@@ -21,6 +21,8 @@ type Height = f64;
 type Velocity = f64;
 type Gas = f64;
 
+const GRAVITY: f64 = 0.5;
+
 pub struct Ship {
     height: Height,
     velocity: Velocity,
@@ -52,7 +54,7 @@ pub fn tick(ship: Ship, gas: Gas) -> Ship {
     }
     Ship {
         height: 49.5 + gas,
-        ..ship
+        velocity: gas - GRAVITY,
     }
 }
 
