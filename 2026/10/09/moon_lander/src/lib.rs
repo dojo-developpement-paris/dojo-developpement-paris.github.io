@@ -17,26 +17,29 @@ dv / dt = total force = 1 * 0 - 0.5
 (define burn-key 32)
 */
 
-type Ship = f64;
 type Height = f64;
 type Gas = f64;
 
+pub struct Ship {
+    height: Height,
+}
+
 pub fn initial_ship() -> Ship {
-    50.0
+    Ship { height: 50.0 }
 }
 
 pub fn height(ship: Ship) -> Height {
-    ship
+    ship.height
 }
 
 pub fn tick(ship: Ship, gas: Gas) -> Ship {
-    if ship == 50.5 {
-        return 51.5;
+    if ship.height == 50.5 {
+        return Ship { height: 51.5 };
     }
-    if ship == 51.5 {
-        return 53.;
+    if ship.height == 51.5 {
+        return Ship { height: 53. };
     }
-    49.5 + gas
+    Ship { height: 49.5 + gas }
 }
 
 #[cfg(test)]
