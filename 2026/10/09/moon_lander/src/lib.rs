@@ -54,7 +54,7 @@ pub fn tick(ship: Ship, gas: Gas) -> Ship {
         };
     }
     Ship {
-        height: 49.5 + gas,
+        height: ship.height + velocity,
         velocity,
     }
 }
