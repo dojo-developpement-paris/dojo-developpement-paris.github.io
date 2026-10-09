@@ -29,8 +29,8 @@ pub fn height(ship: Ship) -> Height {
     ship
 }
 
-pub fn tick(_initial_state: Ship, _arg: Gas) -> Ship {
-    49.5
+pub fn tick(_initial_state: Ship, gas: Gas) -> Ship {
+    49.5 + gas
 }
 
 #[cfg(test)]
@@ -48,5 +48,11 @@ mod test {
     fn after_one_second_without_gas_height_changes() {
         let ship = tick(initial_state(), 0.0);
         assert_that(&height(ship)).is_equal_to(49.5)
+    }
+
+    #[test]
+    fn after_one_second_with_gas_height_changes() {
+        let ship = tick(initial_state(), 1.0);
+        assert_that(&height(ship)).is_equal_to(50.5)
     }
 }
