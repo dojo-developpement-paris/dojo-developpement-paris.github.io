@@ -1,0 +1,16 @@
+{
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+  "init": true,
+  "onCreateCommand": "bash -c 'direnv allow && direnv exec . mask test'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "pinage404.nix-extension-pack",
+        "pinage404.rust-extension-pack"
+      ]
+    }
+  }
+}
