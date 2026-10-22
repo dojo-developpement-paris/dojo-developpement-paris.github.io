@@ -52,7 +52,7 @@ pub fn tick(ship: Ship, thrust: Thrust) -> Ship {
 // [ ] verifier comment on se pose (que se passe t'il quand on arrive a 0)
 // [ ] verifier sur plusieurs ticks de temps qu'on tombe bien
 // [X] renommage pour les unités
-// [ ] Gerer la conso de thrust
+// [ ] Gerer la conso de fuel
 
 #[cfg(test)]
 mod test {
@@ -71,21 +71,24 @@ mod test {
         assert_that(&height(ship)).is_equal_to(49.5)
     }
 
-    #[test]
-    fn after_one_second_with_thrust_height_changes() {
-        let ship = tick(initial_ship(), 1.0);
-        assert_that(&height(ship)).is_equal_to(50.5)
-    }
+    mod max_thrust {
+        use super::*;
+        #[test]
+        fn after_one_second_with_thrust_height_changes() {
+            let ship = tick(initial_ship(), 1.0);
+            assert_that(&height(ship)).is_equal_to(50.5)
+        }
 
-    #[test]
-    fn after_two_seconds_with_thrust_height_changes() {
-        let ship = tick(tick(initial_ship(), 1.0), 1.0);
-        assert_that(&height(ship)).is_equal_to(51.5)
-    }
+        #[test]
+        fn after_two_seconds_with_thrust_height_changes() {
+            let ship = tick(tick(initial_ship(), 1.0), 1.0);
+            assert_that(&height(ship)).is_equal_to(51.5)
+        }
 
-    #[test]
-    fn after_three_seconds_with_thrust_height_changes() {
-        let ship = tick(tick(tick(initial_ship(), 1.0), 1.0), 1.0);
-        assert_that(&height(ship)).is_equal_to(53.)
+        #[test]
+        fn after_three_seconds_with_thrust_height_changes() {
+            let ship = tick(tick(tick(initial_ship(), 1.0), 1.0), 1.0);
+            assert_that(&height(ship)).is_equal_to(53.)
+        }
     }
 }
