@@ -71,12 +71,22 @@ mod test {
 
     mod no_thrust {
         use super::*;
+
         #[test]
         fn after_one_second_without_thrust_height_decreases_velocity_increases() {
             let ship = tick(initial_ship(), 0.);
             assert_that(&ship).is_equal_to(Ship {
                 height: 49.5,
                 velocity: -0.5,
+            })
+        }
+
+        #[test]
+        fn after_two_secondd_without_thrust_height_decreases_velocity_increases() {
+            let ship = tick(tick(initial_ship(), 0.), 0.);
+            assert_that(&ship).is_equal_to(Ship {
+                height: 48.5,
+                velocity: -1.,
             })
         }
     }
