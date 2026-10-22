@@ -23,6 +23,7 @@ type Thrust = f64;
 
 const GRAVITY: f64 = 0.5;
 
+#[derive(Debug, PartialEq)]
 pub struct Ship {
     height: Height,
     velocity: Velocity,
@@ -62,8 +63,10 @@ mod test {
     #[test]
     fn initial_height_is_50() {
         let ship = initial_ship();
-        assert_that(&ship.velocity).is_equal_to(0.);
-        assert_that(&height(ship)).is_equal_to(50.0)
+        assert_that(&ship).is_equal_to(Ship {
+            height: 50.,
+            velocity: 0.,
+        })
     }
 
     mod no_thrust {
