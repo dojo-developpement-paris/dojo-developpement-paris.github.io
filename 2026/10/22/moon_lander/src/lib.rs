@@ -62,6 +62,7 @@ mod test {
     #[test]
     fn initial_height_is_50() {
         let ship = initial_ship();
+        assert_that(&ship.velocity).is_equal_to(0.);
         assert_that(&height(ship)).is_equal_to(50.0)
     }
 
